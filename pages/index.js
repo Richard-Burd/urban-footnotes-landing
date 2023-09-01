@@ -3,7 +3,7 @@ export default function Home() {
     <div>
       <div className="flex justify-center">
         <h1 className="text-center mt-20 roboto-font text-4xl lg:text-7xl text-stone-300 lg:pl-10 opacity-60">
-          Urban Footnotes
+          Urban Foot Notes
         </h1>
       </div>
 
