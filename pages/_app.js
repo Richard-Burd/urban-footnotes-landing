@@ -6,7 +6,7 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Urban Footnotes</title>
+        <title>Urban Foot Notes</title>
         <meta
           name="description"
           content="A project presented by Urban Cruise Ship"
