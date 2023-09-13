@@ -12,6 +12,16 @@ const Navbar = () => {
           <Link href="/about">
             <Button title="About" bgColor="bg-stone-700" className="ml-4" />
           </Link>
+          <Link href="/addresses">
+            <Button title="Addresses" bgColor="bg-stone-700" className="ml-4" />
+          </Link>
+          <Link href="/associations">
+            <Button
+              title="Associations"
+              bgColor="bg-stone-700"
+              className="ml-4"
+            />
+          </Link>
         </div>
       </div>
     </nav>
