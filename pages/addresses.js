@@ -13,10 +13,9 @@ export default function Addresses() {
             Addresses
           </div>
 
-          {/* Add your image here */}
           <div className="my-8">
             <img
-              src={`${process.env.CLOUDINARY_BASE_URL}/title-page-1015-elvira.png`}
+              src={`${process.env.NEXT_PUBLIC_CLOUDINARY_BASE_URL}/title-page-1015-elvira.png`}
               alt="Urban Foot Notes Image"
               width={200}
               height={400}
