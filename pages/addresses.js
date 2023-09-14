@@ -25,7 +25,7 @@ export default function Addresses() {
         </center>
 
         <div className="roboto-font text-1xl text-stone-300 mx-4 lg:mx-32">
-          <p>1015 Elvira St.</p>
+          <p>1015 Elvira St. test</p>
           <br />
           <br />
           <br />
