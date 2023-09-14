@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <div>
+    <div id="ucs-footer-label">
       <Link href="https://urbancruiseship.org/">
         <div className="lg:flex justify-center lg:m-20 mx-4 mt-24">
           <div className="lg:flex">
@@ -24,6 +24,10 @@ const Footer = () => {
         </div>
       </Link>
       <footer>
+        <div className="ucs-font md:text-xl lg:text-2xl pb-12 pt-3 text-stone-500 text-center tracking-widest">
+          Copyright © Urban Cruise Ship {new Date().getFullYear()}
+        </div>
+
         <Link href="mailto:richard@urbancruiseship.org">
           <div className="pt-20 roboto-font pb-40 tracking-wider text-1xl text-center text-stone-300">
             contact: richard@urbancruiseship.org
