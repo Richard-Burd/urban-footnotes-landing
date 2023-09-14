@@ -26,7 +26,10 @@ export default function MobileNavBar() {
         </div>
       </div>
       {isMenuOpen && (
-        <div className="bg-stone-800 w-full text-white">
+        <div
+          id="mobile-nav-bar-links"
+          className="bg-stone-800 w-full text-white"
+        >
           <Link href="/">
             <div
               className="block px-4 py-2 cursor-pointer border-b border-stone-600"
