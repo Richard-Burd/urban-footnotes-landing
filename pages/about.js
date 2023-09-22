@@ -1,4 +1,4 @@
-export default function Home() {
+export default function About() {
   return (
     <div>
       <div className="flex justify-center">
@@ -14,7 +14,7 @@ export default function Home() {
           </div>
         </center>
         <div className="roboto-font text-1xl text-stone-300 mx-4 lg:mx-32">
-          <p>
+          <p className="pb-4">
             We want to create the best walkability assessment for a given
             property or location. Our primary customers are people looking for a
             place to live who also want to reduce their use of, and dependence
@@ -22,27 +22,25 @@ export default function Home() {
             realtors, real estate developers and others involved in deciding
             where people live, work, shop, and play.
           </p>
-          <br />
-          <p>
+
+          <p className="pb-4">
             Our objective is to slow the rate of urban sprawl through
             highlighting the benefits of living in more concentrated locations.
             We seek to encourage the better use of those locations through
             encouraging development of mixed use properties which would reduce
             the need for personal car ownership.
           </p>
-          <br />
+
           <p>
             <i>Urban Foot Notes</i> was created by researchers at{" "}
             <i>Urban Cruise Ship</i> in response to their research on
             <a
               href="https://www.urbancruiseship.org/cities"
-              className="duration-500 hover:text-red-900 hover:underline focus:text-red-900 focus:underline text-blue-400 transition"
               target="_blank"
               rel="noreferrer"
             >
               &nbsp;
               <b>cities</b>
-              &nbsp;
             </a>
             . We are currently working with early adapters in the real estate
             industry and plan to develop an online application for general use

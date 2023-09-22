@@ -1,21 +1,15 @@
-import Link from "next/link";
-import Button from "./Button"; // Adjust the import based on your file structure
+import DesktopNavbar from "./DesktopNavbar";
+import MobileNavbar from "./MobileNavbar";
 
-const Navbar = () => {
+export default function Navbar() {
   return (
-    <nav className="bg-neutral-950 text-white px-2 py-4">
-      <div className="container mx-auto flex justify-between">
-        <div className="flex-1 flex justify-end">
-          <Link href="/">
-            <Button title="Home" bgColor="bg-stone-700" />
-          </Link>
-          <Link href="/about">
-            <Button title="About" bgColor="bg-stone-700" className="ml-4" />
-          </Link>
-        </div>
+    <>
+      <div className="hidden sm:block">
+        <DesktopNavbar />
       </div>
-    </nav>
+      <div className="sm:hidden">
+        <MobileNavbar />
+      </div>
+    </>
   );
-};
-
-export default Navbar;
+}
