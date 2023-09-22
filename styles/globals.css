@@ -30,6 +30,10 @@ body {
   font-family: "Arial Rounded MT Bold", sans-serif;
 }
 
+.varela-rounded-font {
+  font-family: "Varela Round", sans-serif;
+}
+
 .roboto-font {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
@@ -45,3 +49,13 @@ body {
   font-weight: 400;
   font-style: italic;
 }
+
+:root {
+  --custom-link-color: #9db5c4;
+}
+
+a:not(#mobile-nav-bar-links a):not(#ucs-footer-label a) {
+  @apply duration-500 transition hover:text-blue-400 hover:underline focus:text-blue-400 focus:underline;
+  color: var(--custom-link-color);
+}
+
