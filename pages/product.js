@@ -1,12 +1,6 @@
 export default function Product() {
   return (
     <div>
-      <div className="flex justify-center">
-        <h1 className="text-center mt-20 roboto-font text-3xl lg:text-7xl text-stone-300 lg:pl-10 opacity-60">
-          Urban Foot Notes
-        </h1>
-      </div>
-
       <div className="lg:m-20">
         <div>
           <div className="roboto-font text-base sm:text-2xl text-center pt-12 lg:pt-2 lg:text-4xl text-stone-300 opacity-60 tracking-wide pb-4">
