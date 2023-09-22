@@ -12,8 +12,8 @@ export default function DesktopNavbar() {
           <Link href="/about">
             <Button title="About" bgColor="bg-stone-700" className="ml-4" />
           </Link>
-          <Link href="/products">
-            <Button title="Products" bgColor="bg-stone-700" className="ml-4" />
+          <Link href="/product">
+            <Button title="Product" bgColor="bg-stone-700" className="ml-4" />
           </Link>
           <Link href="/samples">
             <Button title="Samples" bgColor="bg-stone-700" className="ml-4" />

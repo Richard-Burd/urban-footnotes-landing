@@ -46,12 +46,12 @@ export default function MobileNavBar() {
               About Page
             </div>
           </Link>
-          <Link href="/products">
+          <Link href="/product">
             <div
               className="block px-4 py-2 cursor-pointer border-b border-stone-600"
               onClick={toggleMenu}
             >
-              Products
+              Product
             </div>
           </Link>
           <Link href="/samples">
