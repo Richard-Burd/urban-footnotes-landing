@@ -16,7 +16,7 @@ export default function Samples() {
         </div>
 
         <div className="mx-4 pb-4 roboto-font text-3xl text-stone-400 mt-36 border-b-4 border-stone-800 w-full">
-          Single Family Addresses
+          Single Family Address
         </div>
 
         <section
@@ -72,6 +72,10 @@ export default function Samples() {
           </div>
         </section>
 
+        <div className="mx-4 pb-4 roboto-font text-3xl text-stone-400 mt-36 border-b-4 border-stone-800 w-full">
+          Duplex
+        </div>
+
         <section
           id="property-1"
           className="flex justify-center sm:justify-start px-4"
@@ -122,7 +126,7 @@ export default function Samples() {
         </section>
 
         <div className="mx-4 pb-4 roboto-font text-3xl text-stone-400 mt-36 border-b-4 border-stone-800 w-full">
-          Multifamily Addresses
+          Multifamily Address
         </div>
 
         <section

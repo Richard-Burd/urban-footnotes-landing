@@ -62,12 +62,12 @@ export default function MobileNavBar() {
               Samples
             </div>
           </Link>
-          <Link href="/associations">
+          <Link href="/references">
             <div
               className="block px-4 py-2 cursor-pointer"
               onClick={toggleMenu}
             >
-              Associations
+              References
             </div>
           </Link>
         </div>

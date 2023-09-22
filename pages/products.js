@@ -10,8 +10,8 @@ export default function Products() {
       <div className="lg:m-20">
         <div>
           <div className="roboto-font text-base sm:text-2xl text-center pt-12 lg:pt-2 lg:text-4xl text-stone-300 opacity-60 tracking-wide pb-4">
-            <span className="block sm:inline sm:mr-2">Products</span>
-            <span className="block sm:inline">(Product Examples)</span>
+            <span className="block sm:inline sm:mr-2">Product Features</span>
+            {/* <span className="block sm:inline">(Current and Proposed)</span> */}
           </div>
         </div>
 
