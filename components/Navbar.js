@@ -4,10 +4,10 @@ import MobileNavbar from "./MobileNavbar";
 export default function Navbar() {
   return (
     <>
-      <div className="hidden sm:block">
+      <div className="hidden lg:block">
         <DesktopNavbar />
       </div>
-      <div className="sm:hidden">
+      <div className="lg:hidden">
         <MobileNavbar />
       </div>
     </>
