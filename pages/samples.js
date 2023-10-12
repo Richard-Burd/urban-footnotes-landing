@@ -47,7 +47,7 @@ export default function Samples() {
                     />
                     <img
                       className="absolute z-20 transition-opacity duration-300 ease-in-out opacity-40 hover:opacity-90 focus:opacity-100 transition-transform duration-300 ease-in-out transform origin-center hover:scale-105"
-                      src="/pdf-preview-pointy-hand.svg"
+                      src="/images/pdf-preview-pointy-hand.svg"
                       alt="Pointy Hand Preview"
                       width={200}
                       height={500}
@@ -104,7 +104,7 @@ export default function Samples() {
                     />
                     <img
                       className="absolute z-20 transition-opacity duration-300 ease-in-out opacity-40 hover:opacity-90 focus:opacity-100 transition-transform duration-300 ease-in-out transform origin-center hover:scale-105"
-                      src="/pdf-preview-pointy-hand.svg"
+                      src="/images/pdf-preview-pointy-hand.svg"
                       alt="Pointy Hand Preview"
                       width={200}
                       height={500}
@@ -157,7 +157,7 @@ export default function Samples() {
                     />
                     <img
                       className="absolute z-20 transition-opacity duration-300 ease-in-out opacity-40 hover:opacity-90 focus:opacity-100 transition-transform duration-300 ease-in-out transform origin-center hover:scale-105"
-                      src="/pdf-preview-pointy-hand.svg"
+                      src="/images/pdf-preview-pointy-hand.svg"
                       alt="Pointy Hand Preview"
                       width={200}
                       height={500}

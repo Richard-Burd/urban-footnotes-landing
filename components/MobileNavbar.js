@@ -11,19 +11,15 @@ export default function MobileNavBar() {
 
   return (
     <div>
-      <div className="bg-neutral-950 text-white px-2 py-4">
-        <div className="container mx-auto">
-          <div className="flex flex-col items-start">
-            <button onClick={toggleMenu}>
-              <Image
-                src="/hamburger-icon-white.svg"
-                alt="Menu"
-                width={30}
-                height={30}
-              />
-            </button>
-          </div>
-        </div>
+      <div className="bg-neutral-950 text-white px-4 py-4">
+        <button onClick={toggleMenu}>
+          <Image
+            src="/images/hamburger-icon-white.svg"
+            alt="Menu"
+            width={30}
+            height={30}
+          />
+        </button>
       </div>
       {isMenuOpen && (
         <div
@@ -46,6 +42,14 @@ export default function MobileNavBar() {
               About Page
             </div>
           </Link>
+          <Link href="/team">
+            <div
+              className="block px-4 py-2 cursor-pointer border-b border-stone-600"
+              onClick={toggleMenu}
+            >
+              Team
+            </div>
+          </Link>
           <Link href="/product">
             <div
               className="block px-4 py-2 cursor-pointer border-b border-stone-600"
@@ -60,6 +64,14 @@ export default function MobileNavBar() {
               onClick={toggleMenu}
             >
               Samples
+            </div>
+          </Link>
+          <Link href="/order">
+            <div
+              className="block px-4 py-2 cursor-pointer border-b border-stone-600"
+              onClick={toggleMenu}
+            >
+              Order
             </div>
           </Link>
           <Link href="/references">

@@ -13,7 +13,7 @@ const Footer = () => {
           </div>
           <div className="flex lg:pl-8 items-center justify-center">
             <Image
-              src="/ucs-logo-light.svg"
+              src="/images/ucs-logo-light.svg"
               alt="Urban Cruise Ship Logo"
               width={200}
               height={100}
