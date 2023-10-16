@@ -22,7 +22,11 @@ export default function DesktopNavbar() {
             <Button title="Samples" bgColor="bg-stone-700" className="ml-4" />
           </Link>
           <Link href="/order">
-            <Button title="Order" bgColor="bg-stone-700" className="ml-4" />
+            <Button
+              title="Order Our Product"
+              bgColor="bg-stone-700"
+              className="ml-4"
+            />
           </Link>
           <Link href="/references">
             <Button

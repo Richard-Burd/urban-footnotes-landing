@@ -71,7 +71,7 @@ export default function MobileNavBar() {
               className="block px-4 py-2 cursor-pointer border-b border-stone-600"
               onClick={toggleMenu}
             >
-              Order
+              Order Our Product
             </div>
           </Link>
           <Link href="/references">
