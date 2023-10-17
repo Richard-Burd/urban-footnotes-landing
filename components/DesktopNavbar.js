@@ -23,7 +23,7 @@ export default function DesktopNavbar() {
           </Link>
           <Link href="/order">
             <Button
-              title="Order Our Product"
+              title="Ordering Our Product"
               bgColor="bg-stone-700"
               className="ml-4"
             />
