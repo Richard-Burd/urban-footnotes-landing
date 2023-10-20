@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function PageTitle() {
   return (
-    <div className="flex justify-center mt-20">
+    <div className="flex justify-center mt-20 mx-4">
       <Image
         src="/images/ufn-logo-light.svg"
         alt="Urban Cruise Ship Logo"
