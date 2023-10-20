@@ -1,12 +1,16 @@
+import Image from "next/image";
+
 export default function PageTitle() {
   return (
-    <div className="flex justify-center">
-      <h1
-        style={{ color: "#d4c0a2" }}
-        className="text-center mt-20 roboto-font text-3xl lg:text-7xl lg:pl-10 opacity-80"
-      >
-        Urban Foot Notes
-      </h1>
+    <div className="flex justify-center mt-20">
+      <Image
+        src="/images/ufn-logo-light.svg"
+        alt="Urban Cruise Ship Logo"
+        width={500}
+        height={164.65}
+        unoptimized={true}
+        style={{ minWidth: "200px", opacity: 0.7 }}
+      />
     </div>
   );
 }
