@@ -5,7 +5,7 @@ export default function DesktopNavbar() {
   return (
     <nav className="bg-neutral-950 text-white px-2 py-4">
       <div className="container flex justify-between">
-        <div className="flex-auto flex justify-end">
+        <div className="flex-auto flex justify-evenly">
           <Link href="/">
             <Button title="Home" bgColor="bg-stone-700" />
           </Link>
