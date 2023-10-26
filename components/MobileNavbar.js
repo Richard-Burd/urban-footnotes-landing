@@ -58,14 +58,6 @@ export default function MobileNavBar() {
               Product
             </div>
           </Link>
-          <Link href="/ads">
-            <div
-              className="block px-4 py-2 cursor-pointer border-b border-stone-600"
-              onClick={toggleMenu}
-            >
-              Ads
-            </div>
-          </Link>
           <Link href="/samples">
             <div
               className="block px-4 py-2 cursor-pointer border-b border-stone-600"
@@ -80,6 +72,14 @@ export default function MobileNavBar() {
               onClick={toggleMenu}
             >
               Ordering Our Product
+            </div>
+          </Link>
+          <Link href="/ads">
+            <div
+              className="block px-4 py-2 cursor-pointer border-b border-stone-600"
+              onClick={toggleMenu}
+            >
+              Ads
             </div>
           </Link>
           <Link href="/references">
