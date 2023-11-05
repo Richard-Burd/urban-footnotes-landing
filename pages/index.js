@@ -1,7 +1,19 @@
+import Image from "next/image";
+
 export default function Home() {
   return (
     <div>
-      <div className="pt-12 lg:m-20">
+      <div id="landing-page-logo" className="flex justify-center mt-20 mx-4">
+        <Image
+          src="/images/ufn-logo-light.svg"
+          alt="Urban Cruise Ship Logo"
+          width={800}
+          height={263.44}
+          unoptimized={true}
+          style={{ minWidth: "200px", opacity: 0.7 }}
+        />
+      </div>
+      <div className="pt-2 lg:m-20">
         <center>
           <div className="roboto-font text-2xl pt-12 lg:pt-2 lg:text-4xl text-stone-300 opacity-60 tracking-wide">
             Mission Statement
