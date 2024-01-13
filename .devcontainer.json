@@ -24,10 +24,16 @@
         "vsicons.projectDetection.autoReload": true,
         "tailwindCSS.sortClassAttributes": true,
         "tailwindCSS.classAttributesSortOrder": "recommended",
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
+        "editor.detectIndentation": false,
         "editor.quickSuggestions": {
           "strings": true
         },
-        "css.sortProperties": false
+        "css.sortProperties": false,
+        "[mdx]": {
+          "editor.defaultFormatter": null
+        }
       }
     }
   }
