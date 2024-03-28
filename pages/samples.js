@@ -43,7 +43,7 @@ export default function Samples() {
                   >
                     <img
                       className="absolute z-10"
-                      src={`${process.env.NEXT_PUBLIC_CLOUDINARY_BASE_URL}/title-page-1015-elvira-1015.jpg`}
+                      src={`${process.env.NEXT_PUBLIC_CLOUDINARY_BASE_URL}/title-page-1015-elvira_seaqur.jpg`}
                       alt="Urban Foot Notes Image"
                       width={200}
                       height={400}
@@ -100,7 +100,7 @@ export default function Samples() {
                   >
                     <img
                       className="absolute z-10"
-                      src={`${process.env.NEXT_PUBLIC_CLOUDINARY_BASE_URL}/title-page-607b-moore.jpg`}
+                      src={`${process.env.NEXT_PUBLIC_CLOUDINARY_BASE_URL}/title-page-607b-moore_gtju88.jpg`}
                       alt="Urban Foot Notes Image"
                       width={200}
                       height={400}
@@ -153,7 +153,7 @@ export default function Samples() {
                   >
                     <img
                       className="absolute z-10"
-                      src={`${process.env.NEXT_PUBLIC_CLOUDINARY_BASE_URL}/title-page-555-church.jpg`}
+                      src={`${process.env.NEXT_PUBLIC_CLOUDINARY_BASE_URL}/title-page-555-church_s0crcx.jpg`}
                       alt="Urban Foot Notes Image"
                       width={200}
                       height={400}
