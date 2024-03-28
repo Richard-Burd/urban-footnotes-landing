@@ -43,7 +43,7 @@ export default function Samples() {
                   >
                     <img
                       className="absolute z-10"
-                      src={`${process.env.NEXT_PUBLIC_CLOUDINARY_BASE_URL}/title-page-1015-elvira.jpg`}
+                      src={`${process.env.NEXT_PUBLIC_CLOUDINARY_BASE_URL}/title-page-1015-elvira-1015.jpg`}
                       alt="Urban Foot Notes Image"
                       width={200}
                       height={400}
