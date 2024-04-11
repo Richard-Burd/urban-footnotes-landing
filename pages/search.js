@@ -22,7 +22,7 @@ export async function getStaticProps() {
     keyExists = result.keyExists;
   } else {
     // For build, use mock data or handle differently
-    data = { id: 1, title: "delectus aut autem" }; // Mocked data
+    data = { id: 2, title: "live fetch is not happening" }; // Mocked data
     keyExists = false; // Assuming the key exists for the build
   }
 
