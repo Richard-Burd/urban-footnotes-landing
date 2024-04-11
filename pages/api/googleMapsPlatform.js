@@ -6,7 +6,6 @@ export default async function handler(req, res) {
 
   // Check if the key exists
   const keyExists = Boolean(key);
-  console.log(`Key exists: ${keyExists}`);
 
   // Fetching data from the external API
   const response = await fetch("https://jsonplaceholder.typicode.com/todos/1");
