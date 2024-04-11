@@ -23,7 +23,7 @@ export async function getStaticProps() {
   } else {
     // For build, use mock data or handle differently
     data = { id: 1, title: "delectus aut autem" }; // Mocked data
-    keyExists = true; // Assuming the key exists for the build
+    keyExists = false; // Assuming the key exists for the build
   }
 
   return {
