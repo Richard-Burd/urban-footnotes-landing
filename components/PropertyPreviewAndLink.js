@@ -1,10 +1,17 @@
 import React from "react";
 
-const PropertyPreviewAndLink = ({ address1, address2, href, imageName }) => {
+const PropertyPreviewAndLink = ({
+  ranking,
+  address1,
+  address2,
+  href,
+  imageName,
+}) => {
   return (
-    <div id={address1}>
-      <div className="text-slate-300 text-1xl text-center">{address1}</div>
-      <div className="text-slate-300 text-1xl text-center">{address2}</div>
+    <div id={address1} className="mb-4">
+      <div className="text-slate-300 text-1xl text-center">{ranking}</div>
+      {/* <div className="text-slate-300 text-1xl text-center">{address1}</div>
+      <div className="text-slate-300 text-1xl text-center">{address2}</div> */}
       <div className="flex justify-center">
         <div style={{ width: "200px", height: "300px" }}>
           <a href={href} target="_blank" rel="noopener noreferrer">
