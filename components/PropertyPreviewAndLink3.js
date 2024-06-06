@@ -10,7 +10,7 @@ const PropertyPreviewAndLink = ({
 }) => {
   return (
     <div id={address1} className="mb-12">
-      <div className="text-slate-300 text-1xl text-center">{ranking1}</div>
+      <div className="text-1xl text-center text-slate-300">{ranking1}</div>
       {/* <div className="text-slate-300 text-1xl text-center">{address1}</div>
       <div className="text-slate-300 text-1xl text-center">{address2}</div> */}
       <div className="flex justify-center">
@@ -26,7 +26,7 @@ const PropertyPreviewAndLink = ({
                   height={400}
                 />
                 <img
-                  className="absolute z-20 transition-opacity duration-300 ease-in-out opacity-40 hover:opacity-90 focus:opacity-100 transform origin-center hover:scale-105"
+                  className="absolute z-20 origin-center transform opacity-40 transition-opacity duration-300 ease-in-out hover:scale-105 hover:opacity-90 focus:opacity-100"
                   src="/images/pdf-preview-pointy-hand.svg"
                   alt="Pointy Hand Preview"
                   width={200}
@@ -37,7 +37,7 @@ const PropertyPreviewAndLink = ({
           </a>
         </div>
       </div>
-      <div className="text-slate-300 text-1xl text-center">{ranking2}</div>
+      <div className="text-1xl text-center text-slate-300">{ranking2}</div>
     </div>
   );
 };
