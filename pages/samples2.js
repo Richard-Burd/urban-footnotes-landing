@@ -13,7 +13,8 @@ export default function Samples() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 -mx-16">
+          {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-8"> */}
           <PropertyPreviewAndLink
             ranking="55 Nearby out of 74"
             address1="223 8th Ave."
