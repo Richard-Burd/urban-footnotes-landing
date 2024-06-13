@@ -5,7 +5,7 @@ const nextConfig = {
     domains: ["ufn-website-images-and-documents.s3.us-east-2.amazonaws.com"],
   },
   env: {
-    CLOUDINARY_BASE_URL: process.env.CLOUDINARY_BASE_URL,
+    NEXT_PUBLIC_S3_BASE_URL: process.env.NEXT_PUBLIC_S3_BASE_URL,
   },
 };
 
