@@ -1,5 +1,6 @@
 import PageTitle from "@/components/PageTitle";
 import PropertyPreviewAndLink from "@/components/PropertyPreviewAndLink";
+import ProductSample from "@/components/ProductSample";
 
 export default function Samples() {
   return (
@@ -7,13 +8,21 @@ export default function Samples() {
       <PageTitle />
       <div className="lg:m-20">
         <div>
-          <div className="roboto-font text-base sm:text-2xl text-center pt-12 lg:pt-2 lg:text-4xl text-stone-300 opacity-60 tracking-wide pb-8">
-            <span className="block sm:inline sm:mr-2">Samples</span>
+          <div className="roboto-font pb-8 pt-12 text-center text-base tracking-wide text-stone-300 opacity-60 sm:text-2xl lg:pt-2 lg:text-4xl">
+            <span className="block sm:mr-2 sm:inline">Samples</span>
             <span className="block sm:inline">(Product Examples)</span>
           </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-8">
+          {/* <ProductSample
+            imagePath="preview-223-8th-ave.jpg"
+            address="1015 Elvira Ave"
+            serviceTypesNearby={55}
+            serviceTypesFarther={8}
+            walkabilityScore={20}
+          /> */}
+
           <PropertyPreviewAndLink
             ranking="55 Nearby out of 74"
             address1="223 8th Ave."
