@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
-import PageTitle from "@/components/PageTitle";
+import PageHeaderLogo from "@/components/PageHeaderLogo";
 
 import Link from "next/link";
 
@@ -13,28 +13,28 @@ export default function Team() {
 
   return (
     <div>
-      <PageTitle />
+      <PageHeaderLogo />
       <div className="lg:m-12">
         <center>
-          <div className="roboto-font text-2xl pt-12 lg:pt-2 lg:text-4xl text-stone-300 opacity-60 tracking-wide pb-4">
+          <div className="roboto-font pb-4 pt-12 text-2xl tracking-wide text-stone-300 opacity-60 lg:pt-2 lg:text-4xl">
             Our Team
           </div>
         </center>
-        <div className="roboto-font lg:text-2xl text-stone-300 mx-4 lg:mx-32">
+        <div className="roboto-font mx-4 text-stone-300 lg:mx-32 lg:text-2xl">
           <p className="py-8">
             Currently our team consists of the following individuals:
           </p>
-          <ul className="hidden lg:block list-disc pl-5 mb-14">
+          <ul className="mb-14 hidden list-disc pl-5 lg:block">
             {data.map((person, index) => (
               <li key={index} className="flex">
-                <span className="w-60 font-bold pb-3">{person.name}</span>
+                <span className="w-60 pb-3 font-bold">{person.name}</span>
                 <span>- {person.title}</span>
               </li>
             ))}
           </ul>
-          <ul className="list-square list-outside lg:hidden pl-5 mb-11">
+          <ul className="mb-11 list-outside list-square pl-5 lg:hidden">
             {data.map((person, index) => (
-              <li key={index} className="pb-3 mb-8">
+              <li key={index} className="mb-8 pb-3">
                 <div className="font-bold">{person.name}</div>
                 <div>{person.title}</div>
               </li>

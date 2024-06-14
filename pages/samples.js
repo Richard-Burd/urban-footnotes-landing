@@ -1,16 +1,22 @@
+import PageHeaderLogo from "@/components/PageHeaderLogo";
 import PageTitle from "@/components/PageTitle";
 import ProductSample from "@/components/ProductSample";
 
 export default function Samples() {
   return (
     <div>
-      <PageTitle />
+      <PageHeaderLogo />
       <div className="lg:m-10">
-        <div>
-          <div className="roboto-font pb-8 pt-12 text-center text-base tracking-wide text-stone-300 opacity-60 sm:text-2xl lg:pt-2 lg:text-4xl">
-            <span className="block sm:mr-2 sm:inline">Samples</span>
-            <span className="block sm:inline">(Product Examples)</span>
-          </div>
+        <PageTitle
+          topTitle="Samples (Product Examples)"
+          textColor="text-green-title"
+        />
+        <div className="roboto-font text-2.5xl mb-32 text-gray-200">
+          <p>
+            Samples are presented ranked by number of service types (out of 74
+            total) within ~1/4 mile of the address shown. Then by those within
+            ~2/5th mile, and then by Walkability Score.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-10">

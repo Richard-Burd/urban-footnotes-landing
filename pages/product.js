@@ -1,23 +1,23 @@
-import PageTitle from "@/components/PageTitle";
+import PageHeaderLogo from "@/components/PageHeaderLogo";
 
 export default function Product() {
   return (
     <div>
-      <PageTitle />
+      <PageHeaderLogo />
       <div className="lg:m-20">
         <div>
-          <div className="roboto-font text-base sm:text-2xl text-center pt-12 lg:pt-2 lg:text-4xl text-stone-300 opacity-60 tracking-wide pb-4">
-            <span className="block sm:inline sm:mr-2">Product Features</span>
+          <div className="roboto-font pb-4 pt-12 text-center text-base tracking-wide text-stone-300 opacity-60 sm:text-2xl lg:pt-2 lg:text-4xl">
+            <span className="block sm:mr-2 sm:inline">Product Features</span>
             {/* <span className="block sm:inline">(Current and Proposed)</span> */}
           </div>
         </div>
 
         <section
           id="property-1"
-          className="flex justify-center sm:justify-start px-4"
+          className="flex justify-center px-4 sm:justify-start"
         >
-          <div className="roboto-font text-stone-400 pt-20 max-w-screen-md">
-            <h2 className="text-2xl text-stone-300 text-left">
+          <div className="roboto-font max-w-screen-md pt-20 text-stone-400">
+            <h2 className="text-left text-2xl text-stone-300">
               Walkability Rating
             </h2>
             <p className="text-xl">
@@ -25,7 +25,7 @@ export default function Product() {
               on-the-ground observer rating the neighborhood on a number of
               criteria. These include:
             </p>
-            <ul className="mx-6 sm:mx-10 list-square list-outside text-base">
+            <ul className="mx-6 list-outside list-square text-base sm:mx-10">
               <li className="pt-3">
                 Sidewalk cracks, bevels, and slope/incline/elevation change
               </li>
@@ -48,10 +48,10 @@ export default function Product() {
 
         <section
           id="property-1"
-          className="flex justify-center sm:justify-start px-4"
+          className="flex justify-center px-4 sm:justify-start"
         >
-          <div className="roboto-font text-stone-400 pt-20 max-w-screen-md">
-            <h2 className="text-2xl text-stone-300 text-left">
+          <div className="roboto-font max-w-screen-md pt-20 text-stone-400">
+            <h2 className="text-left text-2xl text-stone-300">
               Realtor Survey
             </h2>
             <p className="text-xl">
@@ -72,7 +72,7 @@ export default function Product() {
           </div>
         </section>
 
-        <div className="roboto-font text-1xl text-stone-300 mx-4 lg:mx-32">
+        <div className="roboto-font text-1xl mx-4 text-stone-300 lg:mx-32">
           <br />
           <br />
           <br />
