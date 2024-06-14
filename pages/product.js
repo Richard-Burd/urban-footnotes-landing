@@ -9,7 +9,11 @@ export default function Product() {
       <PageHeaderLogo />
       <div>
         <div className="mt-10">
-          <PageTitle topTitle="Product Features" textColor="text-pink-title" />
+          <PageTitle
+            topTitle="Product Features"
+            textColor="text-title-text-product"
+            shadowColor={`title-shadow-product`}
+          />
         </div>
         <Image
           src={`${baseUrl}/desktop-product-page-first-page.png`}

@@ -1,4 +1,5 @@
 import PageHeaderLogo from "@/components/PageHeaderLogo";
+import PageTitle from "@/components/PageTitle";
 
 import Link from "next/link";
 
@@ -8,9 +9,11 @@ export default function Order() {
       <PageHeaderLogo />
       <div className="lg:m-20">
         <center>
-          <div className="roboto-font pb-4 pt-12 text-2xl tracking-wide text-stone-300 opacity-60 lg:pt-2 lg:text-4xl">
-            Ordering Our Product
-          </div>
+          <PageTitle
+            topTitle="Ordering Our Product"
+            textColor="text-title-text-ordering-our-product"
+            shadowColor={`title-shadow-ordering-our-product`}
+          />
         </center>
         <div className="roboto-font text-1xl mx-4 text-stone-300 lg:mx-32">
           <p className="pb-4">

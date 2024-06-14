@@ -8,8 +8,18 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "green-title": "#b5f5a5ff",
-        "pink-title": "#e7c7c7ff",
+        // custom colors for shadows are stored in the
+        // ./styles/global.css file because TailwindCSS
+        // default shadows don't work and custom <style jsx>
+        // tags in React components can't interpolate props
+        "title-text-home": "#9b8d78ff",
+        "title-text-about": "#8a8a8aff",
+        "title-text-team": "#e1d3bfff",
+        "title-text-product": "#e7c7c7ff",
+        "title-text-samples": "#b5f5a5ff",
+        "title-text-ordering-our-product": "#e1d3bfff",
+        "title-text-ads": "#ffbf00",
+        "title-text-references": "#91baeaff",
         "navbar-home": "#9b8d78ff",
         "navbar-about": "#898886ff",
         "navbar-team": "#e6e6e6ff",
