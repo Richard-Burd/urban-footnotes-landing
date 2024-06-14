@@ -8,10 +8,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "green-title": "#b5f5a5ff", // Your custom color value
+        "green-title": "#b5f5a5ff",
+        "pink-title": "#e7c7c7ff",
       },
       fontSize: {
         "2.5xl": ["1.65rem", { lineHeight: "2.3rem" }],
+        "6.5xl": ["4.36rem", { lineHeight: "6rem" }],
       },
     },
   },

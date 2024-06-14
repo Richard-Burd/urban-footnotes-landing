@@ -1,18 +1,46 @@
+import Image from "next/image";
+import PageTitle from "@/components/PageTitle";
 import PageHeaderLogo from "@/components/PageHeaderLogo";
 
 export default function Product() {
+  const baseUrl = process.env.NEXT_PUBLIC_S3_BASE_URL;
   return (
     <div>
       <PageHeaderLogo />
-      <div className="lg:m-20">
-        <div>
-          <div className="roboto-font pb-4 pt-12 text-center text-base tracking-wide text-stone-300 opacity-60 sm:text-2xl lg:pt-2 lg:text-4xl">
-            <span className="block sm:mr-2 sm:inline">Product Features</span>
-            {/* <span className="block sm:inline">(Current and Proposed)</span> */}
-          </div>
+      <div>
+        <div className="mt-10">
+          <PageTitle topTitle="Product Features" textColor="text-pink-title" />
         </div>
+        <Image
+          src={`${baseUrl}/desktop-product-page-first-page.png`}
+          // true width & true height controlled by parent grid
+          // image fills parent's allotted space
+          width={1024}
+          height={1}
+        />
+        <Image
+          src={`${baseUrl}/desktop-product-page-second-page.png`}
+          // true width & true height controlled by parent grid
+          // image fills parent's allotted space
+          width={1024}
+          height={1}
+        />
+        <Image
+          src={`${baseUrl}/desktop-product-page-third-page.png`}
+          // true width & true height controlled by parent grid
+          // image fills parent's allotted space
+          width={1024}
+          height={1}
+        />
+        <Image
+          src={`${baseUrl}/desktop-product-page-fourth-page.png`}
+          // true width & true height controlled by parent grid
+          // image fills parent's allotted space
+          width={1024}
+          height={1}
+        />
 
-        <section
+        {/* <section
           id="property-1"
           className="flex justify-center px-4 sm:justify-start"
         >
@@ -76,7 +104,7 @@ export default function Product() {
           <br />
           <br />
           <br />
-        </div>
+        </div> */}
       </div>
     </div>
   );
