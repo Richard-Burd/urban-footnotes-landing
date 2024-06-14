@@ -1,9 +1,10 @@
 import Image from "next/image";
+import PageTitle from "@/components/PageTitle";
 
 export default function Home() {
   return (
     <div>
-      <div id="landing-page-logo" className="flex justify-center mt-20 mx-4">
+      <div id="landing-page-logo" className="mx-4 mt-20 flex justify-center">
         <Image
           src="/images/ufn-logo-light.svg"
           alt="Urban Cruise Ship Logo"
@@ -15,11 +16,15 @@ export default function Home() {
       </div>
       <div className="pt-2 lg:m-20">
         <center>
-          <div className="roboto-font text-2xl pt-12 lg:pt-2 lg:text-4xl text-stone-300 opacity-60 tracking-wide">
-            Mission Statement
+          <div className="mt-10">
+            <PageTitle
+              topTitle="Mission Statement"
+              textColor="text-title-text-home"
+              shadowColor={`title-shadow-home`}
+            />
           </div>
         </center>
-        <div className="pt-4 roboto-font italic text-1xl text-stone-300 mx-4 lg:mx-32">
+        <div className="roboto-font text-1xl mx-4 pt-4 italic text-stone-300 lg:mx-32">
           <p>
             In service of residents who want to use personal mechanized
             transportation as little as possible, we strive to provide the most

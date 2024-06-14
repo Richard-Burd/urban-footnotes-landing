@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import PageHeaderLogo from "@/components/PageHeaderLogo";
+import PageTitle from "@/components/PageTitle";
 
 import Link from "next/link";
 
@@ -16,9 +17,11 @@ export default function Team() {
       <PageHeaderLogo />
       <div className="lg:m-12">
         <center>
-          <div className="roboto-font pb-4 pt-12 text-2xl tracking-wide text-stone-300 opacity-60 lg:pt-2 lg:text-4xl">
-            Our Team
-          </div>
+          <PageTitle
+            topTitle="Our Team"
+            textColor="text-title-text-team"
+            shadowColor={`title-shadow-team`}
+          />
         </center>
         <div className="roboto-font mx-4 text-stone-300 lg:mx-32 lg:text-2xl">
           <p className="py-8">
@@ -32,7 +35,7 @@ export default function Team() {
               </li>
             ))}
           </ul>
-          <ul className="mb-11 list-outside list-square pl-5 lg:hidden">
+          <ul className="list-square mb-11 list-outside pl-5 lg:hidden">
             {data.map((person, index) => (
               <li key={index} className="mb-8 pb-3">
                 <div className="font-bold">{person.name}</div>

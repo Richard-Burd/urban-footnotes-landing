@@ -9,9 +9,10 @@ export default function Samples() {
       <div className="mx-10 mt-10">
         <PageTitle
           topTitle="Samples (Product Examples)"
-          textColor="text-green-title"
+          textColor="text-title-text-samples"
+          shadowColor="title-shadow-samples"
         />
-        <div className="roboto-font text-2.5xl mb-32 text-gray-200">
+        <div className="roboto-font mb-32 text-2.5xl text-gray-200">
           <p>
             Samples are presented ranked by number of service types (out of 74
             total) within ~1/4 mile of the address shown. Then by those within
