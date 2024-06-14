@@ -1,43 +1,43 @@
 import Link from "next/link";
-import Button from "./Button";
+import { useRouter } from "next/router";
+import DesktopNavbarButton from "./DesktopNavbarButton";
 
 export default function DesktopNavbar() {
+  const router = useRouter();
+  const currentPath = router.pathname;
+
+  const navItems = [
+    { title: "Home", path: "/", bgColor: "bg-navbar-home" },
+    { title: "About", path: "/about", bgColor: "bg-navbar-about" },
+    { title: "Team", path: "/team", bgColor: "bg-navbar-team" },
+    { title: "Product", path: "/product", bgColor: "bg-navbar-product" },
+    { title: "Samples", path: "/samples", bgColor: "bg-navbar-samples" },
+    {
+      title: "Ordering Our Product",
+      path: "/order",
+      bgColor: "bg-navbar-ordering-our-product",
+    },
+    { title: "Ads", path: "/ads", bgColor: "bg-navbar-ads" },
+    {
+      title: "References",
+      path: "/references",
+      bgColor: "bg-navbar-references",
+    },
+  ];
+
   return (
-    <nav className="bg-neutral-950 text-white px-2 py-4">
+    <nav className="bg-neutral-950 text-white">
       <div className="container flex justify-between">
-        <div className="flex-auto flex justify-evenly">
-          <Link href="/">
-            <Button title="Home" bgColor="bg-stone-700" />
-          </Link>
-          <Link href="/about">
-            <Button title="About" bgColor="bg-stone-700" className="ml-4" />
-          </Link>
-          <Link href="/team">
-            <Button title="Team" bgColor="bg-stone-700" className="ml-4" />
-          </Link>
-          <Link href="/product">
-            <Button title="Product" bgColor="bg-stone-700" className="ml-4" />
-          </Link>
-          <Link href="/samples">
-            <Button title="Samples" bgColor="bg-stone-700" className="ml-4" />
-          </Link>
-          <Link href="/order">
-            <Button
-              title="Ordering Our Product"
-              bgColor="bg-stone-700"
-              className="ml-4"
-            />
-          </Link>
-          <Link href="/ads">
-            <Button title="Ads" bgColor="bg-stone-700" className="ml-4" />
-          </Link>
-          <Link href="/references">
-            <Button
-              title="References"
-              bgColor="bg-stone-700"
-              className="ml-4"
-            />
-          </Link>
+        <div className="flex flex-auto justify-evenly">
+          {navItems.map((item) => (
+            <Link href={item.path} key={item.title}>
+              <DesktopNavbarButton
+                title={item.title}
+                bgColor={item.bgColor}
+                isActive={currentPath === item.path}
+              />
+            </Link>
+          ))}
         </div>
       </div>
     </nav>
