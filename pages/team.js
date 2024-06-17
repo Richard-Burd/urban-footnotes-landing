@@ -81,14 +81,14 @@ export default function Team() {
                       {...socialMediaIconProps}
                     />
                   </div>
-                  <div className="mx-3">
+                  <div className="z-10 mx-3">
                     <SocialMediaIcon
                       icon="github"
                       hyperLink="https://github.com/Richard-Burd/"
                       {...socialMediaIconProps}
                     />
                   </div>
-                  <div className="mx-3">
+                  <div className="z-10 mx-3">
                     <SocialMediaIcon
                       icon="email"
                       hyperLink="mailto:richard@urbancruiseship.org"
