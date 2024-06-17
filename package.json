@@ -9,15 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "13.4.19",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "framer-motion": "^11.2.10",
+    "next": "^13.5.6",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "sharp": "^0.33.4"
   },
   "devDependencies": {
-    "prettier": "3.3.1",
-    "tailwindcss": "3.3.3",
     "autoprefixer": "10.4.15",
     "postcss": "8.4.29",
-    "prettier-plugin-tailwindcss": "^0.6.1"
+    "prettier": "3.3.1",
+    "prettier-plugin-tailwindcss": "^0.6.1",
+    "tailwindcss": "3.3.3"
   }
 }
