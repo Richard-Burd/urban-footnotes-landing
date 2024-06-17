@@ -14,7 +14,7 @@ module.exports = {
         // tags in React components can't interpolate props
         "title-text-home": "#9b8d78ff",
         "title-text-about": "#8a8a8aff",
-        "title-text-team": "#e1d3bfff",
+        "title-text-team": "#79d3fc",
         "title-text-product": "#e7c7c7ff",
         "title-text-samples": "#b5f5a5ff",
         "title-text-ordering-our-product": "#e1d3bfff",
@@ -22,7 +22,7 @@ module.exports = {
         "title-text-references": "#91baeaff",
         "navbar-home": "#9b8d78ff",
         "navbar-about": "#898886ff",
-        "navbar-team": "#e6e6e6ff",
+        "navbar-team": "#73d9eb",
         "navbar-product": "#ffafafff",
         "navbar-samples": "#64df46ff",
         "navbar-ordering-our-product": "#ffffffff",
