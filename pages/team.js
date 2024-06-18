@@ -33,15 +33,15 @@ export default function Team() {
                 <div className="social-media-icons ml-4 mt-2 flex flex-row">
                   <div className="mx-3">
                     <SocialMediaIcon
-                      icon="recycle"
-                      hyperLink="https://ram-website-images-and-documents.s3.us-east-2.amazonaws.com/doc-684.pdf"
+                      icon="doc"
+                      hyperLink="https://ram-website-images-and-documents.s3.us-east-2.amazonaws.com/doc-685.pdf"
                       {...socialMediaIconProps}
                     />
                   </div>
                   <div className="mx-3">
                     <SocialMediaIcon
-                      icon="doc"
-                      hyperLink="https://ram-website-images-and-documents.s3.us-east-2.amazonaws.com/doc-685.pdf"
+                      icon="recycle"
+                      hyperLink="https://ram-website-images-and-documents.s3.us-east-2.amazonaws.com/doc-684.pdf"
                       {...socialMediaIconProps}
                     />
                   </div>
@@ -146,8 +146,14 @@ export default function Team() {
           </ul>
           <p className="mt-8">
             You can read about us{" "}
-            <Link href="https://www.urbancruiseship.org/crew">here</Link> on the
-            Urban Cruise Ship website.
+            <Link
+              href="https://www.urbancruiseship.org/crew"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              here
+            </Link>{" "}
+            on the Urban Cruise Ship website.
           </p>
         </div>
       </div>
