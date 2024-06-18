@@ -1,5 +1,6 @@
 import PageHeaderLogo from "@/components/PageHeaderLogo";
 import PageTitle from "@/components/PageTitle";
+import ContactUsForm from "@/components/ContactUsForm"; // 3rd Deployment Try
 
 import Link from "next/link";
 
@@ -27,6 +28,7 @@ export default function Order() {
           </p>
         </div>
       </div>
+      <ContactUsForm />
     </div>
   );
 }
