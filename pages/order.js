@@ -28,7 +28,7 @@ export default function Order() {
           </p>
         </div>
       </div>
-      <ContactUsForm />
+      {/* <ContactUsForm /> */}
     </div>
   );
 }
