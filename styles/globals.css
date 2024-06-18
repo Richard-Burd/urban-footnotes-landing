@@ -50,10 +50,6 @@ body {
   font-style: italic;
 }
 
-:root {
-  --custom-link-color: #9db5c4;
-}
-
 /* these are the color schemes for the title text & shadows
 they are here and not in the tailwind.config.js file because
 that file cannot be used to push custon shadow values into
@@ -90,7 +86,13 @@ the component styling */
   text-shadow: 3px 3px 4px rgba(41, 99, 167, 0.98);
 }
 
+/* This is the default color used on all anchor tag links */
+:root {
+  --custom-link-color: #68bdf2;
+}
+
+/* This is the default transition & color behaviours used on all anchor tag links */
 a:not(#mobile-nav-bar-links a):not(#ucs-footer-label a) {
-  @apply transition duration-500 hover:text-blue-400 hover:underline focus:text-blue-400 focus:underline;
+  @apply underline transition duration-500 hover:text-red-600 hover:underline focus:text-red-400 focus:underline;
   color: var(--custom-link-color);
 }
