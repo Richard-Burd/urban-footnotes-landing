@@ -1,11 +1,3 @@
-{
-  /* <SocialMediaIcon
-  icon="linkedin"
-  hyperLink="https://twitter.com/MichaelKGoff"
-  {...socialMediaIconProps}
-/>; */
-}
-
 import { motion } from "framer-motion";
 import { useState } from "react";
 import Link from "next/link";
