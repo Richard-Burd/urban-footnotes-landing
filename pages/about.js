@@ -33,13 +33,12 @@ export default function About() {
 
           <p>
             <i>Urban Foot Notes</i> was created by researchers at{" "}
-            <i>Urban Cruise Ship</i> in response to their research on
+            <i>Urban Cruise Ship</i> in response to their research on{" "}
             <a
               href="https://www.urbancruiseship.org/cities"
               target="_blank"
               rel="noreferrer"
             >
-              &nbsp;
               <b>cities</b>
             </a>
             . We are currently working with early adapters in the real estate
