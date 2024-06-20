@@ -130,14 +130,110 @@ export default function Team() {
             <li className="mb-8 pb-3">
               <div className="font-bold">John van der Harst</div>
               <div>Chief Strategist</div>
+              <div className="social-media-icons ml-4 mt-2 flex -translate-y-1 flex-row flex-wrap">
+                <div className="mx-2 py-2">
+                  <SocialMediaIcon
+                    icon="doc"
+                    hyperLink="https://ram-website-images-and-documents.s3.us-east-2.amazonaws.com/doc-685.pdf"
+                    width="30"
+                    height="30"
+                    {...socialMediaIconProps}
+                  />
+                </div>
+                <div className="mx-2 py-2">
+                  <SocialMediaIcon
+                    icon="recycle"
+                    hyperLink="https://ram-website-images-and-documents.s3.us-east-2.amazonaws.com/doc-684.pdf"
+                    width="30"
+                    height="30"
+                    {...socialMediaIconProps}
+                  />
+                </div>
+                <div className="mx-2 py-2">
+                  <SocialMediaIcon
+                    icon="email"
+                    hyperLink="https://www.urbancruiseship.org/snail-mail"
+                    width="30"
+                    height="30"
+                    {...socialMediaIconProps}
+                  />
+                </div>
+              </div>
             </li>
             <li className="mb-8 pb-3">
               <div className="font-bold">Richard Burd</div>
               <div>Webmaster & Developer</div>
+              <div className="social-media-icons ml-4 mt-2 flex -translate-y-1 flex-row flex-wrap">
+                <div className="mx-2 py-2">
+                  <SocialMediaIcon
+                    icon="x"
+                    hyperLink="https://x.com/Richard_A_Burd"
+                    width="30"
+                    height="30"
+                    {...socialMediaIconProps}
+                  />
+                </div>
+                <div className="mx-2 py-2">
+                  <SocialMediaIcon
+                    icon="linkedin"
+                    hyperLink="https://www.linkedin.com/in/richardburd/"
+                    width="30"
+                    height="30"
+                    {...socialMediaIconProps}
+                  />
+                </div>
+                <div className="mx-2 py-2">
+                  <SocialMediaIcon
+                    icon="home"
+                    hyperLink="https://richard-burd.github.io/"
+                    width="30"
+                    height="30"
+                    {...socialMediaIconProps}
+                  />
+                </div>
+                <div className="mx-2 py-2">
+                  <SocialMediaIcon
+                    icon="github"
+                    hyperLink="https://github.com/Richard-Burd/"
+                    width="30"
+                    height="30"
+                    {...socialMediaIconProps}
+                  />
+                </div>
+                <div className="mx-2 py-2">
+                  <SocialMediaIcon
+                    icon="email"
+                    hyperLink="mailto:richard@urbancruiseship.org"
+                    width="30"
+                    height="30"
+                    {...socialMediaIconProps}
+                  />
+                </div>
+              </div>
             </li>
             <li className="mb-8 pb-3">
               <div className="font-bold">Jye</div>
               <div>Research & Product Development</div>
+              <div className="social-media-icons ml-4 mt-2 flex -translate-y-1 flex-row flex-wrap">
+                <div className="mx-2 py-2">
+                  <SocialMediaIcon
+                    icon="home"
+                    hyperLink="https://jyeartstudio.com/"
+                    width="30"
+                    height="30"
+                    {...socialMediaIconProps}
+                  />
+                </div>
+                <div className="mx-2 py-2">
+                  <SocialMediaIcon
+                    icon="email"
+                    hyperLink="mailto:jye.art.studio@gmail.com"
+                    width="30"
+                    height="30"
+                    {...socialMediaIconProps}
+                  />
+                </div>
+              </div>
             </li>
             <li className="mb-8 pb-3">
               <div className="font-bold">Roseanne Morgan</div>

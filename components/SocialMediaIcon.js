@@ -8,6 +8,8 @@ export default function EmailIcon({
   hyperLink,
   backgroundColor,
   activeBackgroundColor,
+  width = 40,
+  height = 40,
 }) {
   let renderedPath = undefined;
   if (icon === "email") {
@@ -49,8 +51,8 @@ export default function EmailIcon({
 
   const renderSVG = () => (
     <motion.svg
-      width="40"
-      height="40"
+      width={width}
+      height={height}
       viewBox="0 0 13.229 13.229"
       xmlns="http://www.w3.org/2000/svg"
       initial="initial"

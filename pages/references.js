@@ -16,14 +16,14 @@ export default function Associations() {
             <h3 className="text-2xl font-semibold text-stone-400">Advisors</h3> */}
           <div className="pl-2">
             <div className="pb-4 sm:pb-0">
-              John Zupancic, Owner and Principal Broker,
+              John Zupancic, Owner and Principal Broker,{" "}
               <a
                 href="https://www.muttzrealty.com/"
                 target="_blank"
                 rel="noreferrer"
               >
-                &nbsp; Muttz Realty, LLC, &nbsp;
-              </a>
+                Muttz Realty, LLC,
+              </a>{" "}
               Nashville, TN
             </div>
             <div>

@@ -11,7 +11,7 @@ export default function Home() {
           width={800}
           height={263.44}
           unoptimized={true}
-          style={{ minWidth: "200px", opacity: 0.7 }}
+          style={{ minWidth: "100px", opacity: 0.7 }}
         />
       </div>
       <div className="pt-2 lg:m-20">
