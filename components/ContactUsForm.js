@@ -42,7 +42,7 @@ export default function Form() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="name-section ml-40 pb-10">
+      <div className="name-section mx-4 pb-10 lg:ml-40">
         <div className="pb-2 text-2xl text-slate-200">
           <label>Name:</label>
         </div>
@@ -51,10 +51,10 @@ export default function Form() {
           name="name"
           value={formData.name}
           onChange={handleChange}
-          className="h-10 w-[690px] border border-gray-300 bg-white p-2 text-lg text-slate-950"
+          className="h-10 w-full border border-gray-300 bg-white p-2 text-lg text-slate-950 lg:w-[690px]"
         />
       </div>
-      <div className="email-section ml-40 pb-10">
+      <div className="email-section mx-4 pb-10 lg:ml-40">
         <div className="pb-2 text-2xl text-slate-200">
           <label>Email or Phone (Contact):</label>
         </div>
@@ -63,10 +63,10 @@ export default function Form() {
           name="email"
           value={formData.email}
           onChange={handleChange}
-          className="h-10 w-[690px] border border-gray-300 bg-white p-2 text-lg text-slate-950"
+          className="h-10 w-full border border-gray-300 bg-white p-2 text-lg text-slate-950 lg:w-[690px]"
         />
       </div>
-      <div className="address-section ml-40 pb-10">
+      <div className="address-section mx-4 pb-10 lg:ml-40">
         <div className="pb-2 text-2xl text-slate-200">
           <label>Property Address to be evaluated:</label>
         </div>
@@ -75,10 +75,10 @@ export default function Form() {
           name="address"
           value={formData.address}
           onChange={handleChange}
-          className="h-10 w-[690px] border border-gray-300 bg-white p-2 text-lg text-slate-950"
+          className="h-10 w-full border border-gray-300 bg-white p-2 text-lg text-slate-950 lg:w-[690px]"
         />
       </div>
-      <div className="comments-section ml-40 pb-10">
+      <div className="comments-section mx-4 pb-10 lg:ml-40">
         <div className="pb-2 text-2xl text-slate-200">
           <label>Any questions or comments? (Optional)</label>
         </div>
@@ -86,7 +86,7 @@ export default function Form() {
           name="about"
           value={formData.about}
           onChange={handleChange}
-          className="h-32 w-[690px] border border-gray-300 bg-white p-2 text-lg text-slate-950"
+          className="h-32 w-full border border-gray-300 bg-white p-2 text-lg text-slate-950 lg:w-[690px]"
         />
       </div>
       <button
