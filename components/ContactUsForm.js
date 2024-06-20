@@ -89,13 +89,15 @@ export default function Form() {
           className="h-32 w-full border border-gray-300 bg-white p-2 text-lg text-slate-950 lg:w-[690px]"
         />
       </div>
-      <button
-        type="submit"
-        className="ml-40 mt-10 rounded-xl bg-gray-200 px-4 py-2 text-2xl text-slate-900"
-      >
-        Submit Inquiry
-      </button>
-      <div className="comments-section ml-40 pb-10 pt-10 text-2xl text-slate-200">
+      {submissionStatus !== "success" && (
+        <button
+          type="submit"
+          className="mx-4 mt-10 rounded-xl bg-gray-200 px-4 py-2 text-2xl text-slate-900 lg:ml-40"
+        >
+          Submit Inquiry
+        </button>
+      )}
+      <div className="comments-section mx-4 pb-10 pt-10 text-2xl text-slate-200 lg:ml-40">
         {submissionStatus === "success" && (
           <p className="text-green-300">
             Thank you for your submission, someone will contact you shortly!
