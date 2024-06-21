@@ -63,7 +63,7 @@ export default function Samples() {
             serviceTypesNearby={33}
             serviceTypesFarther={22}
             walkabilityScore={21}
-            pdfPath="doc-1431-sw-park-pve.pdf"
+            pdfPath="doc-1431-sw-park-ave.pdf"
           />
 
           <ProductSample
