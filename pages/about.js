@@ -41,7 +41,7 @@ export default function About() {
             >
               <b>cities</b>
             </a>
-            . We are currently working with early adapters in the real estate
+            . We are currently working with early adopters in the real estate
             industry and plan to develop an online application for general use
             in the future.
           </p>
