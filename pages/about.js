@@ -13,14 +13,15 @@ export default function About() {
             shadowColor={`title-shadow-about`}
           />
         </center>
-        <div className="roboto-font text-1xl mx-4 text-stone-300 lg:mx-32">
+        <div className="roboto-font mx-4 text-xl text-stone-300 md:text-2xl lg:mx-32">
           <p className="pb-4">
-            We want to create the best walkability assessment for a given
-            property or location. Our primary customers are people looking for a
-            place to live who also want to reduce their use of, and dependence
-            on, cars and other transportation means. Our secondary customers are
-            realtors, real estate developers and others involved in deciding
-            where people live, work, shop, and play.
+            Our product offers a comprehensive assessment for properties and
+            provides a detailed report based on walkable proximity to essential
+            services as well as public transportation availability. Our primary
+            customers are real estate developers, city planners, and other
+            stakeholders in the housing sector. Our secondary customers are
+            people looking for a place to live who also want to reduce their use
+            of (and dependence on) cars and other transportation means.
           </p>
 
           <p className="pb-4">
