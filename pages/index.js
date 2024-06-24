@@ -24,12 +24,11 @@ export default function Home() {
             />
           </div>
         </center>
-        <div className="roboto-font text-1xl mx-4 pt-4 italic text-stone-300 lg:mx-32">
+        <div className="roboto-font rext-xl mx-4 italic text-stone-300 md:text-2xl lg:mx-32">
           <p>
-            In service of residents who want to use personal mechanized
-            transportation as little as possible, we strive to provide the most
-            helpful assessment of how well all desired services are provided
-            within easy walking distance of any given address.
+            To reduce residents' use of cars, we comparatively assess how many
+            commonly used services are within short walking distance of a given
+            address.
           </p>
         </div>
       </div>
