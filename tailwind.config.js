@@ -18,7 +18,7 @@ module.exports = {
         "title-text-product": "#e7c7c7ff",
         "title-text-samples": "#b5f5a5ff",
         "title-text-ordering-our-product": "#e1d3bfff",
-        "title-text-ads": "#ffbf00",
+        "title-text-ads": "#a1977a",
         "title-text-references": "#91baeaff",
         "navbar-home": "#9b8d78ff",
         "navbar-about": "#898886ff",
