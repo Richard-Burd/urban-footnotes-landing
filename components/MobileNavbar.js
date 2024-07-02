@@ -11,7 +11,7 @@ export default function MobileNavBar() {
 
   return (
     <div>
-      <div className="bg-neutral-950 text-white px-4 py-4">
+      <div className="bg-neutral-950 px-4 py-4 text-white">
         <button onClick={toggleMenu}>
           <Image
             src="/images/hamburger-icon-white.svg"
@@ -24,11 +24,11 @@ export default function MobileNavBar() {
       {isMenuOpen && (
         <div
           id="mobile-nav-bar-links"
-          className="bg-stone-800 w-full text-white"
+          className="w-full bg-stone-800 text-white"
         >
           <Link href="/">
             <div
-              className="block px-4 py-2 cursor-pointer border-b border-stone-600"
+              className="block cursor-pointer border-b border-stone-600 px-4 py-2"
               onClick={toggleMenu}
             >
               Homepage
@@ -36,7 +36,7 @@ export default function MobileNavBar() {
           </Link>
           <Link href="/about">
             <div
-              className="block px-4 py-2 cursor-pointer border-b border-stone-600"
+              className="block cursor-pointer border-b border-stone-600 px-4 py-2"
               onClick={toggleMenu}
             >
               About Page
@@ -44,7 +44,7 @@ export default function MobileNavBar() {
           </Link>
           <Link href="/team">
             <div
-              className="block px-4 py-2 cursor-pointer border-b border-stone-600"
+              className="block cursor-pointer border-b border-stone-600 px-4 py-2"
               onClick={toggleMenu}
             >
               Team
@@ -52,7 +52,7 @@ export default function MobileNavBar() {
           </Link>
           <Link href="/product">
             <div
-              className="block px-4 py-2 cursor-pointer border-b border-stone-600"
+              className="block cursor-pointer border-b border-stone-600 px-4 py-2"
               onClick={toggleMenu}
             >
               Product
@@ -60,7 +60,7 @@ export default function MobileNavBar() {
           </Link>
           <Link href="/samples">
             <div
-              className="block px-4 py-2 cursor-pointer border-b border-stone-600"
+              className="block cursor-pointer border-b border-stone-600 px-4 py-2"
               onClick={toggleMenu}
             >
               Samples
@@ -68,15 +68,23 @@ export default function MobileNavBar() {
           </Link>
           <Link href="/order">
             <div
-              className="block px-4 py-2 cursor-pointer border-b border-stone-600"
+              className="block cursor-pointer border-b border-stone-600 px-4 py-2"
               onClick={toggleMenu}
             >
-              Ordering Our Product
+              Order
+            </div>
+          </Link>
+          <Link href="/contact">
+            <div
+              className="block cursor-pointer border-b border-stone-600 px-4 py-2"
+              onClick={toggleMenu}
+            >
+              Contact Us
             </div>
           </Link>
           <Link href="/ads">
             <div
-              className="block px-4 py-2 cursor-pointer border-b border-stone-600"
+              className="block cursor-pointer border-b border-stone-600 px-4 py-2"
               onClick={toggleMenu}
             >
               Ads
@@ -84,7 +92,7 @@ export default function MobileNavBar() {
           </Link>
           <Link href="/references">
             <div
-              className="block px-4 py-2 cursor-pointer"
+              className="block cursor-pointer px-4 py-2"
               onClick={toggleMenu}
             >
               References

@@ -13,9 +13,14 @@ export default function DesktopNavbar() {
     { title: "Product", path: "/product", bgColor: "bg-navbar-product" },
     { title: "Samples", path: "/samples", bgColor: "bg-navbar-samples" },
     {
-      title: "Ordering Our Product",
+      title: "Order",
       path: "/order",
-      bgColor: "bg-navbar-ordering-our-product",
+      bgColor: "bg-navbar-order",
+    },
+    {
+      title: "Contact Us",
+      path: "/contact",
+      bgColor: "bg-navbar-contact-us",
     },
     { title: "Ads", path: "/ads", bgColor: "bg-navbar-ads" },
     {
