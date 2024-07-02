@@ -18,7 +18,7 @@ export default function DesktopNavbar() {
       bgColor: "bg-navbar-order",
     },
     {
-      title: "Contact Us",
+      title: "Contact",
       path: "/contact",
       bgColor: "bg-navbar-contact-us",
     },
@@ -31,7 +31,7 @@ export default function DesktopNavbar() {
   ];
 
   return (
-    <nav className="bg-neutral-950 text-white">
+    <nav className="bg-neutral-950 px-2 text-white">
       <div className="container flex justify-between">
         <div className="flex flex-auto justify-evenly">
           {navItems.map((item) => (
