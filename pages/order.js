@@ -1,7 +1,5 @@
 import PageHeaderLogo from "@/components/PageHeaderLogo";
 import PageTitle from "@/components/PageTitle";
-import ContactUsForm from "@/components/ContactUsForm"; // 3rd Deployment Try
-
 import Link from "next/link";
 
 export default function Order() {
@@ -12,27 +10,41 @@ export default function Order() {
         <center>
           <PageTitle
             topTitle="Ordering Our Product"
-            textColor="text-title-text-ordering-our-product"
+            textColor="text-title-text-order"
             shadowColor={`title-shadow-ordering-our-product`}
           />
         </center>
-        <div className="roboto-font mx-4 text-xl text-stone-300 lg:mx-32">
-          <p className="pb-4">
-            If you are interested in ordering our product as an early adopter,
-            please fill in the information below and we will get back to you
-            within a timely manner.
-          </p>
-          <p className="pb-4">
-            You can reach our to Richard directly at:{" "}
-            <Link href="mailto: richard@urbancruiseship.org">
-              richard@urbancruiseship.org
-            </Link>{" "}
-            to get more information on becoming an early adopter. Thank you for
-            taking an interest in Urban Foot Notes!
-          </p>
-        </div>
       </div>
-      <ContactUsForm />
+      <div className="roboto-font mx-4 mt-20 text-xl text-stone-300 lg:mx-32">
+        <p className="pb-4">
+          Please fill out our <Link href="./contact">contact form</Link> to
+          request a property report.
+        </p>
+        <p className="pb-4">
+          Our property report is currently available in imperial measurements,
+          but we plan to soon offer a metric equivalent as well.
+        </p>
+        {/* <p className="pb-4">
+          Clicking on the order button below will take you to our secure
+          checkout link. Please make sure you enter in the correct location
+          address for the property you would like us to analyze.
+        </p>
+
+        <div className="flex items-center justify-center">
+          <button
+            onClick={() =>
+              window.open(
+                "https://buy.stripe.com/test_14k4gt9Kn4ZkcG49AA",
+                "_blank",
+                "noopener,noreferrer",
+              )
+            }
+            className="mx-4 mt-10 rounded-xl bg-gray-200 px-4 py-2 text-2xl text-slate-900"
+          >
+            Order Now
+          </button>
+        </div> */}
+      </div>
     </div>
   );
 }
