@@ -1,5 +1,6 @@
 import PageHeaderLogo from "@/components/PageHeaderLogo";
 import PageTitle from "@/components/PageTitle";
+import Link from "next/link";
 
 export default function Order() {
   return (
@@ -16,10 +17,18 @@ export default function Order() {
       </div>
       <div className="roboto-font mx-4 mt-20 text-xl text-stone-300 lg:mx-32">
         <p className="pb-4">
-          You can buy a test version of our product and checkout securely at the
-          link below:
+          Please fill out our <Link href="./contact">contact form</Link> to
+          request a property report.
         </p>
-        <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+        <p className="pb-4">
+          Our property report is currently available in imperial measurements,
+          but we plan to soon offer a metric equivalent as well.
+        </p>
+        {/* <p className="pb-4">
+          Clicking on the order button below will take you to our secure
+          checkout link. Please make sure you enter in the correct location
+          address for the property you would like us to analyze.
+        </p>
 
         <div className="flex items-center justify-center">
           <button
@@ -34,11 +43,7 @@ export default function Order() {
           >
             Order Now
           </button>
-          {/* <stripe-buy-button
-            buy-button-id="buy_btn_1PWSnGGN52GuXWVWQzelGuJO"
-            publishable-key="pk_test_51PWM5ZGN52GuXWVWTnkncuyRJtaxnWSX4w1zdn16pDyuS3biGYEpjz1YjkboYGle8e9gzX9vXg2HB2YjGIEFaKAq00Ss702D0z"
-          ></stripe-buy-button> */}
-        </div>
+        </div> */}
       </div>
     </div>
   );
