@@ -51,7 +51,7 @@ export default function Form() {
           name="name"
           value={formData.name}
           onChange={handleChange}
-          className="h-10 w-full border border-gray-300 bg-white p-2 text-lg text-slate-950 lg:w-[690px]"
+          className="h-10 w-full border border-gray-300 bg-purple-200 p-2 text-lg text-slate-950 lg:w-[690px]"
         />
       </div>
       <div className="email-section mx-4 pb-10 lg:ml-40">
@@ -63,7 +63,7 @@ export default function Form() {
           name="email"
           value={formData.email}
           onChange={handleChange}
-          className="h-10 w-full border border-gray-300 bg-white p-2 text-lg text-slate-950 lg:w-[690px]"
+          className="h-10 w-full border border-gray-300 bg-purple-200 p-2 text-lg text-slate-950 lg:w-[690px]"
         />
       </div>
       <div className="address-section mx-4 pb-10 lg:ml-40">
@@ -75,7 +75,7 @@ export default function Form() {
           name="address"
           value={formData.address}
           onChange={handleChange}
-          className="h-10 w-full border border-gray-300 bg-white p-2 text-lg text-slate-950 lg:w-[690px]"
+          className="h-10 w-full border border-gray-300 bg-purple-200 p-2 text-lg text-slate-950 lg:w-[690px]"
         />
       </div>
       <div className="comments-section mx-4 pb-10 lg:ml-40">
@@ -86,13 +86,13 @@ export default function Form() {
           name="about"
           value={formData.about}
           onChange={handleChange}
-          className="h-32 w-full border border-gray-300 bg-white p-2 text-lg text-slate-950 lg:w-[690px]"
+          className="h-32 w-full border border-gray-300 bg-purple-200 p-2 text-lg text-slate-950 lg:w-[690px]"
         />
       </div>
       {submissionStatus !== "success" && (
         <button
           type="submit"
-          className="mx-4 mt-10 rounded-xl bg-gray-200 px-4 py-2 text-2xl text-slate-900 lg:ml-40"
+          className="mx-4 mt-10 rounded-xl bg-purple-300 px-4 py-2 text-2xl text-violet-950 lg:ml-40"
         >
           Submit Inquiry
         </button>
