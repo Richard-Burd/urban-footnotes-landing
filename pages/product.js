@@ -15,14 +15,14 @@ export default function Product() {
             shadowColor={`title-shadow-product`}
           />
         </div>
-        <Image
+        {/* <Image
           alt="First page of the product"
           src={`${baseUrl}/desktop-product-page-first-page.png`} // v.2.1
           // true width & true height controlled by parent grid
           // image fills parent's allotted space
           width={1024}
           height={1}
-        />
+        /> */}
         <Image
           alt="Second page of the product"
           src={`${baseUrl}/desktop-product-page-second-page.png`}
