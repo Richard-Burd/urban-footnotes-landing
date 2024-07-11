@@ -17,7 +17,7 @@ export default function Product() {
         </div>
         <Image
           alt="First page of the product"
-          src={`${baseUrl}/desktop-product-page-first-page.png`}
+          src={`${baseUrl}/desktop-product-page-first-page.png`} // v.2.0
           // true width & true height controlled by parent grid
           // image fills parent's allotted space
           width={1024}
