@@ -67,6 +67,15 @@ export default function Samples() {
           />
 
           <ProductSample
+            imagePath="preview-2525-ocean-ave.jpg"
+            address="2525 Ocean Ave, San Francisco, CA 94132"
+            serviceTypesNearby={27}
+            serviceTypesFarther={15}
+            walkabilityScore={21}
+            pdfPath="doc-2525-ocean-ave.pdf"
+          />
+
+          <ProductSample
             imagePath="preview-2033-broadway.jpg"
             address="2033 Broadway, Nashville, TN 37203"
             serviceTypesNearby={26}
@@ -82,15 +91,6 @@ export default function Samples() {
             serviceTypesFarther={13}
             walkabilityScore={12}
             pdfPath="doc-1015-elvira-ave.pdf"
-          />
-
-          <ProductSample
-            imagePath="preview-2525-ocean-ave.jpg"
-            address="2525 Ocean Ave, San Francisco, CA 94132"
-            serviceTypesNearby={27}
-            serviceTypesFarther={15}
-            walkabilityScore={21}
-            pdfPath="doc-2525-ocean-ave.pdf"
           />
         </div>
 
