@@ -40,6 +40,15 @@ export default function Samples() {
           />
 
           <ProductSample
+            imagePath="preview-1505-ponce-de-leon-blvd.jpg"
+            address="1505 Ponce de Leon, Coral Gables, FL 33134"
+            serviceTypesNearby={40}
+            serviceTypesFarther={5}
+            walkabilityScore={23}
+            pdfPath="doc-1505-ponce-de-leon-blvd.pdf"
+          />
+
+          <ProductSample
             imagePath="preview-555-church-st.jpg"
             address="555 Church St. Nashville, TN 37203"
             serviceTypesNearby={37}
