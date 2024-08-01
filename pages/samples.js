@@ -67,6 +67,15 @@ export default function Samples() {
           />
 
           <ProductSample
+            imagePath="preview-6485-victoria-ave.jpg"
+            address="6485 Victoria Ave, Montreal, QC H3W, Canada"
+            serviceTypesNearby={35}
+            serviceTypesFarther={6}
+            walkabilityScore={21}
+            pdfPath="doc-6485-victoria-ave.pdf"
+          />
+
+          <ProductSample
             imagePath="preview-1431-sw-park-ave.jpg"
             address="1431 SW Park Ave. Portland, OR 97201"
             serviceTypesNearby={33}
