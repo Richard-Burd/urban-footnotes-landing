@@ -67,6 +67,15 @@ export default function Samples() {
           />
 
           <ProductSample
+            imagePath="preview-107-high-st.jpg"
+            address="107 High St, Charlestown, MA 02129"
+            serviceTypesNearby={36}
+            serviceTypesFarther={8}
+            walkabilityScore={17}
+            pdfPath="doc-107-high-st.pdf"
+          />
+
+          <ProductSample
             imagePath="preview-6485-victoria-ave.jpg"
             address="6485 Victoria Ave, Montreal, QC H3W, Canada"
             serviceTypesNearby={35}
