@@ -76,6 +76,15 @@ export default function Samples() {
           />
 
           <ProductSample
+            imagePath="preview-4100-georgia-ave.jpg"
+            address="4100 Georgia Ave NW, Washington, DC 20011"
+            serviceTypesNearby={35}
+            serviceTypesFarther={11}
+            walkabilityScore={22}
+            pdfPath="doc-4100-georgia-ave.pdf"
+          />
+
+          <ProductSample
             imagePath="preview-6485-victoria-ave.jpg"
             address="6485 Victoria Ave, Montreal, QC H3W, Canada"
             serviceTypesNearby={35}
