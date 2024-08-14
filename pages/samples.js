@@ -24,10 +24,19 @@ export default function Samples() {
           <ProductSample
             imagePath="preview-223-8th-ave.jpg"
             address="223 8th Ave. New York, NY 10011"
-            serviceTypesNearby={55}
+            serviceTypesNearby={54}
             serviceTypesFarther={8}
             walkabilityScore={20}
             pdfPath="doc-223-8th-ave.pdf"
+          />
+
+          <ProductSample
+            imagePath="preview-316-king-st.jpg"
+            address="316 King St, Charleston, SC 29401"
+            serviceTypesNearby={44}
+            serviceTypesFarther={8}
+            walkabilityScore={19}
+            pdfPath="doc-316-king-st.pdf"
           />
 
           <ProductSample
