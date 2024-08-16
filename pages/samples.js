@@ -1,6 +1,7 @@
 import PageHeaderLogo from "@/components/PageHeaderLogo";
 import PageTitle from "@/components/PageTitle";
 import ProductSample from "@/components/ProductSample";
+// note to test build function
 
 export default function Samples() {
   return (
