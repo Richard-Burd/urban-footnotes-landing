@@ -95,6 +95,15 @@ export default function Samples() {
           />
 
           <ProductSample
+            imagePath="preview-201-chartres-st.jpg"
+            address="201 Chartres St, New Orleans, LA 70130"
+            serviceTypesNearby={35}
+            serviceTypesFarther={16}
+            walkabilityScore={21}
+            pdfPath="doc-201-chartres-st.pdf"
+          />
+
+          <ProductSample
             imagePath="preview-4100-georgia-ave.jpg"
             address="4100 Georgia Ave NW, Washington, DC 20011"
             serviceTypesNearby={35}
