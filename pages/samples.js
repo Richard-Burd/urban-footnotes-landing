@@ -59,6 +59,15 @@ export default function Samples() {
           />
 
           <ProductSample
+            imagePath="preview-1900-broadway.jpg"
+            address="1900 Broadway, Boulder, CO 80302"
+            serviceTypesNearby={40}
+            serviceTypesFarther={15}
+            walkabilityScore={19}
+            pdfPath="doc-1900-broadway.pdf"
+          />
+
+          <ProductSample
             imagePath="preview-1505-ponce-de-leon-blvd.jpg"
             address="1505 Ponce de Leon, Coral Gables, FL 33134"
             serviceTypesNearby={40}
