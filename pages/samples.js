@@ -41,6 +41,15 @@ export default function Samples() {
           />
 
           <ProductSample
+            imagePath="preview-107-patton-ave.jpg"
+            address="316 King St, Charleston, SC 29401"
+            serviceTypesNearby={44}
+            serviceTypesFarther={10}
+            walkabilityScore={18}
+            pdfPath="doc-107-patton-ave.pdf"
+          />
+
+          <ProductSample
             imagePath="preview-316-king-st.jpg"
             address="316 King St, Charleston, SC 29401"
             serviceTypesNearby={44}
