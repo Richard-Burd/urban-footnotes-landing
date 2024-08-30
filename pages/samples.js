@@ -59,6 +59,15 @@ export default function Samples() {
           />
 
           <ProductSample
+            imagePath="preview-14-e-washington-st.jpg"
+            address="14 E Washington St, Indianapolis, IN 46204"
+            serviceTypesNearby={42}
+            serviceTypesFarther={7}
+            walkabilityScore={25}
+            pdfPath="doc-14-e-washington-st.pdf"
+          />
+
+          <ProductSample
             imagePath="preview-1030-tiverton-ave.jpg"
             address="1030 Tiverton Ave. Los Angeles, CA 90024"
             serviceTypesNearby={40}
