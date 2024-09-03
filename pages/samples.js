@@ -59,21 +59,21 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-14-e-washington-st.jpg"
-            address="14 E Washington St, Indianapolis, IN 46204"
-            serviceTypesNearby={42}
-            serviceTypesFarther={7}
-            walkabilityScore={25}
-            pdfPath="doc-14-e-washington-st.pdf"
-          />
-
-          <ProductSample
             imagePath="preview-245-granby-st.jpg"
             address="245 Granby St, Norfolk, VA 23510"
             serviceTypesNearby={42}
             serviceTypesFarther={9}
             walkabilityScore={22}
             pdfPath="doc-245-granby-st.pdf"
+          />
+
+          <ProductSample
+            imagePath="preview-14-e-washington-st.jpg"
+            address="14 E Washington St, Indianapolis, IN 46204"
+            serviceTypesNearby={42}
+            serviceTypesFarther={7}
+            walkabilityScore={25}
+            pdfPath="doc-14-e-washington-st.pdf"
           />
 
           <ProductSample
