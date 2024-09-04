@@ -104,11 +104,20 @@ export default function Samples() {
           />
 
           <ProductSample
+            imagePath="preview-526-superior-ave.jpg"
+            address="526 Superior Ave, Cleveland, OH 44114"
+            serviceTypesNearby={39}
+            serviceTypesFarther={10}
+            walkabilityScore={21}
+            pdfPath="doc-526-superior-ave.pdf"
+          />
+
+          <ProductSample
             imagePath="preview-555-church-st.jpg"
             address="555 Church St. Nashville, TN 37203"
             serviceTypesNearby={37}
             serviceTypesFarther={8}
-            walkabilityScore={24}
+            walkabilityScore={21}
             pdfPath="doc-555-church-st.pdf"
           />
 
