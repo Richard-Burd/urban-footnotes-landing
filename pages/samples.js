@@ -176,6 +176,15 @@ export default function Samples() {
           />
 
           <ProductSample
+            imagePath="preview-1080-peachtree-st.jpg"
+            address="1080 Peachtree St NE, Atlanta, GA 30309"
+            serviceTypesNearby={32}
+            serviceTypesFarther={19}
+            walkabilityScore={23}
+            pdfPath="doc-1080-peachtree-st.pdf"
+          />
+
+          <ProductSample
             imagePath="preview-2525-ocean-ave.jpg"
             address="2525 Ocean Ave, San Francisco, CA 94132"
             serviceTypesNearby={27}
