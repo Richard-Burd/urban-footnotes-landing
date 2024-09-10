@@ -32,7 +32,7 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-29-s-la-salle-st.2.jpg"
+            imagePath="preview-29-s-la-salle-st.3.jpg"
             address="29 S La Salle St, Chicago, IL 60603"
             serviceTypesNearby={49}
             serviceTypesFarther={11}
@@ -41,7 +41,7 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-107-patton-ave.2.jpg"
+            imagePath="preview-107-patton-ave.3.jpg"
             address="316 King St, Charleston, SC 29401"
             serviceTypesNearby={44}
             serviceTypesFarther={10}
