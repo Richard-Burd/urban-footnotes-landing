@@ -59,6 +59,15 @@ export default function Samples() {
           />
 
           <ProductSample
+            imagePath="preview-55-triq-san-vincenz.jpg"
+            address="55 Triq San Vincenz, Tas-Sliema, Malta"
+            serviceTypesNearby={43}
+            serviceTypesFarther={7}
+            walkabilityScore={15}
+            pdfPath="doc-55-triq-san-vincenz.pdf"
+          />
+
+          <ProductSample
             imagePath="preview-245-granby-st.2.jpg"
             address="245 Granby St, Norfolk, VA 23510"
             serviceTypesNearby={42}
