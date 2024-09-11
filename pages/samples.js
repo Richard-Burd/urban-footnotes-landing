@@ -104,7 +104,7 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-1505-ponce-de-leon-blvd.2.jpg"
+            imagePath="preview-1505-ponce-de-leon-blvd.3.jpg"
             address="1505 Ponce de Leon, Coral Gables, FL 33134"
             serviceTypesNearby={40}
             serviceTypesFarther={5}
