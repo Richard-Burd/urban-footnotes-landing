@@ -32,7 +32,7 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-29-s-la-salle-st.3.jpg"
+            imagePath="preview-29-s-la-salle-st.5.jpg"
             address="29 S La Salle St, Chicago, IL 60603"
             serviceTypesNearby={49}
             serviceTypesFarther={11}
@@ -41,7 +41,7 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-107-patton-ave.3.jpg"
+            imagePath="preview-107-patton-ave.5.jpg"
             address="316 King St, Charleston, SC 29401"
             serviceTypesNearby={44}
             serviceTypesFarther={10}
@@ -68,7 +68,7 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-245-granby-st.2.jpg"
+            imagePath="preview-245-granby-st.3.jpg"
             address="245 Granby St, Norfolk, VA 23510"
             serviceTypesNearby={42}
             serviceTypesFarther={9}
@@ -77,7 +77,7 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-14-e-washington-st.2.jpg"
+            imagePath="preview-14-e-washington-st.3.jpg"
             address="14 E Washington St, Indianapolis, IN 46204"
             serviceTypesNearby={42}
             serviceTypesFarther={7}
@@ -86,7 +86,7 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-1030-tiverton-ave.2.jpg"
+            imagePath="preview-1030-tiverton-ave.3.jpg"
             address="1030 Tiverton Ave. Los Angeles, CA 90024"
             serviceTypesNearby={40}
             serviceTypesFarther={17}
@@ -95,7 +95,7 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-1900-broadway.2.jpg"
+            imagePath="preview-1900-broadway.6.jpg"
             address="1900 Broadway, Boulder, CO 80302"
             serviceTypesNearby={40}
             serviceTypesFarther={15}
@@ -113,7 +113,7 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-526-superior-ave.jpg"
+            imagePath="preview-526-superior-ave.2.jpg"
             address="526 Superior Ave, Cleveland, OH 44114"
             serviceTypesNearby={39}
             serviceTypesFarther={10}
@@ -149,7 +149,7 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-201-chartres-st.2.jpg"
+            imagePath="preview-201-chartres-st.5.jpg"
             address="201 Chartres St, New Orleans, LA 70130"
             serviceTypesNearby={35}
             serviceTypesFarther={16}
@@ -158,7 +158,7 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-4100-georgia-ave.2.jpg"
+            imagePath="preview-4100-georgia-ave.5.jpg"
             address="4100 Georgia Ave NW, Washington, DC 20011"
             serviceTypesNearby={35}
             serviceTypesFarther={11}
@@ -167,7 +167,7 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-6485-victoria-ave.2.jpg"
+            imagePath="preview-6485-victoria-ave.4.jpg"
             address="6485 Victoria Ave, Montreal, QC H3W, Canada"
             serviceTypesNearby={35}
             serviceTypesFarther={6}
