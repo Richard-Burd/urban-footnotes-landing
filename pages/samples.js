@@ -50,7 +50,7 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-316-king-st.jpg"
+            imagePath="preview-316-king-st.2.jpg"
             address="316 King St, Charleston, SC 29401"
             serviceTypesNearby={44}
             serviceTypesFarther={8}
@@ -104,7 +104,7 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-1505-ponce-de-leon-blvd.jpg"
+            imagePath="preview-1505-ponce-de-leon-blvd.2.jpg"
             address="1505 Ponce de Leon, Coral Gables, FL 33134"
             serviceTypesNearby={40}
             serviceTypesFarther={5}
