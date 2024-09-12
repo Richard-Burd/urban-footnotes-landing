@@ -15,10 +15,10 @@ export default function Samples() {
         />
         <div className="roboto-font mb-32 text-2.5xl text-gray-200">
           <p>
-            Samples are presented ranked by number of service types (out of 74
-            total) within ~1/4 mile of the address shown (2/5 km on metric
-            versions). Then by those within ~2/5th mile (2/3 km on metric
-            versions), and then by Walkability Score.
+            Samples are presented ranked by the number of service types (out of
+            74 total) within approximately 1/4 mile of the address shown (0.4
+            kilometer in metric versions), then by those within 2/5 mile (0.8
+            kilometer in metric versions), and finally by Walkability Score.
           </p>
         </div>
 
