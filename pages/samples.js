@@ -69,6 +69,15 @@ export default function Samples() {
           />
 
           <ProductSample
+            imagePath="preview-gabriel-max-straße-15.jpg"
+            address="Gabriel-Max-Straße 15, 10245 Berlin, Germany"
+            serviceTypesNearby={42}
+            serviceTypesFarther={12}
+            walkabilityScore={19}
+            pdfPath="doc-gabriel-max-straße-15.pdf"
+          />
+
+          <ProductSample
             imagePath="preview-245-granby-st.3.jpg"
             address="245 Granby St, Norfolk, VA 23510"
             serviceTypesNearby={42}
