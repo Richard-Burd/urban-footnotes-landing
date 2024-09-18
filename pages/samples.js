@@ -42,6 +42,15 @@ export default function Samples() {
           />
 
           <ProductSample
+            imagePath="preview-50-grande-parade.jpg"
+            address="50 Grand Parade, Centre, Cork, T12 D638, Ireland"
+            serviceTypesNearby={44}
+            serviceTypesFarther={11}
+            walkabilityScore={17}
+            pdfPath="doc-50-grande-parade.pdf"
+          />
+
+          <ProductSample
             imagePath="preview-107-patton-ave.5.jpg"
             address="316 King St, Charleston, SC 29401"
             serviceTypesNearby={44}
