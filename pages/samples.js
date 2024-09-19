@@ -42,6 +42,15 @@ export default function Samples() {
           />
 
           <ProductSample
+            imagePath="preview-10-rue-de-rivoli.jpg"
+            address="10 Rue de Rivoli, 75004 Paris, France"
+            serviceTypesNearby={48}
+            serviceTypesFarther={6}
+            walkabilityScore={24}
+            pdfPath="doc-10-rue-de-rivoli.pdf"
+          />
+
+          <ProductSample
             imagePath="preview-50-grande-parade.jpg"
             address="50 Grand Parade, Centre, Cork, T12 D638, Ireland"
             serviceTypesNearby={44}
