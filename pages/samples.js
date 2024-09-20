@@ -28,6 +28,7 @@ export default function Samples() {
             address="223 8th Ave. New York, NY 10011"
             serviceTypesNearby={54}
             serviceTypesFarther={8}
+            serviceTypesDistant={12}
             walkabilityScore={20}
             pdfPath="doc-223-8th-ave.pdf"
           />
@@ -37,6 +38,7 @@ export default function Samples() {
             address="29 S La Salle St, Chicago, IL 60603"
             serviceTypesNearby={49}
             serviceTypesFarther={11}
+            serviceTypesDistant={14}
             walkabilityScore={25}
             pdfPath="doc-29-s-la-salle-st.pdf"
           />
@@ -46,6 +48,7 @@ export default function Samples() {
             address="10 Rue de Rivoli, 75004 Paris, France"
             serviceTypesNearby={48}
             serviceTypesFarther={6}
+            serviceTypesDistant={20}
             walkabilityScore={24}
             pdfPath="doc-10-rue-de-rivoli.pdf"
           />
@@ -55,6 +58,7 @@ export default function Samples() {
             address="50 Grand Parade, Centre, Cork, T12 D638, Ireland"
             serviceTypesNearby={44}
             serviceTypesFarther={11}
+            serviceTypesDistant={19}
             walkabilityScore={17}
             pdfPath="doc-50-grande-parade.pdf"
           />
@@ -64,6 +68,7 @@ export default function Samples() {
             address="316 King St, Charleston, SC 29401"
             serviceTypesNearby={44}
             serviceTypesFarther={10}
+            serviceTypesDistant={20}
             walkabilityScore={18}
             pdfPath="doc-107-patton-ave.pdf"
           />
@@ -73,6 +78,7 @@ export default function Samples() {
             address="316 King St, Charleston, SC 29401"
             serviceTypesNearby={44}
             serviceTypesFarther={8}
+            serviceTypesDistant={22}
             walkabilityScore={19}
             pdfPath="doc-316-king-st.pdf"
           />
@@ -82,6 +88,7 @@ export default function Samples() {
             address="55 Triq San Vincenz, Tas-Sliema, Malta"
             serviceTypesNearby={43}
             serviceTypesFarther={7}
+            serviceTypesDistant={24}
             walkabilityScore={15}
             pdfPath="doc-55-triq-san-vincenz.pdf"
           />
@@ -91,6 +98,7 @@ export default function Samples() {
             address="Gabriel-Max-Straße 15, 10245 Berlin, Germany"
             serviceTypesNearby={42}
             serviceTypesFarther={12}
+            serviceTypesDistant={20}
             walkabilityScore={19}
             pdfPath="doc-gabriel-max-straße-15.pdf"
           />
@@ -100,6 +108,7 @@ export default function Samples() {
             address="245 Granby St, Norfolk, VA 23510"
             serviceTypesNearby={42}
             serviceTypesFarther={9}
+            serviceTypesDistant={23}
             walkabilityScore={22}
             pdfPath="doc-245-granby-st.pdf"
           />
@@ -109,7 +118,8 @@ export default function Samples() {
             address="14 E Washington St, Indianapolis, IN 46204"
             serviceTypesNearby={42}
             serviceTypesFarther={7}
-            walkabilityScore={25}
+            serviceTypesDistant={25}
+            walkabilityScore={22}
             pdfPath="doc-14-e-washington-st.pdf"
           />
 
@@ -118,6 +128,7 @@ export default function Samples() {
             address="1030 Tiverton Ave. Los Angeles, CA 90024"
             serviceTypesNearby={40}
             serviceTypesFarther={17}
+            serviceTypesDistant={17}
             walkabilityScore={25}
             pdfPath="doc-1030-tiverton-ave.pdf"
           />
@@ -127,7 +138,8 @@ export default function Samples() {
             address="1900 Broadway, Boulder, CO 80302"
             serviceTypesNearby={40}
             serviceTypesFarther={15}
-            walkabilityScore={19}
+            serviceTypesDistant={19}
+            walkabilityScore={23}
             pdfPath="doc-1900-broadway.pdf"
           />
 
@@ -136,6 +148,7 @@ export default function Samples() {
             address="1505 Ponce de Leon, Coral Gables, FL 33134"
             serviceTypesNearby={40}
             serviceTypesFarther={5}
+            serviceTypesDistant={29}
             walkabilityScore={23}
             pdfPath="doc-1505-ponce-de-leon-blvd.pdf"
           />
@@ -145,6 +158,7 @@ export default function Samples() {
             address="526 Superior Ave, Cleveland, OH 44114"
             serviceTypesNearby={39}
             serviceTypesFarther={10}
+            serviceTypesDistant={25}
             walkabilityScore={21}
             pdfPath="doc-526-superior-ave.pdf"
           />
@@ -154,7 +168,8 @@ export default function Samples() {
             address="555 Church St. Nashville, TN 37203"
             serviceTypesNearby={37}
             serviceTypesFarther={8}
-            walkabilityScore={21}
+            serviceTypesDistant={29}
+            walkabilityScore={24}
             pdfPath="doc-555-church-st.pdf"
           />
 
@@ -163,6 +178,7 @@ export default function Samples() {
             address="332 E William St. Ann Arbor, MI 48104"
             serviceTypesNearby={36}
             serviceTypesFarther={17}
+            serviceTypesDistant={21}
             walkabilityScore={27}
             pdfPath="doc-332-e-william-st.pdf"
           />
@@ -172,6 +188,7 @@ export default function Samples() {
             address="107 High St, Charlestown, MA 02129"
             serviceTypesNearby={36}
             serviceTypesFarther={8}
+            serviceTypesDistant={30}
             walkabilityScore={17}
             pdfPath="doc-107-high-st.pdf"
           />
@@ -181,6 +198,7 @@ export default function Samples() {
             address="201 Chartres St, New Orleans, LA 70130"
             serviceTypesNearby={35}
             serviceTypesFarther={16}
+            serviceTypesDistant={23}
             walkabilityScore={21}
             pdfPath="doc-201-chartres-st.pdf"
           />
@@ -190,6 +208,7 @@ export default function Samples() {
             address="4100 Georgia Ave NW, Washington, DC 20011"
             serviceTypesNearby={35}
             serviceTypesFarther={11}
+            serviceTypesDistant={28}
             walkabilityScore={22}
             pdfPath="doc-4100-georgia-ave.pdf"
           />
@@ -199,6 +218,7 @@ export default function Samples() {
             address="6485 Victoria Ave, Montreal, QC H3W, Canada"
             serviceTypesNearby={35}
             serviceTypesFarther={6}
+            serviceTypesDistant={33}
             walkabilityScore={21}
             pdfPath="doc-6485-victoria-ave.pdf"
           />
@@ -208,6 +228,7 @@ export default function Samples() {
             address="1431 SW Park Ave. Portland, OR 97201"
             serviceTypesNearby={33}
             serviceTypesFarther={22}
+            serviceTypesDistant={19}
             walkabilityScore={21}
             pdfPath="doc-1431-sw-park-ave.pdf"
           />
@@ -217,6 +238,7 @@ export default function Samples() {
             address="1080 Peachtree St NE, Atlanta, GA 30309"
             serviceTypesNearby={32}
             serviceTypesFarther={19}
+            serviceTypesDistant={23}
             walkabilityScore={23}
             pdfPath="doc-1080-peachtree-st.pdf"
           />
@@ -226,6 +248,7 @@ export default function Samples() {
             address="2525 Ocean Ave, San Francisco, CA 94132"
             serviceTypesNearby={27}
             serviceTypesFarther={15}
+            serviceTypesDistant={32}
             walkabilityScore={21}
             pdfPath="doc-2525-ocean-ave.pdf"
           />
@@ -235,6 +258,7 @@ export default function Samples() {
             address="2033 Broadway, Nashville, TN 37203"
             serviceTypesNearby={26}
             serviceTypesFarther={18}
+            serviceTypesDistant={30}
             walkabilityScore={22}
             pdfPath="doc-2033-broadway.pdf"
           />
@@ -244,6 +268,7 @@ export default function Samples() {
             address="1015 Elvira Ave. Nashville, TN 37216"
             serviceTypesNearby={12}
             serviceTypesFarther={13}
+            serviceTypesDistant={49}
             walkabilityScore={12}
             pdfPath="doc-1015-elvira-ave.pdf"
           />
