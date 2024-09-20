@@ -7,6 +7,7 @@ const ProductSample = ({
   address,
   serviceTypesNearby,
   serviceTypesFarther,
+  serviceTypesDistant,
   walkabilityScore,
   pdfPath,
 }) => {
@@ -50,6 +51,12 @@ const ProductSample = ({
           />
         </div>
       </a>
+      <div className="pb-3 pt-1 text-2xl">
+        <div>
+          <span className="font-bold text-red-400">{serviceTypesDistant}</span>{" "}
+          Service Types Distant
+        </div>
+      </div>
       <div className="pt-3 text-2xl">
         Walkability Score: <span className="font-bold">{walkabilityScore}</span>
       </div>
