@@ -34,6 +34,16 @@ export default function Samples() {
           />
 
           <ProductSample
+            imagePath="preview-sarphatipark-amsterdam.jpg"
+            address="Sarphatipark 38I, 1072 PB Amsterdam, Netherlands"
+            serviceTypesNearby={52}
+            serviceTypesFarther={3}
+            serviceTypesDistant={19}
+            walkabilityScore={23}
+            pdfPath="doc-sarphatipark-amsterdam.pdf"
+          />
+
+          <ProductSample
             imagePath="preview-29-s-la-salle-st.5.jpg"
             address="29 S La Salle St, Chicago, IL 60603"
             serviceTypesNearby={49}
