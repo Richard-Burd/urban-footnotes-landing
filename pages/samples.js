@@ -64,6 +64,16 @@ export default function Samples() {
           />
 
           <ProductSample
+            imagePath="preview-163-lai-chi-kok-rd.jpg"
+            address="50 Grand Parade, Centre, Cork, T12 D638, Ireland"
+            serviceTypesNearby={45}
+            serviceTypesFarther={6}
+            serviceTypesDistant={23}
+            walkabilityScore={20}
+            pdfPath="doc-163-lai-chi-kok-rd.pdf"
+          />
+
+          <ProductSample
             imagePath="preview-50-grande-parade.jpg"
             address="50 Grand Parade, Centre, Cork, T12 D638, Ireland"
             serviceTypesNearby={44}
