@@ -128,7 +128,7 @@ export default function Samples() {
             address="R. Alexandre Martins, 96 - Aparecida, Santos - SP, 11025-200, Brazil"
             serviceTypesNearby={42}
             serviceTypesFarther={10}
-            serviceTypesDistant={23}
+            serviceTypesDistant={22}
             walkabilityScore={21}
             pdfPath="doc-r-alexandre-martins-96.pdf"
           />
