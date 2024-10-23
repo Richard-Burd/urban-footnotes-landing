@@ -14,27 +14,31 @@ export default function Samples() {
           shadowColor="title-shadow-samples"
         />
         <div className="roboto-font mb-32 text-2.5xl text-gray-200">
-          <p>
+          <p className="mb-10">
             Samples are presented ranked by the number of service types (out of
             74 total) within approximately 1/4 mile of the address shown (0.4
             kilometer in metric versions), then by those within 2/5 mile (0.8
             kilometer in metric versions), and finally by Walkability Score.
           </p>
+          <p>
+            The six top-scoring samples below feature an expanded page 4 with
+            additional explanations.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-10">
           <ProductSample
-            imagePath="preview-223-8th-ave.jpg"
+            imagePath="preview-223-8th-ave.p.4-ex.jpg"
             address="223 8th Ave. New York, NY 10011"
-            serviceTypesNearby={54}
-            serviceTypesFarther={8}
+            serviceTypesNearby={55}
+            serviceTypesFarther={7}
             serviceTypesDistant={12}
             walkabilityScore={20}
             pdfPath="doc-223-8th-ave.pdf"
           />
 
           <ProductSample
-            imagePath="preview-sarphatipark-amsterdam.jpg"
+            imagePath="preview-sarphatipark-amsterdam.p.4-ex.jpg"
             address="Sarphatipark 38I, 1072 PB Amsterdam, Netherlands"
             serviceTypesNearby={52}
             serviceTypesFarther={3}
@@ -44,7 +48,7 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-29-s-la-salle-st.5.jpg"
+            imagePath="preview-29-s-la-salle-st.p.4-ex.jpg"
             address="29 S La Salle St, Chicago, IL 60603"
             serviceTypesNearby={49}
             serviceTypesFarther={11}
@@ -54,7 +58,7 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-10-rue-de-rivoli.jpg"
+            imagePath="preview-10-rue-de-rivoli.p.4-ex.jpg"
             address="10 Rue de Rivoli, 75004 Paris, France"
             serviceTypesNearby={48}
             serviceTypesFarther={6}
@@ -64,8 +68,8 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-163-lai-chi-kok-rd.jpg"
-            address="50 Grand Parade, Centre, Cork, T12 D638, Ireland"
+            imagePath="preview-163-lai-chi-kok-rd.p.4-ex.jpg"
+            address="163 Lai Chi Kok Rd, Tai Kok Tsui, Hong Kong"
             serviceTypesNearby={45}
             serviceTypesFarther={6}
             serviceTypesDistant={23}
@@ -74,7 +78,7 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-50-grande-parade.jpg"
+            imagePath="preview-50-grande-parade.p.4-ex.jpg"
             address="50 Grand Parade, Centre, Cork, T12 D638, Ireland"
             serviceTypesNearby={44}
             serviceTypesFarther={11}
