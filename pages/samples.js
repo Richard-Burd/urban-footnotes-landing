@@ -38,7 +38,7 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-sarphatipark-amsterdam.p.4-ex.jpg"
+            imagePath="preview-sarphatipark-amsterdam.0.7.jpg"
             address="Sarphatipark 38I, 1072 PB Amsterdam, Netherlands"
             serviceTypesNearby={52}
             serviceTypesFarther={3}
@@ -58,7 +58,7 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-10-rue-de-rivoli.p.4-ex.jpg"
+            imagePath="preview-10-rue-de-rivoli.0.7.jpg"
             address="10 Rue de Rivoli, 75004 Paris, France"
             serviceTypesNearby={48}
             serviceTypesFarther={6}
@@ -68,7 +68,7 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-163-lai-chi-kok-rd.p.4-ex.jpg"
+            imagePath="preview-163-lai-chi-kok-rd.0.7.jpg"
             address="163 Lai Chi Kok Rd, Tai Kok Tsui, Hong Kong"
             serviceTypesNearby={45}
             serviceTypesFarther={6}
@@ -78,7 +78,7 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-50-grande-parade.p.4-ex.jpg"
+            imagePath="preview-50-grande-parade.0.7.jpg"
             address="50 Grand Parade, Centre, Cork, T12 D638, Ireland"
             serviceTypesNearby={44}
             serviceTypesFarther={11}
@@ -108,7 +108,7 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-55-triq-san-vincenz.jpg"
+            imagePath="preview-55-triq-san-vincenz.0.7.jpg"
             address="55 Triq San Vincenz, Tas-Sliema, Malta"
             serviceTypesNearby={43}
             serviceTypesFarther={7}
@@ -118,7 +118,7 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-gabriel-max-straße-15.jpg"
+            imagePath="preview-gabriel-max-straße-15.0.7.jpg"
             address="Gabriel-Max-Straße 15, 10245 Berlin, Germany"
             serviceTypesNearby={42}
             serviceTypesFarther={12}
@@ -128,7 +128,7 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-r-alexandre-martins-96.jpg"
+            imagePath="preview-r-alexandre-martins-96.0.7.jpg"
             address="R. Alexandre Martins, 96 - Aparecida, Santos - SP, 11025-200, Brazil"
             serviceTypesNearby={42}
             serviceTypesFarther={10}
@@ -248,7 +248,7 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-6485-victoria-ave.4.jpg"
+            imagePath="preview-6485-victoria-ave.0.7.jpg"
             address="6485 Victoria Ave, Montreal, QC H3W, Canada"
             serviceTypesNearby={35}
             serviceTypesFarther={6}
