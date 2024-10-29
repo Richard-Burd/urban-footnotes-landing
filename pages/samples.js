@@ -38,11 +38,11 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-sarphatipark-amsterdam.0.7.jpg"
+            imagePath="preview-sarphatipark-amsterdam.0.7.v2.jpg"
             address="Sarphatipark 38I, 1072 PB Amsterdam, Netherlands"
             serviceTypesNearby={52}
-            serviceTypesFarther={3}
-            serviceTypesDistant={19}
+            serviceTypesFarther={7}
+            serviceTypesDistant={15}
             walkabilityScore={23}
             pdfPath="doc-sarphatipark-amsterdam.pdf"
           />
@@ -61,18 +61,28 @@ export default function Samples() {
             imagePath="preview-10-rue-de-rivoli.0.7.jpg"
             address="10 Rue de Rivoli, 75004 Paris, France"
             serviceTypesNearby={48}
-            serviceTypesFarther={6}
-            serviceTypesDistant={20}
+            serviceTypesFarther={8}
+            serviceTypesDistant={18}
             walkabilityScore={24}
             pdfPath="doc-10-rue-de-rivoli.pdf"
+          />
+
+          <ProductSample
+            imagePath="preview-55-triq-san-vincenz.0.7.jpg"
+            address="55 Triq San Vincenz, Tas-Sliema, Malta"
+            serviceTypesNearby={45}
+            serviceTypesFarther={9}
+            serviceTypesDistant={20}
+            walkabilityScore={15}
+            pdfPath="doc-55-triq-san-vincenz.pdf"
           />
 
           <ProductSample
             imagePath="preview-163-lai-chi-kok-rd.0.7.jpg"
             address="163 Lai Chi Kok Rd, Tai Kok Tsui, Hong Kong"
             serviceTypesNearby={45}
-            serviceTypesFarther={6}
-            serviceTypesDistant={23}
+            serviceTypesFarther={10}
+            serviceTypesDistant={19}
             walkabilityScore={20}
             pdfPath="doc-163-lai-chi-kok-rd.pdf"
           />
@@ -81,8 +91,8 @@ export default function Samples() {
             imagePath="preview-50-grande-parade.0.7.jpg"
             address="50 Grand Parade, Centre, Cork, T12 D638, Ireland"
             serviceTypesNearby={44}
-            serviceTypesFarther={11}
-            serviceTypesDistant={19}
+            serviceTypesFarther={13}
+            serviceTypesDistant={17}
             walkabilityScore={17}
             pdfPath="doc-50-grande-parade.pdf"
           />
@@ -108,21 +118,11 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-55-triq-san-vincenz.0.7.jpg"
-            address="55 Triq San Vincenz, Tas-Sliema, Malta"
-            serviceTypesNearby={43}
-            serviceTypesFarther={7}
-            serviceTypesDistant={24}
-            walkabilityScore={15}
-            pdfPath="doc-55-triq-san-vincenz.pdf"
-          />
-
-          <ProductSample
             imagePath="preview-gabriel-max-straße-15.0.7.jpg"
             address="Gabriel-Max-Straße 15, 10245 Berlin, Germany"
             serviceTypesNearby={42}
-            serviceTypesFarther={12}
-            serviceTypesDistant={20}
+            serviceTypesFarther={14}
+            serviceTypesDistant={18}
             walkabilityScore={19}
             pdfPath="doc-gabriel-max-straße-15.pdf"
           />
@@ -131,8 +131,8 @@ export default function Samples() {
             imagePath="preview-r-alexandre-martins-96.0.7.jpg"
             address="R. Alexandre Martins, 96 - Aparecida, Santos - SP, 11025-200, Brazil"
             serviceTypesNearby={42}
-            serviceTypesFarther={10}
-            serviceTypesDistant={22}
+            serviceTypesFarther={11}
+            serviceTypesDistant={21}
             walkabilityScore={21}
             pdfPath="doc-r-alexandre-martins-96.pdf"
           />
@@ -251,8 +251,8 @@ export default function Samples() {
             imagePath="preview-6485-victoria-ave.0.7.jpg"
             address="6485 Victoria Ave, Montreal, QC H3W, Canada"
             serviceTypesNearby={35}
-            serviceTypesFarther={6}
-            serviceTypesDistant={33}
+            serviceTypesFarther={8}
+            serviceTypesDistant={31}
             walkabilityScore={21}
             pdfPath="doc-6485-victoria-ave.pdf"
           />
