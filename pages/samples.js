@@ -68,6 +68,16 @@ export default function Samples() {
           />
 
           <ProductSample
+            imagePath="preview-301-market-st.jpg"
+            address="301 Market St, Philadelphia, PA 19106"
+            serviceTypesNearby={47}
+            serviceTypesFarther={4}
+            serviceTypesDistant={23}
+            walkabilityScore={19}
+            pdfPath="doc-301-market-st.pdf"
+          />
+
+          <ProductSample
             imagePath="preview-55-triq-san-vincenz.0.7.jpg"
             address="55 Triq San Vincenz, Tas-Sliema, Malta"
             serviceTypesNearby={45}
