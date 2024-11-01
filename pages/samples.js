@@ -78,7 +78,7 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-55-triq-san-vincenz.0.7.jpg"
+            imagePath="preview-55-triq-san-vincenz.p.4-new.jpg"
             address="55 Triq San Vincenz, Tas-Sliema, Malta"
             serviceTypesNearby={45}
             serviceTypesFarther={9}
@@ -108,7 +108,7 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-107-patton-ave.5.jpg"
+            imagePath="preview-107-patton-ave.p.4-new.jpg"
             address="316 King St, Charleston, SC 29401"
             serviceTypesNearby={44}
             serviceTypesFarther={10}
@@ -118,7 +118,7 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-316-king-st.2.jpg"
+            imagePath="preview-316-king-st.p.4-new.jpg"
             address="316 King St, Charleston, SC 29401"
             serviceTypesNearby={44}
             serviceTypesFarther={8}
@@ -228,7 +228,7 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-107-high-st.jpg"
+            imagePath="preview-107-high-st.p.4-new.jpg"
             address="107 High St, Charlestown, MA 02129"
             serviceTypesNearby={36}
             serviceTypesFarther={8}
