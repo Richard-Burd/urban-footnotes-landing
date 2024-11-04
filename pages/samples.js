@@ -138,7 +138,7 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-r-alexandre-martins-96.0.7.jpg"
+            imagePath="preview-r-alexandre-martins-96.p.4-new.jpg"
             address="R. Alexandre Martins, 96 - Aparecida, Santos - SP, 11025-200, Brazil"
             serviceTypesNearby={42}
             serviceTypesFarther={11}
