@@ -158,7 +158,7 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-14-e-washington-st.3.jpg"
+            imagePath="preview-14-e-washington-st.p.4-new.jpg"
             address="14 E Washington St, Indianapolis, IN 46204"
             serviceTypesNearby={42}
             serviceTypesFarther={7}
