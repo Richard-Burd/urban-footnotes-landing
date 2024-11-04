@@ -148,13 +148,13 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-245-granby-st.v2.jpg"
+            imagePath="preview-245-granby-st.p.4-new.jpg"
             address="245 Granby St, Norfolk, VA 23510"
             serviceTypesNearby={42}
             serviceTypesFarther={9}
             serviceTypesDistant={23}
             walkabilityScore={21}
-            pdfPath="doc-245-granby-st.v2.pdf"
+            pdfPath="doc-245-granby-st.p.4-new.pdf"
           />
 
           <ProductSample
