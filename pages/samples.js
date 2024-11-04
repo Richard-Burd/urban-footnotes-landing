@@ -168,11 +168,11 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-1030-tiverton-ave.3.jpg"
+            imagePath="preview-1030-tiverton-ave.p.4-new.jpg"
             address="1030 Tiverton Ave. Los Angeles, CA 90024"
-            serviceTypesNearby={40}
+            serviceTypesNearby={41}
             serviceTypesFarther={17}
-            serviceTypesDistant={17}
+            serviceTypesDistant={16}
             walkabilityScore={25}
             pdfPath="doc-1030-tiverton-ave.pdf"
           />
