@@ -178,7 +178,7 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-1900-broadway.6.jpg"
+            imagePath="preview-1900-broadway.p.4-new.jpg"
             address="1900 Broadway, Boulder, CO 80302"
             serviceTypesNearby={40}
             serviceTypesFarther={15}
