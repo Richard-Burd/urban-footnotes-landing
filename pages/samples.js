@@ -208,7 +208,7 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-555-church-st.jpg"
+            imagePath="preview-555-church-st.p.4-new.jpg"
             address="555 Church St. Nashville, TN 37203"
             serviceTypesNearby={37}
             serviceTypesFarther={8}
