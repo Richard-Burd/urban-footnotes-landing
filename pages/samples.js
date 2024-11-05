@@ -188,10 +188,10 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-526-superior-ave.2.jpg"
+            imagePath="preview-526-superior-ave.p.4-new.jpg"
             address="526 Superior Ave, Cleveland, OH 44114"
-            serviceTypesNearby={39}
-            serviceTypesFarther={10}
+            serviceTypesNearby={40}
+            serviceTypesFarther={9}
             serviceTypesDistant={25}
             walkabilityScore={21}
             pdfPath="doc-526-superior-ave.pdf"
