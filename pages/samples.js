@@ -188,16 +188,6 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-1505-ponce-de-leon-blvd.3.jpg"
-            address="1505 Ponce de Leon, Coral Gables, FL 33134"
-            serviceTypesNearby={40}
-            serviceTypesFarther={5}
-            serviceTypesDistant={29}
-            walkabilityScore={23}
-            pdfPath="doc-1505-ponce-de-leon-blvd.pdf"
-          />
-
-          <ProductSample
             imagePath="preview-526-superior-ave.2.jpg"
             address="526 Superior Ave, Cleveland, OH 44114"
             serviceTypesNearby={39}
@@ -205,6 +195,16 @@ export default function Samples() {
             serviceTypesDistant={25}
             walkabilityScore={21}
             pdfPath="doc-526-superior-ave.pdf"
+          />
+
+          <ProductSample
+            imagePath="preview-1505-ponce-de-leon-blvd.p.4-new.jpg"
+            address="1505 Ponce de Leon, Coral Gables, FL 33134"
+            serviceTypesNearby={38}
+            serviceTypesFarther={7}
+            serviceTypesDistant={29}
+            walkabilityScore={23}
+            pdfPath="doc-1505-ponce-de-leon-blvd.pdf"
           />
 
           <ProductSample
