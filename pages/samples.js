@@ -218,7 +218,7 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-332-e-william-st.jpg"
+            imagePath="preview-332-e-william-st.p.4-new.jpg"
             address="332 E William St. Ann Arbor, MI 48104"
             serviceTypesNearby={36}
             serviceTypesFarther={17}
