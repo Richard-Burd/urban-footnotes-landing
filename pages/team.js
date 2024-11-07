@@ -27,7 +27,7 @@ export default function Team() {
             Currently our team consists of the following individuals:
           </p>
           <ul className="mb-14 hidden list-disc pl-5 lg:block">
-            <li className="flex">
+            <li className="flex" id="john-van-der-harst">
               <span className="w-60 pb-10 font-bold">
                 <div>John van der Harst</div>
                 <div className="social-media-icons ml-4 mt-2 flex flex-row">
@@ -56,7 +56,8 @@ export default function Team() {
               </span>
               <span>- Chief Strategist</span>
             </li>
-            <li className="flex">
+
+            <li className="flex" id="richard-burd">
               <span className="w-60 pb-8 font-bold">
                 <div>Richard Burd</div>
                 <div className="social-media-icons ml-4 mt-2 flex flex-row">
@@ -97,9 +98,10 @@ export default function Team() {
                   </div>
                 </div>
               </span>
-              <span>- Webmaster & Developer</span>
+              <span>- Product Development</span>
             </li>
-            <li className="flex">
+
+            <li className="flex" id="jye">
               <span className="w-60 pb-8 font-bold">
                 <div>Jye</div>
                 <div className="social-media-icons ml-4 mt-2 flex flex-row">
@@ -119,9 +121,63 @@ export default function Team() {
                   </div>
                 </div>
               </span>
-              <span>- Research & Product Development</span>
+              <span>- Software Engineer</span>
             </li>
-            <li className="flex">
+
+            <li className="flex" id="lee-nelson">
+              <span className="w-60 pb-8 font-bold">
+                <div>Lee Nelson</div>
+                <div className="social-media-icons ml-4 mt-2 flex flex-row">
+                  <div className="mx-3">
+                    <SocialMediaIcon
+                      icon="home"
+                      hyperLink="https://www.supremelifeforce.info/"
+                      {...socialMediaIconProps}
+                    />
+                  </div>
+                  <div className="mx-3">
+                    <SocialMediaIcon
+                      icon="email"
+                      hyperLink="mailto:lee@urbancruiseship.org"
+                      {...socialMediaIconProps}
+                    />
+                  </div>
+                  <div className="mx-3">
+                    <SocialMediaIcon
+                      icon="linkedin"
+                      hyperLink="https://www.linkedin.com/in/lee-nelson-b5701981"
+                      {...socialMediaIconProps}
+                    />
+                  </div>
+                </div>
+              </span>
+              <span>- Research & Development</span>
+            </li>
+
+            <li className="flex" id="david-cater">
+              <span className="w-60 pb-8 font-bold">
+                <div>David Cater</div>
+                {/* <div className="social-media-icons ml-4 mt-2 flex flex-row">
+                  <div className="mx-3">
+                    <SocialMediaIcon
+                      icon="home"
+                      hyperLink="https://jyeartstudio.com/"
+                      {...socialMediaIconProps}
+                    />
+                  </div>
+                  <div className="mx-3">
+                    <SocialMediaIcon
+                      icon="email"
+                      hyperLink="mailto:jye.art.studio@gmail.com"
+                      {...socialMediaIconProps}
+                    />
+                  </div>
+                </div> */}
+              </span>
+              <span>- Business Development</span>
+            </li>
+
+            <li className="flex" id="roseanne-morgan">
               <span className="w-60 pb-3 font-bold">Roseanne Morgan</span>
               <span>- Walkability Specialist</span>
             </li>
@@ -161,8 +217,8 @@ export default function Team() {
               </div>
             </li>
             <li className="mb-8 pb-3">
-              <div className="font-bold">Richard Burd</div>
-              <div>Webmaster & Developer</div>
+              <div className="font-bold">Richard Burds</div>
+              <div>Webmaster & Developers</div>
               <div className="social-media-icons ml-4 mt-2 flex -translate-y-1 flex-row flex-wrap">
                 <div className="mx-2 py-2">
                   <SocialMediaIcon
@@ -211,6 +267,66 @@ export default function Team() {
                 </div>
               </div>
             </li>
+
+            <li className="mb-8 pb-3">
+              <div className="font-bold">Jye</div>
+              <div>Research & Product Development</div>
+              <div className="social-media-icons ml-4 mt-2 flex -translate-y-1 flex-row flex-wrap">
+                <div className="mx-2 py-2">
+                  <SocialMediaIcon
+                    icon="home"
+                    hyperLink="https://jyeartstudio.com/"
+                    width="30"
+                    height="30"
+                    {...socialMediaIconProps}
+                  />
+                </div>
+                <div className="mx-2 py-2">
+                  <SocialMediaIcon
+                    icon="email"
+                    hyperLink="mailto:jye.art.studio@gmail.com"
+                    width="30"
+                    height="30"
+                    {...socialMediaIconProps}
+                  />
+                </div>
+              </div>
+            </li>
+
+            <li className="mb-8 pb-3">
+              <div className="font-bold">Lee Nelson</div>
+              <div>Research & Product Development</div>
+              <div className="social-media-icons ml-4 mt-2 flex -translate-y-1 flex-row flex-wrap">
+                <div className="mx-2 py-2">
+                  <SocialMediaIcon
+                    icon="home"
+                    hyperLink="https://www.supremelifeforce.info/"
+                    width="30"
+                    height="30"
+                    {...socialMediaIconProps}
+                  />
+                </div>
+                <div className="mx-2 py-2">
+                  <SocialMediaIcon
+                    icon="email"
+                    hyperLink="mailto:lee@urbancruiseship.org"
+                    width="30"
+                    height="30"
+                    {...socialMediaIconProps}
+                  />
+                </div>
+                <div className="mx-2 py-2">
+                  <SocialMediaIcon
+                    icon="linkedin"
+                    hyperLink="https://www.linkedin.com/in/lee-nelson-b5701981/"
+                    width="30"
+                    height="30"
+                    {...socialMediaIconProps}
+                  />
+                </div>
+              </div>
+            </li>
+
             <li className="mb-8 pb-3">
               <div className="font-bold">Jye</div>
               <div>Research & Product Development</div>
