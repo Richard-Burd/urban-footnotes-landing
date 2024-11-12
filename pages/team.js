@@ -217,8 +217,8 @@ export default function Team() {
               </div>
             </li>
             <li className="mb-8 pb-3">
-              <div className="font-bold">Richard Burds</div>
-              <div>Webmaster & Developers</div>
+              <div className="font-bold">Richard Burd</div>
+              <div>Webmaster & Developer</div>
               <div className="social-media-icons ml-4 mt-2 flex -translate-y-1 flex-row flex-wrap">
                 <div className="mx-2 py-2">
                   <SocialMediaIcon
@@ -270,7 +270,7 @@ export default function Team() {
 
             <li className="mb-8 pb-3">
               <div className="font-bold">Jye</div>
-              <div>Research & Product Development</div>
+              <div>UX/UI Graphic Designer</div>
               <div className="social-media-icons ml-4 mt-2 flex -translate-y-1 flex-row flex-wrap">
                 <div className="mx-2 py-2">
                   <SocialMediaIcon
