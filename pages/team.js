@@ -121,7 +121,7 @@ export default function Team() {
                   </div>
                 </div>
               </span>
-              <span>- Software Engineer</span>
+              <span>- UX/UI Graphic Designer</span>
             </li>
 
             <li className="flex" id="lee-nelson">
