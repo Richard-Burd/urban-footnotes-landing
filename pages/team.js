@@ -328,30 +328,6 @@ export default function Team() {
             </li>
 
             <li className="mb-8 pb-3">
-              <div className="font-bold">Jye</div>
-              <div>Research & Product Development</div>
-              <div className="social-media-icons ml-4 mt-2 flex -translate-y-1 flex-row flex-wrap">
-                <div className="mx-2 py-2">
-                  <SocialMediaIcon
-                    icon="home"
-                    hyperLink="https://jyeartstudio.com/"
-                    width="30"
-                    height="30"
-                    {...socialMediaIconProps}
-                  />
-                </div>
-                <div className="mx-2 py-2">
-                  <SocialMediaIcon
-                    icon="email"
-                    hyperLink="mailto:jye.art.studio@gmail.com"
-                    width="30"
-                    height="30"
-                    {...socialMediaIconProps}
-                  />
-                </div>
-              </div>
-            </li>
-            <li className="mb-8 pb-3">
               <div className="font-bold">Roseanne Morgan</div>
               <div>Walkability Specialist</div>
             </li>
