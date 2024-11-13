@@ -26,138 +26,139 @@ export default function Team() {
           <p className="py-8">
             Currently our team consists of the following individuals:
           </p>
-          <ul className="mb-14 hidden list-disc pl-5 lg:block">
-            <li className="flex" id="john-van-der-harst">
-              <span className="w-60 pb-10 font-bold">
-                <div>John van der Harst</div>
-                <div className="social-media-icons ml-4 mt-2 flex flex-row">
-                  <div className="mx-3">
-                    <SocialMediaIcon
-                      icon="doc"
-                      hyperLink="https://ram-website-images-and-documents.s3.us-east-2.amazonaws.com/doc-685.pdf"
-                      {...socialMediaIconProps}
-                    />
+          <div id="desktop-version">
+            <ul className="mb-14 hidden list-disc pl-5 lg:block">
+              <li className="flex" id="john-van-der-harst">
+                <span className="w-60 pb-10 font-bold">
+                  <div>John van der Harst</div>
+                  <div className="social-media-icons ml-4 mt-2 flex flex-row">
+                    <div className="mx-3">
+                      <SocialMediaIcon
+                        icon="doc"
+                        hyperLink="https://ram-website-images-and-documents.s3.us-east-2.amazonaws.com/doc-685.pdf"
+                        {...socialMediaIconProps}
+                      />
+                    </div>
+                    <div className="mx-3">
+                      <SocialMediaIcon
+                        icon="recycle"
+                        hyperLink="https://ram-website-images-and-documents.s3.us-east-2.amazonaws.com/doc-684.pdf"
+                        {...socialMediaIconProps}
+                      />
+                    </div>
+                    <div className="mx-3">
+                      <SocialMediaIcon
+                        icon="email"
+                        hyperLink="https://www.urbancruiseship.org/snail-mail"
+                        {...socialMediaIconProps}
+                      />
+                    </div>
                   </div>
-                  <div className="mx-3">
-                    <SocialMediaIcon
-                      icon="recycle"
-                      hyperLink="https://ram-website-images-and-documents.s3.us-east-2.amazonaws.com/doc-684.pdf"
-                      {...socialMediaIconProps}
-                    />
-                  </div>
-                  <div className="mx-3">
-                    <SocialMediaIcon
-                      icon="email"
-                      hyperLink="https://www.urbancruiseship.org/snail-mail"
-                      {...socialMediaIconProps}
-                    />
-                  </div>
-                </div>
-              </span>
-              <span>- Chief Strategist</span>
-            </li>
+                </span>
+                <span>- Chief Strategist</span>
+              </li>
 
-            <li className="flex" id="richard-burd">
-              <span className="w-60 pb-8 font-bold">
-                <div>Richard Burd</div>
-                <div className="social-media-icons ml-4 mt-2 flex flex-row">
-                  <div className="mx-3">
-                    <SocialMediaIcon
-                      icon="x"
-                      hyperLink="https://x.com/Richard_A_Burd"
-                      {...socialMediaIconProps}
-                    />
+              <li className="flex" id="richard-burd">
+                <span className="w-60 pb-8 font-bold">
+                  <div>Richard Burd</div>
+                  <div className="social-media-icons ml-4 mt-2 flex flex-row">
+                    <div className="mx-3">
+                      <SocialMediaIcon
+                        icon="x"
+                        hyperLink="https://x.com/Richard_A_Burd"
+                        {...socialMediaIconProps}
+                      />
+                    </div>
+                    <div className="mx-3">
+                      <SocialMediaIcon
+                        icon="linkedin"
+                        hyperLink="https://www.linkedin.com/in/richardburd/"
+                        {...socialMediaIconProps}
+                      />
+                    </div>
+                    <div className="mx-3">
+                      <SocialMediaIcon
+                        icon="home"
+                        hyperLink="https://richard-burd.github.io/"
+                        {...socialMediaIconProps}
+                      />
+                    </div>
+                    <div className="z-10 mx-3">
+                      <SocialMediaIcon
+                        icon="github"
+                        hyperLink="https://github.com/Richard-Burd/"
+                        {...socialMediaIconProps}
+                      />
+                    </div>
+                    <div className="z-10 mx-3">
+                      <SocialMediaIcon
+                        icon="email"
+                        hyperLink="mailto:richard@urbancruiseship.org"
+                        {...socialMediaIconProps}
+                      />
+                    </div>
                   </div>
-                  <div className="mx-3">
-                    <SocialMediaIcon
-                      icon="linkedin"
-                      hyperLink="https://www.linkedin.com/in/richardburd/"
-                      {...socialMediaIconProps}
-                    />
-                  </div>
-                  <div className="mx-3">
-                    <SocialMediaIcon
-                      icon="home"
-                      hyperLink="https://richard-burd.github.io/"
-                      {...socialMediaIconProps}
-                    />
-                  </div>
-                  <div className="z-10 mx-3">
-                    <SocialMediaIcon
-                      icon="github"
-                      hyperLink="https://github.com/Richard-Burd/"
-                      {...socialMediaIconProps}
-                    />
-                  </div>
-                  <div className="z-10 mx-3">
-                    <SocialMediaIcon
-                      icon="email"
-                      hyperLink="mailto:richard@urbancruiseship.org"
-                      {...socialMediaIconProps}
-                    />
-                  </div>
-                </div>
-              </span>
-              <span>- Product Development</span>
-            </li>
+                </span>
+                <span>- Product Development</span>
+              </li>
 
-            <li className="flex" id="jye">
-              <span className="w-60 pb-8 font-bold">
-                <div>Jye</div>
-                <div className="social-media-icons ml-4 mt-2 flex flex-row">
-                  <div className="mx-3">
-                    <SocialMediaIcon
-                      icon="home"
-                      hyperLink="https://jyeartstudio.com/"
-                      {...socialMediaIconProps}
-                    />
+              <li className="flex" id="jye">
+                <span className="w-60 pb-8 font-bold">
+                  <div>Jye</div>
+                  <div className="social-media-icons ml-4 mt-2 flex flex-row">
+                    <div className="mx-3">
+                      <SocialMediaIcon
+                        icon="home"
+                        hyperLink="https://jyeartstudio.com/"
+                        {...socialMediaIconProps}
+                      />
+                    </div>
+                    <div className="mx-3">
+                      <SocialMediaIcon
+                        icon="email"
+                        hyperLink="mailto:jye.art.studio@gmail.com"
+                        {...socialMediaIconProps}
+                      />
+                    </div>
                   </div>
-                  <div className="mx-3">
-                    <SocialMediaIcon
-                      icon="email"
-                      hyperLink="mailto:jye.art.studio@gmail.com"
-                      {...socialMediaIconProps}
-                    />
-                  </div>
-                </div>
-              </span>
-              <span>- UX/UI Graphic Designer</span>
-            </li>
+                </span>
+                <span>- UX/UI Graphic Designer</span>
+              </li>
 
-            <li className="flex" id="lee-nelson">
-              <span className="w-60 pb-8 font-bold">
-                <div>Lee Nelson</div>
-                <div className="social-media-icons ml-4 mt-2 flex flex-row">
-                  <div className="mx-3">
-                    <SocialMediaIcon
-                      icon="home"
-                      hyperLink="https://www.supremelifeforce.info/"
-                      {...socialMediaIconProps}
-                    />
+              <li className="flex" id="lee-nelson">
+                <span className="w-60 pb-8 font-bold">
+                  <div>Lee Nelson</div>
+                  <div className="social-media-icons ml-4 mt-2 flex flex-row">
+                    <div className="mx-3">
+                      <SocialMediaIcon
+                        icon="home"
+                        hyperLink="https://www.supremelifeforce.info/"
+                        {...socialMediaIconProps}
+                      />
+                    </div>
+                    <div className="mx-3">
+                      <SocialMediaIcon
+                        icon="email"
+                        hyperLink="mailto:lee@urbancruiseship.org"
+                        {...socialMediaIconProps}
+                      />
+                    </div>
+                    <div className="mx-3">
+                      <SocialMediaIcon
+                        icon="linkedin"
+                        hyperLink="https://www.linkedin.com/in/lee-nelson-b5701981"
+                        {...socialMediaIconProps}
+                      />
+                    </div>
                   </div>
-                  <div className="mx-3">
-                    <SocialMediaIcon
-                      icon="email"
-                      hyperLink="mailto:lee@urbancruiseship.org"
-                      {...socialMediaIconProps}
-                    />
-                  </div>
-                  <div className="mx-3">
-                    <SocialMediaIcon
-                      icon="linkedin"
-                      hyperLink="https://www.linkedin.com/in/lee-nelson-b5701981"
-                      {...socialMediaIconProps}
-                    />
-                  </div>
-                </div>
-              </span>
-              <span>- Research & Development</span>
-            </li>
+                </span>
+                <span>- Research & Development</span>
+              </li>
 
-            <li className="flex" id="david-cater">
-              <span className="w-60 pb-8 font-bold">
-                <div>David Cater</div>
-                {/* <div className="social-media-icons ml-4 mt-2 flex flex-row">
+              <li className="flex" id="david-cater">
+                <span className="w-60 pb-8 font-bold">
+                  <div>David Cater</div>
+                  {/* <div className="social-media-icons ml-4 mt-2 flex flex-row">
                   <div className="mx-3">
                     <SocialMediaIcon
                       icon="home"
@@ -173,165 +174,169 @@ export default function Team() {
                     />
                   </div>
                 </div> */}
-              </span>
-              <span>- Business Development</span>
-            </li>
+                </span>
+                <span>- Business Development</span>
+              </li>
 
-            <li className="flex" id="roseanne-morgan">
-              <span className="w-60 pb-3 font-bold">Roseanne Morgan</span>
-              <span>- Walkability Specialist</span>
-            </li>
-          </ul>
-          <ul className="list-square mb-11 list-outside pl-5 lg:hidden">
-            <li className="mb-8 pb-3">
-              <div className="font-bold">John van der Harst</div>
-              <div>Chief Strategist</div>
-              <div className="social-media-icons ml-4 mt-2 flex -translate-y-1 flex-row flex-wrap">
-                <div className="mx-2 py-2">
-                  <SocialMediaIcon
-                    icon="doc"
-                    hyperLink="https://ram-website-images-and-documents.s3.us-east-2.amazonaws.com/doc-685.pdf"
-                    width="30"
-                    height="30"
-                    {...socialMediaIconProps}
-                  />
-                </div>
-                <div className="mx-2 py-2">
-                  <SocialMediaIcon
-                    icon="recycle"
-                    hyperLink="https://ram-website-images-and-documents.s3.us-east-2.amazonaws.com/doc-684.pdf"
-                    width="30"
-                    height="30"
-                    {...socialMediaIconProps}
-                  />
-                </div>
-                <div className="mx-2 py-2">
-                  <SocialMediaIcon
-                    icon="email"
-                    hyperLink="https://www.urbancruiseship.org/snail-mail"
-                    width="30"
-                    height="30"
-                    {...socialMediaIconProps}
-                  />
-                </div>
-              </div>
-            </li>
-            <li className="mb-8 pb-3">
-              <div className="font-bold">Richard Burd</div>
-              <div>Webmaster & Developer</div>
-              <div className="social-media-icons ml-4 mt-2 flex -translate-y-1 flex-row flex-wrap">
-                <div className="mx-2 py-2">
-                  <SocialMediaIcon
-                    icon="x"
-                    hyperLink="https://x.com/Richard_A_Burd"
-                    width="30"
-                    height="30"
-                    {...socialMediaIconProps}
-                  />
-                </div>
-                <div className="mx-2 py-2">
-                  <SocialMediaIcon
-                    icon="linkedin"
-                    hyperLink="https://www.linkedin.com/in/richardburd/"
-                    width="30"
-                    height="30"
-                    {...socialMediaIconProps}
-                  />
-                </div>
-                <div className="mx-2 py-2">
-                  <SocialMediaIcon
-                    icon="home"
-                    hyperLink="https://richard-burd.github.io/"
-                    width="30"
-                    height="30"
-                    {...socialMediaIconProps}
-                  />
-                </div>
-                <div className="mx-2 py-2">
-                  <SocialMediaIcon
-                    icon="github"
-                    hyperLink="https://github.com/Richard-Burd/"
-                    width="30"
-                    height="30"
-                    {...socialMediaIconProps}
-                  />
-                </div>
-                <div className="mx-2 py-2">
-                  <SocialMediaIcon
-                    icon="email"
-                    hyperLink="mailto:richard@urbancruiseship.org"
-                    width="30"
-                    height="30"
-                    {...socialMediaIconProps}
-                  />
-                </div>
-              </div>
-            </li>
+              <li className="flex" id="roseanne-morgan">
+                <span className="w-60 pb-3 font-bold">Roseanne Morgan</span>
+                <span>- Walkability Specialist</span>
+              </li>
+            </ul>
+          </div>
 
-            <li className="mb-8 pb-3">
-              <div className="font-bold">Jye</div>
-              <div>UX/UI Graphic Designer</div>
-              <div className="social-media-icons ml-4 mt-2 flex -translate-y-1 flex-row flex-wrap">
-                <div className="mx-2 py-2">
-                  <SocialMediaIcon
-                    icon="home"
-                    hyperLink="https://jyeartstudio.com/"
-                    width="30"
-                    height="30"
-                    {...socialMediaIconProps}
-                  />
+          <div id="mobile-version">
+            <ul className="list-square mb-11 list-outside pl-5 lg:hidden">
+              <li className="mb-8 pb-3">
+                <div className="font-bold">John van der Harst</div>
+                <div>Chief Strategist</div>
+                <div className="social-media-icons ml-4 mt-2 flex -translate-y-1 flex-row flex-wrap">
+                  <div className="mx-2 py-2">
+                    <SocialMediaIcon
+                      icon="doc"
+                      hyperLink="https://ram-website-images-and-documents.s3.us-east-2.amazonaws.com/doc-685.pdf"
+                      width="30"
+                      height="30"
+                      {...socialMediaIconProps}
+                    />
+                  </div>
+                  <div className="mx-2 py-2">
+                    <SocialMediaIcon
+                      icon="recycle"
+                      hyperLink="https://ram-website-images-and-documents.s3.us-east-2.amazonaws.com/doc-684.pdf"
+                      width="30"
+                      height="30"
+                      {...socialMediaIconProps}
+                    />
+                  </div>
+                  <div className="mx-2 py-2">
+                    <SocialMediaIcon
+                      icon="email"
+                      hyperLink="https://www.urbancruiseship.org/snail-mail"
+                      width="30"
+                      height="30"
+                      {...socialMediaIconProps}
+                    />
+                  </div>
                 </div>
-                <div className="mx-2 py-2">
-                  <SocialMediaIcon
-                    icon="email"
-                    hyperLink="mailto:jye.art.studio@gmail.com"
-                    width="30"
-                    height="30"
-                    {...socialMediaIconProps}
-                  />
+              </li>
+              <li className="mb-8 pb-3">
+                <div className="font-bold">Richard Burd</div>
+                <div>Webmaster & Developer</div>
+                <div className="social-media-icons ml-4 mt-2 flex -translate-y-1 flex-row flex-wrap">
+                  <div className="mx-2 py-2">
+                    <SocialMediaIcon
+                      icon="x"
+                      hyperLink="https://x.com/Richard_A_Burd"
+                      width="30"
+                      height="30"
+                      {...socialMediaIconProps}
+                    />
+                  </div>
+                  <div className="mx-2 py-2">
+                    <SocialMediaIcon
+                      icon="linkedin"
+                      hyperLink="https://www.linkedin.com/in/richardburd/"
+                      width="30"
+                      height="30"
+                      {...socialMediaIconProps}
+                    />
+                  </div>
+                  <div className="mx-2 py-2">
+                    <SocialMediaIcon
+                      icon="home"
+                      hyperLink="https://richard-burd.github.io/"
+                      width="30"
+                      height="30"
+                      {...socialMediaIconProps}
+                    />
+                  </div>
+                  <div className="mx-2 py-2">
+                    <SocialMediaIcon
+                      icon="github"
+                      hyperLink="https://github.com/Richard-Burd/"
+                      width="30"
+                      height="30"
+                      {...socialMediaIconProps}
+                    />
+                  </div>
+                  <div className="mx-2 py-2">
+                    <SocialMediaIcon
+                      icon="email"
+                      hyperLink="mailto:richard@urbancruiseship.org"
+                      width="30"
+                      height="30"
+                      {...socialMediaIconProps}
+                    />
+                  </div>
                 </div>
-              </div>
-            </li>
+              </li>
 
-            <li className="mb-8 pb-3">
-              <div className="font-bold">Lee Nelson</div>
-              <div>Research & Product Development</div>
-              <div className="social-media-icons ml-4 mt-2 flex -translate-y-1 flex-row flex-wrap">
-                <div className="mx-2 py-2">
-                  <SocialMediaIcon
-                    icon="home"
-                    hyperLink="https://www.supremelifeforce.info/"
-                    width="30"
-                    height="30"
-                    {...socialMediaIconProps}
-                  />
+              <li className="mb-8 pb-3">
+                <div className="font-bold">Jye</div>
+                <div>UX/UI Graphic Designer</div>
+                <div className="social-media-icons ml-4 mt-2 flex -translate-y-1 flex-row flex-wrap">
+                  <div className="mx-2 py-2">
+                    <SocialMediaIcon
+                      icon="home"
+                      hyperLink="https://jyeartstudio.com/"
+                      width="30"
+                      height="30"
+                      {...socialMediaIconProps}
+                    />
+                  </div>
+                  <div className="mx-2 py-2">
+                    <SocialMediaIcon
+                      icon="email"
+                      hyperLink="mailto:jye.art.studio@gmail.com"
+                      width="30"
+                      height="30"
+                      {...socialMediaIconProps}
+                    />
+                  </div>
                 </div>
-                <div className="mx-2 py-2">
-                  <SocialMediaIcon
-                    icon="email"
-                    hyperLink="mailto:lee@urbancruiseship.org"
-                    width="30"
-                    height="30"
-                    {...socialMediaIconProps}
-                  />
-                </div>
-                <div className="mx-2 py-2">
-                  <SocialMediaIcon
-                    icon="linkedin"
-                    hyperLink="https://www.linkedin.com/in/lee-nelson-b5701981/"
-                    width="30"
-                    height="30"
-                    {...socialMediaIconProps}
-                  />
-                </div>
-              </div>
-            </li>
+              </li>
 
-            <li className="mb-8 pb-3">
-              <div className="font-bold">Roseanne Morgan</div>
-              <div>Walkability Specialist</div>
-            </li>
-          </ul>
+              <li className="mb-8 pb-3">
+                <div className="font-bold">Lee Nelson</div>
+                <div>Research & Product Development</div>
+                <div className="social-media-icons ml-4 mt-2 flex -translate-y-1 flex-row flex-wrap">
+                  <div className="mx-2 py-2">
+                    <SocialMediaIcon
+                      icon="home"
+                      hyperLink="https://www.supremelifeforce.info/"
+                      width="30"
+                      height="30"
+                      {...socialMediaIconProps}
+                    />
+                  </div>
+                  <div className="mx-2 py-2">
+                    <SocialMediaIcon
+                      icon="email"
+                      hyperLink="mailto:lee@urbancruiseship.org"
+                      width="30"
+                      height="30"
+                      {...socialMediaIconProps}
+                    />
+                  </div>
+                  <div className="mx-2 py-2">
+                    <SocialMediaIcon
+                      icon="linkedin"
+                      hyperLink="https://www.linkedin.com/in/lee-nelson-b5701981/"
+                      width="30"
+                      height="30"
+                      {...socialMediaIconProps}
+                    />
+                  </div>
+                </div>
+              </li>
+
+              <li className="mb-8 pb-3">
+                <div className="font-bold">Roseanne Morgan</div>
+                <div>Walkability Specialist</div>
+              </li>
+            </ul>
+          </div>
           <p className="mt-8">
             You can read about us{" "}
             <Link
