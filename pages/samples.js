@@ -248,7 +248,7 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-201-chartres-st.5.jpg"
+            imagePath="preview-201-chartres-st.6.jpg"
             address="201 Chartres St, New Orleans, LA 70130"
             serviceTypesNearby={35}
             serviceTypesFarther={16}
