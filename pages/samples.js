@@ -58,6 +58,16 @@ export default function Samples() {
           />
 
           <ProductSample
+            imagePath="preview-10-lorne-st.jpg"
+            address="10 Lorne Street, Te Aro, Wellington 6011, New Zealand"
+            serviceTypesNearby={49}
+            serviceTypesFarther={7}
+            serviceTypesDistant={18}
+            walkabilityScore={20}
+            pdfPath="doc-10-lorne-st.pdf"
+          />
+
+          <ProductSample
             imagePath="preview-10-rue-de-rivoli.0.7.jpg"
             address="10 Rue de Rivoli, 75004 Paris, France"
             serviceTypesNearby={48}
