@@ -248,6 +248,16 @@ export default function Samples() {
           />
 
           <ProductSample
+            imagePath="preview-6485-victoria-ave.8.jpg"
+            address="6485 Victoria Ave, Montreal, QC H3W, Canada"
+            serviceTypesNearby={36}
+            serviceTypesFarther={8}
+            serviceTypesDistant={30}
+            walkabilityScore={21}
+            pdfPath="doc-6485-victoria-ave.pdf"
+          />
+
+          <ProductSample
             imagePath="preview-107-high-st.p.4-new.jpg"
             address="107 High St, Charlestown, MA 02129"
             serviceTypesNearby={36}
@@ -265,16 +275,6 @@ export default function Samples() {
             serviceTypesDistant={23}
             walkabilityScore={21}
             pdfPath="doc-201-chartres-st.pdf"
-          />
-
-          <ProductSample
-            imagePath="preview-6485-victoria-ave.0.7.jpg"
-            address="6485 Victoria Ave, Montreal, QC H3W, Canada"
-            serviceTypesNearby={35}
-            serviceTypesFarther={8}
-            serviceTypesDistant={31}
-            walkabilityScore={21}
-            pdfPath="doc-6485-victoria-ave.pdf"
           />
 
           <ProductSample
