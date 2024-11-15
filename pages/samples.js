@@ -278,11 +278,11 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-1431-sw-park-ave.jpg"
+            imagePath="preview-1431-sw-park-ave.2.jpg"
             address="1431 SW Park Ave. Portland, OR 97201"
             serviceTypesNearby={33}
-            serviceTypesFarther={22}
-            serviceTypesDistant={19}
+            serviceTypesFarther={21}
+            serviceTypesDistant={20}
             walkabilityScore={21}
             pdfPath="doc-1431-sw-park-ave.pdf"
           />
