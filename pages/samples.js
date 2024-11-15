@@ -308,7 +308,7 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-2525-ocean-ave.jpg"
+            imagePath="preview-2525-ocean-ave.2.jpg"
             address="2525 Ocean Ave, San Francisco, CA 94132"
             serviceTypesNearby={27}
             serviceTypesFarther={15}
