@@ -318,7 +318,7 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-1015-elvira-ave.1.jpg"
+            imagePath="preview-1015-elvira-ave.2.jpg"
             address="1015 Elvira Ave. Nashville, TN 37216"
             serviceTypesNearby={12}
             serviceTypesFarther={13}
