@@ -218,6 +218,16 @@ export default function Samples() {
           />
 
           <ProductSample
+            imagePath="preview-4100-georgia-ave.6.jpg"
+            address="4100 Georgia Ave NW, Washington, DC 20011"
+            serviceTypesNearby={37}
+            serviceTypesFarther={10}
+            serviceTypesDistant={27}
+            walkabilityScore={22}
+            pdfPath="doc-4100-georgia-ave.pdf"
+          />
+
+          <ProductSample
             imagePath="preview-555-church-st.p.4-new.jpg"
             address="555 Church St. Nashville, TN 37203"
             serviceTypesNearby={37}
@@ -255,16 +265,6 @@ export default function Samples() {
             serviceTypesDistant={23}
             walkabilityScore={21}
             pdfPath="doc-201-chartres-st.pdf"
-          />
-
-          <ProductSample
-            imagePath="preview-4100-georgia-ave.5.jpg"
-            address="4100 Georgia Ave NW, Washington, DC 20011"
-            serviceTypesNearby={35}
-            serviceTypesFarther={11}
-            serviceTypesDistant={28}
-            walkabilityScore={22}
-            pdfPath="doc-4100-georgia-ave.pdf"
           />
 
           <ProductSample
