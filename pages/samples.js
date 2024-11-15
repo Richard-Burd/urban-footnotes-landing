@@ -138,7 +138,7 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-gabriel-max-straße-15.0.7.jpg"
+            imagePath="preview-gabriel-max-straße-15.2.jpg"
             address="Gabriel-Max-Straße 15, 10245 Berlin, Germany"
             serviceTypesNearby={42}
             serviceTypesFarther={14}
