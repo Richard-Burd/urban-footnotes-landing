@@ -298,6 +298,16 @@ export default function Samples() {
           />
 
           <ProductSample
+            imagePath="preview-2033-broadway.2.jpg"
+            address="2033 Broadway, Nashville, TN 37203"
+            serviceTypesNearby={27}
+            serviceTypesFarther={17}
+            serviceTypesDistant={30}
+            walkabilityScore={22}
+            pdfPath="doc-2033-broadway.pdf"
+          />
+
+          <ProductSample
             imagePath="preview-2525-ocean-ave.jpg"
             address="2525 Ocean Ave, San Francisco, CA 94132"
             serviceTypesNearby={27}
@@ -305,16 +315,6 @@ export default function Samples() {
             serviceTypesDistant={32}
             walkabilityScore={21}
             pdfPath="doc-2525-ocean-ave.pdf"
-          />
-
-          <ProductSample
-            imagePath="preview-2033-broadway.jpg"
-            address="2033 Broadway, Nashville, TN 37203"
-            serviceTypesNearby={26}
-            serviceTypesFarther={18}
-            serviceTypesDistant={30}
-            walkabilityScore={22}
-            pdfPath="doc-2033-broadway.pdf"
           />
 
           <ProductSample
