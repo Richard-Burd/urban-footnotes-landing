@@ -68,6 +68,16 @@ export default function Samples() {
           />
 
           <ProductSample
+            imagePath="preview-41-e-hastings-st.jpg"
+            address="41 E Hastings St, Vancouver, BC V6A 1M9, Canada"
+            serviceTypesNearby={48}
+            serviceTypesFarther={12}
+            serviceTypesDistant={14}
+            walkabilityScore={19}
+            pdfPath="doc-41-e-hastings-st.pdf"
+          />
+
+          <ProductSample
             imagePath="preview-10-rue-de-rivoli.0.7.jpg"
             address="10 Rue de Rivoli, 75004 Paris, France"
             serviceTypesNearby={48}
