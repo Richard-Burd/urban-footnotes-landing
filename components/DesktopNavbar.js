@@ -32,17 +32,19 @@ export default function DesktopNavbar() {
 
   return (
     <nav className="bg-neutral-950 px-2 text-white">
-      <div className="container flex justify-between">
-        <div className="flex flex-auto justify-evenly">
-          {navItems.map((item) => (
-            <Link href={item.path} key={item.title}>
-              <DesktopNavbarButton
-                title={item.title}
-                bgColor={item.bgColor}
-                isActive={currentPath === item.path}
-              />
-            </Link>
-          ))}
+      <div className="mx-auto flex max-w-screen-lg justify-between">
+        <div className="container flex justify-between">
+          <div className="flex flex-auto justify-evenly">
+            {navItems.map((item) => (
+              <Link href={item.path} key={item.title}>
+                <DesktopNavbarButton
+                  title={item.title}
+                  bgColor={item.bgColor}
+                  isActive={currentPath === item.path}
+                />
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </nav>

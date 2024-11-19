@@ -28,7 +28,7 @@ export default function Home() {
           <p>
             To reduce residents' use of cars, we comparatively assess how many
             commonly used services are within short walking distance of a given
-            address.
+            address.ssdf
           </p>
         </div>
       </div>

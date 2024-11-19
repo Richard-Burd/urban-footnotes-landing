@@ -4,12 +4,20 @@ import Footer from "./Footer";
 const Layout = ({ children }) => {
   return (
     <>
-      <div className="bg-neutral-900 bg-opacity-95">
-        <div className="sm:max-w-screen-lg lg:px-0 lg:max-w-screen-lg mx-auto relative">
+      <div className="min-h-screen bg-neutral-900 bg-opacity-95">
+        {/* Wider layout with centered content */}
+        <div className="relative mx-auto max-w-screen-2xl px-12 sm:px-6 lg:px-8">
           <div className="bg-neutral-900">
-            <Navbar />
-            <div>{children}</div>
-            <Footer />
+            {/* Centered Navbar */}
+            <div className="mx-auto max-w-screen-2xl">
+              <Navbar />
+            </div>
+            {/* Main content centered */}
+            <div className="mx-auto max-w-screen-2xl px-12">{children}</div>
+            {/* Centered Footer */}
+            <div className="mx-auto max-w-screen-lg">
+              <Footer />
+            </div>
           </div>
         </div>
       </div>

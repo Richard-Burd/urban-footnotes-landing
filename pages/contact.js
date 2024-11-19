@@ -8,7 +8,7 @@ export default function Contact() {
   return (
     <div>
       <PageHeaderLogo />
-      <div className="lg:m-20">
+      <div className="lg:m-0">
         <center>
           <PageTitle
             topTitle="Contact Us"
@@ -18,21 +18,17 @@ export default function Contact() {
         </center>
         <div className="roboto-font mx-4 text-xl text-stone-300 lg:mx-32">
           <p className="pb-4">
-            If you are interested in ordering our product as an early adopter,
-            please fill in the information below and we will get back to you
-            within a timely manner.
+            Thank you for taking an interest in Urban Foot Notes!
           </p>
           <p className="pb-4">
-            You can reach our to Richard directly at:{" "}
-            <Link href="mailto: richard@urbancruiseship.org">
-              richard@urbancruiseship.org
+            You can reach out to us directly at:{" "}
+            <Link href="mailto: contact@urbanfootnotes.org">
+              contact@urbancruiseship.org
             </Link>{" "}
-            to get more information on becoming an early adopter. Thank you for
-            taking an interest in Urban Foot Notes!
           </p>
         </div>
       </div>
-      <ContactUsForm />
+      {/* <ContactUsForm /> removed this because it doesn't function*/}
     </div>
   );
 }
