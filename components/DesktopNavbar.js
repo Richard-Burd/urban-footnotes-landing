@@ -22,7 +22,8 @@ export default function DesktopNavbar() {
       path: "/contact",
       bgColor: "bg-navbar-contact-us",
     },
-    { title: "Ads", path: "/ads", bgColor: "bg-navbar-ads" },
+    // removed ads for now
+    // { title: "Ads", path: "/ads", bgColor: "bg-navbar-ads" },
     {
       title: "References",
       path: "/references",

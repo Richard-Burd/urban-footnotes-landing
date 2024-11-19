@@ -22,7 +22,7 @@ export default function Team() {
             shadowColor={`title-shadow-team`}
           />
         </center>
-        <div className="roboto-font mx-4 text-stone-300 lg:mx-32 lg:text-2xl">
+        <div className="roboto-font mx-4 text-stone-300 lg:mx-36 lg:text-2xl">
           <p className="py-8">
             Currently our team consists of the following individuals:
           </p>

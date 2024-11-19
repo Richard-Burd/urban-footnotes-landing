@@ -5,7 +5,7 @@ export default function Associations() {
   return (
     <div>
       <PageHeaderLogo />
-      <div className="lg:m-20">
+      <div className="lg:m-0">
         <PageTitle
           topTitle="References"
           textColor="text-title-text-references"
@@ -15,71 +15,76 @@ export default function Associations() {
           {/* <section id="advisors" className="pb-20 sm:pb-8">
             <h3 className="text-2xl font-semibold text-stone-400">Advisors</h3> */}
           <div className="pl-2">
-            <div className="pb-4 sm:pb-0">
-              John Zupancic, Owner and Principal Broker,{" "}
-              <a
-                href="https://www.muttzrealty.com/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Muttz Realty, LLC,
-              </a>{" "}
-              Nashville, TN
+            {/* John Zupancic */}
+            <div className="pb-6">
+              <b>John Zupancic</b>{" "}
+              <i>
+                Owner and Principal Broker,{" "}
+                <a
+                  href="https://www.muttzrealty.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-blue-500 underline hover:text-blue-400"
+                >
+                  Muttz Realty, LLC
+                </a>
+                , Nashville, TN
+              </i>
             </div>
-            <div>
-              Nancy Collins, Attorney Real Estate Associate, Fayetteville, GA
-            </div>
-          </div>
-          {/* </section> */}
 
-          {/* <section id="allies" className="pb-20 sm:pb-8">
-            <h3 className="text-2xl font-semibold text-stone-400">Allies</h3> */}
-          <div className="pl-2">
-            <div className="pb-4 sm:pb-0">
+            {/* Nancy Collins */}
+            <div className="pb-6">
+              <b>Nancy Collins</b>{" "}
+              <i>Real Estate Associate, Fayetteville, GA</i>
+            </div>
+
+            {/* Urban Planet */}
+            <div className="pb-6">
               <a
                 href="https://urbanplanet.org/forums/forum/250-nashville/"
                 target="_blank"
                 rel="noreferrer"
+                className="text-blue-500 underline hover:text-blue-400"
               >
-                Urban Planet, Nashville, TN
+                Urban Planet
               </a>
+              &nbsp;
+              <em>
+                Nashville Urbanism Meet-Up, Urbanism Discussion Meet-up Group,
+                Nashville, TN
+              </em>
             </div>
 
-            <div>
-              Nashville Urbanism Meet-Up, Urbanism Discussion Meet-up Group
-            </div>
-          </div>
-          {/* </section> */}
-
-          {/* <section id="references" className="pb-20 sm:pb-8">
-            <h3 className="text-2xl font-semibold text-stone-400">
-              References
-            </h3> */}
-          <div className="pl-2">
-            <div className="pb-4 sm:pb-0">
+            {/* References Section */}
+            <div className="pb-6">
               <a
                 href="https://citynownext.com/"
                 target="_blank"
                 rel="noreferrer"
+                className="text-blue-500 underline hover:text-blue-400"
               >
-                City Now Next Real Estate Media, LLC,
+                City Now Next Real Estate Media, LLC
               </a>
-              &nbsp; designed by Robert Looper III
+              , designed by Robert Looper III
             </div>
-            <div>
+
+            <div className="pb-6">
               <a
                 href="https://eastnashvilleurbandesign.wordpress.com/"
                 target="_blank"
                 rel="noreferrer"
+                className="text-blue-500 underline hover:text-blue-400"
               >
                 East Nashville Urban Design
               </a>
             </div>
+
             <div>
               <a
                 href="https://www.google.com/maps/d/viewer?mid=1ELRoQQW5WC_YAmOyc-QfGVr-J50&ll=36.14502126951252%2C-86.76894667856646&z=14"
                 target="_blank"
                 rel="noreferrer"
+                className="text-blue-500 underline hover:text-blue-400"
               >
                 Nashville Projects & Development, interactive map
               </a>

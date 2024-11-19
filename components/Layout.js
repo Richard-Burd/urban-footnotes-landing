@@ -6,7 +6,7 @@ const Layout = ({ children }) => {
     <>
       <div className="min-h-screen bg-neutral-900 bg-opacity-95">
         {/* Wider layout with centered content */}
-        <div className="relative mx-auto max-w-screen-2xl px-12 sm:px-6 lg:px-8">
+        <div className="relative mx-auto max-w-screen-2xl sm:px-6 lg:px-20">
           <div className="bg-neutral-900">
             {/* Centered Navbar */}
             <div className="mx-auto max-w-screen-2xl">

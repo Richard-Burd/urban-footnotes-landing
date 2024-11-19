@@ -8,15 +8,16 @@ export default function Contact() {
   return (
     <div>
       <PageHeaderLogo />
-      <div className="lg:m-0">
+      <div className="lg:mx-0">
         <center>
           <PageTitle
+            className="text-center"
             topTitle="Contact Us"
             textColor="text-title-text-contact"
             shadowColor={`title-shadow-ordering-our-product`}
           />
         </center>
-        <div className="roboto-font mx-4 text-xl text-stone-300 lg:mx-32">
+        <div className="roboto-font mx-4 text-center text-xl text-stone-300 lg:mx-32">
           <p className="pb-4">
             Thank you for taking an interest in Urban Foot Notes!
           </p>

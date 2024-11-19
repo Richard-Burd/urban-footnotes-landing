@@ -8,7 +8,7 @@ export default function Product() {
     <div>
       <PageHeaderLogo />
       <div>
-        <div className="mt-10">
+        <div className="mx-20 mt-0">
           <PageTitle
             topTitle="Product Features"
             textColor="text-title-text-product"
@@ -16,6 +16,7 @@ export default function Product() {
           />
         </div>
         <Image
+          className="mx-4 mt-0"
           alt="First & Second pages of the product"
           src={`${baseUrl}/desktop-product-page-first-n-second-page.png`} // v.2.1
           // true width & true height controlled by parent grid
@@ -24,6 +25,7 @@ export default function Product() {
           height={1}
         />
         <Image
+          className="mx-4 mt-0"
           alt="Third page of the product"
           src={`${baseUrl}/desktop-product-page-third-page.2.png`}
           // true width & true height controlled by parent grid
@@ -32,6 +34,7 @@ export default function Product() {
           height={1}
         />
         <Image
+          className="mx-4 mt-0"
           alt="Fourth page of the product"
           src={`${baseUrl}/desktop-product-page-fourth-page.2.png`}
           // true width & true height controlled by parent grid

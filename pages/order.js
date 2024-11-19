@@ -16,19 +16,17 @@ export default function Order() {
 
   return (
     <div>
-      <div className="lg:m-20">
+      <div className="lg:m-8">
+        <PageHeaderLogo />
         <div>
           <stripe-pricing-table
             pricing-table-id="prctbl_1QMot4GN52GuXWVWoWc0oKj7"
             publishable-key="pk_live_51PWM5ZGN52GuXWVWNN9rPCsYn8nK2OK1xZl03U6AzK38Hh5I74b7o5GpPHMj9qyRrPgoVwLABMjC4ZgjrJqr8tXc004r8wQtLl"
           ></stripe-pricing-table>
         </div>
-        <PageHeaderLogo />
+        <p></p>
+
         <center></center>
-      </div>
-      <div className="roboto-font mx-4 mt-20 text-xl text-stone-300 lg:mx-32">
-        <p className="pb-4"></p>
-        <p className="pb-4"></p>
       </div>
     </div>
   );
