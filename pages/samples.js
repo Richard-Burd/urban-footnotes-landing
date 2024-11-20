@@ -44,6 +44,16 @@ export default function Samples() {
           />
 
           <ProductSample
+            imagePath="preview-1902-2nd-ave.jpg"
+            address="1902 2nd Ave, Seattle, WA 98101"
+            serviceTypesNearby={49}
+            serviceTypesFarther={13}
+            serviceTypesDistant={12}
+            walkabilityScore={20}
+            pdfPath="doc-1902-2nd-ave.pdf"
+          />
+
+          <ProductSample
             imagePath="preview-29-s-la-salle-st.p.4-ex.jpg"
             address="29 S La Salle St, Chicago, IL 60603"
             serviceTypesNearby={49}

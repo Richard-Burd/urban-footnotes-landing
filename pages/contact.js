@@ -18,13 +18,14 @@ export default function Contact() {
         </center>
         <div className="roboto-font mx-4 text-xl text-stone-300 lg:mx-32">
           <p className="pb-4">
-          You can reach out to us directly at:{" "}
-            <Link href="mailto: contact@urbanfootnotes.org">
-              contact@urbancruiseship.org
+            You can reach out to us directly at:{" "}
+            <Link href="mailto: contact@urbanfootnotes.com">
+              contact@urbanfootnotes.com
             </Link>{" "}
           </p>
           <p className="pb-4">
-            Or you can use our contact form, and one of our team members will get in touch with you.
+            Or you can use our contact form, and one of our team members will
+            get in touch with you.
           </p>
         </div>
       </div>
