@@ -14,7 +14,7 @@ export default function Team() {
   return (
     <div>
       <PageHeaderLogo />
-      <div className="lg:m-12">
+      <div className="">
         <center>
           <PageTitle
             topTitle="Our Team"
@@ -23,9 +23,10 @@ export default function Team() {
           />
         </center>
         <div className="roboto-font mx-4 text-stone-300 lg:mx-32 lg:text-2xl">
-          <p className="py-8">
+         {/* removed for redundancy
+           <p className="py-4">
             Currently our team consists of the following individuals:
-          </p>
+          </p> */}
 
           <div id="desktop-version" className="mb-14 hidden pl-5 lg:block">
             <div id="john-van-der-harst" className="pb-12">
@@ -112,10 +113,10 @@ export default function Team() {
             <div id="jye" className="pb-12">
               <div className="flex">
                 <span className="w-60 font-bold">Jye</span>
-                <span>- Graphic Designer, UX/UI</span>
+                <span>- Graphic Designer, Writer</span>
               </div>
               <div className="text-lg italic">
-                Graphic Designer, User Experience & Interface (UX/UI)
+                Graphic Designer, User Experience & Interface (UX/UI), Writer & Content Creator
               </div>
               <div className="social-media-icons ml-4 mt-2 flex flex-row">
                 <div className="mx-3">

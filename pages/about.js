@@ -5,7 +5,7 @@ export default function About() {
   return (
     <div>
       <PageHeaderLogo />
-      <div className="lg:m-20">
+      <div className="">
         <center>
           <PageTitle
             topTitle="About Us"

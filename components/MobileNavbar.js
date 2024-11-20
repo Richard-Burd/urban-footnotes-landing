@@ -82,14 +82,15 @@ export default function MobileNavBar() {
               Contact
             </div>
           </Link>
-          <Link href="/ads">
+          {/* removed ads until we have them to show
+           <Link href="/ads">
             <div
               className="block cursor-pointer border-b border-stone-600 px-4 py-2"
               onClick={toggleMenu}
             >
               Ads
             </div>
-          </Link>
+          </Link> */}
           <Link href="/references">
             <div
               className="block cursor-pointer px-4 py-2"
