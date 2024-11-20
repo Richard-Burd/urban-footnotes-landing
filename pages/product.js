@@ -8,7 +8,7 @@ export default function Product() {
     <div>
       <PageHeaderLogo />
       <div>
-        <div className="mt-10">
+        <div className="">
           <PageTitle
             topTitle="Product Features"
             textColor="text-title-text-product"

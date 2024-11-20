@@ -7,26 +7,22 @@ export default function Samples() {
   return (
     <div>
       <PageHeaderLogo />
-      <div className="mx-10 mt-10">
+      <div className="">
         <PageTitle
           topTitle="Samples (Product Examples)"
           textColor="text-title-text-samples"
           shadowColor="title-shadow-samples"
         />
-        <div className="roboto-font mb-32 text-2.5xl text-gray-200">
+        <div className="roboto-font mb-4 text-2.5xl text-gray-200">
           <p className="mb-10">
             Samples are presented ranked by the number of service types (out of
             74 total) within approximately 1/4 mile of the address shown (0.4
             kilometer in metric versions), then by those within 2/5 mile (0.8
             kilometer in metric versions), and finally by Walkability Score.
           </p>
-          <p>
-            The six top-scoring samples below feature an expanded page 4 with
-            additional explanations.
-          </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-5 xl:grid-cols-4">
           <ProductSample
             imagePath="preview-223-8th-ave.p.4-ex.jpg"
             address="223 8th Ave. New York, NY 10011"

@@ -22,7 +22,7 @@ export default function DesktopNavbar() {
       path: "/contact",
       bgColor: "bg-navbar-contact-us",
     },
-    { title: "Ads", path: "/ads", bgColor: "bg-navbar-ads" },
+    // removed until we have ads { title: "Ads", path: "/ads", bgColor: "bg-navbar-ads" },
     {
       title: "References",
       path: "/references",
@@ -32,8 +32,8 @@ export default function DesktopNavbar() {
 
   return (
     <nav className="bg-neutral-950 px-2 text-white">
-      <div className="container flex justify-between">
-        <div className="flex flex-auto justify-evenly">
+      <div className="flex justify-center">
+        <div className="flex flex-wrap justify-evenly max-w-screen-lg w-full">
           {navItems.map((item) => (
             <Link href={item.path} key={item.title}>
               <DesktopNavbarButton
