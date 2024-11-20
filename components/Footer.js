@@ -29,8 +29,8 @@ const Footer = () => {
         </div>
 
         <Link href="mailto:richard@urbancruiseship.org">
-          <div className="pt-20 roboto-font pb-40 tracking-wider text-1xl text-center text-stone-300">
-            contact: richard@urbancruiseship.org
+          <div className=" roboto-font pb-10 tracking-wider text-1xl text-center text-stone-300">
+            contact@urbancruiseship.org
           </div>
         </Link>
       </footer>
