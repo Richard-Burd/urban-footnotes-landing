@@ -14,7 +14,7 @@ export default function Team() {
   return (
     <div>
       <PageHeaderLogo />
-      <div className="lg:m-12">
+      <div className="">
         <center>
           <PageTitle
             topTitle="Our Team"

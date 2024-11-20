@@ -7,7 +7,7 @@ export default function Samples() {
   return (
     <div>
       <PageHeaderLogo />
-      <div className="mx-10 mt-10">
+      <div className="">
         <PageTitle
           topTitle="Samples (Product Examples)"
           textColor="text-title-text-samples"

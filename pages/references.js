@@ -5,7 +5,7 @@ export default function Associations() {
   return (
     <div>
       <PageHeaderLogo />
-      <div className="lg:m-20">
+      <div className="">
         <PageTitle
           topTitle="References"
           textColor="text-title-text-references"

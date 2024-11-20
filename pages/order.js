@@ -6,7 +6,7 @@ export default function Order() {
   return (
     <div>
       <PageHeaderLogo />
-      <div className="lg:m-20">
+      <div className="">
         <center>
           <PageTitle
             topTitle="Ordering Our Product"

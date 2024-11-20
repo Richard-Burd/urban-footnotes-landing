@@ -14,7 +14,7 @@ export default function Home() {
           style={{ minWidth: "100px", opacity: 0.7 }}
         />
       </div>
-      <div className="pt-2">
+      <div className="mt-2">
         <center>
           <div className="mt-10">
             <PageTitle
