@@ -4,7 +4,7 @@ import PageTitle from "@/components/PageTitle";
 export default function Home() {
   return (
     <div>
-      <div id="landing-page-logo" className="mx-4 mt-20 flex justify-center">
+      <div id="landing-page-logo" className="mx-4 mt-12 flex justify-center">
         <Image
           src="/images/ufn-logo-light.svg"
           alt="Urban Cruise Ship Logo"
@@ -14,7 +14,7 @@ export default function Home() {
           style={{ minWidth: "100px", opacity: 0.7 }}
         />
       </div>
-      <div className="pt-2 lg:m-20">
+      <div className="pt-2">
         <center>
           <div className="mt-10">
             <PageTitle

@@ -18,7 +18,7 @@ const Layout = ({ children }) => {
       </main>
 
       {/* Footer */}
-      <footer className="bg-neutral-900">
+      <footer className="bg-neutral-950">
         <Footer />
       </footer>
     </div>

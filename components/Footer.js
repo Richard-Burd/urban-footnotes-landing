@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <div id="ucs-footer-label">
       <Link href="https://urbancruiseship.org/">
-        <div className="lg:flex justify-center lg:m-20 mx-4 mt-24">
+        <div className="pt-1 m-3 lg:flex justify-center sm:pt-4 sm:m-8 xl:pt-8 xl:m-8">
           <div className="lg:flex">
             <p className="ucs-font tracking-wider text-2xl lg:text-right text-center text-stone-300 lg:pl-10 opacity-75 my-6">
               A project of Urban Cruise Ship
