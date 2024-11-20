@@ -13,7 +13,7 @@ export default function Samples() {
           textColor="text-title-text-samples"
           shadowColor="title-shadow-samples"
         />
-        <div className="roboto-font mb-32 text-2.5xl text-gray-200">
+        <div className="roboto-font mb-4 text-2.5xl text-gray-200">
           <p className="mb-10">
             Samples are presented ranked by the number of service types (out of
             74 total) within approximately 1/4 mile of the address shown (0.4
