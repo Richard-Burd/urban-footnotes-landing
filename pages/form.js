@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import * as filestack from "filestack-js";
 
 export default function SupplementaryForm() {
-  const filestackApiKey = process.env.NEXT_PUBLIC_FILESTACK_KEY; // Use environment variable
+  const filestackApiKey = "AhJtHA69ATCK7bfBTgnbzz"; // Use environment variable
   const client = filestack.init(filestackApiKey);
 
   const [address, setAddress] = useState("");

@@ -33,8 +33,8 @@ export default async function handler(req, res) {
       port: 465,
       secure: true,
       auth: {
-        user: process.env.EMAIL,
-        pass: process.env.PASSWORD,
+        user: "orders@urbanfootnotes.com",
+        pass: "kingRichard56",
       },
     });
 
