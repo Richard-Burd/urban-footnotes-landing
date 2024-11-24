@@ -37,7 +37,7 @@ export default async function handler(req, res) {
 
     const mailOptions = {
         from: process.env.EMAIL,
-        to: "jye@urbanfootnotes.com",
+        to: "contact@urbanfootnotes.com",
         subject: `New Form Submission for Order #${orderId}`,
         html: `
         <p><strong>Time submitted:</strong> ${timestamp}</p> <!-- Display timestamp -->
