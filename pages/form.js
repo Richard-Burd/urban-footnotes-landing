@@ -12,8 +12,8 @@ export default function SupplementaryForm() {
   const [uploadedFileType, setUploadedFileType] = useState("");
   const [comments, setComments] = useState(""); // State for comments
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const maxCommentLength = 2000; // Max length for comments
-
+  const [orderId, setOrderId] = useState(""); // Track Order ID after submission
+  const maxCommentLength = 2000;
   const discretionaryOptions = [
     "Car Wash",
     "Community Center",
@@ -67,7 +67,6 @@ export default function SupplementaryForm() {
 
     client.picker(options).open();
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!address || !email || !uploadedFileUrl) {
@@ -78,10 +77,9 @@ export default function SupplementaryForm() {
     const formData = {
       address,
       email,
-      orderId: "12345", // Example order ID
       discretionaryOptions: selectedOptions.length ? selectedOptions : "None selected",
       logoUrl: uploadedFileUrl,
-      additionalComments: comments || "None", // Include comments or default to "None"
+      additionalComments: comments || "None",
     };
 
     try {
@@ -94,8 +92,12 @@ export default function SupplementaryForm() {
         body: JSON.stringify(formData),
       });
 
+      const data = await response.json();
+
       if (response.ok) {
-        alert("Form submitted and email sent successfully!");
+        // Store Order ID and alert the user
+        setOrderId(data.orderId);
+        alert(`Form submitted successfully! Your Order ID is ${data.orderId}`);
       } else {
         alert("Failed to submit the form.");
       }
@@ -240,6 +242,15 @@ slots will get back filled with ones on our default list.
           {isSubmitting ? "Submitting..." : "Submit"}
         </button>
       </form>
+
+      {/* Display Order ID */}
+      {orderId && (
+        <div className="mt-6 text-center">
+          <h2 className="text-lg font-bold">Your Order ID:</h2>
+          <p className="text-green-600 text-lg">{orderId}</p>
+          <p className="text-gray-600 text-sm">Please save this ID for your records.</p>
+        </div>
+      )}
     </div>
   );
 }
