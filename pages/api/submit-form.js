@@ -5,11 +5,24 @@ export default async function handler(req, res) {
     return res.status(405).json({ message: "Method not allowed" });
   }
 
-  const { orderId, email, logoUrl, discretionaryOptions } = req.body;
+  const { orderId, email, address, logoUrl, discretionaryOptions, additionalComments } = req.body;
 
-  if (!orderId || !email || !logoUrl || discretionaryOptions.length === 0) {
-    return res.status(400).json({ message: "Missing form data" });
+  const maxCommentLength = 1000; // Enforce the max comment length
+
+  // Validate required fields
+  if (!orderId || !email || !address || !logoUrl || discretionaryOptions.length === 0) {
+    return res.status(400).json({ message: "Missing required form data" });
   }
+
+  if (additionalComments && additionalComments.length > maxCommentLength) {
+    return res.status(400).json({
+      message: `Comments must not exceed ${maxCommentLength} characters.`,
+    });
+  }
+
+    // Generate a timestamp
+    const timestamp = new Date().toISOString(); // ISO 8601 format: YYYY-MM-DDTHH:mm:ss.sssZ
+
 
   try {
     const transporter = nodemailer.createTransport({
@@ -23,15 +36,19 @@ export default async function handler(req, res) {
     });
 
     const mailOptions = {
-      from: process.env.EMAIL,
-      to: "jye@urbanfootnotes.com",
-      subject: `New Form Submission for Order #${orderId}`,
-      html: `
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Logo URL:</strong> <a href="${logoUrl}" target="_blank">${logoUrl}</a></p>
-        <p><strong>Discretionary Options:</strong> ${discretionaryOptions.join(", ")}</p>
-      `,
-    };
+        from: process.env.EMAIL,
+        to: "jye@urbanfootnotes.com",
+        subject: `New Form Submission for Order #${orderId}`,
+        html: `
+        <p><strong>Time submitted:</strong> ${timestamp}</p> <!-- Display timestamp -->
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Address:</strong> ${address}</p> <!-- Ensure address is included -->
+          <p><strong>Logo URL:</strong> <a href="${logoUrl}" target="_blank">${logoUrl}</a></p>
+          <p><strong>Discretionary Options:</strong> ${discretionaryOptions.join(", ")}</p>
+          <p><strong>Additional Comments:</strong></p>
+          <p>${additionalComments || "None"}</p>
+        `,
+      };
 
     await transporter.sendMail(mailOptions);
 

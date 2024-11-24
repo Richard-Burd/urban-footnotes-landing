@@ -10,7 +10,9 @@ export default function SupplementaryForm() {
   const [selectedOptions, setSelectedOptions] = useState([]);
   const [uploadedFileUrl, setUploadedFileUrl] = useState("");
   const [uploadedFileType, setUploadedFileType] = useState("");
+  const [comments, setComments] = useState(""); // State for comments
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const maxCommentLength = 1000; // Max length for comments
 
   const discretionaryOptions = [
     "Trash Pickup",
@@ -69,9 +71,10 @@ export default function SupplementaryForm() {
     const formData = {
       address,
       email,
-      orderId: "12345", // Generate dynamically or fetch from context/state
+      orderId: "12345", // Example order ID
       discretionaryOptions: selectedOptions.length ? selectedOptions : "None selected",
       logoUrl: uploadedFileUrl,
+      additionalComments: comments || "None", // Include comments or default to "None"
     };
 
     try {
@@ -99,7 +102,9 @@ export default function SupplementaryForm() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-stone-300 w-4/5 m-6 text-neutral-900">
-      <h1 className="text-2xl font-bold m-6 text-center w-4/5">Your order has been placed! Please fill out the supplemental information below to customize your order.</h1>
+      <h1 className="text-2xl font-bold m-6 text-center w-4/5">
+        Your order has been placed! Please fill out the supplemental information below to customize your order.
+      </h1>
 
       <form onSubmit={handleSubmit} className="m-6">
         <div className="mb-6">
@@ -135,12 +140,7 @@ export default function SupplementaryForm() {
         <div className="mb-6">
           <h2 className="text-lg font-semibold mb-2">Select Discretionary Options (Optional)</h2>
           <p className="text-sm text-gray-600 mb-4">
-          Please enter up to five DISCRETIONARY service types. These
-appear in the lower left-hand corner of page 1 and are any
-service types that you may think would be important to you or
-your residents. If you do not enter any here, we will choose 5
-from the list on page 4. If you choose less than 5, the remaining
-slots will get back filled with ones on our default list.
+            Please select up to five discretionary service types. If fewer than 5 are selected, the remaining slots will be filled with default options.
           </p>
           <div className="grid grid-cols-2 gap-2">
             {discretionaryOptions.map((option) => (
@@ -161,9 +161,7 @@ slots will get back filled with ones on our default list.
         <div className="mb-6">
           <h2 className="text-lg font-semibold mb-2">Upload Your Logo</h2>
           <p className="text-sm text-gray-600 mb-4">
-          This will be prominently displayed on
-pages 1 - 3 of the report. <br/><em>Acceptable file types include: JPG,
-PNG, PDF, & SVG.</em>
+            Upload your logo to appear on pages 1 - 3 of the report. Acceptable file types: JPG, PNG, PDF, SVG.
           </p>
           <button
             type="button"
@@ -200,6 +198,23 @@ PNG, PDF, & SVG.</em>
               )}
             </div>
           )}
+        </div>
+
+        <div className="mb-6">
+          <label htmlFor="comments" className="block text-lg font-semibold mb-2">
+            Additional Comments or Questions (Optional):
+          </label>
+          <textarea
+            id="comments"
+            value={comments}
+            onChange={(e) => setComments(e.target.value)}
+            maxLength={maxCommentLength} // Enforce character limit
+            placeholder="Enter any additional comments or questions here..."
+            className="w-full p-3 border border-gray-300 rounded-lg shadow-sm h-32 resize-none"
+          />
+          <p className="text-sm text-gray-600 mt-2">
+            {comments.length}/{maxCommentLength} characters used
+          </p>
         </div>
 
         <button
