@@ -5,7 +5,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ message: "Method not allowed" });
   }
 
-  const { email, address, logoUrl, discretionaryOptions, additionalComments } = req.body;
+  const { clientName, email, address, logoUrl, discretionaryOptions, additionalComments } = req.body;
 
   const maxCommentLength = 2000;
 
@@ -45,6 +45,7 @@ export default async function handler(req, res) {
       html: `
         <p><strong>Time submitted:</strong> ${timestamp}</p> <!-- Display timestamp -->
         <p><strong>Order ID:</strong> ${orderId}</p> <!-- Include Order ID -->
+        <p><strong>Client Name:</strong> ${clientName}</p> <!-- Include Order ID -->
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Address:</strong> ${address}</p>
         <p><strong>Logo URL:</strong> <a href="${logoUrl}" target="_blank">${logoUrl}</a></p>

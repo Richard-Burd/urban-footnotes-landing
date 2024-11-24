@@ -7,6 +7,7 @@ export default function SupplementaryForm() {
 
   const [address, setAddress] = useState("");
   const [email, setEmail] = useState("");
+  const [clientName, setClientName] = useState("");
   const [selectedOptions, setSelectedOptions] = useState([]);
   const [uploadedFileUrl, setUploadedFileUrl] = useState("");
   const [uploadedFileType, setUploadedFileType] = useState("");
@@ -76,6 +77,7 @@ export default function SupplementaryForm() {
 
     const formData = {
       address,
+      clientName,
       email,
       discretionaryOptions: selectedOptions.length ? selectedOptions : "None selected",
       logoUrl: uploadedFileUrl,
@@ -145,6 +147,21 @@ export default function SupplementaryForm() {
             required
           />
         </div>
+        <div className="mb-6">
+          <label htmlFor="clientName" className="block text-lg font-semibold mb-2">
+            Your Name:
+          </label>
+          <input
+            type="text"
+            id="clientName"
+            value={clientName}
+            onChange={(e) => setClientName(e.target.value)}
+            placeholder="What should we call you?"
+            className="w-full p-3 border border-gray-300 rounded-lg shadow-sm"
+            required
+          />
+        </div>
+        
 
         <div className="mb-6">
           <h2 className="text-lg font-semibold mb-2">Select Discretionary Options (Optional)</h2>
