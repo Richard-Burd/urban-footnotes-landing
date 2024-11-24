@@ -5,10 +5,12 @@ export default function SupplementaryForm() {
   const filestackApiKey = "AhJtHA69ATCK7bfBTgnbzz"; // Use environment variable
   const client = filestack.init(filestackApiKey);
 
+  // State for form inputs
   const [address, setAddress] = useState("");
   const [email, setEmail] = useState("");
   const [clientName, setClientName] = useState("");
-  const [selectedOptions, setSelectedOptions] = useState([]);
+  const [selectedOptions, setSelectedOptions] = useState([]); // For checkboxes
+  const [customOptions, setCustomOptions] = useState(["", "", "", "", ""]); // For text inputs
   const [uploadedFileUrl, setUploadedFileUrl] = useState("");
   const [uploadedFileType, setUploadedFileType] = useState("");
   const [comments, setComments] = useState(""); // State for comments
@@ -31,18 +33,26 @@ export default function SupplementaryForm() {
     "Sports Stadium",
     "Target",
     "Tobacco/Vape",
-    "Walmart"
+    "Walmart",
   ];
-  
+
+  // Track the total number of selected options
+  const totalSelections = customOptions.filter((opt) => opt.trim() !== "").length + selectedOptions.length;
+
+  const handleCustomOptionChange = (index, value) => {
+    if (totalSelections < 5 || customOptions[index].trim() !== "") {
+      const updatedCustomOptions = [...customOptions];
+      updatedCustomOptions[index] = value;
+      setCustomOptions(updatedCustomOptions);
+    }
+  };
 
   const handleCheckboxChange = (option) => {
-    setSelectedOptions((prev) =>
-      prev.includes(option)
-        ? prev.filter((item) => item !== option)
-        : prev.length < 5
-        ? [...prev, option]
-        : prev
-    );
+    if (selectedOptions.includes(option)) {
+      setSelectedOptions((prev) => prev.filter((item) => item !== option));
+    } else if (totalSelections < 5) {
+      setSelectedOptions((prev) => [...prev, option]);
+    }
   };
 
   const openPicker = () => {
@@ -68,6 +78,7 @@ export default function SupplementaryForm() {
 
     client.picker(options).open();
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!address || !email || !uploadedFileUrl) {
@@ -75,11 +86,17 @@ export default function SupplementaryForm() {
       return;
     }
 
+    // Combine custom fields and selected checkboxes
+    const combinedOptions = [
+      ...customOptions.filter((opt) => opt.trim() !== ""),
+      ...selectedOptions,
+    ];
+
     const formData = {
       address,
       clientName,
       email,
-      discretionaryOptions: selectedOptions.length ? selectedOptions : "None selected",
+      discretionaryOptions: combinedOptions.length ? combinedOptions : "None selected",
       logoUrl: uploadedFileUrl,
       additionalComments: comments || "None",
     };
@@ -112,12 +129,13 @@ export default function SupplementaryForm() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-stone-300 w-4/5 m-6 text-neutral-900 rounded-lg shadow-sm resize-none">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-stone-300 w-4/5 m-6 text-neutral-900 rounded-lg shadow-sm">
       <h1 className="text-2xl font-bold m-6 text-center w-4/5">
         Please fill out the supplemental information below to customize and complete your order:
       </h1>
 
       <form onSubmit={handleSubmit} className="m-6">
+        {/* Address Input */}
         <div className="mb-6">
           <label htmlFor="address" className="block text-lg font-semibold mb-2">
             Confirm Property Address for this Report:
@@ -133,6 +151,7 @@ export default function SupplementaryForm() {
           />
         </div>
 
+        {/* Email Input */}
         <div className="mb-6">
           <label htmlFor="email" className="block text-lg font-semibold mb-2">
             Email Address:
@@ -147,6 +166,7 @@ export default function SupplementaryForm() {
             required
           />
         </div>
+
         <div className="mb-6">
           <label htmlFor="clientName" className="block text-lg font-semibold mb-2">
             Your Name:
@@ -161,33 +181,66 @@ export default function SupplementaryForm() {
             required
           />
         </div>
-        
 
-        <div className="mb-6">
-          <h2 className="text-lg font-semibold mb-2">Select Discretionary Options (Optional)</h2>
-          <p className="text-sm text-gray-600 mb-4">
-          Please enter up to five(5) DISCRETIONARY service types. These
+{/* Discretionary Options (Custom + Predefined) */}
+<div className="mb-6">
+  <h2 className="text-lg font-semibold mb-2">Select or Enter Discretionary Options</h2>
+  <p className="text-sm text-gray-600 mb-4">
+  Please enter up to five(5) DISCRETIONARY service types. These
 appear in the lower left-hand corner of page 1 and are any
 service types that you may think would be important to you or
 your residents. If you do not enter any here, we will choose 5
 from the list on page 4. If you choose less than 5, the remaining
 slots will get back filled with ones on our default list.
-          </p>
-          <div className="grid grid-cols-2 gap-2">
-            {discretionaryOptions.map((option) => (
-              <label key={option} className="flex items-center space-x-2">
-                <input
-                  type="checkbox"
-                  value={option}
-                  checked={selectedOptions.includes(option)}
-                  onChange={() => handleCheckboxChange(option)}
-                  className="form-checkbox h-5 w-5 text-blue-500"
-                />
-                <span>{option}</span>
-              </label>
-            ))}
-          </div>
+  </p>
+  <div className="grid grid-cols-2 gap-4">
+    {/* Custom Fields as Text Inputs */}
+    {customOptions.map((customOption, index) => (
+      <div key={`custom-${index}`} className="flex items-center space-x-2">
+        <div className="relative group">
+          <input
+            type="checkbox"
+            checked={!!customOption.trim()} // Checkbox is checked if the input has a value
+            readOnly // Make the checkbox read-only for custom inputs
+            className="form-checkbox h-5 w-5 text-blue-500"
+          />
+          {/* Tooltip */}
+          {!customOption.trim() && (
+            <div className="absolute right-full ml-2 w-48 px-2 py-1 text-sm text-white bg-neutral-700 rounded shadow-lg opacity-0 group-hover:opacity-70">
+              Begin typing in the field to the right to select this checkbox
+            </div>
+          )}
         </div>
+        <input
+          type="text"
+          value={customOption}
+          onChange={(e) => handleCustomOptionChange(index, e.target.value)}
+          placeholder={`Custom Option ${index + 1}`}
+          className="w-full p-2 border border-gray-300 rounded-lg shadow-sm"
+          maxLength={50}
+        />
+      </div>
+    ))}
+
+    {/* Predefined Options as Checkboxes */}
+    {discretionaryOptions.map((option) => (
+      <div key={option} className="flex items-center space-x-2">
+        <input
+          type="checkbox"
+          value={option}
+          checked={selectedOptions.includes(option)}
+          onChange={() => handleCheckboxChange(option)}
+          className="form-checkbox h-5 w-5 text-blue-500"
+          disabled={!selectedOptions.includes(option) && totalSelections >= 5} // Only disable if the limit is reached
+        />
+        <label>{option}</label>
+      </div>
+    ))}
+  </div>
+</div>
+
+
+        
 
         <div className="mb-6">
           <h2 className="text-lg font-semibold mb-2">Upload Your Logo</h2>
