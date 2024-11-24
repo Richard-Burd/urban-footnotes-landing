@@ -98,13 +98,13 @@ export default function SupplementaryForm() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-      <h1 className="text-3xl font-bold mb-6">Supplementary Form</h1>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-stone-300 w-4/5 m-6 text-neutral-900">
+      <h1 className="text-2xl font-bold m-6 text-center w-4/5">Your order has been placed! Please fill out the supplemental information below to customize your order.</h1>
 
-      <form onSubmit={handleSubmit} className="w-full max-w-md">
+      <form onSubmit={handleSubmit} className="m-6">
         <div className="mb-6">
           <label htmlFor="address" className="block text-lg font-semibold mb-2">
-            Address
+            Confirm property address for the report:
           </label>
           <input
             type="text"
@@ -119,7 +119,7 @@ export default function SupplementaryForm() {
 
         <div className="mb-6">
           <label htmlFor="email" className="block text-lg font-semibold mb-2">
-            Email
+            Email address:
           </label>
           <input
             type="email"
@@ -135,7 +135,12 @@ export default function SupplementaryForm() {
         <div className="mb-6">
           <h2 className="text-lg font-semibold mb-2">Select Discretionary Options (Optional)</h2>
           <p className="text-sm text-gray-600 mb-4">
-            You may select up to 5 options, or leave this section blank.
+          Please enter up to five DISCRETIONARY service types. These
+appear in the lower left-hand corner of page 1 and are any
+service types that you may think would be important to you or
+your residents. If you do not enter any here, we will choose 5
+from the list on page 4. If you choose less than 5, the remaining
+slots will get back filled with ones on our default list.
           </p>
           <div className="grid grid-cols-2 gap-2">
             {discretionaryOptions.map((option) => (
@@ -156,7 +161,9 @@ export default function SupplementaryForm() {
         <div className="mb-6">
           <h2 className="text-lg font-semibold mb-2">Upload Your Logo</h2>
           <p className="text-sm text-gray-600 mb-4">
-            Acceptable file types: JPG, PNG, PDF, SVG. Max size: 5MB.
+          This will be prominently displayed on
+pages 1 - 3 of the report. <br/><em>Acceptable file types include: JPG,
+PNG, PDF, & SVG.</em>
           </p>
           <button
             type="button"
