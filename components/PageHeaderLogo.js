@@ -6,7 +6,7 @@ export default function PageHeaderLogo() {
       <Image
         src="/images/ufn-logo-light.svg"
         alt="Urban Cruise Ship Logo"
-        width={600}
+        width={500}
         height={0}
         unoptimized={true}
         style={{ minWidth: "100px" }}
