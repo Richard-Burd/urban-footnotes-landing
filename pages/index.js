@@ -8,10 +8,10 @@ export default function Home() {
         <Image
           src="/images/ufn-logo-light.svg"
           alt="Urban Cruise Ship Logo"
-          width={800}
-          height={263.44}
+          width={850}
+          height={0}
           unoptimized={true}
-          style={{ minWidth: "100px", opacity: 0.7 }}
+          style={{ minWidth: "100px" }}
         />
       </div>
       <div className="mt-2">
