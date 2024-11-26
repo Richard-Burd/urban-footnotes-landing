@@ -19,10 +19,16 @@ export default function Order() {
     <div>
       <PageHeaderLogo />
       <PageTitle
-        topTitle="Order"
+        topTitle="Ordering Your Report"
         textColor="text-title-text-order"
         shadowColor="title-shadow-order"
       />
+      <div className="roboto-font mb-4 text-xl text-gray-200 md:text-2.5xl">
+        <p className="mb-10">
+          The graphic below is an approximate breakdown of our expenses to date,
+          as applied to a typical address.
+        </p>
+      </div>
       <div id="pie-charts">
         <div className="hidden justify-center lg:flex">
           <Image
@@ -48,6 +54,24 @@ export default function Order() {
             height={1}
           />
         </div>
+      </div>
+      <div className="roboto-font mb-4 text-xl text-gray-200 md:text-2.5xl">
+        <p className="my-10">
+          Our accessibility reports are designed to provide insights based on
+          available data for the selected property and its surrounding area.
+          Please note that coverage may be limited in regions outside of major
+          metropolitan areas and suburbs. Additionally, while we strive to
+          utilize the most current and reliable data sources, some information
+          may reflect conditions that have changed over time, as the imagery and
+          other datasets we use may not always be up-to-date. As a result, our
+          assessments are based on the most accurate information available at
+          the time of review, but may not capture recent developments or
+          changes.
+        </p>
+        <p className="my-10">
+          Please select one of the three options below to purchase a report for
+          your address:
+        </p>
       </div>
 
       <div className="mt-8">
