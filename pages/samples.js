@@ -294,6 +294,16 @@ export default function Samples() {
           />
 
           <ProductSample
+            imagePath="preview-2-junction-rd.jpg"
+            address="2 Junction Road, Archway, London N19 5FF"
+            serviceTypesNearby={34}
+            serviceTypesFarther={9}
+            serviceTypesDistant={31}
+            walkabilityScore={26}
+            pdfPath="doc-2-junction-rd.pdf"
+          />
+
+          <ProductSample
             imagePath="preview-1431-sw-park-ave.2.jpg"
             address="1431 SW Park Ave. Portland, OR 97201"
             serviceTypesNearby={33}
