@@ -25,7 +25,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files // we will send these for the time being so it goes to the repo
-# .env*.local
+.env*.local
 
 # vercel
 .vercel
