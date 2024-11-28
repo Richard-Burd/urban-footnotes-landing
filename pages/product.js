@@ -6,13 +6,14 @@ export default function Product() {
   const baseUrl = process.env.NEXT_PUBLIC_S3_BASE_URL;
   return (
     <div>
-      <PageHeaderLogo />
+      
       <div>
         <div className="">
           <PageTitle
             topTitle="Product Features"
             textColor="text-title-text-product"
             shadowColor={`title-shadow-product`}
+            showLogo={true} // Integrates the logo
           />
         </div>
         <Image

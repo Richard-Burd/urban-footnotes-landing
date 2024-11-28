@@ -123,16 +123,17 @@ const TeamMemberCard = ({ member }) => (
 
 export default function Team() {
   return (
-    <div className="min-h-screen text-stone-300">
+    <div className= "text-stone-300">
       {/* Header */}
-      <PageHeaderLogo />
-      <div className="container mx-auto p-4 md:px-8">
+      
+      <div className="container mx-auto md:px-8">
         {/* Title */}
         <center>
           <PageTitle
             topTitle="Our Team"
             textColor="text-title-text-team"
             shadowColor="title-shadow-team"
+            showLogo={true} // Integrates the logo
           />
         </center>
 
