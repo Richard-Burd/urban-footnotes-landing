@@ -7,22 +7,27 @@ export default function PageTitle({
   showLogo = false,
 }) {
   return (
-    <div
-      className={` m-4 flex flex-col items-center lg:mx-32 lg:mb-8 lg:mt-6 lg:flex-row lg:items-end lg:justify-center`}
-    >
-      {/* Logo */}
-      {showLogo && (
-        <div className="flex-shrink-0">
-          <PageHeaderLogo />
-        </div>
-      )}
+    <div className="m-4 mb-8 flex justify-center lg:mx-32">
+      {/* Wrapper for logo and text */}
+      <div className="relative flex w-full max-w-[1200px] items-end">
+        {/* Logo */}
+        {showLogo && (
+          <div className="flex w-1/2 flex-shrink-0 justify-end pr-4">
+            <PageHeaderLogo />
+          </div>
+        )}
 
-      {/* Title aligned to the baseline */}
-      <div
-        className={`${shadowColor} page-title-shadow roboto-font lg:text-5xl text-center text-3xl tracking-wide lg:ml-4 lg:text-left ${textColor}`}
-        style={{ lineHeight: "1.2em", display: "flex", alignItems: "flex-end" }} // Ensures baseline alignment
-      >
-        {topTitle}
+        {/* Title */}
+        <div
+          className={`w-1/2 pl-4 text-left ${textColor} ${shadowColor} page-title-shadow roboto-font text-4xl tracking-wide lg:text-5xl`}
+          style={{
+            lineHeight: "1",
+            display: "flex",
+            alignItems: "flex-end",
+          }}
+        >
+          {topTitle}
+        </div>
       </div>
     </div>
   );
