@@ -4,12 +4,12 @@ import PageTitle from "@/components/PageTitle";
 export default function Associations() {
   return (
     <div>
-      <PageHeaderLogo />
       <div className="">
-      <PageTitle
+        <PageTitle
           topTitle="References"
           textColor="text-title-text-references"
           shadowColor={`title-shadow-references`}
+          showLogo={true} // Integrates the logo
         />
         <div className="roboto-font text-1xl mx-4 text-stone-300 lg:mx-32">
           {/* <section id="advisors" className="pb-20 sm:pb-8">
@@ -76,7 +76,8 @@ export default function Associations() {
                 className="text-blue-500 underline hover:text-blue-400"
               >
                 East Nashville Urban Design
-              </a>&nbsp;<i>Nashville, TN</i>
+              </a>
+              &nbsp;<i>Nashville, TN</i>
             </div>
 
             <div>
@@ -87,7 +88,8 @@ export default function Associations() {
                 className="text-blue-500 underline hover:text-blue-400"
               >
                 Nashville Projects & Development, interactive map
-              </a>&nbsp;<i>Nashville, TN</i>
+              </a>
+              &nbsp;<i>Nashville, TN</i>
             </div>
           </div>
           {/* </section> */}

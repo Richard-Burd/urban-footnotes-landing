@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function PageHeaderLogo() {
   return (
-    <div className="mx-4 mt-6 flex justify-center">
+    <div className="flex justify-center">
       <Image
         src="/images/ufn-logo-light.svg"
         alt="Urban Cruise Ship Logo"

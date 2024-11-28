@@ -4,13 +4,13 @@ import PageTitle from "@/components/PageTitle";
 export default function Ads() {
   return (
     <div>
-      <PageHeaderLogo />
       <div className="">
         <center>
           <PageTitle
             topTitle="Advertisements"
             textColor="text-title-text-ads"
             shadowColor={`title-shadow-ads`}
+            showLogo={true} // Integrates the logo
           />
         </center>
         <center>

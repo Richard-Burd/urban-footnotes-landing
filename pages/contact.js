@@ -7,13 +7,13 @@ import Link from "next/link";
 export default function Contact() {
   return (
     <div>
-      <PageHeaderLogo />
       <div className="">
         <center>
           <PageTitle
             topTitle="Contact Us"
             textColor="text-title-text-contact"
             shadowColor={`title-shadow-ordering-our-product`}
+            showLogo={true} // Integrates the logo
           />
         </center>
         <div className="roboto-font mx-4 text-xl text-stone-300 lg:mx-32">
