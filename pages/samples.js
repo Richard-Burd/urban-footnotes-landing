@@ -6,10 +6,13 @@ import ProductSample from "@/components/ProductSample";
 export default function Samples() {
   return (
     <div>
-      
       <div className="">
         <PageTitle
-          topTitle="Samples (Product Examples)"
+          topTitle={
+            <>
+              Samples <br /> (Product Examples)
+            </>
+          }
           textColor="text-title-text-samples"
           shadowColor="title-shadow-samples"
           showLogo={true} // Integrates the logo

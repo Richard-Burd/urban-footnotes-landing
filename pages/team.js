@@ -123,11 +123,8 @@ const TeamMemberCard = ({ member }) => (
 
 export default function Team() {
   return (
-    <div className= "text-stone-300">
-      {/* Header */}
-      
-      <div className="container mx-auto md:px-8">
-        {/* Title */}
+    <div>
+      <div className="">
         <center>
           <PageTitle
             topTitle="Our Team"
@@ -136,27 +133,28 @@ export default function Team() {
             showLogo={true} // Integrates the logo
           />
         </center>
+        <div className="roboto-font mx-4 text-xl text-stone-300 md:text-2xl lg:mx-32">
+          {/* Team Section */}
+          <section className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
+            {teamMembers.map((member) => (
+              <TeamMemberCard key={member.id} member={member} />
+            ))}
+          </section>
 
-        {/* Team Section */}
-        <section className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
-          {teamMembers.map((member) => (
-            <TeamMemberCard key={member.id} member={member} />
-          ))}
-        </section>
-
-        {/* Additional Info */}
-        <p className="mt-8 text-center">
-          You can read about us{" "}
-          <Link
-            href="https://www.urbancruiseship.org/crew"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-500 underline hover:text-blue-300"
-          >
-            here
-          </Link>{" "}
-          on the Urban Cruise Ship website.
-        </p>
+          {/* Additional Info */}
+          <p className="mt-8 text-center">
+            You can read about us{" "}
+            <Link
+              href="https://www.urbancruiseship.org/crew"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-500 underline hover:text-blue-300"
+            >
+              here
+            </Link>{" "}
+            on the Urban Cruise Ship website.
+          </p>
+        </div>
       </div>
     </div>
   );
