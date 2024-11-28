@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import * as filestack from "filestack-js";
 
 export default function SupplementaryForm() {
-  const filestackApiKey = process.env.NEXT_PUBLIC_FILESTACK_KEY; // Use environment variable
-  if (!process.env.NEXT_PUBLIC_FILESTACK_KEY) {
+  const filestackApiKey = process.env.NEXT_PUBLIC_FILESTACK; // Use environment variable
+  if (!process.env.NEXT_PUBLIC_FILESTACK) {
     throw new Error("filestack api key is not defined!");
   }
   const client = filestack.init(filestackApiKey);
