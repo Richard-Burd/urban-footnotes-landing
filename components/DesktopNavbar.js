@@ -33,7 +33,7 @@ export default function DesktopNavbar() {
   return (
     <nav className="bg-neutral-950 px-2 text-white">
       <div className="flex justify-center">
-        <div className="flex flex-wrap justify-evenly max-w-screen-lg w-full">
+        <div className="flex w-full max-w-screen-lg flex-wrap justify-evenly">
           {navItems.map((item) => (
             <Link href={item.path} key={item.title}>
               <DesktopNavbarButton
