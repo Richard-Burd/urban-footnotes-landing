@@ -5,13 +5,13 @@ const Footer = () => {
   return (
     <div id="ucs-footer-label">
       <Link href="https://urbancruiseship.org/">
-        <div className="pt-1 m-3 lg:flex justify-center sm:pt-4 sm:m-8 xl:pt-8 xl:m-8">
+        <div className="m-3 justify-center pt-1 sm:m-8 sm:pt-4 lg:flex xl:m-8 xl:pt-8">
           <div className="lg:flex">
-            <p className="ucs-font tracking-wider text-2xl lg:text-right text-center text-stone-300 lg:pl-10 opacity-75 my-6">
+            <p className="ucs-font my-6 text-center text-2xl tracking-wider text-stone-300 opacity-75 lg:pl-10 lg:text-right">
               A project of Urban Cruise Ship
             </p>
           </div>
-          <div className="flex lg:pl-8 items-center justify-center">
+          <div className="flex items-center justify-center lg:pl-8">
             <Image
               src="/images/ucs-logo-light.svg"
               alt="Urban Cruise Ship Logo"
@@ -24,12 +24,12 @@ const Footer = () => {
         </div>
       </Link>
       <footer>
-        <div className="ucs-font md:text-xl lg:text-2xl pb-12 pt-3 text-stone-500 text-center tracking-widest">
+        <div className="ucs-font pb-12 pt-3 text-center tracking-widest text-stone-500 md:text-xl lg:text-2xl">
           Copyright © Urban Cruise Ship {new Date().getFullYear()}
         </div>
 
-        <Link href="mailto:richard@urbancruiseship.org">
-          <div className=" roboto-font pb-10 tracking-wider text-1xl text-center text-stone-300">
+        <Link href="mailto:contact@urbancruiseship.org">
+          <div className="roboto-font text-1xl pb-10 text-center tracking-wider text-stone-300">
             contact@urbancruiseship.org
           </div>
         </Link>
