@@ -1,5 +1,5 @@
 import Image from "next/image";
-import PageTitle from "@/components/PageTitle";
+import HomePageTitle from "@/components/HomePageTitle";
 
 export default function Home() {
   return (
@@ -17,7 +17,7 @@ export default function Home() {
       <div className="mt-2">
         <center>
           <div className="mt-10">
-            <PageTitle
+            <HomePageTitle
               topTitle="Mission Statement"
               textColor="text-title-text-home"
               shadowColor={`title-shadow-home`}

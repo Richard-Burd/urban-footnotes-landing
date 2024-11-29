@@ -17,11 +17,11 @@ export default function Order() {
 
   return (
     <div>
-      <PageHeaderLogo />
       <PageTitle
         topTitle="Ordering Your Report"
         textColor="text-title-text-order"
         shadowColor="title-shadow-order"
+        showLogo={true} // Integrates the logo
       />
 
       <div id="explanations-n-stripe-link">
