@@ -5,11 +5,11 @@ export default function PageHeaderLogo() {
     <div className="mx-4 mt-6 flex justify-center">
       <Image
         src="/images/ufn-logo-light.svg"
-        alt="Urban Cruise Ship Logo"
-        width={350}
+        alt="Urban Foot Notes Logo"
+        width={400}
         height={0}
         unoptimized={true}
-        style={{ minWidth: "100px", opacity: 0.7 }}
+        style={{ minWidth: "100px" }}
       />
     </div>
   );
