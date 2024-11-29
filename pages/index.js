@@ -1,5 +1,6 @@
 import Image from "next/image";
 import PageTitle from "@/components/PageTitle";
+import HomePageTitle from "@/components/HomePageTitle";
 
 export default function Home() {
   return (
@@ -7,24 +8,23 @@ export default function Home() {
       <div id="landing-page-logo" className="mx-4 mt-12 flex justify-center">
         <Image
           src="/images/ufn-logo-light.svg"
-          alt="Urban Cruise Ship Logo"
+          alt="Urban Foot Notes Logo"
           width={800}
           height={263.44}
-          unoptimized={true}
-          style={{ minWidth: "100px", opacity: 0.7 }}
+          className="min-w-[100px] opacity-70"
         />
       </div>
-      <div className="mt-2">
+      <div className="pt-2 lg:m-20">
         <center>
-          <div className="mt-10">
-            <PageTitle
+          <div className="m-6">
+            <HomePageTitle
               topTitle="Mission Statement"
               textColor="text-title-text-home"
-              shadowColor={`title-shadow-home`}
+              shadowColor="title-shadow-home"
             />
           </div>
         </center>
-        <div className="roboto-font rext-xl mx-4 italic text-stone-300 md:text-2xl lg:mx-32">
+        <div className="roboto-font mx-4 text-xl italic text-stone-300 md:text-2xl lg:mx-32">
           <p>
             To reduce residents' use of cars, we comparatively assess how many
             commonly used services are within short walking distance of a given
