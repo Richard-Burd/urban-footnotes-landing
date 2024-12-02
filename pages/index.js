@@ -26,9 +26,9 @@ export default function Home() {
         </center>
         <div className="roboto-font rext-xl mx-4 mb-8 italic text-stone-300 md:text-2xl lg:mx-32">
           <p>
-            To reduce residents' use of cars, we comparatively assess how many
-            commonly used services are within short walking distance of a given
-            address.
+            Our mission is to advance sustainable urban growth by spotlighting
+            addresses that prioritize walkability, reducing car dependency and
+            fostering environmentally friendly, vibrant neighborhoods.
           </p>
         </div>
       </div>
