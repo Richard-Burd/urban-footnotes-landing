@@ -13,35 +13,41 @@ export default function About() {
             showLogo={true} // Integrates the logo
           />
         </center>
-        <div className="roboto-font mx-4 text-xl text-stone-300 md:text-2xl">
+        <div className="roboto-font mx-4 text-xl text-stone-300 md:text-2xl pb-8">
           <p className="pb-4">
-            Our product offers a comprehensive assessment for properties and
-            provides a detailed report based on walkable proximity to essential
-            services as well as public transportation availability. Our primary
-            customers are real estate developers, city planners, and other
-            stakeholders in the housing sector. Our secondary customers are
-            people looking for a place to live who also want to reduce their use
-            of (and dependence on) cars and other transportation means.
+            Our standard-format reports rate properties on walkable access to 74
+            commonly-used services, plus 5 client-or-staff-chosen ones. Reports
+            for different addresses can be compared by real estate agents, home
+            buyers, and renters, favoring those requiring less car usage. City
+            planners and developers can use these reports to incentivize more
+            pedestrian-favoring development and reduce traffic.
           </p>
 
           <p className="pb-4">
-            Our objective is to slow the rate of urban sprawl through
-            highlighting the benefits of living in more concentrated locations.
-            We seek to encourage the better use of those locations through
-            encouraging development of mixed use properties which would reduce
-            the need for personal car ownership.
+            Our objective is to reduce urban sprawl by incentivizing denser
+            mixed-use development that serves residents' needs more completely.
+            Having all needed services within a short walking distance can
+            eliminate the need for cars. That can free up funds for other uses,
+            like higher-quality housing. Urban Foot Notes emerged from Urban
+            Cruise Ship's research on cities and interviews with real estate
+            industry professionals and potential users.
           </p>
 
           <p>
-            <i>Urban Foot Notes</i> was created by researchers at{" "}
-            <i>Urban Cruise Ship</i> in response to their research on{" "}
+            <i>Urban Foot Notes</i> was created by the researchers at <a
+              href="https://www.urbancruiseship.org"
+              target="_blank"
+              rel="noreferrer"
+            >{" "}
+            <i>Urban Cruise Ship</i></a> in response to their research on{" "}
             <a
               href="https://www.urbancruiseship.org/cities"
               target="_blank"
               rel="noreferrer"
             >
-              <b>cities</b>
-            </a>
+              <b>cities</b> 
+            </a> and interviews with real estate industry
+              professionals and potential users.
           </p>
         </div>
       </div>
