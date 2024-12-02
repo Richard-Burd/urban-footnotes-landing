@@ -17,13 +17,14 @@ export default function Order() {
 
   return (
     <div>
-      <PageTitle
+      <div className="lg:mx-32">
+        <PageTitle
         topTitle="Ordering Your Report"
         textColor="text-title-text-order"
         shadowColor="title-shadow-order"
         showLogo={true} // Integrates the logo
       />
-
+      </div>
       <div id="explanations-n-stripe-link">
         <div className="mt-0">
           <stripe-pricing-table

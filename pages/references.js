@@ -3,15 +3,15 @@ import PageTitle from "@/components/PageTitle";
 
 export default function Associations() {
   return (
-    <div>
-      <div>
+    <div className="w-full max-w-screen-xl">
+      <div className="lg:mx-32">
         <PageTitle
           topTitle="References"
           textColor="text-title-text-references"
           shadowColor="title-shadow-references"
           showLogo={true} // Integrates the logo
         />
-        <div className="roboto-font mx-4 text-stone-300 lg:mx-32">
+        <div className="roboto-font mx-4 text-stone-300">
           <div className="flex flex-col space-y-6">
             {/* John Zupancic */}
             <div className="rounded-lg bg-stone-800 bg-opacity-70 p-4 shadow-md hover:shadow-lg">
