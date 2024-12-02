@@ -28,9 +28,7 @@ export default function About() {
             mixed-use development that serves residents' needs more completely.
             Having all needed services within a short walking distance can
             eliminate the need for cars. That can free up funds for other uses,
-            like higher-quality housing. Urban Foot Notes emerged from Urban
-            Cruise Ship's research on cities and interviews with real estate
-            industry professionals and potential users.
+            like higher-quality housing.
           </p>
 
           <p>
