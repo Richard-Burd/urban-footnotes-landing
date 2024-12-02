@@ -24,7 +24,7 @@ export default function Home() {
             />
           </div>
         </center>
-        <div className="roboto-font rext-xl mx-4 italic text-stone-300 md:text-2xl lg:mx-32">
+        <div className="roboto-font rext-xl mx-4 mb-8 italic text-stone-300 md:text-2xl lg:mx-32">
           <p>
             To reduce residents' use of cars, we comparatively assess how many
             commonly used services are within short walking distance of a given
