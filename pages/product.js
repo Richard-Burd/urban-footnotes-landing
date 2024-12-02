@@ -5,9 +5,9 @@ import PageHeaderLogo from "@/components/PageHeaderLogo";
 export default function Product() {
   const baseUrl = process.env.NEXT_PUBLIC_S3_BASE_URL;
   return (
-    <div>
+    <div className="lg:mx-32">
       <div>
-        <div className="">
+        <div>
           <PageTitle
             topTitle="Product Features"
             textColor="text-title-text-product"
@@ -40,7 +40,7 @@ export default function Product() {
           height={1}
         />
         {/* nbsp; are there as quickfix for layout issues changing size in flexbox */}
-        <div> 
+        <div>
           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;

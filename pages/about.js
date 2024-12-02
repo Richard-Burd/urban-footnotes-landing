@@ -4,7 +4,7 @@ import PageTitle from "@/components/PageTitle";
 export default function About() {
   return (
     <div>
-      <div className="">
+      <div className="lg:mx-32">
         <center>
           <PageTitle
             topTitle="About Us"
@@ -13,7 +13,7 @@ export default function About() {
             showLogo={true} // Integrates the logo
           />
         </center>
-        <div className="roboto-font mx-4 text-xl text-stone-300 md:text-2xl lg:mx-32">
+        <div className="roboto-font mx-4 text-xl text-stone-300 md:text-2xl">
           <p className="pb-4">
             Our product offers a comprehensive assessment for properties and
             provides a detailed report based on walkable proximity to essential
