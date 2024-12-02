@@ -9,7 +9,7 @@ export default function PageHeaderLogo() {
         width={300}
         height={0}
         unoptimized={true}
-        style={{ minWidth: "100px", opacity: "0.7" }}
+        style={{ minWidth: "100px", opacity: "1" }}
       />
     </div>
   );
