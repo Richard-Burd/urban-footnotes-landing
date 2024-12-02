@@ -6,7 +6,7 @@ export default function PageHeaderLogo() {
       <Image
         src="/images/ufn-logo-light.svg"
         alt="Urban Foot Notes Logo"
-        width={400}
+        width={300}
         height={0}
         unoptimized={true}
         style={{ minWidth: "100px", opacity: "0.7" }}

@@ -17,7 +17,7 @@ const teamMembers = [
     name: "John van der Harst",
     role: "Chief Strategist",
     description:
-      "Concept, branding, product and website design, staffing, outreach",
+      "Concept, development, branding, product and website design, staffing, outreach",
     socialLinks: [
       {
         icon: "doc",
