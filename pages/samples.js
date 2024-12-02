@@ -6,12 +6,16 @@ import ProductSample from "@/components/ProductSample";
 export default function Samples() {
   return (
     <div>
-      <PageHeaderLogo />
       <div className="">
         <PageTitle
-          topTitle="Samples (Product Examples)"
+          topTitle={
+            <>
+              Samples <br /> (Product Examples)
+            </>
+          }
           textColor="text-title-text-samples"
           shadowColor="title-shadow-samples"
+          showLogo={true} // Integrates the logo
         />
         <div className="roboto-font mb-4 text-2.5xl text-gray-200">
           <p className="mb-10">
