@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Contact() {
   return (
     <div>
-      <div className="lg:mx-32">
+      <div className="w-full max-w-screen-lg">
         <center>
           <PageTitle
             topTitle="Contact Us"
@@ -21,7 +21,6 @@ export default function Contact() {
               contact@urbanfootnotes.com
             </Link>{" "}
             <br></br>
-            
           </p>
         </div>
       </div>

@@ -4,7 +4,7 @@ import PageTitle from "@/components/PageTitle";
 export default function About() {
   return (
     <div>
-      <div className="lg:mx-32">
+      <div className="w-full max-w-screen-lg">
         <center>
           <PageTitle
             topTitle="About Us"
@@ -13,7 +13,7 @@ export default function About() {
             showLogo={true} // Integrates the logo
           />
         </center>
-        <div className="roboto-font mx-4 text-xl text-stone-300 md:text-2xl pb-8">
+        <div className="roboto-font mx-4 pb-8 text-xl text-stone-300 md:text-2xl">
           <p className="pb-4">
             Our standard-format reports rate properties on walkable access to 74
             commonly-used services, plus 5 client-or-staff-chosen ones. Reports
@@ -32,20 +32,25 @@ export default function About() {
           </p>
 
           <p>
-            <i>Urban Foot Notes</i> was created by the researchers at <a
+            <i>Urban Foot Notes</i> was created by the researchers at{" "}
+            <a
               href="https://www.urbancruiseship.org"
               target="_blank"
               rel="noreferrer"
-            >{" "}
-            <i>Urban Cruise Ship</i></a> in response to their research on{" "}
+            >
+              {" "}
+              <i>Urban Cruise Ship</i>
+            </a>{" "}
+            in response to their research on{" "}
             <a
               href="https://www.urbancruiseship.org/cities"
               target="_blank"
               rel="noreferrer"
             >
-              <b>cities</b> 
-            </a> and interviews with real estate industry
-              professionals and potential users.
+              <b>cities</b>
+            </a>{" "}
+            and interviews with real estate industry professionals and potential
+            users.
           </p>
         </div>
       </div>

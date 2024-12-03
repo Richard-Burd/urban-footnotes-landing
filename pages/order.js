@@ -17,7 +17,7 @@ export default function Order() {
 
   return (
     <div>
-      <div className="lg:mx-32">
+      <div className="xl:mx-32">
         <PageTitle
         topTitle="Ordering Your Report"
         textColor="text-title-text-order"

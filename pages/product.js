@@ -5,7 +5,7 @@ import PageHeaderLogo from "@/components/PageHeaderLogo";
 export default function Product() {
   const baseUrl = process.env.NEXT_PUBLIC_S3_BASE_URL;
   return (
-    <div className="lg:mx-32">
+    <div className="w-full max-w-screen-lg">
       <div>
         <div>
           <PageTitle
@@ -39,7 +39,6 @@ export default function Product() {
           width={1024}
           height={1}
         />
-       
 
         {/* <section
           id="property-1"
