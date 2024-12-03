@@ -21,7 +21,7 @@ export default function PageTitle({
 
           {/* Title */}
           <div
-            className={`flex-grow text-left ${textColor} ${shadowColor} page-title-shadow roboto-font text-4xl sm:text-5xl tracking-wide lg:text-6xl`}
+            className={`flex-grow text-left ${textColor} ${shadowColor} page-title-shadow roboto-font text-4xl sm:text-5xl tracking-wide lg:text-6xl !font-bold`}
             style={{
               lineHeight: "1",
               display: "flex",
