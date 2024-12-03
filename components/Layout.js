@@ -3,9 +3,9 @@ import Footer from "./Footer";
 
 const Layout = ({ children }) => {
   return (
-    <div className="flex min-h-screen flex-col bg-neutral-900 bg-opacity-95">
+    <div className="flex min-h-screen flex-col bg-gradient-to-b from-neutral-950 via-neutral-800 to-neutral-700">
       {/* Navbar */}
-      <div className="bg-neutral-900">
+      <div className="bg-transparent">
         <Navbar />
 
         {/* Main Content */}
