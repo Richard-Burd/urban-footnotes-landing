@@ -14,14 +14,14 @@ export default function PageTitle({
         <div className="relative flex w-full flex-col items-center sm:flex-row sm:items-end">
           {/* Logo */}
           {showLogo && (
-            <div className="mb-4 flex flex-shrink-0 justify-start pr-16 sm:mb-0 sm:justify-end">
+            <div className="mb-4 flex flex-shrink-0 justify-start pb-2 pr-16 sm:mb-0 sm:justify-end">
               <PageHeaderLogo />
             </div>
           )}
 
           {/* Title */}
           <div
-            className={`flex-grow text-left ${textColor} ${shadowColor} page-title-shadow roboto-font text-4xl sm:text-5xl tracking-wide lg:text-6xl !font-bold`}
+            className={`flex-grow text-left ${textColor} ${shadowColor} page-title-shadow roboto-font text-4xl !font-bold tracking-wide sm:text-5xl lg:text-6xl`}
             style={{
               lineHeight: "1",
               display: "flex",
