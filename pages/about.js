@@ -31,8 +31,8 @@ export default function About() {
             like higher-quality housing.
           </p>
 
-          <p>
-            <i>Urban Foot Notes</i> was created by the researchers at{" "}
+          <p className="pb-4">
+            <i>Urban Foot Notes</i> emerged from{" "}
             <a
               href="https://www.urbancruiseship.org"
               target="_blank"
@@ -40,8 +40,8 @@ export default function About() {
             >
               {" "}
               <i>Urban Cruise Ship</i>
-            </a>{" "}
-            in response to their research on{" "}
+            </a>
+            {""}'s research on{" "}
             <a
               href="https://www.urbancruiseship.org/cities"
               target="_blank"
@@ -51,6 +51,18 @@ export default function About() {
             </a>{" "}
             and interviews with real estate industry professionals and potential
             users.
+          </p>
+          <p className="pb-4">
+            The concept was simple, but no one else had done it. What initially
+            involved John, jye and Roseanne became a nearly 2-year
+            multiple-stage project involving all seven team members. That
+            improved this unique, new product greatly but unfortunately also ran
+            up the cost.
+          </p>
+          <p className="pb-4">
+            We hope our reports help as many people as possible live more
+            convenient and healthy lives, and reduce their polluting,
+            time-consuming dependence on cars.
           </p>
         </div>
       </div>

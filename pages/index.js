@@ -26,9 +26,11 @@ export default function Home() {
         </center>
         <div className="roboto-font rext-xl mx-4 mb-8 italic text-stone-300 md:text-2xl lg:mx-32">
           <p>
-            Our mission is to advance sustainable urban growth by spotlighting
-            addresses that prioritize walkability, reducing car dependency and
-            fostering environmentally friendly, vibrant neighborhoods.
+            To enhance our society and planet's health, our reports display how
+            many commonly-used services are within short walking distance of a
+            given address -- in a standardized, comparative format --
+            incentivizing and promoting development that allows more residents
+            to conveniently live without owning cars.
           </p>
         </div>
       </div>
