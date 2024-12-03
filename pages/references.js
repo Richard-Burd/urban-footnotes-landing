@@ -3,8 +3,8 @@ import PageTitle from "@/components/PageTitle";
 
 export default function Associations() {
   return (
-    <div className="w-full max-w-screen-xl">
-      <div className="lg:mx-32">
+    <div className="w-full max-w-screen-lg">
+      <div className="">
         <PageTitle
           topTitle="References"
           textColor="text-title-text-references"

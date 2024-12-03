@@ -7,7 +7,7 @@ export default function Samples() {
   return (
     <div>
       <div className="">
-        <div className="lg:mx-32">
+        <div className="xl:mx-32">
           <PageTitle
             topTitle={
               <>
