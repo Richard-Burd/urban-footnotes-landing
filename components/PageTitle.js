@@ -7,21 +7,21 @@ export default function PageTitle({
   showLogo = false,
 }) {
   return (
-    <div className="m-4 mb-8 flex justify-center lg:mx-0 lg:mb-16">
-      {/* Outer container spanning the full width */}
-      <div className="w-full max-w-screen-xl">
-        {/* Wrapper for logo and text */}
-        <div className="relative flex w-full flex-col items-center sm:flex-row sm:items-end">
+    <div className="mt-4 mb-8 flex justify-center lg:mx-0 lg:mb-16">
+      {/* Fixed-width container */}
+      <div className="mx-auto w-full max-w-screen-xl px-6">
+        {/* Wrapper for logo and title */}
+        <div className="relative flex w-full items-center sm:flex-row sm:items-end">
           {/* Logo */}
           {showLogo && (
-            <div className="mb-4 flex flex-shrink-0 justify-start pb-2 pr-16 sm:mb-0 sm:justify-end">
+            <div className="flex flex-shrink-0 justify-start pr-8">
               <PageHeaderLogo />
             </div>
           )}
 
           {/* Title */}
           <div
-            className={`flex-grow text-left ${textColor} ${shadowColor} page-title-shadow roboto-font text-4xl !font-bold tracking-wide sm:text-5xl lg:text-6xl`}
+            className={`flex-grow text-left ${textColor} ${shadowColor} page-title-shadow roboto-font text-4xl tracking-wide sm:text-5xl lg:text-6xl !font-bold`}
             style={{
               lineHeight: "1",
               display: "flex",
