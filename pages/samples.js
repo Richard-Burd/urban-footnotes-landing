@@ -7,7 +7,7 @@ export default function Samples() {
   return (
     <div>
       <div className="">
-        <div className="mx-auto flex w-full max-w-screen-xl justify-center px-4">
+        <div className="xl:px-24">
           <PageTitle
             topTitle={
               <>

@@ -17,7 +17,7 @@ export default function Order() {
 
   return (
     <div>
-      <div className="mx-auto w-full max-w-screen-xl px-6">
+      <div className="xl:px-24">
         <PageTitle
           topTitle="Ordering Your Report"
           textColor="text-title-text-order"
