@@ -17,13 +17,14 @@ export default function Order() {
 
   return (
     <div>
-      <PageHeaderLogo />
-      <PageTitle
-        topTitle="Ordering Your Report"
-        textColor="text-title-text-order"
-        shadowColor="title-shadow-order"
-      />
-
+      <div className="xl:px-24">
+        <PageTitle
+          topTitle="Ordering Your Report"
+          textColor="text-title-text-order"
+          shadowColor="title-shadow-order"
+          showLogo={true} // Integrates the logo
+        />
+      </div>
       <div id="explanations-n-stripe-link">
         <div className="mt-0">
           <stripe-pricing-table
