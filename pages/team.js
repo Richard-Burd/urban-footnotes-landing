@@ -17,7 +17,7 @@ const teamMembers = [
     name: "John van der Harst",
     role: "Chief Strategist",
     description:
-      "Concept, branding, product and website design, staffing, outreach",
+      "Concept, development, branding, product and website design, staffing, outreach",
     socialLinks: [
       {
         icon: "doc",
@@ -124,7 +124,7 @@ const TeamMemberCard = ({ member }) => (
 export default function Team() {
   return (
     <div>
-      <div className="">
+      <div className="lg:mx-32">
         <center>
           <PageTitle
             topTitle="Our Team"
@@ -133,7 +133,7 @@ export default function Team() {
             showLogo={true} // Integrates the logo
           />
         </center>
-        <div className="roboto-font mx-4 text-xl text-stone-300 md:text-2xl lg:mx-32">
+        <div className="roboto-font mx-4 text-xl text-stone-300 md:text-2xl">
           {/* Team Section */}
           <section className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
             {teamMembers.map((member) => (

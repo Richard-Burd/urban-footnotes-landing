@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Contact() {
   return (
     <div>
-      <div className="">
+      <div className="lg:mx-32">
         <center>
           <PageTitle
             topTitle="Contact Us"
