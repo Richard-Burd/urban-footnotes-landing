@@ -19,9 +19,12 @@ export default function Contact() {
             You can reach out to us directly at:{" "}
             <Link href="mailto: contact@urbanfootnotes.com">
               contact@urbanfootnotes.com
-            </Link>{""}
-            . <p>We can also arrange a phone call or video conference at your
-            convenience.</p>
+            </Link>
+            {""}.{" "}
+            <p>
+              We can also arrange a phone call or video conference at your
+              convenience.
+            </p>
             <br></br>
           </p>
         </div>
