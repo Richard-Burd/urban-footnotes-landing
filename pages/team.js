@@ -10,14 +10,14 @@ const socialMediaIconProps = {
   activeBackgroundColor: "#c7f3ff",
 };
 
-// Team member data
+// Team member data a
 const teamMembers = [
   {
     id: "john-van-der-harst",
     name: "John van der Harst",
     role: "Chief Strategist",
     description:
-      "Concept, branding, product and website design, staffing, outreach",
+      "Concept, development, branding, product and website design, staffing, outreach",
     socialLinks: [
       {
         icon: "doc",
@@ -123,39 +123,38 @@ const TeamMemberCard = ({ member }) => (
 
 export default function Team() {
   return (
-    <div className="min-h-screen text-stone-300">
-      {/* Header */}
-      <PageHeaderLogo />
-      <div className="container mx-auto p-4 md:px-8">
-        {/* Title */}
+    <div>
+      <div className="w-full max-w-screen-lg">
         <center>
           <PageTitle
             topTitle="Our Team"
             textColor="text-title-text-team"
             shadowColor="title-shadow-team"
+            showLogo={true} // Integrates the logo
           />
         </center>
+        <div className="roboto-font mx-4 text-xl text-stone-300 md:text-2xl">
+          {/* Team Section */}
+          <section className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
+            {teamMembers.map((member) => (
+              <TeamMemberCard key={member.id} member={member} />
+            ))}
+          </section>
 
-        {/* Team Section */}
-        <section className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
-          {teamMembers.map((member) => (
-            <TeamMemberCard key={member.id} member={member} />
-          ))}
-        </section>
-
-        {/* Additional Info */}
-        <p className="mt-8 text-center">
-          You can read about us{" "}
-          <Link
-            href="https://www.urbancruiseship.org/crew"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-500 underline hover:text-blue-300"
-          >
-            here
-          </Link>{" "}
-          on the Urban Cruise Ship website.
-        </p>
+          {/* Additional Info */}
+          <p className="mt-8 text-center">
+            You can read about us{" "}
+            <Link
+              href="https://www.urbancruiseship.org/crew"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-500 underline hover:text-blue-300"
+            >
+              here
+            </Link>{" "}
+            on the Urban Cruise Ship website.
+          </p>
+        </div>
       </div>
     </div>
   );

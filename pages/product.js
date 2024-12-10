@@ -5,14 +5,14 @@ import PageHeaderLogo from "@/components/PageHeaderLogo";
 export default function Product() {
   const baseUrl = process.env.NEXT_PUBLIC_S3_BASE_URL;
   return (
-    <div>
-      <PageHeaderLogo />
+    <div className="w-full max-w-screen-lg">
       <div>
-        <div className="">
+        <div>
           <PageTitle
             topTitle="Product Features"
             textColor="text-title-text-product"
             shadowColor={`title-shadow-product`}
+            showLogo={true} // Integrates the logo
           />
         </div>
         <Image

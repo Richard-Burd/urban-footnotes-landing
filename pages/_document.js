@@ -4,18 +4,27 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        {/* Favicon */}
         <link rel="icon" href="/../ufavicon.ico" />
-        <link
-          href="https://fonts.cdnfonts.com/css/arial-rounded-mt-bold"
-          rel="stylesheet"
-        />
-        <link href="https://fonts.cdnfonts.com/css/arial" rel="stylesheet" />
+
+        {/* Preconnect for fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
           href="https://fonts.gstatic.com"
-          crossOrigin="true"
+          crossOrigin="anonymous"
         />
+
+        {/* Preload Roboto */}
+        <link
+          rel="preload"
+          href="https://fonts.gstatic.com/s/roboto/v29/KFOmCnqEu92Fr1Mu4mxP.ttf"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+
+        {/* Load Fonts */}
         <link
           href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
           rel="stylesheet"
@@ -26,6 +35,10 @@ export default function Document() {
         />
         <link
           href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.cdnfonts.com/css/arial-rounded-mt-bold"
           rel="stylesheet"
         />
       </Head>
