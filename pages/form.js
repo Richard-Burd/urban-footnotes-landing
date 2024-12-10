@@ -4,10 +4,10 @@ import * as filestack from "filestack-js";
 export default function SupplementaryForm() {
 
   
-  const filestackApiKey = process.env.NEXT_PUBLIC_FILESTACK; // Use environment variable
-  if (!process.env.NEXT_PUBLIC_FILESTACK) {
+  const filestackApiKey = "AhJtHA69ATCK7bfBTgnbzz"; // Use environment variable
+ /*  if (!process.env.NEXT_PUBLIC_FILESTACK) {
     throw new Error("filestack api key is not defined!");
-  }
+  } */
   const client = filestack.init(filestackApiKey); 
 
   // State for form inputs
