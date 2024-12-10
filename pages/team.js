@@ -10,7 +10,7 @@ const socialMediaIconProps = {
   activeBackgroundColor: "#c7f3ff",
 };
 
-// Team member data
+// Team member data a
 const teamMembers = [
   {
     id: "john-van-der-harst",
