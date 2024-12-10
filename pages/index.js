@@ -1,5 +1,5 @@
 import Image from "next/image";
-import PageTitle from "@/components/PageTitle";
+import HomePageTitle from "@/components/HomePageTitle";
 
 export default function Home() {
   return (
@@ -11,24 +11,26 @@ export default function Home() {
           width={800}
           height={263.44}
           unoptimized={true}
-          style={{ minWidth: "100px", opacity: 0.7 }}
+          style={{ minWidth: "100px", opacity: 1 }}
         />
       </div>
       <div className="mt-2">
         <center>
           <div className="mt-10">
-            <PageTitle
+            <HomePageTitle
               topTitle="Mission Statement"
               textColor="text-title-text-home"
               shadowColor={`title-shadow-home`}
             />
           </div>
         </center>
-        <div className="roboto-font rext-xl mx-4 italic text-stone-300 md:text-2xl lg:mx-32">
+        <div className="roboto-font rext-xl mx-4 mb-8 italic text-stone-300 md:text-2xl lg:mx-32">
           <p>
-            To reduce residents' use of cars, we comparatively assess how many
-            commonly used services are within short walking distance of a given
-            address.
+            To enhance our society and planet's health, our reports display how
+            many commonly-used services are within short walking distance of a
+            given address -- in a standardized, comparative format --
+            incentivizing and promoting development that allows more residents
+            to conveniently live without owning cars.
           </p>
         </div>
       </div>
