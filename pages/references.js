@@ -6,7 +6,7 @@ export default function Associations() {
     <div className="w-full max-w-screen-lg">
       <div className="">
         <PageTitle
-          topTitle="References"
+          topTitle="Selected References"
           textColor="text-title-text-references"
           shadowColor="title-shadow-references"
           showLogo={true} // Integrates the logo
