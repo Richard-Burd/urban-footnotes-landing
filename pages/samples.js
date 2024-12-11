@@ -111,6 +111,16 @@ export default function Samples() {
           />
 
           <ProductSample
+            imagePath="preview-163-lai-chi-kok-rd.0.7.jpg"
+            address="163 Lai Chi Kok Rd, Tai Kok Tsui, Hong Kong"
+            serviceTypesNearby={45}
+            serviceTypesFarther={10}
+            serviceTypesDistant={19}
+            walkabilityScore={20}
+            pdfPath="doc-163-lai-chi-kok-rd.pdf"
+          />
+
+          <ProductSample
             imagePath="preview-55-triq-san-vincenz.p.4-new.jpg"
             address="55 Triq San Vincenz, Tas-Sliema, Malta"
             serviceTypesNearby={45}
@@ -121,13 +131,13 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-163-lai-chi-kok-rd.0.7.jpg"
-            address="163 Lai Chi Kok Rd, Tai Kok Tsui, Hong Kong"
+            imagePath="preview-618-622-anacapa-st.jpg"
+            address="618-622 Anacapa St, Santa Barbara, CA 93101"
             serviceTypesNearby={45}
-            serviceTypesFarther={10}
-            serviceTypesDistant={19}
-            walkabilityScore={20}
-            pdfPath="doc-163-lai-chi-kok-rd.pdf"
+            serviceTypesFarther={7}
+            serviceTypesDistant={22}
+            walkabilityScore={22}
+            pdfPath="doc-618-622-anacapa-st.pdf"
           />
 
           <ProductSample
