@@ -16,7 +16,7 @@ export default function About() {
         <div className="roboto-font mx-4 pb-8 text-xl text-stone-300 md:text-2xl">
           <p className="pb-4">
             Our standard-format reports rate properties on walkable access to 74
-            commonly-used services, plus 5 client-or-staff-chosen ones. Reports
+            commonly-used services, plus five client-or-staff-chosen ones. Reports
             for different addresses can be compared by real estate agents, home
             buyers, and renters, favoring those requiring less car usage. City
             planners and developers can use these reports to incentivize more
@@ -54,7 +54,7 @@ export default function About() {
           </p>
           <p className="pb-4">
             The concept was simple, but no one else had done it. What initially
-            involved John, jye and Roseanne became a nearly 2-year
+            involved John, jye and Roseanne became a nearly two-year
             multiple-stage project involving all seven team members. That
             improved this unique, new product greatly but unfortunately also ran
             up the cost.
