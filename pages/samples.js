@@ -131,7 +131,7 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-618-622-anacapa-st.jpg"
+            imagePath="preview-618-622-anacapa-st.2.jpg"
             address="618-622 Anacapa St, Santa Barbara, CA 93101"
             serviceTypesNearby={45}
             serviceTypesFarther={7}
