@@ -101,6 +101,16 @@ export default function Samples() {
           />
 
           <ProductSample
+            imagePath="preview-67a-regent-rd.jpg"
+            address="67A Regent Rd, Sea Point, Cape Town, South Africa"
+            serviceTypesNearby={48}
+            serviceTypesFarther={2}
+            serviceTypesDistant={24}
+            walkabilityScore={23}
+            pdfPath="doc-67a-regent-rd.pdf"
+          />
+
+          <ProductSample
             imagePath="preview-301-market-st.jpg"
             address="301 Market St, Philadelphia, PA 19106"
             serviceTypesNearby={47}
