@@ -14,6 +14,8 @@ export default function SupplementaryForm() {
   const [address, setAddress] = useState("");
   const [email, setEmail] = useState("");
   const [clientName, setClientName] = useState("");
+  const [clientCompany, setClientCompany] = useState("");
+  const [clientPhone, setClientPhone] = useState("");
   const [selectedOptions, setSelectedOptions] = useState([]); // For checkboxes
   const [customOptions, setCustomOptions] = useState(["", "", "", "", ""]); // For text inputs
   const [uploadedFileUrl, setUploadedFileUrl] = useState("");
@@ -102,6 +104,8 @@ export default function SupplementaryForm() {
     const formData = {
       address,
       clientName,
+      clientCompany,
+      clientPhone,
       email,
       discretionaryOptions: combinedOptions.length ? combinedOptions : [],
       logoUrl: uploadedFileUrl,
@@ -189,7 +193,40 @@ export default function SupplementaryForm() {
             onChange={(e) => setClientName(e.target.value)}
             placeholder="What should we call you?"
             className="w-full rounded-lg border border-gray-300 p-3 shadow-sm"
-            required
+          />
+        </div>
+
+        <div className="mb-6">
+          <label
+            htmlFor="clientCompany"
+            className="mb-2 block text-lg font-semibold"
+          >
+            Company Name:
+          </label>
+          <input
+            type="text"
+            id="clientCompany"
+            value={clientCompany}
+            onChange={(e) => setClientCompany(e.target.value)}
+            placeholder="optional"
+            className="w-full rounded-lg border border-gray-300 p-3 shadow-sm"
+          />
+        </div>
+
+        <div className="mb-6">
+          <label
+            htmlFor="clientPhone"
+            className="mb-2 block text-lg font-semibold"
+          >
+            Phone Number:
+          </label>
+          <input
+            type="number"
+            id="clientPhone"
+            value={clientPhone}
+            onChange={(e) => setClientPhone(e.target.value)}
+            placeholder="optional"
+            className="w-full rounded-lg border border-gray-300 p-3 shadow-sm"
           />
         </div>
 
