@@ -71,6 +71,16 @@ export default function Samples() {
           />
 
           <ProductSample
+            imagePath="preview-313-sauchiehall-st.jpg"
+            address="313 Sauchiehall St. Glasgow Scotland"
+            serviceTypesNearby={49}
+            serviceTypesFarther={11}
+            serviceTypesDistant={14}
+            walkabilityScore={23}
+            pdfPath="doc-313-sauchiehall-st.pdf"
+          />
+
+          <ProductSample
             imagePath="preview-10-lorne-st.jpg"
             address="10 Lorne Street, Te Aro, Wellington 6011, New Zealand"
             serviceTypesNearby={49}
