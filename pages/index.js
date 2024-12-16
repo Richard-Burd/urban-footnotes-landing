@@ -4,7 +4,7 @@ import HomePageTitle from "@/components/HomePageTitle";
 export default function Home() {
   return (
     <div>
-      <div id="landing-page-logo" className="mx-4 mt-12 flex justify-center">
+      <div id="landing-page-logo" className="mx-4 mt-4 flex justify-center">
         <Image
           src="/images/ufn-logo-light.svg"
           alt="Urban Foot Notes Logo"
