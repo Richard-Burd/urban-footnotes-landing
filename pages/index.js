@@ -7,9 +7,9 @@ export default function Home() {
       <div id="landing-page-logo" className="mx-4 mt-12 flex justify-center">
         <Image
           src="/images/ufn-logo-light.svg"
-          alt="Urban Cruise Ship Logo"
-          width={800}
-          height={263.44}
+          alt="Urban Foot Notes Logo"
+          width={750}
+          height={0}
           unoptimized={true}
           style={{ minWidth: "100px", opacity: 1 }}
         />
