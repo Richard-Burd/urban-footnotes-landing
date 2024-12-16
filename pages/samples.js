@@ -71,8 +71,8 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-313-sauchiehall-st.jpg"
-            address="313 Sauchiehall St. Glasgow Scotland"
+            imagePath="preview-313-sauchiehall-st.2.jpg"
+            address="313 Sauchiehall St. Glasgow G2 3JA Scotland"
             serviceTypesNearby={49}
             serviceTypesFarther={11}
             serviceTypesDistant={14}
@@ -111,8 +111,8 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-67a-regent-rd.jpg"
-            address="67A Regent Rd, Sea Point, Cape Town, South Africa"
+            imagePath="preview-67a-regent-rd.2.jpg"
+            address="67A Regent Rd, Cape Town, 8005, South Africa"
             serviceTypesNearby={48}
             serviceTypesFarther={2}
             serviceTypesDistant={24}
