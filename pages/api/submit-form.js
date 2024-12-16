@@ -11,6 +11,8 @@ export default async function handler(req, res) {
   const {
     clientName,
     email,
+    clientCompany,
+    clientPhone,
     address,
     logoUrl,
     discretionaryOptions,
@@ -72,6 +74,8 @@ export default async function handler(req, res) {
         <p><strong>Order ID:</strong> ${orderId}</p> <!-- Include Order ID -->
         <p><strong>Client Name:</strong> ${clientName}</p> <!-- Include Order ID -->
         <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Client Company:</strong> ${clientCompany}</p>
+        <p><strong>Client Phone:</strong> ${clientPhone}</p>
         <p><strong>Address:</strong> ${address}</p>
         <p><strong>Logo URL:</strong> <a href="${logoUrl}" target="_blank">${logoUrl}</a></p>
         <p><strong>Discretionary Options:</strong> ${options.length > 0 ? options.join(", ") : "None"}</p>
