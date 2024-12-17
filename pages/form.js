@@ -221,7 +221,7 @@ export default function SupplementaryForm() {
             Phone Number:
           </label>
           <input
-            type="number"
+            type="text"
             id="clientPhone"
             value={clientPhone}
             onChange={(e) => setClientPhone(e.target.value)}
