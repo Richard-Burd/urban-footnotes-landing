@@ -7,7 +7,7 @@ export default function PageTitle({
   showLogo = false,
 }) {
   return (
-    <div className="mt-4 mb-4 flex justify-center lg:mx-0 lg:mb-8">
+    <div className="mt-2 mb-4 flex justify-center lg:mx-0 lg:mb-8">
       {/* Fixed-width container */}
       <div className="mx-auto w-full max-w-screen-xl px-6">
         {/* Wrapper for logo and title */}
@@ -21,7 +21,7 @@ export default function PageTitle({
 
           {/* Title */}
           <div
-            className={`flex-grow text-left ${textColor} ${shadowColor} page-title-shadow roboto-font text-4xl tracking-wide sm:text-5xl lg:text-6xl lg:mb-12`}
+            className={`flex-grow text-left ${textColor} ${shadowColor} page-title-shadow roboto-font text-4xl tracking-wide sm:text-5xl lg:text-8xl lg:mb-4`}
             style={{
               lineHeight: "1",
               display: "flex",

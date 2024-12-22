@@ -36,7 +36,7 @@ export default function MobileNavBar() {
           </Link>
           <Link href="/about">
             <div
-              className="block cursor-pointer border-b border-stone-600 px-4 py-2"
+              className="block cursor-pointer border-b border-stone-400 px-4 py-2"
               onClick={toggleMenu}
             >
               About Page
