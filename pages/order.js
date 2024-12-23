@@ -25,7 +25,12 @@ export default function Order() {
           showLogo={true} // Integrates the logo
         />
       </div>
-      <div id="explanations-n-stripe-link">
+
+      <div className="roboto-font mb-4 text-2.5xl text-gray-200 lg:mx-32">
+        Coming Soon!
+      </div>
+
+      {/* <div id="explanations-n-stripe-link">
         <div className="mt-0">
           <stripe-pricing-table
             pricing-table-id="prctbl_1QMot4GN52GuXWVWoWc0oKj7"
@@ -88,7 +93,7 @@ export default function Order() {
             changes.
           </p>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
