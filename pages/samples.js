@@ -21,6 +21,10 @@ export default function Samples() {
         </div>
 
         <div className="roboto-font mb-4 text-2.5xl text-gray-200 lg:mx-32">
+          Coming Soon!
+        </div>
+
+        {/* <div className="roboto-font mb-4 text-2.5xl text-gray-200 lg:mx-32">
           <p className="mb-10">
             Samples are presented ranked by the number of service types (out of
             74 total) within approximately 1/4 mile of the address shown (0.4
@@ -389,7 +393,7 @@ export default function Samples() {
             walkabilityScore={12}
             pdfPath="doc-1015-elvira-ave.pdf"
           />
-        </div>
+        </div> */}
 
         <div>
           <br />
