@@ -176,7 +176,7 @@ export default function Samples() {
 
           <ProductSample
             imagePath="preview-107-patton-ave.p.4-new.jpg"
-            address="316 King St, Charleston, SC 29401"
+            address="107 Patton Ave, Asheville, NC 28801"
             serviceTypesNearby={44}
             serviceTypesFarther={10}
             serviceTypesDistant={20}
