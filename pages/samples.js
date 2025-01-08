@@ -21,10 +21,6 @@ export default function Samples() {
         </div>
 
         <div className="roboto-font mb-4 text-2.5xl text-gray-200 lg:mx-32">
-          Coming Soon!
-        </div>
-
-        {/* <div className="roboto-font mb-4 text-2.5xl text-gray-200 lg:mx-32">
           <p className="mb-10">
             Samples are presented ranked by the number of service types (out of
             74 total) within approximately 1/4 mile of the address shown (0.4
@@ -35,7 +31,7 @@ export default function Samples() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-5 xl:grid-cols-4">
           <ProductSample
-            imagePath="preview-223-8th-ave.p.4-ex.jpg"
+            imagePath="preview-223-8th-ave.jpg"
             address="223 8th Ave. New York, NY 10011"
             serviceTypesNearby={55}
             serviceTypesFarther={7}
@@ -44,7 +40,7 @@ export default function Samples() {
             pdfPath="doc-223-8th-ave.pdf"
           />
 
-          <ProductSample
+          {/* <ProductSample
             imagePath="preview-sarphatipark-amsterdam.0.7.v2.jpg"
             address="Sarphatipark 38I, 1072 PB Amsterdam, Netherlands"
             serviceTypesNearby={52}
@@ -52,7 +48,7 @@ export default function Samples() {
             serviceTypesDistant={15}
             walkabilityScore={23}
             pdfPath="doc-sarphatipark-amsterdam.pdf"
-          />
+          /> */}
 
           <ProductSample
             imagePath="preview-1902-2nd-ave.jpg"
@@ -65,7 +61,7 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-29-s-la-salle-st.p.4-ex.jpg"
+            imagePath="preview-29-s-la-salle-st.jpg"
             address="29 S La Salle St, Chicago, IL 60603"
             serviceTypesNearby={49}
             serviceTypesFarther={11}
@@ -75,7 +71,7 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-313-sauchiehall-st.2.jpg"
+            imagePath="preview-313-sauchiehall-st.jpg"
             address="313 Sauchiehall St. Glasgow G2 3JA Scotland"
             serviceTypesNearby={49}
             serviceTypesFarther={11}
@@ -84,7 +80,7 @@ export default function Samples() {
             pdfPath="doc-313-sauchiehall-st.pdf"
           />
 
-          <ProductSample
+          {/* <ProductSample
             imagePath="preview-10-lorne-st.jpg"
             address="10 Lorne Street, Te Aro, Wellington 6011, New Zealand"
             serviceTypesNearby={49}
@@ -392,8 +388,8 @@ export default function Samples() {
             serviceTypesDistant={49}
             walkabilityScore={12}
             pdfPath="doc-1015-elvira-ave.pdf"
-          />
-        </div> */}
+          /> */}
+        </div>
 
         <div>
           <br />
