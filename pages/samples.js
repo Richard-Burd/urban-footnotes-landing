@@ -37,7 +37,7 @@ export default function Samples() {
             serviceTypesFarther={7}
             serviceTypesDistant={12}
             walkabilityScore={20}
-            pdfPath="doc-223-8th-ave.pdf"
+            pdfPath="doc-223-8th-ave.new-version.pdf"
           />
 
           {/* <ProductSample
@@ -57,7 +57,7 @@ export default function Samples() {
             serviceTypesFarther={13}
             serviceTypesDistant={12}
             walkabilityScore={20}
-            pdfPath="doc-1902-2nd-ave.pdf"
+            pdfPath="doc-1902-2nd-ave.new-version.pdf"
           />
 
           <ProductSample
@@ -67,7 +67,7 @@ export default function Samples() {
             serviceTypesFarther={11}
             serviceTypesDistant={14}
             walkabilityScore={25}
-            pdfPath="doc-29-s-la-salle-st.pdf"
+            pdfPath="doc-29-s-la-salle-st.new-version.pdf"
           />
 
           <ProductSample
