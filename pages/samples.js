@@ -61,7 +61,7 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-29-s-la-salle-st.jpg"
+            imagePath="preview-29-s-la-salle-st.new-version.jpg"
             address="29 S La Salle St, Chicago, IL 60603"
             serviceTypesNearby={49}
             serviceTypesFarther={11}
