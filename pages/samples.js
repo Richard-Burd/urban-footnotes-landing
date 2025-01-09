@@ -77,7 +77,7 @@ export default function Samples() {
             serviceTypesFarther={11}
             serviceTypesDistant={14}
             walkabilityScore={23}
-            pdfPath="doc-313-sauchiehall-st.pdf"
+            pdfPath="doc-313-sauchiehall-st.new-version.pdf"
           />
 
           {/* <ProductSample
