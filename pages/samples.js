@@ -31,16 +31,16 @@ export default function Samples() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-5 xl:grid-cols-4">
           <ProductSample
-            imagePath="preview-223-8th-ave.p.4-ex.jpg"
+            imagePath="preview-223-8th-ave.jpg"
             address="223 8th Ave. New York, NY 10011"
             serviceTypesNearby={55}
             serviceTypesFarther={7}
             serviceTypesDistant={12}
             walkabilityScore={20}
-            pdfPath="doc-223-8th-ave.pdf"
+            pdfPath="doc-223-8th-ave.new-version.pdf"
           />
 
-          <ProductSample
+          {/* <ProductSample
             imagePath="preview-sarphatipark-amsterdam.0.7.v2.jpg"
             address="Sarphatipark 38I, 1072 PB Amsterdam, Netherlands"
             serviceTypesNearby={52}
@@ -48,7 +48,7 @@ export default function Samples() {
             serviceTypesDistant={15}
             walkabilityScore={23}
             pdfPath="doc-sarphatipark-amsterdam.pdf"
-          />
+          /> */}
 
           <ProductSample
             imagePath="preview-1902-2nd-ave.jpg"
@@ -57,20 +57,30 @@ export default function Samples() {
             serviceTypesFarther={13}
             serviceTypesDistant={12}
             walkabilityScore={20}
-            pdfPath="doc-1902-2nd-ave.pdf"
+            pdfPath="doc-1902-2nd-ave.new-version.pdf"
           />
 
           <ProductSample
-            imagePath="preview-29-s-la-salle-st.p.4-ex.jpg"
+            imagePath="preview-29-s-la-salle-st.new-version.jpg"
             address="29 S La Salle St, Chicago, IL 60603"
             serviceTypesNearby={49}
             serviceTypesFarther={11}
             serviceTypesDistant={14}
             walkabilityScore={25}
-            pdfPath="doc-29-s-la-salle-st.pdf"
+            pdfPath="doc-29-s-la-salle-st.new-version.pdf"
           />
 
           <ProductSample
+            imagePath="preview-313-sauchiehall-st.jpg"
+            address="313 Sauchiehall St. Glasgow G2 3JA Scotland"
+            serviceTypesNearby={49}
+            serviceTypesFarther={11}
+            serviceTypesDistant={14}
+            walkabilityScore={23}
+            pdfPath="doc-313-sauchiehall-st.new-version.pdf"
+          />
+
+          {/* <ProductSample
             imagePath="preview-10-lorne-st.jpg"
             address="10 Lorne Street, Te Aro, Wellington 6011, New Zealand"
             serviceTypesNearby={49}
@@ -101,6 +111,16 @@ export default function Samples() {
           />
 
           <ProductSample
+            imagePath="preview-67a-regent-rd.2.jpg"
+            address="67A Regent Rd, Cape Town, 8005, South Africa"
+            serviceTypesNearby={48}
+            serviceTypesFarther={2}
+            serviceTypesDistant={24}
+            walkabilityScore={23}
+            pdfPath="doc-67a-regent-rd.pdf"
+          />
+
+          <ProductSample
             imagePath="preview-301-market-st.jpg"
             address="301 Market St, Philadelphia, PA 19106"
             serviceTypesNearby={47}
@@ -108,6 +128,16 @@ export default function Samples() {
             serviceTypesDistant={23}
             walkabilityScore={19}
             pdfPath="doc-301-market-st.pdf"
+          />
+
+          <ProductSample
+            imagePath="preview-163-lai-chi-kok-rd.0.7.jpg"
+            address="163 Lai Chi Kok Rd, Tai Kok Tsui, Hong Kong"
+            serviceTypesNearby={45}
+            serviceTypesFarther={10}
+            serviceTypesDistant={19}
+            walkabilityScore={20}
+            pdfPath="doc-163-lai-chi-kok-rd.pdf"
           />
 
           <ProductSample
@@ -121,13 +151,13 @@ export default function Samples() {
           />
 
           <ProductSample
-            imagePath="preview-163-lai-chi-kok-rd.0.7.jpg"
-            address="163 Lai Chi Kok Rd, Tai Kok Tsui, Hong Kong"
+            imagePath="preview-618-622-anacapa-st.2.jpg"
+            address="618-622 Anacapa St, Santa Barbara, CA 93101"
             serviceTypesNearby={45}
-            serviceTypesFarther={10}
-            serviceTypesDistant={19}
-            walkabilityScore={20}
-            pdfPath="doc-163-lai-chi-kok-rd.pdf"
+            serviceTypesFarther={7}
+            serviceTypesDistant={22}
+            walkabilityScore={22}
+            pdfPath="doc-618-622-anacapa-st.pdf"
           />
 
           <ProductSample
@@ -142,7 +172,7 @@ export default function Samples() {
 
           <ProductSample
             imagePath="preview-107-patton-ave.p.4-new.jpg"
-            address="316 King St, Charleston, SC 29401"
+            address="107 Patton Ave, Asheville, NC 28801"
             serviceTypesNearby={44}
             serviceTypesFarther={10}
             serviceTypesDistant={20}
@@ -358,7 +388,7 @@ export default function Samples() {
             serviceTypesDistant={49}
             walkabilityScore={12}
             pdfPath="doc-1015-elvira-ave.pdf"
-          />
+          /> */}
         </div>
 
         <div>
