@@ -11,7 +11,7 @@ export default function Samples() {
           <PageTitle
             topTitle={
               <>
-                Samples <br /> (Product Examples)
+                Product Samples
               </>
             }
             textColor="text-title-text-samples"

@@ -24,6 +24,15 @@ export default function Document() {
           crossOrigin="anonymous"
         />
 
+                {/* Preload Playfair Display */}
+                <link              rel="preload"
+              href="https://fonts.gstatic.com/s/playfairdisplay/v24/nuFvD-3Aw4n3eC6W-yaxrZzA.woff2"
+              as="font"
+              type="font/woff2"
+              crossOrigin="anonymous"
+            />
+
+
         {/* Load Fonts */}
         <link
           href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
