@@ -31,13 +31,13 @@ export default function Samples() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-5 xl:grid-cols-4">
           <ProductSample
-            imagePath="preview-223-8th-ave.jpg"
+            imagePath="preview-223-8th-ave.opacity-full.jpg"
             address="223 8th Ave. New York, NY 10011"
             serviceTypesNearby={55}
             serviceTypesFarther={7}
             serviceTypesDistant={12}
             walkabilityScore={20}
-            pdfPath="doc-223-8th-ave.new-version.pdf"
+            pdfPath="doc-223-8th-ave.opacity-full.pdf"
           />
 
           {/* <ProductSample
@@ -51,33 +51,33 @@ export default function Samples() {
           /> */}
 
           <ProductSample
-            imagePath="preview-1902-2nd-ave.jpg"
+            imagePath="preview-1902-2nd-ave.opacity-full.jpg"
             address="1902 2nd Ave, Seattle, WA 98101"
             serviceTypesNearby={49}
             serviceTypesFarther={13}
             serviceTypesDistant={12}
             walkabilityScore={20}
-            pdfPath="doc-1902-2nd-ave.new-version.pdf"
+            pdfPath="doc-1902-2nd-ave.opacity-full.pdf"
           />
 
           <ProductSample
-            imagePath="preview-29-s-la-salle-st.new-version.jpg"
+            imagePath="preview-29-s-la-salle-st.opacity-full.jpg"
             address="29 S La Salle St, Chicago, IL 60603"
             serviceTypesNearby={49}
             serviceTypesFarther={11}
             serviceTypesDistant={14}
             walkabilityScore={25}
-            pdfPath="doc-29-s-la-salle-st.new-version.pdf"
+            pdfPath="doc-29-s-la-salle-st.opacity-full.pdf"
           />
 
           <ProductSample
-            imagePath="preview-313-sauchiehall-st.jpg"
+            imagePath="preview-313-sauchiehall-st.opacity-full.jpg"
             address="313 Sauchiehall St. Glasgow G2 3JA Scotland"
             serviceTypesNearby={49}
             serviceTypesFarther={11}
             serviceTypesDistant={14}
             walkabilityScore={23}
-            pdfPath="doc-313-sauchiehall-st.new-version.pdf"
+            pdfPath="doc-313-sauchiehall-st.opacity-full.pdf"
           />
 
           {/* <ProductSample
