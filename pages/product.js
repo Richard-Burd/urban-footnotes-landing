@@ -17,7 +17,7 @@ export default function Product() {
         </div>
         <Image
           alt="First & Second pages of the product"
-          src={`${baseUrl}/desktop-product-page-first-n-second-page.7.png`} // v.2.1
+          src={`${baseUrl}/desktop-product-page-first-n-second-page.8.png`} // v.2.1
           // true width & true height controlled by parent grid
           // image fills parent's allotted space
           width={1024}
@@ -25,7 +25,7 @@ export default function Product() {
         />
         <Image
           alt="Third page of the product"
-          src={`${baseUrl}/desktop-product-page-third-page.6.png`}
+          src={`${baseUrl}/desktop-product-page-third-page.8.png`}
           // true width & true height controlled by parent grid
           // image fills parent's allotted space
           width={1024}
@@ -33,7 +33,7 @@ export default function Product() {
         />
         <Image
           alt="Fourth page of the product"
-          src={`${baseUrl}/desktop-product-page-fourth-page.6.png`}
+          src={`${baseUrl}/desktop-product-page-fourth-page.8.png`}
           // true width & true height controlled by parent grid
           // image fills parent's allotted space
           width={1024}
