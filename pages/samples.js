@@ -342,13 +342,13 @@ export default function Samples() {
             pdfPath="doc-2525-ocean-ave.nrl.pdf"
           />
           <ProductSample
-            imagePath="preview-1015-elvira-ave.nrl.jpg"
+            imagePath="preview-1015-elvira-ave.nrl.2.jpg"
             address="1015 Elvira Ave. Nashville, TN 37216"
             serviceTypesNearby={12}
             serviceTypesFarther={13}
             serviceTypesDistant={49}
             walkabilityScore={12}
-            pdfPath="doc-1015-elvira-ave.nrl.pdf"
+            pdfPath="doc-1015-elvira-ave.nrl.2.pdf"
           />{" "}
         </div>
 
