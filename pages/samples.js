@@ -134,15 +134,15 @@ export default function Samples() {
             walkabilityScore={15}
             pdfPath="doc-55-triq-san-vincenz.pdf"
           /> */}
-          {/* <ProductSample
-            imagePath="preview-618-622-anacapa-st.2.jpg"
+          <ProductSample
+            imagePath="preview-618-622-anacapa-st.nrl.jpg"
             address="618-622 Anacapa St, Santa Barbara, CA 93101"
             serviceTypesNearby={45}
             serviceTypesFarther={7}
             serviceTypesDistant={22}
             walkabilityScore={22}
-            pdfPath="doc-618-622-anacapa-st.pdf"
-          /> */}
+            pdfPath="doc-618-622-anacapa-st.nrl.pdf"
+          />
           {/* <ProductSample
             imagePath="preview-50-grande-parade.0.7.jpg"
             address="50 Grand Parade, Centre, Cork, T12 D638, Ireland"
@@ -296,15 +296,15 @@ export default function Samples() {
             walkabilityScore={21}
             pdfPath="doc-201-chartres-st.nrl.pdf"
           />
-          {/* <ProductSample
-            imagePath="preview-2-junction-rd.jpg"
+          <ProductSample
+            imagePath="preview-2-junction-road.nrl.jpg"
             address="2 Junction Road, Archway, London N19 5FF"
             serviceTypesNearby={34}
             serviceTypesFarther={9}
             serviceTypesDistant={31}
-            walkabilityScore={26}
-            pdfPath="doc-2-junction-rd.pdf"
-          /> */}
+            walkabilityScore={24}
+            pdfPath="doc-2-junction-road.nrl.pdf"
+          />
           <ProductSample
             imagePath="preview-1431-sw-park-ave.nrl.jpg"
             address="1431 SW Park Ave. Portland, OR 97201"
