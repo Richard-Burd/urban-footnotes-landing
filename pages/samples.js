@@ -35,15 +35,15 @@ export default function Samples() {
             walkabilityScore={20}
             pdfPath="doc-223-8th-ave.nrl.pdf"
           />
-          {/* <ProductSample
-            imagePath="preview-sarphatipark-amsterdam.0.7.v2.jpg"
+          <ProductSample
+            imagePath="preview-sarphatipark-38i.nrl.jpg"
             address="Sarphatipark 38I, 1072 PB Amsterdam, Netherlands"
             serviceTypesNearby={52}
             serviceTypesFarther={7}
             serviceTypesDistant={15}
             walkabilityScore={23}
-            pdfPath="doc-sarphatipark-amsterdam.pdf"
-          /> */}
+            pdfPath="doc-sarphatipark-38i.nrl.pdf"
+          />
           <ProductSample
             imagePath="preview-1902-2nd-ave.nrl.jpg"
             address="1902 2nd Ave, Seattle, WA 98101"
@@ -71,42 +71,42 @@ export default function Samples() {
             walkabilityScore={23}
             pdfPath="doc-313-sauchiehall-st.nrl.pdf"
           />
-          {/* {/* <ProductSample
-            imagePath="preview-10-lorne-st.jpg"
+          <ProductSample
+            imagePath="preview-10-lorne-st.nrl.jpg"
             address="10 Lorne Street, Te Aro, Wellington 6011, New Zealand"
             serviceTypesNearby={49}
             serviceTypesFarther={7}
             serviceTypesDistant={18}
             walkabilityScore={20}
-            pdfPath="doc-10-lorne-st.pdf"
-          /> */}
-          {/* <ProductSample
-            imagePath="preview-41-e-hastings-st.jpg"
+            pdfPath="doc-10-lorne-st.nrl.pdf"
+          />
+          <ProductSample
+            imagePath="preview-41-e-hastings-st.nrl.jpg"
             address="41 E Hastings St, Vancouver, BC V6A 1M9, Canada"
             serviceTypesNearby={48}
             serviceTypesFarther={12}
             serviceTypesDistant={14}
             walkabilityScore={19}
-            pdfPath="doc-41-e-hastings-st.pdf"
-          /> */}
-          {/* <ProductSample
-            imagePath="preview-10-rue-de-rivoli.0.7.jpg"
+            pdfPath="doc-41-e-hastings-st.nrl.pdf"
+          />
+          <ProductSample
+            imagePath="preview-10-rue-de-rivoli.nrl.jpg"
             address="10 Rue de Rivoli, 75004 Paris, France"
             serviceTypesNearby={48}
             serviceTypesFarther={8}
             serviceTypesDistant={18}
             walkabilityScore={24}
-            pdfPath="doc-10-rue-de-rivoli.pdf"
-          /> */}
-          {/* <ProductSample
-            imagePath="preview-67a-regent-rd.2.jpg"
+            pdfPath="doc-10-rue-de-rivoli.nrl.pdf"
+          />
+          <ProductSample
+            imagePath="preview-67a-regent-rd.nrl.jpg"
             address="67A Regent Rd, Cape Town, 8005, South Africa"
             serviceTypesNearby={48}
             serviceTypesFarther={2}
             serviceTypesDistant={24}
             walkabilityScore={23}
-            pdfPath="doc-67a-regent-rd.pdf"
-          /> */}
+            pdfPath="doc-67a-regent-rd.nrl.pdf"
+          />
           <ProductSample
             imagePath="preview-301-market-st.nrl.jpg"
             address="301 Market St, Philadelphia, PA 19106"
@@ -170,24 +170,24 @@ export default function Samples() {
             walkabilityScore={19}
             pdfPath="doc-316-king-st.nrl.pdf"
           />
-          {/* <ProductSample
-            imagePath="preview-gabriel-max-straße-15.2.jpg"
+          <ProductSample
+            imagePath="preview-gabriel-max-straße-15.nrl.jpg"
             address="Gabriel-Max-Straße 15, 10245 Berlin, Germany"
             serviceTypesNearby={42}
             serviceTypesFarther={14}
             serviceTypesDistant={18}
             walkabilityScore={19}
-            pdfPath="doc-gabriel-max-straße-15.pdf"
-          /> */}
-          {/* <ProductSample
-            imagePath="preview-r-alexandre-martins-96.p.4-new.jpg"
+            pdfPath="doc-gabriel-max-straße-15.nrl.pdf"
+          />
+          <ProductSample
+            imagePath="preview-r-alexandre-martins-96.nrl.jpg"
             address="R. Alexandre Martins, 96 - Aparecida, Santos - SP, 11025-200, Brazil"
             serviceTypesNearby={42}
             serviceTypesFarther={11}
             serviceTypesDistant={21}
             walkabilityScore={21}
-            pdfPath="doc-r-alexandre-martins-96.pdf"
-          /> */}
+            pdfPath="doc-r-alexandre-martins-96.nrl.pdf"
+          />
           <ProductSample
             imagePath="preview-245-granby-st.nrl.jpg"
             address="245 Granby St, Norfolk, VA 23510"
