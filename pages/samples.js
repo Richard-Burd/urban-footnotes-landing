@@ -116,24 +116,24 @@ export default function Samples() {
             walkabilityScore={19}
             pdfPath="doc-301-market-st.nrl.pdf"
           />
-          {/* <ProductSample
-            imagePath="preview-163-lai-chi-kok-rd.0.7.jpg"
+          <ProductSample
+            imagePath="preview-163-lai-chi-kok-rd.nrl.jpg"
             address="163 Lai Chi Kok Rd, Tai Kok Tsui, Hong Kong"
             serviceTypesNearby={45}
             serviceTypesFarther={10}
             serviceTypesDistant={19}
             walkabilityScore={20}
-            pdfPath="doc-163-lai-chi-kok-rd.pdf"
-          /> */}
-          {/* <ProductSample
-            imagePath="preview-55-triq-san-vincenz.p.4-new.jpg"
+            pdfPath="doc-163-lai-chi-kok-rd.nrl.pdf"
+          />
+          <ProductSample
+            imagePath="preview-55-triq-san-vincenz.nrl.jpg"
             address="55 Triq San Vincenz, Tas-Sliema, Malta"
             serviceTypesNearby={45}
             serviceTypesFarther={9}
             serviceTypesDistant={20}
             walkabilityScore={15}
-            pdfPath="doc-55-triq-san-vincenz.pdf"
-          /> */}
+            pdfPath="doc-55-triq-san-vincenz.nrl.pdf"
+          />
           <ProductSample
             imagePath="preview-618-622-anacapa-st.nrl.jpg"
             address="618-622 Anacapa St, Santa Barbara, CA 93101"
@@ -143,15 +143,15 @@ export default function Samples() {
             walkabilityScore={22}
             pdfPath="doc-618-622-anacapa-st.nrl.pdf"
           />
-          {/* <ProductSample
-            imagePath="preview-50-grande-parade.0.7.jpg"
+          <ProductSample
+            imagePath="preview-50-grand-parade.nrl.jpg"
             address="50 Grand Parade, Centre, Cork, T12 D638, Ireland"
             serviceTypesNearby={44}
             serviceTypesFarther={13}
             serviceTypesDistant={17}
             walkabilityScore={17}
-            pdfPath="doc-50-grande-parade.pdf"
-          /> */}
+            pdfPath="doc-50-grand-parade.nrl.pdf"
+          />
           <ProductSample
             imagePath="preview-107-patton-ave.nrl.jpg"
             address="107 Patton Ave, Asheville, NC 28801"
@@ -269,15 +269,15 @@ export default function Samples() {
             walkabilityScore={27}
             pdfPath="doc-332-e-william-st.nrl.pdf"
           />
-          {/* <ProductSample
-            imagePath="preview-6485-victoria-ave.8.jpg"
+          <ProductSample
+            imagePath="preview-6485-victoria-ave.nrl.jpg"
             address="6485 Victoria Ave, Montreal, QC H3W, Canada"
             serviceTypesNearby={36}
             serviceTypesFarther={8}
             serviceTypesDistant={30}
             walkabilityScore={21}
-            pdfPath="doc-6485-victoria-ave.pdf"
-          /> */}
+            pdfPath="doc-6485-victoria-ave.nrl.pdf"
+          />
           <ProductSample
             imagePath="preview-107-high-st.nrl.jpg"
             address="107 High St, Charlestown, MA 02129"
