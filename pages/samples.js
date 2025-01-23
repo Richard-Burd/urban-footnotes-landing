@@ -72,6 +72,15 @@ export default function Samples() {
             pdfPath="doc-313-sauchiehall-st.nrl.pdf"
           />
           <ProductSample
+            imagePath="preview-18-whitechapel.nrl.jpg"
+            address="18 Whitechapel, Liverpool L1 6DS, UK"
+            serviceTypesNearby={49}
+            serviceTypesFarther={9}
+            serviceTypesDistant={16}
+            walkabilityScore={27}
+            pdfPath="doc-18-whitechapel.nrl.pdf"
+          />
+          <ProductSample
             imagePath="preview-10-lorne-st.nrl.jpg"
             address="10 Lorne Street, Te Aro, Wellington 6011, New Zealand"
             serviceTypesNearby={49}
@@ -340,6 +349,15 @@ export default function Samples() {
             serviceTypesDistant={32}
             walkabilityScore={21}
             pdfPath="doc-2525-ocean-ave.nrl.pdf"
+          />
+          <ProductSample
+            imagePath="preview-5025-penn-ave.nrl.jpg"
+            address="18 Whitechapel, Liverpool L1 6DS, UK"
+            serviceTypesNearby={23}
+            serviceTypesFarther={5}
+            serviceTypesDistant={46}
+            walkabilityScore={18}
+            pdfPath="doc-5025-penn-ave.nrl.pdf"
           />
           <ProductSample
             imagePath="preview-1015-elvira-ave.nrl.2.jpg"
