@@ -1,18 +1,19 @@
 import Image from "next/image";
 import HomePageTitle from "@/components/HomePageTitle";
+import Logo from "@/components/Logo";
 
 export default function Home() {
   return (
     <div>
       <div id="landing-page-logo" className="mx-4 mt-4 flex justify-center">
-        <Image
-          src="/images/ufn-logo-light.svg"
-          alt="Urban Foot Notes Logo"
-          width={750}
-          height={0}
-          unoptimized={true}
-          style={{ minWidth: "100px", opacity: 1 }}
-        />
+        <div
+          id="background-transition-color"
+          className="bg-gradient-to-r from-white from-[10%] to-transparent to-[50%]"
+        >
+          <div id="container" className="my-14 w-full">
+            <Logo color="#ffe873ff" width="579" height="363" />
+          </div>
+        </div>
       </div>
       <div className="mt-2">
         <center>
