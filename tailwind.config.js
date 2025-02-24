@@ -13,7 +13,7 @@ module.exports = {
         // default shadows don't work and custom <style jsx>
         // tags in React components can't interpolate props
         "title-text-home": "#ffe873ff",
-        "title-text-about": "#8a8a8aff",
+        "title-text-about": "#b4b4b4ff",
         "title-text-team": "#79d3fc",
         "title-text-product": "#e7c7c7ff",
         "title-text-samples": "#b5f5a5ff",
@@ -22,7 +22,7 @@ module.exports = {
         "title-text-ads": "#ba813c",
         "title-text-references": "#91baeaff",
         "navbar-home": "#ffe873ff",
-        "navbar-about": "#898886ff",
+        "navbar-about": "#b4b4b4ff",
         "navbar-team": "#73d9eb",
         "navbar-product": "#ffafafff",
         "navbar-samples": "#64df46ff",
