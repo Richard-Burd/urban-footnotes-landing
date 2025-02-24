@@ -1,10 +1,20 @@
-const DesktopNavbarButton = ({ title, bgColor, isActive }) => {
+import Link from "next/link";
+
+const MobileNavbarButton = ({ title, bgColor, isActive, path }) => {
   return (
-    <div className={`${isActive ? bgColor : "bg-inherit"} px-1 py-4`}>
+    <div
+      className={`flex w-full justify-center ${isActive ? bgColor : "bg-inherit"} p-[8px]`}
+    >
       <button
-        className={`${isActive ? "navbar-button-shadow" : ""} roboto-font mx-1 rounded-md bg-stone-700 px-4 py-2 text-xl font-bold text-neutral-300 focus:outline-none`}
+        className={`${isActive ? "navbar-button-shadow" : ""} roboto-font w-full rounded-md bg-stone-700 text-xl font-bold focus:outline-none`}
       >
-        {title}
+        <Link
+          href={path}
+          className="flex h-full w-full items-center justify-center text-neutral-300 no-underline"
+          style={{ textDecoration: "none", color: "#d1d5db" }}
+        >
+          <div className="py-[2px] text-[15px]">{title}</div>
+        </Link>
       </button>
       <style jsx>{`
         .navbar-button-shadow {
@@ -15,4 +25,4 @@ const DesktopNavbarButton = ({ title, bgColor, isActive }) => {
   );
 };
 
-export default DesktopNavbarButton;
+export default MobileNavbarButton;
