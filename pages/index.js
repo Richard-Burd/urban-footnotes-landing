@@ -1,18 +1,25 @@
-import Image from "next/image";
 import HomePageTitle from "@/components/HomePageTitle";
 import Logo from "@/components/Logo";
+import Image from "next/image";
 
 export default function Home() {
   return (
     <div>
-      <div id="landing-page-logo" className="mx-4 mt-4 flex justify-center">
-        <div
-          id="background-transition-color"
-          className="bg-gradient-to-r from-white from-[10%] to-transparent to-[50%]"
-        >
-          <div id="container" className="my-14 w-full">
-            <Logo color="#ffe873ff" width="579" height="363" />
-          </div>
+      <div
+        id="landing-page-logo-and-homepage-gradient"
+        className="relative h-[430px] w-screen"
+      >
+        {/* Background Image */}
+        <Image
+          src="/images/homepage-gradient.svg"
+          alt="homepage-gradient"
+          fill
+          className="object-cover"
+        />
+
+        {/* Centered Logo */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <Logo color="#ffe873ff" width="579" height="363" />
         </div>
       </div>
       <div className="mt-2">
