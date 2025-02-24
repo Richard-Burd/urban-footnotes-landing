@@ -12,7 +12,7 @@ module.exports = {
         // ./styles/global.css file because TailwindCSS
         // default shadows don't work and custom <style jsx>
         // tags in React components can't interpolate props
-        "title-text-home": "#9b8d78ff",
+        "title-text-home": "#ffe873ff",
         "title-text-about": "#8a8a8aff",
         "title-text-team": "#79d3fc",
         "title-text-product": "#e7c7c7ff",
@@ -21,7 +21,7 @@ module.exports = {
         "title-text-contact": "#bba4eb",
         "title-text-ads": "#ba813c",
         "title-text-references": "#91baeaff",
-        "navbar-home": "#9b8d78ff",
+        "navbar-home": "#ffe873ff",
         "navbar-about": "#898886ff",
         "navbar-team": "#73d9eb",
         "navbar-product": "#ffafafff",
