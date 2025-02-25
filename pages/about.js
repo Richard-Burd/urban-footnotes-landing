@@ -1,4 +1,3 @@
-import PageHeaderLogo from "@/components/PageHeaderLogo";
 import PageTitle from "@/components/PageTitle";
 
 export default function About() {
@@ -10,17 +9,21 @@ export default function About() {
             topTitle="About Us"
             textColor="text-title-text-about"
             shadowColor={`title-shadow-about`}
+            logoColor="#b4b4b4ff"
+            gradient={
+              "bg-[linear-gradient(to_right,rgba(90,90,90,0.1),rgba(90,90,90,0.5))]"
+            }
             showLogo={true} // Integrates the logo
           />
         </center>
         <div className="roboto-font mx-4 pb-8 text-xl text-stone-300 md:text-2xl">
           <p className="pb-4">
             Our standard-format reports rate properties on walkable access to 74
-            commonly-used services, plus five client-or-staff-chosen ones. Reports
-            for different addresses can be compared by real estate agents, home
-            buyers, and renters, favoring those requiring less car usage. City
-            planners and developers can use these reports to incentivize more
-            pedestrian-favoring development and reduce traffic.
+            commonly-used services, plus five client-or-staff-chosen ones.
+            Reports for different addresses can be compared by real estate
+            agents, home buyers, and renters, favoring those requiring less car
+            usage. City planners and developers can use these reports to
+            incentivize more pedestrian-favoring development and reduce traffic.
           </p>
 
           <p className="pb-4">

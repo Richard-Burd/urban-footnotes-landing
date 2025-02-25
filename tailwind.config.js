@@ -14,7 +14,7 @@ module.exports = {
         // tags in React components can't interpolate props
         "title-text-home": "#ffe873ff",
         "title-text-about": "#b4b4b4ff",
-        "title-text-team": "#79d3fc",
+        "title-text-team": "#73ebe4ff",
         "title-text-product": "#e7c7c7ff",
         "title-text-samples": "#b5f5a5ff",
         "title-text-order": "#decd7a",
