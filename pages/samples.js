@@ -1,4 +1,3 @@
-import PageHeaderLogo from "@/components/PageHeaderLogo";
 import PageTitle from "@/components/PageTitle";
 import ProductSample from "@/components/ProductSample";
 // note to test build function
@@ -6,17 +5,20 @@ import ProductSample from "@/components/ProductSample";
 export default function Samples() {
   return (
     <div>
-      <div className="">
-        <div className="xl:px-24">
-          <PageTitle
-            topTitle={<>Product Samples</>}
-            textColor="text-title-text-samples"
-            shadowColor="title-shadow-samples"
-            showLogo={true} // Integrates the logo
-          />
-        </div>
+      <div>
+        <PageTitle
+          topTitle="Product Samples"
+          textColor="text-title-text-samples"
+          shadowColor="title-shadow-samples"
+          logoColor="#daffd1ff"
+          gradient={
+            "bg-[linear-gradient(to_right,rgba(59,80,35,0.1),rgba(61,113,21,0.5))]"
+          }
+          showLogo={true} // Integrates the logo
+        />
+      </div>
 
-        <div className="roboto-font mb-4 text-2.5xl text-gray-200 lg:mx-32">
+      {/* <div className="roboto-font mb-4 text-2.5xl text-gray-200 lg:mx-32">
           <p className="mb-10">
             Samples are presented ranked by the number of service types (out of
             74 total) within approximately 1/4 mile of the address shown (0.4
@@ -368,13 +370,12 @@ export default function Samples() {
             walkabilityScore={12}
             pdfPath="doc-1015-elvira-ave.nrl.2.pdf"
           />{" "}
-        </div>
+        </div> */}
 
-        <div>
-          <br />
-          <br />
-          <br />
-        </div>
+      <div>
+        <br />
+        <br />
+        <br />
       </div>
     </div>
   );
