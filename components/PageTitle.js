@@ -6,15 +6,15 @@ export default function PageTitle({
   logoColor,
   shadowColor,
   gradient,
+  mobileTitleCentered = false,
   showLogo = false,
 }) {
+  const mobileTitleStyles = `flex-grow text-left ${textColor} ${shadowColor} page-title-shadow roboto-font text-[56px] tracking-wide lg:mb-4 md:text-8xl py-3`;
   return (
     <div>
       <div id="desktop-version" className="hidden min-[1000px]:block">
         <div className="w-full max-w-screen-lg">
-          <div
-            className={`${gradient} flex justify-center p-4 lg:mx-0 lg:mb-8`}
-          >
+          <div className={`${gradient} mb-8 flex justify-center p-4`}>
             {/* Fixed-width container */}
             <div className="mx-auto w-full px-6">
               {/* Wrapper for logo and title */}
@@ -28,7 +28,7 @@ export default function PageTitle({
 
                 {/* Title */}
                 <div
-                  className={`flex-grow text-left ${textColor} ${shadowColor} page-title-shadow roboto-font text-8xl tracking-wide lg:mb-4`}
+                  className={`flex-grow text-left ${textColor} ${shadowColor} page-title-shadow roboto-font mb-4 text-8xl tracking-wide`}
                 >
                   {topTitle}
                 </div>
@@ -75,12 +75,18 @@ export default function PageTitle({
             </div>
           </div>
         </div>
-        {/* Title */}
-        <div
-          className={`flex-grow text-left ${textColor} ${shadowColor} page-title-shadow roboto-font text-4xl tracking-wide sm:text-5xl lg:mb-4 lg:text-8xl`}
-        >
-          {topTitle}
-        </div>
+        {/* if mobileTitleCentered = false, else show */}
+        {mobileTitleCentered ? (
+          <div className="px-2 leading-none">
+            <div className={mobileTitleStyles}>
+              <center>{topTitle}</center>
+            </div>
+          </div>
+        ) : (
+          <div className="px-2 leading-none">
+            <div className={mobileTitleStyles}>{topTitle}</div>
+          </div>
+        )}
       </div>
     </div>
   );

@@ -15,6 +15,7 @@ export default function Contact() {
             gradient={
               "bg-[linear-gradient(to_right,rgba(77,61,87,0.1),rgba(45,19,67,0.9))]"
             }
+            mobileTitleCentered={false}
             showLogo={true} // Integrates the logo
           />
         </center>

@@ -14,6 +14,7 @@ export default function Samples() {
           gradient={
             "bg-[linear-gradient(to_right,rgba(59,80,35,0.1),rgba(61,113,21,0.5))]"
           }
+          mobileTitleCentered={false}
           showLogo={true} // Integrates the logo
         />
       </center>
