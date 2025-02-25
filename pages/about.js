@@ -8,7 +8,7 @@ export default function About() {
           topTitle="About Us"
           textColor="text-title-text-about"
           shadowColor={`title-shadow-about`}
-          logoColor="#b4b4b4ff"
+          logoColor="#d4d4d4ff"
           gradient={
             "bg-[linear-gradient(to_right,rgba(90,90,90,0.1),rgba(90,90,90,0.5))]"
           }
