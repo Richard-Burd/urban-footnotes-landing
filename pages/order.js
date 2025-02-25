@@ -22,9 +22,9 @@ export default function Order() {
           topTitle="Ordering Your Report"
           textColor="text-title-text-order"
           shadowColor="title-shadow-order"
-          logoColor="#daffd1ff"
+          logoColor="#eedfa2ff"
           gradient={
-            "bg-[linear-gradient(to_right,rgba(59,80,35,0.1),rgba(61,113,21,0.5))]"
+            "bg-[linear-gradient(to_right,rgba(123,117,92,0.1),rgba(113,96,21,0.9))]"
           }
           showLogo={true} // Integrates the logo
         />

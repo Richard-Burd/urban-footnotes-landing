@@ -10,10 +10,10 @@ export default function Contact() {
           <PageTitle
             topTitle="Contact Us"
             textColor="text-title-text-contact"
-            shadowColor={`title-shadow-ordering-our-product`}
-            logoColor="#daffd1ff"
+            shadowColor={`title-shadow-contact`}
+            logoColor="#d8c7f6ff"
             gradient={
-              "bg-[linear-gradient(to_right,rgba(59,80,35,0.1),rgba(61,113,21,0.5))]"
+              "bg-[linear-gradient(to_right,rgba(77,61,87,0.1),rgba(45,19,67,0.9))]"
             }
             showLogo={true} // Integrates the logo
           />
