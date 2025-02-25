@@ -132,6 +132,7 @@ export default function Team() {
           gradient={
             "bg-[linear-gradient(to_right,rgba(21,110,113,0.1),rgba(21,110,113,0.5))]"
           }
+          mobileTitleCentered={true}
           showLogo={true} // Integrates the logo
         />
       </center>

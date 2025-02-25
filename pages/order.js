@@ -1,7 +1,5 @@
 import { useEffect } from "react";
-import PageHeaderLogo from "@/components/PageHeaderLogo";
 import PageTitle from "@/components/PageTitle";
-import Image from "next/image";
 
 export default function Order() {
   const baseUrl = process.env.NEXT_PUBLIC_S3_BASE_URL;
@@ -26,6 +24,7 @@ export default function Order() {
           gradient={
             "bg-[linear-gradient(to_right,rgba(123,117,92,0.1),rgba(113,96,21,0.8))]"
           }
+          mobileTitleCentered={false}
           showLogo={true} // Integrates the logo
         />
       </div>

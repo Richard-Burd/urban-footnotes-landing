@@ -13,6 +13,7 @@ export default function Associations() {
           gradient={
             "bg-[linear-gradient(to_right,rgba(29,43,57,0.2),rgba(22,57,105,0.8))]"
           }
+          mobileTitleCentered={false}
           showLogo={true} // Integrates the logo
         />
         <div className="roboto-font mx-4 text-stone-300">
