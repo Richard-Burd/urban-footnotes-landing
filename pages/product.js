@@ -17,30 +17,58 @@ export default function Product() {
           showLogo={true} // Integrates the logo
         />
       </div>
-      <Image
-        alt="First & Second pages of the product"
-        src={`${baseUrl}/desktop-product-page-first-n-second-page.8.png`} // v.2.1
-        // true width & true height controlled by parent grid
-        // image fills parent's allotted space
-        width={1024}
-        height={1}
-      />
-      <Image
-        alt="Third page of the product"
-        src={`${baseUrl}/desktop-product-page-third-page.8.png`}
-        // true width & true height controlled by parent grid
-        // image fills parent's allotted space
-        width={1024}
-        height={1}
-      />
-      <Image
-        alt="Fourth page of the product"
-        src={`${baseUrl}/desktop-product-page-fourth-page.8.png`}
-        // true width & true height controlled by parent grid
-        // image fills parent's allotted space
-        width={1024}
-        height={1}
-      />
+      <div id="desktop-version" className="max-[700px]:hidden">
+        <Image
+          alt="First & Second pages of the product"
+          src={`${baseUrl}/desktop-product-page-first-n-second-page.8.png`} // v.2.1
+          // true width & true height controlled by parent grid
+          // image fills parent's allotted space
+          width={1024}
+          height={1}
+        />
+        <Image
+          alt="Third page of the product"
+          src={`${baseUrl}/desktop-product-page-third-page.8.png`}
+          // true width & true height controlled by parent grid
+          // image fills parent's allotted space
+          width={1024}
+          height={1}
+        />
+        <Image
+          alt="Fourth page of the product"
+          src={`${baseUrl}/desktop-product-page-fourth-page.8.png`}
+          // true width & true height controlled by parent grid
+          // image fills parent's allotted space
+          width={1024}
+          height={1}
+        />
+      </div>
+      <div id="mobile-version" className="min-[701px]:hidden">
+        <Image
+          alt="First page of the product, mobile version"
+          src={`${baseUrl}/mobile-product-page-first-page.png`} // v.2.1
+          // true width & true height controlled by parent grid
+          // image fills parent's allotted space
+          width={700}
+          height={1}
+        />
+        <Image
+          alt="First page of the product, mobile version"
+          src={`${baseUrl}/mobile-product-page-second-n-third-page.png`} // v.2.1
+          // true width & true height controlled by parent grid
+          // image fills parent's allotted space
+          width={700}
+          height={1}
+        />
+        <Image
+          alt="First page of the product, mobile version"
+          src={`${baseUrl}/mobile-product-page-fourth-page.png`} // v.2.1
+          // true width & true height controlled by parent grid
+          // image fills parent's allotted space
+          width={700}
+          height={1}
+        />
+      </div>
 
       {/* <section
           id="property-1"
