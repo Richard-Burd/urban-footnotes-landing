@@ -28,7 +28,7 @@ export default function PageTitle({
 
                 {/* Title */}
                 <div
-                  className={`flex-grow text-left ${textColor} ${shadowColor} page-title-shadow roboto-font text-4xl tracking-wide sm:text-5xl lg:mb-4 lg:text-8xl`}
+                  className={`flex-grow text-left ${textColor} ${shadowColor} page-title-shadow roboto-font text-8xl tracking-wide lg:mb-4`}
                 >
                   {topTitle}
                 </div>
@@ -45,23 +45,29 @@ export default function PageTitle({
             <div className="">
               {/* Logo */}
               {showLogo && (
-                <div>
+                <div className="w-screen">
                   {/* large mobile logo */}
-                  <div className="block max-[359px]:hidden min-[999px]:hidden">
-                    <div className="py-5">
-                      <Logo color={logoColor} width="296" height="183" />
+                  <div className="block max-[360px]:hidden min-[999px]:hidden">
+                    <div className="py-6">
+                      <center>
+                        <Logo color={logoColor} width="296" height="183" />
+                      </center>
                     </div>
                   </div>
                   {/* medium mobile logo */}
-                  <div className="block max-[280px]:hidden min-[358px]:hidden">
-                    <div className="py-5">
-                      <Logo color={logoColor} width="240" height="150" />
+                  <div className="block max-[280px]:hidden min-[361px]:hidden">
+                    <div className="py-6">
+                      <center>
+                        <Logo color={logoColor} width="240" height="150" />
+                      </center>
                     </div>
                   </div>
                   {/* small mobile logo */}
-                  <div className="block max-[100px]:hidden min-[279px]:hidden">
-                    <div className="py-5">
-                      <Logo color={logoColor} width="200" height="124" />
+                  <div className="block max-[100px]:hidden min-[281px]:hidden">
+                    <div className="py-6">
+                      <center>
+                        <Logo color={logoColor} width="200" height="124" />
+                      </center>
                     </div>
                   </div>
                 </div>
