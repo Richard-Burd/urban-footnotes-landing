@@ -24,7 +24,7 @@ export default function Order() {
           shadowColor="title-shadow-order"
           logoColor="#eedfa2ff"
           gradient={
-            "bg-[linear-gradient(to_right,rgba(123,117,92,0.1),rgba(113,96,21,0.9))]"
+            "bg-[linear-gradient(to_right,rgba(123,117,92,0.1),rgba(113,96,21,0.8))]"
           }
           showLogo={true} // Integrates the logo
         />

@@ -9,6 +9,10 @@ export default function Associations() {
           topTitle="Selected References"
           textColor="text-title-text-references"
           shadowColor="title-shadow-references"
+          logoColor="#c8dffaff"
+          gradient={
+            "bg-[linear-gradient(to_right,rgba(29,43,57,0.2),rgba(22,57,105,0.8))]"
+          }
           showLogo={true} // Integrates the logo
         />
         <div className="roboto-font mx-4 text-stone-300">
