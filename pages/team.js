@@ -130,6 +130,10 @@ export default function Team() {
             topTitle="Our Team"
             textColor="text-title-text-team"
             shadowColor="title-shadow-team"
+            logoColor="#73ebe4ff"
+            gradient={
+              "bg-[linear-gradient(to_right,rgba(21,110,113,0.1),rgba(21,110,113,0.5))]"
+            }
             showLogo={true} // Integrates the logo
           />
         </center>

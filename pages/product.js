@@ -12,6 +12,10 @@ export default function Product() {
             topTitle="Product Features"
             textColor="text-title-text-product"
             shadowColor={`title-shadow-product`}
+            logoColor="#e7c7c7ff"
+            gradient={
+              "bg-[linear-gradient(to_right,rgba(246,154,154,0.1),rgba(113,22,21,0.5))]"
+            }
             showLogo={true} // Integrates the logo
           />
         </div>
