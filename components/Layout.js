@@ -9,10 +9,7 @@ const Layout = ({ children }) => {
         <Navbar />
 
         {/* Main Content */}
-        <main
-          className="mx-auto flex w-full max-w-screen-xl flex-col items-center px-2 sm:px-4 lg:px-6"
-          role="main"
-        >
+        <main className="flex flex-col items-center" role="main">
           {children}
         </main>
 

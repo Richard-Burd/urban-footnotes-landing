@@ -11,6 +11,10 @@ export default function Contact() {
             topTitle="Contact Us"
             textColor="text-title-text-contact"
             shadowColor={`title-shadow-ordering-our-product`}
+            logoColor="#daffd1ff"
+            gradient={
+              "bg-[linear-gradient(to_right,rgba(59,80,35,0.1),rgba(61,113,21,0.5))]"
+            }
             showLogo={true} // Integrates the logo
           />
         </center>

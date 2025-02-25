@@ -1,5 +1,4 @@
 import React from "react";
-import PageHeaderLogo from "@/components/PageHeaderLogo";
 import PageTitle from "@/components/PageTitle";
 import SocialMediaIcon from "@/components/SocialMediaIcon";
 
@@ -124,41 +123,39 @@ const TeamMemberCard = ({ member }) => (
 export default function Team() {
   return (
     <div>
-      <div className="w-full max-w-screen-lg">
-        <center>
-          <PageTitle
-            topTitle="Our Team"
-            textColor="text-title-text-team"
-            shadowColor="title-shadow-team"
-            logoColor="#73ebe4ff"
-            gradient={
-              "bg-[linear-gradient(to_right,rgba(21,110,113,0.1),rgba(21,110,113,0.5))]"
-            }
-            showLogo={true} // Integrates the logo
-          />
-        </center>
-        <div className="roboto-font mx-4 text-xl text-stone-300 md:text-2xl">
-          {/* Team Section */}
-          <section className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
-            {teamMembers.map((member) => (
-              <TeamMemberCard key={member.id} member={member} />
-            ))}
-          </section>
+      <center>
+        <PageTitle
+          topTitle="Our Team"
+          textColor="text-title-text-team"
+          shadowColor="title-shadow-team"
+          logoColor="#73ebe4ff"
+          gradient={
+            "bg-[linear-gradient(to_right,rgba(21,110,113,0.1),rgba(21,110,113,0.5))]"
+          }
+          showLogo={true} // Integrates the logo
+        />
+      </center>
+      <div className="roboto-font mx-4 text-xl text-stone-300 md:text-2xl">
+        {/* Team Section */}
+        <section className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
+          {teamMembers.map((member) => (
+            <TeamMemberCard key={member.id} member={member} />
+          ))}
+        </section>
 
-          {/* Additional Info */}
-          <p className="mt-8 text-center">
-            You can read about us{" "}
-            <Link
-              href="https://www.urbancruiseship.org/crew"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-500 underline hover:text-blue-300"
-            >
-              here
-            </Link>{" "}
-            on the Urban Cruise Ship website.
-          </p>
-        </div>
+        {/* Additional Info */}
+        <p className="mt-8 text-center">
+          You can read about us{" "}
+          <Link
+            href="https://www.urbancruiseship.org/crew"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-500 underline hover:text-blue-300"
+          >
+            here
+          </Link>{" "}
+          on the Urban Cruise Ship website.
+        </p>
       </div>
     </div>
   );

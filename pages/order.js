@@ -17,11 +17,15 @@ export default function Order() {
 
   return (
     <div>
-      <div className="xl:px-24">
+      <div>
         <PageTitle
           topTitle="Ordering Your Report"
           textColor="text-title-text-order"
           shadowColor="title-shadow-order"
+          logoColor="#daffd1ff"
+          gradient={
+            "bg-[linear-gradient(to_right,rgba(59,80,35,0.1),rgba(61,113,21,0.5))]"
+          }
           showLogo={true} // Integrates the logo
         />
       </div>
