@@ -43,7 +43,7 @@ export default function Product() {
           height={1}
         />
       </div>
-      <div id="mobile-version" className="min-[701px]:hidden">
+      <div id="mobile-version" className="px-3 min-[701px]:hidden">
         <Image
           alt="First page of the product, mobile version"
           src={`${baseUrl}/mobile-product-page-first-page.png`} // v.2.1
