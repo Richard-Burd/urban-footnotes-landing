@@ -98,24 +98,26 @@ const teamMembers = [
 const TeamMemberCard = ({ member }) => (
   <article
     key={member.id}
-    className="mb-8 flex flex-col border-b border-stone-400 pb-4 md:pb-6"
+    className="flex flex-col rounded-[30px] bg-[linear-gradient(to_right,rgba(21,110,113,0.2),rgba(21,110,113,0.7))]"
   >
-    <div className="text-xl font-bold">{member.name}</div>
-    <div className="text-lg italic">{member.role}</div>
-    <p className="mt-2 text-sm text-stone-300">{member.description}</p>
-    <div className="mt-3 flex flex-wrap">
-      {member.socialLinks.map((link, index) => (
-        <div key={index} className="mr-4 mt-2">
-          <SocialMediaIcon
-            icon={link.icon}
-            hyperLink={link.link}
-            aria-label={`${member.name} ${link.icon} link`}
-            width="30"
-            height="30"
-            {...socialMediaIconProps}
-          />
-        </div>
-      ))}
+    <div className="ml-2 p-5">
+      <div className="text-xl font-bold">{member.name}</div>
+      <div className="text-lg italic">{member.role}</div>
+      <p className="mt-2 text-sm text-stone-300">{member.description}</p>
+      <div className="mt-3 flex flex-wrap">
+        {member.socialLinks.map((link, index) => (
+          <div key={index} className="mr-4 mt-2">
+            <SocialMediaIcon
+              icon={link.icon}
+              hyperLink={link.link}
+              aria-label={`${member.name} ${link.icon} link`}
+              width="30"
+              height="30"
+              {...socialMediaIconProps}
+            />
+          </div>
+        ))}
+      </div>
     </div>
   </article>
 );
@@ -136,9 +138,9 @@ export default function Team() {
           showLogo={true} // Integrates the logo
         />
       </center>
-      <div className="roboto-font mx-4 text-xl text-stone-300 md:text-2xl">
+      <div className="roboto-font mx-4 pt-4 text-xl text-stone-300 md:text-2xl">
         {/* Team Section */}
-        <section className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
+        <section className="grid w-full max-w-screen-lg grid-cols-1 gap-6 lg:grid-cols-2">
           {teamMembers.map((member) => (
             <TeamMemberCard key={member.id} member={member} />
           ))}
