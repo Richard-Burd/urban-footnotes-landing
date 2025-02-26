@@ -377,32 +377,41 @@ export default function Samples() {
         />{" "}
       </div> */}
 
-      <div id="Highly Walkable" className="p-4">
-        <div className="text-4xl text-gray-200">Highly Walkable</div>
-        {filteredData.map((entry, index) => (
-          <div key={index} className="">
-            {/* Address */}
-            <div className="text-lg font-bold text-gray-200">
-              {entry.address}
-            </div>
-
-            {/* Walkability Data */}
-            <div className="mt-2 text-2xl font-semibold text-gray-800">
-              <div className="w-10 bg-lime-400 text-center">
-                {entry.greenNear}
-              </div>
-              <div className="w-10 bg-yellow-400 text-center">
-                {entry.yellowFarther}
-              </div>
-              <div className="w-10 bg-rose-400 text-center">
-                {entry.redDistant}
-              </div>
-              <div className="w-10 bg-slate-300 text-center">
-                {entry.walkabilityScore}
-              </div>
+      <div className="mx-auto max-w-screen-lg">
+        <div className="rounded-t-[50px] bg-green-950 py-10 text-center text-6xl text-lime-300">
+          Property Report Scoreboard
+        </div>
+        <div id="Highly Walkable" className="bg-green-700 p-4">
+          <div className="border-b-4 border-x-slate-200">
+            <div className="pb-2 text-right text-4xl text-gray-200">
+              Highly Walkable
             </div>
           </div>
-        ))}
+          {filteredData.map((entry, index) => (
+            <div key={index} className="">
+              {/* Address */}
+              <div className="text-lg font-bold text-gray-200">
+                {entry.address}
+              </div>
+
+              {/* Walkability Data */}
+              <div className="mt-2 text-2xl font-semibold text-gray-800">
+                <div className="w-10 bg-lime-400 text-center">
+                  {entry.greenNear}
+                </div>
+                <div className="w-10 bg-yellow-400 text-center">
+                  {entry.yellowFarther}
+                </div>
+                <div className="w-10 bg-rose-400 text-center">
+                  {entry.redDistant}
+                </div>
+                <div className="w-10 bg-slate-300 text-center">
+                  {entry.walkabilityScore}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
 
       <div>
