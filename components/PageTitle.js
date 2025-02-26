@@ -83,7 +83,7 @@ export default function PageTitle({
             </div>
           </div>
         ) : (
-          <div className="px-2 leading-none">
+          <div className="px-3 leading-none">
             <div className={mobileTitleStyles}>{topTitle}</div>
           </div>
         )}
