@@ -1,8 +1,9 @@
+// slated for deletion
 import Image from "next/image";
 
 export default function PageHeaderLogo() {
   return (
-    <div className= "flex justify-center">
+    <div className="flex justify-center">
       <Image
         src="/images/ufn-logo-light.svg"
         alt="Urban Foot Notes Logo"
