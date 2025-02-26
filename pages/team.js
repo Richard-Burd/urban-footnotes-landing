@@ -124,7 +124,7 @@ const TeamMemberCard = ({ member }) => (
 
 export default function Team() {
   return (
-    <div>
+    <div className="w-full max-w-screen-lg">
       <center>
         <PageTitle
           topTitle="Our Team"
