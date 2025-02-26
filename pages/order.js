@@ -29,7 +29,7 @@ export default function Order() {
         />
       </div>
 
-      <div className="roboto-font mb-4 text-2.5xl text-gray-200 lg:mx-32">
+      <div className="roboto-font mb-4 text-center text-2.5xl text-gray-200 lg:mx-32">
         Coming Soon!
       </div>
 
