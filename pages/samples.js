@@ -1,8 +1,12 @@
 import PageTitle from "@/components/PageTitle";
-import ProductSample from "@/components/ProductSample";
-// note to test build function
+import samplesData from "@/lib/samplesData";
 
 export default function Samples() {
+  // Filter & sort the data
+  const filteredData = samplesData
+    .filter((entry) => entry.category === "Highly Walkable")
+    .sort((a, b) => Number(b.walkabilityScore) - Number(a.walkabilityScore)); // Sort by walkabilityScore (descending)
+
   return (
     <div>
       <center>
@@ -28,7 +32,7 @@ export default function Samples() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-5 xl:grid-cols-4">
+      {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-5 xl:grid-cols-4">
         <ProductSample
           imagePath="preview-223-8th-ave.nrl.jpg"
           address="223 8th Ave. New York, NY 10011"
@@ -371,6 +375,34 @@ export default function Samples() {
           walkabilityScore={12}
           pdfPath="doc-1015-elvira-ave.nrl.2.pdf"
         />{" "}
+      </div> */}
+
+      <div id="Highly Walkable" className="p-4">
+        <div className="text-4xl text-gray-200">Highly Walkable</div>
+        {filteredData.map((entry, index) => (
+          <div key={index} className="">
+            {/* Address */}
+            <div className="text-lg font-bold text-gray-200">
+              {entry.address}
+            </div>
+
+            {/* Walkability Data */}
+            <div className="mt-2 text-2xl font-semibold text-gray-800">
+              <div className="w-10 bg-lime-400 text-center">
+                {entry.greenNear}
+              </div>
+              <div className="w-10 bg-yellow-400 text-center">
+                {entry.yellowFarther}
+              </div>
+              <div className="w-10 bg-rose-400 text-center">
+                {entry.redDistant}
+              </div>
+              <div className="w-10 bg-slate-300 text-center">
+                {entry.walkabilityScore}
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
 
       <div>
