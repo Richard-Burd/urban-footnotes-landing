@@ -17,7 +17,7 @@ export default function About() {
         />
       </center>
       <div className="roboto-font w-full max-w-screen-lg pb-8 text-xl text-stone-300 md:text-2xl">
-        <div className="max-[1050px]:mx-6 max-[999px]:mx-6">
+        <div className="max-[1030px]:mx-6">
           <p className="pb-4">
             Our standard-format reports rate properties on walkable access to 74
             commonly-used services, plus five client-or-staff-chosen ones.
