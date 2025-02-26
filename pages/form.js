@@ -43,6 +43,9 @@ export default function SupplementaryForm() {
     "Walmart",
   ];
 
+  console.log("Filestack API Key:", filestackApiKey);
+
+
   // Track the total number of selected options
   const totalSelections =
     customOptions.filter((opt) => opt.trim() !== "").length +
@@ -63,34 +66,58 @@ export default function SupplementaryForm() {
       setSelectedOptions((prev) => [...prev, option]);
     }
   };
-
   const openPicker = () => {
     if (!address || !email) {
       alert("Please complete the address and email fields before uploading.");
       return;
     }
-
+  
+    console.log("Opening Filestack Picker...");
+  
     const options = {
       maxFiles: 1,
       uploadInBackground: false,
       fromSources: ["local_file_system"],
       accept: ["image/jpeg", "image/png", "application/pdf", "image/svg+xml"],
-      maxSize: 5 * 1024 * 1024,
-      onUploadDone: (result) => {
-        if (result.filesUploaded.length > 0) {
-          const file = result.filesUploaded[0];
-          setUploadedFileUrl(file.url);
-          setUploadedFileType(file.mimetype);
+      maxSize: 5 * 1024 * 1024, // 5MB limit (adjustable)
+      onFileSelected: (file) => {
+        console.log("File Selected:", file);
+  
+        if (file.size > 5 * 1024 * 1024) { // 5MB limit
+          alert("File size exceeds 5MB. Please submit the form without uploading, and email us at contact@urbanfootnotes.com, and we will help you upload your logo.");
+          return; // Stop further processing
         }
       },
+      onUploadDone: (result) => {
+        console.log("Filestack Upload Response:", result);
+  
+        if (result.filesUploaded.length > 0) {
+          const file = result.filesUploaded[0];
+  
+          setUploadedFileUrl(file.url);
+          setUploadedFileType(file.mimetype);
+  
+          console.log("Uploaded File URL:", file.url);
+        } else {
+          console.error("No files were uploaded.");
+        }
+      },
+      onFileUploadFailed: (error) => {
+        console.error("File Upload Failed:", error);
+      },
+      onClose: () => {
+        console.log("Filestack Picker Closed without Uploading.");
+      },
     };
-
+  
     client.picker(options).open();
   };
-
+  
+  
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!address || !email || !uploadedFileUrl) {
+    if (!address || !email ) {
       alert("Please complete all required fields before submitting.");
       return;
     }
@@ -301,7 +328,7 @@ export default function SupplementaryForm() {
           <h2 className="mb-2 text-lg font-semibold">Upload Your Logo</h2>
           <p className="mb-4 text-sm text-gray-600">
             Your logo will be prominently displayed on pages 1 - 3 of the
-            report. Acceptable file types: JPG, PNG, PDF, SVG.
+            report. Acceptable file types: JPG, PNG, PDF, SVG. File must be less than 5 megabytes, for larger files, please email us at contact@urbanfootnotes.com
           </p>
           <button
             type="button"
