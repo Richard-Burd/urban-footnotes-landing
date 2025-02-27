@@ -436,6 +436,7 @@ export default function Samples() {
             Property Report Scoreboard
           </div>
           <div className="rounded-b-[45px] bg-[linear-gradient(to_right,rgba(4,28,3,0.5),rgba(26,48,26,0.5))] pb-9">
+            {/* Highly Walkable */}
             <div id="Highly Walkable" className="px-10">
               <div className="mb-2 border-b-4 border-x-slate-200">
                 <div className="pb-2 pt-3 text-right text-[40px] italic text-gray-200">
@@ -462,16 +463,16 @@ export default function Samples() {
                       {/* Walkability Data */}
                       <div className="column-layout">
                         <div className="flex w-full gap-4 text-center text-[24px] font-semibold leading-[34px] text-gray-800">
-                          <div className="mx-[4px] w-12 bg-lime-400 pb-[2px]">
+                          <div className="mx-[4px] w-12 bg-[#73e369ff] pb-[2px]">
                             {entry.greenNear}
                           </div>
-                          <div className="mx-[4px] w-12 bg-yellow-400">
+                          <div className="mx-[4px] w-12 bg-[#f7fc70ff]">
                             {entry.yellowFarther}
                           </div>
-                          <div className="mx-[4px] w-12 bg-rose-400">
+                          <div className="mx-[4px] w-12 bg-[#e37569ff]">
                             {entry.redDistant}
                           </div>
-                          <div className="mx-[4px] w-12 rounded-[10px] bg-slate-300">
+                          <div className="mx-[4px] w-12 rounded-[10px] bg-[#cbd4e0ff] text-[#1f244dff]">
                             {entry.walkabilityScore}
                           </div>
                         </div>
@@ -482,6 +483,7 @@ export default function Samples() {
               </div>
             </div>
 
+            {/* Somewhat Walkable */}
             <div id="Somewhat Walkable" className="px-10 pt-14">
               <div className="mb-2 border-b-4 border-x-slate-200">
                 <div className="pb-2 pt-3 text-right text-[40px] italic text-gray-200">
@@ -508,16 +510,16 @@ export default function Samples() {
                       {/* Walkability Data */}
                       <div className="column-layout">
                         <div className="flex w-full gap-4 text-center text-[24px] font-semibold leading-[34px] text-gray-800">
-                          <div className="mx-[4px] w-12 bg-lime-400 pb-[2px]">
+                          <div className="mx-[4px] w-12 bg-[#73e369ff] pb-[2px]">
                             {entry.greenNear}
                           </div>
-                          <div className="mx-[4px] w-12 bg-yellow-400">
+                          <div className="mx-[4px] w-12 bg-[#f7fc70ff]">
                             {entry.yellowFarther}
                           </div>
-                          <div className="mx-[4px] w-12 bg-rose-400">
+                          <div className="mx-[4px] w-12 bg-[#e37569ff]">
                             {entry.redDistant}
                           </div>
-                          <div className="mx-[4px] w-12 rounded-[10px] bg-slate-300">
+                          <div className="mx-[4px] w-12 rounded-[10px] bg-[#cbd4e0ff] text-[#1f244dff]">
                             {entry.walkabilityScore}
                           </div>
                         </div>
@@ -528,6 +530,7 @@ export default function Samples() {
               </div>
             </div>
 
+            {/* Less Walkable */}
             <div id="Less Walkable" className="rounded-b-[45px] px-10 pt-14">
               <div className="mb-2 border-b-4 border-x-slate-200">
                 <div className="pb-2 pt-3 text-right text-[40px] italic text-gray-200">
@@ -554,16 +557,156 @@ export default function Samples() {
                       {/* Walkability Data */}
                       <div className="column-layout">
                         <div className="flex w-full gap-4 text-center text-[24px] font-semibold leading-[34px] text-gray-800">
-                          <div className="mx-[4px] w-12 bg-lime-400 pb-[2px]">
+                          <div className="mx-[4px] w-12 bg-[#73e369ff] pb-[2px]">
                             {entry.greenNear}
                           </div>
-                          <div className="mx-[4px] w-12 bg-yellow-400">
+                          <div className="mx-[4px] w-12 bg-[#f7fc70ff]">
                             {entry.yellowFarther}
                           </div>
-                          <div className="mx-[4px] w-12 bg-rose-400">
+                          <div className="mx-[4px] w-12 bg-[#e37569ff]">
                             {entry.redDistant}
                           </div>
-                          <div className="mx-[4px] w-12 rounded-[10px] bg-slate-300">
+                          <div className="mx-[4px] w-12 rounded-[10px] bg-[#cbd4e0ff] text-[#1f244dff]">
+                            {entry.walkabilityScore}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile Property Report Scorecard */}
+        <div id="mobilw-scorecard" className="hidden px-4 max-[1001px]:block">
+          <div className="rounded-t-[45px] bg-[linear-gradient(to_right,rgba(0,28,0,0.5),rgba(61,113,21,0.5))] px-4 pb-4 pt-4 text-[42px] leading-[45px] text-title-text-samples">
+            Property Report Scoreboard
+          </div>
+          <div className="rounded-b-[45px] bg-[linear-gradient(to_right,rgba(4,28,3,0.5),rgba(26,48,26,0.5))] pb-9">
+            {/* Highly Walkable */}
+            <div id="Highly Walkable" className="px-4">
+              <div className="mb-2 border-b-4 border-x-slate-200">
+                <div className="pb-2 pt-3 text-right text-[27px] italic text-gray-200">
+                  Highly Walkable
+                </div>
+              </div>
+              <div>
+                <div className="column-layout">
+                  {highlyWalkableData.map((entry, index) => (
+                    <div key={entry.address} className="column-layout">
+                      {/* Address */}
+                      <div className="column-layout">
+                        <div
+                          key={index}
+                          className="pb-2 text-[24px] leading-[30px] text-gray-200"
+                        >
+                          {entry.address}
+                        </div>
+                      </div>
+
+                      {/* Walkability Data */}
+                      <div className="column-layout pb-8">
+                        <div className="flex w-full justify-end gap-2 text-center text-[21px] font-semibold leading-[27px] text-gray-800">
+                          <div className="mx-[2px] w-9 bg-[#73e369ff] pb-[2px]">
+                            {entry.greenNear}
+                          </div>
+                          <div className="mx-[2px] w-9 bg-[#f7fc70ff]">
+                            {entry.yellowFarther}
+                          </div>
+                          <div className="mx-[2px] w-9 bg-[#e37569ff]">
+                            {entry.redDistant}
+                          </div>
+                          <div className="mx-[2px] w-9 rounded-[7px] bg-[#cbd4e0ff] text-[#1f244dff]">
+                            {entry.walkabilityScore}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Somewhat Walkable */}
+            <div id="Somewhat Walkable" className="mt-8 px-4">
+              <div className="mb-2 border-b-4 border-x-slate-200">
+                <div className="pb-2 pt-3 text-right text-[27px] italic text-gray-200">
+                  Somewhat Walkable
+                </div>
+              </div>
+              <div>
+                <div className="column-layout">
+                  {somewhatWalkableData.map((entry, index) => (
+                    <div key={entry.address} className="column-layout">
+                      {/* Address */}
+                      <div className="column-layout">
+                        <div
+                          key={index}
+                          className="pb-2 text-[24px] leading-[30px] text-gray-200"
+                        >
+                          {entry.address}
+                        </div>
+                      </div>
+
+                      {/* Walkability Data */}
+                      <div className="column-layout pb-8">
+                        <div className="flex w-full justify-end gap-2 text-center text-[21px] font-semibold leading-[27px] text-gray-800">
+                          <div className="mx-[2px] w-9 bg-[#73e369ff] pb-[2px]">
+                            {entry.greenNear}
+                          </div>
+                          <div className="mx-[2px] w-9 bg-[#f7fc70ff]">
+                            {entry.yellowFarther}
+                          </div>
+                          <div className="mx-[2px] w-9 bg-[#e37569ff]">
+                            {entry.redDistant}
+                          </div>
+                          <div className="mx-[2px] w-9 rounded-[7px] bg-[#cbd4e0ff] text-[#1f244dff]">
+                            {entry.walkabilityScore}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Less Walkable */}
+            <div id="Less Walkable" className="mt-8 px-4">
+              <div className="mb-2 border-b-4 border-x-slate-200">
+                <div className="pb-2 pt-3 text-right text-[27px] italic text-gray-200">
+                  Less Walkable
+                </div>
+              </div>
+              <div>
+                <div className="column-layout">
+                  {lessWalkableData.map((entry, index) => (
+                    <div key={entry.address} className="column-layout">
+                      {/* Address */}
+                      <div className="column-layout">
+                        <div
+                          key={index}
+                          className="pb-2 text-[24px] leading-[30px] text-gray-200"
+                        >
+                          {entry.address}
+                        </div>
+                      </div>
+
+                      {/* Walkability Data */}
+                      <div className="column-layout pb-8">
+                        <div className="flex w-full justify-end gap-2 text-center text-[21px] font-semibold leading-[27px] text-gray-800">
+                          <div className="mx-[2px] w-9 bg-[#73e369ff] pb-[2px]">
+                            {entry.greenNear}
+                          </div>
+                          <div className="mx-[2px] w-9 bg-[#f7fc70ff]">
+                            {entry.yellowFarther}
+                          </div>
+                          <div className="mx-[2px] w-9 bg-[#e37569ff]">
+                            {entry.redDistant}
+                          </div>
+                          <div className="mx-[2px] w-9 rounded-[7px] bg-[#cbd4e0ff] text-[#1f244dff]">
                             {entry.walkabilityScore}
                           </div>
                         </div>
