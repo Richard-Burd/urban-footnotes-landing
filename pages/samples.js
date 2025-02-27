@@ -2,10 +2,20 @@ import PageTitle from "@/components/PageTitle";
 import samplesData from "@/lib/samplesData";
 
 export default function Samples() {
-  // Filter & sort the data
-  const filteredData = samplesData
+  // Filter & sort the "Highly Walkable" data
+  const highlyWalkableData = samplesData
     .filter((entry) => entry.category === "Highly Walkable")
-    .sort((a, b) => Number(b.walkabilityScore) - Number(a.walkabilityScore)); // Sort by walkabilityScore (descending)
+    .sort((a, b) => Number(a.categoryRank) - Number(b.categoryRank)); // Sort by categoryRank (converted to a number)
+
+  // Filter & sort the "Less Walkable" data
+  const somewhatWalkableData = samplesData
+    .filter((entry) => entry.category === "Somewhat Walkable")
+    .sort((a, b) => Number(a.categoryRank) - Number(b.categoryRank)); // Sort by categoryRank (converted to a number)
+
+  // Filter & sort the "Less Walkable" data
+  const lessWalkableData = samplesData
+    .filter((entry) => entry.category === "Less Walkable")
+    .sort((a, b) => Number(a.categoryRank) - Number(b.categoryRank)); // Sort by categoryRank (converted to a number)
 
   return (
     <div>
@@ -377,40 +387,141 @@ export default function Samples() {
         />{" "}
       </div> */}
 
-      <div className="mx-auto max-w-screen-lg">
-        <div className="rounded-t-[50px] bg-green-950 py-10 text-center text-6xl text-lime-300">
+      <div className="mx-auto max-w-screen-lg max-[1040px]:px-4">
+        <div className="rounded-t-[45px] bg-green-950 pb-4 text-center text-[75px] text-lime-300">
           Property Report Scoreboard
         </div>
-        <div id="Highly Walkable" className="bg-green-700 p-4">
-          <div className="border-b-4 border-x-slate-200">
-            <div className="pb-2 text-right text-4xl text-gray-200">
+
+        <div id="Highly Walkable" className="bg-green-700 px-10">
+          <div className="mb-2 border-b-4 border-x-slate-200">
+            <div className="pb-2 pt-3 text-right text-[40px] italic text-gray-200">
               Highly Walkable
             </div>
           </div>
-          {filteredData.map((entry, index) => (
-            <div key={index} className="">
-              {/* Address */}
-              <div className="text-lg font-bold text-gray-200">
-                {entry.address}
-              </div>
+          <div>
+            <div className="column-layout flex flex-col">
+              {highlyWalkableData.map((entry, index) => (
+                <div
+                  key={entry.address}
+                  className="column-layout flex w-full items-center"
+                >
+                  {/* Address */}
+                  <div className="column-layout w-full pr-12 text-right">
+                    <div
+                      key={index}
+                      className="text-[26px] leading-[45px] text-gray-200"
+                    >
+                      {entry.address}
+                    </div>
+                  </div>
 
-              {/* Walkability Data */}
-              <div className="mt-2 text-2xl font-semibold text-gray-800">
-                <div className="w-10 bg-lime-400 text-center">
-                  {entry.greenNear}
+                  {/* Walkability Data */}
+                  <div className="column-layout">
+                    <div className="flex w-full gap-4 text-center text-[24px] font-semibold leading-[34px] text-gray-800">
+                      <div className="w-12 bg-lime-400 pb-[2px]">
+                        {entry.greenNear}
+                      </div>
+                      <div className="w-12 bg-yellow-400">
+                        {entry.yellowFarther}
+                      </div>
+                      <div className="w-12 bg-rose-400">{entry.redDistant}</div>
+                      <div className="w-12 rounded-[10px] bg-slate-300">
+                        {entry.walkabilityScore}
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="w-10 bg-yellow-400 text-center">
-                  {entry.yellowFarther}
-                </div>
-                <div className="w-10 bg-rose-400 text-center">
-                  {entry.redDistant}
-                </div>
-                <div className="w-10 bg-slate-300 text-center">
-                  {entry.walkabilityScore}
-                </div>
-              </div>
+              ))}
             </div>
-          ))}
+          </div>
+        </div>
+
+        <div id="Somewhat Walkable" className="bg-green-700 px-10 pt-14">
+          <div className="mb-2 border-b-4 border-x-slate-200">
+            <div className="pb-2 pt-3 text-right text-[40px] italic text-gray-200">
+              Somewhat Walkable
+            </div>
+          </div>
+          <div>
+            <div className="column-layout flex flex-col">
+              {somewhatWalkableData.map((entry, index) => (
+                <div
+                  key={entry.address}
+                  className="column-layout flex w-full items-center"
+                >
+                  {/* Address */}
+                  <div className="column-layout w-full pr-12 text-right">
+                    <div
+                      key={index}
+                      className="text-[26px] leading-[45px] text-gray-200"
+                    >
+                      {entry.address}
+                    </div>
+                  </div>
+
+                  {/* Walkability Data */}
+                  <div className="column-layout">
+                    <div className="flex w-full gap-4 text-center text-[24px] font-semibold leading-[34px] text-gray-800">
+                      <div className="w-12 bg-lime-400 pb-[2px]">
+                        {entry.greenNear}
+                      </div>
+                      <div className="w-12 bg-yellow-400">
+                        {entry.yellowFarther}
+                      </div>
+                      <div className="w-12 bg-rose-400">{entry.redDistant}</div>
+                      <div className="w-12 rounded-[10px] bg-slate-300">
+                        {entry.walkabilityScore}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div id="Less Walkable" className="bg-green-700 px-10 pt-14">
+          <div className="mb-2 border-b-4 border-x-slate-200">
+            <div className="pb-2 pt-3 text-right text-[40px] italic text-gray-200">
+              Less Walkable
+            </div>
+          </div>
+          <div>
+            <div className="column-layout flex flex-col">
+              {lessWalkableData.map((entry, index) => (
+                <div
+                  key={entry.address}
+                  className="column-layout flex w-full items-center"
+                >
+                  {/* Address */}
+                  <div className="column-layout w-full pr-12 text-right">
+                    <div
+                      key={index}
+                      className="text-[26px] leading-[45px] text-gray-200"
+                    >
+                      {entry.address}
+                    </div>
+                  </div>
+
+                  {/* Walkability Data */}
+                  <div className="column-layout">
+                    <div className="flex w-full gap-4 text-center text-[24px] font-semibold leading-[34px] text-gray-800">
+                      <div className="w-12 bg-lime-400 pb-[2px]">
+                        {entry.greenNear}
+                      </div>
+                      <div className="w-12 bg-yellow-400">
+                        {entry.yellowFarther}
+                      </div>
+                      <div className="w-12 bg-rose-400">{entry.redDistant}</div>
+                      <div className="w-12 rounded-[10px] bg-slate-300">
+                        {entry.walkabilityScore}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
 
