@@ -14,8 +14,9 @@ export default function MobileNavBar({ navItems }) {
         <nav className="bg-neutral-950 px-2 pb-1 pt-2 text-white">
           <div className="flex justify-center">
             <div className="grid w-full grid-cols-3 pb-[6px]">
-              {navItems.map((item) => (
+              {navItems.map((item, index) => (
                 <MobileNavbarButton
+                  key={item.path || index}
                   title={item.title}
                   bgColor={item.bgColor}
                   isActive={currentPath === item.path}

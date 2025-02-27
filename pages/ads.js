@@ -10,7 +10,7 @@ export default function Ads() {
         <div className="w-full max-w-screen-lg">
           <div id="background-and-title">
             <PageTitle
-              topTitle="Advertisements"
+              topTitle="a a a a a a a" // creates necessary spacing for bg title to span full width
               textColor="text-title-text-ads text-opacity-0" // this page has smaller text size
               shadowColor={`title-shadow-ads opacity-0`} // this page has smaller text size
               logoColor="#f6d7beff"
@@ -21,11 +21,13 @@ export default function Ads() {
             />
           </div>
           <div id="desktop-title" className="hidden min-[1000px]:block">
-            <div
-              id="page-title"
-              className={`title-shadow-ads page-title-shadow roboto-font flex-grow -translate-y-[260px] translate-x-[450px] text-left text-[74px] tracking-wide text-title-text-ads`}
-            >
-              Advertisements
+            <div className="flex justify-center">
+              <div
+                id="page-title"
+                className={`title-shadow-ads page-title-shadow roboto-font -translate-y-[260px] translate-x-[180px] text-left text-[74px] tracking-wide text-title-text-ads`}
+              >
+                Advertisements
+              </div>
             </div>
           </div>
           {/* <div
