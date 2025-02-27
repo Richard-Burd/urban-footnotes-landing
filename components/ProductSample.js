@@ -35,7 +35,7 @@ const ProductSample = ({
         target="_blank"
         rel="noopener noreferrer"
       >
-        <div className="relative">
+        <div className="flex justify-center px-2">
           <Image
             src={`${baseUrl}/${imagePath}`}
             alt={`picture of ${address}`}
