@@ -100,6 +100,11 @@ export default function Ads() {
               Advertisements
             </div>
           </div>
+          <center>
+            <div className="roboto-font pb-4 text-4xl tracking-wide text-stone-300 opacity-60 lg:pt-2 lg:text-4xl">
+              Comming Soon...
+            </div>
+          </center>
         </center>
       </div>
     </div>
