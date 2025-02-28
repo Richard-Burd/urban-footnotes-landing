@@ -1,8 +1,21 @@
 import PageTitle from "@/components/PageTitle";
 import samplesData from "@/lib/samplesData";
 import ProductSample from "@/components/ProductSample";
+import { useEffect, useState } from "react";
 
 export default function Samples() {
+  const [showButton, setShowButton] = useState(false);
+
+  useEffect(() => {
+    // Delay showing the button by 5000ms (5 seconds)
+    const timer = setTimeout(() => {
+      setShowButton(true);
+    }, 5000);
+
+    // Cleanup the timer if the component unmounts before 5 seconds
+    return () => clearTimeout(timer);
+  }, []);
+
   // scrolls the user to the Property Report Scorecard when they click the button
   const handleScroll = () => {
     document
@@ -63,17 +76,27 @@ export default function Samples() {
             </div>
 
             {/* Right Side: Button */}
+
             <button
               id="button-to-property-report-scorecards"
               onClick={handleScroll}
               className="mb-14 max-w-[184px] -translate-y-1 rounded-[20px] border-4 border-green-900 bg-[linear-gradient(to_right,rgba(28,78,35,1),rgba(14,109,27,1))] px-4 py-2 text-white shadow-lg transition hover:bg-blue-600"
             >
-              <div className="mx-2 tracking-wider">
-                <div className="text-[27px] text-lime-200">Click Here</div>
-                <div className="text-[17px]">
-                  to see a list of our properties with metrics, categorized
+              {showButton ? (
+                <div className="mx-2 tracking-wider">
+                  <div className="text-[27px] text-lime-200">Click Here</div>
+                  <div className="text-[17px]">
+                    to see a list of our properties with metrics, categorized
+                  </div>
                 </div>
-              </div>
+              ) : (
+                <div className="mx-2 tracking-wider">
+                  <div className="text-[27px] text-lime-200">Loading</div>
+                  <div className="text-[17px]">
+                    Please wait for the page to render
+                  </div>
+                </div>
+              )}
             </button>
           </div>
         </div>
