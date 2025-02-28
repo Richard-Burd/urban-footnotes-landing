@@ -45,7 +45,7 @@ const ProductSample = ({
             height={1}
           />
           <img
-            className="absolute left-0 top-0 scale-95 transform opacity-40 transition-opacity duration-300 ease-in-out hover:scale-100 hover:opacity-90 focus:opacity-100"
+            className="absolute flex scale-95 transform justify-center opacity-40 transition-opacity duration-300 ease-in-out hover:scale-100 hover:opacity-90 focus:opacity-100"
             src="/images/pdf-preview-pointy-hand.svg"
             alt="Pointy Hand Preview"
             // true width & true height controlled by parent grid
