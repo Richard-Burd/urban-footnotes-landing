@@ -3,16 +3,13 @@ import Footer from "./Footer";
 
 const Layout = ({ children }) => {
   return (
-    <div className="flex min-h-screen flex-col bg-gradient-to-b from-neutral-950 via-neutral-800 to-neutral-700">
+    <div className="flex min-h-screen flex-col bg-gradient-to-b from-neutral-950 via-neutral-900 to-neutral-800">
       {/* Navbar */}
       <div className="bg-transparent">
         <Navbar />
 
         {/* Main Content */}
-        <main
-          className="mx-auto flex w-full max-w-screen-xl flex-col items-center px-2 sm:px-4 lg:px-6"
-          role="main"
-        >
+        <main className="flex flex-col items-center" role="main">
           {children}
         </main>
 
