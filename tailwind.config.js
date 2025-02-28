@@ -16,7 +16,7 @@ module.exports = {
         "title-text-about": "#b4b4b4ff",
         "title-text-team": "#73ebe4ff",
         "title-text-product": "#e7c7c7ff",
-        "title-text-samples": "#b5f5a5ff",
+        "title-text-samples": "#8adc75ff",
         "title-text-order": "#decd7a",
         "title-text-contact": "#bba4eb",
         "title-text-ads": "#ba813c",

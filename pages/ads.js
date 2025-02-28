@@ -24,7 +24,7 @@ export default function Ads() {
             <div className="flex justify-center">
               <div
                 id="page-title"
-                className={`title-shadow-ads page-title-shadow roboto-font -translate-y-[260px] translate-x-[180px] text-left text-[74px] tracking-wide text-title-text-ads`}
+                className={`title-shadow-ads page-title-shadow roboto-font -translate-y-[160px] translate-x-[180px] text-left text-[74px] tracking-wide text-title-text-ads`}
               >
                 Advertisements
               </div>
