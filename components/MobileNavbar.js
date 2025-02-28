@@ -1,106 +1,32 @@
-import { useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
+import MobileNavbarButton from "./MobileNavbarButton";
+import { useRouter } from "next/router";
 
-export default function MobileNavBar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+export default function MobileNavBar({ navItems }) {
+  const router = useRouter();
+  const currentPath = router.pathname;
 
   return (
     <div>
-      <div className="bg-neutral-950 px-4 py-4 text-white">
-        <button onClick={toggleMenu}>
-          <Image
-            src="/images/hamburger-icon-white.svg"
-            alt="Menu"
-            width={30}
-            height={30}
-          />
-        </button>
+      <div
+        id="mobile-nav-bar-buttons"
+        className="w-full bg-stone-800 text-white"
+      >
+        <nav className="bg-neutral-950 px-2 pb-1 pt-2 text-white">
+          <div className="flex justify-center">
+            <div className="grid w-full grid-cols-3 pb-[6px]">
+              {navItems.map((item, index) => (
+                <MobileNavbarButton
+                  key={item.path || index}
+                  title={item.title}
+                  bgColor={item.bgColor}
+                  isActive={currentPath === item.path}
+                  path={item.path}
+                />
+              ))}
+            </div>
+          </div>
+        </nav>
       </div>
-      {isMenuOpen && (
-        <div
-          id="mobile-nav-bar-links"
-          className="w-full bg-stone-800 text-white"
-        >
-          <Link href="/">
-            <div
-              className="block cursor-pointer border-b border-stone-600 px-4 py-2"
-              onClick={toggleMenu}
-            >
-              Homepage
-            </div>
-          </Link>
-          <Link href="/about">
-            <div
-              className="block cursor-pointer border-b border-stone-400 px-4 py-2"
-              onClick={toggleMenu}
-            >
-              About Page
-            </div>
-          </Link>
-          <Link href="/team">
-            <div
-              className="block cursor-pointer border-b border-stone-600 px-4 py-2"
-              onClick={toggleMenu}
-            >
-              Team
-            </div>
-          </Link>
-          <Link href="/product">
-            <div
-              className="block cursor-pointer border-b border-stone-600 px-4 py-2"
-              onClick={toggleMenu}
-            >
-              Product
-            </div>
-          </Link>
-          <Link href="/samples">
-            <div
-              className="block cursor-pointer border-b border-stone-600 px-4 py-2"
-              onClick={toggleMenu}
-            >
-              Samples
-            </div>
-          </Link>
-          <Link href="/order">
-            <div
-              className="block cursor-pointer border-b border-stone-600 px-4 py-2"
-              onClick={toggleMenu}
-            >
-              Order
-            </div>
-          </Link>
-          <Link href="/contact">
-            <div
-              className="block cursor-pointer border-b border-stone-600 px-4 py-2"
-              onClick={toggleMenu}
-            >
-              Contact
-            </div>
-          </Link>
-          {/* removed ads until we have them to show
-           <Link href="/ads">
-            <div
-              className="block cursor-pointer border-b border-stone-600 px-4 py-2"
-              onClick={toggleMenu}
-            >
-              Ads
-            </div>
-          </Link> */}
-          <Link href="/references">
-            <div
-              className="block cursor-pointer px-4 py-2"
-              onClick={toggleMenu}
-            >
-              References
-            </div>
-          </Link>
-        </div>
-      )}
     </div>
   );
 }

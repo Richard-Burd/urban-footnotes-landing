@@ -1,7 +1,5 @@
 import { useEffect } from "react";
-import PageHeaderLogo from "@/components/PageHeaderLogo";
 import PageTitle from "@/components/PageTitle";
-import Image from "next/image";
 
 export default function Order() {
   const baseUrl = process.env.NEXT_PUBLIC_S3_BASE_URL;
@@ -17,16 +15,21 @@ export default function Order() {
 
   return (
     <div>
-      <div className="xl:px-24">
+      <div>
         <PageTitle
           topTitle="Ordering Your Report"
           textColor="text-title-text-order"
           shadowColor="title-shadow-order"
+          logoColor="#eedfa2ff"
+          gradient={
+            "bg-[linear-gradient(to_right,rgba(123,117,92,0.1),rgba(113,96,21,0.8))]"
+          }
+          mobileTitleCentered={false}
           showLogo={true} // Integrates the logo
         />
       </div>
 
-      <div className="roboto-font mb-4 text-2.5xl text-gray-200 lg:mx-32">
+      <div className="roboto-font mb-4 text-center text-2.5xl text-gray-200 lg:mx-32">
         Coming Soon!
       </div>
 
