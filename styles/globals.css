@@ -66,19 +66,19 @@ the component styling */
 }
 
 .title-shadow-about {
-  text-shadow: 3px 3px 4px rgba(63, 63, 63, 0.98);
+  text-shadow: 3px 3px 4px rgba(10, 10, 10, 0.98);
 }
 
 .title-shadow-team {
-  text-shadow: 3px 3px 4px rgba(79, 141, 158, 0.98);
+  text-shadow: 3px 3px 4px rgba(5, 21, 27, 0.98);
 }
 
 .title-shadow-product {
-  text-shadow: 3px 3px 4px rgba(137, 106, 106, 0.98);
+  text-shadow: 3px 3px 4px rgba(22, 4, 4, 0.98);
 }
 
 .title-shadow-samples {
-  text-shadow: 3px 3px 4px rgba(57, 104, 46, 0.98);
+  text-shadow: 3px 3px 4px rgba(4, 18, 4, 0.98);
 }
 
 .title-shadow-order {
@@ -94,7 +94,7 @@ the component styling */
 }
 
 .title-shadow-references {
-  text-shadow: 3px 3px 4px rgba(41, 99, 167, 0.98);
+  text-shadow: 3px 3px 4px rgba(10, 10, 29, 0.98);
 }
 
 /* This is the default color used on all anchor tag links */

@@ -18,7 +18,7 @@ export default function Contact() {
           showLogo={true} // Integrates the logo
         />
       </center>
-      <div className="roboto-font mx-4 rounded-[40px] bg-[linear-gradient(to_right,rgba(77,61,87,0.3),rgba(45,19,67,1.0))] p-8 text-xl text-stone-300 md:text-2xl lg:mx-32">
+      <div className="roboto-font mx-4 rounded-[40px] p-8 text-xl text-stone-300 sm:bg-[linear-gradient(to_right,rgba(77,61,87,0.3),rgba(45,19,67,1.0))] md:text-2xl lg:mx-32">
         <p className="mb-4">
           You can reach out to us directly at:{" "}
           <Link href="mailto: contact@urbanfootnotes.com">
