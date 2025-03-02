@@ -48,7 +48,7 @@ export default function Samples() {
               >
                 <div className="mx-2 tracking-wider">
                   <div className="text-[27px] text-lime-200">Click Here</div>
-                  <div className="text-[17px]">
+                  <div className="text-left text-[17px]">
                     to see a list of our properties with metrics, categorized
                   </div>
                 </div>
