@@ -65,7 +65,7 @@ export default function Samples() {
             >
               <div className="mx-2 tracking-wider">
                 <div className="text-[27px] text-lime-200">Click Here</div>
-                <div className="text-[17px]">
+                <div className="text-left text-[17px]">
                   to go back to the product samples page
                 </div>
               </div>
