@@ -29,7 +29,7 @@ export default function Home() {
         {/* Box w/rounded corners that holds the title and description */}
         <div
           id="mission-statement-box"
-          className="mx-auto my-12 max-w-[770px] rounded-[45px] bg-[rgba(86,85,70,0.4)] pt-8"
+          className="mx-auto my-12 max-w-[770px] rounded-[40px] bg-[rgba(86,85,70,0.4)] pt-8"
         >
           <div
             id="mission-statement-title"
