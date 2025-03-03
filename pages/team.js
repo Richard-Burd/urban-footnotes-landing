@@ -98,7 +98,7 @@ const teamMembers = [
 const TeamMemberCard = ({ member }) => (
   <article
     key={member.id}
-    className="flex flex-col rounded-[30px] bg-[linear-gradient(to_right,rgba(21,110,113,0.2),rgba(21,110,113,0.7))]"
+    className="flex flex-col rounded-[40px] bg-[linear-gradient(to_right,rgba(21,110,113,0.2),rgba(21,110,113,0.7))]"
   >
     <div className="ml-2 p-5">
       <div className="text-xl font-bold">{member.name}</div>
