@@ -30,21 +30,6 @@ export default function Ads() {
               </div>
             </div>
           </div>
-          {/* <div
-            id="mobile-title"
-            className="block max-[10px]:hidden min-[999px]:hidden"
-          >
-            <center>
-              <div
-                id="page-title"
-                className={`title-shadow-ads page-title-shadow roboto-font m-4 -translate-y-10 text-[40px] tracking-wide text-title-text-ads`}
-              >
-                <div className="w-full max-w-full overflow-hidden text-[5vw]">
-                  Advertisements
-                </div>
-              </div>
-            </center>
-          </div> */}
 
           <center>
             <div className="roboto-font pb-4 text-2xl tracking-wide text-stone-300 opacity-60 lg:pt-2 lg:text-4xl">

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import Logo from "./Logo";
 
 const Footer = () => {
   return (
@@ -12,14 +13,7 @@ const Footer = () => {
             </p>
           </div>
           <div className="flex items-center justify-center lg:pl-8">
-            <Image
-              src="/images/ucs-logo-light.svg"
-              alt="Urban Cruise Ship Logo"
-              width={200}
-              height={100}
-              unoptimized={true}
-              style={{ minWidth: "200px", opacity: 0.8 }}
-            />
+            <Logo type="ucs" color="#ac9c84ff" width="200" height="100" />
           </div>
         </div>
       </Link>
