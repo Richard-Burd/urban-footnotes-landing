@@ -23,7 +23,7 @@ export default function Home() {
 
           {/* Centered Logo on top of the transitioning gradient */}
           <div className="absolute inset-0 flex items-center justify-center">
-            <Logo color="#ffe873ff" width="579" height="363" />
+            <Logo type="ufn" color="#ffe873ff" width="579" height="363" />
           </div>
         </div>
         {/* Box w/rounded corners that holds the title and description */}
@@ -57,7 +57,7 @@ export default function Home() {
 
           {/* Centered Logo on top of the transitioning gradient */}
           <div className="absolute inset-0 m-4 flex items-center justify-center">
-            <Logo color="#ffe873ff" width="295" height="184" />
+            <Logo type="ufn" color="#ffe873ff" width="295" height="184" />
           </div>
         </div>
 
