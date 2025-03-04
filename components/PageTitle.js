@@ -22,7 +22,12 @@ export default function PageTitle({
                 {/* Logo */}
                 {showLogo && (
                   <div className="mr-12">
-                    <Logo color={logoColor} width="345" height="214" />
+                    <Logo
+                      type="ufn"
+                      color={logoColor}
+                      width="345"
+                      height="214"
+                    />
                   </div>
                 )}
 
@@ -50,7 +55,12 @@ export default function PageTitle({
                   <div className="block max-[360px]:hidden min-[999px]:hidden">
                     <div className="py-6">
                       <center>
-                        <Logo color={logoColor} width="296" height="183" />
+                        <Logo
+                          type="ufn"
+                          color={logoColor}
+                          width="296"
+                          height="183"
+                        />
                       </center>
                     </div>
                   </div>
