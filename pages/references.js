@@ -1,4 +1,3 @@
-import PageHeaderLogo from "@/components/PageHeaderLogo";
 import PageTitle from "@/components/PageTitle";
 
 export default function Associations() {
