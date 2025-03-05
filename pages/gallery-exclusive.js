@@ -96,53 +96,51 @@ export default function Gallery() {
               </div>
               <div>
                 <div className="column-layout flex flex-col">
-                  {highlyWalkableData.map((entry, index) => (
-                    <div key={entry.address}>
-                      <div className="column-layout flex w-full items-center">
-                        {/* Address */}
-                        <div className="column-layout w-full pr-12 text-right">
-                          <div
-                            key={index}
-                            className="-ml-10 text-[26px] leading-[45px] text-gray-200"
-                          >
-                            {entry.address}
-                          </div>
-                        </div>
+                  {highlyWalkableData.map(
+                    (entry, index) =>
+                      entry.streetView && (
+                        <div key={entry.address}>
+                          <div className="column-layout flex w-full items-center">
+                            {/* Address */}
+                            <div className="column-layout w-full pr-12 text-right">
+                              <div
+                                key={index}
+                                className="-ml-10 text-[26px] leading-[45px] text-gray-200"
+                              >
+                                {entry.address}
+                              </div>
+                            </div>
 
-                        {/* Walkability Data */}
-                        <div className="column-layout">
-                          <div className="flex w-full gap-4 text-center text-[24px] font-semibold leading-[34px] text-gray-800">
-                            <div className="mx-[4px] w-12 bg-[#73e369ff] pb-[2px]">
-                              {entry.greenNear}
-                            </div>
-                            <div className="mx-[4px] w-12 bg-[#f7fc70ff]">
-                              {entry.yellowFarther}
-                            </div>
-                            <div className="mx-[4px] w-12 bg-[#e37569ff]">
-                              {entry.redDistant}
-                            </div>
-                            <div className="mx-[4px] w-12 rounded-[10px] bg-[#cbd4e0ff] text-[#1f244dff]">
-                              {entry.walkabilityScore}
+                            {/* Walkability Data */}
+                            <div className="column-layout">
+                              <div className="flex w-full gap-4 text-center text-[24px] font-semibold leading-[34px] text-gray-800">
+                                <div className="mx-[4px] w-12 bg-[#73e369ff] pb-[2px]">
+                                  {entry.greenNear}
+                                </div>
+                                <div className="mx-[4px] w-12 bg-[#f7fc70ff]">
+                                  {entry.yellowFarther}
+                                </div>
+                                <div className="mx-[4px] w-12 bg-[#e37569ff]">
+                                  {entry.redDistant}
+                                </div>
+                                <div className="mx-[4px] w-12 rounded-[10px] bg-[#cbd4e0ff] text-[#1f244dff]">
+                                  {entry.walkabilityScore}
+                                </div>
+                              </div>
                             </div>
                           </div>
+
+                          <div key={entry.streetView} className="mb-28 mt-2">
+                            <Image
+                              src={`${baseUrl}/${entry.streetView}`}
+                              alt={`picture of ${entry.streetView}`}
+                              width={1000} // true width controlled by parent element
+                              height={1} // true height tied to width
+                            />
+                          </div>
                         </div>
-                      </div>
-                      {/* If there is a streetView, go ahead and render it */}
-                      {entry.streetView ? (
-                        <div key={entry.streetView} className="mb-28 mt-2">
-                          <Image
-                            src={`${baseUrl}/${entry.streetView}`}
-                            alt={`picture of ${entry.streetView}`}
-                            width={1000} // true width controlled by parent element
-                            height={1} // true height tied to width
-                          />
-                        </div>
-                      ) : (
-                        // If there is no streetView, add some space
-                        <div className="mb-20"></div>
-                      )}
-                    </div>
-                  ))}
+                      ),
+                  )}
                 </div>
               </div>
             </div>
@@ -156,53 +154,51 @@ export default function Gallery() {
               </div>
               <div>
                 <div className="column-layout flex flex-col">
-                  {somewhatWalkableData.map((entry, index) => (
-                    <div key={entry.address}>
-                      <div className="column-layout flex w-full items-center">
-                        {/* Address */}
-                        <div className="column-layout w-full pr-12 text-right">
-                          <div
-                            key={index}
-                            className="-ml-10 text-[26px] leading-[45px] text-gray-200"
-                          >
-                            {entry.address}
-                          </div>
-                        </div>
+                  {somewhatWalkableData.map(
+                    (entry, index) =>
+                      entry.streetView && (
+                        <div key={entry.address}>
+                          <div className="column-layout flex w-full items-center">
+                            {/* Address */}
+                            <div className="column-layout w-full pr-12 text-right">
+                              <div
+                                key={index}
+                                className="-ml-10 text-[26px] leading-[45px] text-gray-200"
+                              >
+                                {entry.address}
+                              </div>
+                            </div>
 
-                        {/* Walkability Data */}
-                        <div className="column-layout">
-                          <div className="flex w-full gap-4 text-center text-[24px] font-semibold leading-[34px] text-gray-800">
-                            <div className="mx-[4px] w-12 bg-[#73e369ff] pb-[2px]">
-                              {entry.greenNear}
-                            </div>
-                            <div className="mx-[4px] w-12 bg-[#f7fc70ff]">
-                              {entry.yellowFarther}
-                            </div>
-                            <div className="mx-[4px] w-12 bg-[#e37569ff]">
-                              {entry.redDistant}
-                            </div>
-                            <div className="mx-[4px] w-12 rounded-[10px] bg-[#cbd4e0ff] text-[#1f244dff]">
-                              {entry.walkabilityScore}
+                            {/* Walkability Data */}
+                            <div className="column-layout">
+                              <div className="flex w-full gap-4 text-center text-[24px] font-semibold leading-[34px] text-gray-800">
+                                <div className="mx-[4px] w-12 bg-[#73e369ff] pb-[2px]">
+                                  {entry.greenNear}
+                                </div>
+                                <div className="mx-[4px] w-12 bg-[#f7fc70ff]">
+                                  {entry.yellowFarther}
+                                </div>
+                                <div className="mx-[4px] w-12 bg-[#e37569ff]">
+                                  {entry.redDistant}
+                                </div>
+                                <div className="mx-[4px] w-12 rounded-[10px] bg-[#cbd4e0ff] text-[#1f244dff]">
+                                  {entry.walkabilityScore}
+                                </div>
+                              </div>
                             </div>
                           </div>
+
+                          <div key={entry.streetView} className="mb-28 mt-2">
+                            <Image
+                              src={`${baseUrl}/${entry.streetView}`}
+                              alt={`picture of ${entry.streetView}`}
+                              width={1000} // true width controlled by parent element
+                              height={1} // true height tied to width
+                            />
+                          </div>
                         </div>
-                      </div>
-                      {/* If there is a streetView, go ahead and render it */}
-                      {entry.streetView ? (
-                        <div key={entry.streetView} className="mb-28 mt-2">
-                          <Image
-                            src={`${baseUrl}/${entry.streetView}`}
-                            alt={`picture of ${entry.streetView}`}
-                            width={1000} // true width controlled by parent element
-                            height={1} // true height tied to width
-                          />
-                        </div>
-                      ) : (
-                        // If there is no streetView, add some space
-                        <div className="mb-20"></div>
-                      )}
-                    </div>
-                  ))}
+                      ),
+                  )}
                 </div>
               </div>
             </div>
@@ -216,53 +212,51 @@ export default function Gallery() {
               </div>
               <div>
                 <div className="column-layout flex flex-col">
-                  {lessWalkableData.map((entry, index) => (
-                    <div key={entry.address}>
-                      <div className="column-layout flex w-full items-center">
-                        {/* Address */}
-                        <div className="column-layout w-full pr-12 text-right">
-                          <div
-                            key={index}
-                            className="-ml-10 text-[26px] leading-[45px] text-gray-200"
-                          >
-                            {entry.address}
-                          </div>
-                        </div>
+                  {lessWalkableData.map(
+                    (entry, index) =>
+                      entry.streetView && (
+                        <div key={entry.address}>
+                          <div className="column-layout flex w-full items-center">
+                            {/* Address */}
+                            <div className="column-layout w-full pr-12 text-right">
+                              <div
+                                key={index}
+                                className="-ml-10 text-[26px] leading-[45px] text-gray-200"
+                              >
+                                {entry.address}
+                              </div>
+                            </div>
 
-                        {/* Walkability Data */}
-                        <div className="column-layout">
-                          <div className="flex w-full gap-4 text-center text-[24px] font-semibold leading-[34px] text-gray-800">
-                            <div className="mx-[4px] w-12 bg-[#73e369ff] pb-[2px]">
-                              {entry.greenNear}
-                            </div>
-                            <div className="mx-[4px] w-12 bg-[#f7fc70ff]">
-                              {entry.yellowFarther}
-                            </div>
-                            <div className="mx-[4px] w-12 bg-[#e37569ff]">
-                              {entry.redDistant}
-                            </div>
-                            <div className="mx-[4px] w-12 rounded-[10px] bg-[#cbd4e0ff] text-[#1f244dff]">
-                              {entry.walkabilityScore}
+                            {/* Walkability Data */}
+                            <div className="column-layout">
+                              <div className="flex w-full gap-4 text-center text-[24px] font-semibold leading-[34px] text-gray-800">
+                                <div className="mx-[4px] w-12 bg-[#73e369ff] pb-[2px]">
+                                  {entry.greenNear}
+                                </div>
+                                <div className="mx-[4px] w-12 bg-[#f7fc70ff]">
+                                  {entry.yellowFarther}
+                                </div>
+                                <div className="mx-[4px] w-12 bg-[#e37569ff]">
+                                  {entry.redDistant}
+                                </div>
+                                <div className="mx-[4px] w-12 rounded-[10px] bg-[#cbd4e0ff] text-[#1f244dff]">
+                                  {entry.walkabilityScore}
+                                </div>
+                              </div>
                             </div>
                           </div>
+
+                          <div key={entry.streetView} className="mb-28 mt-2">
+                            <Image
+                              src={`${baseUrl}/${entry.streetView}`}
+                              alt={`picture of ${entry.streetView}`}
+                              width={1000} // true width controlled by parent element
+                              height={1} // true height tied to width
+                            />
+                          </div>
                         </div>
-                      </div>
-                      {/* If there is a streetView, go ahead and render it */}
-                      {entry.streetView ? (
-                        <div key={entry.streetView} className="mb-28 mt-2">
-                          <Image
-                            src={`${baseUrl}/${entry.streetView}`}
-                            alt={`picture of ${entry.streetView}`}
-                            width={1000} // true width controlled by parent element
-                            height={1} // true height tied to width
-                          />
-                        </div>
-                      ) : (
-                        // If there is no streetView, add some space
-                        <div className="mb-20"></div>
-                      )}
-                    </div>
-                  ))}
+                      ),
+                  )}
                 </div>
               </div>
             </div>
