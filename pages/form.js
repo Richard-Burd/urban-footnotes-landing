@@ -135,7 +135,7 @@ export default function SupplementaryForm() {
       clientPhone,
       email,
       discretionaryOptions: combinedOptions.length ? combinedOptions : [],
-      logoUrl: uploadedFileUrl,
+      logoUrl: uploadedFileUrl || "https://cdn.filestackcontent.com/kaNkonzETJqkatZaMjiH", // Ensure this field is always sent
       additionalComments: comments || "None",
     };
 
