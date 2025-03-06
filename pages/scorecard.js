@@ -1,10 +1,8 @@
 import PageTitle from "@/components/PageTitle";
 import samplesData from "@/lib/samplesData";
-import { useRouter } from "next/router";
 import SamplesButton from "@/components/SamplesButton";
 
 export default function Samples() {
-  const router = useRouter();
   // Filter & sort the "Highly Walkable" data
   const highlyWalkableData = samplesData
     .filter((entry) => entry.category === "Highly Walkable")
@@ -88,7 +86,7 @@ export default function Samples() {
             {/* Highly Walkable */}
             <div id="Highly Walkable" className="px-10">
               <div className="mb-2 border-b-4 border-x-slate-200">
-                <div className="pb-2 pt-3 text-right text-[40px] italic text-gray-200">
+                <div className="pt-3 text-right text-[40px] italic text-gray-200">
                   Highly Walkable
                 </div>
               </div>
@@ -135,7 +133,7 @@ export default function Samples() {
             {/* Somewhat Walkable */}
             <div id="Somewhat Walkable" className="px-10 pt-14">
               <div className="mb-2 border-b-4 border-x-slate-200">
-                <div className="pb-2 pt-3 text-right text-[40px] italic text-gray-200">
+                <div className="pt-3 text-right text-[40px] italic text-gray-200">
                   Somewhat Walkable
                 </div>
               </div>
@@ -182,7 +180,7 @@ export default function Samples() {
             {/* Less Walkable */}
             <div id="Less Walkable" className="rounded-b-[45px] px-10 pt-14">
               <div className="mb-2 border-b-4 border-x-slate-200">
-                <div className="pb-2 pt-3 text-right text-[40px] italic text-gray-200">
+                <div className="pt-3 text-right text-[40px] italic text-gray-200">
                   Less Walkable
                 </div>
               </div>
@@ -237,7 +235,7 @@ export default function Samples() {
             {/* Highly Walkable */}
             <div id="Highly Walkable" className="px-4">
               <div className="mb-2 border-b-4 border-x-slate-200">
-                <div className="pb-2 pt-3 text-right text-[27px] italic text-gray-200">
+                <div className="pt-3 text-right text-[27px] italic text-gray-200">
                   Highly Walkable
                 </div>
               </div>
@@ -281,7 +279,7 @@ export default function Samples() {
             {/* Somewhat Walkable */}
             <div id="Somewhat Walkable" className="mt-8 px-4">
               <div className="mb-2 border-b-4 border-x-slate-200">
-                <div className="pb-2 pt-3 text-right text-[27px] italic text-gray-200">
+                <div className="pt-3 text-right text-[27px] italic text-gray-200">
                   Somewhat Walkable
                 </div>
               </div>
@@ -325,7 +323,7 @@ export default function Samples() {
             {/* Less Walkable */}
             <div id="Less Walkable" className="mt-8 px-4">
               <div className="mb-2 border-b-4 border-x-slate-200">
-                <div className="pb-2 pt-3 text-right text-[27px] italic text-gray-200">
+                <div className="pt-3 text-right text-[27px] italic text-gray-200">
                   Less Walkable
                 </div>
               </div>
