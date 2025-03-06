@@ -2,7 +2,7 @@ import Image from "next/image";
 import PageTitle from "@/components/PageTitle";
 import samplesData from "@/lib/samplesData";
 import { useRouter } from "next/router";
-import Link from "next/link";
+import SamplesButton from "@/components/SamplesButton";
 
 export default function Gallery() {
   const baseUrl = process.env.NEXT_PUBLIC_S3_BASE_URL;
@@ -48,7 +48,7 @@ export default function Gallery() {
             {/* Left Side: Explanation */}
             <div
               id="explanation"
-              className="roboto-font mb-4 mr-16 text-2.5xl text-gray-200 lg:w-2/3"
+              className="roboto-font mb-4 text-2.5xl text-gray-200 md:mr-16 lg:w-2/3"
             >
               <p className="mb-10">
                 Samples are presented ranked by the number of service types (out
@@ -61,32 +61,16 @@ export default function Gallery() {
 
             {/* Right Side: Button */}
             <div id="buttons" className="items-right flex flex-col">
-              <Link href="/scorecard">
-                <button
-                  id="button-to-property-report-scorecards"
-                  className="mb-10 w-[360px] rounded-[20px] border-4 border-green-900 bg-[linear-gradient(to_right,rgba(28,78,35,1),rgba(14,109,27,1))] px-4 py-2 text-white"
-                >
-                  <div className="mx-2 pb-2 tracking-wider">
-                    <div className="text-[27px] text-lime-200">Click Here</div>
-                    <div className="text-left text-[17px]">
-                      to see a list of our properties with metrics, categorized
-                    </div>
-                  </div>
-                </button>
-              </Link>
-              <Link href="/samples">
-                <button
-                  id="button-to-property-report-scorecards"
-                  className="mb-14 w-[360px] rounded-[20px] border-4 border-green-900 bg-[linear-gradient(to_right,rgba(28,78,35,1),rgba(14,109,27,1))] px-4 py-2 text-white"
-                >
-                  <div className="mx-2 pb-2 tracking-wider">
-                    <div className="text-[27px] text-lime-200">Click Here</div>
-                    <div className="text-left text-[17px]">
-                      to go back to the product samples page
-                    </div>
-                  </div>
-                </button>
-              </Link>
+              <SamplesButton
+                title="Click Here"
+                text="to see a list of our properties with metrics, categorized"
+                link="/scorecard"
+              />
+              <SamplesButton
+                title="Click Here"
+                text="to go back to the product samples page"
+                link="/samples"
+              />
             </div>
           </div>
         </div>
@@ -312,8 +296,23 @@ export default function Gallery() {
                         </div>
                       </div>
 
+                      {/* If there is a streetView, go ahead and render it */}
+                      {entry.streetView ? (
+                        <div key={entry.streetView} className="mb-4 mt-2">
+                          <Image
+                            src={`${baseUrl}/${entry.streetView}`}
+                            alt={`picture of ${entry.streetView}`}
+                            width={1000} // true width controlled by parent element
+                            height={1} // true height tied to width
+                          />
+                        </div>
+                      ) : (
+                        // If there is no streetView, add some space
+                        <div className="mb-20"></div>
+                      )}
+
                       {/* Walkability Data */}
-                      <div className="column-layout pb-8">
+                      <div className="column-layout pb-24">
                         <div className="flex w-full justify-end gap-2 text-center text-[21px] font-semibold leading-[27px] text-gray-800">
                           <div className="mx-[2px] w-9 bg-[#73e369ff] pb-[2px]">
                             {entry.greenNear}
@@ -356,8 +355,23 @@ export default function Gallery() {
                         </div>
                       </div>
 
+                      {/* If there is a streetView, go ahead and render it */}
+                      {entry.streetView ? (
+                        <div key={entry.streetView} className="mb-4 mt-2">
+                          <Image
+                            src={`${baseUrl}/${entry.streetView}`}
+                            alt={`picture of ${entry.streetView}`}
+                            width={1000} // true width controlled by parent element
+                            height={1} // true height tied to width
+                          />
+                        </div>
+                      ) : (
+                        // If there is no streetView, add some space
+                        <div className="mb-20"></div>
+                      )}
+
                       {/* Walkability Data */}
-                      <div className="column-layout pb-8">
+                      <div className="column-layout pb-24">
                         <div className="flex w-full justify-end gap-2 text-center text-[21px] font-semibold leading-[27px] text-gray-800">
                           <div className="mx-[2px] w-9 bg-[#73e369ff] pb-[2px]">
                             {entry.greenNear}
@@ -400,8 +414,23 @@ export default function Gallery() {
                         </div>
                       </div>
 
+                      {/* If there is a streetView, go ahead and render it */}
+                      {entry.streetView ? (
+                        <div key={entry.streetView} className="mb-4 mt-2">
+                          <Image
+                            src={`${baseUrl}/${entry.streetView}`}
+                            alt={`picture of ${entry.streetView}`}
+                            width={1000} // true width controlled by parent element
+                            height={1} // true height tied to width
+                          />
+                        </div>
+                      ) : (
+                        // If there is no streetView, add some space
+                        <div className="mb-20"></div>
+                      )}
+
                       {/* Walkability Data */}
-                      <div className="column-layout pb-8">
+                      <div className="column-layout pb-24">
                         <div className="flex w-full justify-end gap-2 text-center text-[21px] font-semibold leading-[27px] text-gray-800">
                           <div className="mx-[2px] w-9 bg-[#73e369ff] pb-[2px]">
                             {entry.greenNear}
