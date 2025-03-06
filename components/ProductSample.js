@@ -1,5 +1,3 @@
-// trigger build with env vars on vercel.
-
 import Image from "next/image";
 
 const ProductSample = ({

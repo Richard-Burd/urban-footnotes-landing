@@ -1,7 +1,7 @@
 import PageTitle from "@/components/PageTitle";
 import samplesData from "@/lib/samplesData";
 import { useRouter } from "next/router";
-import Link from "next/link";
+import SamplesButton from "@/components/SamplesButton";
 
 export default function Samples() {
   const router = useRouter();
@@ -46,7 +46,7 @@ export default function Samples() {
             {/* Left Side: Explanation */}
             <div
               id="explanation"
-              className="roboto-font mb-4 mr-16 text-2.5xl text-gray-200 lg:w-2/3"
+              className="roboto-font mb-4 text-2.5xl text-gray-200 md:mr-16 lg:w-2/3"
             >
               <p className="mb-10">
                 Samples are presented ranked by the number of service types (out
@@ -59,33 +59,16 @@ export default function Samples() {
 
             {/* Right Side: Button */}
             <div id="buttons" className="items-right flex flex-col">
-              <Link href="/gallery">
-                <button
-                  id="button-to-property-report-scorecards"
-                  className="mb-14 w-[360px] rounded-[20px] border-4 border-green-900 bg-[linear-gradient(to_right,rgba(28,78,35,1),rgba(14,109,27,1))] px-4 py-2 text-white"
-                >
-                  <div className="mx-2 pb-2 tracking-wider">
-                    <div className="text-[27px] text-lime-200">Click Here</div>
-                    <div className="text-left text-[17px]">
-                      to see a gallery of renderings of our properties with
-                      metrics, categorized
-                    </div>
-                  </div>
-                </button>
-              </Link>
-              <Link href="/samples">
-                <button
-                  id="button-to-property-report-scorecards"
-                  className="mb-10 w-[360px] rounded-[20px] border-4 border-green-900 bg-[linear-gradient(to_right,rgba(28,78,35,1),rgba(14,109,27,1))] px-4 py-2 text-white"
-                >
-                  <div className="mx-2 pb-2 tracking-wider">
-                    <div className="text-[27px] text-lime-200">Click Here</div>
-                    <div className="text-left text-[17px]">
-                      to go back to the product samples page
-                    </div>
-                  </div>
-                </button>
-              </Link>
+              <SamplesButton
+                title="Click Here"
+                text="to see a gallery of renderings of our properties with metrics, categorized"
+                link="/gallery"
+              />
+              <SamplesButton
+                title="Click Here"
+                text="to go back to the product samples page"
+                link="/samples"
+              />
             </div>
           </div>
         </div>
