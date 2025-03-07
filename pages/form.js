@@ -3,7 +3,7 @@ import * as filestack from "filestack-js";
 
 export default function SupplementaryForm() {
 
-  
+  // Acc. to Jye, this is a client-side identifier
   const filestackApiKey = "AhJtHA69ATCK7bfBTgnbzz"; // Use environment variable
  /*  if (!process.env.NEXT_PUBLIC_FILESTACK) {
     throw new Error("filestack api key is not defined!");
