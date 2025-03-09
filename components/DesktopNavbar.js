@@ -6,16 +6,29 @@ export default function DesktopNavbar({ navItems }) {
   const router = useRouter();
   const currentPath = router.pathname;
 
+  // Define logic for gallery and scorecard pages which share the '/samples' button
+  const isSamplesSection = ["/samples", "/gallery", "/scorecard"].includes(
+    currentPath,
+  );
+
   return (
     <nav className="bg-neutral-950 px-2 text-white">
       <div className="flex justify-center">
         <div className="flex w-full max-w-screen-lg justify-evenly">
-          {navItems.map((item) => (
+          {navItems.map((item, index) => (
             <Link href={item.path} key={item.title}>
               <DesktopNavbarButton
+                key={item.path || index}
                 title={item.title}
-                bgColor={item.bgColor}
-                isActive={currentPath === item.path}
+                bgColor={
+                  isSamplesSection && item.path === "/samples"
+                    ? "bg-navbar-samples"
+                    : item.bgColor
+                }
+                isActive={
+                  (isSamplesSection && item.path === "/samples") ||
+                  currentPath === item.path
+                }
               />
             </Link>
           ))}

@@ -5,6 +5,11 @@ export default function MobileNavBar({ navItems }) {
   const router = useRouter();
   const currentPath = router.pathname;
 
+  // Define logic for gallery and scorecard pages
+  const isSamplesSection = ["/samples", "/gallery", "/scorecard"].includes(
+    currentPath,
+  );
+
   return (
     <div>
       <div
@@ -18,8 +23,15 @@ export default function MobileNavBar({ navItems }) {
                 <MobileNavbarButton
                   key={item.path || index}
                   title={item.title}
-                  bgColor={item.bgColor}
-                  isActive={currentPath === item.path}
+                  bgColor={
+                    isSamplesSection && item.path === "/samples"
+                      ? "bg-navbar-samples"
+                      : item.bgColor
+                  }
+                  isActive={
+                    (isSamplesSection && item.path === "/samples") ||
+                    currentPath === item.path
+                  }
                   path={item.path}
                 />
               ))}
