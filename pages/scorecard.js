@@ -79,12 +79,12 @@ export default function Samples() {
           id="desktop-scorecard"
           className="mx-auto hidden max-w-screen-lg max-[1040px]:px-4 min-[1000px]:block"
         >
-          <div className="rounded-t-[45px] bg-[linear-gradient(to_right,rgba(0,28,0,0.5),rgba(61,113,21,0.5))] pb-4 text-center text-[75px] text-title-text-samples">
+          <div className="pb-4 text-center text-[75px] text-title-text-samples">
             Property Report Scoreboard
           </div>
-          <div className="rounded-b-[45px] bg-[linear-gradient(to_right,rgba(4,28,3,0.5),rgba(26,48,26,0.5))] pb-9">
+          <div className="pb-9">
             {/* Highly Walkable */}
-            <div id="Highly Walkable" className="px-10">
+            <div id="Highly Walkable" className="">
               <div className="mb-2 border-b-4 border-x-slate-200">
                 <div className="pt-3 text-right text-[40px] italic text-gray-200">
                   Highly Walkable
@@ -131,7 +131,7 @@ export default function Samples() {
             </div>
 
             {/* Somewhat Walkable */}
-            <div id="Somewhat Walkable" className="px-10 pt-14">
+            <div id="Somewhat Walkable" className="pt-14">
               <div className="mb-2 border-b-4 border-x-slate-200">
                 <div className="pt-3 text-right text-[40px] italic text-gray-200">
                   Somewhat Walkable
@@ -178,7 +178,7 @@ export default function Samples() {
             </div>
 
             {/* Less Walkable */}
-            <div id="Less Walkable" className="rounded-b-[45px] px-10 pt-14">
+            <div id="Less Walkable" className="rounded-b-[45px] pt-14">
               <div className="mb-2 border-b-4 border-x-slate-200">
                 <div className="pt-3 text-right text-[40px] italic text-gray-200">
                   Less Walkable
