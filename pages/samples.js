@@ -66,31 +66,31 @@ export default function Samples() {
         </div>
         <div className="grid grid-cols-1 px-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-5 xl:grid-cols-4">
           <ProductSample
-            imagePath="preview-223-8th-ave.nrl.jpg"
+            imagePath="preview-233-8th-ave-new-york.1.jpg"
             address="223 8th Ave. New York, NY 10011"
             serviceTypesNearby={55}
             serviceTypesFarther={7}
             serviceTypesDistant={12}
             walkabilityScore={20}
-            pdfPath="doc-223-8th-ave.nrl.pdf"
+            pdfPath="doc-233-8th-ave-new-york.1.pdf"
           />
           <ProductSample
-            imagePath="preview-sarphatipark-38i.nrl.jpg"
+            imagePath="preview-sarphatipark-38i-amsterdam.1.jpg"
             address="Sarphatipark 38I, 1072 PB Amsterdam, Netherlands"
             serviceTypesNearby={52}
             serviceTypesFarther={7}
             serviceTypesDistant={15}
             walkabilityScore={23}
-            pdfPath="doc-sarphatipark-38i.nrl.pdf"
+            pdfPath="doc-sarphatipark-38i-amsterdam.1.pdf"
           />
           <ProductSample
-            imagePath="preview-1902-2nd-ave.nrl.jpg"
+            imagePath="preview-1902-2nd-ave-seattle-wa.1.jpg"
             address="1902 2nd Ave, Seattle, WA 98101"
             serviceTypesNearby={49}
             serviceTypesFarther={13}
             serviceTypesDistant={12}
             walkabilityScore={20}
-            pdfPath="doc-1902-2nd-ave.nrl.pdf"
+            pdfPath="doc-1902-2nd-ave-seattle-wa.1.pdf"
           />
           <ProductSample
             imagePath="preview-29-s-la-salle-st.nrl.jpg"

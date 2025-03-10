@@ -228,10 +228,10 @@ export default function Samples() {
 
         {/* Mobile Property Report Scorecard */}
         <div id="mobilw-scorecard" className="hidden px-4 max-[1001px]:block">
-          <div className="rounded-t-[45px] bg-[linear-gradient(to_right,rgba(0,28,0,0.5),rgba(61,113,21,0.5))] px-4 pb-4 pt-4 text-[42px] leading-[45px] text-title-text-samples">
+          <div className="px-4 pb-4 pt-4 text-[42px] text-title-text-samples">
             Property Report Scoreboard
           </div>
-          <div className="rounded-b-[45px] bg-[linear-gradient(to_right,rgba(4,28,3,0.5),rgba(26,48,26,0.5))] pb-9">
+          <div className="pb-9">
             {/* Highly Walkable */}
             <div id="Highly Walkable" className="px-4">
               <div className="mb-2 border-b-4 border-x-slate-200">
