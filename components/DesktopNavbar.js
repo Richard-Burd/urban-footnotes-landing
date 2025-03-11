@@ -7,9 +7,11 @@ export default function DesktopNavbar({ navItems }) {
   const currentPath = router.pathname;
 
   // Define logic for gallery and scorecard pages which share the '/samples' button
-  const isSamplesSection = ["/samples", "/gallery", "/scorecard"].includes(
-    currentPath,
-  );
+  const isSamplesSection = [
+    "/samples",
+    "/gallery-streetview",
+    "/scorecard",
+  ].includes(currentPath);
 
   return (
     <nav className="bg-neutral-950 px-2 text-white">

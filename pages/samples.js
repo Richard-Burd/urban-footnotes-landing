@@ -1,6 +1,7 @@
 import PageTitle from "@/components/PageTitle";
 import ProductSample from "@/components/ProductSample";
 import SamplesButton from "@/components/SamplesButton";
+import SamplesNavbar from "@/components/SamplesNavbar";
 
 export default function Samples() {
   return (
@@ -18,6 +19,9 @@ export default function Samples() {
           showLogo={true} // Integrates the logo
         />
       </center>
+
+      {/* SamplesNavbar */}
+      {/* <SamplesNavbar /> */}
 
       {/* Explanation & Button to Property Report Scorecard */}
       <div className="mx-auto max-w-screen-lg items-center justify-center">
@@ -50,7 +54,7 @@ export default function Samples() {
               <SamplesButton
                 title="Click Here"
                 text="to see a gallery of renderings of our properties with metrics, categorized"
-                link="/gallery"
+                link="/gallery-streetview"
               />
             </div>
           </div>
