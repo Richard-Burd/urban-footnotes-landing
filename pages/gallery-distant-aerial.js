@@ -1,9 +1,12 @@
+import Gallery from "@/components/Gallery";
+
 export default function GalleryDistantAerial() {
   return (
     <div>
-      <h1 className="text-gray-300">
-        Gallery of Mid-Range Aerial Illustrations
-      </h1>
+      <Gallery
+        title="Gallery of Distant Aerial Illustrations"
+        viewType="aerialDistant"
+      />
     </div>
   );
 }

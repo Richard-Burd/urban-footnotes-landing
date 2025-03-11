@@ -1,7 +1,7 @@
 import PageTitle from "@/components/PageTitle";
 import ProductSample from "@/components/ProductSample";
 import SamplesButton from "@/components/SamplesButton";
-import SamplesNavbar from "@/components/SamplesNavbar";
+// import SamplesNavbar from "@/components/SamplesNavbar";
 
 export default function Samples() {
   return (

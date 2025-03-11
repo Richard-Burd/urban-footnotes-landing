@@ -1,9 +1,12 @@
+import Gallery from "@/components/Gallery";
+
 export default function GalleryCloseUpAerial() {
   return (
     <div>
-      <h1 className="text-gray-300">
-        Gallery of Close-Up Aerial Illustrations
-      </h1>
+      <Gallery
+        title="Gallery of Close-Up Aerial Illustrations"
+        viewType="aerialCloseUp"
+      />
     </div>
   );
 }
