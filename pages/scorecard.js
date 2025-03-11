@@ -1,6 +1,7 @@
 import PageTitle from "@/components/PageTitle";
 import samplesData from "@/lib/samplesData";
 import SamplesButton from "@/components/SamplesButton";
+import SamplesNavbar from "@/components/SamplesNavbar";
 
 export default function Samples() {
   // Filter & sort the "Highly Walkable" data
@@ -34,6 +35,9 @@ export default function Samples() {
         />
       </center>
 
+      {/* SamplesNavbar */}
+      {/* <SamplesNavbar /> */}
+
       {/* Explanation & Button to Property Report Scorecard */}
       <div className="mx-auto max-w-screen-lg items-center justify-center">
         <div className="max-[1030px]:mx-8">
@@ -60,7 +64,7 @@ export default function Samples() {
               <SamplesButton
                 title="Click Here"
                 text="to see a gallery of renderings of our properties with metrics, categorized"
-                link="/gallery"
+                link="/gallery-streetview"
               />
               <SamplesButton
                 title="Click Here"

@@ -3,7 +3,7 @@ import PageTitle from "@/components/PageTitle";
 import samplesData from "@/lib/samplesData";
 import SamplesButton from "@/components/SamplesButton";
 
-export default function Gallery() {
+export default function GalleryStreetView() {
   const baseUrl = process.env.NEXT_PUBLIC_S3_BASE_URL;
   // Filter & sort the "Highly Walkable" data
   const highlyWalkableData = samplesData

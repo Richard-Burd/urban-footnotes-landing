@@ -6,9 +6,11 @@ export default function MobileNavBar({ navItems }) {
   const currentPath = router.pathname;
 
   // Define logic for gallery and scorecard pages
-  const isSamplesSection = ["/samples", "/gallery", "/scorecard"].includes(
-    currentPath,
-  );
+  const isSamplesSection = [
+    "/samples",
+    "/gallery-streetview",
+    "/scorecard",
+  ].includes(currentPath);
 
   return (
     <div>
