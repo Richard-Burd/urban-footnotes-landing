@@ -30,7 +30,7 @@ export default function Gallery({ title, viewType }) {
           {/* <div className="rounded-t-[45px] bg-[linear-gradient(to_right,rgba(0,28,0,0.5),rgba(61,113,21,0.5))] pb-4 text-center text-[60px] text-title-text-samples">
             Gallery of Streetscape Illustrations
           </div> */}
-          <div className="pb-4 text-center text-[60px] text-title-text-samples">
+          <div className="pb-4 pt-9 text-center text-[60px] text-title-text-samples">
             {title}
           </div>
           <div>
