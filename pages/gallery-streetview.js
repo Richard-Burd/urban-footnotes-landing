@@ -62,7 +62,7 @@ export default function GalleryStreetView() {
               <SamplesButton
                 title="Click Here"
                 text="to see a list of our properties with metrics, categorized"
-                link="/scorecard"
+                link="/scoreboard"
               />
               <SamplesButton
                 title="Click Here"
@@ -75,10 +75,10 @@ export default function GalleryStreetView() {
       </div>
 
       {/* Desktop & Mobile Property Report Scoreboard */}
-      <div id="property-report-scorecards">
+      <div id="property-report-scoreboards">
         {/* Desktop Property Report Scoreboard */}
         <div
-          id="desktop-scorecard"
+          id="desktop-scoreboard"
           className="mx-auto hidden max-w-screen-lg max-[1040px]:px-4 min-[1000px]:block"
         >
           {/* <div className="rounded-t-[45px] bg-[linear-gradient(to_right,rgba(0,28,0,0.5),rgba(61,113,21,0.5))] pb-4 text-center text-[60px] text-title-text-samples">
@@ -271,7 +271,7 @@ export default function GalleryStreetView() {
         </div>
 
         {/* Mobile Property Report Scoreboard */}
-        <div id="mobile-scorecard" className="hidden px-4 max-[1001px]:block">
+        <div id="mobile-scoreboard" className="hidden px-4 max-[1001px]:block">
           <div className="px-4 pb-4 pt-4 text-[42px] leading-[45px] text-title-text-samples">
             Gallery of Streetscape Illustrations
           </div>

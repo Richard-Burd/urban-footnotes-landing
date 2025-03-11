@@ -38,7 +38,7 @@ export default function Samples() {
       {/* SamplesNavbar */}
       {/* <SamplesNavbar /> */}
 
-      {/* Explanation & Button to Property Report Scorecard */}
+      {/* Explanation & Button to Property Report scoreboard */}
       <div className="mx-auto max-w-screen-lg items-center justify-center">
         <div className="max-[1030px]:mx-8">
           <div
@@ -76,11 +76,11 @@ export default function Samples() {
         </div>
       </div>
 
-      {/* Desktop & Mobile Property Report Scorecard */}
-      <div id="property-report-scorecards">
-        {/* Desktop Property Report Scorecard */}
+      {/* Desktop & Mobile Property Report scoreboard */}
+      <div id="property-report-scoreboards">
+        {/* Desktop Property Report scoreboard */}
         <div
-          id="desktop-scorecard"
+          id="desktop-scoreboard"
           className="mx-auto hidden max-w-screen-lg max-[1040px]:px-4 min-[1000px]:block"
         >
           <div className="pb-4 text-center text-[75px] text-title-text-samples">
@@ -230,8 +230,8 @@ export default function Samples() {
           </div>
         </div>
 
-        {/* Mobile Property Report Scorecard */}
-        <div id="mobilw-scorecard" className="hidden px-4 max-[1001px]:block">
+        {/* Mobile Property Report scoreboard */}
+        <div id="mobilw-scoreboard" className="hidden px-4 max-[1001px]:block">
           <div className="px-4 pb-4 pt-4 text-[42px] text-title-text-samples">
             Property Report Scoreboard
           </div>

@@ -6,11 +6,11 @@ export default function DesktopNavbar({ navItems }) {
   const router = useRouter();
   const currentPath = router.pathname;
 
-  // Define logic for gallery and scorecard pages which share the '/samples' button
+  // Define logic for gallery and scoreboard pages which share the '/samples' button
   const isSamplesSection = [
     "/samples",
     "/gallery-streetview",
-    "/scorecard",
+    "/scoreboard",
   ].includes(currentPath);
 
   return (

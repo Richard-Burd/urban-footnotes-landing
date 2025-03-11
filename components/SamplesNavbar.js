@@ -10,7 +10,7 @@ const sampleNavItems = [
   },
   {
     title: "Property Report Metrics Scoreboard",
-    path: "/scorecard",
+    path: "/scoreboard",
     bgColor: "bg-navbar-samples",
   },
   {
