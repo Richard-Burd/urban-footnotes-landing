@@ -10,6 +10,9 @@ export default function DesktopNavbar({ navItems }) {
   const isSamplesSection = [
     "/samples",
     "/gallery-streetview",
+    "/gallery-close-up-aerial",
+    "/gallery-mid-range-aerial",
+    "/gallery-distant-aerial",
     "/scoreboard",
   ].includes(currentPath);
 
