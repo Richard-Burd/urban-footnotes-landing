@@ -19,7 +19,7 @@ export default function SamplesHeader() {
       </center>
       <div
         id="blurb-and-samples-navbar"
-        className="mx-auto max-w-screen-lg sm:flex"
+        className="mx-auto max-w-screen-lg min-[970px]:flex"
       >
         <div
           id="explanation"

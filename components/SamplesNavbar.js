@@ -41,7 +41,7 @@ export default function SamplesNavbar() {
 
   return (
     <div className="flex justify-center">
-      <div className="grid w-[530px] max-w-screen-lg grid-cols-2 gap-x-2 gap-y-0">
+      <div className="grid gap-x-2 gap-y-0 min-[530px]:w-[530px] min-[530px]:grid-cols-2">
         {sampleNavItems.map((item, index) => (
           <Link href={item.path} key={item.title} className="m-0 block p-0">
             <SamplesNavbarButton
