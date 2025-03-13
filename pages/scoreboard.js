@@ -28,8 +28,11 @@ export default function Samples() {
           id="desktop-scoreboard"
           className="mx-auto hidden max-w-screen-lg max-[1040px]:px-4 min-[1000px]:block"
         >
-          <div className="pb-4 text-center text-[75px] text-title-text-samples">
-            Property Report Scoreboard
+          <div
+            id="page-title"
+            className="pb-4 pt-9 text-center text-[30px] text-title-text-samples sm:text-[40px] md:text-[57px]"
+          >
+            Property Report Metrics Scoreboard
           </div>
           <div className="pb-9">
             {/* Highly Walkable */}
