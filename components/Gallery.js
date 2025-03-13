@@ -169,7 +169,7 @@ export default function Gallery({ viewType }) {
             </div>
 
             {/* Less Walkable */}
-            <div id="Less Walkable" className="rounded-b-[45px] px-10 pt-14">
+            <div id="Less Walkable" className="rounded-b-[45px] pt-14">
               <div className="mb-2 border-b-4 border-x-slate-200">
                 <div className="pt-3 text-right text-[40px] italic text-gray-200">
                   Less Walkable
