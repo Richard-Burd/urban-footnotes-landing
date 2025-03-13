@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 
 const sampleNavItems = [
   {
-    title: "Property Report Sets, ranked by metrics",
+    title: "Property Report Sets, Ranked by Metrics",
     path: "/samples",
     bgColor: "bg-navbar-samples",
   },

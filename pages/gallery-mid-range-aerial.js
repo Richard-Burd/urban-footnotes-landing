@@ -7,7 +7,7 @@ export default function GalleryMidRangeAerial() {
       <SamplesHeader />
       <div
         id="page-title"
-        className="pb-4 pt-9 text-center text-[30px] text-title-text-samples sm:text-[40px] md:text-[50px]"
+        className="pb-4 pt-9 text-center text-[30px] text-title-text-samples sm:text-[40px] md:text-[57px]"
       >
         Gallery of Mid-Range Aerial Illustrations
       </div>

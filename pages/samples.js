@@ -5,6 +5,12 @@ export default function Samples() {
   return (
     <div>
       <SamplesHeader />
+      <div
+        id="page-title"
+        className="pb-4 pt-9 text-center text-[30px] text-title-text-samples sm:text-[40px] md:text-[57px]"
+      >
+        Property Report Sets, Ranked by Metrics
+      </div>
       {/* Highly Walkable Property Report Previews */}
       <div id="highly-walkable">
         <div className="mx-8 mb-2 border-b-4 border-x-slate-200">
