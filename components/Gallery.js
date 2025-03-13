@@ -1,7 +1,15 @@
+import { useRouter } from "next/router";
+
 import Image from "next/image";
 import samplesData from "@/lib/samplesData";
 
 export default function Gallery({ title, viewType }) {
+  // scroll to the top of the page
+  const router = useRouter();
+  const scrollToTop = () => {
+    router.replace(router.asPath);
+  };
+
   const baseUrl = process.env.NEXT_PUBLIC_S3_BASE_URL;
   // Filter & sort the "Highly Walkable" data
   const highlyWalkableData = samplesData
@@ -27,12 +35,6 @@ export default function Gallery({ title, viewType }) {
           id="desktop-scoreboard"
           className="mx-auto hidden max-w-screen-lg max-[1040px]:px-4 min-[1000px]:block"
         >
-          {/* <div className="rounded-t-[45px] bg-[linear-gradient(to_right,rgba(0,28,0,0.5),rgba(61,113,21,0.5))] pb-4 text-center text-[60px] text-title-text-samples">
-            Gallery of Streetscape Illustrations
-          </div> */}
-          <div className="pb-4 pt-9 text-center text-[60px] text-title-text-samples">
-            {title}
-          </div>
           <div>
             {/* Highly Walkable */}
             <div id="Highly Walkable" className="">
@@ -83,6 +85,12 @@ export default function Gallery({ title, viewType }) {
                             width={1200} // true width controlled by parent element
                             height={1} // true height tied to width
                           />
+                          <button
+                            onClick={scrollToTop}
+                            className="text-lg text-gray-300"
+                          >
+                            Back to top of page
+                          </button>
                         </div>
                       ) : (
                         // If there is no viewType, add some space
@@ -95,7 +103,7 @@ export default function Gallery({ title, viewType }) {
             </div>
 
             {/* Somewhat Walkable */}
-            <div id="Somewhat Walkable" className="px-10 pt-14">
+            <div id="Somewhat Walkable" className="pt-14">
               <div className="mb-2 border-b-4 border-x-slate-200">
                 <div className="pt-3 text-right text-[40px] italic text-gray-200">
                   Somewhat Walkable
@@ -143,6 +151,12 @@ export default function Gallery({ title, viewType }) {
                             width={1200} // true width controlled by parent element
                             height={1} // true height tied to width
                           />
+                          <button
+                            onClick={scrollToTop}
+                            className="text-lg text-gray-300"
+                          >
+                            Back to top of page
+                          </button>
                         </div>
                       ) : (
                         // If there is no viewType, add some space
@@ -203,6 +217,12 @@ export default function Gallery({ title, viewType }) {
                             width={1200} // true width controlled by parent element
                             height={1} // true height tied to width
                           />
+                          <button
+                            onClick={scrollToTop}
+                            className="text-lg text-gray-300"
+                          >
+                            Back to top of page
+                          </button>
                         </div>
                       ) : (
                         // If there is no viewType, add some space
@@ -218,9 +238,6 @@ export default function Gallery({ title, viewType }) {
 
         {/* Mobile Property Report Scoreboard */}
         <div id="mobile-scoreboard" className="hidden px-4 max-[1001px]:block">
-          <div className="px-4 pb-4 pt-4 text-[42px] leading-[45px] text-title-text-samples">
-            Gallery of Streetscape Illustrations
-          </div>
           <div className="pb-9">
             {/* Highly Walkable */}
             <div id="Highly Walkable" className="">
