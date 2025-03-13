@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import samplesData from "@/lib/samplesData";
 
-export default function Gallery({ title, viewType }) {
+export default function Gallery({ viewType }) {
   // scroll to the top of the page
   const router = useRouter();
   const scrollToTop = () => {

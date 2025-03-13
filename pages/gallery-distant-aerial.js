@@ -11,10 +11,7 @@ export default function GalleryDistantAerial() {
       >
         Gallery of Distant Aerial Illustrations
       </div>
-      <Gallery
-        title="Gallery of Distant Aerial Illustrations"
-        viewType="aerialDistant"
-      />
+      <Gallery viewType="aerialDistant" />
     </div>
   );
 }
