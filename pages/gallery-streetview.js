@@ -11,10 +11,7 @@ export default function GalleryStreetView() {
       >
         Gallery of Streetscape Illustrations
       </div>
-      <Gallery
-        title="Gallery of Streetscape Illustrations"
-        viewType="streetView"
-      />
+      <Gallery viewType="streetView" />
     </div>
   );
 }

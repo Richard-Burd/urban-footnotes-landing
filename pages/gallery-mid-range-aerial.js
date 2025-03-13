@@ -11,10 +11,7 @@ export default function GalleryMidRangeAerial() {
       >
         Gallery of Mid-Range Aerial Illustrations
       </div>
-      <Gallery
-        title="Gallery of Mid-Range Aerial Illustrations"
-        viewType="aerialMidRange"
-      />
+      <Gallery viewType="aerialMidRange" />
     </div>
   );
 }
