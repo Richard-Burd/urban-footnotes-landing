@@ -20,7 +20,7 @@ export default function Product() {
       <div id="desktop-version" className="max-[700px]:hidden">
         <Image
           alt="First & Second pages of the product"
-          src={`${baseUrl}/desktop-product-page-first-n-second-page.8.png`} // v.2.1
+          src={`${baseUrl}/product-page-desktop.1a.png`} // v.2.1
           // true width & true height controlled by parent grid
           // image fills parent's allotted space
           width={1024}
@@ -28,7 +28,7 @@ export default function Product() {
         />
         <Image
           alt="Third page of the product"
-          src={`${baseUrl}/desktop-product-page-third-page.8.png`}
+          src={`${baseUrl}/product-page-desktop.1b.png`}
           // true width & true height controlled by parent grid
           // image fills parent's allotted space
           width={1024}
@@ -36,7 +36,23 @@ export default function Product() {
         />
         <Image
           alt="Fourth page of the product"
-          src={`${baseUrl}/desktop-product-page-fourth-page.8.png`}
+          src={`${baseUrl}/product-page-desktop.1c.png`}
+          // true width & true height controlled by parent grid
+          // image fills parent's allotted space
+          width={1024}
+          height={1}
+        />
+        <Image
+          alt="Fifth page of the product"
+          src={`${baseUrl}/product-page-desktop.1d.png`}
+          // true width & true height controlled by parent grid
+          // image fills parent's allotted space
+          width={1024}
+          height={1}
+        />
+        <Image
+          alt="Sixth page of the product"
+          src={`${baseUrl}/product-page-desktop.1e.png`}
           // true width & true height controlled by parent grid
           // image fills parent's allotted space
           width={1024}
@@ -46,23 +62,31 @@ export default function Product() {
       <div id="mobile-version" className="px-3 min-[701px]:hidden">
         <Image
           alt="First page of the product, mobile version"
-          src={`${baseUrl}/mobile-product-page-first-page.png`} // v.2.1
+          src={`${baseUrl}/product-page-mobile.1a.png`} // v.2.1
           // true width & true height controlled by parent grid
           // image fills parent's allotted space
           width={700}
           height={1}
         />
         <Image
-          alt="First page of the product, mobile version"
-          src={`${baseUrl}/mobile-product-page-second-n-third-page.png`} // v.2.1
+          alt="Second & Third pages of the product, mobile version"
+          src={`${baseUrl}/product-page-mobile.1b.png`} // v.2.1
           // true width & true height controlled by parent grid
           // image fills parent's allotted space
           width={700}
           height={1}
         />
         <Image
-          alt="First page of the product, mobile version"
-          src={`${baseUrl}/mobile-product-page-fourth-page.png`} // v.2.1
+          alt="Fourth & Fifth pages of the product, mobile version"
+          src={`${baseUrl}/product-page-mobile.1c.png`} // v.2.1
+          // true width & true height controlled by parent grid
+          // image fills parent's allotted space
+          width={700}
+          height={1}
+        />
+        <Image
+          alt="Sixth page of the product, mobile version"
+          src={`${baseUrl}/product-page-mobile.1d.png`} // v.2.1
           // true width & true height controlled by parent grid
           // image fills parent's allotted space
           width={700}
