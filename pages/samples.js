@@ -47,13 +47,13 @@ export default function Samples() {
             pdfPath="doc-1902-2nd-ave-seattle-wa.2.pdf"
           />
           <ProductSample
-            imagePath="preview-29-s-la-salle-st.nrl.jpg"
+            imagePath="preview-chicago-il.2.jpg"
             address="29 S La Salle St, Chicago, IL 60603"
             serviceTypesNearby={49}
             serviceTypesFarther={11}
             serviceTypesDistant={14}
             walkabilityScore={25}
-            pdfPath="doc-29-s-la-salle-st.nrl.pdf"
+            pdfPath="doc-chicago-il.2.pdf"
           />
           <ProductSample
             imagePath="preview-313-sauchiehall-st.nrl.jpg"
