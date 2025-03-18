@@ -65,22 +65,22 @@ export default function Samples() {
             pdfPath="doc-313-sauchiehall-st.nrl.pdf"
           />
           <ProductSample
-            imagePath="preview-18-whitechapel.nrl.jpg"
+            imagePath="preview-liverpool-uk.2.jpg"
             address="18 Whitechapel, Liverpool L1 6DS, UK"
             serviceTypesNearby={49}
             serviceTypesFarther={9}
             serviceTypesDistant={16}
             walkabilityScore={27}
-            pdfPath="doc-18-whitechapel.nrl.pdf"
+            pdfPath="doc-liverpool-uk.2.pdf"
           />
           <ProductSample
-            imagePath="preview-10-lorne-st.nrl.jpg"
+            imagePath="preview-wellington-nz.2.jpg"
             address="10 Lorne Street, Te Aro, Wellington 6011, New Zealand"
             serviceTypesNearby={49}
             serviceTypesFarther={7}
             serviceTypesDistant={18}
             walkabilityScore={20}
-            pdfPath="doc-10-lorne-st.nrl.pdf"
+            pdfPath="doc-wellington-nz.2.pdf"
           />
           <ProductSample
             imagePath="preview-41-e-hastings-st.nrl.jpg"
