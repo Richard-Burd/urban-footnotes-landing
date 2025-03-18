@@ -130,31 +130,31 @@ export default function Samples() {
             pdfPath="doc-philadelphia-pa.2.pdf"
           />
           <ProductSample
-            imagePath="preview-163-lai-chi-kok-rd.nrl.jpg"
+            imagePath="preview-hong-kong.2.jpg"
             address="163 Lai Chi Kok Rd, Tai Kok Tsui, Hong Kong"
             serviceTypesNearby={45}
             serviceTypesFarther={10}
             serviceTypesDistant={19}
             walkabilityScore={20}
-            pdfPath="doc-163-lai-chi-kok-rd.nrl.pdf"
+            pdfPath="doc-hong-kong.2.pdf"
           />
           <ProductSample
-            imagePath="preview-55-triq-san-vincenz.nrl.jpg"
+            imagePath="preview-malta.2.jpg"
             address="55 Triq San Vincenz, Tas-Sliema, Malta"
             serviceTypesNearby={45}
             serviceTypesFarther={9}
             serviceTypesDistant={20}
             walkabilityScore={15}
-            pdfPath="doc-55-triq-san-vincenz.nrl.pdf"
+            pdfPath="doc-malta.2.pdf"
           />
           <ProductSample
-            imagePath="preview-618-622-anacapa-st.nrl.jpg"
+            imagePath="preview-santa-barbara-ca.2.jpg"
             address="618-622 Anacapa St, Santa Barbara, CA 93101"
             serviceTypesNearby={45}
             serviceTypesFarther={7}
             serviceTypesDistant={22}
             walkabilityScore={22}
-            pdfPath="doc-618-622-anacapa-st.nrl.pdf"
+            pdfPath="doc-santa-barbara-ca.2.pdf"
           />
           <ProductSample
             imagePath="preview-50-grand-parade.nrl.jpg"
