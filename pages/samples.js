@@ -121,13 +121,13 @@ export default function Samples() {
         </div>
         <div className="grid grid-cols-1 px-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-5 xl:grid-cols-4">
           <ProductSample
-            imagePath="preview-301-market-st.nrl.jpg"
+            imagePath="preview-philadelphia-pa.2.jpg"
             address="301 Market St, Philadelphia, PA 19106"
             serviceTypesNearby={47}
             serviceTypesFarther={4}
             serviceTypesDistant={23}
             walkabilityScore={19}
-            pdfPath="doc-301-market-st.nrl.pdf"
+            pdfPath="doc-philadelphia-pa.2.pdf"
           />
           <ProductSample
             imagePath="preview-163-lai-chi-kok-rd.nrl.jpg"
