@@ -83,31 +83,31 @@ export default function Samples() {
             pdfPath="doc-wellington-nz.2.pdf"
           />
           <ProductSample
-            imagePath="preview-41-e-hastings-st.nrl.jpg"
+            imagePath="preview-vancouver-canada.2.jpg"
             address="41 E Hastings St, Vancouver, BC V6A 1M9, Canada"
             serviceTypesNearby={48}
             serviceTypesFarther={12}
             serviceTypesDistant={14}
             walkabilityScore={19}
-            pdfPath="doc-41-e-hastings-st.nrl.pdf"
+            pdfPath="doc-vancouver-canada.2.pdf"
           />
           <ProductSample
-            imagePath="preview-10-rue-de-rivoli.nrl.jpg"
+            imagePath="preview-paris-france.2.jpg"
             address="10 Rue de Rivoli, 75004 Paris, France"
             serviceTypesNearby={48}
             serviceTypesFarther={8}
             serviceTypesDistant={18}
             walkabilityScore={24}
-            pdfPath="doc-10-rue-de-rivoli.nrl.pdf"
+            pdfPath="doc-paris-france.2.pdf"
           />
           <ProductSample
-            imagePath="preview-67a-regent-rd.nrl.jpg"
+            imagePath="preview-cape-town-south-africa.2.jpg"
             address="67A Regent Rd, Cape Town, 8005, South Africa"
             serviceTypesNearby={48}
             serviceTypesFarther={2}
             serviceTypesDistant={24}
             walkabilityScore={23}
-            pdfPath="doc-67a-regent-rd.nrl.pdf"
+            pdfPath="doc-cape-town-south-africa.2.pdf"
           />
         </div>
       </div>
