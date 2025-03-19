@@ -166,13 +166,13 @@ export default function Samples() {
             pdfPath="doc-ireland.2.pdf"
           />
           <ProductSample
-            imagePath="preview-107-patton-ave.nrl.jpg"
+            imagePath="preview-asheville-nc.2.jpg"
             address="107 Patton Ave, Asheville, NC 28801"
             serviceTypesNearby={44}
             serviceTypesFarther={10}
             serviceTypesDistant={20}
             walkabilityScore={18}
-            pdfPath="doc-107-patton-ave.nrl.pdf"
+            pdfPath="doc-asheville-nc.2.pdf"
           />
           <ProductSample
             imagePath="preview-316-king-st.nrl.jpg"
