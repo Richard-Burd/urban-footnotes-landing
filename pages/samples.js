@@ -193,40 +193,40 @@ export default function Samples() {
             pdfPath="doc-berlin-germany.2.pdf"
           />
           <ProductSample
-            imagePath="preview-r-alexandre-martins-96.nrl.jpg"
+            imagePath="preview-sao-palo-brazil.2.jpg"
             address="R. Alexandre Martins, 96 - Aparecida, Santos - SP, 11025-200, Brazil"
             serviceTypesNearby={42}
             serviceTypesFarther={11}
             serviceTypesDistant={21}
             walkabilityScore={21}
-            pdfPath="doc-r-alexandre-martins-96.nrl.pdf"
+            pdfPath="doc-sao-palo-brazil.2.pdf"
           />
           <ProductSample
-            imagePath="preview-245-granby-st.nrl.jpg"
+            imagePath="preview-norfolk-va.2.jpg"
             address="245 Granby St, Norfolk, VA 23510"
             serviceTypesNearby={42}
             serviceTypesFarther={9}
             serviceTypesDistant={23}
             walkabilityScore={21}
-            pdfPath="doc-245-granby-st.nrl.pdf"
+            pdfPath="doc-norfolk-va.2.pdf"
           />
           <ProductSample
-            imagePath="preview-14-e-washington-st.nrl.jpg"
+            imagePath="preview-indianapolis-in.2.jpg"
             address="14 E Washington St, Indianapolis, IN 46204"
             serviceTypesNearby={42}
             serviceTypesFarther={7}
             serviceTypesDistant={25}
             walkabilityScore={22}
-            pdfPath="doc-14-e-washington-st.nrl.pdf"
+            pdfPath="doc-indianapolis-in.2.pdf"
           />
           <ProductSample
-            imagePath="preview-1030-tiverton-ave.nrl.jpg"
+            imagePath="preview-tiverton-ave-los-angeles.2.jpg"
             address="1030 Tiverton Ave. Los Angeles, CA 90024"
             serviceTypesNearby={41}
             serviceTypesFarther={17}
             serviceTypesDistant={16}
             walkabilityScore={25}
-            pdfPath="doc-1030-tiverton-ave.nrl.pdf"
+            pdfPath="doc-tiverton-ave-los-angeles.2.pdf"
           />
           <ProductSample
             imagePath="preview-1900-broadway.nrl.jpg"
