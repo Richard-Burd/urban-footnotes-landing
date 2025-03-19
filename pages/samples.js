@@ -229,22 +229,22 @@ export default function Samples() {
             pdfPath="doc-tiverton-ave-los-angeles.2.pdf"
           />
           <ProductSample
-            imagePath="preview-1900-broadway.nrl.jpg"
+            imagePath="preview-boulder-co.2.jpg"
             address="1900 Broadway, Boulder, CO 80302"
             serviceTypesNearby={40}
             serviceTypesFarther={15}
             serviceTypesDistant={19}
             walkabilityScore={23}
-            pdfPath="doc-1900-broadway.nrl.pdf"
+            pdfPath="doc-boulder-co.2.pdf"
           />
           <ProductSample
-            imagePath="preview-526-superior-ave.nrl.jpg"
+            imagePath="preview-superior-ave-cleveland-oh.jpg"
             address="526 Superior Ave, Cleveland, OH 44114"
             serviceTypesNearby={40}
             serviceTypesFarther={9}
             serviceTypesDistant={25}
             walkabilityScore={21}
-            pdfPath="doc-526-superior-ave.nrl.pdf"
+            pdfPath="doc-superior-ave-cleveland-oh.pdf"
           />
         </div>
       </div>
