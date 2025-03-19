@@ -175,22 +175,22 @@ export default function Samples() {
             pdfPath="doc-asheville-nc.2.pdf"
           />
           <ProductSample
-            imagePath="preview-316-king-st.nrl.jpg"
+            imagePath="preview-charleston-sc.2.jpg"
             address="316 King St, Charleston, SC 29401"
             serviceTypesNearby={44}
             serviceTypesFarther={8}
             serviceTypesDistant={22}
             walkabilityScore={19}
-            pdfPath="doc-316-king-st.nrl.pdf"
+            pdfPath="doc-charleston-sc.2.pdf"
           />
           <ProductSample
-            imagePath="preview-gabriel-max-straße-15.nrl.jpg"
+            imagePath="preview-berlin-germany.2.jpg"
             address="Gabriel-Max-Straße 15, 10245 Berlin, Germany"
             serviceTypesNearby={42}
             serviceTypesFarther={14}
             serviceTypesDistant={18}
             walkabilityScore={19}
-            pdfPath="doc-gabriel-max-straße-15.nrl.pdf"
+            pdfPath="doc-berlin-germany.2.pdf"
           />
           <ProductSample
             imagePath="preview-r-alexandre-martins-96.nrl.jpg"
