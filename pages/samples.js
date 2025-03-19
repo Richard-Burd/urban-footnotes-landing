@@ -157,13 +157,13 @@ export default function Samples() {
             pdfPath="doc-santa-barbara-ca.2.pdf"
           />
           <ProductSample
-            imagePath="preview-50-grand-parade.nrl.jpg"
+            imagePath="preview-ireland.2.jpg"
             address="50 Grand Parade, Centre, Cork, T12 D638, Ireland"
             serviceTypesNearby={44}
             serviceTypesFarther={13}
             serviceTypesDistant={17}
             walkabilityScore={17}
-            pdfPath="doc-50-grand-parade.nrl.pdf"
+            pdfPath="doc-ireland.2.pdf"
           />
           <ProductSample
             imagePath="preview-107-patton-ave.nrl.jpg"
