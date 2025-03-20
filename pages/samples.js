@@ -258,22 +258,22 @@ export default function Samples() {
         </div>
         <div className="grid grid-cols-1 px-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-5 xl:grid-cols-4">
           <ProductSample
-            imagePath="preview-1505-ponce-de-leon.nrl.jpg"
+            imagePath="preview-coral-gables-fl.2.jpg"
             address="1505 Ponce de Leon, Coral Gables, FL 33134"
             serviceTypesNearby={38}
             serviceTypesFarther={7}
             serviceTypesDistant={29}
             walkabilityScore={23}
-            pdfPath="doc-1505-ponce-de-leon.nrl.pdf"
+            pdfPath="doc-coral-gables-fl.2_compressed.pdf"
           />
           <ProductSample
-            imagePath="preview-4100-georgia-ave.nrl.jpg"
+            imagePath="preview-washington-dc.2.jpg"
             address="4100 Georgia Ave NW, Washington, DC 20011"
             serviceTypesNearby={37}
             serviceTypesFarther={10}
             serviceTypesDistant={27}
             walkabilityScore={22}
-            pdfPath="doc-4100-georgia-ave.nrl.pdf"
+            pdfPath="doc-washington-dc.2.pdf"
           />
           <ProductSample
             imagePath="preview-555-church-st.nrl.jpg"
