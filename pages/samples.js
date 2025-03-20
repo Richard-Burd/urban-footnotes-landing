@@ -303,13 +303,13 @@ export default function Samples() {
             pdfPath="doc-montreal-qc-canada.2.pdf"
           />
           <ProductSample
-            imagePath="preview-107-high-st.nrl.jpg"
+            imagePath="preview-charlestown-ma.2.jpg"
             address="107 High St, Charlestown, MA 02129"
             serviceTypesNearby={36}
             serviceTypesFarther={8}
             serviceTypesDistant={30}
             walkabilityScore={17}
-            pdfPath="doc-107-high-st.nrl.pdf"
+            pdfPath="doc-charlestown-ma.2.pdf"
           />
           <ProductSample
             imagePath="preview-201-chartres-st.nrl.jpg"
