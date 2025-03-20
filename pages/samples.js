@@ -56,13 +56,13 @@ export default function Samples() {
             pdfPath="doc-chicago-il.2.pdf"
           />
           <ProductSample
-            imagePath="preview-313-sauchiehall-st.nrl.jpg"
+            imagePath="preview-glasgow-scotland-uk.2.jpg"
             address="313 Sauchiehall St. Glasgow G2 3JA Scotland"
             serviceTypesNearby={49}
             serviceTypesFarther={11}
             serviceTypesDistant={14}
             walkabilityScore={23}
-            pdfPath="doc-313-sauchiehall-st.nrl.pdf"
+            pdfPath="doc-glasgow-scotland-uk.2.pdf"
           />
           <ProductSample
             imagePath="preview-liverpool-uk.2.jpg"
