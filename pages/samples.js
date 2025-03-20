@@ -276,31 +276,31 @@ export default function Samples() {
             pdfPath="doc-washington-dc.2.pdf"
           />
           <ProductSample
-            imagePath="preview-555-church-st.nrl.jpg"
+            imagePath="preview-church-st-nashville-tn.2.jpg"
             address="555 Church St. Nashville, TN 37203"
             serviceTypesNearby={37}
             serviceTypesFarther={8}
             serviceTypesDistant={29}
             walkabilityScore={24}
-            pdfPath="doc-555-church-st.nrl.pdf"
+            pdfPath="doc-church-st-nashville-tn.2.pdf"
           />
           <ProductSample
-            imagePath="preview-332-e-william-st.nrl.jpg"
+            imagePath="preview-ann-arbor-mi.2.jpg"
             address="332 E William St. Ann Arbor, MI 48104"
             serviceTypesNearby={36}
             serviceTypesFarther={17}
             serviceTypesDistant={21}
             walkabilityScore={27}
-            pdfPath="doc-332-e-william-st.nrl.pdf"
+            pdfPath="doc-ann-arbor-mi.2.pdf"
           />
           <ProductSample
-            imagePath="preview-6485-victoria-ave.nrl.jpg"
+            imagePath="preview-montreal-qc-canada.2.jpg"
             address="6485 Victoria Ave, Montreal, QC H3W, Canada"
             serviceTypesNearby={36}
             serviceTypesFarther={8}
             serviceTypesDistant={30}
             walkabilityScore={21}
-            pdfPath="doc-6485-victoria-ave.nrl.pdf"
+            pdfPath="doc-montreal-qc-canada.2.pdf"
           />
           <ProductSample
             imagePath="preview-107-high-st.nrl.jpg"
