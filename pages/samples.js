@@ -327,7 +327,7 @@ export default function Samples() {
             serviceTypesFarther={9}
             serviceTypesDistant={31}
             walkabilityScore={24}
-            pdfPath="doc-archway-london-uk.2.pdf"
+            pdfPath="doc-archway-london-uk.2.1.pdf"
           />
           <ProductSample
             imagePath="preview-portland-or.2.jpg"
