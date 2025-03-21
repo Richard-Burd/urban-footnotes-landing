@@ -321,13 +321,13 @@ export default function Samples() {
             pdfPath="doc-new-orleans-la.2.pdf"
           />
           <ProductSample
-            imagePath="preview-2-junction-road.nrl.jpg"
+            imagePath="preview-archway-london-uk.2.jpg"
             address="2 Junction Road, Archway, London N19 5FF"
             serviceTypesNearby={34}
             serviceTypesFarther={9}
             serviceTypesDistant={31}
             walkabilityScore={24}
-            pdfPath="doc-2-junction-road.nrl.pdf"
+            pdfPath="doc-archway-london-uk.2.pdf"
           />
           <ProductSample
             imagePath="preview-1431-sw-park-ave.nrl.jpg"
