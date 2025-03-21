@@ -312,13 +312,13 @@ export default function Samples() {
             pdfPath="doc-charlestown-ma.2.pdf"
           />
           <ProductSample
-            imagePath="preview-201-chartres-st.nrl.jpg"
+            imagePath="preview-new-orleans-la.2.jpg"
             address="201 Chartres St, New Orleans, LA 70130"
             serviceTypesNearby={35}
             serviceTypesFarther={16}
             serviceTypesDistant={23}
             walkabilityScore={21}
-            pdfPath="doc-201-chartres-st.nrl.pdf"
+            pdfPath="doc-new-orleans-la.2.pdf"
           />
           <ProductSample
             imagePath="preview-2-junction-road.nrl.jpg"
