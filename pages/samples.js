@@ -291,7 +291,7 @@ export default function Samples() {
             serviceTypesFarther={17}
             serviceTypesDistant={21}
             walkabilityScore={27}
-            pdfPath="doc-ann-arbor-mi.2.pdf"
+            pdfPath="doc-ann-arbor-mi.2.1.pdf"
           />
           <ProductSample
             imagePath="preview-montreal-qc-canada.2.jpg"
