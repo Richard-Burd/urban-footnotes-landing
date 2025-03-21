@@ -381,7 +381,7 @@ export default function Samples() {
             serviceTypesFarther={13}
             serviceTypesDistant={49}
             walkabilityScore={12}
-            pdfPath="doc-elvira-nashville-tn.2.pdf"
+            pdfPath="doc-elvira-nashville-tn.2.1.pdf"
           />
         </div>
       </div>
