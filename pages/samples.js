@@ -330,13 +330,13 @@ export default function Samples() {
             pdfPath="doc-archway-london-uk.2.pdf"
           />
           <ProductSample
-            imagePath="preview-1431-sw-park-ave.nrl.jpg"
+            imagePath="preview-portland-or.2.jpg"
             address="1431 SW Park Ave. Portland, OR 97201"
             serviceTypesNearby={33}
             serviceTypesFarther={21}
             serviceTypesDistant={20}
             walkabilityScore={21}
-            pdfPath="doc-1431-sw-park-ave.nrl.pdf"
+            pdfPath="doc-portland-or.2.pdf"
           />
           <ProductSample
             imagePath="preview-1080-peachtree-st.nrl.jpg"
