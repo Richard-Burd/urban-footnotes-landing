@@ -339,40 +339,40 @@ export default function Samples() {
             pdfPath="doc-portland-or.2.pdf"
           />
           <ProductSample
-            imagePath="preview-1080-peachtree-st.nrl.jpg"
+            imagePath="preview-atlanta-ga.2.jpg"
             address="1080 Peachtree St NE, Atlanta, GA 30309"
             serviceTypesNearby={32}
             serviceTypesFarther={19}
             serviceTypesDistant={23}
             walkabilityScore={23}
-            pdfPath="doc-1080-peachtree-st.nrl.pdf"
+            pdfPath="doc-atlanta-ga.2.pdf"
           />
           <ProductSample
-            imagePath="preview-2033-broadway.nrl.jpg"
+            imagePath="preview-broadway-nashville-tn.2.jpg"
             address="2033 Broadway, Nashville, TN 37203"
             serviceTypesNearby={27}
             serviceTypesFarther={17}
             serviceTypesDistant={30}
             walkabilityScore={22}
-            pdfPath="doc-2033-broadway.nrl.pdf"
+            pdfPath="doc-broadway-nashville-tn.2.pdf"
           />
           <ProductSample
-            imagePath="preview-2525-ocean-ave.nrl.jpg"
+            imagePath="preview-ocean-ave-san-francisco-ca.2.jpg"
             address="2525 Ocean Ave, San Francisco, CA 94132"
             serviceTypesNearby={27}
             serviceTypesFarther={15}
             serviceTypesDistant={32}
             walkabilityScore={21}
-            pdfPath="doc-2525-ocean-ave.nrl.pdf"
+            pdfPath="doc-ocean-ave-san-francisco-ca.2.pdf"
           />
           <ProductSample
-            imagePath="preview-5025-penn-ave.nrl.jpg"
-            address="18 Whitechapel, Liverpool L1 6DS, UK"
+            imagePath="preview-pittsburgh-pa.2.jpg"
+            address="5025 Penn Ave, Pittsburgh, PA 15224"
             serviceTypesNearby={23}
             serviceTypesFarther={5}
             serviceTypesDistant={46}
             walkabilityScore={18}
-            pdfPath="doc-5025-penn-ave.nrl.pdf"
+            pdfPath="doc-pittsburgh-pa.2.pdf"
           />
           <ProductSample
             imagePath="preview-elvira-nashville-tn.2.jpg"
