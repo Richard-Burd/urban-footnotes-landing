@@ -52,7 +52,7 @@ export default function Product() {
         />
         <Image
           alt="Sixth page of the product"
-          src={`${baseUrl}/product-page-desktop.1e.png`}
+          src={`${baseUrl}/product-page-desktop.2e.png`}
           // true width & true height controlled by parent grid
           // image fills parent's allotted space
           width={1024}
