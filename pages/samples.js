@@ -20,13 +20,13 @@ export default function Samples() {
         </div>
         <div className="grid grid-cols-1 px-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-5 xl:grid-cols-4">
           <ProductSample
-            imagePath="preview-233-8th-ave-new-york.2.jpg"
+            imagePath="preview-233-8th-ave-new-york.3.jpg"
             address="223 8th Ave. New York, NY 10011"
             serviceTypesNearby={55}
             serviceTypesFarther={7}
             serviceTypesDistant={12}
             walkabilityScore={20}
-            pdfPath="doc-233-8th-ave-new-york.2.pdf"
+            pdfPath="doc-233-8th-ave-new-york.3.pdf"
           />
           <ProductSample
             imagePath="preview-sarphatipark-38i-amsterdam.2.jpg"
