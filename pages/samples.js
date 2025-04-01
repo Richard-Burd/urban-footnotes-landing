@@ -29,16 +29,16 @@ export default function Samples() {
             pdfPath="doc-233-8th-ave-new-york.4.pdf"
           />
           <ProductSample
-            imagePath="preview-sarphatipark-38i-amsterdam.2.jpg"
+            imagePath="preview-sarphatipark-38i-amsterdam.3.2.jpg"
             address="Sarphatipark 38I, 1072 PB Amsterdam, Netherlands"
             serviceTypesNearby={52}
             serviceTypesFarther={7}
             serviceTypesDistant={15}
             walkabilityScore={23}
-            pdfPath="doc-sarphatipark-38i-amsterdam.2.pdf"
+            pdfPath="doc-sarphatipark-38i-amsterdam.3.pdf"
           />
           <ProductSample
-            imagePath="preview-1902-2nd-ave-seattle-wa.2.jpg"
+            imagePath="preview-1902-2nd-ave-seattle-wa.3.1.jpg"
             address="1902 2nd Ave, Seattle, WA 98101"
             serviceTypesNearby={49}
             serviceTypesFarther={13}
@@ -47,7 +47,7 @@ export default function Samples() {
             pdfPath="doc-1902-2nd-ave-seattle-wa.2.pdf"
           />
           <ProductSample
-            imagePath="preview-chicago-il.2.jpg"
+            imagePath="preview-chicago-il.3.jpg"
             address="29 S La Salle St, Chicago, IL 60603"
             serviceTypesNearby={49}
             serviceTypesFarther={11}
@@ -56,7 +56,7 @@ export default function Samples() {
             pdfPath="doc-chicago-il.2.pdf"
           />
           <ProductSample
-            imagePath="preview-glasgow-scotland-uk.2.jpg"
+            imagePath="preview-glasgow-scotland-uk.3.1.jpg"
             address="313 Sauchiehall St. Glasgow G2 3JA Scotland"
             serviceTypesNearby={49}
             serviceTypesFarther={11}
@@ -74,7 +74,7 @@ export default function Samples() {
             pdfPath="doc-liverpool-uk.3.pdf"
           />
           <ProductSample
-            imagePath="preview-wellington-nz.2.jpg"
+            imagePath="preview-wellington-nz.3.jpg"
             address="10 Lorne Street, Te Aro, Wellington 6011, New Zealand"
             serviceTypesNearby={49}
             serviceTypesFarther={7}
@@ -83,16 +83,16 @@ export default function Samples() {
             pdfPath="doc-wellington-nz.2.pdf"
           />
           <ProductSample
-            imagePath="preview-vancouver-canada.2.jpg"
+            imagePath="preview-vancouver-canada.3.1.jpg"
             address="41 E Hastings St, Vancouver, BC V6A 1M9, Canada"
             serviceTypesNearby={48}
             serviceTypesFarther={12}
             serviceTypesDistant={14}
             walkabilityScore={19}
-            pdfPath="doc-vancouver-canada.2.pdf"
+            pdfPath="doc-vancouver-canada.3.pdf"
           />
           <ProductSample
-            imagePath="preview-paris-france.2.jpg"
+            imagePath="preview-paris-france.3.jpg"
             address="10 Rue de Rivoli, 75004 Paris, France"
             serviceTypesNearby={48}
             serviceTypesFarther={8}
@@ -101,7 +101,7 @@ export default function Samples() {
             pdfPath="doc-paris-france.2.pdf"
           />
           <ProductSample
-            imagePath="preview-cape-town-south-africa.2.jpg"
+            imagePath="preview-cape-town-south-africa.3.1.jpg"
             address="67A Regent Rd, Cape Town, 8005, South Africa"
             serviceTypesNearby={48}
             serviceTypesFarther={2}
