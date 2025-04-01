@@ -65,13 +65,13 @@ export default function Samples() {
             pdfPath="doc-glasgow-scotland-uk.2.pdf"
           />
           <ProductSample
-            imagePath="preview-liverpool-uk.2.jpg"
+            imagePath="preview-liverpool-uk.3.jpg"
             address="18 Whitechapel, Liverpool L1 6DS, UK"
             serviceTypesNearby={49}
             serviceTypesFarther={9}
             serviceTypesDistant={16}
             walkabilityScore={27}
-            pdfPath="doc-liverpool-uk.2.pdf"
+            pdfPath="doc-liverpool-uk.3.pdf"
           />
           <ProductSample
             imagePath="preview-wellington-nz.2.jpg"
