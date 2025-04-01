@@ -121,16 +121,16 @@ export default function Samples() {
         </div>
         <div className="grid grid-cols-1 px-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-5 xl:grid-cols-4">
           <ProductSample
-            imagePath="preview-philadelphia-pa.2.jpg"
+            imagePath="preview-philadelphia-pa.3.1.jpg"
             address="301 Market St, Philadelphia, PA 19106"
             serviceTypesNearby={47}
             serviceTypesFarther={4}
             serviceTypesDistant={23}
             walkabilityScore={19}
-            pdfPath="doc-philadelphia-pa.2.pdf"
+            pdfPath="doc-philadelphia-pa.3.pdf"
           />
           <ProductSample
-            imagePath="preview-hong-kong.2.jpg"
+            imagePath="preview-hong-kong.3.jpg"
             address="163 Lai Chi Kok Rd, Tai Kok Tsui, Hong Kong"
             serviceTypesNearby={45}
             serviceTypesFarther={10}
@@ -139,7 +139,7 @@ export default function Samples() {
             pdfPath="doc-hong-kong.2.pdf"
           />
           <ProductSample
-            imagePath="preview-malta.2.jpg"
+            imagePath="preview-malta.3.jpg"
             address="55 Triq San Vincenz, Tas-Sliema, Malta"
             serviceTypesNearby={45}
             serviceTypesFarther={9}
@@ -148,7 +148,7 @@ export default function Samples() {
             pdfPath="doc-malta.2.pdf"
           />
           <ProductSample
-            imagePath="preview-santa-barbara-ca.2.jpg"
+            imagePath="preview-santa-barbara-ca.3.jpg"
             address="618-622 Anacapa St, Santa Barbara, CA 93101"
             serviceTypesNearby={45}
             serviceTypesFarther={7}
@@ -157,7 +157,7 @@ export default function Samples() {
             pdfPath="doc-santa-barbara-ca.2.pdf"
           />
           <ProductSample
-            imagePath="preview-ireland.2.jpg"
+            imagePath="preview-ireland.3.jpg"
             address="50 Grand Parade, Centre, Cork, T12 D638, Ireland"
             serviceTypesNearby={44}
             serviceTypesFarther={13}
@@ -166,7 +166,7 @@ export default function Samples() {
             pdfPath="doc-ireland.2.pdf"
           />
           <ProductSample
-            imagePath="preview-asheville-nc.2.jpg"
+            imagePath="preview-asheville-nc.3.jpg"
             address="107 Patton Ave, Asheville, NC 28801"
             serviceTypesNearby={44}
             serviceTypesFarther={10}
@@ -175,7 +175,7 @@ export default function Samples() {
             pdfPath="doc-asheville-nc.2.pdf"
           />
           <ProductSample
-            imagePath="preview-charleston-sc.2.jpg"
+            imagePath="preview-charleston-sc.3.jpg"
             address="316 King St, Charleston, SC 29401"
             serviceTypesNearby={44}
             serviceTypesFarther={8}
@@ -184,7 +184,7 @@ export default function Samples() {
             pdfPath="doc-charleston-sc.2.pdf"
           />
           <ProductSample
-            imagePath="preview-berlin-germany.2.jpg"
+            imagePath="preview-berlin-germany.3.jpg"
             address="Gabriel-Max-Straße 15, 10245 Berlin, Germany"
             serviceTypesNearby={42}
             serviceTypesFarther={14}
@@ -193,7 +193,7 @@ export default function Samples() {
             pdfPath="doc-berlin-germany.2.pdf"
           />
           <ProductSample
-            imagePath="preview-sao-palo-brazil.2.jpg"
+            imagePath="preview-sao-palo-brazil.3.jpg"
             address="R. Alexandre Martins, 96 - Aparecida, Santos - SP, 11025-200, Brazil"
             serviceTypesNearby={42}
             serviceTypesFarther={11}
@@ -202,7 +202,7 @@ export default function Samples() {
             pdfPath="doc-sao-palo-brazil.2.pdf"
           />
           <ProductSample
-            imagePath="preview-norfolk-va.2.jpg"
+            imagePath="preview-norfolk-va.3.jpg"
             address="245 Granby St, Norfolk, VA 23510"
             serviceTypesNearby={42}
             serviceTypesFarther={9}
@@ -211,7 +211,7 @@ export default function Samples() {
             pdfPath="doc-norfolk-va.2.pdf"
           />
           <ProductSample
-            imagePath="preview-indianapolis-in.2.jpg"
+            imagePath="preview-indianapolis-in.3.jpg"
             address="14 E Washington St, Indianapolis, IN 46204"
             serviceTypesNearby={42}
             serviceTypesFarther={7}
@@ -220,7 +220,7 @@ export default function Samples() {
             pdfPath="doc-indianapolis-in.2.pdf"
           />
           <ProductSample
-            imagePath="preview-tiverton-ave-los-angeles.2.jpg"
+            imagePath="preview-tiverton-ave-los-angeles.3.jpg"
             address="1030 Tiverton Ave. Los Angeles, CA 90024"
             serviceTypesNearby={41}
             serviceTypesFarther={17}
@@ -229,7 +229,7 @@ export default function Samples() {
             pdfPath="doc-tiverton-ave-los-angeles.2.pdf"
           />
           <ProductSample
-            imagePath="preview-boulder-co.2.jpg"
+            imagePath="preview-boulder-co.3.jpg"
             address="1900 Broadway, Boulder, CO 80302"
             serviceTypesNearby={40}
             serviceTypesFarther={15}
@@ -238,7 +238,7 @@ export default function Samples() {
             pdfPath="doc-boulder-co.2.pdf"
           />
           <ProductSample
-            imagePath="preview-superior-ave-cleveland-oh.jpg"
+            imagePath="preview-superior-ave-cleveland-oh.3.jpg"
             address="526 Superior Ave, Cleveland, OH 44114"
             serviceTypesNearby={40}
             serviceTypesFarther={9}
@@ -258,7 +258,7 @@ export default function Samples() {
         </div>
         <div className="grid grid-cols-1 px-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-5 xl:grid-cols-4">
           <ProductSample
-            imagePath="preview-coral-gables-fl.2.jpg"
+            imagePath="preview-coral-gables-fl.3.jpg"
             address="1505 Ponce de Leon, Coral Gables, FL 33134"
             serviceTypesNearby={38}
             serviceTypesFarther={7}
@@ -267,7 +267,7 @@ export default function Samples() {
             pdfPath="doc-coral-gables-fl.3.pdf"
           />
           <ProductSample
-            imagePath="preview-washington-dc.2.jpg"
+            imagePath="preview-washington-dc.3.1.jpg"
             address="4100 Georgia Ave NW, Washington, DC 20011"
             serviceTypesNearby={37}
             serviceTypesFarther={10}
@@ -276,7 +276,7 @@ export default function Samples() {
             pdfPath="doc-washington-dc.3.pdf"
           />
           <ProductSample
-            imagePath="preview-church-st-nashville-tn.2.jpg"
+            imagePath="preview-church-st-nashville-tn.3.jpg"
             address="555 Church St. Nashville, TN 37203"
             serviceTypesNearby={37}
             serviceTypesFarther={8}
@@ -285,7 +285,7 @@ export default function Samples() {
             pdfPath="doc-church-st-nashville-tn.2.pdf"
           />
           <ProductSample
-            imagePath="preview-ann-arbor-mi.2.jpg"
+            imagePath="preview-ann-arbor-mi.3.jpg"
             address="332 E William St. Ann Arbor, MI 48104"
             serviceTypesNearby={36}
             serviceTypesFarther={17}
@@ -294,16 +294,16 @@ export default function Samples() {
             pdfPath="doc-ann-arbor-mi.2.1.pdf"
           />
           <ProductSample
-            imagePath="preview-montreal-qc-canada.2.jpg"
+            imagePath="preview-montreal-qc-canada.3.jpg"
             address="6485 Victoria Ave, Montreal, QC H3W, Canada"
             serviceTypesNearby={36}
             serviceTypesFarther={8}
             serviceTypesDistant={30}
             walkabilityScore={21}
-            pdfPath="doc-montreal-qc-canada.2.pdf"
+            pdfPath="doc-montreal-qc-canada.3.pdf"
           />
           <ProductSample
-            imagePath="preview-charlestown-ma.2.jpg"
+            imagePath="preview-charlestown-ma.3.jpg"
             address="107 High St, Charlestown, MA 02129"
             serviceTypesNearby={36}
             serviceTypesFarther={8}
@@ -312,7 +312,7 @@ export default function Samples() {
             pdfPath="doc-charlestown-ma.2.pdf"
           />
           <ProductSample
-            imagePath="preview-new-orleans-la.2.jpg"
+            imagePath="preview-new-orleans-la.3.jpg"
             address="201 Chartres St, New Orleans, LA 70130"
             serviceTypesNearby={35}
             serviceTypesFarther={16}
