@@ -20,13 +20,13 @@ export default function Samples() {
         </div>
         <div className="grid grid-cols-1 px-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-5 xl:grid-cols-4">
           <ProductSample
-            imagePath="preview-233-8th-ave-new-york.3.jpg"
+            imagePath="preview-233-8th-ave-new-york.4.jpg"
             address="223 8th Ave. New York, NY 10011"
             serviceTypesNearby={55}
             serviceTypesFarther={7}
             serviceTypesDistant={12}
             walkabilityScore={20}
-            pdfPath="doc-233-8th-ave-new-york.3.pdf"
+            pdfPath="doc-233-8th-ave-new-york.4.pdf"
           />
           <ProductSample
             imagePath="preview-sarphatipark-38i-amsterdam.2.jpg"
@@ -264,7 +264,7 @@ export default function Samples() {
             serviceTypesFarther={7}
             serviceTypesDistant={29}
             walkabilityScore={23}
-            pdfPath="doc-coral-gables-fl.2_compressed.pdf"
+            pdfPath="doc-coral-gables-fl.3.pdf"
           />
           <ProductSample
             imagePath="preview-washington-dc.2.jpg"
@@ -273,7 +273,7 @@ export default function Samples() {
             serviceTypesFarther={10}
             serviceTypesDistant={27}
             walkabilityScore={22}
-            pdfPath="doc-washington-dc.2.pdf"
+            pdfPath="doc-washington-dc.3.pdf"
           />
           <ProductSample
             imagePath="preview-church-st-nashville-tn.2.jpg"
@@ -318,7 +318,7 @@ export default function Samples() {
             serviceTypesFarther={16}
             serviceTypesDistant={23}
             walkabilityScore={21}
-            pdfPath="doc-new-orleans-la.2.pdf"
+            pdfPath="doc-new-orleans-la.3.pdf"
           />
           <ProductSample
             imagePath="preview-archway-london-uk.2.jpg"
@@ -363,7 +363,7 @@ export default function Samples() {
             serviceTypesFarther={15}
             serviceTypesDistant={32}
             walkabilityScore={21}
-            pdfPath="doc-ocean-ave-san-francisco-ca.2.pdf"
+            pdfPath="doc-ocean-ave-san-francisco-ca.3.pdf"
           />
           <ProductSample
             imagePath="preview-pittsburgh-pa.2.jpg"
