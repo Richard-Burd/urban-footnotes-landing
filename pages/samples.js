@@ -321,7 +321,7 @@ export default function Samples() {
             pdfPath="doc-new-orleans-la.3.pdf"
           />
           <ProductSample
-            imagePath="preview-archway-london-uk.2.jpg"
+            imagePath="preview-archway-london-uk.3.jpg"
             address="2 Junction Road, Archway, London N19 5FF"
             serviceTypesNearby={34}
             serviceTypesFarther={9}
@@ -330,7 +330,7 @@ export default function Samples() {
             pdfPath="doc-archway-london-uk.2.1.pdf"
           />
           <ProductSample
-            imagePath="preview-portland-or.2.jpg"
+            imagePath="preview-portland-or.3.jpg"
             address="1431 SW Park Ave. Portland, OR 97201"
             serviceTypesNearby={33}
             serviceTypesFarther={21}
@@ -339,7 +339,7 @@ export default function Samples() {
             pdfPath="doc-portland-or.2.pdf"
           />
           <ProductSample
-            imagePath="preview-atlanta-ga.2.jpg"
+            imagePath="preview-atlanta-ga.3.jpg"
             address="1080 Peachtree St NE, Atlanta, GA 30309"
             serviceTypesNearby={32}
             serviceTypesFarther={19}
@@ -348,34 +348,34 @@ export default function Samples() {
             pdfPath="doc-atlanta-ga.2.pdf"
           />
           <ProductSample
-            imagePath="preview-broadway-nashville-tn.2.jpg"
+            imagePath="preview-broadway-nashville-tn.3.jpg"
             address="2033 Broadway, Nashville, TN 37203"
             serviceTypesNearby={27}
             serviceTypesFarther={17}
             serviceTypesDistant={30}
             walkabilityScore={22}
-            pdfPath="doc-broadway-nashville-tn.2.pdf"
+            pdfPath="doc-broadway-nashville-tn.3.pdf"
           />
           <ProductSample
-            imagePath="preview-ocean-ave-san-francisco-ca.2.jpg"
+            imagePath="preview-ocean-ave-san-francisco-ca.3.jpg"
             address="2525 Ocean Ave, San Francisco, CA 94132"
             serviceTypesNearby={27}
             serviceTypesFarther={15}
             serviceTypesDistant={32}
             walkabilityScore={21}
-            pdfPath="doc-ocean-ave-san-francisco-ca.3.pdf"
+            pdfPath="doc-ocean-ave-san-francisco-ca.3.1.pdf"
           />
           <ProductSample
-            imagePath="preview-pittsburgh-pa.2.jpg"
+            imagePath="preview-pittsburgh-pa.3.jpg"
             address="5025 Penn Ave, Pittsburgh, PA 15224"
             serviceTypesNearby={23}
             serviceTypesFarther={5}
             serviceTypesDistant={46}
             walkabilityScore={18}
-            pdfPath="doc-pittsburgh-pa.2.pdf"
+            pdfPath="doc-pittsburgh-pa.3.pdf"
           />
           <ProductSample
-            imagePath="preview-elvira-nashville-tn.2.jpg"
+            imagePath="preview-elvira-nashville-tn.3.jpg"
             address="1015 Elvira Ave. Nashville, TN 37216"
             serviceTypesNearby={12}
             serviceTypesFarther={13}
