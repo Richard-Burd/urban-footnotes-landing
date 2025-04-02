@@ -26,7 +26,7 @@ export default function Samples() {
             serviceTypesFarther={7}
             serviceTypesDistant={12}
             walkabilityScore={20}
-            pdfPath="doc-233-8th-ave-new-york.4.pdf"
+            pdfPath="doc-233-8th-ave-new-york.5.pdf"
           />
           <ProductSample
             imagePath="preview-sarphatipark-38i-amsterdam.3.2.jpg"
@@ -44,7 +44,7 @@ export default function Samples() {
             serviceTypesFarther={13}
             serviceTypesDistant={12}
             walkabilityScore={20}
-            pdfPath="doc-1902-2nd-ave-seattle-wa.2.pdf"
+            pdfPath="doc-1902-2nd-ave-seattle-wa.5.pdf"
           />
           <ProductSample
             imagePath="preview-chicago-il.3.jpg"
@@ -53,7 +53,7 @@ export default function Samples() {
             serviceTypesFarther={11}
             serviceTypesDistant={14}
             walkabilityScore={25}
-            pdfPath="doc-chicago-il.2.pdf"
+            pdfPath="doc-chicago-il.5.pdf"
           />
           <ProductSample
             imagePath="preview-glasgow-scotland-uk.3.1.jpg"
@@ -235,7 +235,7 @@ export default function Samples() {
             serviceTypesFarther={15}
             serviceTypesDistant={19}
             walkabilityScore={23}
-            pdfPath="doc-boulder-co.2.pdf"
+            pdfPath="doc-boulder-co.5.pdf"
           />
           <ProductSample
             imagePath="preview-superior-ave-cleveland-oh.3.jpg"
@@ -264,7 +264,7 @@ export default function Samples() {
             serviceTypesFarther={7}
             serviceTypesDistant={29}
             walkabilityScore={23}
-            pdfPath="doc-coral-gables-fl.3.pdf"
+            pdfPath="doc-coral-gables-fl.5.pdf"
           />
           <ProductSample
             imagePath="preview-washington-dc.3.1.jpg"
@@ -381,7 +381,7 @@ export default function Samples() {
             serviceTypesFarther={13}
             serviceTypesDistant={49}
             walkabilityScore={12}
-            pdfPath="doc-elvira-nashville-tn.2.1.pdf"
+            pdfPath="doc-elvira-nashville-tn.5.pdf"
           />
         </div>
       </div>
