@@ -62,7 +62,7 @@ export default function Samples() {
             serviceTypesFarther={11}
             serviceTypesDistant={14}
             walkabilityScore={23}
-            pdfPath="doc-glasgow-scotland-uk.2.pdf"
+            pdfPath="doc-glasgow-scotland-uk.5.pdf"
           />
           <ProductSample
             imagePath="preview-liverpool-uk.3.jpg"
