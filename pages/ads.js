@@ -33,7 +33,7 @@ export default function Ads() {
 
           <center>
             <div className="roboto-font pb-4 text-2xl tracking-wide text-stone-300 opacity-60 lg:pt-2 lg:text-4xl">
-              Comming Soon...
+              Coming Soon...
             </div>
           </center>
         </div>
