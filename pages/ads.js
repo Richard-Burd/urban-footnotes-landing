@@ -32,9 +32,38 @@ export default function Ads() {
           </div>
 
           <center>
-            <div className="roboto-font pb-4 text-2xl tracking-wide text-stone-300 opacity-60 lg:pt-2 lg:text-4xl">
-              Coming Soon...
-            </div>
+            <div className="m-4 space-y-8 py-6">
+            <p className="text-5xl text-stone-300">
+              What if your next development proposal came with a story—the story
+              of the neighborhood, told in data?
+            </p><br></br>
+            <p className="text-2xl text-stone-300">
+              Too many projects start with incomplete data. Outdated online
+              listings. Empty directories. Missing the feel of the block, or the
+              shift happening two streets over. That's where deals fall apart—or
+              miss their mark.
+            </p>
+            <p className="text-2xl text-stone-300">
+              Urban Foot Notes delivers personal, investigative neighborhood
+              reports. We analyze business presence, amenity access, land use,
+              and walkability—so you can propose your project with clarity and
+              confidence. Our researchers have been providing data-driven
+              environmental solutions since 2014. We can add to your analysis
+              with grounded, location-specific insight.
+            </p>
+            <p className="text-2xl text-stone-300">
+              Our reports can strengthen presentations to development
+              authorities, zoning boards, citizens, city councils, and
+              investors. They can better answer buyers or renters who ask,
+              “What's it like around here?” You'll have comprehensive data to
+              work with.
+            </p>
+            <p className="text-2xl text-stone-300">
+              Support your next project with insight that speaks for itself.
+              Visit urbanfootnotes.com to see samples, order your own report, or
+              share any concerns with us.
+            </p>
+          </div>
           </center>
         </div>
       </div>
@@ -86,9 +115,38 @@ export default function Ads() {
             </div>
           </div>
           <center>
-            <div className="roboto-font pb-4 text-4xl tracking-wide text-stone-300 opacity-60 lg:pt-2 lg:text-4xl">
-              Comming Soon...
-            </div>
+                        <div className="m-4 space-y-8 py-6">
+            <p className="text-5xl text-stone-300">
+              What if your next development proposal came with a story—the story
+              of the neighborhood, told in data?
+            </p><br></br>
+            <p className="text-2xl text-stone-300">
+              Too many projects start with incomplete data. Outdated online
+              listings. Empty directories. Missing the feel of the block, or the
+              shift happening two streets over. That's where deals fall apart—or
+              miss their mark.
+            </p>
+            <p className="text-2xl text-stone-300">
+              Urban Foot Notes delivers personal, investigative neighborhood
+              reports. We analyze business presence, amenity access, land use,
+              and walkability—so you can propose your project with clarity and
+              confidence. Our researchers have been providing data-driven
+              environmental solutions since 2014. We can add to your analysis
+              with grounded, location-specific insight.
+            </p>
+            <p className="text-2xl text-stone-300">
+              Our reports can strengthen presentations to development
+              authorities, zoning boards, citizens, city councils, and
+              investors. They can better answer buyers or renters who ask,
+              “What's it like around here?” You'll have comprehensive data to
+              work with.
+            </p>
+            <p className="text-2xl text-stone-300">
+              Support your next project with insight that speaks for itself.
+              Visit urbanfootnotes.com to see samples, order your own report, or
+              share any concerns with us.
+            </p>
+          </div>
           </center>
         </center>
       </div>
