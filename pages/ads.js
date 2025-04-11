@@ -1,8 +1,10 @@
 import PageTitle from "@/components/PageTitle";
 import Logo from "@/components/Logo";
 import { useState } from "react";
+import Image from "next/image";
 
 export default function Ads() {
+  const baseUrl = process.env.NEXT_PUBLIC_S3_BASE_URL;
   const [active, setActive] = useState("button1");
   return (
     <div>
@@ -14,25 +16,25 @@ export default function Ads() {
       >
         <div className="w-full max-w-screen-lg">
           <div id="background-and-title">
-            <PageTitle
-              topTitle="a a a a a a a" // creates necessary spacing for bg title to span full width
-              textColor="text-title-text-ads text-opacity-0" // this page has smaller text size
-              shadowColor={`title-shadow-ads opacity-0`} // this page has smaller text size
-              logoColor="#f6d7beff"
-              gradient={
-                "bg-[linear-gradient(to_right,rgba(59,45,24,0.1),rgba(113,67,21,0.8))]"
-              }
-              showLogo={true} // Integrates the logo
-            />
-          </div>
-          <div id="desktop-title" className="hidden min-[1000px]:block">
-            <div className="flex justify-center">
-              <div
-                id="page-title"
-                className={`title-shadow-ads page-title-shadow roboto-font -translate-y-[160px] translate-x-[180px] text-left text-[74px] tracking-wide text-title-text-ads`}
-              >
-                Advertisements
-              </div>
+            <div className="[min-width:1000px]:hidden">
+              <Image
+                src={`${baseUrl}/advertisements-custom-header.svg`}
+                alt={`picture of Advertisements masthead`}
+                width={1024} // true width controlled by parent element
+                height={1} // true height tied to width
+              />
+            </div>
+            <div className="hidden max-[999px]:block">
+              <PageTitle
+                topTitle="a a a a a a a" // creates necessary spacing for bg title to span full width
+                textColor="text-title-text-ads text-opacity-0" // this page has smaller text size
+                shadowColor={`title-shadow-ads opacity-0`} // this page has smaller text size
+                logoColor="#f6d7beff"
+                gradient={
+                  "bg-[linear-gradient(to_right,rgba(59,45,24,0.1),rgba(113,67,21,0.8))]"
+                }
+                showLogo={true} // Integrates the logo
+              />
             </div>
           </div>
         </div>
@@ -48,7 +50,7 @@ export default function Ads() {
 
               <div className="w-screen">
                 {/* large mobile logo */}
-                <div className="block max-[360px]:hidden min-[999px]:hidden">
+                <div className="block max-[360px]:hidden min-[1000px]:hidden">
                   <div className="py-6">
                     <center>
                       <Logo color="#f6d7beff" width="296" height="183" />
@@ -88,9 +90,9 @@ export default function Ads() {
       </div>
       <div
         id="buttons-and-content"
-        className="flex min-h-screen translate-y-[-300px] items-center justify-center lg:translate-y-[-400px]"
+        className="flex items-center justify-center"
       >
-        <div className="mx-auto max-w-4xl p-4">
+        <div className="mx-auto mt-16 max-w-4xl p-4">
           <div className="flex flex-col gap-0 sm:flex-row">
             <div className="max-w-[280px]">
               <button
@@ -127,10 +129,7 @@ export default function Ads() {
           </div>
         </div>
       </div>
-      <div
-        id="displayed text"
-        className="max-w-[1000px] translate-y-[-560px] sm:translate-y-[-600px] md:translate-y-[-700px]"
-      >
+      <div id="displayed text" className="max-w-[1000px]">
         {active === "button1" && (
           <div className="flex items-center justify-center text-3xl font-medium text-gray-200">
             Coming soon!
