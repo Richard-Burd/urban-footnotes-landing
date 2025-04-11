@@ -103,8 +103,13 @@ export default function Ads() {
               >
                 <div
                   className={
-                    "m-6 rounded-xl bg-[#683816ff] p-5 text-4xl text-orange-100 shadow"
+                    "m-6 rounded-xl bg-[#683816ff] p-5 text-4xl text-orange-100"
                   }
+                  style={{
+                    boxShadow: "8px 8px 12px rgba(0, 0, 0, 0.8)", // x-offset, y-offset, blur, color
+                    padding: "16px",
+                    borderRadius: "12px",
+                  }}
                 >
                   Existing Projects
                 </div>
@@ -121,6 +126,11 @@ export default function Ads() {
                   className={
                     "m-6 rounded-xl bg-[#683816ff] p-5 text-4xl text-orange-100"
                   }
+                  style={{
+                    boxShadow: "8px 8px 12px rgba(0, 0, 0, 0.8)", // x-offset, y-offset, blur, color
+                    padding: "16px",
+                    borderRadius: "12px",
+                  }}
                 >
                   Proposed Projects
                 </div>
