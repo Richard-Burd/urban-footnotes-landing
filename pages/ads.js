@@ -91,7 +91,7 @@ export default function Ads() {
         className="flex min-h-screen translate-y-[-300px] items-center justify-center lg:translate-y-[-400px]"
       >
         <div className="mx-auto max-w-4xl p-4">
-          <div className="flex flex-col gap-4 sm:flex-row">
+          <div className="flex flex-col gap-0 sm:flex-row">
             <div className="max-w-[280px]">
               <button
                 onClick={() => setActive("button1")}
@@ -125,46 +125,51 @@ export default function Ads() {
               </button>
             </div>
           </div>
-
-          <div id="displayed text" className="mt-6">
-            {active === "button1" && (
-              <div className="flex items-center justify-center text-3xl font-medium text-gray-200">
-                Coming soon!
-              </div>
-            )}
-            {active === "button2" && (
-              <div className="flex items-center justify-center text-3xl font-medium text-gray-200">
-                Here it is
-                <div>
-                  Too many projects start with incomplete data. Outdated online
-                  listings. Empty directories. Missing the feel of the block, or
-                  the shift happening two streets over. That's where deals fall
-                  apart—or miss their mark.
-                </div>
-                <div>
-                  Urban Foot Notes delivers personal, investigative neighborhood
-                  reports. We analyze business presence, amenity access, land
-                  use, and walkability—so you can propose your project with
-                  clarity and confidence. Our researchers have been providing
-                  data-driven environmental solutions since 2014. We can add to
-                  your analysis with grounded, location-specific insight.
-                </div>
-                <div>
-                  Our reports can strengthen presentations to development
-                  authorities, zoning boards, citizens, city councils, and
-                  investors. They can better answer buyers or renters who ask,
-                  “What's it like around here?” You'll have comprehensive data
-                  to work with.
-                </div>
-                <div>
-                  Support your next project with insight that speaks for itself.
-                  Visit urbanfootnotes.com to see samples, order your own
-                  report, or share any concerns with us.
-                </div>
-              </div>
-            )}
-          </div>
         </div>
+      </div>
+      <div
+        id="displayed text"
+        className="max-w-[1000px] translate-y-[-560px] sm:translate-y-[-600px] md:translate-y-[-700px]"
+      >
+        {active === "button1" && (
+          <div className="flex items-center justify-center text-3xl font-medium text-gray-200">
+            Coming soon!
+          </div>
+        )}
+        {active === "button2" && (
+          <div id="paragraphs" className="columns-1 p-4 text-gray-200">
+            <div className="mb-8 text-center text-[30px] md:text-[45px]">
+              What if your next development proposal came with a story—the story
+              of the neighborhood, told in data?
+            </div>
+            <div className="mb-8 text-center text-[23px]">
+              Too many projects start with incomplete data. Outdated online
+              listings. Empty directories. Missing the feel of the block, or the
+              shift happening two streets over. That's where deals fall apart—or
+              miss their mark.
+            </div>
+            <div className="mb-8 text-center text-[23px]">
+              Urban Foot Notes delivers personal, investigative neighborhood
+              reports. We analyze business presence, amenity access, land use,
+              and walkability—so you can propose your project with clarity and
+              confidence. Our researchers have been providing data-driven
+              environmental solutions since 2014. We can add to your analysis
+              with grounded, location-specific insight.
+            </div>
+            <div className="mb-8 text-center text-[23px]">
+              Our reports can strengthen presentations to development
+              authorities, zoning boards, citizens, city councils, and
+              investors. They can better answer buyers or renters who ask,
+              “What's it like around here?” You'll have comprehensive data to
+              work with.
+            </div>
+            <div className="mb-8 text-center text-[23px]">
+              Support your next project with insight that speaks for itself.
+              Visit urbanfootnotes.com to see samples, order your own report, or
+              share any concerns with us.
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
