@@ -92,9 +92,9 @@ export default function Ads() {
         id="buttons-and-content"
         className="flex items-center justify-center"
       >
-        <div className="mx-auto mt-16 max-w-4xl p-4">
+        <div className="mx-auto mt-4 max-w-4xl p-4">
           <div className="flex flex-col gap-0 sm:flex-row">
-            <div className="max-w-[280px]">
+            <div id="button-1" className="max-w-[280px]">
               <button
                 onClick={() => setActive("button1")}
                 className={`${
@@ -115,7 +115,7 @@ export default function Ads() {
                 </div>
               </button>
             </div>
-            <div className="max-w-[280px]">
+            <div id="button-2" className="max-w-[280px]">
               <button
                 onClick={() => setActive("button2")}
                 className={`${
@@ -124,19 +124,20 @@ export default function Ads() {
               >
                 <div
                   className={
-                    "m-6 rounded-xl bg-[#683816ff] p-5 text-4xl text-orange-100"
+                    "m-6 min-h-[110px] rounded-xl bg-[#683816ff] text-orange-100"
                   }
                   style={{
                     boxShadow: "8px 8px 12px rgba(0, 0, 0, 0.8)", // x-offset, y-offset, blur, color
-                    padding: "16px",
+                    padding: "6px",
                     borderRadius: "12px",
                   }}
                 >
-                  Proposed Projects
+                  <div className="pt-2 text-[27px]">Proposed Projects</div>
+                  <div className="text-[27px]">Text Only</div>
                 </div>
               </button>
             </div>
-            <div className="max-w-[290px]">
+            <div id="button-3" className="max-w-[290px]">
               <button
                 onClick={() => setActive("button3")}
                 className={`${
