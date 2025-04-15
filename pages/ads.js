@@ -3,9 +3,35 @@ import Logo from "@/components/Logo";
 import { useState } from "react";
 import Image from "next/image";
 
+// the is the custom ads button for this page
+function SelectableButton({ activeKey, active, setActive, title, subtitle }) {
+  return (
+    <div className="max-w-[280px]">
+      <button
+        onClick={() => setActive(activeKey)}
+        className={`${active === activeKey ? "bg-[#ba813cff]" : "bg-transparent"}`}
+      >
+        <div
+          className="m-3 flex items-center rounded-xl bg-[#683816ff] text-orange-100 lg:m-6 lg:min-h-[110px]"
+          style={{
+            boxShadow: "8px 8px 12px rgba(0, 0, 0, 0.8)",
+            padding: "6px",
+            borderRadius: "12px",
+          }}
+        >
+          <div id="text-element" className="sm:px-2">
+            <div className="text-[17px] lg:text-[25px]">{title}</div>
+            <div className="text-[17px] lg:text-[25px]">{subtitle}</div>
+          </div>
+        </div>
+      </button>
+    </div>
+  );
+}
+
 export default function Ads() {
   const baseUrl = process.env.NEXT_PUBLIC_S3_BASE_URL;
-  const [active, setActive] = useState("button2");
+  const [active, setActive] = useState("button6");
   return (
     <div>
       {/* The Advertisements page title is unique in size and requires custom work */}
@@ -89,86 +115,127 @@ export default function Ads() {
         </center>
       </div>
       <div
-        id="buttons-and-content"
-        className="flex items-center justify-center"
+        id="new-buttons-and-content"
+        className="mt-8 text-[29px] text-orange-100"
       >
-        <div className="mx-auto mt-4 max-w-4xl p-4">
-          <div className="flex flex-col gap-0 sm:flex-row">
-            <div id="button-1" className="max-w-[280px]">
-              <button
-                onClick={() => setActive("button1")}
-                className={`${
-                  active === "button1" ? "bg-[#ba813cff]" : "bg-transparent"
-                }`}
-              >
-                <div
-                  className={
-                    "m-6 rounded-xl bg-[#683816ff] p-5 text-4xl text-orange-100"
-                  }
-                  style={{
-                    boxShadow: "8px 8px 12px rgba(0, 0, 0, 0.8)", // x-offset, y-offset, blur, color
-                    padding: "16px",
-                    borderRadius: "12px",
-                  }}
-                >
-                  Existing Projects
-                </div>
-              </button>
+        <div className="mx-10 lg:mx-0">
+          <div
+            id="buttons-array"
+            className="flex flex-col items-center sm:w-full sm:flex-row sm:justify-between"
+          >
+            <div id="first-row" className="flex sm:block">
+              <div className="">
+                <SelectableButton
+                  activeKey="button1"
+                  active={active}
+                  setActive={setActive}
+                  title="Buyers / Renters"
+                  subtitle="Audio"
+                />
+              </div>
+              <div className="">
+                <SelectableButton
+                  activeKey="button2"
+                  active={active}
+                  setActive={setActive}
+                  title="Buyers / Renters"
+                  subtitle="Text Only"
+                />
+              </div>
             </div>
-            <div id="button-2" className="max-w-[280px]">
-              <button
-                onClick={() => setActive("button2")}
-                className={`${
-                  active === "button2" ? "bg-[#ba813cff]" : "bg-transparent"
-                }`}
-              >
-                <div
-                  className={
-                    "m-6 min-h-[110px] rounded-xl bg-[#683816ff] text-orange-100"
-                  }
-                  style={{
-                    boxShadow: "8px 8px 12px rgba(0, 0, 0, 0.8)", // x-offset, y-offset, blur, color
-                    padding: "6px",
-                    borderRadius: "12px",
-                  }}
-                >
-                  <div className="pt-2 text-[27px]">Proposed Projects</div>
-                  <div className="text-[27px]">Text Only</div>
-                </div>
-              </button>
+
+            <div id="second-row" className="flex sm:block">
+              <div className="">
+                <SelectableButton
+                  activeKey="button3"
+                  active={active}
+                  setActive={setActive}
+                  title="Existing Projects"
+                  subtitle="Audio"
+                />
+              </div>
+              <div className="">
+                <SelectableButton
+                  activeKey="button4"
+                  active={active}
+                  setActive={setActive}
+                  title="Existing Projects"
+                  subtitle="Text Only"
+                />
+              </div>
             </div>
-            <div id="button-3" className="max-w-[290px]">
-              <button
-                onClick={() => setActive("button3")}
-                className={`${
-                  active === "button3" ? "bg-[#ba813cff]" : "bg-transparent"
-                }`}
-              >
-                <div
-                  className={
-                    "m-6 min-h-[110px] rounded-xl bg-[#683816ff] text-orange-100"
-                  }
-                  style={{
-                    boxShadow: "8px 8px 12px rgba(0, 0, 0, 0.8)", // x-offset, y-offset, blur, color
-                    padding: "6px",
-                    borderRadius: "12px",
-                  }}
-                >
-                  <div className="pt-2 text-[27px]">Proposed Projects</div>
-                  <div className="text-[27px]">Audio (1:10)</div>
-                </div>
-              </button>
+
+            <div id="third-row" className="flex sm:block">
+              <div className="">
+                <SelectableButton
+                  activeKey="button5"
+                  active={active}
+                  setActive={setActive}
+                  title="Proposed Projects"
+                  subtitle="Audio (1:10)"
+                />
+              </div>
+              <div className="">
+                <SelectableButton
+                  activeKey="button6"
+                  active={active}
+                  setActive={setActive}
+                  title="Proposed Projects"
+                  subtitle="Text Only"
+                />
+              </div>
+            </div>
+
+            <div id="fourth-row" className="flex sm:block">
+              <div className="">
+                <SelectableButton
+                  activeKey="button7"
+                  active={active}
+                  setActive={setActive}
+                  title="City Planners"
+                  subtitle="Audio"
+                />
+              </div>
+              <div className="">
+                <SelectableButton
+                  activeKey="button8"
+                  active={active}
+                  setActive={setActive}
+                  title="City Planners"
+                  subtitle="Text Only"
+                />
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div id="displayed text" className="max-w-[1000px]">
+      <div id="displayed text" className="mt-2 max-w-[1000px]">
         {active === "button1" && (
           <div className="flex items-center justify-center text-3xl font-medium text-gray-200">
             Coming soon!
           </div>
         )}
         {active === "button2" && (
+          <div className="flex items-center justify-center text-3xl font-medium text-gray-200">
+            Coming soon!
+          </div>
+        )}
+        {active === "button3" && (
+          <div className="flex items-center justify-center text-3xl font-medium text-gray-200">
+            Coming soon!
+          </div>
+        )}
+        {active === "button4" && (
+          <div className="flex items-center justify-center text-3xl font-medium text-gray-200">
+            Coming soon!
+          </div>
+        )}
+        {active === "button5" && (
+          <div className="flex items-center justify-center text-3xl font-medium text-gray-200">
+            Coming soon!
+          </div>
+        )}
+        {active === "button6" && (
           <div id="paragraphs" className="columns-1 p-4 text-gray-200">
             <div className="mb-8 text-center text-[30px] md:text-[45px]">
               What if your next development proposal came with a story—the story
@@ -202,9 +269,43 @@ export default function Ads() {
             </div>
           </div>
         )}
-        {active === "button3" && (
+        {active === "button7" && (
           <div className="flex items-center justify-center text-3xl font-medium text-gray-200">
             Coming soon!
+          </div>
+        )}
+        {active === "button8" && (
+          <div id="paragraphs" className="columns-1 p-4 text-gray-200">
+            <div className="mb-8 text-center text-[30px] md:text-[45px]">
+              Ever wish your city could perform better by using a new tool? A
+              reliable tool. One that no one can argue with.
+            </div>
+            <div className="mb-8 text-center text-[23px]">
+              Now you face ongoing arguments. Constituents want different
+              policies. Wielding notions as if they were facts. Can anyone agree
+              on anything?
+            </div>
+            <div className="mb-8 text-center text-[23px]">
+              Urban Foot Notes can provide neighborhood reports for any given
+              address. We describe pedestrian access to services and businesses
+              commonly desired by residents. We even include the percentage of
+              residents who typically use such services. Our list is
+              standardized, for comparative purposes. With some flexibility, to
+              accommodate all addresses.
+            </div>
+            <div className="mb-8 text-center text-[23px]">
+              Our reports meet Urban Cruise Ship-level independent quality
+              standards. Each report's checklist of services available shows
+              what is needed and not. They show likely impact on pedestrian and
+              vehicle traffic. Which are consequences that often get debated the
+              most.
+            </div>
+            <div className="mb-8 text-center text-[23px]">
+              You can ask developers to provide an Urban Foot Notes report.
+              Maybe both "Before" and "After" reports, to show the difference
+              their projects would make. Visit urbanfootnotes.com to see
+              samples, order a report, or share any concerns with us.
+            </div>
           </div>
         )}
       </div>
