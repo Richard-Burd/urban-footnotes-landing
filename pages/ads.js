@@ -5,6 +5,7 @@ import Image from "next/image";
 
 // the is the custom ads button for this page
 function SelectableButton({ activeKey, active, setActive, title, subtitle }) {
+  const isActive = active === activeKey;
   return (
     <div className="max-w-[280px]">
       <button
@@ -14,14 +15,14 @@ function SelectableButton({ activeKey, active, setActive, title, subtitle }) {
         <div
           className="m-3 flex items-center rounded-xl bg-[#683816ff] text-orange-100 lg:m-6 lg:min-h-[110px]"
           style={{
-            boxShadow: "8px 8px 12px rgba(0, 0, 0, 0.8)",
             padding: "6px",
             borderRadius: "12px",
+            ...(isActive && { boxShadow: "8px 8px 12px rgba(0, 0, 0, 0.8)" }),
           }}
         >
           <div id="text-element" className="sm:px-2">
-            <div className="text-[17px] lg:text-[25px]">{title}</div>
-            <div className="text-[17px] lg:text-[25px]">{subtitle}</div>
+            <div className="text-[17px] lg:text-[24px]">{title}</div>
+            <div className="text-[17px] lg:text-[24px]">{subtitle}</div>
           </div>
         </div>
       </button>
