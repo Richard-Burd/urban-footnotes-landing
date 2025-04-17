@@ -7,13 +7,13 @@ import Image from "next/image";
 function SelectableButton({ activeKey, active, setActive, title, subtitle }) {
   const isActive = active === activeKey;
   return (
-    <div className="max-w-[280px]">
+    <div className="">
       <button
         onClick={() => setActive(activeKey)}
         className={`${active === activeKey ? "bg-[#ba813cff]" : "bg-transparent"}`}
       >
         <div
-          className="m-3 flex items-center rounded-xl bg-[#683816ff] text-orange-100 lg:m-6 lg:min-h-[110px]"
+          className="m-3 flex items-center rounded-xl bg-[#683816ff] text-orange-100 lg:m-5"
           style={{
             padding: "6px",
             borderRadius: "12px",
@@ -217,8 +217,38 @@ export default function Ads() {
           </div>
         )}
         {active === "button2" && (
-          <div className="flex items-center justify-center text-3xl font-medium text-gray-200">
-            Coming soon!
+          <div id="paragraphs" className="columns-1 p-4 text-gray-200">
+            <div className="mb-8 text-center text-[30px] md:text-[45px]">
+              What if you could compare places with more than just pictures?
+              What if you had real data— about the neighborhood?
+            </div>
+            <div className="mb-8 text-center text-[23px]">
+              Most listings show what’s inside. But not what life looks like…
+              just outside the door.
+            </div>
+            <div className="mb-8 text-center text-[23px]">
+              Can you walk to what you need? Do people use the same places you
+              would? Is the neighborhood changing?
+            </div>
+            <div className="mb-8 text-center text-[23px]">
+              Without those answers— you’re left guessing.
+            </div>
+            <div className="mb-8 text-center text-[23px]">
+              Urban Foot Notes gives you a clear look at the everyday experience
+              of a neighborhood.
+            </div>
+            <div className="mb-8 text-center text-[23px]">
+              We show what’s nearby, how far it is on foot, and how often people
+              actually use it.
+            </div>
+            <div className="mb-8 text-center text-[23px]">
+              You’ll get a simple checklist— based on data, not hype— so you can
+              choose where you’ll feel most at home.
+            </div>
+            <div className="mb-8 text-center text-[23px]">
+              Ask your agent for an Urban Foot Notes report. Or visit
+              urbanfootnotes.com to explore neighborhoods on your own.
+            </div>
           </div>
         )}
         {active === "button3" && (
@@ -227,8 +257,44 @@ export default function Ads() {
           </div>
         )}
         {active === "button4" && (
-          <div className="flex items-center justify-center text-3xl font-medium text-gray-200">
-            Coming soon!
+          <div id="paragraphs" className="columns-1 p-4 text-gray-200">
+            <div className="mb-8 text-center text-[30px] md:text-[45px]">
+              What if your property came with a story? A data-driven look at the
+              neighborhood it belongs to.
+            </div>
+            <div className="mb-8 text-center text-[23px]">
+              Buyers and renters want more than square footage. They want to
+              know how the neighborhood works— how it connects, and what it
+              supports.
+            </div>
+            <div className="mb-8 text-center text-[23px]">
+              When that story isn’t clear, deals stall. Or attract the wrong
+              fit.
+            </div>
+            <div className="mb-8 text-center text-[23px]">
+              Urban Foot Notes delivers reports that profile the surrounding
+              neighborhood.
+            </div>
+            <div className="mb-8 text-center text-[23px]">
+              We map walkability, service access, land use, and local business
+              activity— and structure it all in a clean, visual format.
+            </div>
+            <div className="mb-8 text-center text-[23px]">
+              Use our reports in marketing materials, meetings, or investor
+              decks.
+            </div>
+            <div className="mb-8 text-center text-[23px]">
+              They answer the essential question: “What’s it really like to live
+              here?”
+            </div>
+            <div className="mb-8 text-center text-[23px]">
+              Build trust. Attract the right people. And reduce friction during
+              the process.
+            </div>
+            <div className="mb-8 text-center text-[23px]">
+              Make your listing speak beyond the walls. Visit urbanfootnotes.com
+              to see examples or request a report.
+            </div>
           </div>
         )}
         {active === "button5" && (
