@@ -8,7 +8,7 @@ const BUTTONS = [
   {
     key: 'buyers',
     title: 'Buyers / Renters',
-    audioSrc: 'ad-audio-existing-projects.m4a',
+    audioSrc: 'ad-audio-buyers-renters.m4a',
     content: [
       "Want to spend less on driving—and more on living?", "Start by choosing the right neighborhood.",
       "You can only walk so far without resorting to a vehicle. But what if daily errands, food, and fun were all just steps from home? How do you find places like that?",
