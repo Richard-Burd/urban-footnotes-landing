@@ -219,12 +219,15 @@ export default function Ads() {
         {active === "button2" && (
           <div id="paragraphs" className="columns-1 p-4 text-gray-200">
             <div className="mb-8 text-center text-[30px] md:text-[45px]">
-              What if you could compare places with more than just pictures?
-              What if you had real data— about the neighborhood?
+            Want to spend less on driving—and more on living?
+Start by choosing the right neighborhood.
+
             </div>
             <div className="mb-8 text-center text-[23px]">
-              Most listings show what’s inside. But not what life looks like…
-              just outside the door.
+            You can only walk so far without resorting to a vehicle.
+But what if daily errands, food, and fun were all just steps from home?
+How do you find places like that?
+
             </div>
             <div className="mb-8 text-center text-[23px]">
               Can you walk to what you need? Do people use the same places you
@@ -234,20 +237,18 @@ export default function Ads() {
               Without those answers— you’re left guessing.
             </div>
             <div className="mb-8 text-center text-[23px]">
-              Urban Foot Notes gives you a clear look at the everyday experience
-              of a neighborhood.
+            An Urban Foot Notes report gives you a scored, rating of pedestrian access to 
+commonly-desired services, showing how easy it is to live at an address without needing to drive.
+
             </div>
             <div className="mb-8 text-center text-[23px]">
-              We show what’s nearby, how far it is on foot, and how often people
-              actually use it.
+            It answers the big question: “What’s it really like to live there?”
+A higher walk score means more freedom, better health, and lower costs.
+
             </div>
             <div className="mb-8 text-center text-[23px]">
-              You’ll get a simple checklist— based on data, not hype— so you can
-              choose where you’ll feel most at home.
-            </div>
-            <div className="mb-8 text-center text-[23px]">
-              Ask your agent for an Urban Foot Notes report. Or visit
-              urbanfootnotes.com to explore neighborhoods on your own.
+            Ask your agent, landlord, or builder for an Urban Foot Notes report.
+            Or visit urbanfootnotes.com to check out sample reports yourself.
             </div>
           </div>
         )}
@@ -259,41 +260,36 @@ export default function Ads() {
         {active === "button4" && (
           <div id="paragraphs" className="columns-1 p-4 text-gray-200">
             <div className="mb-8 text-center text-[30px] md:text-[45px]">
-              What if your property came with a story? A data-driven look at the
-              neighborhood it belongs to.
+            Trying to attract the right buyers or renters?
+
             </div>
             <div className="mb-8 text-center text-[23px]">
-              Buyers and renters want more than square footage. They want to
-              know how the neighborhood works— how it connects, and what it
-              supports.
+            People often lack insight on how an address’ neighborhood meets their needs. 
+That's when hasty, less-than-ideal judgements get made.
+
             </div>
             <div className="mb-8 text-center text-[23px]">
-              When that story isn’t clear, deals stall. Or attract the wrong
-              fit.
+            Urban Foot Notes delivers standardized, address-specific, comparative, neighborhood reports.
+
             </div>
             <div className="mb-8 text-center text-[23px]">
-              Urban Foot Notes delivers reports that profile the surrounding
-              neighborhood.
+            We describe pedestrian access to services and businesses that many residents desire.
+This is scored.
+
             </div>
             <div className="mb-8 text-center text-[23px]">
-              We map walkability, service access, land use, and local business
-              activity— and structure it all in a clean, visual format.
+            Walkability means convenience, lower car costs, and a better day-to-day life.
             </div>
             <div className="mb-8 text-center text-[23px]">
-              Use our reports in marketing materials, meetings, or investor
-              decks.
+            That translates into higher satisfaction—and more money freed up for housing.            </div>
+          
+            <div className="mb-8 text-center text-[23px]">
+            So, providing an Urban Foot Notes report can attract and please your most preferred residents.
+
             </div>
             <div className="mb-8 text-center text-[23px]">
-              They answer the essential question: “What’s it really like to live
-              here?”
-            </div>
-            <div className="mb-8 text-center text-[23px]">
-              Build trust. Attract the right people. And reduce friction during
-              the process.
-            </div>
-            <div className="mb-8 text-center text-[23px]">
-              Make your listing speak beyond the walls. Visit urbanfootnotes.com
-              to see examples or request a report.
+            Visit urbanfootnotes.com to see samples, contact us, or order your report. 
+
             </div>
           </div>
         )}
@@ -305,34 +301,23 @@ export default function Ads() {
         {active === "button6" && (
           <div id="paragraphs" className="columns-1 p-4 text-gray-200">
             <div className="mb-8 text-center text-[30px] md:text-[45px]">
-              What if your next development proposal came with a story—the story
-              of the neighborhood, told in data?
+            What if you could add a story to your development proposal—its neighborhood's story, told in data?
+
             </div>
             <div className="mb-8 text-center text-[23px]">
-              Too many projects start with incomplete data. Outdated online
-              listings. Empty directories. Missing the feel of the block, or the
-              shift happening two streets over. That's where deals fall apart—or
-              miss their mark.
+            Too many projects start with incomplete neighborhood data. That’s where deals can fall apart—or additional opportunities get missed.
             </div>
             <div className="mb-8 text-center text-[23px]">
-              Urban Foot Notes delivers personal, investigative neighborhood
-              reports. We analyze business presence, amenity access, land use,
-              and walkability—so you can propose your project with clarity and
-              confidence. Our researchers have been providing data-driven
-              environmental solutions since 2014. We can add to your analysis
-              with grounded, location-specific insight.
+            Urban Foot Notes delivers personal, investigative neighborhood reports.
+We analyze business presence, amenity access, land use, and walkability—so you can propose your project with clarity and confidence. 
+
             </div>
             <div className="mb-8 text-center text-[23px]">
-              Our reports can strengthen presentations to development
-              authorities, zoning boards, citizens, city councils, and
-              investors. They can better answer buyers or renters who ask,
-              “What's it like around here?” You'll have comprehensive data to
-              work with.
+            Our reports strengthen your presentations—to development authorities, zoning boards, citizens, city councils, investors and others. They will see a report that will likely attract more buyers and renters. 
             </div>
             <div className="mb-8 text-center text-[23px]">
-              Support your next project with insight that speaks for itself.
-              Visit urbanfootnotes.com to see samples, order your own report, or
-              share any concerns with us.
+            Support your next project with the targeted data our reports provide.
+            Visit urbanfootnotes.com to see samples, contact us, or order your report. 
             </div>
           </div>
         )}
@@ -344,34 +329,30 @@ export default function Ads() {
         {active === "button8" && (
           <div id="paragraphs" className="columns-1 p-4 text-gray-200">
             <div className="mb-8 text-center text-[30px] md:text-[45px]">
-              Ever wish your city could perform better by using a new tool? A
-              reliable tool. One that no one can argue with.
+            Tired of the same fights over traffic and density?
+Blame’s easy. Solutions aren’t.
+
             </div>
             <div className="mb-8 text-center text-[23px]">
-              Now you face ongoing arguments. Constituents want different
-              policies. Wielding notions as if they were facts. Can anyone agree
-              on anything?
+              Sprawling NIMBYs battle developers’ densities.
+Now often unpleasant compromises seem like the only path forward.
+
             </div>
             <div className="mb-8 text-center text-[23px]">
-              Urban Foot Notes can provide neighborhood reports for any given
-              address. We describe pedestrian access to services and businesses
-              commonly desired by residents. We even include the percentage of
-              residents who typically use such services. Our list is
-              standardized, for comparative purposes. With some flexibility, to
-              accommodate all addresses.
+              Urban Foot Notes offers standardized, comparative, address-specific neighborhood reports,
+describing pedestrian access to commonly-used services and businesses.
+ including the percentage of those typically using such services.
+It’s all scored in the report.
+
             </div>
             <div className="mb-8 text-center text-[23px]">
-              Our reports meet Urban Cruise Ship-level independent quality
-              standards. Each report's checklist of services available shows
-              what is needed and not. They show likely impact on pedestrian and
-              vehicle traffic. Which are consequences that often get debated the
-              most.
+            A higher score means more walking, and less driving.
+The data can shift the discussion to facts. 
+
             </div>
             <div className="mb-8 text-center text-[23px]">
-              You can ask developers to provide an Urban Foot Notes report.
-              Maybe both "Before" and "After" reports, to show the difference
-              their projects would make. Visit urbanfootnotes.com to see
-              samples, order a report, or share any concerns with us.
+            You can ask or require developers to provide an Urban Foot Notes report.
+            Visit urbanfootnotes.com to see samples, contact us, or order a report. 
             </div>
           </div>
         )}
