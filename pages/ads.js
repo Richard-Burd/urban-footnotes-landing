@@ -1,14 +1,14 @@
-import PageTitle from "@/components/PageTitle";
 import Logo from "@/components/Logo";
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
-import { Volume2, Pause } from "lucide-react";
+import { Volume2, Pause, ChevronDown, ChevronUp } from "lucide-react";
 
 const BUTTONS = [
   {
     key: 'buyers',
     title: 'Buyers / Renters',
     audioSrc: 'ad-audio-buyers-renters.m4a',
+    showAudio: true,
     content: [
       "Want to spend less on driving—and more on living?", "Start by choosing the right neighborhood.",
       "You can only walk so far without resorting to a vehicle. But what if daily errands, food, and fun were all just steps from home? How do you find places like that?",
@@ -22,6 +22,7 @@ const BUTTONS = [
     key: 'existing',
     title: 'Existing Projects',
     audioSrc: 'ad-audio-existing-projects.m4a',
+    showAudio: true,
     content: [
       "Trying to attract the right buyers or renters?",
       "People often lack insight on how an address’ neighborhood meets their needs. That's when hasty, less-than-ideal judgments get made.",
@@ -35,7 +36,8 @@ const BUTTONS = [
   {
     key: 'proposed',
     title: 'Proposed Projects',
-    audioSrc: 'ad-audio-existing-projects.m4a',
+    audioSrc: 'ad-audio-proposed-projects.m4a',
+    showAudio: true,
     content: [
       "What if you could add a story to your development proposal—its neighborhood's story, told in data?",
       "Too many projects start with incomplete neighborhood data. That’s where deals can fall apart—or additional opportunities get missed.",
@@ -55,79 +57,69 @@ const BUTTONS = [
       "A higher score means more walking, and less driving. The data can shift the discussion to facts.",
       "You can ask or require developers to provide an Urban Foot Notes report. Visit urbanfootnotes.com to see samples, contact us, or order a report."
     ]
-  }
+  },
+  // …add your other 7 ads here, each with key, title, audioSrc, showAudio, content
 ];
 
 function AudioPlayer({ src }) {
   const audioRef = useRef(null);
   const [currentTime, setCurrentTime] = useState(0);
-  const [duration, setDuration] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [pulseValue, setPulseValue] = useState(1);
+  const [duration,    setDuration]    = useState(0);
+  const [isPlaying,  setIsPlaying]   = useState(false);
+  const [pulseValue, setPulseValue]  = useState(1);
 
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
-
-    const onLoaded = () => setDuration(Math.floor(audio.duration));
-    const onTimeUpdate = () =>
-      setCurrentTime(Math.floor(audio.currentTime));
+    const onLoaded    = () => setDuration(Math.floor(audio.duration));
+    const onTimeUpdate= () => setCurrentTime(Math.floor(audio.currentTime));
+    const onPlay      = () => setIsPlaying(true);
+    const onPause     = () => setIsPlaying(false);
 
     audio.addEventListener("loadedmetadata", onLoaded);
-    audio.addEventListener("timeupdate", onTimeUpdate);
+    audio.addEventListener("timeupdate",     onTimeUpdate);
+    audio.addEventListener("play",           onPlay);
+    audio.addEventListener("pause",          onPause);
 
     return () => {
       audio.removeEventListener("loadedmetadata", onLoaded);
-      audio.removeEventListener("timeupdate", onTimeUpdate);
+      audio.removeEventListener("timeupdate",     onTimeUpdate);
+      audio.removeEventListener("play",           onPlay);
+      audio.removeEventListener("pause",          onPause);
     };
   }, [src]);
 
   useEffect(() => {
     if (!isPlaying) return;
-
-    const interval = setInterval(() => {
-      setPulseValue(0.9 + Math.random() * 0.1); // Simulate reactive pulsing
+    const iv = setInterval(() => {
+      setPulseValue(0.95 + Math.random() * 0.05);
     }, 200);
-
-    return () => clearInterval(interval);
+    return () => clearInterval(iv);
   }, [isPlaying]);
 
   const togglePlay = () => {
     const audio = audioRef.current;
     if (!audio) return;
-
-    if (audio.paused) {
-      audio.play();
-      setIsPlaying(true);
-    } else {
-      audio.pause();
-      setIsPlaying(false);
-    }
+    audio.paused ? audio.play() : audio.pause();
   };
 
   const formatTime = (sec) => {
     if (sec < 60) return `${sec} sec`;
     const m = Math.floor(sec / 60);
     const s = sec % 60;
-    return `${m} min${m > 1 ? "s" : ""}${s > 0 ? ` ${s} sec` : ""}`;
+    return `${m} min${m>1?'s':''}${s>0?` ${s} sec`:''}`;
   };
 
   return (
-    <div
-      className="flex items-center justify-center gap-4 mb-6 w-full max-w-screen-lg px-4"
-      role="group"
-      aria-label="Audio controls"
-    >
+    <div className="flex items-center justify-center gap-4 mb-6 w-full max-w-screen-lg px-4">
       <button
         onClick={togglePlay}
         className="p-2 bg-[#683816ff] rounded-full text-orange-100 focus:outline-none focus:ring-2 focus:ring-orange-300"
-        aria-label="Play or pause audio"
+        aria-label={isPlaying ? "Pause" : "Play"}
       >
-        {isPlaying ? (
-          <Pause className="w-20 h-20" aria-hidden="true" />
-        ) : (
-          <Volume2 className="w-20 h-20" aria-hidden="true" />
-        )}
+        {isPlaying
+          ? <Pause   className="w-20 h-20" />
+          : <Volume2 className="w-20 h-20" />}
       </button>
 
       <span className="text-orange-100 text-[17px] lg:text-[24px] whitespace-nowrap">
@@ -141,28 +133,25 @@ function AudioPlayer({ src }) {
         value={currentTime}
         onChange={(e) => {
           const audio = audioRef.current;
-          const newTime = parseInt(e.target.value);
+          const t = parseInt(e.target.value);
           if (audio) {
-            audio.currentTime = newTime;
-            setCurrentTime(newTime);
+            audio.currentTime = t;
+            setCurrentTime(t);
           }
         }}
         className="h-2 w-[200px] appearance-none rounded-lg cursor-pointer"
         style={{
-          background: `linear-gradient(to right, #f6d7beff 0%, #ba813cff ${Math.min(
-            (currentTime / duration) * 100,
-            100
-          )}%, #683816ff ${Math.min(
-            (currentTime / duration) * 100,
-            100
-          )}%, #683816ff 100%)`,
+          background: `linear-gradient(to right,
+            #f6d7beff 0%,
+            #ba813cff ${Math.min((currentTime/duration)*100,100)}%,
+            #683816ff ${Math.min((currentTime/duration)*100,100)}%,
+            #683816ff 100%)`,
           transform: `scaleY(${pulseValue})`,
           boxShadow: isPlaying
-            ? `0 0 ${pulseValue * 6}px rgba(250, 200, 150, 0.4)`
+            ? `0 0 ${pulseValue*6}px rgba(250,200,150,0.4)`
             : "none",
-          transition: "transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out",
+          transition: "transform 0.2s ease, box-shadow 0.2s ease",
         }}
-        
       />
 
       <audio
@@ -176,77 +165,91 @@ function AudioPlayer({ src }) {
   );
 }
 
-function SelectableButton({ btn, isActive, onClick }) {
-  return (
-    <div className="flex-none">
-      <button
-        onClick={onClick}
-        className={isActive ? 'bg-[#ba813cff]' : 'bg-transparent'}
-      >
-        <div
-          className="m-3 flex items-center rounded-xl bg-[#683816ff] text-orange-100 lg:m-5"
-          style={{
-            padding: 6,
-            borderRadius: 12,
-            ...(isActive && { boxShadow: '8px 8px 12px rgba(0,0,0,0.8)' })
-          }}
-        >
-          <div id="text-element" className="sm:px-2">
-            <div className="text-[17px] lg:text-[24px]">{btn.title}</div>
-          </div>
-        </div>
-      </button>
-    </div>
-  );
-}
-
 export default function Ads() {
-  const [activeKey, setActiveKey] = useState(BUTTONS[0].key);
+  const [activeKey, setActiveKey] = useState('existing');
+  const [dropdownOpen, setDropdownOpen] = useState(false);
   const current = BUTTONS.find(b => b.key === activeKey);
   const baseUrl = process.env.NEXT_PUBLIC_S3_BASE_URL;
 
   return (
     <main className="text-gray-100">
+      {/* Header */}
       <header>
         <div className="hidden min-[1000px]:block w-full max-w-screen-lg mx-auto relative">
           <Image
             src={`${baseUrl}/advertisements-custom-header.svg`}
             alt="Advertisements masthead"
-            width={1024}
-            height={1}
+            width={1024} height={1}
             className="w-full h-auto"
           />
         </div>
         <div className="block min-[1000px]:hidden bg-gradient-to-r from-black/10 to-black/80 text-center">
           <div className="py-6">
-            <Logo color="#f6d7beff" width="240" height="150" />
+            <Logo color="#f6d7beff" width={240} height={150} />
           </div>
-          <div className="title-shadow-ads page-title-shadow roboto-font m-4 text-[36px] tracking-wide text-title-text-ads">
-            <span className="block w-full overflow-hidden text-[8vw]">Advertisements</span>
+          <div className="roboto-font m-4 text-[36px] tracking-wide text-title-text-ads">
+            <span className="block w-full overflow-hidden text-[8vw]">
+              Advertisements
+            </span>
           </div>
         </div>
       </header>
 
-      <nav className="mt-8 w-full max-w-screen-lg mx-auto flex justify-center">
-        {BUTTONS.map(btn => (
-          <SelectableButton
-            key={btn.key}
-            btn={btn}
-            isActive={btn.key === activeKey}
-            onClick={() => setActiveKey(btn.key)}
-          />
-        ))}
-      </nav>
+      {/* Custom dropdown selector with separate label */}
+      <div className="mt-6 max-w-screen-lg mx-auto px-4 flex items-center">
+        {/* Prompt to the left */}
+        <span className="text-[20px] text-orange-100 mr-4">
+          What is your focus?
+        </span>
 
-      <section className="mt-1 max-w-screen-lg mx-auto text-left px-4">
-        {current.audioSrc && <AudioPlayer src={`${baseUrl}/${current.audioSrc}`} />}
+        {/* Dropdown button */}
+        <div className="relative flex-grow">
+          <button
+            onClick={() => setDropdownOpen(o => !o)}
+            className="w-full text-left bg-[#683816ff] hover:bg-[#7a4820ff] rounded-lg px-4 py-3 flex justify-between items-center text-[20px] text-orange-100"
+          >
+            {current.title}
+            {dropdownOpen ? <ChevronUp /> : <ChevronDown />}
+          </button>
+
+          {dropdownOpen && (
+            <ul className="absolute z-10 w-full bg-[#683816ff] rounded-b-lg shadow-lg mt-1">
+              {BUTTONS.map(b => (
+                <li key={b.key}>
+                  <button
+                    onClick={() => {
+                      setActiveKey(b.key);
+                      setDropdownOpen(false);
+                    }}
+                    className={`block w-full text-left px-4 py-3 hover:bg-[#7a4820ff]
+                      ${b.key === activeKey ? 'font-bold' : ''} text-[18px] text-orange-100`}
+                  >
+                    {b.title}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      </div>
+
+      {/* Content Section */}
+      <section className="mt-6 max-w-screen-lg mx-auto px-4">
+        {current.showAudio && (
+          <AudioPlayer src={`${baseUrl}/${current.audioSrc}`} />
+        )}
         <article className="space-y-4">
-          <h2 className="text-[24px] md:text-[32px] text-center">{current.content[0]}</h2>
-          {current.content.slice(1).map((para, idx) => (
-            <p key={idx} className="text-[28px]">{para}</p>
+          <h2 className="text-[24px] md:text-[32px] text-left">
+            {current.content[0]}
+          </h2>
+          {current.content.slice(1).map((p, i) => (
+            <p key={i} className="text-[28px]">
+              {p}
+            </p>
           ))}
         </article>
       </section>
     </main>
   );
 }
+
