@@ -5,24 +5,10 @@ import { Volume2, Pause, ChevronDown, ChevronUp } from "lucide-react";
 
 const BUTTONS = [
   {
-    key: 'buyers',
-    title: 'Buyers / Renters',
-    audioSrc: 'ad-audio-buyers-renters.m4a',
-    showAudio: true,
-    content: [
-      "Want to spend less on driving—and more on living?", "Start by choosing the right neighborhood.",
-      "You can only walk so far without resorting to a vehicle. But what if daily errands, food, and fun were all just steps from home? How do you find places like that?",
-      "Can you walk to what you need? Do people use the same places you would? Is the neighborhood changing? Without those answers—you’re left guessing.",
-      "An Urban Foot Notes report gives you a scored rating of pedestrian access to commonly-desired services, showing how easy it is to live at an address without needing to drive.",
-      "It answers the big question: “What’s it really like to live there?” A higher walkability rating means more freedom, better health, and lower costs.",
-      "Ask your agent, landlord, or builder for an Urban Foot Notes report. Or visit urbanfootnotes.com to check out sample reports yourself."
-    ]
-  },
-  {
     key: 'existing',
-    title: 'Existing Projects',
+    title: 'Existing Projects (Developers)',
     audioSrc: 'ad-audio-existing-projects.m4a',
-    showAudio: true,
+    showAudio: false,
     content: [
       "Trying to attract the right buyers or renters?",
       "People often lack insight on how an address’ neighborhood meets their needs. That's when hasty, less-than-ideal judgments get made.",
@@ -34,10 +20,24 @@ const BUTTONS = [
     ]
   },
   {
+    "key": "existing_needs",
+    "title": "Project Planning (Developers)",
+    "audioSrc": "ad-audio-existing-projects-filling-needs.m4a",
+    "showAudio": false,
+    "content": [
+        "Struggling to convince buyers or renters that your property fits their needs?",
+        "You can’t control everything a neighborhood lacks—but you can clearly understand and address those gaps.",
+        "Urban Foot Notes provides standardized neighborhood reports pinpointing exactly what's missing—helping you or partners strategically plan future improvements.",
+        "This report can be used to promote other developments, including your own.",
+        "Use this clarity to market smarter and guide future investments effectively.",
+        "Visit urbanfootnotes.com to view samples or request your report today."
+    ]
+},
+  {
     key: 'proposed',
-    title: 'Proposed Projects',
+    title: 'Proposed Developments (Developers)',
     audioSrc: 'ad-audio-proposed-projects.m4a',
-    showAudio: true,
+    showAudio: false,
     content: [
       "What if you could add a story to your development proposal—its neighborhood's story, told in data?",
       "Too many projects start with incomplete neighborhood data. That’s where deals can fall apart—or additional opportunities get missed.",
@@ -47,9 +47,86 @@ const BUTTONS = [
     ]
   },
   {
+    key: 'buyers',
+    title: 'Home Buyers and Renters',
+    audioSrc: 'ad-audio-buyers-renters.m4a',
+    showAudio: true,
+    content: [
+      "Want to spend less on driving—and more on living?", "Start by choosing the right neighborhood.",
+      "You can only walk so far without resorting to a vehicle. But what if daily errands, food, and fun were all just steps from home? How do you find places like that?",
+      "Can you walk to what you need? Do people use the same places you would? Is the neighborhood changing? Without those answers—you’re left guessing.",
+      "An Urban Foot Notes report gives you a scored rating of pedestrian access to commonly-desired services, showing how easy it is to live at an address without needing to drive.",
+      "It answers the big question: “What’s it really like to live there?” A higher walkability rating means more freedom, better health, and lower costs.",
+      "Ask your agent, landlord, or builder for an Urban Foot Notes report. Or visit urbanfootnotes.com to check out sample reports yourself."
+    ]
+  },
+
+  {
+    "key": "hotels",
+    "title": "Short-Term Rentals, Hotels, Airbnb's",
+    "audioSrc": "ad-audio-hotels-short-term-rentals.m4a",
+    "showAudio": false,
+    "content": [
+        "Are you looking to attract more guests?",
+        "It's about more than your property—it’s also about the location. But describing neighborhood convenience thoroughly takes effort and research, especially for guests who want to walk more than drive.",
+        "Urban Foot Notes delivers standardized, address-specific, comparative neighborhood reports.",
+        "We describe and score ease of pedestrian access to businesses and services that many guests would desire.",
+        "Better walkability means happier, longer-term guests—and reduced transportation expenses mean their money lasts longer.",
+        "Attract more satisfied guests with reliable neighborhood data.",
+        "Visit urbanfootnotes.com to see samples, contact us, or order your report."
+    ]
+},
+{
+    "key": "environmentalists",
+    "title": "Environmental",
+    "audioSrc": "ad-audio-environmentalists.m4a",
+    "showAudio": false,
+    "content": [
+        "Wish you could see fewer cars? And use less fossil fuels? Plus breathe less polluted air?",
+        "Cities built around cars can feel impossible to change, and expensive transit projects often move slowly or stall entirely.",
+        "The fastest solution is better development. Urban Foot Notes clearly scores neighborhood walkability—encouraging developments that put essential services within easy walking distance.",
+        "Urban Foot Notes scores how well this is done, with comparative, standardized neighborhood reports.",
+        "A higher score means more walking and less driving. Our goal is to encourage competition between developers to naturally drive more pedestrian-centered spaces.",
+        "You can ask your government to require developers to provide an Urban Foot Notes report to show how much traffic reduction is being proposed.",
+        "Visit urbanfootnotes.com to see samples, contact us, or order a report."
+    ]
+},
+{
+  "key": "advocates",
+  "title": "Pedestrian & Bicycling Advocates",
+  "audioSrc": "ad-audio-pedestrian-bicycling-advocates.m4a",
+  "showAudio": false,
+  "content": [
+      "Want safer streets for walking or biking?",
+      "Retrofitting roads for cyclists and pedestrians can cause pushback and high costs. Yet, you know safer access matters.",
+      "While these things can still be done, better urban development can deliver immediate improvements.",
+      "Urban Foot Notes scores how well neighborhoods offer easy pedestrian and bike access to essential services.",
+      "Higher scores mean safer, healthier neighborhoods for everyone.",
+      "Encourage your local government to require Urban Foot Notes reports from developers.",
+      "Visit urbanfootnotes.com for more info."
+  ]
+},
+{
+  "key": "gov_officeholders",
+  "title": "Government Office Holders",
+  "audioSrc": "ad-audio-government-officeholders.m4a",
+  "showAudio": false,
+  "content": [
+      "Are the residents tired of traffic problems and expecting action?",
+      "Pedestrian accidents, cyclist fatalities, road rage, and poor air quality reflect badly on leadership—but voters often miss the connection between these issues and private-sector development choices.",
+      "Better-planned developments drastically reduce traffic. Easy pedestrian access to all of residents’ needs enhances the community.",
+      "Urban Foot Notes offers comparative, standardized neighborhood reports, scoring pedestrian access to commonly-used services and businesses.",
+      "High scores visibly mean less traffic and more livable communities.",
+      "You can require developers to provide an Urban Foot Notes report, putting potential traffic reduction on display.",
+      "Encourage developers to consider their impact on the interests of the community, and show voters you're serious about improving their neighborhoods.",
+      "Visit urbanfootnotes.com to see samples, contact us, or order a report."
+  ]
+},
+  {
     key: 'planners',
-    title: 'City Planners',
+    title: 'City Planning',
     audioSrc: 'ad-audio-existing-projects.m4a',
+    showAudio: false,
     content: [
       "Tired of the same fights over traffic and density? Blame’s easy. Solutions aren’t.",
       "Sprawling NIMBYs battle developers’ densities. Now often unpleasant compromises seem like the only path forward.",
@@ -58,7 +135,39 @@ const BUTTONS = [
       "You can ask or require developers to provide an Urban Foot Notes report. Visit urbanfootnotes.com to see samples, contact us, or order a report."
     ]
   },
-  // …add your other 7 ads here, each with key, title, audioSrc, showAudio, content
+  {
+    "key": "cityplanners_traffic",
+    "title": "Traffic Abatement",
+    "audioSrc": "ad-audio-city-planners-traffic.m4a",
+    "showAudio": false,
+    "content": [
+        "Are you frustrated by growing traffic problems?",
+        "Pedestrian injuries, cyclist safety, air quality—all are linked to excessive car usage.",
+        "Urban Foot Notes offers those in planning and real estate scored, comparative, standardized neighborhood reports describing how easy pedestrian access is to commonly-used services and businesses—encouraging reduced reliance on cars.",
+        "Better reports indicate more walking, fewer cars, and safer, healthier neighborhoods.",
+        "You can ask or require developers to provide an Urban Foot Notes report and start strategically reducing traffic.",
+        "Visit urbanfootnotes.com to see samples, contact us, or order a report."
+    ]
+},
+
+
+
+
+  {
+      "key": "neighborhood_assoc",
+      "title": "Neighborhood Associations",
+      "audioSrc": "ad-audio-neighborhood-associations.m4a",
+      "showAudio": false,
+      "content": [
+          "Want more influence over your neighborhood’s future?",
+          "Developers operate within existing zoning, but zoning doesn’t always reflect true neighborhood needs.",
+          "Urban Foot Notes clearly scores neighborhood walkability and access to popular services—empowering your association to push for more thoughtful developments.",
+          "Higher scores mean less traffic and a more vibrant community.",
+          "Ask local government to require developers to submit Urban Foot Notes reports.",
+          "Visit urbanfootnotes.com today."
+      ]
+  }
+
 ];
 
 function AudioPlayer({ src }) {
@@ -199,7 +308,7 @@ export default function Ads() {
       <div className="mt-6 max-w-screen-lg mx-auto px-4 flex items-center">
         {/* Prompt to the left */}
         <span className="text-[20px] text-orange-100 mr-4">
-          What is your focus?
+          What is your focus or role?
         </span>
 
         {/* Dropdown button */}
