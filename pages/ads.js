@@ -29,7 +29,7 @@ const BUTTONS = [
     "content": [
         "Struggling to convince buyers or renters that your property fits their needs?",
         "You can’t control everything a neighborhood lacks—but you can clearly understand and address those gaps.",
-        "Urban Foot Notes provides standardized neighborhood reports pinpointing exactly what's missing—helping you or partners strategically plan future improvements.",
+        "Urban Foot Notes delivers personal, investigative neighborhood reports. We analyze business presence, amenity access, land use, and walkability— working like a checklist to help you or partners strategically plan future improvements.",
         "This report can be used to promote other developments, including your own.",
         "Use this clarity to market smarter and guide future investments effectively.",
         "Visit urbanfootnotes.com to view samples or request your report today."
