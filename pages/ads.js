@@ -1,362 +1,359 @@
-import PageTitle from "@/components/PageTitle";
 import Logo from "@/components/Logo";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
+import { Volume2, Pause, ChevronDown, ChevronUp } from "lucide-react";
+import PageTitle from "@/components/PageTitle";
+import Link from "next/link";
 
-// the is the custom ads button for this page
-function SelectableButton({ activeKey, active, setActive, title, subtitle }) {
-  const isActive = active === activeKey;
+const BUTTONS = [
+  {
+    key: 'existing',
+    title: 'Existing Projects (Developers)',
+    audioSrc: 'ad-audio-existing-projects.m4a',
+    showAudio: false,
+    content: [
+      "Trying to attract the right buyers or renters?",
+      "People often lack insight on how an address’ neighborhood meets their needs. That's when hasty, less-than-ideal judgments get made.",
+      "Urban Foot Notes delivers standardized, address-specific, comparative neighborhood reports.",
+      "We describe pedestrian access to services and businesses that many residents desire. This is scored.",
+      "Walkability means convenience, lower car costs, and a better day-to-day life.",
+      "That translates into higher satisfaction—and more money freed up for housing.",
+      "Visit urbanfootnotes.com to see samples, contact us, or order your report."
+    ]
+  },
+  {
+    "key": "existing_needs",
+    "title": "Project Planning (Developers)",
+    "audioSrc": "ad-audio-existing-projects-filling-needs.m4a",
+    "showAudio": false,
+    "content": [
+        "Struggling to convince buyers or renters that your property fits their needs?",
+        "You can’t control everything a neighborhood lacks—but you can clearly understand and address those gaps.",
+        "Urban Foot Notes provides standardized neighborhood reports pinpointing exactly what's missing—helping you or partners strategically plan future improvements.",
+        "This report can be used to promote other developments, including your own.",
+        "Use this clarity to market smarter and guide future investments effectively.",
+        "Visit urbanfootnotes.com to view samples or request your report today."
+    ]
+},
+  {
+    key: 'proposed',
+    title: 'Proposed Developments (Developers)',
+    audioSrc: 'ad-audio-proposed-projects.m4a',
+    showAudio: false,
+    content: [
+      "What if you could add a story to your development proposal—its neighborhood's story, told in data?",
+      "Too many projects start with incomplete neighborhood data. That’s where deals can fall apart—or additional opportunities get missed.",
+      "Urban Foot Notes delivers personal, investigative neighborhood reports. We analyze business presence, amenity access, land use, and walkability—so you can propose your project with clarity and confidence.",
+      "Our reports strengthen your presentations—to development authorities, zoning boards, citizens, city councils, investors and others. They will see a report that will likely attract more buyers and renters.",
+      "Support your next project with the targeted data our reports provide. Visit urbanfootnotes.com to see samples, contact us, or order your report."
+    ]
+  },
+  {
+    key: 'buyers',
+    title: 'Home Buyers and Renters',
+    audioSrc: 'ad-audio-buyers-renters.m4a',
+    showAudio: true,
+    content: [
+      "Want to spend less on driving—and more on living?", "Start by choosing the right neighborhood.",
+      "You can only walk so far without resorting to a vehicle. But what if daily errands, food, and fun were all just steps from home? How do you find places like that?",
+      "Can you walk to what you need? Do people use the same places you would? Is the neighborhood changing? Without those answers—you’re left guessing.",
+      "An Urban Foot Notes report gives you a scored rating of pedestrian access to commonly-desired services, showing how easy it is to live at an address without needing to drive.",
+      "It answers the big question: “What’s it really like to live there?” A higher walkability rating means more freedom, better health, and lower costs.",
+      "Ask your agent, landlord, or builder for an Urban Foot Notes report. Or visit urbanfootnotes.com to check out sample reports yourself."
+    ]
+  },
+
+  {
+    "key": "hotels",
+    "title": "Short-Term Rentals, Hotels, Airbnb's",
+    "audioSrc": "ad-audio-hotels-short-term-rentals.m4a",
+    "showAudio": false,
+    "content": [
+        "Are you looking to attract more guests?",
+        "It's about more than your property—it’s also about the location. But describing neighborhood convenience thoroughly takes effort and research, especially for guests who want to walk more than drive.",
+        "Urban Foot Notes delivers standardized, address-specific, comparative neighborhood reports.",
+        "We describe and score ease of pedestrian access to businesses and services that many guests would desire.",
+        "Better walkability means happier, longer-term guests—and reduced transportation expenses mean their money lasts longer.",
+        "Attract more satisfied guests with reliable neighborhood data.",
+        "Visit urbanfootnotes.com to see samples, contact us, or order your report."
+    ]
+},
+{
+    "key": "environmentalists",
+    "title": "Environmental",
+    "audioSrc": "ad-audio-environmentalists.m4a",
+    "showAudio": false,
+    "content": [
+        "Wish you could see fewer cars? And use less fossil fuels? Plus breathe less polluted air?",
+        "Cities built around cars can feel impossible to change, and expensive transit projects often move slowly or stall entirely.",
+        "The fastest solution is better development. Urban Foot Notes clearly scores neighborhood walkability—encouraging developments that put essential services within easy walking distance.",
+        "Urban Foot Notes scores how well this is done, with comparative, standardized neighborhood reports.",
+        "A higher score means more walking and less driving. Our goal is to encourage competition between developers to naturally drive more pedestrian-centered spaces.",
+        "You can ask your government to require developers to provide an Urban Foot Notes report to show how much traffic reduction is being proposed.",
+        "Visit urbanfootnotes.com to see samples, contact us, or order a report."
+    ]
+},
+{
+  "key": "advocates",
+  "title": "Pedestrian & Bicycling Advocates",
+  "audioSrc": "ad-audio-pedestrian-bicycling-advocates.m4a",
+  "showAudio": false,
+  "content": [
+      "Want safer streets for walking or biking?",
+      "Retrofitting roads for cyclists and pedestrians can cause pushback and high costs. Yet, you know safer access matters.",
+      "While these things can still be done, better urban development can deliver immediate improvements.",
+      "Urban Foot Notes scores how well neighborhoods offer easy pedestrian and bike access to essential services.",
+      "Higher scores mean safer, healthier neighborhoods for everyone.",
+      "Encourage your local government to require Urban Foot Notes reports from developers.",
+      "Visit urbanfootnotes.com for more info."
+  ]
+},
+{
+  "key": "gov_officeholders",
+  "title": "Government Office Holders",
+  "audioSrc": "ad-audio-government-officeholders.m4a",
+  "showAudio": false,
+  "content": [
+      "Are the residents tired of traffic problems and expecting action?",
+      "Pedestrian accidents, cyclist fatalities, road rage, and poor air quality reflect badly on leadership—but voters often miss the connection between these issues and private-sector development choices.",
+      "Better-planned developments drastically reduce traffic. Easy pedestrian access to all of residents’ needs enhances the community.",
+      "Urban Foot Notes offers comparative, standardized neighborhood reports, scoring pedestrian access to commonly-used services and businesses.",
+      "High scores visibly mean less traffic and more livable communities.",
+      "You can require developers to provide an Urban Foot Notes report, putting potential traffic reduction on display.",
+      "Encourage developers to consider their impact on the interests of the community, and show voters you're serious about improving their neighborhoods.",
+      "Visit urbanfootnotes.com to see samples, contact us, or order a report."
+  ]
+},
+  {
+    key: 'planners',
+    title: 'City Planning',
+    audioSrc: 'ad-audio-existing-projects.m4a',
+    showAudio: false,
+    content: [
+      "Tired of the same fights over traffic and density? Blame’s easy. Solutions aren’t.",
+      "Sprawling NIMBYs battle developers’ densities. Now often unpleasant compromises seem like the only path forward.",
+      "Urban Foot Notes offers standardized, comparative, address-specific neighborhood reports, describing pedestrian access to commonly-used services and businesses, including the percentage of those typically using such services. It’s all scored in the report.",
+      "A higher score means more walking, and less driving. The data can shift the discussion to facts.",
+      "You can ask or require developers to provide an Urban Foot Notes report. Visit urbanfootnotes.com to see samples, contact us, or order a report."
+    ]
+  },
+  {
+    "key": "cityplanners_traffic",
+    "title": "Traffic Abatement",
+    "audioSrc": "ad-audio-city-planners-traffic.m4a",
+    "showAudio": false,
+    "content": [
+        "Are you frustrated by growing traffic problems?",
+        "Pedestrian injuries, cyclist safety, air quality—all are linked to excessive car usage.",
+        "Urban Foot Notes offers those in planning and real estate scored, comparative, standardized neighborhood reports describing how easy pedestrian access is to commonly-used services and businesses—encouraging reduced reliance on cars.",
+        "Better reports indicate more walking, fewer cars, and safer, healthier neighborhoods.",
+        "You can ask or require developers to provide an Urban Foot Notes report and start strategically reducing traffic.",
+        "Visit urbanfootnotes.com to see samples, contact us, or order a report."
+    ]
+},
+
+
+
+
+  {
+      "key": "neighborhood_assoc",
+      "title": "Neighborhood Associations",
+      "audioSrc": "ad-audio-neighborhood-associations.m4a",
+      "showAudio": false,
+      "content": [
+          "Want more influence over your neighborhood’s future?",
+          "Developers operate within existing zoning, but zoning doesn’t always reflect true neighborhood needs.",
+          "Urban Foot Notes clearly scores neighborhood walkability and access to popular services—empowering your association to push for more thoughtful developments.",
+          "Higher scores mean less traffic and a more vibrant community.",
+          "Ask local government to require developers to submit Urban Foot Notes reports.",
+          "Visit urbanfootnotes.com today."
+      ]
+  }
+
+];
+
+function AudioPlayer({ src }) {
+  const audioRef = useRef(null);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration,    setDuration]    = useState(0);
+  const [isPlaying,  setIsPlaying]   = useState(false);
+  const [pulseValue, setPulseValue]  = useState(1);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    const onLoaded    = () => setDuration(Math.floor(audio.duration));
+    const onTimeUpdate= () => setCurrentTime(Math.floor(audio.currentTime));
+    const onPlay      = () => setIsPlaying(true);
+    const onPause     = () => setIsPlaying(false);
+
+    audio.addEventListener("loadedmetadata", onLoaded);
+    audio.addEventListener("timeupdate",     onTimeUpdate);
+    audio.addEventListener("play",           onPlay);
+    audio.addEventListener("pause",          onPause);
+
+    return () => {
+      audio.removeEventListener("loadedmetadata", onLoaded);
+      audio.removeEventListener("timeupdate",     onTimeUpdate);
+      audio.removeEventListener("play",           onPlay);
+      audio.removeEventListener("pause",          onPause);
+    };
+  }, [src]);
+
+  useEffect(() => {
+    if (!isPlaying) return;
+    const iv = setInterval(() => {
+      setPulseValue(0.95 + Math.random() * 0.05);
+    }, 200);
+    return () => clearInterval(iv);
+  }, [isPlaying]);
+
+  const togglePlay = () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    audio.paused ? audio.play() : audio.pause();
+  };
+
+  const formatTime = (sec) => {
+    if (sec < 60) return `${sec} sec`;
+    const m = Math.floor(sec / 60);
+    const s = sec % 60;
+    return `${m} min${m>1?'s':''}${s>0?` ${s} sec`:''}`;
+  };
+
   return (
-    <div className="">
+    <div className="flex items-center justify-center gap-4 mb-6 w-full max-w-screen-lg px-4">
       <button
-        onClick={() => setActive(activeKey)}
-        className={`${active === activeKey ? "bg-[#ba813cff]" : "bg-transparent"}`}
+        onClick={togglePlay}
+        className="p-2 bg-[#683816ff] rounded-full text-orange-100 focus:outline-none focus:ring-2 focus:ring-orange-300"
+        aria-label={isPlaying ? "Pause" : "Play"}
       >
-        <div
-          className="m-3 flex items-center rounded-xl bg-[#683816ff] text-orange-100 lg:m-5"
-          style={{
-            padding: "6px",
-            borderRadius: "12px",
-            ...(isActive && { boxShadow: "8px 8px 12px rgba(0, 0, 0, 0.8)" }),
-          }}
-        >
-          <div id="text-element" className="sm:px-2">
-            <div className="text-[17px] lg:text-[24px]">{title}</div>
-            <div className="text-[17px] lg:text-[24px]">{subtitle}</div>
-          </div>
-        </div>
+        {isPlaying
+          ? <Pause   className="w-20 h-20" />
+          : <Volume2 className="w-20 h-20" />}
       </button>
+
+      <span className="text-orange-100 text-[17px] lg:text-[24px] whitespace-nowrap">
+        {formatTime(duration)}
+      </span>
+
+      <input
+        type="range"
+        min="0"
+        max={duration}
+        value={currentTime}
+        onChange={(e) => {
+          const audio = audioRef.current;
+          const t = parseInt(e.target.value);
+          if (audio) {
+            audio.currentTime = t;
+            setCurrentTime(t);
+          }
+        }}
+        className="h-2 w-[200px] appearance-none rounded-lg cursor-pointer"
+        style={{
+          background: `linear-gradient(to right,
+            #f6d7beff 0%,
+            #ba813cff ${Math.min((currentTime/duration)*100,100)}%,
+            #683816ff ${Math.min((currentTime/duration)*100,100)}%,
+            #683816ff 100%)`,
+          transform: `scaleY(${pulseValue})`,
+          boxShadow: isPlaying
+            ? `0 0 ${pulseValue*6}px rgba(250,200,150,0.4)`
+            : "none",
+          transition: "transform 0.2s ease, box-shadow 0.2s ease",
+        }}
+      />
+
+      <audio
+        key={src}
+        ref={audioRef}
+        src={src}
+        preload="metadata"
+        className="sr-only"
+      />
     </div>
   );
 }
 
 export default function Ads() {
+  const [activeKey, setActiveKey] = useState('existing');
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const current = BUTTONS.find(b => b.key === activeKey);
   const baseUrl = process.env.NEXT_PUBLIC_S3_BASE_URL;
-  const [active, setActive] = useState("button6");
+
   return (
+    <main className="text-gray-100">
     <div>
-      {/* The Advertisements page title is unique in size and requires custom work */}
-      {/* The <PageTitle.js /> component only renders for the Desktop version */}
-      <div
-        id="desktop-titleblock-version"
-        className="hidden min-[1000px]:block"
-      >
-        <div className="w-full max-w-screen-lg">
-          <div id="background-and-title">
-            <div className="[min-width:1000px]:hidden">
-              <Image
-                src={`${baseUrl}/advertisements-custom-header.svg`}
-                alt={`picture of Advertisements masthead`}
-                width={1024} // true width controlled by parent element
-                height={1} // true height tied to width
-              />
-            </div>
-            <div className="hidden max-[999px]:block">
-              <PageTitle
-                topTitle="a a a a a a a" // creates necessary spacing for bg title to span full width
-                textColor="text-title-text-ads text-opacity-0" // this page has smaller text size
-                shadowColor={`title-shadow-ads opacity-0`} // this page has smaller text size
-                logoColor="#f6d7beff"
-                gradient={
-                  "bg-[linear-gradient(to_right,rgba(59,45,24,0.1),rgba(113,67,21,0.8))]"
-                }
-                showLogo={true} // Integrates the logo
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* This is a custom mobile version of the  <PageTitle.js /> component */}
-      <div id="mobile-titleblock-version" className="block min-[1000px]:hidden">
-        <div className="bg-[linear-gradient(to_right,rgba(59,45,24,0.1),rgba(113,67,21,0.8))]">
-          {/* Fixed-width container */}
-          <div className="">
-            {/* Wrapper for logo and title */}
-            <div className="">
-              {/* Logo */}
+      <center>
+        <PageTitle
+          topTitle="Outreach"
+          textColor="text-title-text-ads"
+          shadowColor={`title-shadow-ads`}
+          logoColor="#f6d7beff"
+          gradient={
+            "bg-[linear-gradient(to_right,rgba(87,73,61,0.1),rgba(67,41,19,0.9))]"
+          }
+          mobileTitleCentered={false}
+          showLogo={true} // Integrates the logo)
+        />
+      </center>
 
-              <div className="w-screen">
-                {/* large mobile logo */}
-                <div className="block max-[360px]:hidden min-[1000px]:hidden">
-                  <div className="py-6">
-                    <center>
-                      <Logo color="#f6d7beff" width="296" height="183" />
-                    </center>
-                  </div>
-                </div>
-                {/* medium mobile logo */}
-                <div className="block max-[280px]:hidden min-[361px]:hidden">
-                  <div className="py-6">
-                    <center>
-                      <Logo color="#f6d7beff" width="240" height="150" />
-                    </center>
-                  </div>
-                </div>
-                {/* small mobile logo */}
-                <div className="block max-[100px]:hidden min-[281px]:hidden">
-                  <div className="py-6">
-                    <center>
-                      <Logo color="#f6d7beff" width="200" height="124" />
-                    </center>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <center>
-          <div
-            id="page-title"
-            className={`title-shadow-ads page-title-shadow roboto-font m-4 text-[40px] tracking-wide text-title-text-ads`}
-          >
-            <div className="w-full max-w-full overflow-hidden text-[9vw]">
-              Advertisements
-            </div>
-          </div>
-        </center>
-      </div>
-      <div
-        id="new-buttons-and-content"
-        className="mt-8 text-[29px] text-orange-100"
-      >
-        <div className="mx-10 lg:mx-0">
-          <div
-            id="buttons-array"
-            className="flex flex-col items-center sm:w-full sm:flex-row sm:justify-between"
-          >
-            <div id="first-row" className="flex sm:block">
-              <div className="">
-                <SelectableButton
-                  activeKey="button1"
-                  active={active}
-                  setActive={setActive}
-                  title="Buyers / Renters"
-                  subtitle="Audio"
-                />
-              </div>
-              <div className="">
-                <SelectableButton
-                  activeKey="button2"
-                  active={active}
-                  setActive={setActive}
-                  title="Buyers / Renters"
-                  subtitle="Text Only"
-                />
-              </div>
-            </div>
-
-            <div id="second-row" className="flex sm:block">
-              <div className="">
-                <SelectableButton
-                  activeKey="button3"
-                  active={active}
-                  setActive={setActive}
-                  title="Existing Projects"
-                  subtitle="Audio"
-                />
-              </div>
-              <div className="">
-                <SelectableButton
-                  activeKey="button4"
-                  active={active}
-                  setActive={setActive}
-                  title="Existing Projects"
-                  subtitle="Text Only"
-                />
-              </div>
-            </div>
-
-            <div id="third-row" className="flex sm:block">
-              <div className="">
-                <SelectableButton
-                  activeKey="button5"
-                  active={active}
-                  setActive={setActive}
-                  title="Proposed Projects"
-                  subtitle="Audio (1:10)"
-                />
-              </div>
-              <div className="">
-                <SelectableButton
-                  activeKey="button6"
-                  active={active}
-                  setActive={setActive}
-                  title="Proposed Projects"
-                  subtitle="Text Only"
-                />
-              </div>
-            </div>
-
-            <div id="fourth-row" className="flex sm:block">
-              <div className="">
-                <SelectableButton
-                  activeKey="button7"
-                  active={active}
-                  setActive={setActive}
-                  title="City Planners"
-                  subtitle="Audio"
-                />
-              </div>
-              <div className="">
-                <SelectableButton
-                  activeKey="button8"
-                  active={active}
-                  setActive={setActive}
-                  title="City Planners"
-                  subtitle="Text Only"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="displayed text" className="mt-2 max-w-[1000px]">
-        {active === "button1" && (
-          <div className="flex items-center justify-center text-3xl font-medium text-gray-200">
-            Coming soon!
-          </div>
-        )}
-        {active === "button2" && (
-          <div id="paragraphs" className="columns-1 p-4 text-gray-200">
-            <div className="mb-8 text-center text-[30px] md:text-[45px]">
-            Want to spend less on driving—and more on living?
-Start by choosing the right neighborhood.
-
-            </div>
-            <div className="mb-8 text-center text-[23px]">
-            You can only walk so far without resorting to a vehicle.
-But what if daily errands, food, and fun were all just steps from home?
-How do you find places like that?
-
-            </div>
-            <div className="mb-8 text-center text-[23px]">
-              Can you walk to what you need? Do people use the same places you
-              would? Is the neighborhood changing?
-            </div>
-            <div className="mb-8 text-center text-[23px]">
-              Without those answers— you’re left guessing.
-            </div>
-            <div className="mb-8 text-center text-[23px]">
-            An Urban Foot Notes report gives you a scored, rating of pedestrian access to 
-commonly-desired services, showing how easy it is to live at an address without needing to drive.
-
-            </div>
-            <div className="mb-8 text-center text-[23px]">
-            It answers the big question: “What’s it really like to live there?”
-A higher walk score means more freedom, better health, and lower costs.
-
-            </div>
-            <div className="mb-8 text-center text-[23px]">
-            Ask your agent, landlord, or builder for an Urban Foot Notes report.
-            Or visit urbanfootnotes.com to check out sample reports yourself.
-            </div>
-          </div>
-        )}
-        {active === "button3" && (
-          <div className="flex items-center justify-center text-3xl font-medium text-gray-200">
-            Coming soon!
-          </div>
-        )}
-        {active === "button4" && (
-          <div id="paragraphs" className="columns-1 p-4 text-gray-200">
-            <div className="mb-8 text-center text-[30px] md:text-[45px]">
-            Trying to attract the right buyers or renters?
-
-            </div>
-            <div className="mb-8 text-center text-[23px]">
-            People often lack insight on how an address’ neighborhood meets their needs. 
-That's when hasty, less-than-ideal judgements get made.
-
-            </div>
-            <div className="mb-8 text-center text-[23px]">
-            Urban Foot Notes delivers standardized, address-specific, comparative, neighborhood reports.
-
-            </div>
-            <div className="mb-8 text-center text-[23px]">
-            We describe pedestrian access to services and businesses that many residents desire.
-This is scored.
-
-            </div>
-            <div className="mb-8 text-center text-[23px]">
-            Walkability means convenience, lower car costs, and a better day-to-day life.
-            </div>
-            <div className="mb-8 text-center text-[23px]">
-            That translates into higher satisfaction—and more money freed up for housing.            </div>
-          
-            <div className="mb-8 text-center text-[23px]">
-            So, providing an Urban Foot Notes report can attract and please your most preferred residents.
-
-            </div>
-            <div className="mb-8 text-center text-[23px]">
-            Visit urbanfootnotes.com to see samples, contact us, or order your report. 
-
-            </div>
-          </div>
-        )}
-        {active === "button5" && (
-          <div className="flex items-center justify-center text-3xl font-medium text-gray-200">
-            Coming soon!
-          </div>
-        )}
-        {active === "button6" && (
-          <div id="paragraphs" className="columns-1 p-4 text-gray-200">
-            <div className="mb-8 text-center text-[30px] md:text-[45px]">
-            What if you could add a story to your development proposal—its neighborhood's story, told in data?
-
-            </div>
-            <div className="mb-8 text-center text-[23px]">
-            Too many projects start with incomplete neighborhood data. That’s where deals can fall apart—or additional opportunities get missed.
-            </div>
-            <div className="mb-8 text-center text-[23px]">
-            Urban Foot Notes delivers personal, investigative neighborhood reports.
-We analyze business presence, amenity access, land use, and walkability—so you can propose your project with clarity and confidence. 
-
-            </div>
-            <div className="mb-8 text-center text-[23px]">
-            Our reports strengthen your presentations—to development authorities, zoning boards, citizens, city councils, investors and others. They will see a report that will likely attract more buyers and renters. 
-            </div>
-            <div className="mb-8 text-center text-[23px]">
-            Support your next project with the targeted data our reports provide.
-            Visit urbanfootnotes.com to see samples, contact us, or order your report. 
-            </div>
-          </div>
-        )}
-        {active === "button7" && (
-          <div className="flex items-center justify-center text-3xl font-medium text-gray-200">
-            Coming soon!
-          </div>
-        )}
-        {active === "button8" && (
-          <div id="paragraphs" className="columns-1 p-4 text-gray-200">
-            <div className="mb-8 text-center text-[30px] md:text-[45px]">
-            Tired of the same fights over traffic and density?
-Blame’s easy. Solutions aren’t.
-
-            </div>
-            <div className="mb-8 text-center text-[23px]">
-              Sprawling NIMBYs battle developers’ densities.
-Now often unpleasant compromises seem like the only path forward.
-
-            </div>
-            <div className="mb-8 text-center text-[23px]">
-              Urban Foot Notes offers standardized, comparative, address-specific neighborhood reports,
-describing pedestrian access to commonly-used services and businesses.
- including the percentage of those typically using such services.
-It’s all scored in the report.
-
-            </div>
-            <div className="mb-8 text-center text-[23px]">
-            A higher score means more walking, and less driving.
-The data can shift the discussion to facts. 
-
-            </div>
-            <div className="mb-8 text-center text-[23px]">
-            You can ask or require developers to provide an Urban Foot Notes report.
-            Visit urbanfootnotes.com to see samples, contact us, or order a report. 
-            </div>
-          </div>
-        )}
-      </div>
     </div>
+      <div className="mt-6 max-w-screen-lg mx-auto px-4 flex items-center ">
+        {/* Prompt to the left */}
+        <span className="text-[20px] text-orange-100 mr-4">
+          What is your focus or role?
+        </span>
+
+        {/* Dropdown button */}
+        <div className="relative flex-grow">
+          <button
+            onClick={() => setDropdownOpen(o => !o)}
+            className="w-full text-left bg-[#683816ff] hover:bg-[#7a4820ff] rounded-lg px-4 py-3 flex justify-between items-center text-[20px] text-orange-100"
+          >
+            {current.title}
+            {dropdownOpen ? <ChevronUp /> : <ChevronDown />}
+          </button>
+
+          {dropdownOpen && (
+            <ul className="absolute z-10 w-full bg-[#683816ff] rounded-b-lg shadow-lg mt-1">
+              {BUTTONS.map(b => (
+                <li key={b.key}>
+                  <button
+                    onClick={() => {
+                      setActiveKey(b.key);
+                      setDropdownOpen(false);
+                    }}
+                    className={`block w-full text-left px-4 py-3 hover:bg-[#7a4820ff]
+                      ${b.key === activeKey ? 'font-bold' : ''} text-[18px] text-orange-100`}
+                  >
+                    {b.title}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      </div>
+
+      {/* Content Section */}
+      <section className="mt-6 max-w-screen-lg mx-auto px-4">
+        {current.showAudio && (
+          <AudioPlayer src={`${baseUrl}/${current.audioSrc}`} />
+        )}
+        <article className="space-y-4">
+          <h2 className="text-[24px] md:text-[32px] text-left">
+            {current.content[0]}
+          </h2>
+          {current.content.slice(1).map((p, i) => (
+            <p key={i} className="text-[28px]">
+              {p}
+            </p>
+          ))}
+        </article>
+      </section>
+    </main>
   );
 }
+
