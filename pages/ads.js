@@ -8,7 +8,7 @@ import Link from "next/link";
 const BUTTONS = [
   {
     key: 'existing',
-    title: 'Existing Projects (Developers)',
+    title: 'Developers: Existing Projects',
     audioSrc: 'ad-audio-existing-projects.m4a',
     showAudio: false,
     content: [
@@ -23,7 +23,7 @@ const BUTTONS = [
   },
   {
     "key": "existing_needs",
-    "title": "Project Planning (Developers)",
+    "title": "Developers: Project Planning",
     "audioSrc": "ad-audio-existing-projects-filling-needs.m4a",
     "showAudio": false,
     "content": [
@@ -37,7 +37,7 @@ const BUTTONS = [
 },
   {
     key: 'proposed',
-    title: 'Proposed Developments (Developers)',
+    title: 'Developers: Proposed Developments',
     audioSrc: 'ad-audio-proposed-projects.m4a',
     showAudio: false,
     content: [
@@ -49,8 +49,23 @@ const BUTTONS = [
     ]
   },
   {
+    "key": "hotels",
+    "title": "Developers: Short-Term Rentals, Hotels, Airbnb's",
+    "audioSrc": "ad-audio-hotels-short-term-rentals.m4a",
+    "showAudio": false,
+    "content": [
+        "Are you looking to attract more guests?",
+        "It's about more than your property—it’s also about the location. But describing neighborhood convenience thoroughly takes effort and research, especially for guests who want to walk more than drive.",
+        "Urban Foot Notes delivers standardized, address-specific, comparative neighborhood reports.",
+        "We describe and score ease of pedestrian access to businesses and services that many guests would desire.",
+        "Better walkability means happier, longer-term guests—and reduced transportation expenses mean their money lasts longer.",
+        "Attract more satisfied guests with reliable neighborhood data.",
+        "Visit urbanfootnotes.com to see samples, contact us, or order your report."
+    ]
+  },
+  {
     key: 'buyers',
-    title: 'Home Buyers and Renters',
+    title: 'Residents: Home Buyers and Renters',
     audioSrc: 'ad-audio-buyers-renters.m4a',
     showAudio: true,
     content: [
@@ -63,24 +78,9 @@ const BUTTONS = [
     ]
   },
 
-  {
-    "key": "hotels",
-    "title": "Short-Term Rentals, Hotels, Airbnb's",
-    "audioSrc": "ad-audio-hotels-short-term-rentals.m4a",
-    "showAudio": false,
-    "content": [
-        "Are you looking to attract more guests?",
-        "It's about more than your property—it’s also about the location. But describing neighborhood convenience thoroughly takes effort and research, especially for guests who want to walk more than drive.",
-        "Urban Foot Notes delivers standardized, address-specific, comparative neighborhood reports.",
-        "We describe and score ease of pedestrian access to businesses and services that many guests would desire.",
-        "Better walkability means happier, longer-term guests—and reduced transportation expenses mean their money lasts longer.",
-        "Attract more satisfied guests with reliable neighborhood data.",
-        "Visit urbanfootnotes.com to see samples, contact us, or order your report."
-    ]
-},
 {
     "key": "environmentalists",
-    "title": "Environmental",
+    "title": "Residents: Environmental",
     "audioSrc": "ad-audio-environmentalists.m4a",
     "showAudio": false,
     "content": [
@@ -95,7 +95,7 @@ const BUTTONS = [
 },
 {
   "key": "advocates",
-  "title": "Pedestrian & Bicycling Advocates",
+  "title": "Residents: Pedestrian & Bicycling Advocates",
   "audioSrc": "ad-audio-pedestrian-bicycling-advocates.m4a",
   "showAudio": false,
   "content": [
@@ -109,8 +109,22 @@ const BUTTONS = [
   ]
 },
 {
+  "key": "neighborhood_assoc",
+  "title": "Residents: Neighborhood Associations",
+  "audioSrc": "ad-audio-neighborhood-associations.m4a",
+  "showAudio": false,
+  "content": [
+      "Want more influence over your neighborhood’s future?",
+      "Developers operate within existing zoning, but zoning doesn’t always reflect true neighborhood needs.",
+      "Urban Foot Notes clearly scores neighborhood walkability and access to popular services—empowering your association to push for more thoughtful developments.",
+      "Higher scores mean less traffic and a more vibrant community.",
+      "Ask local government to require developers to submit Urban Foot Notes reports.",
+      "Visit urbanfootnotes.com today."
+  ]
+},
+{
   "key": "gov_officeholders",
-  "title": "Government Office Holders",
+  "title": "Government: Office Holders",
   "audioSrc": "ad-audio-government-officeholders.m4a",
   "showAudio": false,
   "content": [
@@ -126,7 +140,7 @@ const BUTTONS = [
 },
   {
     key: 'planners',
-    title: 'City Planning',
+    title: 'City Planning: Conflict Resolution',
     audioSrc: 'ad-audio-existing-projects.m4a',
     showAudio: false,
     content: [
@@ -139,7 +153,7 @@ const BUTTONS = [
   },
   {
     "key": "cityplanners_traffic",
-    "title": "Traffic Abatement",
+    "title": "City Planning: Traffic Abatement",
     "audioSrc": "ad-audio-city-planners-traffic.m4a",
     "showAudio": false,
     "content": [
@@ -152,23 +166,6 @@ const BUTTONS = [
     ]
 },
 
-
-
-
-  {
-      "key": "neighborhood_assoc",
-      "title": "Neighborhood Associations",
-      "audioSrc": "ad-audio-neighborhood-associations.m4a",
-      "showAudio": false,
-      "content": [
-          "Want more influence over your neighborhood’s future?",
-          "Developers operate within existing zoning, but zoning doesn’t always reflect true neighborhood needs.",
-          "Urban Foot Notes clearly scores neighborhood walkability and access to popular services—empowering your association to push for more thoughtful developments.",
-          "Higher scores mean less traffic and a more vibrant community.",
-          "Ask local government to require developers to submit Urban Foot Notes reports.",
-          "Visit urbanfootnotes.com today."
-      ]
-  }
 
 ];
 
