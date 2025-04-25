@@ -233,7 +233,7 @@ function AudioPlayer({ src }) {
           : <Volume2 className="w-20 h-20" />}
       </button>
 
-      <span className="text-orange-100 text-[17px] lg:text-[24px] whitespace-nowrap">
+      <span className="text-orange-100 text-[24px] lg:text-[24px] whitespace-nowrap">
         {formatTime(duration)}
       </span>
 
@@ -302,7 +302,7 @@ export default function Ads() {
     </div>
       <div className="mt-6 max-w-screen-lg mx-auto px-4 flex items-center ">
         {/* Prompt to the left */}
-        <span className="text-[20px] text-orange-100 mr-4">
+        <span className="text-[24px] text-orange-100 mr-4">
           What is your focus or role?
         </span>
 
@@ -310,7 +310,7 @@ export default function Ads() {
         <div className="relative flex-grow">
           <button
             onClick={() => setDropdownOpen(o => !o)}
-            className="w-full text-left bg-[#683816ff] hover:bg-[#7a4820ff] rounded-lg px-4 py-3 flex justify-between items-center text-[20px] text-orange-100"
+            className="w-full text-left bg-[#683816ff] hover:bg-[#7a4820ff] rounded-lg px-4 py-3 flex justify-between items-center text-[22px] text-orange-100"
           >
             {current.title}
             {dropdownOpen ? <ChevronUp /> : <ChevronDown />}
