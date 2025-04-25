@@ -9,8 +9,8 @@ const navItems = [
   { title: "Samples", path: "/samples", bgColor: "bg-navbar-samples" },
   { title: "Order", path: "/order", bgColor: "bg-navbar-order" },
   { title: "Contact", path: "/contact", bgColor: "bg-navbar-contact-us" },
-  { title: "Ads", path: "/ads", bgColor: "bg-navbar-ads" },
-  { title: "References", path: "/references", bgColor: "bg-navbar-references" },
+  { title: "Outreach", path: "/ads", bgColor: "bg-navbar-ads" },
+  { title: "Reference", path: "/references", bgColor: "bg-navbar-references" },
 ];
 
 export default function Navbar() {
