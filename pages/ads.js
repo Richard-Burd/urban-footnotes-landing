@@ -2,6 +2,8 @@ import Logo from "@/components/Logo";
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { Volume2, Pause, ChevronDown, ChevronUp } from "lucide-react";
+import PageTitle from "@/components/PageTitle";
+import Link from "next/link";
 
 const BUTTONS = [
   {
@@ -282,30 +284,23 @@ export default function Ads() {
 
   return (
     <main className="text-gray-100">
-      {/* Header */}
-      <header>
-        <div className="hidden min-[1000px]:block w-full max-w-screen-lg mx-auto relative">
-          <Image
-            src={`${baseUrl}/advertisements-custom-header.svg`}
-            alt="Advertisements masthead"
-            width={1024} height={1}
-            className="w-full h-auto"
-          />
-        </div>
-        <div className="block min-[1000px]:hidden bg-gradient-to-r from-black/10 to-black/80 text-center">
-          <div className="py-6">
-            <Logo color="#f6d7beff" width={240} height={150} />
-          </div>
-          <div className="roboto-font m-4 text-[36px] tracking-wide text-title-text-ads">
-            <span className="block w-full overflow-hidden text-[8vw]">
-              Advertisements
-            </span>
-          </div>
-        </div>
-      </header>
+    <div>
+      <center>
+        <PageTitle
+          topTitle="Outreach"
+          textColor="text-title-text-ads"
+          shadowColor={`title-shadow-ads`}
+          logoColor="#f6d7beff"
+          gradient={
+            "bg-[linear-gradient(to_right,rgba(87,73,61,0.1),rgba(67,41,19,0.9))]"
+          }
+          mobileTitleCentered={false}
+          showLogo={true} // Integrates the logo)
+        />
+      </center>
 
-      {/* Custom dropdown selector with separate label */}
-      <div className="mt-6 max-w-screen-lg mx-auto px-4 flex items-center">
+    </div>
+      <div className="mt-6 max-w-screen-lg mx-auto px-4 flex items-center ">
         {/* Prompt to the left */}
         <span className="text-[20px] text-orange-100 mr-4">
           What is your focus or role?
