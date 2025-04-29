@@ -1,0 +1,19 @@
+.slim {
+    width: 100%;
+    height: 2.5rem;          /* exact control */
+    padding: 0 1rem;       /* zero vertical */
+    
+    font-size: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #683816ff;
+    color: #FFEDD5;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+  }
+  .slim:hover {
+    background: #7a4820ff;
+  }
+  

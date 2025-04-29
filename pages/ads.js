@@ -2,6 +2,7 @@ import Logo from "@/components/Logo";
 import { useState, useRef, useEffect } from "react";
 import { Volume2, Pause, ChevronDown } from "lucide-react";
 import PageTitle from "@/components/PageTitle";
+import styles from '../styles/Button.module.css'
 
 const BUTTONS = [
   {
@@ -241,7 +242,7 @@ export default function Ads() {
         <div className="relative flex-grow dropdown">
           <button
             onClick={() => setDropdownOpen(o => !o)}
-            className="w-full text-left bg-[#683816ff] hover:bg-[#7a4820ff] rounded-lg px-4 py-3 flex justify-between items-center text-[24px] text-orange-100"
+            className={styles.slim}
           >
             {current.role}: {current.title}
             <ChevronDown className={`transform transition-transform duration-200 ${dropdownOpen ? 'rotate-180' : ''}`} />
@@ -259,9 +260,9 @@ export default function Ads() {
                 <div key={role} className="border-t border-[#805a44]">
                   <button
                     onClick={() => setOpenRole(openRole === role ? null : role)}
-                    className="w-full flex justify-between items-center px-4 py-3 text-[24px] text-orange-100 hover:bg-[#7a4820ff]"
+                    className={styles.slim}
                   >
-                    <span className="font-semibold">{role}</span>
+                    <span className="">{role}</span>
                     <ChevronDown
                       className={`transform transition-transform duration-200 ${openRole === role ? 'rotate-180' : ''}`}  />
                   </button>
