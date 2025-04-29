@@ -236,12 +236,12 @@ export default function Ads() {
         </center>
       </div>
       
-      <div className="mt-6 max-w-screen-lg mx-auto px-4 flex items-center">
-        <span className="text-[24px] text-orange-100 mr-4">What is your focus or role?</span>
+      <div className="mt-6 max-w-screen-lg mx-auto px-10 flex items-center">
+        <span className="text-[28px] text-orange-100 mr-4">What is your focus or role?</span>
         <div className="relative flex-grow dropdown">
           <button
             onClick={() => setDropdownOpen(o => !o)}
-            className="w-full text-left bg-[#683816ff] hover:bg-[#7a4820ff] rounded-lg px-4 py-3 flex justify-between items-center text-[22px] text-orange-100"
+            className="w-full text-left bg-[#683816ff] hover:bg-[#7a4820ff] rounded-lg px-4 py-3 flex justify-between items-center text-[24px] text-orange-100"
           >
             {current.role}: {current.title}
             <ChevronDown className={`transform transition-transform duration-200 ${dropdownOpen ? 'rotate-180' : ''}`} />
@@ -259,7 +259,7 @@ export default function Ads() {
                 <div key={role} className="border-t border-[#805a44]">
                   <button
                     onClick={() => setOpenRole(openRole === role ? null : role)}
-                    className="w-full flex justify-between items-center px-4 py-3 text-orange-100 hover:bg-[#7a4820ff]"
+                    className="w-full flex justify-between items-center px-4 py-3 text-[24px] text-orange-100 hover:bg-[#7a4820ff]"
                   >
                     <span className="font-semibold">{role}</span>
                     <ChevronDown
@@ -270,7 +270,7 @@ export default function Ads() {
                       <button
                         key={item.key}
                         onClick={() => { setActiveKey(item.key); setDropdownOpen(false); setOpenRole(null); }}
-                        className="block w-full text-left px-8 py-2 text-[18px] text-orange-100 hover:bg-[#7a4820ff]"
+                        className="block w-full text-left px-8 py-2 text-[24px] text-orange-100 hover:bg-[#7a4820ff]"
                       >
                         {item.title}
                       </button>
@@ -286,9 +286,9 @@ export default function Ads() {
       <section className="mt-6 max-w-screen-lg mx-auto px-4">
         {current.showAudio && <AudioPlayer src={`${baseUrl}/${current.audioSrc}`} />}
         <article className="space-y-4">
-          <h2 className="text-[24px] md:text-[32px] text-left">{current.content[0]}</h2>
+          <h2 className="text-[24px] md:text-[28px] text-left text-orange-100 mr-4">{current.content[0]}</h2>
           {current.content.slice(1).map((p, idx) => (
-            <p key={idx} className="text-[28px]">{p}</p>
+            <p key={idx} className="text-[28px] text-orange-100 mr-4">{p}</p>
           ))}
         </article>
       </section>
