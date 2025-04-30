@@ -14,6 +14,8 @@
     cursor: pointer;
   }
   .slim:hover {
-    background: #7a4820ff;
+    background: #85b7dfff;
+    color: #23211f;
+    transition: 200ms;
   }
   
