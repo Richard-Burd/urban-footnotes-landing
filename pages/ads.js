@@ -3,6 +3,7 @@ import { useState, useRef, useEffect } from "react";
 import { Volume2, Pause, ChevronDown, Square } from "lucide-react";
 import PageTitle from "@/components/PageTitle";
 import styles from '../styles/Button.module.css'
+import Image from "next/image";
 
 const BUTTONS = [
   {

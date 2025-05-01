@@ -33,6 +33,14 @@ export default function About() {
     ],
   };
 
+    // 3. Map each tab to one of your image files in public/images/
+    const imageMap = {
+      real_estate: "woman-with-key.png",
+      residents:   "pedestrian-icon-mix.png",
+      government:  "man-stamping.png",
+    };
+
+
   // state now holds an id (no spaces!)
   const [activeTab, setActiveTab] = useState(tabs[0].id);
 
@@ -96,6 +104,15 @@ export default function About() {
               </button>
             ))}
           </div>
+        </div>
+
+        {/* Dynamic image */}
+        <div className="flex justify-center my-6">
+          <img
+            src={`/images/${imageMap[activeTab]}`}
+            alt={tabs.find(t => t.id === activeTab).label}
+            className="w-1/3 object-contain rounded-lg shadow-lg"
+          />
         </div>
 
         {/* Content for activeTab */}
