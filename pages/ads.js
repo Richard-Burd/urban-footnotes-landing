@@ -1,6 +1,6 @@
 import Logo from "@/components/Logo";
 import { useState, useRef, useEffect } from "react";
-import { Volume2, Pause, ChevronDown } from "lucide-react";
+import { Volume2, Pause, ChevronDown, Square } from "lucide-react";
 import PageTitle from "@/components/PageTitle";
 import styles from '../styles/Button.module.css'
 
@@ -182,6 +182,7 @@ const BUTTONS = [
 
 // AudioPlayer component to play audio files with a progress bar and play/pause button
 
+
 function AudioPlayer({ src }) {
   const audioRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -191,7 +192,7 @@ function AudioPlayer({ src }) {
   const formatTime = (sec) => {
     if (isNaN(sec)) return "0:00";
     const m = Math.floor(sec / 60);
-    const s = Math.floor(sec % 60).toString().padStart(2, "0");
+    const s = String(Math.floor(sec % 60)).padStart(2, "0");
     return `${m}:${s}`;
   };
 
@@ -206,6 +207,7 @@ function AudioPlayer({ src }) {
     if (!audio) return;
     const onLoaded = () => setDuration(audio.duration);
     const onTimeUpdate = () => setProgress(audio.currentTime);
+
     audio.addEventListener("loadedmetadata", onLoaded);
     audio.addEventListener("timeupdate", onTimeUpdate);
     return () => {
@@ -228,10 +230,18 @@ function AudioPlayer({ src }) {
         onClick={togglePlay}
         className="p-4 bg-[#683816ff] rounded-full text-orange-100 focus:outline-none focus:ring-2 focus:ring-orange-300"
       >
-        {isPlaying 
-          ? <Pause className="w-20 h-20" /> 
-          : <Volume2 className="w-20 h-20" />
-        }
+        {isPlaying ? (
+          <svg
+            className="w-20 h-20"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect x="4" y="4" width="16" height="16" />
+          </svg>
+        ) : (
+          <Volume2 className="w-20 h-20" />
+        )}
       </button>
 
       <input
@@ -244,7 +254,7 @@ function AudioPlayer({ src }) {
         className="flex-grow h-2 rounded-lg cursor-pointer bg-gray-300/50 accent-orange-400"
       />
 
-      <span className="text-orange-100 text-sm whitespace-nowrap">
+      <span className="text-orange-100 text-[24px] whitespace-nowrap">
         {formatTime(progress)} / {formatTime(duration)}
       </span>
 
@@ -259,6 +269,7 @@ function AudioPlayer({ src }) {
     </div>
   );
 }
+
 
 
 
