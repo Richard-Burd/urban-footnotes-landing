@@ -71,7 +71,7 @@ const BUTTONS = [
     key: 'buyers',
     role: 'Residents',
     title: 'Home Buyers and Renters',
-    audioSrc: 'ad-audio-buyers-renters.m4a',
+    audioSrc: 'ad-res-renters.mp3',
     showAudio: true,
     content: [
       "Want to spend less on driving—and more on living?",
@@ -167,8 +167,8 @@ const BUTTONS = [
     key: 'planners',
     role: 'City Planning',
     title: 'Conflict Resolution',
-    audioSrc: 'ad-audio-existing-projects.m4a',
-    showAudio: false,
+    audioSrc: 'ad-city-conflict.mp3',
+    showAudio: true,
     content: [
       "Tired of the same fights over traffic and density? Blame’s easy. Solutions aren’t.",
       "Sprawling NIMBYs battle developers’ densities. Now often unpleasant compromises seem like the only path forward.",
@@ -296,6 +296,8 @@ export default function Ads() {
   const [openRole, setOpenRole] = useState(null);
 
   const baseUrl = process.env.NEXT_PUBLIC_S3_BASE_URL;
+  // s3folder is the folder in the S3 bucket where the audio files are stored
+  const s3folder = 'ads';
   const current = BUTTONS.find(b => b.key === activeKey);
 
   useEffect(() => {
@@ -373,7 +375,8 @@ export default function Ads() {
       </div>
 
       <section className="mt-6 max-w-screen-lg mx-auto px-4">
-        {current.showAudio && <AudioPlayer src={`${baseUrl}/${current.audioSrc}`} />}
+         {/* functionality for s3 bucket folder switching */}
+        {current.showAudio && <AudioPlayer  src={`${baseUrl.replace(/\/+$/, '')}/${s3folder}/${current.audioSrc.replace(/^\/+/, '')}`} />}
         <article className="space-y-4">
           <h2 className="text-[24px] md:text-[28px] text-left text-orange-100 mr-4">{current.content[0]}</h2>
           {current.content.slice(1).map((p, idx) => (
