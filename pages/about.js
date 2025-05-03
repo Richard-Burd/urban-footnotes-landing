@@ -76,25 +76,25 @@ export default function About() {
 
         {/* Benefits Section */}
         <div>
-          <p className="pb-4 text-2xl font-medium text-center">
+          <p className="pb-6 text-3xl font-medium text-center">
             Our product benefits the . . .
           </p>
-          <div className="flex justify-center space-x-12 mb-6">
+          {/* Tabs with fixed image space to prevent shifting */}
+        <div className="mb-8">
+          <div className="flex justify-center space-x-20 mx-auto px-4 md:px-0">
             {tabs.map(({ id, label }) => (
               <div key={id} className="flex flex-col items-center">
                 <button
                   onClick={() => setActiveTab(id)}
-                  className={`pb-2 text-lg md:text-2xl font-medium transition
-                    ${
-                      activeTab === id
-                        ? 'text-orange-100'
-                        : 'hover:text-orange-100 text-stone-400'
-                    }
-                  `}
+                  className={`px-4 py-2 rounded-lg text-lg md:text-2xl font-medium transition ${
+                    activeTab === id
+                      ? 'bg-orange-100 text-black'
+                      : 'bg-stone-700 text-stone-300 hover:bg-stone-600'
+                  }`}
                 >
                   {label}
                 </button>
-                <div className="mt-2 w-40 h-40 flex items-center justify-center">
+                <div className="mt-6 w-40 h-40 flex items-center justify-center">
                   {activeTab === id ? (
                     <img
                       src={`/images/${imageMap[id]}`}
@@ -108,6 +108,8 @@ export default function About() {
               </div>
             ))}
           </div>
+        </div>
+
           <ul className="list-disc list-inside space-y-2">
             {sections[activeTab].map((item, idx) => (
               <li key={idx}>{item}</li>
