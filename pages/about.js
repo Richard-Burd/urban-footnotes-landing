@@ -2,13 +2,11 @@ import { useState } from "react";
 import PageTitle from "@/components/PageTitle";
 
 export default function About() {
-  // define tabs with id + label
   const tabs = [
     { id: "real_estate", label: "Real Estate Industry" },
     { id: "residents", label: "Residents" },
     { id: "government", label: "Government" },
   ];
-
 
   const sections = {
     real_estate: [
@@ -33,15 +31,12 @@ export default function About() {
     ],
   };
 
-    // 3. Map each tab to one of your image files in public/images/
-    const imageMap = {
-      real_estate: "woman-with-key.png",
-      residents:   "pedestrian-icon-mix.png",
-      government:  "man-stamping.png",
-    };
+  const imageMap = {
+    real_estate: "woman-with-key.png",
+    residents: "pedestrian-icon-mix.png",
+    government: "man-stamping.png",
+  };
 
-
-  // state now holds an id (no spaces!)
   const [activeTab, setActiveTab] = useState(tabs[0].id);
 
   return (
@@ -58,9 +53,10 @@ export default function About() {
         />
       </center>
 
-      {/* Introductory copy */}
-      <div className="roboto-font w-full max-w-screen-lg pb-8 text-xl md:text-2xl">
-        <div className="max-[1030px]:mx-6">
+      {/* Body content wrapper */}
+      <div className="roboto-font w-full max-w-screen-lg mx-auto px-4 md:px-0 space-y-6 text-orange-100 text-xl md:text-2xl">
+        {/* Introductory copy */}
+        <div>
           <p className="pb-4">
             Our standard-format reports rate properties on walkable access to 74
             commonly-used services, plus five client-or-staff-chosen ones.
@@ -69,7 +65,6 @@ export default function About() {
             usage. City planners and developers can use these reports to
             incentivize more pedestrian-favoring development and reduce traffic.
           </p>
-
           <p className="pb-4">
             Our objective is to reduce urban sprawl by incentivizing denser
             mixed-use development that serves residents' needs more completely.
@@ -77,55 +72,53 @@ export default function About() {
             eliminate the need for cars. That can free up funds for other uses,
             like higher-quality housing.
           </p>
+        </div>
 
-
-      {/* Our product benefits section */}
-      <div className="roboto-font w-full max-w-screen-lg mx-auto">
-        <p className="pb-4 text-2xl font text-center">Our product benefits the . . . </p>
-
-        {/* Tabs */}
-        <div className="border-b border-stone-600 mb-4">
-          <div className="flex justify-center space-x-4">
+        {/* Benefits Section */}
+        <div>
+          <p className="pb-4 text-2xl font-medium text-center">
+            Our product benefits the . . .
+          </p>
+          <div className="flex justify-center space-x-12 mb-6">
             {tabs.map(({ id, label }) => (
-              <button
-                key={id}
-                onClick={() => setActiveTab(id)}
-                className={`
-                  pb-2 text-lg md:text-2xl font-medium
-                  ${
-                    activeTab === id
-                      ? "border-b-2 border-orange-100 text-orange-100"
-                      : "hover:text-orange-100"
-                  }
-                  transition
-                `}
-              >
-                {label}
-              </button>
+              <div key={id} className="flex flex-col items-center">
+                <button
+                  onClick={() => setActiveTab(id)}
+                  className={`pb-2 text-lg md:text-2xl font-medium transition
+                    ${
+                      activeTab === id
+                        ? 'text-orange-100'
+                        : 'hover:text-orange-100 text-stone-400'
+                    }
+                  `}
+                >
+                  {label}
+                </button>
+                <div className="mt-2 w-40 h-40 flex items-center justify-center">
+                  {activeTab === id ? (
+                    <img
+                      src={`/images/${imageMap[id]}`}
+                      alt={label}
+                      className="w-full h-full object-contain rounded-lg shadow-lg"
+                    />
+                  ) : (
+                    <div className="w-full h-full" />
+                  )}
+                </div>
+              </div>
             ))}
           </div>
+          <ul className="list-disc list-inside space-y-2">
+            {sections[activeTab].map((item, idx) => (
+              <li key={idx}>{item}</li>
+            ))}
+          </ul>
         </div>
+        <br></br>
 
-        {/* Dynamic image */}
-        <div className="flex justify-center my-6">
-          <img
-            src={`/images/${imageMap[activeTab]}`}
-            alt={tabs.find(t => t.id === activeTab).label}
-            className="w-1/6 object-contain rounded-lg shadow-lg"
-          />
-        </div>
-
-        {/* Content for activeTab */}
-        <ul className="list-disc list-inside px-6 md:px-0 space-y-2 text-xl md:text-2xl">
-          {sections[activeTab].map((item, idx) => (
-            <li key={idx}>{item}</li>
-          ))}
-        </ul>
-      </div>
-    </div>
-    <br>
-    </br>          
-    <p className="pb-4">
+        {/* Closing body paragraphs */}
+        <div>
+          <p className="pb-4">
             <i>Urban Foot Notes</i> emerged from{' '}
             <a
               href="https://www.urbancruiseship.org"
@@ -151,7 +144,6 @@ export default function About() {
             improved this unique, new product greatly but unfortunately also ran
             up the cost.
           </p>
-
           <p className="pb-4">
             We hope our reports help as many people as possible live more
             convenient and healthy lives, and reduce their polluting,
@@ -159,7 +151,6 @@ export default function About() {
           </p>
         </div>
       </div>
-
-
+    </div>
   );
 }
