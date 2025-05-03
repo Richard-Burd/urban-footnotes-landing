@@ -19,7 +19,7 @@
   white-space: normal;
   word-break: break-word;
 
-  background: #683816ff;
+  background: #5b2702;
   color: #FFEDD5;
   border-radius: 0.5rem;
   border: none;
@@ -27,7 +27,7 @@
 }
 
 .slim:hover {
-  background: #85b7dfff;
+  background: #ba813c;
   color: #23211f;
   transition: 200ms;
 }
