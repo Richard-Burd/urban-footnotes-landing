@@ -10,8 +10,8 @@ const BUTTONS = [
     key: 'existing',
     role: 'Developers',
     title: 'Existing Projects',
-    audioSrc: 'ad-audio-existing-projects.m4a',
-    showAudio: false,
+    audioSrc: 'ad-dev-existing.mp3',
+    showAudio: true,
     content: [
       "Trying to attract the right buyers or renters?",
       "People often lack insight on how an address’ neighborhood meets their needs. That's when hasty, less-than-ideal judgments get made.",
@@ -87,8 +87,8 @@ const BUTTONS = [
     key: 'environmentalists',
     role: 'Residents',
     title: 'Environmental',
-    audioSrc: 'ad-audio-environmentalists.m4a',
-    showAudio: false,
+    audioSrc: 'ad-res-environment.mp3',
+    showAudio: true,
     content: [
       "Wish you could see fewer cars? And use less fossil fuels? Plus breathe less polluted air?",
       "Cities built around cars can feel impossible to change, and expensive transit projects often move slowly or stall entirely.",
