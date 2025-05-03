@@ -19,15 +19,15 @@
   white-space: normal;
   word-break: break-word;
 
-  background: #5b2702;
-  color: #FFEDD5;
+  background: #c87e23;
+  color: #121111;
   border-radius: 0.5rem;
   border: none;
   cursor: pointer;
 }
 
 .slim:hover {
-  background: #ba813c;
+  background: #f9bf79;
   color: #23211f;
   transition: 200ms;
 }

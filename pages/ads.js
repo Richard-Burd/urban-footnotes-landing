@@ -245,7 +245,7 @@ function AudioPlayer({ src }) {
     <div className="flex items-center justify-center gap-4 mb-6 w-1/3 mx-auto px-4">
       <button
         onClick={togglePlay}
-        className="p-4 bg-[#5b2702] rounded-full text-orange-100 hover:bg-[#ba813c] transition-colors duration-200"
+        className="p-4 bg-[#c87e23] rounded-full text-orange-100 hover:bg-[#f9bf79] transition-colors duration-200"
       >
         {isPlaying ? (
           <svg
@@ -257,7 +257,7 @@ function AudioPlayer({ src }) {
             <rect x="4" y="4" width="16" height="16" />
           </svg>
         ) : (
-          <Volume2 className="w-20 h-20"/>
+          <Volume2 className="w-20 h-20 text-[#121111]"/>
         )}
       </button>
 
@@ -339,7 +339,7 @@ export default function Ads() {
           </button>
 
           {dropdownOpen && (
-            <div className="absolute z-10 w-full bg-[#5b2702] rounded-b-lg shadow-lg mt-1">
+            <div className="absolute z-10 w-full bg-[#c87e23] rounded-b-lg shadow-lg mt-1">
               {Object.entries(
                 BUTTONS.reduce((acc, item) => {
                   acc[item.role] = acc[item.role] || [];
@@ -361,7 +361,7 @@ export default function Ads() {
                       <button
                         key={item.key}
                         onClick={() => { setActiveKey(item.key); setDropdownOpen(false); setOpenRole(null); }}
-                        className="block w-full text-left px-8 py-2 text-[24px] text-orange-100 hover:bg-[#ba813c] hover:text-[#23211f] transition-colors duration-200"
+                        className="block w-full text-left px-8 py-2 text-[24px] text-[#121111] text-orange-100 hover:bg-[#f9bf79] hover:text-[#23211f] transition-colors duration-200"
                       >
                         {item.title}
                       </button>
