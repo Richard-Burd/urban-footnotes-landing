@@ -45,7 +45,7 @@ export default function About() {
   const [activeTab, setActiveTab] = useState(tabs[0].id);
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 text-orange-100">
       <center>
         <PageTitle
           topTitle="About Us"
@@ -59,7 +59,7 @@ export default function About() {
       </center>
 
       {/* Introductory copy */}
-      <div className="roboto-font w-full max-w-screen-lg pb-8 text-xl text-stone-300 md:text-2xl">
+      <div className="roboto-font w-full max-w-screen-lg pb-8 text-xl md:text-2xl">
         <div className="max-[1030px]:mx-6">
           <p className="pb-4">
             Our standard-format reports rate properties on walkable access to 74
@@ -80,7 +80,7 @@ export default function About() {
 
 
       {/* Our product benefits section */}
-      <div className="roboto-font w-full max-w-screen-lg mx-auto text-stone-300">
+      <div className="roboto-font w-full max-w-screen-lg mx-auto">
         <p className="pb-4 text-2xl font text-center">Our product benefits the . . . </p>
 
         {/* Tabs */}
@@ -95,7 +95,7 @@ export default function About() {
                   ${
                     activeTab === id
                       ? "border-b-2 border-orange-100 text-orange-100"
-                      : "text-stone-400 hover:text-orange-100"
+                      : "hover:text-orange-100"
                   }
                   transition
                 `}
@@ -111,7 +111,7 @@ export default function About() {
           <img
             src={`/images/${imageMap[activeTab]}`}
             alt={tabs.find(t => t.id === activeTab).label}
-            className="w-1/3 object-contain rounded-lg shadow-lg"
+            className="w-1/6 object-contain rounded-lg shadow-lg"
           />
         </div>
 

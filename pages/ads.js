@@ -255,7 +255,7 @@ function AudioPlayer({ src }) {
         className="flex-grow h-2 rounded-lg cursor-pointer bg-gray-300/50 accent-orange-400"
       />
 
-      <span className="text-orange-100 text-[24px] whitespace-nowrap">
+      <span className="text-orange-100 text-[24px]  whitespace-nowrap">
         {formatTime(progress)} / {formatTime(duration)}
       </span>
 
