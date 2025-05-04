@@ -245,7 +245,7 @@ function AudioPlayer({ src }) {
     <div className="flex items-center justify-center gap-4 mb-6 w-1/3 mx-auto px-4">
       <button
         onClick={togglePlay}
-        className="p-4 bg-[#7f1e07] rounded-full text-[#f4d4c9] hover:bg-[#d8886e] transition-colors duration-200"
+        className="p-4 bg-[#3B1F07] rounded-full text-[#f4d4c9] hover:bg-[#843F06] transition-colors duration-200"
       >
         {isPlaying ? (
           <svg
@@ -268,10 +268,10 @@ function AudioPlayer({ src }) {
         value={progress}
         step="0.1"
         onChange={onSeek}
-        className="flex-grow h-2 rounded-lg cursor-pointer bg-gray-300/50 accent-[#d8886e]"
+        className="flex-grow h-2 rounded-lg cursor-pointer bg-gray-300/50 accent-[#F7A969]"
       />
 
-      <span className="text-[#f4d4c9] text-[24px]  whitespace-nowrap">
+      <span className="text-[#ffe5d1] text-[24px]  whitespace-nowrap">
         {formatTime(progress)} / {formatTime(duration)}
       </span>
 
@@ -319,8 +319,8 @@ export default function Ads() {
             topTitle="Outreach"
             textColor="text-title-text-ads"
             shadowColor="title-shadow-ads"
-            logoColor="#f4d4c9"
-            gradient="bg-[linear-gradient(to_right,#391505,#7f1e07)]"
+            logoColor="#ffd4b3"
+            gradient="bg-[linear-gradient(to_right,#120902,#3B1F07)]"
             mobileTitleCentered={false}
             showLogo
           />
@@ -328,7 +328,7 @@ export default function Ads() {
       </div>
       
       <div className="mt-6 max-w-screen-lg mx-auto px-10 flex items-center">
-        <span className="text-[28px] text-[#f4d4c9] mr-4">What is your focus or role?</span>
+        <span className="text-[28px] text-[#ffd4b3] mr-4">What is your focus or role?</span>
         <div className="relative flex-grow dropdown">
           <button
             onClick={() => setDropdownOpen(o => !o)}
@@ -339,7 +339,7 @@ export default function Ads() {
           </button>
 
           {dropdownOpen && (
-            <div className="absolute z-10 w-full bg-[#d8886e] rounded-b-lg shadow-lg mt-1">
+            <div className="absolute z-10 w-full bg-[#ffd4b3] rounded-b-lg shadow-lg mt-1">
               {Object.entries(
                 BUTTONS.reduce((acc, item) => {
                   acc[item.role] = acc[item.role] || [];
@@ -361,7 +361,7 @@ export default function Ads() {
                       <button
                         key={item.key}
                         onClick={() => { setActiveKey(item.key); setDropdownOpen(false); setOpenRole(null); }}
-                        className="block w-full text-left px-8 py-2 text-[24px] text-[#121111] hover:bg-[#A52003] hover:text-[#eaeaea] transition-colors duration-200"
+                        className="block w-full text-left px-8 py-2 text-[24px] text-[#121111] hover:bg-[#3B1F07] hover:text-[#ffe5d1] transition-colors duration-200"
                       >
                         {item.title}
                       </button>
@@ -378,9 +378,9 @@ export default function Ads() {
          {/* functionality for s3 bucket folder switching */}
         {current.showAudio && <AudioPlayer  src={`${baseUrl.replace(/\/+$/, '')}/${s3folder}/${current.audioSrc.replace(/^\/+/, '')}`} />}
         <article className="space-y-4">
-          <h2 className="text-[24px] md:text-[28px] text-left text-[#f4d4c9] mr-4">{current.content[0]}</h2>
+          <h2 className="text-[24px] md:text-[28px] text-left text-[#ffe5d1] mr-4">{current.content[0]}</h2>
           {current.content.slice(1).map((p, idx) => (
-            <p key={idx} className="text-[28px] text-[#f4d4c9] mr-4">{p}</p>
+            <p key={idx} className="text-[28px] text-[#ffe5d1] mr-4">{p}</p>
           ))}
         </article>
       </section>
