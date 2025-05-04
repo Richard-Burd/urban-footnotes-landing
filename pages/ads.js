@@ -320,7 +320,7 @@ export default function Ads() {
             textColor="text-title-text-ads"
             shadowColor="title-shadow-ads"
             logoColor="#f6d7beff"
-            gradient="bg-[linear-gradient(to_right,rgba(87,73,61,0.1),rgba(67,41,19,0.9))]"
+            gradient="bg-[linear-gradient(to_right,rgba(87,73,61,0.1),#432913)]"
             mobileTitleCentered={false}
             showLogo
           />
