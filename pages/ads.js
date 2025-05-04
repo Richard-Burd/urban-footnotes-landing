@@ -26,8 +26,8 @@ const BUTTONS = [
     key: 'existing_needs',
     role: 'Developers',
     title: 'Project Planning',
-    audioSrc: 'ad-audio-existing-projects-filling-needs.m4a',
-    showAudio: false,
+    audioSrc: 'ad-dev-planning.mp3',
+    showAudio: true,
     content: [
       "Struggling to convince buyers or renters that your property fits their needs?",
       "You can’t control everything a neighborhood lacks—but you can clearly understand and address those gaps.",
@@ -41,8 +41,8 @@ const BUTTONS = [
     key: 'proposed',
     role: 'Developers',
     title: 'Proposed Developments',
-    audioSrc: 'ad-audio-proposed-projects.m4a',
-    showAudio: false,
+    audioSrc: 'ad-dev-proposed.mp3',
+    showAudio: true,
     content: [
       "What if you could add a story to your development proposal—its neighborhood's story, told in data?",
       "Too many projects start with incomplete neighborhood data. That’s where deals can fall apart—or additional opportunities get missed.",
@@ -56,7 +56,7 @@ const BUTTONS = [
     role: 'Developers',
     title: "Short-Term Rentals, Hotels, Airbnb's",
     audioSrc: 'ad-dev-hotels.mp3',
-    showAudio: false,
+    showAudio: true,
     content: [
       "Are you looking to attract more guests?",
       "It's about more than your property—it’s also about the location. But describing neighborhood convenience thoroughly takes effort and research, especially for guests who want to walk more than drive.",
@@ -103,8 +103,8 @@ const BUTTONS = [
     key: 'advocates',
     role: 'Residents',
     title: 'Pedestrian & Bicycling Advocates',
-    audioSrc: 'ad-audio-pedestrian-bicycling-advocates.m4a',
-    showAudio: false,
+    audioSrc: 'ad-res-advocates.mp3',
+    showAudio: true,
     content: [
       "Want safer streets for walking or biking?",
       "Retrofitting roads for cyclists and pedestrians can cause pushback and high costs. Yet, you know safer access matters.",
@@ -119,8 +119,8 @@ const BUTTONS = [
     key: 'neighborhood_assoc',
     role: 'Residents',
     title: 'Neighborhood Associations',
-    audioSrc: 'ad-audio-neighborhood-associations.m4a',
-    showAudio: false,
+    audioSrc: 'ad-res-neighborhood-ass.mp3',
+    showAudio: true,
     content: [
       "Want more influence over your neighborhood’s future?",
       "Developers operate within existing zoning, but zoning doesn’t always reflect true neighborhood needs.",
@@ -134,7 +134,7 @@ const BUTTONS = [
     key: 'res_hotels',
     role: 'Residents',
     title: "Hotels, Short-Term Rentals, Airbnb's",
-    audioSrc: 'ad-aud.m4a',
+    audioSrc: 'ad-audstillneedstobedone.m4a',
     showAudio: false,
     content: [
       "Are you trying to maximize your experience in a new place?",
@@ -151,7 +151,7 @@ const BUTTONS = [
     role: 'Government',
     title: 'Office Holders',
     audioSrc: 'ad-gov-office.mp3',
-    showAudio: false,
+    showAudio: true,
     content: [
       "Are the residents tired of traffic problems and expecting action?",
       "Pedestrian accidents, cyclist fatalities, road rage, and poor air quality reflect badly on leadership—but voters often miss the connection between these issues and private-sector development choices.",
@@ -181,8 +181,8 @@ const BUTTONS = [
     key: 'cityplanners_traffic',
     role: 'City Planning',
     title: 'Traffic Abatement',
-    audioSrc: 'ad-audio-city-planners-traffic.m4a',
-    showAudio: false,
+    audioSrc: 'ad-city-traffic.mp3',
+    showAudio: true,
     content: [
       "Are you frustrated by growing traffic problems?",
       "Pedestrian injuries, cyclist safety, air quality—all are linked to excessive car usage.",
