@@ -245,7 +245,7 @@ function AudioPlayer({ src }) {
     <div className="flex items-center justify-center gap-4 mb-6 w-1/3 mx-auto px-4">
       <button
         onClick={togglePlay}
-        className="p-4 bg-[#c87e23] rounded-full text-orange-100 hover:bg-[#f9bf79] transition-colors duration-200"
+        className="p-4 bg-[#f5865d] rounded-full text-orange-100 hover:bg-[#f9bf79] transition-colors duration-200"
       >
         {isPlaying ? (
           <svg
@@ -319,8 +319,8 @@ export default function Ads() {
             topTitle="Outreach"
             textColor="text-title-text-ads"
             shadowColor="title-shadow-ads"
-            logoColor="#f6d7beff"
-            gradient="bg-[linear-gradient(to_right,rgba(87,73,61,0.1),#432913)]"
+            logoColor="#f5865d"
+            gradient="bg-[linear-gradient(to_right,#220901,#621708)]"
             mobileTitleCentered={false}
             showLogo
           />
@@ -328,7 +328,7 @@ export default function Ads() {
       </div>
       
       <div className="mt-6 max-w-screen-lg mx-auto px-10 flex items-center">
-        <span className="text-[28px] text-orange-100 mr-4">What is your focus or role?</span>
+        <span className="text-[28px] text-orange-200 mr-4">What is your focus or role?</span>
         <div className="relative flex-grow dropdown">
           <button
             onClick={() => setDropdownOpen(o => !o)}
@@ -378,9 +378,9 @@ export default function Ads() {
          {/* functionality for s3 bucket folder switching */}
         {current.showAudio && <AudioPlayer  src={`${baseUrl.replace(/\/+$/, '')}/${s3folder}/${current.audioSrc.replace(/^\/+/, '')}`} />}
         <article className="space-y-4">
-          <h2 className="text-[24px] md:text-[28px] text-left text-orange-100 mr-4">{current.content[0]}</h2>
+          <h2 className="text-[24px] md:text-[28px] text-left text-orange-200 mr-4">{current.content[0]}</h2>
           {current.content.slice(1).map((p, idx) => (
-            <p key={idx} className="text-[28px] text-orange-100 mr-4">{p}</p>
+            <p key={idx} className="text-[28px] text-orange-200 mr-4">{p}</p>
           ))}
         </article>
       </section>

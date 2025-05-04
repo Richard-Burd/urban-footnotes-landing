@@ -18,8 +18,8 @@
   /* allow text to wrap to a second line if necessary */
   white-space: normal;
   word-break: break-word;
-  background: #f9bf79;
-  color: #23211f;
+  background: #f6aa1c;
+  color: #220901;
   border-radius: 0.5rem;
   border: none;
   cursor: pointer;
@@ -27,7 +27,7 @@
 
 .slim:hover {
 
-  background: #432913;
-  color: #ffffff;
+  background: #621708;
+  color: #f5865d;
   transition: 200ms;
 }
