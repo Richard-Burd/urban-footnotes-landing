@@ -55,7 +55,7 @@ const BUTTONS = [
     key: 'hotels',
     role: 'Developers',
     title: "Short-Term Rentals, Hotels, Airbnb's",
-    audioSrc: 'ad-audio-hotels-short-term-rentals.m4a',
+    audioSrc: 'ad-dev-hotels.mp3',
     showAudio: false,
     content: [
       "Are you looking to attract more guests?",
@@ -150,7 +150,7 @@ const BUTTONS = [
     key: 'gov_officeholders',
     role: 'Government',
     title: 'Office Holders',
-    audioSrc: 'ad-audio-government-officeholders.m4a',
+    audioSrc: 'ad-gov-office.mp3',
     showAudio: false,
     content: [
       "Are the residents tired of traffic problems and expecting action?",
