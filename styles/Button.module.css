@@ -18,7 +18,7 @@
   /* allow text to wrap to a second line if necessary */
   white-space: normal;
   word-break: break-word;
-  background: #f6aa1c;
+  background: #e2a089;
   color: #220901;
   border-radius: 0.5rem;
   border: none;
@@ -27,7 +27,7 @@
 
 .slim:hover {
 
-  background: #621708;
-  color: #f5865d;
+  background: #A52003;
+  color: #eaeaea;
   transition: 200ms;
 }
