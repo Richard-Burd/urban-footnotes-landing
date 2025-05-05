@@ -245,7 +245,7 @@ function AudioPlayer({ src }) {
     <div className="flex items-center justify-center gap-4 mb-6 w-1/3 mx-auto px-4">
       <button
         onClick={togglePlay}
-        className="p-4 bg-[#3B1F07] rounded-full text-[#f4d4c9] hover:bg-[#843F06] transition-colors duration-200"
+        className="p-4 bg-[#3B1F07] rounded-full text-[#d1d5db] hover:bg-[#843F06] transition-colors duration-200"
       >
         {isPlaying ? (
           <svg
@@ -339,7 +339,7 @@ export default function Ads() {
           </button>
 
           {dropdownOpen && (
-            <div className="absolute z-10 w-full bg-[#843F06] rounded-b-lg shadow-lg mt-1">
+            <div className="absolute z-10 w-full bg-[#44403c] rounded-b-lg shadow-lg mt-1">
               {Object.entries(
                 BUTTONS.reduce((acc, item) => {
                   acc[item.role] = acc[item.role] || [];
@@ -361,7 +361,7 @@ export default function Ads() {
                       <button
                         key={item.key}
                         onClick={() => { setActiveKey(item.key); setDropdownOpen(false); setOpenRole(null); }}
-                        className="block w-full text-left px-8 py-2 text-[24px] text-[#ffe5d1] hover:bg-[#ffe5d1] hover:text-[#120902] transition-colors duration-200"
+                        className="block w-full text-left px-8 py-2 text-[24px] text-[#d1d5db] hover:bg-[#ffe5d1] hover:text-[#120902] transition-colors duration-200"
                       >
                         {item.title}
                       </button>
