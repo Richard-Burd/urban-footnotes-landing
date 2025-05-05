@@ -339,7 +339,7 @@ export default function Ads() {
           </button>
 
           {dropdownOpen && (
-            <div className="absolute z-10 w-full bg-[#ffd4b3] rounded-b-lg shadow-lg mt-1">
+            <div className="absolute z-10 w-full bg-[#843F06] rounded-b-lg shadow-lg mt-1">
               {Object.entries(
                 BUTTONS.reduce((acc, item) => {
                   acc[item.role] = acc[item.role] || [];
@@ -361,7 +361,7 @@ export default function Ads() {
                       <button
                         key={item.key}
                         onClick={() => { setActiveKey(item.key); setDropdownOpen(false); setOpenRole(null); }}
-                        className="block w-full text-left px-8 py-2 text-[24px] text-[#121111] hover:bg-[#3B1F07] hover:text-[#ffe5d1] transition-colors duration-200"
+                        className="block w-full text-left px-8 py-2 text-[24px] text-[#ffe5d1] hover:bg-[#ffe5d1] hover:text-[#120902] transition-colors duration-200"
                       >
                         {item.title}
                       </button>
