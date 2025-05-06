@@ -1,23 +1,62 @@
+import { useState } from "react";
 import PageTitle from "@/components/PageTitle";
 
 export default function About() {
+  const tabs = [
+    { id: "real_estate", label: "Real Estate Industry" },
+    { id: "residents", label: "Residents" },
+    { id: "government", label: "Government" },
+  ];
+
+  const sections = {
+    real_estate: [
+      "More buyers and renters can evaluate each address",
+      "Those not needing a car can spend more on housing",
+      "Independent evaluation brings credibility",
+      "Increased certainty comforts investors",
+      "Gaps in development types are made obvious",
+      "Reports become additional sales material",
+    ],
+    residents: [
+      "Independent evaluation brings more certainty",
+      "Standardized format allows easier comparison",
+      "Less need for cars boosts options",
+      "Scores for services availability and walkability save time",
+    ],
+    government: [
+      "Less traffic possible",
+      "Less contention likely",
+      "Less pollution possible",
+      "Easier comparisons with other places",
+    ],
+  };
+
+  const imageMap = {
+    real_estate: "woman-with-key.png",
+    residents: "pedestrian-icon-mix.png",
+    government: "man-stamping.png",
+  };
+
+  const [activeTab, setActiveTab] = useState(tabs[0].id);
+
   return (
-    <div>
+    <div className="space-y-8 text-orange-100">
       <center>
         <PageTitle
           topTitle="About Us"
           textColor="text-title-text-about"
-          shadowColor={`title-shadow-about`}
+          shadowColor="title-shadow-about"
           logoColor="#d4d4d4ff"
-          gradient={
-            "bg-[linear-gradient(to_right,rgba(90,90,90,0.1),rgba(90,90,90,0.5))]"
-          }
-          mobileTitleCentered={true}
-          showLogo={true} // Integrates the logo
+          gradient="bg-[linear-gradient(to_right,rgba(90,90,90,0.1),rgba(90,90,90,0.5))]"
+          mobileTitleCentered
+          showLogo
         />
       </center>
-      <div className="roboto-font w-full max-w-screen-lg pb-8 text-xl text-stone-300 md:text-2xl">
-        <div className="max-[1030px]:mx-6">
+
+      {/* Body content wrapper */}
+      <div className="roboto-font w-full max-w-screen-lg mx-auto px-4 md:px-0 space-y-6 text-orange-100 text-xl md:text-2xl">
+        {/* Introductory copy */}
+        <div>
           <p className="pb-4">
             Our standard-format reports rate properties on walkable access to 74
             commonly-used services, plus five client-or-staff-chosen ones.
@@ -26,7 +65,6 @@ export default function About() {
             usage. City planners and developers can use these reports to
             incentivize more pedestrian-favoring development and reduce traffic.
           </p>
-
           <p className="pb-4">
             Our objective is to reduce urban sprawl by incentivizing denser
             mixed-use development that serves residents' needs more completely.
@@ -34,31 +72,76 @@ export default function About() {
             eliminate the need for cars. That can free up funds for other uses,
             like higher-quality housing.
           </p>
+        </div>
 
+        {/* Benefits Section */}
+        <div>
+          <p className="pb-6 text-3xl font-medium text-center">
+            Our product benefits the . . .
+          </p>
+          {/* Tabs with fixed image space to prevent shifting */}
+        <div className="mb-8">
+          <div className="flex justify-center space-x-20 mx-auto px-4 md:px-0">
+            {tabs.map(({ id, label }) => (
+              <div key={id} className="flex flex-col items-center">
+                <button
+                  onClick={() => setActiveTab(id)}
+                  className={`px-4 py-2 rounded-lg text-lg md:text-2xl font-medium transition ${
+                    activeTab === id
+                      ? 'bg-orange-100 text-black'
+                      : 'bg-stone-700 text-stone-300 hover:bg-stone-600'
+                  }`}
+                >
+                  {label}
+                </button>
+                <div className="mt-6 w-40 h-40 flex items-center justify-center">
+                  {activeTab === id ? (
+                    <img
+                      src={`/images/${imageMap[id]}`}
+                      alt={label}
+                      className="w-full h-full object-contain rounded-lg shadow-lg"
+                    />
+                  ) : (
+                    <div className="w-full h-full" />
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+          <ul className="list-disc list-inside space-y-2">
+            {sections[activeTab].map((item, idx) => (
+              <li key={idx}>{item}</li>
+            ))}
+          </ul>
+        </div>
+        <br></br>
+
+        {/* Closing body paragraphs */}
+        <div>
           <p className="pb-4">
-            <i>Urban Foot Notes</i> emerged from{" "}
+            <i>Urban Foot Notes</i> emerged from{' '}
             <a
               href="https://www.urbancruiseship.org"
               target="_blank"
               rel="noreferrer"
             >
-              {" "}
               <i>Urban Cruise Ship</i>
-            </a>
-            {""}'s research on{" "}
+            </a>{' '}'s research on{' '}
             <a
               href="https://www.urbancruiseship.org/cities"
               target="_blank"
               rel="noreferrer"
             >
               <b>cities</b>
-            </a>{" "}
+            </a>{' '}
             and interviews with real estate industry professionals and potential
             users.
           </p>
           <p className="pb-4">
             The concept was simple, but no one else had done it. What initially
-            involved John, jye and Roseanne became a nearly two-year
+            involved John, Jye and Roseanne became a nearly two-year
             multiple-stage project involving all seven team members. That
             improved this unique, new product greatly but unfortunately also ran
             up the cost.

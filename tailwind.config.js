@@ -19,7 +19,7 @@ module.exports = {
         "title-text-samples": "#8adc75ff",
         "title-text-order": "#decd7a",
         "title-text-contact": "#bba4eb",
-        "title-text-ads": "#ba813c",
+        "title-text-ads": "#F7A969",
         "title-text-references": "#91baeaff",
         "navbar-home": "#ffe873ff",
         "navbar-about": "#b4b4b4ff",
@@ -28,7 +28,7 @@ module.exports = {
         "navbar-samples": "#64df46ff",
         "navbar-order": "#f7eb7e",
         "navbar-contact-us": "#9177c9",
-        "navbar-ads": "#ba813c",
+        "navbar-ads": "#F7A969",
         "navbar-references": "#6baaf5ff",
       },
       fontSize: {

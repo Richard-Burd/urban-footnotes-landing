@@ -44,10 +44,10 @@ const teamMembers = [
   },
   {
     id: "jye",
-    name: "Jye",
-    role: "Graphic Designer, Writer, Creative Consultant",
+    name: "Jye Harrison",
+    role: "Illustrator, Graphic Designer, Writer, Creative Consultant",
     description:
-      "Graphic Designer, User Experience & Interface (UX/UI), Writer & Content Creator",
+      "Creates illustrations for reports, User Experience & Interface (UX/UI), Writer & Content Creator",
     socialLinks: [
       { icon: "home", link: "https://jyeartstudio.com/" },
       { icon: "email", link: "mailto:jye@urbanfootnotes.com" },
