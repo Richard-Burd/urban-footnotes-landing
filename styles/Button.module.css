@@ -1,0 +1,33 @@
+.slim {
+  width: 100%;
+  /* → let it resize, but start at 2.5rem when it's one line */
+  min-height: 2.5rem;
+  height: auto;
+
+  /* comfortable padding all around */
+  padding: 0.5rem 0.5rem;
+
+  font-size: 26px;
+  line-height: 1.2;
+
+  display: flex;
+  /* top-align flex children so text can wrap below the chevron */
+  align-items: flex-start;
+  justify-content: space-between;
+
+  /* allow text to wrap to a second line if necessary */
+  white-space: normal;
+  word-break: break-word;
+  background: #44403c;
+  color: #d1d5db;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+.slim:hover {
+
+  background: #F7A969;
+  color: #120902;
+  transition: 200ms;
+}
