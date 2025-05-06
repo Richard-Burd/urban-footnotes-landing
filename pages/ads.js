@@ -361,7 +361,7 @@ export default function Ads() {
                       <button
                         key={item.key}
                         onClick={() => { setActiveKey(item.key); setDropdownOpen(false); setOpenRole(null); }}
-                        className="block w-full text-left px-8 py-2 text-[24px] text-[#d1d5db] hover:bg-[#ffe5d1] hover:text-[#120902] transition-colors duration-200"
+                        className="block w-full text-left px-8 py-2 text-[24px] text-[#d1d5db] hover:bg-[#F7A969] hover:text-[#120902] transition-colors duration-200"
                       >
                         {item.title}
                       </button>
