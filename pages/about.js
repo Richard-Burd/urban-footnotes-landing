@@ -54,7 +54,7 @@ export default function About() {
       </center>
 
       {/* Body content wrapper */}
-      <div className="roboto-font w-full max-w-screen-lg mx-auto px-4 md:px-0 space-y-6 text-orange-100 text-xl md:text-2xl">
+      <div className="roboto-font mx-auto w-full max-w-screen-lg space-y-6 text-xl text-gray-100 max-[1040px]:px-4 md:text-2xl">
         {/* Introductory copy */}
         <div>
           <p className="pb-4">
@@ -74,68 +74,91 @@ export default function About() {
           </p>
         </div>
 
-        {/* Benefits Section */}
-        <div>
-          <p className="pb-6 text-3xl font-medium text-center">
+        {/* Desktop Benefits Section */}
+        <div className="bg-gradient-to-r from-zinc-800 to-zinc-900 p-4 max-[700px]:hidden">
+          <p className="pb-6 text-center text-3xl font-medium">
             Our product benefits the . . .
           </p>
           {/* Tabs with fixed image space to prevent shifting */}
-        <div className="mb-8">
-          <div className="flex justify-center space-x-20 mx-auto px-4 md:px-0">
-            {tabs.map(({ id, label }) => (
-              <div key={id} className="flex flex-col items-center">
-                <button
-                  onClick={() => setActiveTab(id)}
-                  className={`px-4 py-2 rounded-lg text-lg md:text-2xl font-medium transition ${
-                    activeTab === id
-                      ? 'bg-orange-100 text-black'
-                      : 'bg-stone-700 text-stone-300 hover:bg-stone-600'
-                  }`}
-                >
-                  {label}
-                </button>
-                <div className="mt-6 w-40 h-40 flex items-center justify-center">
-                  {activeTab === id ? (
-                    <img
-                      src={`/images/${imageMap[id]}`}
-                      alt={label}
-                      className="w-full h-full object-contain rounded-lg shadow-lg"
-                    />
-                  ) : (
-                    <div className="w-full h-full" />
-                  )}
+          <div className="mb-8">
+            <div className="mx-auto flex justify-center px-4 md:px-0 min-[1024px]:space-x-20">
+              {tabs.map(({ id, label }) => (
+                <div key={id} className="flex flex-col items-center">
+                  <button
+                    onClick={() => setActiveTab(id)}
+                    className={`rounded-lg px-4 py-2 text-lg font-medium transition md:text-2xl ${
+                      activeTab === id
+                        ? "bg-gray-100 text-black"
+                        : "bg-stone-700 text-stone-300 hover:bg-stone-600"
+                    }`}
+                  >
+                    {label}
+                  </button>
+                  <div className="mt-6 flex h-40 w-40 items-center justify-center">
+                    {activeTab === id ? (
+                      <img
+                        src={`/images/${imageMap[id]}`}
+                        alt={label}
+                        className="h-full w-full rounded-lg object-contain shadow-lg"
+                      />
+                    ) : (
+                      <div className="h-full w-full" />
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+          </div>
+          <div className="flex justify-center">
+            <ul className="list-inside list-disc space-y-2">
+              {sections[activeTab].map((item, idx) => (
+                <li key={idx}>{item}</li>
+              ))}
+            </ul>
           </div>
         </div>
 
-          <ul className="list-disc list-inside space-y-2">
-            {sections[activeTab].map((item, idx) => (
-              <li key={idx}>{item}</li>
-            ))}
-          </ul>
+        {/* Mobile Benefits Section */}
+        <div className="min-[700px]:hidden">
+          <p className="pb-6 text-center text-3xl font-medium">
+            Our product benefits the . . .
+          </p>
+          {tabs.map((tab) => (
+            <div key={tab.id} className="mb-6">
+              <div className="text-[17pt] font-semibold text-gray-100">
+                {tab.label}
+              </div>
+              <ul className="mb-16 mt-2 list-outside list-disc pl-5 text-gray-300">
+                {sections[tab.id].map((item, index) => (
+                  <li className="mb-4" key={index}>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
         <br></br>
 
         {/* Closing body paragraphs */}
         <div>
           <p className="pb-4">
-            <i>Urban Foot Notes</i> emerged from{' '}
+            <i>Urban Foot Notes</i> emerged from{" "}
             <a
               href="https://www.urbancruiseship.org"
               target="_blank"
               rel="noreferrer"
             >
               <i>Urban Cruise Ship</i>
-            </a>{' '}'s research on{' '}
+            </a>{" "}
+            's research on{" "}
             <a
               href="https://www.urbancruiseship.org/cities"
               target="_blank"
               rel="noreferrer"
             >
               <b>cities</b>
-            </a>{' '}
+            </a>{" "}
             and interviews with real estate industry professionals and potential
             users.
           </p>
