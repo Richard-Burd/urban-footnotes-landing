@@ -89,7 +89,7 @@ export default function About() {
                     className={`rounded-lg px-4 py-2 text-lg font-medium transition md:text-2xl ${
                       activeTab === id
                         ? "bg-[#ffe1b3] text-black"
-                        : "bg-stone-700 text-[#ffe1b3] hover:bg-stone-600"
+                        : "bg-stone-950 text-[#ffe1b3] hover:bg-[#1a1207]"
                     }`}
                   >
                     {label}
