@@ -75,8 +75,8 @@ export default function About() {
         </div>
 
         {/* Desktop Benefits Section */}
-        <div className="bg-gradient-to-r from-zinc-800 to-zinc-900 p-4 max-[700px]:hidden">
-          <p className="pb-6 text-center text-3xl font-medium">
+        <div className="bg-[linear-gradient(to_right,rgba(90,90,90,0.1),rgba(90,90,90,0.5))] p-4 max-[700px]:hidden">
+          <p className="pb-6 text-center text-3xl font-medium text-[#ffe1b3]">
             Our product benefits the . . .
           </p>
           {/* Tabs with fixed image space to prevent shifting */}
@@ -88,8 +88,8 @@ export default function About() {
                     onClick={() => setActiveTab(id)}
                     className={`rounded-lg px-4 py-2 text-lg font-medium transition md:text-2xl ${
                       activeTab === id
-                        ? "bg-gray-100 text-black"
-                        : "bg-stone-700 text-stone-300 hover:bg-stone-600"
+                        ? "bg-[#ffe1b3] text-black"
+                        : "bg-stone-700 text-[#ffe1b3] hover:bg-stone-600"
                     }`}
                   >
                     {label}
@@ -110,7 +110,7 @@ export default function About() {
             </div>
           </div>
           <div className="flex justify-center">
-            <ul className="list-inside list-disc space-y-2">
+            <ul className="list-inside list-disc space-y-2 text-[#ffe1b3]">
               {sections[activeTab].map((item, idx) => (
                 <li key={idx}>{item}</li>
               ))}
@@ -138,10 +138,9 @@ export default function About() {
             </div>
           ))}
         </div>
-        <br></br>
 
         {/* Closing body paragraphs */}
-        <div>
+        <div className="pt-2">
           <p className="pb-4">
             <i>Urban Foot Notes</i> emerged from{" "}
             <a
