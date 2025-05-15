@@ -99,7 +99,7 @@ export default function About() {
                     <img
                       src={`/images/${imageMap[id]}`}
                       alt={label}
-                      className="w-full h-full object-contain rounded-lg shadow-lg"
+                      className="w-full h-full object-contain rounded-lg shadow-lg opacity-90"
                     />
                   ) : (
                     <div className="w-full h-full" />
