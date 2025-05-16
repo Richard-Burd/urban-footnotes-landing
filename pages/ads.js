@@ -333,7 +333,7 @@ export default function Ads() {
     `${baseUrl.replace(/\/+$/, '')}/${s3folder}/${file.replace(/^\/+/, '')}`;
 
   return (
-    <main className="text-gray-100">
+    <main className="space-y-8 text-orange-100">
       <PageTitle
         topTitle="Outreach"
         textColor="text-title-text-ads"
