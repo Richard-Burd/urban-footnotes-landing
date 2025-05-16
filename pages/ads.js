@@ -1,11 +1,11 @@
 import Logo from "@/components/Logo";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useMemo, useCallback } from "react";
 import { Volume2, Pause, ChevronDown, Square } from "lucide-react";
 import PageTitle from "@/components/PageTitle";
 import styles from '../styles/Button.module.css'
 import Image from "next/image";
 
-// Button definitions
+// Button definitions (constant)
 const BUTTONS = [
   {
     key: 'existing',
@@ -204,10 +204,10 @@ const BUTTONS = [
 
 
 function AudioPlayer({ src }) {
-  const audioRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [progress, setProgress] = useState(0);
-  const [duration, setDuration] = useState(0);
+    const audioRef = useRef(null);
+    const [isPlaying, setIsPlaying] = useState(false);
+    const [progress, setProgress] = useState(0);
+    const [duration, setDuration] = useState(0);
 
   const formatTime = (sec) => {
     if (isNaN(sec)) return "0:00";
@@ -222,29 +222,29 @@ function AudioPlayer({ src }) {
     audio.paused ? audio.play() : audio.pause();
   };
 
-  useEffect(() => {
-    const audio = audioRef.current;
-    if (!audio) return;
-    const onLoaded = () => setDuration(audio.duration);
-    const onTimeUpdate = () => setProgress(audio.currentTime);
+    useEffect(() => {
+      const audio = audioRef.current;
+      if (!audio) return;
+      const onLoaded = () => setDuration(audio.duration);
+      const onTimeUpdate = () => setProgress(audio.currentTime);
 
-    audio.addEventListener("loadedmetadata", onLoaded);
-    audio.addEventListener("timeupdate", onTimeUpdate);
-    return () => {
-      audio.removeEventListener("loadedmetadata", onLoaded);
-      audio.removeEventListener("timeupdate", onTimeUpdate);
-    };
-  }, []);
+      audio.addEventListener("loadedmetadata", onLoaded);
+      audio.addEventListener("timeupdate", onTimeUpdate);
+      return () => {
+        audio.removeEventListener("loadedmetadata", onLoaded);
+        audio.removeEventListener("timeupdate", onTimeUpdate);
+      };
+    }, []);
 
   const onSeek = (e) => {
-    const audio = audioRef.current;
-    if (!audio) return;
-    const t = parseFloat(e.target.value);
+      const audio = audioRef.current;
+      if (!audio) return;
+      const t = parseFloat(e.target.value);
     audio.currentTime = t;
-    setProgress(t);
-  };
+      setProgress(t);
+    };
 
-  return (
+    return (
     <div className="flex items-center justify-center gap-4 mb-6 w-1/3 mx-auto px-4">
       <button
         onClick={togglePlay}
@@ -262,21 +262,21 @@ function AudioPlayer({ src }) {
         ) : (
           <Volume2 className="w-20 h-20 text-[#f4d4c9]"/>
         )}
-      </button>
+        </button>
 
-      <input
-        type="range"
+        <input
+          type="range"
         min="0"
-        max={duration}
-        value={progress}
+          max={duration}
+          value={progress}
         step="0.1"
-        onChange={onSeek}
-        className="flex-grow h-2 rounded-lg cursor-pointer bg-gray-300/50 accent-[#F7A969]"
-      />
+          onChange={onSeek}
+          className="flex-grow h-2 rounded-lg cursor-pointer bg-gray-300/50 accent-[#F7A969]"
+        />
 
       <span className="text-[#ffe5d1] text-[24px]  whitespace-nowrap">
-        {formatTime(progress)} / {formatTime(duration)}
-      </span>
+          {formatTime(progress)} / {formatTime(duration)}
+        </span>
 
       <audio
         ref={audioRef}
@@ -286,8 +286,8 @@ function AudioPlayer({ src }) {
         onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)}
       />
-    </div>
-  );
+      </div>
+    );
 }
 
 function VideoPlayer({ src }) {
@@ -389,12 +389,8 @@ export default function Ads() {
       </div>
 
       <section className="mt-6 max-w-screen-lg mx-auto px-4">
-        {current.showVideo && current.videoSrc && (
-          <VideoPlayer src={srcPath(current.videoSrc)} />
-        )}
-        {current.showAudio && current.audioSrc && (
-          <AudioPlayer src={srcPath(current.audioSrc)} />
-        )}
+        {current.showVideo && current.videoSrc && <VideoPlayer src={srcPath(current.videoSrc)} />}
+        {current.showAudio && current.audioSrc && <AudioPlayer src={srcPath(current.audioSrc)} />}
 
         <article className="space-y-4">
           <h2 className="text-[28px] md=text-[28px] text-[#ffe5d1]">
