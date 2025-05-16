@@ -1,14 +1,28 @@
 import Logo from "@/components/Logo";
 import Image from "next/image";
 import Link from 'next/link'
+import Head from 'next/head'
+
+
 
 export default function Home() {
+  const videoUrl = `${process.env.NEXT_PUBLIC_S3_BASE_URL.replace(/\/+$/, '')}/ads/ad-vid-existing-projects.mp4`
+
   const homeTitle = "Mission Statement";
   const homeText =
     "To enhance our society and planet's health, our reports display how many commonly-used services are within short walking distance of a given address -- in a standardized, comparative format -- incentivizing and promoting development that allows more residents to conveniently live without owning cars.";
 
-  return (
+  return (      
     <div>
+      <Head>
+        {/* tells the browser “go fetch this video file ASAP” */}
+        <link
+          rel="preload"
+          href={videoUrl}
+          as="video"
+          type="video/mp4"
+        />
+      </Head>
       <div id="desktop-version" className="hidden min-[1000px]:block">
       <Link
         href="/ads"
