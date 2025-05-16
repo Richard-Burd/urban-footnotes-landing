@@ -1,3 +1,4 @@
+import "dotenv/config";
 import nodemailer from "nodemailer";
 
 export default async function handler(req, res) {
@@ -62,19 +63,20 @@ export default async function handler(req, res) {
 
   try {
     const transporter = nodemailer.createTransport({
-      host: process.env.EMAIL_HOST,
-      port: process.env.EMAIL_PORT,
+      host: process.env.SMTP_HOST,
+      port: process.env.SMTP_PORT,
       secure: true,
       auth: {
-        user: process.env.ORDERS_EMAIL_USER,
-        pass: process.env.ORDERS_EMAIL_PASS,
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
       },
     });
 
+    
     const mailOptions = {
-      from: process.env.ORDERS_EMAIL_USER,
-      to: process.env.ORDER_SENDTO_EMAIL_USER,
-      subject: `New Form Submission for Order #${orderId}`,
+      from: process.env.SMTP_FROM,
+      to: email,
+      subject: orderId,
       html: `
         <p><strong>Time submitted:</strong> ${timestamp}</p> <!-- Display timestamp -->
         <p><strong>Order ID:</strong> ${orderId}</p> <!-- Include Order ID -->
