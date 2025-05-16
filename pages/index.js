@@ -1,5 +1,6 @@
 import Logo from "@/components/Logo";
 import Image from "next/image";
+import Link from 'next/link'
 
 export default function Home() {
   const homeTitle = "Mission Statement";
@@ -9,6 +10,11 @@ export default function Home() {
   return (
     <div>
       <div id="desktop-version" className="hidden min-[1000px]:block">
+      <Link
+        href="/ads"
+        className="relative block h-[430px] w-screen"
+        aria-label="Go to ads page"
+      >
         <div
           id="landing-page-logo-and-homepage-gradient"
           className="relative h-[430px] w-screen"
@@ -25,8 +31,9 @@ export default function Home() {
           <div className="absolute inset-0 flex items-center justify-center">
             <Logo type="ufn" color="#ffe873ff" width="579" height="363" />
           </div>
-        </div>
-        {/* Box w/rounded corners that holds the title and description */}
+
+        </div>          
+        </Link>
         <div
           id="mission-statement-box"
           className="mx-auto my-12 max-w-[770px] rounded-[40px] bg-[rgba(86,85,70,0.4)] pt-8"
