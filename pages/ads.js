@@ -1,17 +1,20 @@
 import Logo from "@/components/Logo";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useMemo, useCallback } from "react";
 import { Volume2, Pause, ChevronDown, Square } from "lucide-react";
 import PageTitle from "@/components/PageTitle";
 import styles from '../styles/Button.module.css'
 import Image from "next/image";
 
+// Button definitions (constant)
 const BUTTONS = [
   {
     key: 'existing',
     role: 'Developers',
     title: 'Existing Projects',
     audioSrc: 'ad-dev-existing.mp3',
-    showAudio: true,
+    showAudio: false,
+    videoSrc: 'ad-vid-existing-projects.mp4',
+    showVideo: true,
     content: [
       "Trying to attract the right buyers or renters?",
       "People often lack insight on how an address’ neighborhood meets their needs. That's when hasty, less-than-ideal judgments get made.",
@@ -201,10 +204,10 @@ const BUTTONS = [
 
 
 function AudioPlayer({ src }) {
-  const audioRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [progress, setProgress] = useState(0);
-  const [duration, setDuration] = useState(0);
+    const audioRef = useRef(null);
+    const [isPlaying, setIsPlaying] = useState(false);
+    const [progress, setProgress] = useState(0);
+    const [duration, setDuration] = useState(0);
 
   const formatTime = (sec) => {
     if (isNaN(sec)) return "0:00";
@@ -219,29 +222,29 @@ function AudioPlayer({ src }) {
     audio.paused ? audio.play() : audio.pause();
   };
 
-  useEffect(() => {
-    const audio = audioRef.current;
-    if (!audio) return;
-    const onLoaded = () => setDuration(audio.duration);
-    const onTimeUpdate = () => setProgress(audio.currentTime);
+    useEffect(() => {
+      const audio = audioRef.current;
+      if (!audio) return;
+      const onLoaded = () => setDuration(audio.duration);
+      const onTimeUpdate = () => setProgress(audio.currentTime);
 
-    audio.addEventListener("loadedmetadata", onLoaded);
-    audio.addEventListener("timeupdate", onTimeUpdate);
-    return () => {
-      audio.removeEventListener("loadedmetadata", onLoaded);
-      audio.removeEventListener("timeupdate", onTimeUpdate);
-    };
-  }, []);
+      audio.addEventListener("loadedmetadata", onLoaded);
+      audio.addEventListener("timeupdate", onTimeUpdate);
+      return () => {
+        audio.removeEventListener("loadedmetadata", onLoaded);
+        audio.removeEventListener("timeupdate", onTimeUpdate);
+      };
+    }, []);
 
   const onSeek = (e) => {
-    const audio = audioRef.current;
-    if (!audio) return;
-    const t = parseFloat(e.target.value);
+      const audio = audioRef.current;
+      if (!audio) return;
+      const t = parseFloat(e.target.value);
     audio.currentTime = t;
-    setProgress(t);
-  };
+      setProgress(t);
+    };
 
-  return (
+    return (
     <div className="flex items-center justify-center gap-4 mb-6 w-1/3 mx-auto px-4">
       <button
         onClick={togglePlay}
@@ -259,21 +262,21 @@ function AudioPlayer({ src }) {
         ) : (
           <Volume2 className="w-20 h-20 text-[#f4d4c9]"/>
         )}
-      </button>
+        </button>
 
-      <input
-        type="range"
+        <input
+          type="range"
         min="0"
-        max={duration}
-        value={progress}
+          max={duration}
+          value={progress}
         step="0.1"
-        onChange={onSeek}
-        className="flex-grow h-2 rounded-lg cursor-pointer bg-gray-300/50 accent-[#F7A969]"
-      />
+          onChange={onSeek}
+          className="flex-grow h-2 rounded-lg cursor-pointer bg-gray-300/50 accent-[#F7A969]"
+        />
 
       <span className="text-[#ffe5d1] text-[24px]  whitespace-nowrap">
-        {formatTime(progress)} / {formatTime(duration)}
-      </span>
+          {formatTime(progress)} / {formatTime(duration)}
+        </span>
 
       <audio
         ref={audioRef}
@@ -283,12 +286,22 @@ function AudioPlayer({ src }) {
         onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)}
       />
+      </div>
+    );
+}
+
+function VideoPlayer({ src }) {
+  return (
+    <div className="mb-6 w-full mx-auto px-4">
+      <video
+        src={src}
+        controls
+        className="w-full max-h-[480px] rounded-lg shadow-lg"
+        preload="metadata"
+      />
     </div>
   );
 }
-
-
-
 
 export default function Ads() {
   const [activeKey, setActiveKey] = useState('existing');
@@ -296,72 +309,73 @@ export default function Ads() {
   const [openRole, setOpenRole] = useState(null);
 
   const baseUrl = process.env.NEXT_PUBLIC_S3_BASE_URL;
-  // s3folder is the folder in the S3 bucket where the audio files are stored
   const s3folder = 'ads';
   const current = BUTTONS.find(b => b.key === activeKey);
 
   useEffect(() => {
-    const close = e => {
+    const handleClickOutside = e => {
       if (!e.target.closest('.dropdown')) {
         setDropdownOpen(false);
         setOpenRole(null);
       }
     };
-    document.addEventListener('click', close);
-    return () => document.removeEventListener('click', close);
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
   }, []);
 
+  const grouped = BUTTONS.reduce((acc, item) => {
+    acc[item.role] = acc[item.role] || [];
+    acc[item.role].push(item);
+    return acc;
+  }, {});
+
+  const srcPath = file =>
+    `${baseUrl.replace(/\/+$/, '')}/${s3folder}/${file.replace(/^\/+/, '')}`;
+
   return (
-    <main className="text-gray-100">
-      <div>
-        <center>
-          <PageTitle
-            topTitle="Outreach"
-            textColor="text-title-text-ads"
-            shadowColor="title-shadow-ads"
-            logoColor="#ffd4b3"
-            gradient="bg-[linear-gradient(to_right,#120902,#3B1F07)]"
-            mobileTitleCentered={false}
-            showLogo
-          />
-        </center>
-      </div>
-      
-      <div className="mt-6 max-w-screen-lg mx-auto px-10 flex items-center">
-        <span className="text-[28px] text-[#ffd4b3] mr-4">What is your focus or role?</span>
+    <main className="space-y-8 text-orange-100">
+      <PageTitle
+        topTitle="Outreach"
+        textColor="text-title-text-ads"
+        shadowColor="title-shadow-ads"
+        logoColor="#ffd4b3"
+        gradient="bg-[linear-gradient(to_right,#120902,#3B1F07)]"
+        mobileTitleCentered={false}
+        showLogo
+      />
+
+      <div className="mt-6 max-w-screen-lg mx-auto px-10 flex items-center space-x-4">
+        <span className="text-[28px] text-[#ffd4b3]">What is your focus or role?</span>
         <div className="relative flex-grow dropdown">
           <button
             onClick={() => setDropdownOpen(o => !o)}
             className={styles.slim}
           >
             {current.role}: {current.title}
-            <ChevronDown className={`transform transition-transform duration-200 ${dropdownOpen ? 'rotate-180' : ''}`} />
+            <ChevronDown
+              className={`ml-2 transform transition-transform duration-200 ${dropdownOpen ? 'rotate-180' : ''}`}
+            />
           </button>
 
           {dropdownOpen && (
             <div className="absolute z-10 w-full bg-[#44403c] rounded-b-lg shadow-lg mt-1">
-              {Object.entries(
-                BUTTONS.reduce((acc, item) => {
-                  acc[item.role] = acc[item.role] || [];
-                  acc[item.role].push(item);
-                  return acc;
-                }, {})
-              ).map(([role, items]) => (
-                <div key={role} className="">
+              {Object.entries(grouped).map(([role, items]) => (
+                <div key={role}>
                   <button
                     onClick={() => setOpenRole(openRole === role ? null : role)}
                     className={styles.slim}
                   >
-                    <span className="">{role}</span>
+                    {role}
                     <ChevronDown
-                      className={`transform transition-transform duration-200 ${openRole === role ? 'rotate-180' : ''}`}  />
+                      className={`ml-2 transform transition-transform duration-200 ${openRole === role ? 'rotate-180' : ''}`}
+                    />
                   </button>
-                  <div className={`overflow-hidden transition-max-height duration-300 ease-out ${openRole === role ? 'max-h-screen' : 'max-h-0'}`}> 
+                  <div className={`overflow-hidden transition-max-height duration-300 ease-out ${openRole === role ? 'max-h-screen' : 'max-h-0'}`}>
                     {items.map(item => (
                       <button
                         key={item.key}
                         onClick={() => { setActiveKey(item.key); setDropdownOpen(false); setOpenRole(null); }}
-                        className="block w-full text-left px-8 py-2 text-[24px] text-[#d1d5db] hover:bg-[#F7A969] hover:text-[#120902] transition-colors duration-200"
+                        className="block w-full text-left px-8 py-2 text-[24px] text-[#d1d5db] hover:bg-[#F7A969] hover=text-[#120902] transition-colors duration-200"
                       >
                         {item.title}
                       </button>
@@ -375,12 +389,15 @@ export default function Ads() {
       </div>
 
       <section className="mt-6 max-w-screen-lg mx-auto px-4">
-         {/* functionality for s3 bucket folder switching */}
-        {current.showAudio && <AudioPlayer  src={`${baseUrl.replace(/\/+$/, '')}/${s3folder}/${current.audioSrc.replace(/^\/+/, '')}`} />}
+        {current.showVideo && current.videoSrc && <VideoPlayer src={srcPath(current.videoSrc)} />}
+        {current.showAudio && current.audioSrc && <AudioPlayer src={srcPath(current.audioSrc)} />}
+
         <article className="space-y-4">
-          <h2 className="text-[24px] md:text-[28px] text-left text-[#ffe5d1] mr-4">{current.content[0]}</h2>
+          <h2 className="text-[28px] md=text-[28px] text-[#ffe5d1]">
+            {current.content[0]}
+          </h2>
           {current.content.slice(1).map((p, idx) => (
-            <p key={idx} className="text-[28px] text-[#ffe5d1] mr-4">{p}</p>
+            <p key={idx} className="text-[28px] text-[#ffe5d1]">{p}</p>
           ))}
         </article>
       </section>
