@@ -61,13 +61,12 @@ const BUTTONS = [
     audioSrc: 'ad-dev-hotels.mp3',
     showAudio: true,
     content: [
-      "Are you looking to attract more guests?",
-      "It's about more than your property—it’s also about the location. But describing neighborhood convenience thoroughly takes effort and research, especially for guests who want to walk more than drive.",
-      "Urban Foot Notes delivers standardized, address-specific, comparative neighborhood reports.",
-      "We describe and score ease of pedestrian access to businesses and services that many guests would desire.",
-      "Better walkability means happier, longer-term guests—and reduced transportation expenses mean their money lasts longer.",
-      "Attract more satisfied guests with reliable neighborhood data.",
-      "Visit urbanfootnotes.com to see samples, contact us, or order your report."
+      "How can you make your accommodations stand out?",
+      "Guests can miss the best things around your property because they simply don't know what's nearby.",
+      "Urban Foot Notes provides clear, easy-to-understand neighborhood reports highlighting walkable access to cafes, shops, and essential services.",
+      "Help your guests see what will be right outside their door",
+      "Visit urbanfootnotes.com to see samples, contact us, or get your personalized report today.",
+
     ]
   },
   {
