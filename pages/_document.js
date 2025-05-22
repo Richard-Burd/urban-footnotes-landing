@@ -25,12 +25,14 @@ export default function Document() {
         />
 
                 {/* Preload Playfair Display */}
-                <link              rel="preload"
-              href="https://fonts.gstatic.com/s/playfairdisplay/v24/nuFvD-3Aw4n3eC6W-yaxrZzA.woff2"
-              as="font"
-              type="font/woff2"
-              crossOrigin="anonymous"
-            />
+                <link
+                rel="preload"
+                href="https://fonts.gstatic.com/s/playfairdisplay/v27/nuFvD-3Aw4n3eC6W-yaxrZzA.woff2"
+                as="font"
+                type="font/woff2"
+                crossOrigin="anonymous"
+              />
+
 
 
         {/* Load Fonts */}
