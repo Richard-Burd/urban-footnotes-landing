@@ -30,7 +30,9 @@ const BUTTONS = [
     role: 'Developers',
     title: 'Project Planning',
     audioSrc: 'ad-dev-planning.mp3',
-    showAudio: true,
+    
+    videoSrc: 'vid-project-planning.mp4',
+    showVideo: true,
     content: [
       "Struggling to convince buyers or renters that your property fits their needs?",
       "You can’t control everything a neighborhood lacks—but you can clearly understand and address those gaps.",
@@ -45,7 +47,9 @@ const BUTTONS = [
     role: 'Developers',
     title: 'Proposed Developments',
     audioSrc: 'ad-dev-proposed.mp3',
-    showAudio: true,
+    
+    videoSrc: 'vid-dev-new-projects.mp4',
+    showVideo: true,
     content: [
       "What if you could add a story to your development proposal—its neighborhood's story, told in data?",
       "Too many projects start with incomplete neighborhood data. That’s where deals can fall apart—or additional opportunities get missed.",
@@ -58,8 +62,9 @@ const BUTTONS = [
     key: 'hotels',
     role: 'Developers',
     title: "Short-Term Rentals, Hotels, Airbnb's",
-    audioSrc: 'ad-dev-hotels.mp3',
-    showAudio: true,
+    audioSrc: 'ad-dev-hotels.mp3'
+    videoSrc: 'vid-dev-hotel',
+    showVideo: true,
     content: [
       "Are you looking to attract more guests?",
       "It's about more than your property—it’s also about the location. But describing neighborhood convenience thoroughly takes effort and research, especially for guests who want to walk more than drive.",
@@ -171,7 +176,9 @@ const BUTTONS = [
     role: 'City Planning',
     title: 'Conflict Resolution',
     audioSrc: 'ad-city-conflict.mp3',
-    showAudio: true,
+    
+    videoSrc: 'dev-city-conflict.mp4',
+    showVideo: true,
     content: [
       "Tired of the same fights over traffic and density? Blame’s easy. Solutions aren’t.",
       "Sprawling NIMBYs battle developers’ densities. Now often unpleasant compromises seem like the only path forward.",
@@ -186,6 +193,8 @@ const BUTTONS = [
     title: 'Traffic Abatement',
     audioSrc: 'ad-city-traffic.mp3',
     showAudio: true,
+    videoSrc: 'vid-city-traffic.mp4',
+    showVideo: true,
     content: [
       "Are you frustrated by growing traffic problems?",
       "Pedestrian injuries, cyclist safety, air quality—all are linked to excessive car usage.",
