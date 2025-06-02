@@ -2,18 +2,18 @@ import "dotenv/config";
 import nodemailer from "nodemailer";
 
 export default async function handler(req, res) {
-  console.log('SMTP config:', {
+/*   console.log('SMTP config:', {
     host: process.env.SMTP_HOST,
     port: process.env.SMTP_PORT,
     secure: process.env.SMTP_SECURE,
     user: process.env.SMTP_USER
-  });
+  }); */
   if (req.method !== "POST") {
     return res.status(405).json({ message: "Method not allowed" });
   }
 
   // Log incoming request body
-  console.log("Request Body:", req.body);
+  //console.log("Request Body:", req.body);
 
   const {
     clientName,
