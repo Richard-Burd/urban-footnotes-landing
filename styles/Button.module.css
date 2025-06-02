@@ -5,9 +5,8 @@
   height: auto;
 
   /* comfortable padding all around */
-  padding: 0.5rem 0.5rem;
-
-  font-size: 26px;
+  padding: clamp(0.1rem, 4vw, 0.5rem);
+  font-size: clamp(0.2rem, 4vw, 1.7rem);
   line-height: 1.2;
 
   display: flex;
