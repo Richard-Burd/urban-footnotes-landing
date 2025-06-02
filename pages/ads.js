@@ -16,12 +16,12 @@ const BUTTONS = [
     videoSrc: 'ad-vid-existing-projects.mp4',
     showVideo: true,
     content: [
-      "Trying to attract the right buyers or renters?",
-      "People often lack insight on how an address’ neighborhood meets their needs. That's when hasty, less-than-ideal judgments get made.",
+      "Are you trying to attract the right buyers or renters?",
+      "People need reliable data on how an area fits their needs.",
       "Urban Foot Notes delivers standardized, address-specific, comparative neighborhood reports.",
-      "We describe pedestrian access to services and businesses that many residents desire. This is scored.",
-      "Walkability means convenience, lower car costs, and a better day-to-day life.",
-      "That translates into higher satisfaction—and more money freed up for housing.",
+      "We describe and score pedestrian access to services and businesses that many residents desire.",
+      "High walkability scores translate to convenience, lower transportation costs, and healthier lifestyles.",
+      "Our data-driven insights show them exactly how your property fits their lifestyle.",
       "Visit urbanfootnotes.com to see samples, contact us, or order your report."
     ]
   },
@@ -33,12 +33,12 @@ const BUTTONS = [
     videoSrc: 'vid-project-planning.mp4',
     showVideo: true,
     content: [
-      "Struggling to convince buyers or renters that your property fits their needs?",
-      "You can’t control everything a neighborhood lacks—but you can clearly understand and address those gaps.",
-      "Urban Foot Notes delivers personal, investigative neighborhood reports. We analyze business presence, amenity access, land use, and walkability—working like a checklist to help you or partners strategically plan future improvements.",
+      "Are you struggling to convince buyers or renters that your property fits their needs?",
+      "You can’t control everything a neighborhood lacks, but you can  understand and address those gaps.",
+      "Urban Foot Notes delivers personal, investigative neighborhood reports that pinpoint exactly what's missing, givin you a strategic checklist to plan future improvements or investments.",
       "This report can be used to promote other developments, including your own.",
-      "Use this clarity to market smarter and guide future investments effectively.",
-      "Visit urbanfootnotes.com to view samples or request your report today."
+      "Market smarter, invest strategically, and attract more interest.",
+      "Visit urbanfootnotes.com to view samples, contact us or request your report today."
     ]
   },
   {
@@ -50,11 +50,11 @@ const BUTTONS = [
     videoSrc: 'vid-dev-new-projects.mp4',
     showVideo: true,
     content: [
-      "What if you could add a story to your development proposal—its neighborhood's story, told in data?",
-      "Too many projects start with incomplete neighborhood data. That’s where deals can fall apart—or additional opportunities get missed.",
-      "Urban Foot Notes delivers personal, investigative neighborhood reports. We analyze business presence, amenity access, land use, and walkability—so you can propose your project with clarity and confidence.",
-      "Our reports strengthen your presentations—to development authorities, zoning boards, citizens, city councils, investors and others. They will see a report that will likely attract more buyers and renters.",
-      "Support your next project with the targeted data our reports provide. Visit urbanfootnotes.com to see samples, contact us, or order your report."
+      "What if you could show exactly why a neighborhood is ideal for your project?",
+      "Incomplete details of the surrounding area can weaken proposals, and cause missed opportunities.",
+      "Urban Foot Notes provides straight-forward reports analyzing amenities, walkability, land use, and nearby businesses.",
+      "Present our reports to development authorities, zoning boards, citizens, city councils, investors and others. Help them see exactly why your product deserves their support.",
+      "Visit urbanfootnotes.com to see samples, contact us, or order your report."
     ]
   },
   {
@@ -178,11 +178,11 @@ const BUTTONS = [
     videoSrc: 'vid-city-conflict.mp4',
     showVideo: true,
     content: [
-      "Tired of the same fights over traffic and density? Blame’s easy. Solutions aren’t.",
+      "Are you navigating constant conflicts over traffic and urban density?",
       "Sprawling NIMBYs battle developers’ densities. Now often unpleasant compromises seem like the only path forward.",
-      "Urban Foot Notes offers standardized, comparative, address-specific neighborhood reports, describing pedestrian access to commonly-used services and businesses, including the percentage of those typically using such services. It’s all scored in the report.",
-      "A higher score means more walking, and less driving. The data can shift the discussion to facts.",
-      "You can ask or require developers to provide an Urban Footnotes report. Visit urbanfootnotes.com to see samples, contact us, or order a report."
+      "Urban Foot Notes changes the conversation with standardized, address-specific neighborhood reports, which quantify pedestrian convenience, giving planners and policymakers solid ground for better decisions.",
+      "Encourage fewer cars, healthier neighborhoods, and smarter planning.",
+      "Ask developers to provide an Urban Footnotes report in their proposals. Visit urbanfootnotes.com to learn more."
     ]
   },
   {
