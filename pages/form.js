@@ -216,7 +216,9 @@ export default function SupplementaryForm() {
           </div>
         </div>
 
-        {/* File Upload */}
+        {/* File Upload 
+
+        
         <div className="mb-6">
           <label className="block mb-2 text-lg font-semibold">Upload Your File (max 100MB)</label>
           <input
@@ -232,6 +234,7 @@ export default function SupplementaryForm() {
           )}
         </div>
 
+*/}
         {/* Comments */}
         <div className="mb-6">
           <label className="block mb-2 text-lg font-semibold">Additional Comments</label>
