@@ -1,12 +1,19 @@
+import "dotenv/config";
 import nodemailer from "nodemailer";
 
 export default async function handler(req, res) {
+/*   console.log('SMTP config:', {
+    host: process.env.SMTP_HOST,
+    port: process.env.SMTP_PORT,
+    secure: process.env.SMTP_SECURE,
+    user: process.env.SMTP_USER
+  }); */
   if (req.method !== "POST") {
     return res.status(405).json({ message: "Method not allowed" });
   }
 
   // Log incoming request body
-  console.log("Request Body:", req.body);
+  //console.log("Request Body:", req.body);
 
   const {
     clientName,
@@ -56,19 +63,20 @@ export default async function handler(req, res) {
 
   try {
     const transporter = nodemailer.createTransport({
-      host: process.env.EMAIL_HOST,
-      port: process.env.EMAIL_PORT,
+      host: process.env.SMTP_HOST,
+      port: process.env.SMTP_PORT,
       secure: true,
       auth: {
-        user: process.env.ORDERS_EMAIL_USER,
-        pass: process.env.ORDERS_EMAIL_PASS,
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
       },
     });
 
+    
     const mailOptions = {
-      from: process.env.ORDERS_EMAIL_USER,
-      to: process.env.ORDER_SENDTO_EMAIL_USER,
-      subject: `New Form Submission for Order #${orderId}`,
+      from: process.env.SMTP_FROM,
+      to: 'contact@urbanfootnotes.com',
+      subject: orderId,
       html: `
         <p><strong>Time submitted:</strong> ${timestamp}</p> <!-- Display timestamp -->
         <p><strong>Order ID:</strong> ${orderId}</p> <!-- Include Order ID -->
