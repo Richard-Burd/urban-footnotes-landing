@@ -78,15 +78,16 @@ const BUTTONS = [
     role: 'Residents',
     title: 'Home Buyers and Renters',
     audioSrc: 'ad-res-renters.mp3',
-    showAudio: true,
+    showAudio: false,
+    videoSrc: 'vid-homebuyers.mp4',
+    showVideo: true,
     content: [
-      "Want to spend less on driving—and more on living?",
-      "Start by choosing the right neighborhood.",
-      "You can only walk so far without resorting to a vehicle. But what if daily errands, food, and fun were all just steps from home? How do you find places like that?",
-      "Can you walk to what you need? Do people use the same places you would? Is the neighborhood changing? Without those answers—you’re left guessing.",
-      "An Urban Foot Notes report gives you a scored rating of pedestrian access to commonly-desired services, showing how easy it is to live at an address without needing to drive.",
-      "It answers the big question: “What’s it really like to live there?” A higher walkability rating means more freedom, better health, and lower costs.",
-      "Ask your agent, landlord, or builder for an Urban Foot Notes report. Or visit urbanfootnotes.com to check out sample reports yourself."
+      "Driving shouldn’t be a requirement for daily life.",
+      "Groceries, cafés, errands, parks: they should be part of your neighborhood.",
+      "Urban Foot Notes helps you evaluate the area where you will live, showing how practical walking is.",
+      "We help you get a sense of what it's like to live there.",
+      "It’s a smarter way to choose where to live—based on freedom, health, and cost.",
+      "Ask your agent, landlord, or builder for an Urban Foot Notes report. Or visit urbanfootnotes.com to check out sample reports yourself.",
     ]
   },
   {
