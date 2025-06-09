@@ -141,16 +141,16 @@ const BUTTONS = [
     key: 'res_hotels',
     role: 'Residents',
     title: "Hotels, Short-Term Rentals, Airbnb's",
-    audioSrc: 'ad-audstillneedstobedone.m4a',
-    showAudio: false,
+    videoSrc: 'vid-res-hotel.mp4',
+    showVideo: true,
     content: [
-      "Are you trying to maximize your experience in a new place?",
-      "Accommodations may offer appealing furnishing, but what about the neighborhood?",
-      "How can you find out what is it like outside the door, and that the amenities fit your needs, especially for those who would rather not drive?",
-      "Urban Foot Notes scores how well neighborhoods offer easy pedestrian and bike access to essential services.",
-      "Better walkability means less time in cars—and more time experiencing the area.",
+      "Driving doesn’t need to be part of every trip away from home.",
+      "Coffee, groceries, and a park to unwind are easier when they’re a short walk, not a car ride away.",
+      "Urban Foot Notes produces local area walkability reports for hotels and short-term rentals.",
+      "Each report shows how realistic it is to handle daily needs on foot or by bike from that location.",
+      "Choose accommodation that matches your routine, lowers transport costs, and lets you spend more time enjoying the place.",
       "Ask for the reliable neighborhood data you can count on from Urban Foot Notes.",
-      "Visit urbanfootnotes.com to see samples, contact us, or order your own report."
+      "Ask your host or hotel for an Urban Foot Notes report, or visit urbanfootnotes.com to see examples or request one yourself."
     ]
   },
   {
