@@ -110,8 +110,9 @@ const BUTTONS = [
     key: 'advocates',
     role: 'Residents',
     title: 'Pedestrian & Bicycling Advocates',
-    audioSrc: 'ad-res-advocates.mp3',
-    showAudio: true,
+    videoSrc: 'vid-res-pedestrian.mp4',
+    showVideo: true,
+    showAudio: false,
     content: [
       "Want safer streets for walking or biking?",
       "Retrofitting roads for cyclists and pedestrians can cause pushback and high costs. Yet, you know safer access matters.",
