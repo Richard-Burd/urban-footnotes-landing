@@ -128,15 +128,15 @@ const BUTTONS = [
     key: 'neighborhood_assoc',
     role: 'Residents',
     title: 'Neighborhood Associations',
-    audioSrc: 'ad-res-neighborhood-ass.mp3',
-    showAudio: true,
+    videoSrc: 'vid-neighborhood-ass.mp4',
+    showVideo: true,
     content: [
-      "Want more influence over your neighborhood’s future?",
-      "Developers operate within existing zoning, but zoning doesn’t always reflect true neighborhood needs.",
-      "Urban Foot Notes clearly scores neighborhood walkability and access to popular services—empowering your association to push for more thoughtful developments.",
-      "Higher scores mean less traffic and a more vibrant community.",
-      "Ask local government to require developers to submit Urban Footnotes reports.",
-      "Visit urbanfootnotes.com today."
+      "Community groups deserve to have a say in their neighborhood's future.",
+      "Developers operate within existing zoning, but zoning doesn’t always reflect what is best for your neighborhood.",
+      "Developers already file traffic, drainage, and environmental studies, but none of those reports answer a simple question: Can people live here without a car?",
+      "Urban Foot Notes brings the focus to the health of the neighborhood in terms of walkability and key services.",
+      "Use the data to press for smarter, low-traffic development.",
+      " Ask your city to make Urban Foot Notes reports a part of your approval process. Learn more at urbanfootnotes.com"
     ]
   },
   {
