@@ -159,16 +159,15 @@ const BUTTONS = [
     role: 'Government',
     title: 'Office Holders',
     audioSrc: 'ad-gov-office.mp3',
-    showAudio: true,
+    showVideo: true,
+    videoSrc: 'vid-govt-office.mp4',
     content: [
-      "Are the residents tired of traffic problems and expecting action?",
-      "Pedestrian accidents, cyclist fatalities, road rage, and poor air quality reflect badly on leadership—but voters often miss the connection between these issues and private-sector development choices.",
-      "Better-planned developments drastically reduce traffic. Easy pedestrian access to all of residents’ needs enhances the community.",
-      "Urban Foot Notes offers comparative, standardized neighborhood reports, scoring pedestrian access to commonly-used services and businesses.",
-      "High scores visibly mean less traffic and more livable communities.",
-      "You can require developers to provide an Urban Footnotes report, putting potential traffic reduction on display.",
-      "Encourage developers to consider their impact on the interests of the community, and show voters you're serious about improving their neighborhoods.",
-      "Visit urbanfootnotes.com to see samples, contact us, or order a report."
+      "Residents want relief from congestion, collisions, and poor air quality—and they expect leaders to act.",
+      "Yet the link between those problems and private-sector development often goes unnoticed.",
+      "Urban Foot Notes supplies comparative, address-level reports that score pedestrian access to shops, services, and amenities.",
+      "Ask for developers to submit an Urban Foot Notes report and put potential traffic reduction on display.",
+      "Show voters you’re serious about safer streets and healthier neighborhoods.",
+      "See sample reports or get in touch at urbanfootnotes.com."
     ]
   },
   {
