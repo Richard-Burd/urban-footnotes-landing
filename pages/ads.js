@@ -95,15 +95,16 @@ const BUTTONS = [
     role: 'Residents',
     title: 'Environmental',
     audioSrc: 'ad-res-environment.mp3',
-    showAudio: true,
+    showVideo: true,
+    videoSrc: 'vid-environmental.mp4',
     content: [
-      "Wish you could see fewer cars? And use less fossil fuels? Plus breathe less polluted air?",
-      "Cities built around cars can feel impossible to change, and expensive transit projects often move slowly or stall entirely.",
-      "The fastest solution is better development. Urban Foot Notes clearly scores neighborhood walkability—encouraging developments that put essential services within easy walking distance.",
-      "Urban Foot Notes scores how well this is done, with comparative, standardized neighborhood reports.",
-      "A higher score means more walking and less driving. Our goal is to encourage competition between developers to naturally drive more pedestrian-centered spaces.",
-      "You can ask your government to require developers to provide an Urban Foot Notes report to show how much traffic reduction is being proposed.",
-      "Visit urbanfootnotes.com to see samples, contact us, or order a report."
+      "Cars don’t have to dominate our country.",
+      "Cleaner air, lower carbon use, and fewer vehicles begin with how we build . . . long before costly transit projects break ground.",
+      "Urban Foot Notes reveals walkable potential.",
+      "Our comparative, address-level reports score how easily residents can reach daily essentials on foot or by bike, giving planners and developers a clear target for traffic-reducing design.",
+      "Higher scores mean more walking, less driving, and healthier neighborhoods, spurring developers to compete on people-first projects.",
+      "Ask your city to require an Urban Foot Notes report with every proposal, making traffic impact clear from day one.",
+      "See sample reports or request your own at urbanfootnotes.com."
     ]
   },
   {
