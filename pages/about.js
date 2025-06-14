@@ -3,9 +3,10 @@ import PageTitle from "@/components/PageTitle";
 
 export default function About() {
   const tabs = [
-    { id: "real_estate", label: "Real Estate Industry" },
-    { id: "residents", label: "Residents" },
-    { id: "government", label: "Government" },
+    { id: "real_estate", label: "Real Estate Professionals" },
+    { id: "residents", label: "Local Residents" },
+    { id: "city_planners", label: "City Planners" },
+    { id: "government", label: "Government Employees" },
   ];
 
   const sections = {
@@ -23,6 +24,13 @@ export default function About() {
       "Less need for cars boosts options",
       "Scores for services availability and walkability save time",
     ],
+    city_planners: [
+      "Make more neighborhood informed choices",
+      "Reduce Traffic",
+      "Resolve conflicts with data",
+      "Highlight pedestrian access",
+      "Put the focus on the community",
+    ],
     government: [
       "Less traffic possible",
       "Less contention likely",
@@ -34,6 +42,7 @@ export default function About() {
   const imageMap = {
     real_estate: "woman-with-key.png",
     residents: "pedestrian-icon-mix.png",
+    city_planners: "blueprints.png",
     government: "man-stamping.png",
   };
 
@@ -77,7 +86,7 @@ export default function About() {
         {/* Desktop Benefits Section */}
         <div className="bg-[linear-gradient(to_right,rgba(90,90,90,0.1),rgba(90,90,90,0.5))] p-4 max-[700px]:hidden">
           <p className="pb-6 text-center text-3xl font-medium text-[#ffe1b3]">
-            Our product benefits the . . .
+            Our product benefits . . .
           </p>
           {/* Tabs with fixed image space to prevent shifting */}
           <div className="mb-8">
@@ -121,7 +130,7 @@ export default function About() {
         {/* Mobile Benefits Section */}
         <div className="min-[700px]:hidden">
           <p className="pb-6 text-center text-3xl font-medium">
-            Our product benefits the . . .
+            Our product benefit . . .
           </p>
           {tabs.map((tab) => (
             <div key={tab.id} className="mb-6">
