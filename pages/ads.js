@@ -13,7 +13,7 @@ const BUTTONS = [
     title: 'Existing Projects',
     audioSrc: 'ad-dev-existing.mp3',
     showAudio: false,
-    videoSrc: 'ad-vid-existing-projects.mp4',
+    videoSrc: 'ad-vid-existing-v2.mp4',
     showVideo: true,
     content: [
       "Are you trying to attract the right buyers or renters?",
