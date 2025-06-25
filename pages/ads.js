@@ -62,7 +62,7 @@ const BUTTONS = [
     role: 'Developers',
     title: "Short-Term Rentals, Hotels, Airbnb's",
     showAudio: false,
-    videoSrc: 'vid-dev-hotel.mp4',
+    videoSrc: 'vid-dev-hotel-v2.mp4',
     showVideo: true,
     content: [
       "How can you make your accommodations stand out?",
