@@ -30,14 +30,14 @@ const BUTTONS = [
     role: 'Developers',
     title: 'Project Planning',
     showAudio: false,
-    videoSrc: 'vid-project-planning.mp4',
+    videoSrc: 'vid-dev-project-planning-v2.mp4',
     showVideo: true,
     content: [
-      "Are you struggling to convince buyers or renters that your property fits their needs?",
+      "Successful project planning begins with a clear picture of the surrounding neighborhood.",
       "You can’t control everything a neighborhood lacks, but you can  understand and address those gaps.",
-      "Urban Foot Notes delivers personal, investigative neighborhood reports that pinpoint exactly what's missing, givin you a strategic checklist to plan future improvements or investments.",
-      "This report can be used to promote other developments, including your own.",
-      "Market smarter, invest strategically, and attract more interest.",
+      "Urban Foot Notes provides standardized, investigative neighborhood reports that pinpoint exactly what's missing, giving you a strategic checklist to plan future improvements or investments.",
+      "Use these insights to refine proposals, guide new developments, and market your projects with transparent, data-driven confidence.",
+      "",
       "Visit urbanfootnotes.com to view samples, contact us or request your report today."
     ]
   },
