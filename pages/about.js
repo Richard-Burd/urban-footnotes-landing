@@ -43,10 +43,10 @@ export default function About() {
   };
 
   const imageMap = {
-    real_estate: "woman-with-key.png",
-    residents: "pedestrian-icon-mix.png",
-    city_planners: "blueprints.png",
-    government: "man-stamping.png",
+    real_estate: "about-page-icon-woman-with-key.png",
+    residents: "about-page-icon-pedestrian-icon-mix.png",
+    city_planners: "about-page-icon-blueprints.png",
+    government: "about-page-icon-man-stamping.png",
   };
 
   const [activeTab, setActiveTab] = useState(tabs[0].id);
