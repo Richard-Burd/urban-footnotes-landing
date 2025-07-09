@@ -1,6 +1,9 @@
 import { useState } from "react";
 import PageTitle from "@/components/PageTitle";
 
+// Next.js <Image> component for optimized images, lazy loading, and responsive images
+import Image from "next/image";
+
 export default function About() {
   const tabs = [
     { id: "real_estate", label: "Real Estate Professionals" },
@@ -47,6 +50,9 @@ export default function About() {
   };
 
   const [activeTab, setActiveTab] = useState(tabs[0].id);
+
+  // Base URL for images, set in environment variables for flexibility
+  const baseUrl = process.env.NEXT_PUBLIC_S3_BASE_URL;
 
   return (
     <div className="space-y-8 text-orange-100">
@@ -105,8 +111,12 @@ export default function About() {
                   </button>
                   <div className="mt-6 flex h-40 w-40 items-center justify-center">
                     {activeTab === id ? (
-                      <img
-                        src={`/images/${imageMap[id]}`}
+                      // Next.js <Image> component for optimized images, lazy loading, and responsive images
+                      <Image
+                        // width & height req'd by Next.js to prevent layout shift
+                        width={160} // size in pixels in browser, AWS S3 ver. same size
+                        height={160} // size in pixels in browser, AWS S3 ver. same size
+                        src={`${baseUrl}/${imageMap[id]}`}
                         alt={label}
                         className="h-full w-full rounded-lg object-contain shadow-lg"
                       />
