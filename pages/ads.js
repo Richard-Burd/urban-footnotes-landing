@@ -47,7 +47,7 @@ const BUTTONS = [
     title: 'Proposed Developments',
     audioSrc: 'ad-dev-proposed.mp3',
     showAudio: false,
-    videoSrc: 'vid-dev-new-proposals-v2.mp4',
+    videoSrc: 'vid-dev-new-proposals-v3.mp4',
     showVideo: true,
     content: [
       "What if you could show exactly why a neighborhood is ideal for your project?",
