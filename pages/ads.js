@@ -177,7 +177,7 @@ const BUTTONS = [
     title: 'Conflict Resolution',
     audioSrc: 'ad-city-conflict.mp3',
     showAudio: false,
-    videoSrc: 'vid-city-conflict.mp4',
+    videoSrc: 'vid-city-conflict-v2.mp4',
     showVideo: true,
     content: [
       "Are you navigating constant conflicts over traffic and urban density?",
