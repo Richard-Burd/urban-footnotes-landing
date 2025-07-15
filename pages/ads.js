@@ -193,7 +193,7 @@ const BUTTONS = [
     title: 'Traffic Abatement',
     audioSrc: 'ad-city-traffic.mp3',
     showAudio: false,
-    videoSrc: 'vid-city-traffic.mp4',
+    videoSrc: 'vid-city-traffic-v2.mp4',
     showVideo: true,
     content: [
       "Are you frustrated by growing traffic problems?",
