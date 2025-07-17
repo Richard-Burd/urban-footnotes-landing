@@ -161,14 +161,14 @@ const BUTTONS = [
     title: 'Office Holders',
     audioSrc: 'ad-gov-office.mp3',
     showVideo: true,
-    videoSrc: 'vid-govt-office.mp4',
+    videoSrc: 'vid-govt-official-v2.mp4',
     content: [
-      "Residents want relief from congestion, collisions, and poor air quality—and they expect leaders to act.",
+      "Residents want relief from congestion, collisions, and poor air quality.",
       "Yet the link between those problems and private-sector development often goes unnoticed.",
-      "Urban Foot Notes supplies comparative, address-level reports that score pedestrian access to shops, services, and amenities.",
+      "Urban Foot Notes supplies comparative, address-specific reports that score pedestrian access to shops, services, and amenities.",
       "Ask for developers to submit an Urban Foot Notes report and put potential traffic reduction on display.",
       "Show voters you’re serious about safer streets and healthier neighborhoods.",
-      "See sample reports or get in touch at urbanfootnotes.com."
+      "Visit urbanfootnotes.com to see samples, contact us, or order a report today."
     ]
   },
   {
