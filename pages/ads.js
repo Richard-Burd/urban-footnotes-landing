@@ -79,7 +79,7 @@ const BUTTONS = [
     title: 'Home Buyers and Renters',
     audioSrc: 'ad-res-renters.mp3',
     showAudio: false,
-    videoSrc: 'vid-homebuyers.mp4',
+    videoSrc: 'vid-homebuyers-v2.mp4',
     showVideo: true,
     content: [
       "Driving shouldn’t be a requirement for daily life.",
