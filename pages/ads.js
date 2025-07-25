@@ -96,7 +96,7 @@ const BUTTONS = [
     title: 'Environmental',
     audioSrc: 'ad-res-environment.mp3',
     showVideo: true,
-    videoSrc: 'vid-environmental.mp4',
+    videoSrc: 'vid-environmental-v2.mp4',
     content: [
       "Cars don’t have to dominate our country.",
       "Cleaner air, lower carbon use, and fewer vehicles begin with how we build . . . long before costly transit projects break ground.",
@@ -111,7 +111,7 @@ const BUTTONS = [
     key: 'advocates',
     role: 'Residents',
     title: 'Pedestrian & Bicycling Advocates',
-    videoSrc: 'vid-res-pedestrian.mp4',
+    videoSrc: 'vid-pedestrian-v2.mp4',
     showVideo: true,
     showAudio: false,
     content: [
@@ -143,7 +143,7 @@ const BUTTONS = [
     key: 'res_hotels',
     role: 'Residents',
     title: "Hotels, Short-Term Rentals, Airbnb's",
-    videoSrc: 'vid-res-hotel.mp4',
+    videoSrc: 'vid-res-airbnb-v2.mp4',
     showVideo: true,
     content: [
       "Driving doesn’t need to be part of every trip away from home.",
