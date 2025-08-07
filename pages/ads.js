@@ -187,6 +187,20 @@ const BUTTONS = [
       "Ask developers to provide an Urban Footnotes report in their proposals. Visit urbanfootnotes.com to learn more."
     ]
   },
+    {
+    key: 'travellers',
+    role: 'Residents',
+    title: 'Travellers',
+    showAudio: false,
+    videoSrc: 'vid-travellers.mp4',
+    showVideo: true,
+    content: [
+      "Traveling can serve as an inspiration for what your neighborhood could be. 'Why not have a walkable neighborhood at home?' ",
+"In-depth comparative analysis can reveal what’s missing, giving planners and investors concrete goals for improvement.", "Urban Foot Notes provides extensive research into a neighborhood, quantifying amenities and services as well as examining the true walkability of an area with human researchers.", 
+"Turn traveller expectations into a blueprint for change.",
+"Visit urbanfootnotes.com to see samples, contact us, or order a report today."
+    ]
+  },
   {
     key: 'cityplanners_traffic',
     role: 'City Planning',
