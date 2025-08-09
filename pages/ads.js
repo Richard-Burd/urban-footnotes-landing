@@ -192,7 +192,7 @@ const BUTTONS = [
     role: 'Residents',
     title: 'Travellers',
     showAudio: false,
-    videoSrc: 'ufn-travellers-v2.mp4',
+    videoSrc: 'vid-travellers-v3.mp4',
     showVideo: true,
     content: [
       "Traveling can serve as an inspiration for what your neighborhood could be. 'Why not have a walkable neighborhood at home?' ",
