@@ -355,6 +355,8 @@ export default function Ads() {
   const srcPath = file =>
     `${baseUrl.replace(/\/+$/, '')}/${s3folder}/${file.replace(/^\/+/, '')}`;
 
+
+  
   return (
     <main className="space-y-8 text-orange-100">
       <PageTitle
