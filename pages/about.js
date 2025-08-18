@@ -140,7 +140,7 @@ export default function About() {
         {/* Mobile Benefits Section */}
         <div className="min-[700px]:hidden">
           <p className="pb-6 text-center text-3xl font-medium">
-            Our product benefit . . .
+            Our product benefits . . .
           </p>
           {tabs.map((tab) => (
             <div key={tab.id} className="mb-6">
