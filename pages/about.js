@@ -3,22 +3,14 @@ import PageTitle from "@/components/PageTitle";
 
 // Next.js <Image> component for optimized images, lazy loading, and responsive images
 import Image from "next/image";
+import dynamic from "next/dynamic";
 
-function VideoPlayer({ src, poster }) {
-  return (
-    <div className="mx-auto mb-8 w-full max-w-screen-md px-4">
-      <video
-        src={src}
-        controls
-        playsInline
-        preload="metadata"
-        poster={poster}
-        className="block w-full max-h-[520px] rounded-lg shadow-lg bg-black"
-        
-      />
-    </div>
-  );
-}
+// import dynamically to avoid hydration mismatch
+const VideoPlayer = dynamic(() => import("@/components/VideoPlayer"), {
+  ssr: false,
+});
+
+
 
 
 export default function About() {
