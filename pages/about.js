@@ -3,6 +3,15 @@ import PageTitle from "@/components/PageTitle";
 
 // Next.js <Image> component for optimized images, lazy loading, and responsive images
 import Image from "next/image";
+import dynamic from "next/dynamic";
+
+// import dynamically to avoid hydration mismatch
+const VideoPlayer = dynamic(() => import("@/components/VideoPlayer"), {
+  ssr: false,
+});
+
+
+
 
 export default function About() {
   const tabs = [
@@ -41,7 +50,7 @@ export default function About() {
       "Easier comparisons with other places",
     ],
   };
-
+  
   const imageMap = {
     real_estate: "about-page-icon-woman-with-key.png",
     residents: "about-page-icon-pedestrian-icon-mix.png",
@@ -53,7 +62,11 @@ export default function About() {
 
   // Base URL for images, set in environment variables for flexibility
   const baseUrl = process.env.NEXT_PUBLIC_S3_BASE_URL;
+  const videoUrl = `${baseUrl}/ads/vid-about-us.mp4`;
 
+
+
+console.log("videoUrl:", videoUrl);
   return (
     <div className="space-y-8 text-orange-100">
       <center>
@@ -68,26 +81,30 @@ export default function About() {
         />
       </center>
 
+<section aria-labelledby="overview-video" className="mx-auto max-w-screen-md">
+  <h2 id="overview-video" className="text-center text-2xl font-semibold text-[#ffe1b3] mb-3">
+    Our Reports
+  </h2>
+  <VideoPlayer src={videoUrl} />
+  
+
+
+  
+</section>
       {/* Body content wrapper */}
       <div className="roboto-font mx-auto w-full max-w-screen-lg space-y-6 text-xl text-gray-100 max-[1040px]:px-4 md:text-2xl">
         {/* Introductory copy */}
-        <div>
-          <p className="pb-4">
-            Our standard-format reports rate properties on walkable access to 74
-            commonly-used services, plus five client-or-staff-chosen ones.
-            Reports for different addresses can be compared by real estate
-            agents, home buyers, and renters, favoring those requiring less car
-            usage. City planners and developers can use these reports to
-            incentivize more pedestrian-favoring development and reduce traffic.
-          </p>
-          <p className="pb-4">
-            Our objective is to reduce urban sprawl by incentivizing denser
-            mixed-use development that serves residents' needs more completely.
-            Having all needed services within a short walking distance can
-            eliminate the need for cars. That can free up funds for other uses,
-            like higher-quality housing.
-          </p>
-        </div>
+        <section aria-labelledby="what-we-do" className="mx-auto max-w-prose leading-relaxed">
+        <h2 id="what-we-do" className="sr-only">What we do</h2>
+        <p className="pb-4">
+          We produce standardized, address-level walkability reports that score access to 74 everyday services (plus 5 custom). Reports are directly comparable across addresses, helping agents, buyers, renters, and planners make better decisions.
+        </p>
+        <p>
+          Our goal: reduce sprawl and traffic by supporting denser, mixed-use
+          development. When daily needs are a short walk away, people spend less on
+          transport and can invest more in better housing.
+        </p>
+      </section>
 
         {/* Desktop Benefits Section */}
         <div className="bg-[linear-gradient(to_right,rgba(90,90,90,0.1),rgba(90,90,90,0.5))] p-4 max-[700px]:hidden">
@@ -138,25 +155,26 @@ export default function About() {
         </div>
 
         {/* Mobile Benefits Section */}
-        <div className="min-[700px]:hidden">
-          <p className="pb-6 text-center text-3xl font-medium">
-            Our product benefits . . .
-          </p>
-          {tabs.map((tab) => (
-            <div key={tab.id} className="mb-6">
-              <div className="text-[17pt] font-semibold text-gray-100">
-                {tab.label}
-              </div>
-              <ul className="mb-16 mt-2 list-outside list-disc pl-5 text-gray-300">
-                {sections[tab.id].map((item, index) => (
-                  <li className="mb-4" key={index}>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
+<div className="min-[700px]:hidden">
+  <h2 className="pb-4 text-center text-2xl font-semibold">Our product benefits…</h2>
+  <div className="space-y-3">
+    {tabs.map((tab) => (
+      <details key={tab.id} className="rounded-lg bg-stone-900/60 p-3">
+        <summary className="cursor-pointer text-[17pt] font-semibold text-gray-100">
+          {tab.label}
+        </summary>
+        <ul className="mt-3 list-disc pl-6 text-gray-300">
+          {sections[tab.id].map((item, i) => <li key={i} className="mb-2">{item}</li>)}
+        </ul>
+      </details>
+    ))}
+  </div>
+</div>
+
+
+
+
+
 
         {/* Closing body paragraphs */}
         <div className="pt-2">
