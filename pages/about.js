@@ -172,12 +172,9 @@ console.log("videoUrl:", videoUrl);
 </div>
 
 
-<section aria-labelledby="next-steps" className="mx-auto mt-8 flex flex-wrap items-center justify-center gap-3">
-  <h2 id="next-steps" className="sr-only">Next steps</h2>
-  <a href="/samples" className="rounded-lg bg-amber-300 px-5 py-2 font-semibold text-black hover:bg-amber-200 focus:outline-none focus:ring-2 focus:ring-amber-300">View Samples</a>
-  <a href="/order" className="rounded-lg bg-stone-800 px-5 py-2 font-semibold text-amber-200 hover:bg-stone-700 focus:outline-none focus:ring-2 focus:ring-amber-300">Order a Report</a>
-  <a href="/contact" className="rounded-lg border border-amber-300 px-5 py-2 font-semibold text-amber-200 hover:bg-stone-900 focus:outline-none focus:ring-2 focus:ring-amber-300">Talk to Us</a>
-</section>
+
+
+
 
         {/* Closing body paragraphs */}
         <div className="pt-2">
