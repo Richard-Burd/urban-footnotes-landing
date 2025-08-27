@@ -17,29 +17,33 @@ export default function Home() {
       </Head>
 
       {/* Use the SAME container as your site header/layout */}
-      <main className="mx-auto max-w-6xl px-8">
+      <main className="mx-auto lg:mb-4 md:text-8xl py-0 max-w-screen-lg">
         {/* HERO */}
-        <section className="mt-6">
-          <div className="relative overflow-hidden rounded-xl min-h-[560px] md:min-h-[400px]">
+        <section className="mt-0 ">
+          <div className="relative min-h-[560px] md:min-h-[400px]">
             {/* Gradient background inside the same container (no w-screen) */}
             <Image
               src="/images/homepage-gradient.svg"
               alt=""
               aria-hidden="true"
               fill
+              sizes="100vw"
               className="object-cover"
               priority
             />
 
             {/* Content: logo left, text right (stacks on mobile) */}
-            <div className="absolute inset-0 flex flex-col md:flex-row items-center md:items-center justify-center md:justify-start px-6 md:px-10">
+    <div className="absolute inset-0 z-10 flex flex-col md:flex-row 
+                    items-center md:items-center justify-center md:justify-start 
+                    px-6 md:px-10 gap-4 md:gap-12">
+
               {/* Logo — explicit floors so it’s never tiny */}
-                <div className="w-full md:w-2/3 m-6">
+                <div className="w-full md:w-3/5">
                 <Logo type="ufn" className="w-full h-auto" />
               </div>
 
               {/* Copy + CTA */}
-              <div className="w-full md:w-1/3 text-center md:text-left">
+              <div className="mt-0 md:mt-10 w-full md:w-2/5 text-center md:text-left">
                 <h1 className="font-bold leading-tight text-[clamp(1.75rem,3.6vw,2rem)]">
                   Neighborhood reports on walkability and access to services.
                 </h1>
@@ -48,8 +52,13 @@ export default function Home() {
                 </p>
                 <Link
                   href="/reports"
-                  className="inline-block mt-6 px-6 py-3 bg-stone-800 text-black text-[clamp(1.2rem,3.6vw,1.4rem)] font-semibold rounded-lg shadow transition"
-                >
+                    className="w-full mb-10 mt-4 inline-flex items-center justify-center py-3
+             bg-stone-900 text-stone-100
+             text-[clamp(1.2rem,3.6vw,1.4rem)] font-semibold
+             rounded-lg shadow transition
+             hover:bg-stone-800 focus-visible:outline focus-visible:outline-2
+             focus-visible:outline-offset-2 focus-visible:outline-stone-300"
+>
                   View Sample Reports
                 </Link>
               </div>
