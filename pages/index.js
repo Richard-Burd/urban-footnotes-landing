@@ -2,77 +2,91 @@ import Logo from "@/components/LogoLanding";
 import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
+import ProductSample from "@/components/ProductSample";
+import samplesData from "@/lib/samplesData";
+import SamplesHeader from "@/components/SamplesHeader";
+// import Button from "@/components/Button"; // unused right now
 
 export default function Home() {
-  const videoUrl = `${process.env.NEXT_PUBLIC_S3_BASE_URL.replace(/\/+$/, "")}/ads/ufn-about-us-v2-small.mp4`;
+  const baseUrl = process.env.NEXT_PUBLIC_S3_BASE_URL?.replace(/\/+$/, "") ?? "";
+  const videoUrl = `${baseUrl}/ads/ufn-about-us-v2-small.mp4`;
 
-  const homeTitle = "Mission Statement";
+  const whoTitle = "Who We Are";
+  const homeTitle = "Our Mission";
   const homeText =
     "To enhance our society and planet's health, our reports display how many commonly-used services are within short walking distance of a given address — in a standardized, comparative format — incentivizing and promoting development that allows more residents to conveniently live without owning cars.";
 
+      // Filter & sort the "Highly Walkable" data
+  const highlyWalkableData = samplesData
+    .filter((entry) => entry.category === "Highly Walkable")
+    .sort((a, b) => Number(a.categoryRank) - Number(b.categoryRank)); // Sort by categoryRank (converted to a number)
   return (
-    <div className="bg-black text-white">
+    <div className="text-white">
       <Head>
-        <link rel="preload" href={videoUrl} as="video" type="video/mp4" media="(min-width: 1000px)" />
+        <link
+          rel="preload"
+          href={videoUrl}
+          as="video"
+          type="video/mp4"
+          media="(min-width: 1000px)"
+        />
       </Head>
 
-      {/* Use the SAME container as your site header/layout */}
-      <main className="mx-auto lg:mb-4 md:text-8xl py-0 max-w-screen-lg">
+      {/* Page grid (12 cols) */}
+      <main className="mx-auto max-w-screen-lg grid grid-cols-12 gap-x-0 gap-y-0 lg:mb-4 py-0 items-start">
         {/* HERO */}
-        <section className="mt-0 ">
-          <div className="relative min-h-[560px] md:min-h-[400px]">
-            {/* Gradient background inside the same container (no w-screen) */}
-            <Image
-              src="/images/homepage-gradient.svg"
-              alt=""
-              aria-hidden="true"
-              fill
-              sizes="100vw"
-              className="object-cover"
-              priority
-            />
+        <section className="relative col-span-12 isolate">
+          <Image
+            src="/images/homepage-gradient.svg"
+            alt="homepage-gradient"
+            fill
+            sizes="100vw"
+            className="object-cover -z-10"
+            priority
+          />
 
-            {/* Content: logo left, text right (stacks on mobile) */}
-    <div className="absolute inset-0 z-10 flex flex-col md:flex-row 
-                    items-center md:items-center justify-center md:justify-start 
-                    px-6 md:px-10 gap-4 md:gap-12">
+          <div
+            className="min-h-[400px] md:min-h-[560px] px-6 md:px-10 py-6 md:py-10
+                       grid grid-cols-1 md:[grid-template-columns:2fr_1fr]
+                       items-start md:items-center gap-0 md:gap-12"
+          >
+            <div>
+              <Logo
+                type="ufn"
+                className="w-full h-auto max-h-[220px] md:max-h-[400px]"
+              />
+            </div>
 
-              {/* Logo — explicit floors so it’s never tiny */}
-                <div className="w-full md:w-3/5">
-                <Logo type="ufn" className="w-full h-auto" />
-              </div>
-
-              {/* Copy + CTA */}
-              <div className="mt-0 md:mt-10 w-full md:w-2/5 text-center md:text-left">
-                <h1 className="font-bold leading-tight text-[clamp(1.75rem,3.6vw,2rem)]">
-                  Neighborhood reports on walkability and access to services.
-                </h1>
-                <p className="mt-4 text-[clamp(1.2rem,3.6vw,1.4rem)] leading-relaxed text-stone-200">
-                  Research that supports healthier, walkable, more sustainable communities.
-                </p>
-                <Link
-                  href="/reports"
-                    className="w-full mb-10 mt-4 inline-flex items-center justify-center py-3
-             bg-stone-900 text-stone-100
-             text-[clamp(1.2rem,3.6vw,1.4rem)] font-semibold
-             rounded-lg shadow transition
-             hover:bg-stone-800 focus-visible:outline focus-visible:outline-2
-             focus-visible:outline-offset-2 focus-visible:outline-stone-300"
->
-                  View Sample Reports
-                </Link>
-              </div>
+            <div className="text-center md:text-left self-start md:self-auto">
+              <h1 className="font-bold leading-tight text-[clamp(1.75rem,3.6vw,2rem)]">
+                Neighborhood reports on walkability and access to services.
+              </h1>
+              <p className="mt-4 text-[clamp(1.2rem,3.6vw,1.4rem)] leading-relaxed text-stone-200">
+                Research that supports healthier, walkable, more sustainable communities.
+              </p>
+              <Link
+                href="/samples"
+                className="w-full mb-10 mt-4 inline-flex items-center justify-center py-3
+                           bg-stone-900 text-stone-100
+                           text-[clamp(1.2rem,3.6vw,1.4rem)] font-semibold
+                           rounded-lg shadow transition hover:bg-stone-800
+                           focus-visible:outline focus-visible:outline-2
+                           focus-visible:outline-offset-2 focus-visible:outline-stone-300
+                           no-underline visited:no-underline text-current visited:text-current"
+              >
+                View Sample Reports
+              </Link>
             </div>
           </div>
         </section>
 
         {/* VIDEO */}
-        <section className="mt-10">
+        <section className="col-span-12 mt-0">
           <video
-            className="w-full rounded-xl shadow-lg"
+            className="w-full shadow-lg"
             controls
             preload="metadata"
-            poster="/images/hero-poster.jpg"
+            poster=""
             playsInline
           >
             <source src={videoUrl} type="video/mp4" />
@@ -80,17 +94,176 @@ export default function Home() {
           </video>
         </section>
 
-        {/* MISSION STATEMENT */}
-        <section className="my-12">
-          <div className="rounded-[40px] bg-[rgba(86,85,70,0.4)] p-8">
-            <h2 className="text-center font-bold text-[clamp(2rem,4vw,3.5rem)]">
-              {homeTitle}
-            </h2>
-            <p className="mt-4 text-[20px] md:text-[23px] leading-relaxed tracking-wide text-stone-300">
-              {homeText}
-            </p>
+        {/* LEFT COLUMN: who + mission (no sample here now) */}
+        <div className="col-span-12 md:col-span-6 p-4">
+          {/* who we are */}
+          <div id="who-statement-box" className="max-w-[770px] rounded-[10px] bg-blue-900/20 pt-4 self-start">
+            <div className="flex-col flex gap-4">
+              <div
+                className="title-shadow-samples page-title-shadow roboto-font text-center text-[35px] text-title-text-home [@media(min-width:1000px)]:text-[45px]"
+              >
+                <div className="text-center">{whoTitle}</div>
+              </div>
+
+              <div className="roboto-font px-8 pb-8 pt-0 text-[clamp(1.2rem,3.6vw,1.5rem)] tracking-wide text-stone-300">
+                <p>
+                  We are a team of environmental researchers building tools and publishing reports to help
+                  build healthier, more sustainable communities. Explore our other projects at
+                </p>
+
+                <Link href="https://urbancruiseship.org/" target="_blank" rel="noopener noreferrer">
+                  <div className="flex items-center justify-center lg:pl-8 mt-4">
+                    <Logo type="ucs" color="#ac9c84ff" width="200" height="100" />
+                  </div>
+                </Link>
+              </div>
+            </div>
           </div>
-        </section>
+
+          {/* MISSION STATEMENT */}
+          <div id="mission-statement-box" className="mt-6 max-w-[770px] rounded-[10px] bg-[rgba(86,85,70,0.4)] pt-4 self-start">
+            <div className="flex-col flex gap-4">
+              <div className="pmt-6 title-shadow-samples page-title-shadow roboto-font text-center text-[35px] text-title-text-home [@media(min-width:1000px)]:text-[45px]">
+                <div className="text-center">{homeTitle}</div>
+              </div>
+              <div className="roboto-font px-8 pb-8 pt-0 text-[clamp(1.2rem,3.6vw,1.5rem)] tracking-wide text-stone-300">
+                <p>{homeText}</p>
+              </div>
+            </div>
+          </div>
+
+            {/* Property Report Metrics Scoreboard (clickable card) */}
+<div className="relative group my-8 rounded-[10px] overflow-hidden max-w-[770px]">
+  {/* Visual card */}
+  <div
+    className="rounded-[10px] bg-[rgba(86,85,70,0.4)] p-4 transition-shadow
+               group-hover:shadow-lg group-hover:bg-[rgba(86,85,70,0.6)]"
+  >
+    {/* Card Title */}
+    <div
+      id="page-title"
+      className="pb-4 text-center text-[30px] text-title-text-samples sm:text-[40px] md:text-[45px]"
+    >
+      Property Report Metrics Scoreboard
+    </div>
+
+    {/* Section: Highly Walkable */}
+    <div className="pb-4">
+      <div className="mb-2 border-b-4 border-x-slate-200">
+        <div className="pt-3 text-right text-[24px] md:text-[28px] italic text-gray-200">
+          Highly Walkable
+        </div>
+      </div>
+
+      <div>
+        <div className="flex flex-col">
+          {highlyWalkableData.slice(0, 5).map((entry, index) => (
+            <div
+              key={entry.address}
+              className="flex w-full items-center py-2 border-b border-slate-700 last:border-none"
+            >
+              {/* Address */}
+              <div className="w-full pr-4 text-right">
+                <div
+                  key={index}
+                  className="text-[18px] md:text-[20px] leading-[28px] text-gray-200"
+                >
+                  {entry.address}
+                </div>
+              </div>
+
+              {/* Walkability Data */}
+              <div className="flex gap-2 text-center text-[16px] md:text-[18px] font-semibold leading-[24px] text-gray-800">
+                <div className="w-10 md:w-12 bg-[#73e369ff]">{entry.greenNear}</div>
+                <div className="w-10 md:w-12 bg-[#f7fc70ff]">{entry.yellowFarther}</div>
+                <div className="w-10 md:w-12 bg-[#e37569ff]">{entry.redDistant}</div>
+                <div className="w-10 md:w-12 rounded-[6px] bg-[#cbd4e0ff] text-[#1f244dff]">
+                  {entry.walkabilityScore}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {/* Invisible overlay link — covers whole card */}
+  <Link
+    href="/scoreboard" // <-- change this to where you want the card to go
+    aria-label="View full metrics scoreboard"
+    className="absolute inset-0 z-10 no-underline decoration-none text-current visited:text-current
+               focus-visible:outline focus-visible:outline-2 focus-visible:outline-stone-300"
+  />
+</div>
+
+
+        </div>
+
+
+
+
+        {/* RIGHT COLUMN: sample card + product preview */}
+        <div id="right-column" className="self-start col-span-12 md:col-span-6 px-4 md:p-4">
+          {/* SAMPLE CARD - visual card + invisible overlay link */}
+          <div className="relative group rounded-[10px] overflow-hidden">
+            <div className="rounded-[10px] bg-green-900/10 p-6 transition-shadow group-hover:shadow-lg group-hover:bg-green-900/20">
+              <div className="text-center text-[35px] roboto-font title-shadow-samples page-title-shadow text-title-text-home">
+                Sample Report
+              </div>
+              <div className="p-0">
+                <ProductSample
+                  imagePath="preview-233-8th-ave-new-york.4.jpg"
+                  address="223 8th Ave. New York, NY 10011"
+                  serviceTypesNearby={55}
+                  serviceTypesFarther={7}
+                  serviceTypesDistant={12}
+                  walkabilityScore={20}
+                  pdfPath="doc-233-8th-ave-new-york.5.pdf"
+                />
+              </div>
+            </div>
+
+            <Link
+              href="/samples"
+              aria-label="View sample reports"
+              className="absolute inset-0 z-10 no-underline decoration-none text-current visited:text-current focus-visible:outline focus-visible:outline-2 focus-visible:outline-stone-300"
+            />
+          </div>
+
+                    <div className="relative group rounded-[10px] ">
+            <div className="py-6 md:mx-0 rounded-[10px] bg-red-900/20 p-6 transition-shadow group-hover:shadow-lg group-hover:bg-red-900/30 mt-6">
+              <div className="text-center text-[35px] roboto-font title-shadow-samples page-title-shadow text-title-text-home">
+                Product Features
+              </div>
+              <div className="mt-0">
+            <Link
+              href="/product"
+              className="w-full inline-flex items-center justify-center
+                        text-stone-100 
+                         text-[clamp(1.2rem,3.6vw,1.4rem)] font-semibold
+                         rounded-lg "
+            >
+              <div className="relative w-full max-w-[420px] aspect-[9/16] p-4">
+                <Image
+                  alt="First page of the product, mobile version"
+                  src={`${baseUrl}/product-page-mobile.1a.v2.png`}
+                  fill
+                  sizes="(min-width: 1024px) 33vw, 80vw"
+                  className="object-contain"
+                />
+              </div>
+            </Link>
+          </div>
+            </div>
+
+            <Link
+              href="/samples"
+              aria-label="View sample reports"
+              className="absolute inset-0 z-10 no-underline decoration-none text-current visited:text-current focus-visible:outline focus-visible:outline-2 focus-visible:outline-stone-300"
+            />
+          </div>
+        </div>
       </main>
     </div>
   );
