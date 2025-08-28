@@ -96,48 +96,83 @@ export default function Home() {
 
         {/* LEFT COLUMN: who + mission (no sample here now) */}
         <div className="col-span-12 md:col-span-6 p-4">
-          {/* who we are */}
-          <div id="who-statement-box" className="max-w-[770px] rounded-[10px] bg-blue-900/20 pt-4 self-start">
-            <div className="flex-col flex gap-4">
-              <div
-                className="title-shadow-samples page-title-shadow roboto-font text-center text-[35px] text-title-text-home [@media(min-width:1000px)]:text-[45px]"
-              >
-                <div className="text-center">{whoTitle}</div>
-              </div>
 
-              <div className="roboto-font px-8 pb-8 pt-0 text-[clamp(1.2rem,3.6vw,1.5rem)] tracking-wide text-stone-300">
-                <p>
-                  We are a team of environmental researchers building tools and publishing reports to help
-                  build healthier, more sustainable communities. Explore our other projects at
-                </p>
 
-                <Link href="https://urbancruiseship.org/" target="_blank" rel="noopener noreferrer">
-                  <div className="flex items-center justify-center lg:pl-8 mt-4">
-                    <Logo type="ucs" color="#ac9c84ff" width="200" height="100" />
-                  </div>
-                </Link>
-              </div>
-            </div>
-          </div>
+          {/* Who We Are (clickable card) */}
+<div className="relative group max-w-[770px] rounded-[10px] overflow-hidden self-start pt-0">
+  {/* Visual card */}
+  <div
+    id="who-statement-box"
+    className="rounded-[10px] bg-blue-900/20  transition-shadow
+               group-hover:shadow-lg group-hover:bg-blue-900/30"
+  >
+    <div className="flex-col flex gap-4">
+      <div
+        className="title-shadow-samples page-title-shadow roboto-font text-center text-[35px] text-title-text-home [@media(min-width:1000px)]:text-[45px]"
+      >
+        <div className="text-center">{whoTitle}</div>
+      </div>
 
-          {/* MISSION STATEMENT */}
-          <div id="mission-statement-box" className="mt-6 max-w-[770px] rounded-[10px] bg-[rgba(86,85,70,0.4)] pt-4 self-start">
-            <div className="flex-col flex gap-4">
-              <div className="pmt-6 title-shadow-samples page-title-shadow roboto-font text-center text-[35px] text-title-text-home [@media(min-width:1000px)]:text-[45px]">
-                <div className="text-center">{homeTitle}</div>
-              </div>
-              <div className="roboto-font px-8 pb-8 pt-0 text-[clamp(1.2rem,3.6vw,1.5rem)] tracking-wide text-stone-300">
-                <p>{homeText}</p>
-              </div>
-            </div>
-          </div>
+      <div className="roboto-font px-8 pb-8 pt-0 text-[clamp(1.2rem,3.6vw,1.5rem)] tracking-wide text-stone-300">
+        <p>
+          We are a team of environmental researchers building tools and publishing reports
+          to help build healthier, more sustainable communities. Explore our other projects
+          at:
+        </p>
+
+        {/* Just render the logo as decoration inside the card */}
+        <div className="flex items-center justify-center lg:pl-8 mt-4">
+          <Logo type="ucs" color="#ac9c84ff" width="200" height="100" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {/* Invisible overlay link for the whole card */}
+  <Link
+    href="https://urbancruiseship.org/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Learn more about Urban Cruise Ship Analysis Solutions"
+    className="absolute inset-0 z-10 no-underline decoration-none text-current visited:text-current
+               focus-visible:outline focus-visible:outline-2 focus-visible:outline-stone-300"
+  />
+</div>
+
+
+         {/* MISSION STATEMENT (clickable card) */}
+<div className="relative group mt-6 max-w-[770px] rounded-[10px] overflow-hidden self-start">
+  {/* Visual card */}
+  <div
+    id="mission-statement-box"
+    className="rounded-[10px] bg-[rgba(86,85,70,0.4)] p-4 transition-shadow
+               group-hover:shadow-lg group-hover:bg-[rgba(86,85,70,0.6)]"
+  >
+    <div className="flex-col flex gap-4">
+      <div className="title-shadow-samples page-title-shadow roboto-font text-center text-[35px] text-title-text-home [@media(min-width:1000px)]:text-[45px]">
+        <div className="text-center">{homeTitle}</div>
+      </div>
+      <div className="roboto-font px-8 pb-8 pt-0 text-[clamp(1.2rem,3.6vw,1.5rem)] tracking-wide text-stone-300">
+        <p>{homeText}</p>
+      </div>
+    </div>
+  </div>
+
+  {/* Invisible overlay link */}
+  <Link
+    href="/about"  // <-- change this route to your actual About Us page
+    aria-label="Learn more about us"
+    className="absolute inset-0 z-10 no-underline decoration-none text-current visited:text-current
+               focus-visible:outline focus-visible:outline-2 focus-visible:outline-stone-300"
+  />
+</div>
 
             {/* Property Report Metrics Scoreboard (clickable card) */}
 <div className="relative group my-8 rounded-[10px] overflow-hidden max-w-[770px]">
   {/* Visual card */}
   <div
-    className="rounded-[10px] bg-[rgba(86,85,70,0.4)] p-4 transition-shadow
-               group-hover:shadow-lg group-hover:bg-[rgba(86,85,70,0.6)]"
+    className="rounded-[10px] bg-green-900/20 p-4 transition-shadow
+               group-hover:shadow-lg group-hover:bg-green-900/30"
   >
     {/* Card Title */}
     <div
@@ -230,9 +265,9 @@ export default function Home() {
               className="absolute inset-0 z-10 no-underline decoration-none text-current visited:text-current focus-visible:outline focus-visible:outline-2 focus-visible:outline-stone-300"
             />
           </div>
-
-                    <div className="relative group rounded-[10px] ">
-            <div className="py-6 md:mx-0 rounded-[10px] bg-red-900/20 p-6 transition-shadow group-hover:shadow-lg group-hover:bg-red-900/30 mt-6">
+          {/* PRODUCT PREVIEW (clickable card) */}
+                    <div className="relative group rounded-[10px] py-4 ">
+            <div className="py-4 md:mx-0 rounded-[10px] bg-red-900/20 p-6 transition-shadow group-hover:shadow-lg group-hover:bg-red-900/30 mt-6">
               <div className="text-center text-[35px] roboto-font title-shadow-samples page-title-shadow text-title-text-home">
                 Product Features
               </div>
@@ -244,12 +279,12 @@ export default function Home() {
                          text-[clamp(1.2rem,3.6vw,1.4rem)] font-semibold
                          rounded-lg "
             >
-              <div className="relative w-full max-w-[420px] aspect-[9/16] p-4">
+              <div className="relative w-full max-w-[460px] aspect-[9/16] p-4">
                 <Image
                   alt="First page of the product, mobile version"
                   src={`${baseUrl}/product-page-mobile.1a.v2.png`}
                   fill
-                  sizes="(min-width: 1024px) 33vw, 80vw"
+                  sizes="(min-width: 1024px) 460px, 100vw"
                   className="object-contain"
                 />
               </div>
@@ -258,7 +293,7 @@ export default function Home() {
             </div>
 
             <Link
-              href="/samples"
+              href="/product"
               aria-label="View sample reports"
               className="absolute inset-0 z-10 no-underline decoration-none text-current visited:text-current focus-visible:outline focus-visible:outline-2 focus-visible:outline-stone-300"
             />
