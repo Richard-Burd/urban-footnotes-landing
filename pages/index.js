@@ -21,7 +21,7 @@ export default function Home() {
     .filter((entry) => entry.category === "Highly Walkable")
     .sort((a, b) => Number(a.categoryRank) - Number(b.categoryRank)); // Sort by categoryRank (converted to a number)
   return (
-    <div className="text-red">
+    <div className="">
       <Head>
         <link
           rel="preload"
@@ -49,9 +49,10 @@ export default function Home() {
             {/* Centered content wrapper */}
   <div className="max-w-screen-xl xl:max-w-[1600px] px-6 md:px-10 py-6 md:py-10">
     <div
-      className="min-h-[400px] md:min-h-0[px] 
-                 grid grid-cols-1 md:[grid-template-columns:2fr_1fr]
-                 items-start md:items-center gap-0 md:gap-12"
+      className="min-h-[400px] md:min-h-[0px]
+             grid grid-cols-1 md:grid-cols-2
+             items-start md:items-center gap-0 md:gap-12
+             justify-center max-w-5xl mx-auto"
     >
             <div>
               <Logo
@@ -161,7 +162,7 @@ export default function Home() {
       <div className="title-shadow-samples page-title-shadow roboto-font text-center text-[35px] text-title-text-home [@media(min-width:1000px)]:text-[45px]">
         <div className="text-center">{homeTitle}</div>
       </div>
-      <div className="roboto-font px-8 pb-8 pt-0 text-[clamp(1.2rem,3.6vw,1.5rem)] tracking-wide text-red">
+      <div className="roboto-font px-8 pb-8 pt-0 text-[clamp(1.2rem,3.6vw,1.5rem)] tracking-wide">
         <p>{homeText}</p>
       </div>
     </div>
@@ -283,8 +284,7 @@ export default function Home() {
               <div className="mt-0">
             <Link
               href="/product"
-              className="w-full inline-flex items-center justify-center
-                        text-red
+              className="w-full inline-flex items-center justify-center 
                          text-[clamp(1.2rem,3.6vw,1.4rem)] font-semibold
                          rounded-lg "
             >

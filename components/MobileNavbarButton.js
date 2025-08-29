@@ -10,8 +10,8 @@ const MobileNavbarButton = ({ title, bgColor, isActive, path }) => {
       >
         <Link
           href={path}
-          className="flex h-full w-full items-center justify-center text-neutral-300 no-underline"
-          style={{ textDecoration: "none", color: "#d1d5db" }}
+          className="flex h-full w-full items-center justify-center text-white no-underline"
+          style={{ textDecoration: "none", color: "#ffffffff" }}
         >
           <div className="py-[2px] text-[15px]">{title}</div>
         </Link>

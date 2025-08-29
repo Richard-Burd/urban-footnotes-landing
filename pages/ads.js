@@ -271,7 +271,7 @@ function AudioPlayer({ src }) {
     <div className="flex items-center justify-center gap-4 mb-6 w-1/3 mx-auto px-4">
       <button
         onClick={togglePlay}
-        className="p-4 bg-[#3B1F07] rounded-full text-[#d1d5db] hover:bg-[#843F06] transition-colors duration-200"
+        className="p-4 bg-[#3B1F07] rounded-full hover:bg-[#843F06] transition-colors duration-200"
       >
         {isPlaying ? (
           <svg
@@ -283,7 +283,7 @@ function AudioPlayer({ src }) {
             <rect x="4" y="4" width="16" height="16" />
           </svg>
         ) : (
-          <Volume2 className="w-20 h-20 text-[#f4d4c9]"/>
+          <Volume2 className="w-20 h-20"/>
         )}
         </button>
 
@@ -297,7 +297,7 @@ function AudioPlayer({ src }) {
           className="flex-grow h-2 rounded-lg cursor-pointer bg-gray-300/50 accent-[#F7A969]"
         />
 
-      <span className="text-[#ffe5d1] text-[24px]  whitespace-nowrap">
+      <span className="text-[24px]  whitespace-nowrap">
           {formatTime(progress)} / {formatTime(duration)}
         </span>
 
@@ -368,7 +368,7 @@ export default function Ads() {
       />
 
       <div className="mt-6 max-w-screen-lg mx-auto px-10 flex items-center space-x-4">
-        <span className="text-[28px] md=text-[16px] text-[#ffd4b3]">What is your focus or role?</span>
+        <span className="text-[28px] md=text-[16px]">What is your focus or role?</span>
         <div className="relative flex-grow dropdown">
           <button
             onClick={() => setDropdownOpen(o => !o)}
@@ -398,7 +398,7 @@ export default function Ads() {
                       <button
                         key={item.key}
                         onClick={() => { setActiveKey(item.key); setDropdownOpen(false); setOpenRole(null); }}
-                        className="block w-full text-left px-8 py-2 text-[22px] md=text-[16px] text-[#d1d5db] hover:bg-[#F7A969] hover=text-[#120902] transition-colors duration-200"
+                        className="block w-full text-left px-8 py-2 text-[22px] md=text-[16px] text-white hover:bg-[#F7A969] hover=text-[#120902] transition-colors duration-200"
                       >
                         {item.title}
                       </button>
@@ -416,11 +416,11 @@ export default function Ads() {
         {current.showAudio && current.audioSrc && <AudioPlayer src={srcPath(current.audioSrc)} />}
 
         <article className="space-y-4">
-          <h2 className="text-[28px] md=text-[20px] text-[#ffe5d1]">
+          <h2 className="text-[28px] md=text-[20px]">
             {current.content[0]}
           </h2>
           {current.content.slice(1).map((p, idx) => (
-            <p key={idx} className="text-[28px] md=text-[20px] text-[#ffe5d1]">{p}</p>
+            <p key={idx} className="text-[28px] md=text-[20px]">{p}</p>
           ))}
         </article>
       </section>
