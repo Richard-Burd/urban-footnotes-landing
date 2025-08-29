@@ -33,27 +33,30 @@ export default function Home() {
       </Head>
 
       {/* Page grid (12 cols) */}
-      <main className="mx-auto max-w-screen-lg grid grid-cols-12 gap-x-0 gap-y-0 lg:mb-4 py-0 items-start">
+<main className="mx-auto max-w-screen-xl 2xl:max-w-[1600px] grid grid-cols-12 gap-x-0 gap-y-0 lg:mb-4 py-0 items-start">
         {/* HERO */}
-        <section className="relative col-span-12 isolate">
-          <Image
-            src="/images/homepage-gradient.svg"
-            alt="homepage-gradient"
-            fill
-            sizes="100vw"
-            className="object-cover -z-10"
-            priority
-          />
+        <section className="relative col-span-12 isolate mx-[calc(50%-50vw)] w-screen">
+      {/* Full-bleed background */}
+      <Image
+        src="/images/homepage-gradient.svg"
+        alt="homepage-gradient"
+        fill
+        sizes="100vw"
+        className="object-cover -z-10"
+        priority
+      />
 
-          <div
-            className="min-h-[400px] md:min-h-[560px] px-6 md:px-10 py-6 md:py-10
-                       grid grid-cols-1 md:[grid-template-columns:2fr_1fr]
-                       items-start md:items-center gap-0 md:gap-12"
-          >
+            {/* Centered content wrapper */}
+  <div className="max-w-screen-xl xl:max-w-[1600px] px-6 md:px-10 py-6 md:py-10">
+    <div
+      className="min-h-[400px] md:min-h-0[px] 
+                 grid grid-cols-1 md:[grid-template-columns:2fr_1fr]
+                 items-start md:items-center gap-0 md:gap-12"
+    >
             <div>
               <Logo
                 type="ufn"
-                className="w-full h-auto max-h-[220px] md:max-h-[400px]"
+                className="w-full h-auto max-h-[400px]"
               />
             </div>
 
@@ -61,13 +64,13 @@ export default function Home() {
               <h1 className="font-bold leading-tight text-[clamp(1.75rem,3.6vw,2rem)]">
                 Neighborhood reports on walkability and access to services.
               </h1>
-              <p className="mt-4 text-[clamp(1.2rem,3.6vw,1.4rem)] leading-relaxed text-stone-200">
+              <p className="mt-4 text-[clamp(1.2rem,3.6vw,1.4rem)] leading-relaxed text-white">
                 Research that supports healthier, walkable, more sustainable communities.
               </p>
               <Link
                 href="/samples"
                 className="w-full mb-10 mt-4 inline-flex items-center justify-center py-3
-                           bg-stone-900 text-stone-100
+                           bg-stone-900 text-white
                            text-[clamp(1.2rem,3.6vw,1.4rem)] font-semibold
                            rounded-lg shadow transition hover:bg-stone-800
                            focus-visible:outline focus-visible:outline-2
@@ -78,21 +81,27 @@ export default function Home() {
               </Link>
             </div>
           </div>
+          </div>
         </section>
 
-        {/* VIDEO */}
-        <section className="col-span-12 mt-0">
-          <video
-            className="w-full shadow-lg"
-            controls
-            preload="metadata"
-            poster=""
-            playsInline
-          >
-            <source src={videoUrl} type="video/mp4" />
-            Sorry, your browser doesn’t support embedded videos.
-          </video>
-        </section>
+        {/* VIDEO (full-width card) */}
+<section className="col-span-12 mt-0">
+  <div className="relative m-4 group rounded-[10px] overflow-hidden">
+    <div className=" rounded-[10px] bg-stone-900/20 transition-shadow group-hover:shadow-lg group-hover:bg-stone-900/30">
+      <video
+        className="w-full h-auto object-cover"
+        controls
+        preload="metadata"
+        poster=""
+        playsInline
+      >
+        <source src={videoUrl} type="video/mp4" />
+        Sorry, your browser doesn’t support embedded videos.
+      </video>
+    </div>
+  </div>
+</section>
+
 
         {/* LEFT COLUMN: who + mission (no sample here now) */}
         <div className="col-span-12 md:col-span-6 p-4">
@@ -103,7 +112,7 @@ export default function Home() {
   {/* Visual card */}
   <div
     id="who-statement-box"
-    className="rounded-[10px] bg-blue-900/20  transition-shadow
+    className="p-2 rounded-[10px] bg-blue-900/20  transition-shadow
                group-hover:shadow-lg group-hover:bg-blue-900/30"
   >
     <div className="flex-col flex gap-4">
@@ -113,7 +122,7 @@ export default function Home() {
         <div className="text-center">{whoTitle}</div>
       </div>
 
-      <div className="roboto-font px-8 pb-8 pt-0 text-[clamp(1.2rem,3.6vw,1.5rem)] tracking-wide text-stone-300">
+      <div className="roboto-font px-8 pb-8 pt-0 text-[clamp(1.2rem,3.6vw,1.5rem)] tracking-wide">
         <p>
           We are a team of environmental researchers building tools and publishing reports
           to help build healthier, more sustainable communities. Explore our other projects
@@ -152,7 +161,7 @@ export default function Home() {
       <div className="title-shadow-samples page-title-shadow roboto-font text-center text-[35px] text-title-text-home [@media(min-width:1000px)]:text-[45px]">
         <div className="text-center">{homeTitle}</div>
       </div>
-      <div className="roboto-font px-8 pb-8 pt-0 text-[clamp(1.2rem,3.6vw,1.5rem)] tracking-wide text-stone-300">
+      <div className="roboto-font px-8 pb-8 pt-0 text-[clamp(1.2rem,3.6vw,1.5rem)] tracking-wide text-red">
         <p>{homeText}</p>
       </div>
     </div>
@@ -177,7 +186,7 @@ export default function Home() {
     {/* Card Title */}
     <div
       id="page-title"
-      className="pb-4 text-center text-[30px] text-title-text-samples sm:text-[40px] md:text-[45px]"
+      className="title-shadow-samples page-title-shadow pb-4 text-center text-[30px] text-title-text-samples sm:text-[40px] md:text-[45px]"
     >
       Property Report Metrics Scoreboard
     </div>
@@ -185,14 +194,14 @@ export default function Home() {
     {/* Section: Highly Walkable */}
     <div className="pb-4">
       <div className="mb-2 border-b-4 border-x-slate-200">
-        <div className="pt-3 text-right text-[24px] md:text-[28px] italic text-gray-200">
-          Highly Walkable
+        <div className="pt-3 text-right text-[clamp(1.2rem,3.6vw,1.4rem)] italic text-white">
+          The first number, highlighted in green, is the count of service types within a comfortable walking distance (roughly 0.25 miles). The second number, highlighted in yellow, is the count of service types within a longer walking distance (roughly 0.5 miles). The third number, highlighted in red, is the count of service types within a still longer walking distance (roughly 1 mile). The final number is the overall walkability score (out of 30).
         </div>
       </div>
 
       <div>
         <div className="flex flex-col">
-          {highlyWalkableData.slice(0, 5).map((entry, index) => (
+          {highlyWalkableData.slice(0, 8).map((entry, index) => (
             <div
               key={entry.address}
               className="flex w-full items-center py-2 border-b border-slate-700 last:border-none"
@@ -201,14 +210,14 @@ export default function Home() {
               <div className="w-full pr-4 text-right">
                 <div
                   key={index}
-                  className="text-[18px] md:text-[20px] leading-[28px] text-gray-200"
+                  className="text-[18px] md:text-[20px] leading-[28px]"
                 >
                   {entry.address}
                 </div>
               </div>
 
               {/* Walkability Data */}
-              <div className="flex gap-2 text-center text-[16px] md:text-[18px] font-semibold leading-[24px] text-gray-800">
+              <div className="flex gap-2 text-center text-[16px] md:text-[18px] font-semibold leading-[24px] text-stone-900">
                 <div className="w-10 md:w-12 bg-[#73e369ff]">{entry.greenNear}</div>
                 <div className="w-10 md:w-12 bg-[#f7fc70ff]">{entry.yellowFarther}</div>
                 <div className="w-10 md:w-12 bg-[#e37569ff]">{entry.redDistant}</div>
@@ -242,8 +251,8 @@ export default function Home() {
         <div id="right-column" className="self-start col-span-12 md:col-span-6 px-4 md:p-4">
           {/* SAMPLE CARD - visual card + invisible overlay link */}
           <div className="relative group rounded-[10px] overflow-hidden">
-            <div className="rounded-[10px] bg-green-900/10 p-6 transition-shadow group-hover:shadow-lg group-hover:bg-green-900/20">
-              <div className="text-center text-[35px] roboto-font title-shadow-samples page-title-shadow text-title-text-home">
+            <div className="rounded-[10px] bg-green-900/10 p-2 transition-shadow group-hover:shadow-lg group-hover:bg-green-900/20">
+              <div className="title-shadow-samples page-title-shadow roboto-font text-center text-[35px] text-title-text-home [@media(min-width:1000px)]:text-[45px]">
                 Sample Report
               </div>
               <div className="p-0">
@@ -268,14 +277,14 @@ export default function Home() {
           {/* PRODUCT PREVIEW (clickable card) */}
                     <div className="relative group rounded-[10px] py-4 ">
             <div className="py-4 md:mx-0 rounded-[10px] bg-red-900/20 p-6 transition-shadow group-hover:shadow-lg group-hover:bg-red-900/30 mt-6">
-              <div className="text-center text-[35px] roboto-font title-shadow-samples page-title-shadow text-title-text-home">
+              <div className="title-shadow-samples page-title-shadow roboto-font text-center text-[35px] text-title-text-home [@media(min-width:1000px)]:text-[45px]">
                 Product Features
               </div>
               <div className="mt-0">
             <Link
               href="/product"
               className="w-full inline-flex items-center justify-center
-                        text-stone-100 
+                        text-white 
                          text-[clamp(1.2rem,3.6vw,1.4rem)] font-semibold
                          rounded-lg "
             >
