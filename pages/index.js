@@ -21,7 +21,7 @@ export default function Home() {
     .filter((entry) => entry.category === "Highly Walkable")
     .sort((a, b) => Number(a.categoryRank) - Number(b.categoryRank)); // Sort by categoryRank (converted to a number)
   return (
-    <div className="text-white">
+    <div className="text-red">
       <Head>
         <link
           rel="preload"
@@ -64,13 +64,13 @@ export default function Home() {
               <h1 className="font-bold leading-tight text-[clamp(1.75rem,3.6vw,2rem)]">
                 Neighborhood reports on walkability and access to services.
               </h1>
-              <p className="mt-4 text-[clamp(1.2rem,3.6vw,1.4rem)] leading-relaxed text-white">
+              <p className="mt-4 text-[clamp(1.2rem,3.6vw,1.4rem)] leading-relaxed">
                 Research that supports healthier, walkable, more sustainable communities.
               </p>
               <Link
                 href="/samples"
                 className="w-full mb-10 mt-4 inline-flex items-center justify-center py-3
-                           bg-stone-900 text-white
+                           bg-stone-900
                            text-[clamp(1.2rem,3.6vw,1.4rem)] font-semibold
                            rounded-lg shadow transition hover:bg-stone-800
                            focus-visible:outline focus-visible:outline-2
@@ -284,7 +284,7 @@ export default function Home() {
             <Link
               href="/product"
               className="w-full inline-flex items-center justify-center
-                        text-white 
+                        text-red
                          text-[clamp(1.2rem,3.6vw,1.4rem)] font-semibold
                          rounded-lg "
             >
