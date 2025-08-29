@@ -36,9 +36,9 @@ export default function Order() {
         publishable-key="pk_live_51PWM5ZGN52GuXWVWNN9rPCsYn8nK2OK1xZl03U6AzK38Hh5I74b7o5GpPHMj9qyRrPgoVwLABMjC4ZgjrJqr8tXc004r8wQtLl"
       ></stripe-pricing-table>
 
-      <div className="roboto-font w-full max-w-screen-lg px-4 pb-8 text-xl text-stone-300 md:text-2xl">
+      <div className="roboto-font w-full max-w-screen-lg px-4 pb-8 text-xl text-white md:text-2xl">
         <div id="explanations-n-pie-chart">
-          <div className="roboto-font mb-4 text-xl text-gray-200 md:text-2.5xl">
+          <div className="roboto-font mb-4 text-xl text-gray-100 md:text-2.5xl">
             <p className="my-10">
               Please select one of the three options above to purchase a report
               for your address.
@@ -77,7 +77,7 @@ export default function Order() {
               />
             </div>
           </div>
-          <div className="roboto-font mb-4 text-xl text-gray-200 md:text-2.5xl">
+          <div className="roboto-font mb-4 text-xl text-gray-100 md:text-2.5xl">
             <p className="my-10">
               Our accessibility reports are designed to provide insights based
               on available data for the selected property and its surrounding
