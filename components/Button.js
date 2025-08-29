@@ -8,9 +8,9 @@ const base =
   "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-300 " +
   "disabled:opacity-50 disabled:pointer-events-none";
 const variants = {
-  primary: "bg-stone-900 text-stone-100 hover:bg-stone-800",
-  secondary: "bg-stone-100 text-stone-900 hover:bg-stone-200",
-  ghost: "bg-transparent text-stone-100 hover:bg-stone-800/20",
+  primary: "bg-stone-900 text-white hover:bg-stone-800",
+  secondary: "bg-stone-100 text-white hover:bg-stone-200",
+  ghost: "bg-transparent text-white hover:bg-stone-800/20",
 };
 
 export function Button({

@@ -82,7 +82,7 @@ export default function About() {
           >
             <center>{homeTitle}</center>
           </div>
-          <div className="roboto-font px-8 pb-8 pt-4 text-[23px] tracking-wide text-stone-300">
+          <div className="roboto-font px-8 pb-8 pt-4 text-[23px] tracking-wide text-white">
             <p>{homeText}</p>
           </div>
         </div>
