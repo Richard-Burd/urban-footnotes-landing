@@ -5,6 +5,11 @@ import PageTitle from "@/components/PageTitle";
 import Image from "next/image";
 
 export default function About() {
+    const homeTitle = "Our Mission";
+  const homeText =
+    "To enhance our society and planet's health, our reports display how many commonly-used services are within short walking distance of a given address -- in a standardized, comparative format -- incentivizing and promoting development that allows more residents to conveniently live without owning cars.";
+
+    
   const tabs = [
     { id: "real_estate", label: "Real Estate Professionals" },
     { id: "residents", label: "Local Residents" },
@@ -67,27 +72,34 @@ export default function About() {
           showLogo
         />
       </center>
-
+ <div
+          id="mission-statement-box"
+          className="mx-auto my-12 max-w-[770px] rounded-[40px] bg-[rgba(86,85,70,0.4)] pt-4"
+        >
+          <div
+            id="mission-statement-title"
+            className="my-2 title-shadow-home page-title-shadow roboto-font text-center text-[40px] text-title-text-home [@media(min-width:1000px)]:text-[56px] "
+          >
+            <center>{homeTitle}</center>
+          </div>
+          <div className="roboto-font px-8 pb-8 pt-4 text-[23px] tracking-wide text-stone-300">
+            <p>{homeText}</p>
+          </div>
+        </div>
       {/* Body content wrapper */}
       <div className="roboto-font mx-auto w-full max-w-screen-lg space-y-6 text-xl text-gray-100 max-[1040px]:px-4 md:text-2xl">
         {/* Introductory copy */}
-        <div>
-          <p className="pb-4">
-            Our standard-format reports rate properties on walkable access to 74
-            commonly-used services, plus five client-or-staff-chosen ones.
-            Reports for different addresses can be compared by real estate
-            agents, home buyers, and renters, favoring those requiring less car
-            usage. City planners and developers can use these reports to
-            incentivize more pedestrian-favoring development and reduce traffic.
-          </p>
-          <p className="pb-4">
-            Our objective is to reduce urban sprawl by incentivizing denser
-            mixed-use development that serves residents' needs more completely.
-            Having all needed services within a short walking distance can
-            eliminate the need for cars. That can free up funds for other uses,
-            like higher-quality housing.
-          </p>
-        </div>
+        <section aria-labelledby="what-we-do" className="mx-auto max-w-prose leading-relaxed">
+        <h2 id="what-we-do" className="sr-only">What we do</h2>
+        <p className="pb-4">
+          We produce standardized, address-level walkability reports that score access to 74 everyday services (plus 5 custom). Reports are directly comparable across addresses, helping agents, buyers, renters, and planners make better decisions.
+        </p>
+        <p>
+          Our goal: reduce sprawl and traffic by supporting denser, mixed-use
+          development. When daily needs are a short walk away, people spend less on
+          transport and can invest more in better housing.
+        </p>
+      </section>
 
         {/* Desktop Benefits Section */}
         <div className="bg-[linear-gradient(to_right,rgba(90,90,90,0.1),rgba(90,90,90,0.5))] p-4 max-[700px]:hidden">
@@ -157,10 +169,11 @@ export default function About() {
             </div>
           ))}
         </div>
-
+   
         {/* Closing body paragraphs */}
         <div className="pt-2">
           <p className="pb-4">
+            <p className="text-center text-3xl font-medium mb-6"> Company History</p>
             <i>Urban Foot Notes</i> emerged from{" "}
             <a
               href="https://www.urbancruiseship.org"
