@@ -33,8 +33,7 @@ export default function Home() {
       </Head>
 
       {/* Page grid (12 cols) */}
-<main className="mx-auto max-w-screen-xl 2xl:max-w-[1600px] grid grid-cols-12 gap-x-0 gap-y-0 lg:mb-4 py-0 items-start">
-        {/* HERO */}
+<main className="mx-auto max-w-screen-xl 2xl:max-w-[1600px] grid grid-cols-12 gap-x-0 gap-y-0 lg:mb-4 py-0">        {/* HERO */}
         <section className="relative col-span-12 isolate mx-[calc(50%-50vw)] w-screen">
       {/* Full-bleed background */}
       <Image
@@ -120,7 +119,7 @@ export default function Home() {
       <div
         className="title-shadow-samples page-title-shadow roboto-font text-center text-[35px] text-title-text-home [@media(min-width:1000px)]:text-[45px]"
       >
-        <div className="text-center">{whoTitle}</div>
+        <div className="text-center">Who We Are</div>
       </div>
 
       <div className="roboto-font px-8 pb-8 pt-0 text-[clamp(1.2rem,3.6vw,1.5rem)] tracking-wide">
