@@ -124,59 +124,57 @@ export default function About() {
           </div>
         </section>
 
-        {/* Benefits (desktop) */}
-        <section className="col-span-12 max-[700px]:hidden">
-          <div className="group overflow-hidden rounded-[10px]">
-            <div className="rounded-[10px] bg-[linear-gradient(to_right,rgba(90,90,90,0.1),rgba(90,90,90,0.5))] p-6 transition-shadow group-hover:shadow-lg">
-              <p className="pb-6 text-center text-3xl font-medium text-[#ffe1b3]">
-                Our product benefits . . .
-              </p>
+{/* Benefits (desktop) */}
+<section className="col-span-8 col-start-1 max-[400px]:hidden">
+  <div className="group rounded-[10px] overflow-hidden">
+    <div className="rounded-[10px] p-6 transition-shadow group-hover:shadow-lg bg-[linear-gradient(to_right,rgba(90,90,90,0.1),rgba(90,90,90,0.5))]">
+      <p className="pb-6 text-center text-3xl font-medium text-[#ffe1b3]">
+        Our product benefits . . .
+      </p>
 
-              <div className="mb-8">
-                <div className="mx-auto flex justify-center px-4 md:px-0 min-[1024px]:space-x-20">
-                  {TABS.map(({ id, label }) => (
-                    <div key={id} className="flex flex-col items-center">
-                      <button
-                        onClick={() => setActiveTab(id)}
-                        className={`rounded-lg px-4 py-2 text-lg font-medium transition md:text-2xl ${
-                          activeTab === id
-                            ? "bg-[#ffe1b3] text-black"
-                            : "bg-stone-950 text-[#ffe1b3] hover:bg-[#1a1207]"
-                        }`}
-                        type="button"
-                        aria-pressed={activeTab === id}
-                      >
-                        {label}
-                      </button>
+      {/* Buttons row */}
+      <div className="mb-8 flex flex-wrap justify-center gap-4 ">
+        {TABS.map(({ id, label }) => (
+          <button
+            key={id}
+            onClick={() => setActiveTab(id)}
+            type="button"
+            aria-pressed={activeTab === id}
+            className={`rounded-lg px-4 py-2 text-lg font-medium transition md:text-2xl ${
+              activeTab === id
+                ? "bg-[#ffe1b3] text-black"
+                : "bg-stone-950 text-[#ffe1b3] hover:bg-[#1a1207]"
+            }`}
+          >
+            {label}
+          </button>
+        ))}
+      </div>
 
-                      <div className="mt-6 flex h-40 w-40 items-center justify-center">
-                        {activeTab === id ? (
-                          <Image
-                            width={160}
-                            height={160}
-                            src={`${baseUrl}/${IMAGE_MAP[id]}`}
-                            alt={label}
-                            className="h-full w-full rounded-lg object-contain shadow-lg"
-                          />
-                        ) : (
-                          <div className="h-full w-full" aria-hidden />
-                        )}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
+      {/* Image left + list right */}
+      <div className="flex flex-col items-center gap-8 md:flex-row md:items-start">
+        {/* Image box */}
+        <div className="flex h-40 w-40 flex-shrink-0 items-center justify-center">
+          <Image
+            width={160}
+            height={160}
+            src={`${baseUrl}/${IMAGE_MAP[activeTab]}`}
+            alt={TABS.find(t => t.id === activeTab)?.label}
+            className="h-full w-full rounded-lg object-contain shadow-lg"
+          />
+        </div>
 
-              <div className="flex justify-center">
-                <ul className="list-inside list-disc space-y-2 text-[#ffe1b3]">
-                  {SECTIONS[activeTab].map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* List */}
+        <ul className="list-disc pl-5 text-[#ffe1b3] space-y-2 text-lg md:text-xl">
+          {SECTIONS[activeTab].map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 
         {/* Benefits (mobile) */}
         <section className="col-span-12 min-[700px]:hidden">
@@ -200,8 +198,8 @@ export default function About() {
             </div>
           </div>
         </section>
-        {/* What we do */}
-        <section className="col-span-12 md:col-span-8 md:col-start-3">
+        {/* Company History card */}
+        <section className="col-span-12 md:col-span-10 max-w-[700px] justify-items-center">
           <div className="group overflow-hidden rounded-[10px]">
             <div className={`${CARD} bg-blue-800/20`}>
               <h2 className="page-title-shadow title-shadow-home my-2 text-center text-[32px] md:text-[40px]">
