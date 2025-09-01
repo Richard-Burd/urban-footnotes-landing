@@ -53,21 +53,22 @@ const IMAGE_MAP = {
 
 /* ---- presentational helpers ---- */
 const WRAP = "mx-auto max-w-screen-xl 2xl:max-w-[1600px] px-6 md:px-10";
-const CARD =
-  "rounded-[10px] bg-stone-900/20 p-6 transition-shadow group-hover:shadow-lg group-hover:bg-stone-900/30";
-const SOFT_CARD =
-  "rounded-[10px] p-4 transition-shadow group-hover:shadow-lg";
+const CARD = "rounded-[10px] group-hover:shadow-lg p-4 transition-shadow";
+const SOFT_CARD = "rounded-[10px] p-4 transition-shadow group-hover:shadow-lg";
 
 export default function About() {
   const [activeTab, setActiveTab] = useState(TABS[0].id);
-  const baseUrl = (process.env.NEXT_PUBLIC_S3_BASE_URL || "").replace(/\/+$/, "");
+  const baseUrl = (process.env.NEXT_PUBLIC_S3_BASE_URL || "").replace(
+    /\/+$/,
+    "",
+  );
 
   return (
-    <div className="text-white roboto-font">
-      {/* TITLE CARD */}
-      <div className={`${WRAP} pt-6`}>
-        <div className="group rounded-[10px] overflow-hidden">
-          <div className={CARD}>
+    <div className="roboto-font text-white">
+      {/* TITLE */}
+      <div className={``}>
+        <div className="group rounded-[10px]">
+          
             <div className="flex justify-center">
               <PageTitle
                 topTitle="About Us"
@@ -81,18 +82,18 @@ export default function About() {
             </div>
           </div>
         </div>
-      </div>
+      
 
       {/* GRID */}
       <main className={`grid grid-cols-12 gap-4 py-6 ${WRAP}`}>
         {/* Mission */}
-        <section className="col-span-12 md:col-span-6">
-          <div className="group rounded-[10px] overflow-hidden">
-            <div className={`${SOFT_CARD} bg-[rgba(86,85,70,0.4)] group-hover:bg-[rgba(86,85,70,0.6)]`}>
-              <h2 className="my-2 text-center text-[32px] md:text-[40px] page-title-shadow title-shadow-home">
+        <section className="col-span-12 md:col-span-5">
+          <div className="group overflow-hidden rounded-[10px]">
+            <div className={`${CARD} bg-[rgba(126,120,29,0.4)]`}>
+              <h2 className="page-title-shadow title-shadow-home my-2 text-center text-[32px] md:text-[40px]">
                 {HOME_TITLE}
               </h2>
-              <p className="px-4 md:px-6 pt-2 text-[clamp(1.05rem,3.6vw,1.25rem)] tracking-wide">
+              <p className="px-4 pt-2 text-[clamp(1.05rem,3.6vw,1.25rem)] tracking-wide md:px-6">
                 {HOME_TEXT}
               </p>
             </div>
@@ -100,23 +101,24 @@ export default function About() {
         </section>
 
         {/* What we do */}
-        <section className="col-span-12 md:col-span-6">
-          <div className="group rounded-[10px] overflow-hidden">
-            <div className={CARD}>
-              <h2 className="my-2 text-center text-[32px] md:text-[40px] page-title-shadow title-shadow-home">
+        <section className="col-span-12 md:col-span-7">
+          <div className="group overflow-hidden rounded-[10px]">
+            <div className={`${CARD} bg-blue-800/20`}>
+              <h2 className="page-title-shadow title-shadow-home my-2 text-center text-[32px] md:text-[40px]">
                 What We Do
               </h2>
-              <div className="leading-relaxed space-y-4 text-[clamp(1.05rem,3.6vw,1.25rem)]">
+              <div className="space-y-4 text-[clamp(1.05rem,3.6vw,1.25rem)] leading-relaxed">
                 <p>
-                  We produce standardized, address-level walkability reports that score
-                  access to 74 everyday services (plus 5 custom). Reports are directly
-                  comparable across addresses, helping agents, buyers, renters, and
-                  planners make better decisions.
+                  We produce standardized, address-level walkability reports
+                  that score access to 74 everyday services (plus 5 custom).
+                  Reports are directly comparable across addresses, helping
+                  agents, buyers, renters, and planners make better decisions.
                 </p>
                 <p>
-                  Our goal: reduce sprawl and traffic by supporting denser, mixed-use
-                  development. When daily needs are a short walk away, people spend less
-                  on transport and can invest more in better housing.
+                  Our goal: reduce sprawl and traffic by supporting denser,
+                  mixed-use development. When daily needs are a short walk away,
+                  people spend less on transport and can invest more in better
+                  housing.
                 </p>
               </div>
             </div>
@@ -125,8 +127,8 @@ export default function About() {
 
         {/* Benefits (desktop) */}
         <section className="col-span-12 max-[700px]:hidden">
-          <div className="group rounded-[10px] overflow-hidden">
-            <div className="rounded-[10px] p-6 transition-shadow group-hover:shadow-lg bg-[linear-gradient(to_right,rgba(90,90,90,0.1),rgba(90,90,90,0.5))]">
+          <div className="group overflow-hidden rounded-[10px]">
+            <div className="rounded-[10px] bg-[linear-gradient(to_right,rgba(90,90,90,0.1),rgba(90,90,90,0.5))] p-6 transition-shadow group-hover:shadow-lg">
               <p className="pb-6 text-center text-3xl font-medium text-[#ffe1b3]">
                 Our product benefits . . .
               </p>
@@ -179,9 +181,11 @@ export default function About() {
 
         {/* Benefits (mobile) */}
         <section className="col-span-12 min-[700px]:hidden">
-          <div className="group rounded-[10px] overflow-hidden">
+          <div className="group overflow-hidden rounded-[10px]">
             <div className={CARD}>
-              <p className="pb-6 text-center text-3xl font-medium">Our product benefits . . .</p>
+              <p className="pb-6 text-center text-3xl font-medium">
+                Our product benefits . . .
+              </p>
               {TABS.map((tab) => (
                 <div key={tab.id} className="mb-6">
                   <h3 className="text-[17pt] font-semibold">{tab.label}</h3>
@@ -197,32 +201,45 @@ export default function About() {
             </div>
           </div>
         </section>
-
-        {/* Company history */}
-        <section className="col-span-12">
-          <div className="group rounded-[10px] overflow-hidden">
-            <div className={CARD}>
-              <h2 className="mb-6 text-center text-3xl font-medium">Company History</h2>
-              <div className="space-y-4">
+        {/* What we do */}
+        <section className="col-span-12 md:col-span-8 md:col-start-3">
+          <div className="group overflow-hidden rounded-[10px]">
+            <div className={`${CARD} bg-blue-800/20`}>
+              <h2 className="page-title-shadow title-shadow-home my-2 text-center text-[32px] md:text-[40px]">
+                Company History
+              </h2>
+              <div className="space-y-4 text-[clamp(1.05rem,3.6vw,1.25rem)] leading-relaxed">
                 <p>
                   <i>Urban Foot Notes</i> emerged from{" "}
-                  <a href="https://www.urbancruiseship.org" target="_blank" rel="noreferrer">
+                  <a
+                    href="https://www.urbancruiseship.org"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <i>Urban Cruise Ship</i>
                   </a>{" "}
                   ’s research on{" "}
-                  <a href="https://www.urbancruiseship.org/cities" target="_blank" rel="noreferrer">
+                  <a
+                    href="https://www.urbancruiseship.org/cities"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <b>cities</b>
                   </a>{" "}
-                  and interviews with real estate industry professionals and potential users.
+                  and interviews with real estate industry professionals and
+                  potential users.
                 </p>
                 <p>
-                  The concept was simple, but no one else had done it. What initially involved John, Jye and
-                  Roseanne became a nearly two-year multiple-stage project involving all seven team members. That
-                  improved this unique, new product greatly but unfortunately also ran up the cost.
+                  The concept was simple, but no one else had done it. What
+                  initially involved John, Jye and Roseanne became a nearly
+                  two-year multiple-stage project involving all seven team
+                  members. That improved this unique, new product greatly but
+                  unfortunately also ran up the cost.
                 </p>
                 <p>
-                  We hope our reports help as many people as possible live more convenient and healthy lives, and
-                  reduce their polluting, time-consuming dependence on cars.
+                  We hope our reports help as many people as possible live more
+                  convenient and healthy lives, and reduce their polluting,
+                  time-consuming dependence on cars.
                 </p>
               </div>
             </div>
