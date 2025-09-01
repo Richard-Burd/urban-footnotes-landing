@@ -64,12 +64,11 @@ export default function About() {
   );
 
   return (
-    <div className="roboto-font text-white">
+    <div className="roboto-font text-white ">
       {/* TITLE */}
-      <div className={``}>
-        <div className="group rounded-[10px]">
-          
-            <div className="flex justify-center">
+      <div className="flex justify-center w-full">
+        <div className="">
+            <div className="">
               <PageTitle
                 topTitle="About Us"
                 textColor="text-white"
