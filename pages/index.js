@@ -17,6 +17,13 @@ export default function Home() {
   const homeText =
     "To enhance our society and planet's health, our reports display how many commonly-used services are within short walking distance of a given address — in a standardized, comparative format — incentivizing and promoting development that allows more residents to conveniently live without owning cars.";
 
+
+/* ---- presentational helpers ---- */
+/* ---- card format, rounded shape, padding ---- */
+const CARD =
+  "rounded-[10px] group-hover:shadow-lg p-4 transition-shadow";
+
+
   // Filter & sort the "Highly Walkable" data
   const highlyWalkableData = samplesData
     .filter((entry) => entry.category === "Highly Walkable")
@@ -93,12 +100,13 @@ export default function Home() {
         {/* LEFT COLUMN: who + mission (no sample here now) */}
         <div className="col-span-12 p-4 md:col-span-6">
           {/* MISSION STATEMENT (clickable card) */}
-          <div className="group relative mt-6 max-w-[770px] self-start overflow-hidden rounded-[10px]">
+          <div className="group relative mt-6 self-start"> 
             {/* Visual card */}
             <div
               id="mission-statement-box"
-              className="rounded-[10px] bg-[rgba(86,85,70,0.4)] p-4 transition-shadow group-hover:bg-[rgba(86,85,70,0.6)] group-hover:shadow-lg"
-            >
+              className={`${CARD}  bg-[rgba(86,85,70,0.4)] group-hover:bg-[rgba(86,85,70,0.6)]`}>
+            
+         
               <div className="flex flex-col gap-4">
                 <div className="title-shadow-samples page-title-shadow roboto-font text-center text-[35px] text-title-text-home [@media(min-width:1000px)]:text-[45px]">
                   <div className="text-center">{homeTitle}</div>
@@ -120,7 +128,8 @@ export default function Home() {
           {/* Property Report Metrics Scoreboard (clickable card) */}
           <div className="group relative my-8 max-w-[770px] overflow-hidden rounded-[10px]">
             {/* Visual card */}
-            <div className="rounded-[10px] bg-green-900/20 p-4 transition-shadow group-hover:bg-green-900/30 group-hover:shadow-lg">
+            <div 
+            className={`${CARD}  bg-green-900/20 group-hover:bg-green-900/40`}>
               {/* Card Title */}
               <div
                 id="page-title"
@@ -188,13 +197,14 @@ export default function Home() {
             />
           </div>
 
-          {/* Who We Are (clickable card) */}
+          {/* Urban Cruise Ship plug (clickable card) */}
           <div className="group relative max-w-[770px] self-start overflow-hidden rounded-[10px] pt-0">
             {/* Visual card */}
             <div
               id="urban-cruise-ship-box"
-              className="rounded-[10px] bg-blue-900/20 p-2 transition-shadow group-hover:bg-blue-900/30 group-hover:shadow-lg"
-            >
+    
+              className={`${CARD} bg-blue-900/20 group-hover:bg-blue-900/40 group-hover:shadow-lg`}>
+          
               <div className="flex flex-col gap-4">
                 <div className="title-shadow-samples page-title-shadow roboto-font text-center text-[35px] text-title-text-home [@media(min-width:1000px)]:text-[45px]">
                   <div className="text-center">Other Projects</div>
@@ -235,11 +245,11 @@ export default function Home() {
         {/* RIGHT COLUMN: sample card + product preview */}
         <div
           id="right-column"
-          className="col-span-12 self-start px-4 md:col-span-6 md:p-4"
+          className="col-span-12 p-4 md:col-span-6"
         >
           {/* SAMPLE CARD - visual card + invisible overlay link */}
           <div className="group relative overflow-hidden rounded-[10px]">
-            <div className="mt-6 rounded-[10px] bg-green-900/10 p-2 transition-shadow group-hover:bg-green-900/20 group-hover:shadow-lg">
+            <div className={`${CARD}  bg-green-900/20 group-hover:bg-green-900/40 mt-6`}>
               <div className="title-shadow-samples page-title-shadow roboto-font text-center text-[35px] text-title-text-home [@media(min-width:1000px)]:text-[45px]">
                 Sample Report
               </div>
@@ -262,9 +272,9 @@ export default function Home() {
               className="decoration-none absolute inset-0 z-10 text-current no-underline visited:text-current focus-visible:outline focus-visible:outline-2 focus-visible:outline-stone-300"
             />
           </div>
-          {/* PRODUCT PREVIEW (clickable card) */}
+          {/* PRODUCT FEATURES (clickable card) */}
           <div className="group relative rounded-[10px] py-4">
-            <div className="mt-6 rounded-[10px] bg-red-900/20 p-6 py-4 transition-shadow group-hover:bg-red-900/30 group-hover:shadow-lg md:mx-0">
+            <div className={`${CARD}  bg-green-900/20 group-hover:bg-green-900/40 mt-6`}>
               <div className="title-shadow-samples page-title-shadow roboto-font text-center text-[35px] text-title-text-home [@media(min-width:1000px)]:text-[45px]">
                 Product Features
               </div>
