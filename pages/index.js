@@ -195,7 +195,7 @@ export default function Home() {
     <div className="pb-4">
       <div className="mb-2 border-b-4 border-x-slate-200">
         <div className="pt-3 text-right text-[clamp(1.2rem,3.6vw,1.4rem)] italic text-white">
-          The first number, highlighted in green, is the count of service types within a comfortable walking distance (roughly 0.25 miles). The second number, highlighted in yellow, is the count of service types within a longer walking distance (roughly 0.5 miles). The third number, highlighted in red, is the count of service types within a still longer walking distance (roughly 1 mile). The final number is the overall walkability score (out of 30).
+          The highlighted numbers are the number of business categories which are found at different distances. Green represent a 5 minute walk; yellow, 10 minutes. Anything farther is marked in red. The grey number is the walkability score (out of 30).
         </div>
       </div>
 
