@@ -55,6 +55,7 @@ const IMAGE_MAP = {
 const WRAP = "mx-auto max-w-screen-xl 2xl:max-w-[1600px] px-6 md:px-10";
 const CARD = "rounded-[10px] group-hover:shadow-lg p-4 transition-shadow";
 const SOFT_CARD = "rounded-[10px] p-4 transition-shadow group-hover:shadow-lg";
+const TITLE = "title-shadow-samples page-title-shadow roboto-font text-center text-[35px] [@media(min-width:1000px)]:text-[45px]";
 
 export default function About() {
   const [activeTab, setActiveTab] = useState(TABS[0].id);
@@ -88,8 +89,8 @@ export default function About() {
         {/* Mission */}
         <section className="col-span-12 md:col-span-5">
           <div className="group overflow-hidden rounded-[10px]">
-            <div className={`${CARD} bg-[rgba(126,120,29,0.4)]`}>
-              <h2 className="page-title-shadow title-shadow-home my-2 text-center text-[32px] md:text-[40px]">
+            <div className={`${CARD} bg-[linear-gradient(to_right,rgba(126,120,29,0.4),rgba(90,90,90,0.5))]`}>
+              <h2 className={`${TITLE} text-title-text-home`}>
                 {HOME_TITLE}
               </h2>
               <p className="px-4 pt-2 text-[clamp(1.05rem,3.6vw,1.25rem)] tracking-wide md:px-6">
@@ -102,8 +103,8 @@ export default function About() {
         {/* What we do */}
         <section className="col-span-12 md:col-span-7">
           <div className="group overflow-hidden rounded-[10px]">
-            <div className={`${CARD} bg-blue-800/20`}>
-              <h2 className="page-title-shadow title-shadow-home my-2 text-center text-[32px] md:text-[40px]">
+            <div className={`${CARD} bg-blue-800/20 bg-[linear-gradient(to_right,rgba(19,26,48,0.5),rgba(90,90,90,0.3))]`}>
+              <h2 className={`${TITLE} text-title-text-references`}>
                 What We Do
               </h2>
               <div className="space-y-4 text-[clamp(1.05rem,3.6vw,1.25rem)] leading-relaxed">
@@ -128,7 +129,7 @@ export default function About() {
 <section className="col-span-12 lg:col-span-7 col-start-1 max-[400px]:hidden">
   <div className="group rounded-[10px] overflow-hidden">
     <div className="rounded-[10px] p-6 transition-shadow group-hover:shadow-lg bg-[linear-gradient(to_right,rgba(90,90,90,0.1),rgba(90,90,90,0.5))]">
-      <p className="pb-6 text-center text-3xl font-medium text-[#ffe1b3]">
+      <p className={`${TITLE} text-white mb-4`}>
         Our product benefits . . .
       </p>
 
@@ -204,8 +205,8 @@ export default function About() {
         {/* Company History card */}
         <section className="col-span-12 md:col-span-8 md:col-start-3 lg:col-span-5 max-w-[7000px] justify-items-center">
           <div className="group overflow-hidden rounded-[10px]">
-            <div className={`${CARD} bg-[rgba(18,63,64,0.4)]`}>
-              <h2 className="page-title-shadow title-shadow-home my-2 text-center text-[32px] md:text-[40px]">
+            <div className={`${CARD} bg-[linear-gradient(to_right,rgba(20,38,39,0.6),rgba(90,90,90,0.4))]`}>
+              <h2 className={`${TITLE} text-title-text-team`}>
                 Company History
               </h2>
               <div className="space-y-4 text-[clamp(1.05rem,3.6vw,1.25rem)] leading-relaxed">

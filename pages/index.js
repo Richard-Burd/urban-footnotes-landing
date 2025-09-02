@@ -22,14 +22,14 @@ export default function Home() {
 /* ---- card format, rounded shape, padding ---- */
 const CARD =
   "rounded-[10px] group-hover:shadow-lg p-4 transition-shadow";
-
+const TITLE = "title-shadow-samples page-title-shadow roboto-font text-center text-[35px] [@media(min-width:1000px)]:text-[45px]";
 
   // Filter & sort the "Highly Walkable" data
   const highlyWalkableData = samplesData
     .filter((entry) => entry.category === "Highly Walkable")
     .sort((a, b) => Number(a.categoryRank) - Number(b.categoryRank)); // Sort by categoryRank (converted to a number)
   return (
-    <div className="">
+    <div className="text-white">
       <Head>
         <link
           rel="preload"
@@ -56,7 +56,7 @@ const CARD =
           />
 
           {/* Centered content wrapper */}
-          <div className="max-w-screen-xl px-6 py-6 md:px-10 md:py-10 xl:max-w-[1600px]">
+          <div className=" max-w-screen-xl px-6 py-6 md:px-10 md:py-10 xl:max-w-[1600px]">
             <div className="mx-auto grid min-h-[400px] max-w-5xl grid-cols-1 items-start justify-center gap-0 md:min-h-[0px] md:grid-cols-2 md:items-center md:gap-12">
               <div>
                 <Logo type="ufn" className="h-auto max-h-[400px] w-full" />
@@ -108,7 +108,7 @@ const CARD =
             
          
               <div className="flex flex-col gap-4">
-                <div className="title-shadow-samples page-title-shadow roboto-font text-center text-[35px] text-title-text-home [@media(min-width:1000px)]:text-[45px]">
+                <div className={`${TITLE} text-title-text-home`}>
                   <div className="text-center">{homeTitle}</div>
                 </div>
                 <div className="roboto-font px-8 pb-8 pt-0 text-[clamp(1.2rem,3.6vw,1.5rem)] tracking-wide">
@@ -133,7 +133,7 @@ const CARD =
               {/* Card Title */}
               <div
                 id="page-title"
-                className="title-shadow-samples page-title-shadow pb-4 text-center text-[30px] text-title-text-samples sm:text-[40px] md:text-[45px]"
+                className={`${TITLE} text-title-text-samples `}
               >
                 Our Top Properties
               </div>
@@ -141,7 +141,7 @@ const CARD =
               {/* Section: Highly Walkable */}
               <div className="pb-4">
                 <div className="mb-2 border-b-4 border-x-slate-200">
-                  <div className="pt-3 text-right text-[clamp(1.2rem,3.6vw,1.4rem)] italic text-white">
+                  <div className="pt-3 text-left text-[clamp(1.2rem,3.6vw,1.4rem)] italic text-white">
                     The highlighted numbers are the number of business
                     categories which are found at different distances. Green
                     represent a 5 minute walk; yellow, 10 minutes. Anything
@@ -168,7 +168,7 @@ const CARD =
                         </div>
 
                         {/* Walkability Data */}
-                        <div className="flex gap-2 text-center text-[16px] font-semibold leading-[24px] text-stone-900 md:text-[18px]">
+                        <div className="flex gap-2 text-center text-[16px] font-semibold text-neutral-950 leading-[24px] md:text-[18px]">
                           <div className="w-10 bg-[#73e369ff] md:w-12">
                             {entry.greenNear}
                           </div>
@@ -178,7 +178,7 @@ const CARD =
                           <div className="w-10 bg-[#e37569ff] md:w-12">
                             {entry.redDistant}
                           </div>
-                          <div className="w-10 rounded-[6px] bg-[#cbd4e0ff] text-[#1f244dff] md:w-12">
+                          <div className="w-10 rounded-[6px] bg-[#cbd4e0ff] md:w-12">
                             {entry.walkabilityScore}
                           </div>
                         </div>
@@ -206,7 +206,7 @@ const CARD =
               className={`${CARD} bg-blue-900/20 group-hover:bg-blue-900/40 group-hover:shadow-lg`}>
           
               <div className="flex flex-col gap-4">
-                <div className="title-shadow-samples page-title-shadow roboto-font text-center text-[35px] text-title-text-home [@media(min-width:1000px)]:text-[45px]">
+                <div className={`${TITLE} text-title-text-references`}>
                   <div className="text-center">Other Projects</div>
                 </div>
 
@@ -215,11 +215,11 @@ const CARD =
                     Check out our sister organization, Urban Cruise Ship
                     Analysis Solutions, which provides articles and data
                     analysis services for anyone interested in learning more
-                    about environmental solutions
+                    about solutions for a more sustainable world.
                   </p>
 
                   {/* Just render the logo as decoration inside the card */}
-                  <div className="mt-4 flex items-center justify-center lg:pl-8">
+                  <div className="mt-4 flex px-10">
                     <Logo
                       type="ucs"
                       color="#ac9c84ff"
@@ -250,7 +250,7 @@ const CARD =
           {/* SAMPLE CARD - visual card + invisible overlay link */}
           <div className="group relative overflow-hidden rounded-[10px]">
             <div className={`${CARD}  bg-green-900/20 group-hover:bg-green-900/40 mt-6`}>
-              <div className="title-shadow-samples page-title-shadow roboto-font text-center text-[35px] text-title-text-home [@media(min-width:1000px)]:text-[45px]">
+              <div className={`${TITLE} text-title-text-samples`}>
                 Sample Report
               </div>
               <div className="p-0">
@@ -274,8 +274,8 @@ const CARD =
           </div>
           {/* PRODUCT FEATURES (clickable card) */}
           <div className="group relative rounded-[10px] py-4">
-            <div className={`${CARD}  bg-green-900/20 group-hover:bg-green-900/40 mt-6`}>
-              <div className="title-shadow-samples page-title-shadow roboto-font text-center text-[35px] text-title-text-home [@media(min-width:1000px)]:text-[45px]">
+            <div className={`${CARD}  bg-red-900/20 group-hover:bg-red-900/40 mt-6`}>
+              <div className={`${TITLE} text-title-text-product`}>
                 Product Features
               </div>
               <div className="mt-0">
