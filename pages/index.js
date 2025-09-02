@@ -88,7 +88,7 @@ const TITLE = "title-shadow-samples page-title-shadow roboto-font text-center te
                 className="h-auto w-full object-cover"
                 controls
                 preload="metadata"
-                poster=""
+                poster="videoPosterUrl"
                 playsInline
               >
                 <source src={videoUrl} type="video/mp4" />
