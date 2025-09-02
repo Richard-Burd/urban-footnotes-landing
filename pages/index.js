@@ -11,7 +11,7 @@ export default function Home() {
   const baseUrl =
     process.env.NEXT_PUBLIC_S3_BASE_URL?.replace(/\/+$/, "") ?? "";
   const videoUrl = `${baseUrl}/ads/ufn-about-us-v2-small.mp4`;
-
+  const videoPosterUrl = `${baseUrl}/ads/about-us-preview.png`;
   const whoTitle = "Who We Are";
   const homeTitle = "Our Mission";
   const homeText =
@@ -123,6 +123,7 @@ const TITLE = "title-shadow-samples page-title-shadow roboto-font text-center te
               aria-label="Learn more about us"
               className="decoration-none absolute inset-0 z-10 text-current no-underline visited:text-current focus-visible:outline focus-visible:outline-2 focus-visible:outline-stone-300"
             />
+
           </div>
 
           {/* Property Report Metrics Scoreboard (clickable card) */}
