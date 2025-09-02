@@ -44,28 +44,23 @@ const TITLE = "title-shadow-samples page-title-shadow roboto-font text-center te
       <main className="mx-auto grid max-w-screen-xl grid-cols-12 gap-x-0 gap-y-0 py-0 lg:mb-4 2xl:max-w-[1600px]">
         {" "}
         {/* HERO */}
-        <section className="relative col-span-12 overflow-hidden">
-  {/* Background bleeds to viewport while content stays in the grid width */}
-  <div className=" inset-y-0 left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] -z-10 relative">
-    <Image
-      src="/images/homepage-gradient.svg"
-      alt="homepage-gradient"
-      fill
-      priority
-      sizes="100vw"
-      className="object-cover"
-    />
-  </div>
-
-  {/* Centered content wrapper stays aligned with the rest of the page */}
+<section className="relative col-span-12 isolate overflow-hidden">
+  {/* Full-bleed background, centered to viewport */}
+  <div
+    className="
+      absolute inset-y-0 left-1/2 -translate-x-1/2
+      w-screen -z-10
+      bg-[linear-gradient(to_right,#6f6d43,transparent,transparent,transparent,#6f6d43)]
+      pointer-events-none
+    "
+  />
+  {/* Centered content wrapper */}
   <div className="mx-auto max-w-screen-xl 2xl:max-w-[1600px] px-6 md:px-10 py-8 md:py-12">
-    <div className="grid items-center gap-8 md:gap-12 min-h-[400px] md:[grid-template-columns:1.4fr_1fr]">
-      {/* Logo */}
+    <div className="grid items-center gap-8 md:gap-12 min-h-[3px] md:[grid-template-columns:1.4fr_1fr]">
       <div className="flex justify-center md:justify-start">
         <Logo type="ufn" className="w-full h-auto max-h-[400px]" />
       </div>
 
-      {/* Text block */}
       <div className="text-center md:text-left self-start md:self-auto">
         <h1 className="font-bold leading-tight text-[clamp(1.75rem,3.6vw,2rem)]">
           Neighborhood reports on walkability and access to services.
@@ -85,8 +80,11 @@ const TITLE = "title-shadow-samples page-title-shadow roboto-font text-center te
     </div>
   </div>
 </section>
+
+
+
         {/* VIDEO (full-width card) */}
-        <section className="col-span-12 mt-0">
+        <section className="col-span-12 mt-0 ">
           <div className="group relative m-4 overflow-hidden rounded-[10px]">
             <div className="rounded-[10px] bg-stone-900/20 transition-shadow group-hover:bg-stone-900/30 group-hover:shadow-lg">
               <video
