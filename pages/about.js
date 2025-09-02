@@ -125,7 +125,7 @@ export default function About() {
         </section>
 
 {/* Benefits (desktop) */}
-<section className="col-span-8 col-start-1 max-[400px]:hidden">
+<section className="col-span-12 lg:col-span-7 col-start-1 max-[400px]:hidden">
   <div className="group rounded-[10px] overflow-hidden">
     <div className="rounded-[10px] p-6 transition-shadow group-hover:shadow-lg bg-[linear-gradient(to_right,rgba(90,90,90,0.1),rgba(90,90,90,0.5))]">
       <p className="pb-6 text-center text-3xl font-medium text-[#ffe1b3]">
@@ -198,8 +198,11 @@ export default function About() {
             </div>
           </div>
         </section>
+
+
+
         {/* Company History card */}
-        <section className="col-span-12 md:col-span-10 max-w-[700px] justify-items-center">
+        <section className="col-span-12 md:col-span-8 md:col-start-3 lg:col-span-5 max-w-[7000px] justify-items-center">
           <div className="group overflow-hidden rounded-[10px]">
             <div className={`${CARD} bg-blue-800/20`}>
               <h2 className="page-title-shadow title-shadow-home my-2 text-center text-[32px] md:text-[40px]">
@@ -207,7 +210,7 @@ export default function About() {
               </h2>
               <div className="space-y-4 text-[clamp(1.05rem,3.6vw,1.25rem)] leading-relaxed">
                 <p>
-                  <i>Urban Foot Notes</i> emerged from{" "}
+                  <i>Urban Foot Notes</i> emerged from research at {" "}
                   <a
                     href="https://www.urbancruiseship.org"
                     target="_blank"
@@ -215,7 +218,7 @@ export default function About() {
                   >
                     <i>Urban Cruise Ship</i>
                   </a>{" "}
-                  ’s research on{" "}
+                    on{" "}
                   <a
                     href="https://www.urbancruiseship.org/cities"
                     target="_blank"
@@ -227,11 +230,10 @@ export default function About() {
                   potential users.
                 </p>
                 <p>
-                  The concept was simple, but no one else had done it. What
+                  We saw a need for walkability and area reports that utilized  real researchers instead of just relying on big data. What
                   initially involved John, Jye and Roseanne became a nearly
                   two-year multiple-stage project involving all seven team
-                  members. That improved this unique, new product greatly but
-                  unfortunately also ran up the cost.
+                  members. We have worked hard to refine our product with extensive research.
                 </p>
                 <p>
                   We hope our reports help as many people as possible live more
