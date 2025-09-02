@@ -204,7 +204,7 @@ export default function About() {
         {/* Company History card */}
         <section className="col-span-12 md:col-span-8 md:col-start-3 lg:col-span-5 max-w-[7000px] justify-items-center">
           <div className="group overflow-hidden rounded-[10px]">
-            <div className={`${CARD} bg-blue-800/20`}>
+            <div className={`${CARD} bg-[rgba(18,63,64,0.4)]`}>
               <h2 className="page-title-shadow title-shadow-home my-2 text-center text-[32px] md:text-[40px]">
                 Company History
               </h2>
