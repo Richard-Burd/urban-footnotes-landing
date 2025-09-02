@@ -11,6 +11,7 @@ export default function Home() {
   const baseUrl =
     process.env.NEXT_PUBLIC_S3_BASE_URL?.replace(/\/+$/, "") ?? "";
   const videoUrl = `${baseUrl}/ads/ufn-about-us-v2-small.mp4`;
+   const videoPosterUrl = `${baseUrl}/ads/about-us-preview.png`;
 
   const whoTitle = "Who We Are";
   const homeTitle = "Our Mission";
@@ -55,7 +56,7 @@ const TITLE = "title-shadow-samples page-title-shadow roboto-font text-center te
     "
   />
   {/* Centered content wrapper */}
-  <div className="mx-auto max-w-screen-xl 2xl:max-w-[1600px] px-6 md:px-10 py-8 md:py-12">
+  <div className="mx-auto max-w-screen-xl 2xl:max-w-[1600px] px-6 md:px-10 py-8 md:py-2">
     <div className="grid items-center gap-8 md:gap-12 min-h-[3px] md:[grid-template-columns:1.4fr_1fr]">
       <div className="flex justify-center md:justify-start">
         <Logo type="ufn" className="w-full h-auto max-h-[400px]" />
@@ -82,16 +83,15 @@ const TITLE = "title-shadow-samples page-title-shadow roboto-font text-center te
 </section>
 
 
-
         {/* VIDEO (full-width card) */}
-        <section className="col-span-12 mt-0 ">
+        <section className="col-span-10 col-start-2 mt-0 ">
           <div className="group relative m-4 overflow-hidden rounded-[10px]">
             <div className="rounded-[10px] bg-stone-900/20 transition-shadow group-hover:bg-stone-900/30 group-hover:shadow-lg">
               <video
                 className="h-auto w-full object-cover"
                 controls
                 preload="metadata"
-                poster=""
+                poster={videoPosterUrl}
                 playsInline
               >
                 <source src={videoUrl} type="video/mp4" />
