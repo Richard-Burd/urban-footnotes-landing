@@ -1,97 +1,312 @@
-import Logo from "@/components/Logo";
+import Logo from "@/components/LogoLanding";
 import Image from "next/image";
-import Link from 'next/link'
-import Head from 'next/head'
-
-
+import Link from "next/link";
+import Head from "next/head";
+import ProductSample from "@/components/ProductSample";
+import samplesData from "@/lib/samplesData";
+import SamplesHeader from "@/components/SamplesHeader";
+// import Button from "@/components/Button"; // unused right now
 
 export default function Home() {
-  const videoUrl = `${process.env.NEXT_PUBLIC_S3_BASE_URL.replace(/\/+$/, '')}/ads/ad-vid-existing-projects.mp4`
+  const baseUrl =
+    process.env.NEXT_PUBLIC_S3_BASE_URL?.replace(/\/+$/, "") ?? "";
+  const videoUrl = `${baseUrl}/ads/ufn-about-us-v2-small.mp4`;
+   const videoPosterUrl = `${baseUrl}/ads/about-us-preview.png`;
 
-  const homeTitle = "Mission Statement";
+  const whoTitle = "Who We Are";
+  const homeTitle = "Our Mission";
   const homeText =
-    "To enhance our society and planet's health, our reports display how many commonly-used services are within short walking distance of a given address -- in a standardized, comparative format -- incentivizing and promoting development that allows more residents to conveniently live without owning cars.";
+    "To enhance our society and planet's health, our reports display how many commonly-used services are within short walking distance of a given address — in a standardized, comparative format — incentivizing and promoting development that allows more residents to conveniently live without owning cars.";
 
-  return (      
-    <div>
+
+/* ---- presentational helpers ---- */
+/* ---- card format, rounded shape, padding ---- */
+const CARD =
+  "rounded-[10px] group-hover:shadow-lg p-4 transition-shadow";
+const TITLE = "title-shadow-samples page-title-shadow roboto-font text-center text-[35px] [@media(min-width:1000px)]:text-[45px]";
+
+  // Filter & sort the "Highly Walkable" data
+  const highlyWalkableData = samplesData
+    .filter((entry) => entry.category === "Highly Walkable")
+    .sort((a, b) => Number(a.categoryRank) - Number(b.categoryRank)); // Sort by categoryRank (converted to a number)
+  return (
+    <div className="text-white">
       <Head>
-        {/* tells the browser “go fetch this video file ASAP” */}
         <link
           rel="preload"
           href={videoUrl}
           as="video"
           type="video/mp4"
+          media="(min-width: 1000px)"
         />
       </Head>
-      <div id="desktop-version" className="hidden min-[1000px]:block">
-      <Link
-        href="/ads"
-        className="relative block h-[430px] w-screen"
-        aria-label="Go to ads page"
-      >
-        <div
-          id="landing-page-logo-and-homepage-gradient"
-          className="relative h-[430px] w-screen"
+
+      {/* Page grid (12 cols) */}
+      <main className="mx-auto grid max-w-screen-2xl grid-cols-12 gap-x-0 gap-y-0 py-0 lg:mb-4 2xl:max-w-[3000px]">
+        {" "}
+        {/* HERO */}
+<section className="relative col-span-12 isolate overflow-hidden">
+  {/* Full-bleed background, centered to viewport */}
+  <div
+    className="
+      absolute inset-y-0 left-1/2 -translate-x-1/2
+      w-screen -z-10
+      bg-[linear-gradient(to_right,#6f6d43,transparent,transparent,transparent,#6f6d43)]
+      pointer-events-none
+    "
+  />
+  {/* Centered content wrapper */}
+  <div className="mx-auto max-w-screen-xl 2xl:max-w-[1600px] px-6 md:px-10 py-8 md:py-2">
+    <div className="grid items-center gap-8 md:gap-12 min-h-[3px] md:[grid-template-columns:1.4fr_1fr]">
+      <div className="flex justify-center md:justify-start">
+        <Logo type="ufn" className="w-full h-auto max-h-[400px]" />
+      </div>
+
+      <div className="text-center md:text-left self-start md:self-auto">
+        <h1 className="font-bold leading-tight text-[clamp(1.75rem,3.6vw,2rem)]">
+          Neighborhood reports on walkability and access to services.
+        </h1>
+        <p className="mt-4 leading-relaxed text-[clamp(1.2rem,3.6vw,1.4rem)]">
+          Research that supports healthier, walkable, more sustainable communities.
+        </p>
+        <Link
+          href="/samples"
+          className="mt-6 inline-flex items-center justify-center rounded-lg bg-stone-900 px-5 py-3 font-semibold
+                     text-white shadow transition hover:bg-stone-800
+                     focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-300"
         >
-          {/* Background Image with transitioning gradient on left & right sides */}
-          <Image
-            src="/images/homepage-gradient.svg"
-            alt="homepage-gradient"
-            fill
-            className="object-cover"
-          />
-
-          {/* Centered Logo on top of the transitioning gradient */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <Logo type="ufn" color="#ffe873ff" width="579" height="363" />
-          </div>
-
-        </div>          
+          View Sample Reports
         </Link>
-        <div
-          id="mission-statement-box"
-          className="mx-auto my-12 max-w-[770px] rounded-[40px] bg-[rgba(86,85,70,0.4)] pt-8"
-        >
-          <div
-            id="mission-statement-title"
-            className="title-shadow-home page-title-shadow roboto-font text-center text-[40px] text-title-text-home [@media(min-width:1000px)]:text-[56px]"
-          >
-            <center>{homeTitle}</center>
-          </div>
-          <div className="roboto-font px-8 pb-8 pt-4 text-[23px] tracking-wide text-stone-300">
-            <p>{homeText}</p>
-          </div>
-        </div>
       </div>
-      <div id="mobile-version" className="block min-[1000px]:hidden">
-        <div
-          id="landing-page-logo-and-homepage-gradient"
-          className="relative h-[235px] w-screen"
-        >
-          {/* Background Image with transitioning gradient on left & right sides */}
-          <Image
-            src="/images/homepage-gradient.svg"
-            alt="homepage-gradient"
-            fill
-            className="object-cover"
-          />
+    </div>
+  </div>
+</section>
 
-          {/* Centered Logo on top of the transitioning gradient */}
-          <div className="absolute inset-0 m-4 flex items-center justify-center">
-            <Logo type="ufn" color="#ffe873ff" width="295" height="184" />
+
+        {/* VIDEO (full-width card) */}
+        <section className="col-span-10 col-start-2 mt-0 ">
+          <div className="group relative m-4 overflow-hidden rounded-[10px]">
+            <div className="rounded-[10px] bg-stone-900/20 transition-shadow group-hover:bg-stone-900/30 group-hover:shadow-lg">
+              <video
+                className="h-auto w-full object-cover"
+                controls
+                preload="metadata"
+                poster={videoPosterUrl}
+                playsInline
+              >
+                <source src={videoUrl} type="video/mp4" />
+                Sorry, your browser doesn’t support embedded videos.
+              </video>
+            </div>
+          </div>
+        </section>
+        {/* LEFT COLUMN: who + mission (no sample here now) */}
+        <div className="col-span-12 p-4 md:col-span-6">
+          {/* MISSION STATEMENT (clickable card) */}
+          <div className="group relative mt-6 self-start"> 
+            {/* Visual card */}
+            <div
+              id="mission-statement-box"
+              className={`${CARD}  bg-[rgba(86,85,70,0.4)] group-hover:bg-[rgba(86,85,70,0.6)]`}>
+            
+         
+              <div className="flex flex-col gap-4">
+                <div className={`${TITLE} text-title-text-home`}>
+                  <div className="text-center">{homeTitle}</div>
+                </div>
+                <div className="roboto-font px-8 pb-8 pt-0 text-[clamp(1.2rem,3.6vw,1.5rem)] tracking-wide">
+                  <p>{homeText}</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Invisible overlay link */}
+            <Link
+              href="/about" // <-- change this route to your actual About Us page
+              aria-label="Learn more about us"
+              className="decoration-none absolute inset-0 z-10 text-current no-underline visited:text-current focus-visible:outline focus-visible:outline-2 focus-visible:outline-stone-300"
+            />
+          </div>
+
+          {/* Property Report Metrics Scoreboard (clickable card) */}
+          <div className="group relative my-8 max-w-[770px] overflow-hidden rounded-[10px]">
+            {/* Visual card */}
+            <div 
+            className={`${CARD}  bg-green-900/20 group-hover:bg-green-900/40`}>
+              {/* Card Title */}
+              <div
+                id="page-title"
+                className={`${TITLE} text-title-text-samples `}
+              >
+                Our Top Properties
+              </div>
+
+              {/* Section: Highly Walkable */}
+              <div className="pb-4">
+                <div className="mb-2 border-b-4 border-x-slate-200">
+                  <div className="pt-3 text-left text-[clamp(1.2rem,3.6vw,1.4rem)] italic text-white">
+                    The highlighted numbers are the number of business
+                    categories which are found at different distances. Green
+                    represent a 5 minute walk; yellow, 10 minutes. Anything
+                    farther is marked in red. The grey number is the walkability
+                    score (out of 30).
+                  </div>
+                </div>
+
+                <div>
+                  <div className="flex flex-col">
+                    {highlyWalkableData.slice(0, 8).map((entry, index) => (
+                      <div
+                        key={entry.address}
+                        className="flex w-full items-center border-b border-slate-700 py-2 last:border-none"
+                      >
+                        {/* Address */}
+                        <div className="w-full pr-4 text-right">
+                          <div
+                            key={index}
+                            className="text-[18px] leading-[28px] md:text-[20px]"
+                          >
+                            {entry.address}
+                          </div>
+                        </div>
+
+                        {/* Walkability Data */}
+                        <div className="flex gap-2 text-center text-[16px] font-semibold text-neutral-950 leading-[24px] md:text-[18px]">
+                          <div className="w-10 bg-[#73e369ff] md:w-12">
+                            {entry.greenNear}
+                          </div>
+                          <div className="w-10 bg-[#f7fc70ff] md:w-12">
+                            {entry.yellowFarther}
+                          </div>
+                          <div className="w-10 bg-[#e37569ff] md:w-12">
+                            {entry.redDistant}
+                          </div>
+                          <div className="w-10 rounded-[6px] bg-[#cbd4e0ff] md:w-12">
+                            {entry.walkabilityScore}
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Invisible overlay link — covers whole card */}
+            <Link
+              href="/scoreboard" // <-- change this to where you want the card to go
+              aria-label="View full metrics scoreboard"
+              className="decoration-none absolute inset-0 z-10 text-current no-underline visited:text-current focus-visible:outline focus-visible:outline-2 focus-visible:outline-stone-300"
+            />
+          </div>
+
+          {/* Urban Cruise Ship plug (clickable card) */}
+          <div className="group relative max-w-[770px] self-start overflow-hidden rounded-[10px] pt-0">
+            {/* Visual card */}
+            <div
+              id="urban-cruise-ship-box"
+    
+              className={`${CARD} bg-blue-900/20 group-hover:bg-blue-900/40 group-hover:shadow-lg`}>
+          
+              <div className="flex flex-col gap-4">
+                <div className={`${TITLE} text-title-text-references`}>
+                  <div className="text-center">Other Projects</div>
+                </div>
+
+                <div className="roboto-font px-8 pb-8 pt-0 text-[clamp(1.2rem,3.6vw,1.5rem)] tracking-wide">
+                  <p>
+                    Check out our sister organization, Urban Cruise Ship
+                    Analysis Solutions, which provides articles and data
+                    analysis services for anyone interested in learning more
+                    about solutions for a more sustainable world.
+                  </p>
+
+                  {/* Just render the logo as decoration inside the card */}
+                  <div className="mt-4 flex px-10">
+                    <Logo
+                      type="ucs"
+                      color="#ac9c84ff"
+                      width="200"
+                      height="100"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Invisible overlay link for the whole card */}
+            <Link
+              href="https://urbancruiseship.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Learn more about Urban Cruise Ship Analysis Solutions"
+              className="decoration-none absolute inset-0 z-10 text-current no-underline visited:text-current focus-visible:outline focus-visible:outline-2 focus-visible:outline-stone-300"
+            />
           </div>
         </div>
-
+        {/*End of LEFT COLUMN */}
+        {/* RIGHT COLUMN: sample card + product preview */}
         <div
-          id="mission-statement-title"
-          className="title-shadow-home page-title-shadow roboto-font mx-8 pt-8 text-center text-title-text-home [@media(min-width:200px)]:text-[30px] [@media(min-width:360px)]:text-[35px] [@media(min-width:900px)]:text-[46px]"
+          id="right-column"
+          className="col-span-12 p-4 md:col-span-6"
         >
-          <center>{homeTitle}</center>
+          {/* SAMPLE CARD - visual card + invisible overlay link */}
+          <div className="group relative overflow-hidden rounded-[10px]">
+            <div className={`${CARD}  bg-green-900/20 group-hover:bg-green-900/40 mt-6`}>
+              <div className={`${TITLE} text-title-text-samples`}>
+                Sample Report
+              </div>
+              <div className="p-0">
+                <ProductSample
+                  imagePath="preview-233-8th-ave-new-york.4.jpg"
+                  address="223 8th Ave. New York, NY 10011"
+                  serviceTypesNearby={55}
+                  serviceTypesFarther={7}
+                  serviceTypesDistant={12}
+                  walkabilityScore={20}
+                  pdfPath="doc-233-8th-ave-new-york.5.pdf"
+                />
+              </div>
+            </div>
+
+            <Link
+              href="/samples"
+              aria-label="View sample reports"
+              className="decoration-none absolute inset-0 z-10 text-current no-underline visited:text-current focus-visible:outline focus-visible:outline-2 focus-visible:outline-stone-300"
+            />
+          </div>
+          {/* PRODUCT FEATURES (clickable card) */}
+          <div className="group relative rounded-[10px] py-4">
+            <div className={`${CARD}  bg-red-900/20 group-hover:bg-red-900/40 mt-6`}>
+              <div className={`${TITLE} text-title-text-product`}>
+                Product Features
+              </div>
+              <div className="mt-0">
+                <Link
+                  href="/product"
+                  className="inline-flex w-full items-center justify-center rounded-lg text-[clamp(1.2rem,3.6vw,1.4rem)] font-semibold"
+                >
+                  <div className="relative aspect-[2/5] w-full max-w-[460px] p-4">
+                    <Image
+                      alt="First page of the product, mobile version"
+                      src={`${baseUrl}/product-page-mobile.1a.v2.png`}
+                      fill
+                      sizes="(min-width: 1024px) 460px, 100vw"
+                      className="object-contain"
+                    />
+                  </div>
+                </Link>
+              </div>
+            </div>
+
+            <Link
+              href="/product"
+              aria-label="View sample reports"
+              className="decoration-none absolute inset-0 z-10 text-current no-underline visited:text-current focus-visible:outline focus-visible:outline-2 focus-visible:outline-stone-300"
+            />
+          </div>
         </div>
-        <div className="roboto-font break-words px-8 pb-8 pt-2 text-justify text-[20px] italic tracking-wide text-stone-300">
-          <p>{homeText}</p>
-        </div>
-      </div>
+      </main>
     </div>
   );
 }
