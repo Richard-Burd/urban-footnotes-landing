@@ -7,14 +7,14 @@ export default function Samples() {
       <SamplesHeader />
       <div
         id="page-title"
-        className="pb-4 pt-9 text-center text-[30px] text-title-text-samples sm:text-[40px] md:text-[57px]"
+        className="text-white pb-4 pt-9 text-center text-[30px] text-title-text-samples sm:text-[40px] md:text-[57px]"
       >
         Property Report Sets, Ranked by Metrics
       </div>
       {/* Highly Walkable Property Report Previews */}
       <div id="highly-walkable">
         <div className="mx-8 mb-2 border-b-4 border-x-slate-200">
-          <div className="pt-3 text-right text-[27px] italic text-gray-200 lg:text-[40px]">
+          <div className="pt-3 text-right text-[27px] italic lg:text-[40px]">
             Highly Walkable
           </div>
         </div>
