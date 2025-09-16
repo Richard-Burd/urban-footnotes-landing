@@ -7,14 +7,14 @@ export default function Samples() {
       <SamplesHeader />
       <div
         id="page-title"
-        className="text-white pb-4 pt-9 text-center text-[30px] text-title-text-samples sm:text-[40px] md:text-[57px]"
+        className="pb-4 pt-9 text-center text-[30px] text-title-text-samples text-white sm:text-[40px] md:text-[57px]"
       >
         Property Report Sets, Ranked by Metrics
       </div>
       {/* Highly Walkable Property Report Previews */}
       <div id="highly-walkable">
         <div className="mx-8 mb-2 border-b-4 border-x-slate-200">
-          <div className="pt-3 text-right text-[27px] italic lg:text-[40px]">
+          <div className="pt-3 text-right text-[27px] italic text-white lg:text-[40px]">
             Highly Walkable
           </div>
         </div>
@@ -26,7 +26,7 @@ export default function Samples() {
             serviceTypesFarther={7}
             serviceTypesDistant={12}
             walkabilityScore={20}
-            pdfPath="doc-233-8th-ave-new-york.5.pdf"
+            pdfPath="doc-233-8th-ave-new-york.7.pdf"
           />
           <ProductSample
             imagePath="preview-sarphatipark-38i-amsterdam.3.2.jpg"
@@ -264,7 +264,7 @@ export default function Samples() {
             serviceTypesFarther={7}
             serviceTypesDistant={29}
             walkabilityScore={23}
-            pdfPath="doc-coral-gables-fl.5.pdf"
+            pdfPath="doc-coral-gables-fl.6.pdf"
           />
           <ProductSample
             imagePath="preview-washington-dc.3.1.jpg"
@@ -273,7 +273,7 @@ export default function Samples() {
             serviceTypesFarther={10}
             serviceTypesDistant={27}
             walkabilityScore={22}
-            pdfPath="doc-washington-dc.3.pdf"
+            pdfPath="doc-washington-dc.4.pdf"
           />
           <ProductSample
             imagePath="preview-church-st-nashville-tn.3.jpg"
@@ -282,7 +282,7 @@ export default function Samples() {
             serviceTypesFarther={8}
             serviceTypesDistant={29}
             walkabilityScore={24}
-            pdfPath="doc-church-st-nashville-tn.2.pdf"
+            pdfPath="doc-church-st-nashville-tn.4.pdf"
           />
           <ProductSample
             imagePath="preview-ann-arbor-mi.3.jpg"
