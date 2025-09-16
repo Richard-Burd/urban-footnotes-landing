@@ -217,7 +217,7 @@ export default function Samples() {
             serviceTypesFarther={7}
             serviceTypesDistant={25}
             walkabilityScore={22}
-            pdfPath="doc-indianapolis-in.2.pdf"
+            pdfPath="doc-indianapolis-in.3.pdf"
           />
           <ProductSample
             imagePath="preview-tiverton-ave-los-angeles.3.jpg"
