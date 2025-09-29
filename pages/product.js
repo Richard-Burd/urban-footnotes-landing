@@ -52,7 +52,23 @@ export default function Product() {
         />
         <Image
           alt="Sixth page of the product"
-          src={`${baseUrl}/product-page-desktop.2e.v2.png`}
+          src={`${baseUrl}/product-page-desktop.2e.v2.2.png`}
+          // true width & true height controlled by parent grid
+          // image fills parent's allotted space
+          width={1024}
+          height={1}
+        />
+        <Image
+          alt="Seventh page of the product"
+          src={`${baseUrl}/product-page-desktop.2f.png`}
+          // true width & true height controlled by parent grid
+          // image fills parent's allotted space
+          width={1024}
+          height={1}
+        />
+        <Image
+          alt="Eighth page of the product"
+          src={`${baseUrl}/product-page-desktop.2g.png`}
           // true width & true height controlled by parent grid
           // image fills parent's allotted space
           width={1024}
@@ -85,8 +101,8 @@ export default function Product() {
           height={1}
         />
         <Image
-          alt="Sixth page of the product, mobile version"
-          src={`${baseUrl}/product-page-mobile.1d.v2.1.png`} // v.2.1
+          alt="Sixth, Seventh, & Eighth pages of the product, mobile version"
+          src={`${baseUrl}/product-page-mobile.1d.v3.png`} // v.2.1
           // true width & true height controlled by parent grid
           // image fills parent's allotted space
           width={700}
