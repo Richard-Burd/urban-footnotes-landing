@@ -102,7 +102,7 @@ export default function Product() {
         />
         <Image
           alt="Sixth, Seventh, & Eighth pages of the product, mobile version"
-          src={`${baseUrl}/product-page-mobile.1d.v3.png`} // v.2.1
+          src={`${baseUrl}/product-page-mobile.1d.v4.png`} // v.2.1
           // true width & true height controlled by parent grid
           // image fills parent's allotted space
           width={700}
