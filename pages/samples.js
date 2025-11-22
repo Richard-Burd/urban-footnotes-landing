@@ -29,13 +29,13 @@ export default function Samples() {
             pdfPath="doc-233-8th-ave-new-york.7.pdf"
           />
           <ProductSample
-            imagePath="preview-coral-gables-fl-development-proposal.1.jpg"
+            imagePath="preview-coral-gables-fl-development-proposal.3.jpg"
             address="1505 Ponce de Leon, Coral Gables, FL 33134"
             serviceTypesNearby={54}
             serviceTypesFarther={0}
             serviceTypesDistant={20}
             walkabilityScore={26}
-            pdfPath="doc-coral-gables-fl-development-proposal.2.pdf"
+            pdfPath="doc-coral-gables-fl-development-proposal.3.pdf"
           />
           <ProductSample
             imagePath="preview-sarphatipark-38i-amsterdam.3.2.jpg"
