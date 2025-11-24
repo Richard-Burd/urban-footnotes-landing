@@ -35,7 +35,7 @@ export default function Samples() {
             serviceTypesFarther={0}
             serviceTypesDistant={20}
             walkabilityScore={26}
-            pdfPath="doc-coral-gables-fl-development-proposal.3.pdf"
+            pdfPath="doc-coral-gables-fl-development-proposal.4.pdf"
           />
           <ProductSample
             imagePath="preview-sarphatipark-38i-amsterdam.3.2.jpg"
