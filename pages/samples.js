@@ -29,7 +29,7 @@ export default function Samples() {
             pdfPath="doc-233-8th-ave-new-york.7.pdf"
           />
           <ProductSample
-            imagePath="preview-coral-gables-fl-development-proposal.3.jpg"
+            imagePath="preview-coral-gables-fl-development-proposal.4.jpg"
             address="1505 Ponce de Leon, Coral Gables, FL 33134"
             serviceTypesNearby={54}
             serviceTypesFarther={0}
