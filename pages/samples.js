@@ -20,6 +20,15 @@ export default function Samples() {
         </div>
         <div className="grid grid-cols-1 px-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-5 xl:grid-cols-4">
           <ProductSample
+            imagePath="preview-indianapolis-in-development-proposal.1.jpg"
+            address="15 E Washington St, Indianapolis, IN 46204"
+            serviceTypesNearby={60}
+            serviceTypesFarther={4}
+            serviceTypesDistant={10}
+            walkabilityScore={22}
+            pdfPath="doc-indianapolis-in-development-proposal.1.pdf"
+          />
+          <ProductSample
             imagePath="preview-233-8th-ave-new-york.4.jpg"
             address="223 8th Ave. New York, NY 10011"
             serviceTypesNearby={55}
