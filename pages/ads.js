@@ -174,7 +174,7 @@ const BUTTONS = [
   {
     key: 'gov_departments',
     role: 'Government',
-    title: 'Government Departments',
+    title: 'Departments',
     showAudio: false,
     showVideo: true,
     videoSrc: 'vid-govt-dept.mp4',
