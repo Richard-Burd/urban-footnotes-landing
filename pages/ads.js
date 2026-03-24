@@ -172,6 +172,20 @@ const BUTTONS = [
     ]
   },
   {
+    key: 'gov_departments',
+    role: 'Government',
+    title: 'Government Departments',
+    showAudio: false,
+    showVideo: true,
+    videoSrc: 'vid-govt-dept.mp4',
+    content: [
+      "Urban sprawl can drain your city's budget, but walkable, high-density projects still face an uphill battle for approval.",
+      "Urban Footnotes makes walkability measurable, scored, standardized.",
+      "Require the right data in your approvals and encourage developers who build for pedestrians.",
+      "Visit us at urbanfootnotes.com."
+    ]
+  },
+  {
     key: 'planners',
     role: 'City Planning',
     title: 'Conflict Resolution',
@@ -219,9 +233,6 @@ const BUTTONS = [
     ]
   }
 ];
-
-
-
 
 // AudioPlayer component to play audio files with a progress bar and play/pause button
 
