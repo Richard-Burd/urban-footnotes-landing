@@ -215,8 +215,7 @@ const TITLE = "title-shadow-samples page-title-shadow roboto-font text-center te
 
                 <div className="roboto-font px-8 pb-8 pt-0 text-[clamp(1.2rem,3.6vw,1.5rem)] tracking-wide">
                   <p>
-                    Check out our sister organization, Urban Cruise Ship
-                    Analysis Solutions, which provides articles and data
+                    Check out our sister organization, Urban Cruise Ship, which provides articles and data
                     analysis services for anyone interested in learning more
                     about solutions for a more sustainable world.
                   </p>
