@@ -26,7 +26,7 @@ export default function Samples() {
             serviceTypesFarther={4}
             serviceTypesDistant={10}
             walkabilityScore={22}
-            pdfPath="doc-indianapolis-in-development-proposal.4.pdf"
+            pdfPath="doc-indianapolis-in-development-proposal.5.pdf"
           />
           <ProductSample
             imagePath="preview-233-8th-ave-new-york.4.jpg"
@@ -44,7 +44,7 @@ export default function Samples() {
             serviceTypesFarther={0}
             serviceTypesDistant={20}
             walkabilityScore={26}
-            pdfPath="doc-coral-gables-fl-development-proposal.7.1.pdf"
+            pdfPath="doc-coral-gables-fl-development-proposal.7.2.pdf"
           />
           <ProductSample
             imagePath="preview-sarphatipark-38i-amsterdam.3.2.jpg"
