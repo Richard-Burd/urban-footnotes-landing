@@ -30,6 +30,38 @@ export default function Order() {
         />
       </center>
 
+      <div className="w-full max-w-screen-lg px-4 text-xl text-white min-[1000px]:text-2.5xl">
+        <div className="mb-10">
+          The team at Urban Foot Notes can create two types of reports:
+        </div>
+        <div id="report-descriptions" className="mx-10 max-[1000px]:mx-0">
+          <div id="property-report-description" className="mb-10">
+            <div className="font-bold italic">Property Report</div>
+            <div className="mx-6 max-[1000px]:mx-0">
+              This is a standardized address-level walkability report that
+              scores access to 74 everyday services. Property reports are
+              directly comparable across addresses, helping agents, buyers,
+              renters, and planners make better decisions
+            </div>
+          </div>
+          <div
+            id="development-proposal-description"
+            className="mb-10 max-[1000px]:mx-0"
+          >
+            <div className="font-bold italic">Development Proposal</div>
+            <div className="mx-6 max-[1000px]:mx-0">
+              This includes everything in a property report plus a set of
+              architectural drawings showing how a property could be developed
+              so as to maximize walkability for a given address.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="mx-4 border-t-2 border-gray-300" />
+
+      <div className="text-white">Property Reports</div>
+
       <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
       <stripe-pricing-table
         pricing-table-id="prctbl_1R8ebIGN52GuXWVWPtWvx2aH"
