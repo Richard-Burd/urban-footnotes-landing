@@ -58,9 +58,18 @@ export default function Order() {
         </div>
       </div>
 
-      <hr class="mx-4 border-t-2 border-gray-300" />
+      <hr class="mx-4 border-t-2 border-gray-300 pb-8" />
 
-      <div className="text-white">Property Reports</div>
+      <div className="w-full max-w-screen-lg px-4 pb-8 text-white">
+        <div className="pb-1 text-4xl font-semibold underline">
+          Property Reports
+        </div>
+        <div className="text-2xl">
+          These are available for purchase online. You can select one of the
+          three options below to purchase a Property Report for an address of
+          your choosing
+        </div>
+      </div>
 
       <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
       <stripe-pricing-table
