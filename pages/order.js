@@ -60,11 +60,14 @@ export default function Order() {
 
       <hr class="mx-4 border-t-2 border-gray-300 pb-8" />
 
-      <div className="w-full max-w-screen-lg px-4 pb-8 text-white">
-        <div className="pb-1 text-4xl font-semibold underline">
+      <div
+        id="property-reports-intro"
+        className="w-full max-w-screen-lg px-4 pb-8 text-white"
+      >
+        <div className="pb-1 text-2xl font-semibold min-[1000px]:text-4xl min-[1000px]:underline">
           Property Reports
         </div>
-        <div className="text-2xl">
+        <div className="text-xl min-[1000px]:text-2xl">
           These are available for purchase online. You can select one of the
           three options below to purchase a Property Report for an address of
           your choosing
@@ -77,13 +80,79 @@ export default function Order() {
         publishable-key="pk_live_51PWM5ZGN52GuXWVWNN9rPCsYn8nK2OK1xZl03U6AzK38Hh5I74b7o5GpPHMj9qyRrPgoVwLABMjC4ZgjrJqr8tXc004r8wQtLl"
       ></stripe-pricing-table>
 
+      <hr class="mx-4 mt-12 border-t-2 border-gray-300 pb-14" />
+
+      <div
+        id="development-proposals-intro"
+        className="w-full max-w-screen-lg px-4 pb-8 text-white"
+      >
+        <div className="pb-1 text-2xl font-semibold min-[1000px]:text-4xl min-[1000px]:underline">
+          Development Proposals
+        </div>
+        <div id="development-proposal-paragraphs">
+          <div id="dev-paragraph-1" className="text-xl min-[1000px]:text-2xl">
+            These reports explore a potential building construction development
+            design for a given parcel or parcel cluster. The reports show how a
+            property could be developed so as to maximize walkability for
+            residents living in the immediate vicinity. These designs are almost
+            always mixed-use complexes with residential, office, and retail
+            spaces.
+          </div>
+
+          <div
+            id="dev-paragraph-2"
+            className="mt-8 text-xl min-[1000px]:text-2xl"
+          >
+            The cost of a development proposal depends on the development's
+            size, complexity, and level of detail for both design & analysis.
+            For this reason we cannot quote a fixed price but we offer the
+            following examples on the right with estimated costs for each one.
+          </div>
+
+          <div
+            id="dev-paragraph-3"
+            className="mt-8 text-xl min-[1000px]:text-2xl"
+          >
+            Development proposals should be thought of as a tool for parcel
+            optimization & discovery. They can be used to make a case for
+            rezoning, conditional use permit, or a mixed-use overlay. City
+            planners may be more flexible on granting these if a case can be
+            made for an overall public good, which development proposals aim to
+            demonstrate.
+          </div>
+
+          <div
+            id="dev-paragraph-4"
+            className="mt-8 text-xl min-[1000px]:text-2xl"
+          >
+            Our development proposals have a level of planning detail
+            commensurate with earlystage preliminary architectural design
+            drawings. They show schematic floor plans broken down by occupancy
+            type per floor. Basic IBC compliant egress schemas are included as
+            well. We can provide varying levels of fidelity in terms of 3D
+            modeling and presentation to meet your specific needs.
+          </div>
+
+          <div
+            id="dev-paragraph-5"
+            className="mt-8 text-xl min-[1000px]:text-2xl"
+          >
+            Our team has extensive experience in both architecture/ building
+            construction as well as environmental & urban solutions. We leverage
+            this experience to deliver a unique product. That said, we may rely
+            on you for certain due-diligence requirements unique to your city or
+            region. If you have a property address or parcel you would like us
+            to look at, please feel free to contact us so we can discuss your
+            project.
+          </div>
+        </div>
+      </div>
+
+      <hr class="mx-4 mt-8 border-t-2 border-gray-300 pb-14" />
+
       <div className="roboto-font w-full max-w-screen-lg px-4 pb-8 text-xl text-white md:text-2xl">
         <div id="explanations-n-pie-chart">
           <div className="roboto-font mb-4 text-xl text-gray-100 md:text-2.5xl">
-            <p className="my-10">
-              Please select one of the three options above to purchase a report
-              for your address.
-            </p>
             <p className="mb-10">
               The graphic below is an approximate percentage breakdown of our
               expenses so far, at present, and going forward (estimated),
