@@ -10,7 +10,7 @@ module.exports = {
       screens: {
         xs: "480px",
         report: "700px",
-        desktop: "1000px",
+        desktop: "992px",
       },
       colors: {
         // custom colors for shadows are stored in the

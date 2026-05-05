@@ -1,20 +1,13 @@
 import PageTitle from "./PageTitle";
+import PropertyReportsTabs from "./PropertyReportsTabs";
 import SamplesNavbar from "./SamplesNavbar";
+import { propertyReportsHeaderProps } from "./propertyReportsHeaderConfig";
 
 export default function SamplesHeader() {
   return (
     <div className="w-full">
-      <PageTitle
-        topTitle="Sample Reports"
-        textColor="text-title-text-samples"
-        shadowColor="title-shadow-samples"
-        logoColor="#daffd1ff"
-        gradient={
-          "bg-[linear-gradient(to_right,rgba(59,80,35,0.1),rgba(61,113,21,0.5))]"
-        }
-        mobileTitleCentered={false}
-        showLogo={true}
-      />
+      <PageTitle {...propertyReportsHeaderProps} />
+      <PropertyReportsTabs activeView="samples" />
       <div
         id="blurb-and-samples-navbar"
         className="mx-auto max-w-screen-lg desktop:flex"
