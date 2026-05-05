@@ -103,6 +103,7 @@ export default function Proposals() {
                   alt="High fidelity development proposal example"
                   width={900}
                   height={1}
+                  sizes="(min-width: 1024px) 420px, calc(100vw - 3rem)"
                   className="w-full rounded-[6px]"
                 />
               </div>

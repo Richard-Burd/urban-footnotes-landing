@@ -6,13 +6,13 @@ export default function Product() {
   return (
     <NeighborhoodReportsPage
       activeView="features"
-      seoTitle="Product Features for Neighborhood Reports | Urban Foot Notes"
+      seoTitle="Product Features for Property Reports | Urban Foot Notes"
       seoDescription="Explore Urban Foot Notes neighborhood report features, including walkability metrics, service access, maps, score summaries, and report page examples."
       canonicalPath="/product"
     >
       <div
         id="product-desktop-version"
-        className="mx-auto flex max-w-[1024px] flex-col items-center max-[700px]:hidden"
+        className="mx-auto hidden max-w-[1024px] flex-col items-center report:flex"
       >
         <Image
           alt="First & Second pages of the product"
@@ -21,6 +21,7 @@ export default function Product() {
           // image fills parent's allotted space
           width={1024}
           height={1}
+          sizes="(min-width: 1024px) 1024px, 100vw"
         />
         <Image
           alt="Third page of the product"
@@ -29,6 +30,7 @@ export default function Product() {
           // image fills parent's allotted space
           width={1024}
           height={1}
+          sizes="(min-width: 1024px) 1024px, 100vw"
         />
         <Image
           alt="Fourth page of the product"
@@ -37,6 +39,7 @@ export default function Product() {
           // image fills parent's allotted space
           width={1024}
           height={1}
+          sizes="(min-width: 1024px) 1024px, 100vw"
         />
         <Image
           alt="Fifth page of the product"
@@ -45,6 +48,7 @@ export default function Product() {
           // image fills parent's allotted space
           width={1024}
           height={1}
+          sizes="(min-width: 1024px) 1024px, 100vw"
         />
         <Image
           alt="Sixth page of the product"
@@ -53,6 +57,7 @@ export default function Product() {
           // image fills parent's allotted space
           width={1024}
           height={1}
+          sizes="(min-width: 1024px) 1024px, 100vw"
         />
         <Image
           alt="Seventh page of the product"
@@ -61,6 +66,7 @@ export default function Product() {
           // image fills parent's allotted space
           width={1024}
           height={1}
+          sizes="(min-width: 1024px) 1024px, 100vw"
         />
         <Image
           alt="Eighth page of the product"
@@ -69,11 +75,12 @@ export default function Product() {
           // image fills parent's allotted space
           width={1024}
           height={1}
+          sizes="(min-width: 1024px) 1024px, 100vw"
         />
       </div>
       <div
         id="product-mobile-version"
-        className="mx-auto flex max-w-[700px] flex-col items-center px-3 min-[701px]:hidden"
+        className="mx-auto flex max-w-[700px] flex-col items-center px-3 report:hidden"
       >
         <Image
           alt="First page of the product, mobile version"
@@ -82,6 +89,7 @@ export default function Product() {
           // image fills parent's allotted space
           width={700}
           height={1}
+          sizes="(min-width: 700px) 700px, calc(100vw - 1.5rem)"
         />
         <Image
           alt="Second & Third pages of the product, mobile version"
@@ -90,6 +98,7 @@ export default function Product() {
           // image fills parent's allotted space
           width={700}
           height={1}
+          sizes="(min-width: 700px) 700px, calc(100vw - 1.5rem)"
         />
         <Image
           alt="Fourth & Fifth pages of the product, mobile version"
@@ -98,6 +107,7 @@ export default function Product() {
           // image fills parent's allotted space
           width={700}
           height={1}
+          sizes="(min-width: 700px) 700px, calc(100vw - 1.5rem)"
         />
         <Image
           alt="Sixth, Seventh, & Eighth pages of the product, mobile version"
@@ -106,6 +116,7 @@ export default function Product() {
           // image fills parent's allotted space
           width={700}
           height={1}
+          sizes="(min-width: 700px) 700px, calc(100vw - 1.5rem)"
         />
       </div>
     </NeighborhoodReportsPage>

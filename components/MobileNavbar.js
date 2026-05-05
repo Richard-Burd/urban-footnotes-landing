@@ -1,10 +1,31 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import { SAMPLES_PATHS } from "./Navbar";
+import LogoNoText from "./LogoNoText";
+import { activeColor, isPathActive } from "./navbarConfig";
 
-// Products and Pricing stay visible at all times; everything else lives in the hamburger
-const PINNED_TITLES = ["Products", "Pricing"];
+const ChevronIcon = ({ className = "" }) => (
+  <svg
+    className={`h-3 w-3 shrink-0 transition-transform duration-200 ${className}`}
+    fill="currentColor"
+    viewBox="0 0 20 20"
+    aria-hidden="true"
+  >
+    <path
+      fillRule="evenodd"
+      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+      clipRule="evenodd"
+    />
+  </svg>
+);
+
+const activeBayClass = (color, tab = false) =>
+  `inline-flex px-2 ${tab ? "pb-2 pt-1" : "py-1"} ${
+    color ? `${color} ${tab ? "rounded-t-md rounded-b-none" : "rounded-md"}` : "rounded-md"
+  }`;
+
+const menuControlClass = (active) =>
+  `${active ? "navbar-button-shadow" : ""} roboto-font rounded-md bg-stone-700 px-3 py-2 text-base font-bold text-white transition-colors hover:text-navbar-home focus:outline-none`;
 
 export default function MobileNavbar({ navItems }) {
   const router = useRouter();
@@ -12,22 +33,8 @@ export default function MobileNavbar({ navItems }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [expandedItems, setExpandedItems] = useState({});
 
-  const isSamplesPath = SAMPLES_PATHS.includes(currentPath);
-
-  const isPathActive = (path) =>
-    currentPath === path || (isSamplesPath && path === "/samples");
-
-  const activeColor = (item) => {
-    for (const child of item.children ?? []) {
-      const childActiveColor = activeColor(child);
-      if (childActiveColor) return childActiveColor;
-    }
-
-    if (item.path && isPathActive(item.path)) return item.bgColor;
-    return null;
-  };
-
-  const isItemActive = (item) => !!activeColor(item);
+  const getActiveColor = (item) => activeColor(item, currentPath);
+  const isItemActive = (item) => !!getActiveColor(item);
 
   const toggleExpand = (title) =>
     setExpandedItems((prev) => ({ ...prev, [title]: !prev[title] }));
@@ -37,24 +44,22 @@ export default function MobileNavbar({ navItems }) {
     setExpandedItems({});
   };
 
-  // Clearing pinned dropdowns when hamburger opens keeps the UI uncluttered
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
     setExpandedItems({});
   };
 
-  const pinnedItems = navItems.filter((item) => PINNED_TITLES.includes(item.title));
-  const menuItems = navItems.filter((item) => !PINNED_TITLES.includes(item.title));
+  const menuItems = navItems;
 
   return (
-    <nav className="bg-neutral-950 text-white">
-      {/* Always-visible bar: hamburger left, Products + Pricing right */}
-      <div className="flex items-center justify-between px-3 py-2">
+    <nav className="site-nav roboto-font bg-neutral-950 text-white">
+      <div className="grid min-h-16 grid-cols-[auto_minmax(2.5rem,1fr)_auto] items-end gap-2 px-3 pt-2">
         <button
+          type="button"
           onClick={toggleMenu}
           aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
           aria-expanded={menuOpen}
-          className="rounded-md bg-stone-700 p-2 text-white transition-colors hover:bg-stone-600 focus:outline-none"
+          className="mb-2 rounded-md bg-stone-700 p-2 text-white transition-colors hover:bg-stone-600 focus:outline-none"
         >
           <svg
             className="h-6 w-6"
@@ -81,200 +86,75 @@ export default function MobileNavbar({ navItems }) {
           </svg>
         </button>
 
-        <div className="flex gap-2">
-          {pinnedItems.map((item) => {
-            const active = isItemActive(item);
-            const expanded = expandedItems[item.title];
-            const hasChildren = !!item.children?.length;
-            return (
-              <div key={item.title} className="relative">
-                {/* Colored halo wrapper mirrors desktop active-state treatment */}
-                <div className={`rounded-md p-1 ${activeColor(item) ?? ""}`}>
-                  {hasChildren ? (
-                    <button
-                      onClick={() => toggleExpand(item.title)}
-                      className={`roboto-font flex items-center gap-1 rounded-md bg-stone-700 px-3 py-2 text-sm font-bold text-white transition-colors hover:text-navbar-home focus:outline-none ${active ? "navbar-button-shadow" : ""}`}
-                    >
-                      {item.title}
-                      <svg
-                        className={`h-3 w-3 shrink-0 transition-transform duration-200 ${expanded ? "rotate-180" : ""}`}
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        aria-hidden="true"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                    </button>
-                  ) : (
-                    <Link
-                      href={item.path}
-                      className={`roboto-font block rounded-md bg-stone-700 px-3 py-2 text-sm font-bold text-white transition-colors hover:text-navbar-home focus:outline-none ${active ? "navbar-button-shadow" : ""}`}
-                    >
-                      {item.title}
-                    </Link>
-                  )}
-                </div>
+        <Link
+          href="/"
+          aria-label="Urban Footnotes home"
+          className="mb-2 flex min-w-0 justify-center"
+          onClick={closeAll}
+        >
+          <LogoNoText className="h-9 w-9 object-contain xs:h-10 xs:w-10" />
+        </Link>
 
-                {expanded && hasChildren && (
-                  <div className="absolute right-0 top-full z-50 min-w-[200px] overflow-hidden rounded-b-md bg-neutral-900 py-1 shadow-xl">
-                    {item.children.map((child) => {
-                      const hasGrandchildren = !!child.children?.length;
-                      const childActiveColor = activeColor(child);
-                      const childActive = !!childActiveColor;
-                      const isChildExpanded = expandedItems[child.title];
-
-                      if (hasGrandchildren) {
-                        return (
-                          <div key={child.title}>
-                            <div
-                              className={`roboto-font flex items-center text-sm transition-colors ${
-                                childActive
-                                  ? `${childActiveColor} font-bold text-neutral-900`
-                                  : "text-white hover:bg-stone-700 hover:text-navbar-home"
-                              }`}
-                            >
-                              {child.path ? (
-                                <Link
-                                  href={child.path}
-                                  onClick={closeAll}
-                                  className="block flex-1 px-4 py-2 text-left"
-                                >
-                                  {child.title}
-                                </Link>
-                              ) : (
-                                <button
-                                  onClick={() => toggleExpand(child.title)}
-                                  className="flex-1 px-4 py-2 text-left focus:outline-none"
-                                >
-                                  {child.title}
-                                </button>
-                              )}
-                              <button
-                                onClick={() => toggleExpand(child.title)}
-                                aria-label={`${isChildExpanded ? "Collapse" : "Expand"} ${child.title}`}
-                                aria-expanded={isChildExpanded}
-                                className="self-stretch px-4 focus:outline-none"
-                              >
-                                <svg
-                                  className={`h-3 w-3 shrink-0 transition-transform duration-200 ${isChildExpanded ? "rotate-180" : ""}`}
-                                  fill="currentColor"
-                                  viewBox="0 0 20 20"
-                                  aria-hidden="true"
-                                >
-                                  <path
-                                    fillRule="evenodd"
-                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                    clipRule="evenodd"
-                                  />
-                                </svg>
-                              </button>
-                            </div>
-                            {isChildExpanded && (
-                              <div className="border-t border-stone-700">
-                                {child.children.map((gc) => {
-                                  const gcActive = isPathActive(gc.path);
-                                  return (
-                                    <Link href={gc.path} key={gc.title} onClick={closeAll}>
-                                      <div
-                                        className={`roboto-font cursor-pointer py-2 pl-7 pr-4 text-sm transition-colors ${
-                                          gcActive
-                                            ? `${gc.bgColor} font-bold text-neutral-900`
-                                            : "text-white hover:bg-stone-700 hover:text-navbar-home"
-                                        }`}
-                                      >
-                                        {gc.title}
-                                      </div>
-                                    </Link>
-                                  );
-                                })}
-                              </div>
-                            )}
-                          </div>
-                        );
-                      }
-
-                      return (
-                        <Link href={child.path} key={child.title} onClick={closeAll}>
-                          <div
-                            className={`roboto-font cursor-pointer px-4 py-2 text-sm transition-colors ${
-                              childActive
-                                ? `${child.bgColor} font-bold text-neutral-900`
-                                : "text-white hover:bg-stone-700 hover:text-navbar-home"
-                            }`}
-                          >
-                            {child.title}
-                          </div>
-                        </Link>
-                      );
-                    })}
-                  </div>
-                )}
-              </div>
-            );
-          })}
-        </div>
+        <div className="mb-2 h-10 w-10" aria-hidden="true" />
       </div>
 
-      {/* Hamburger-expanded menu: Home, About (accordion), Contact */}
       {menuOpen && (
         <div className="border-t border-stone-700 px-3 py-2">
           {menuItems.map((item) => {
             const active = isItemActive(item);
             const expanded = expandedItems[item.title];
+            const itemActiveColor = getActiveColor(item);
+            const hasChildren = !!item.children?.length;
 
             if (item.path) {
               return (
-                <Link href={item.path} key={item.title} onClick={closeAll}>
-                  <div className={`mb-1 rounded-md p-1 ${activeColor(item) ?? ""}`}>
-                    <div className="roboto-font rounded-md bg-stone-700 px-3 py-2 text-base font-bold text-white transition-colors hover:text-navbar-home">
+                <div key={item.title} className="mb-1">
+                  <div className={activeBayClass(itemActiveColor)}>
+                    <Link
+                      href={item.path}
+                      onClick={closeAll}
+                      className={menuControlClass(active)}
+                    >
                       {item.title}
-                    </div>
+                    </Link>
                   </div>
-                </Link>
+                </div>
               );
             }
 
             return (
               <div key={item.title} className="mb-1">
-                <div className={`rounded-md p-1 ${activeColor(item) ?? ""}`}>
+                <div className={activeBayClass(itemActiveColor)}>
                   <button
+                    type="button"
                     onClick={() => toggleExpand(item.title)}
-                    className="roboto-font flex w-full items-center justify-between rounded-md bg-stone-700 px-3 py-2 text-base font-bold text-white transition-colors hover:text-navbar-home focus:outline-none"
+                    aria-haspopup="true"
+                    aria-expanded={expanded}
+                    className={`${menuControlClass(active)} flex items-center justify-between`}
                   >
                     {item.title}
-                    <svg
-                      className={`h-4 w-4 shrink-0 transition-transform duration-200 ${expanded ? "rotate-180" : ""}`}
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      aria-hidden="true"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
+                    <ChevronIcon className={`ml-2 h-4 w-4 ${expanded ? "rotate-180" : ""}`} />
                   </button>
                 </div>
 
-                {expanded && (
+                {expanded && hasChildren && (
                   <div className="ml-3 mt-1 border-l-2 border-stone-600 pl-2">
                     {item.children.map((child) => {
-                      const childActive = isPathActive(child.path);
+                      const childActive = isPathActive(currentPath, child.path);
                       return (
-                        <Link href={child.path} key={child.title} onClick={closeAll}>
-                          <div className={`mb-1 rounded-md p-1 ${childActive ? child.bgColor : ""}`}>
-                            <div
-                              className={`roboto-font rounded-md bg-stone-700 px-3 py-1.5 text-base text-white transition-colors hover:text-navbar-home ${childActive ? "font-bold" : ""}`}
+                        <div key={child.title} className="mb-1">
+                          <div className={activeBayClass(childActive ? child.bgColor : null)}>
+                            <Link
+                              href={child.path}
+                              onClick={closeAll}
+                              className={`rounded-md bg-stone-700 px-3 py-1.5 text-base text-white transition-colors hover:text-navbar-home ${
+                                childActive ? "navbar-button-shadow font-bold" : ""
+                              }`}
                             >
                               {child.title}
-                            </div>
+                            </Link>
                           </div>
-                        </Link>
+                        </div>
                       );
                     })}
                   </div>
@@ -285,11 +165,6 @@ export default function MobileNavbar({ navItems }) {
         </div>
       )}
 
-      <style jsx>{`
-        .navbar-button-shadow {
-          box-shadow: 6px 6px 7px rgb(0, 0, 0, 0.5);
-        }
-      `}</style>
     </nav>
   );
 }

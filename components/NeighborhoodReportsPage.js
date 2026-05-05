@@ -48,7 +48,7 @@ export default function NeighborhoodReportsPage({
       </Head>
 
       <PageTitle
-        topTitle="Neighborhood Reports"
+        topTitle="Property Reports"
         textColor="text-title-text-samples"
         shadowColor="title-shadow-samples"
         logoColor="#daffd1ff"
@@ -58,7 +58,7 @@ export default function NeighborhoodReportsPage({
       />
 
       <nav
-        aria-label="Neighborhood reports sections"
+        aria-label="Property Reports sections"
         className="mx-auto mb-8 flex max-w-screen-lg justify-center px-4"
       >
         <div className="flex w-full max-w-[560px] gap-1.5 overflow-hidden rounded-xl bg-stone-800 p-1.5 ring-1 ring-white/10">

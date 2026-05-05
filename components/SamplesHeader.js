@@ -17,11 +17,11 @@ export default function SamplesHeader() {
       />
       <div
         id="blurb-and-samples-navbar"
-        className="mx-auto max-w-screen-lg min-[970px]:flex"
+        className="mx-auto max-w-screen-lg desktop:flex"
       >
         <div
           id="explanation"
-          className="roboto-font mb-4 text-2.5xl text-gray-200 max-[1036px]:ml-8 sm:mr-8 lg:w-2/3"
+          className="roboto-font mx-8 mb-4 text-2.5xl text-gray-200 desktop:ml-0 desktop:mr-8 desktop:w-2/3"
         >
           <p className="pt-2">
             Samples are presented ranked by the number of service types (out of

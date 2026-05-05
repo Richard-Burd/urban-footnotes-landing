@@ -16,11 +16,6 @@ const MobileNavbarButton = ({ title, bgColor, isActive, path }) => {
           <div className="py-[2px] text-[15px]">{title}</div>
         </Link>
       </button>
-      <style jsx>{`
-        .navbar-button-shadow {
-          box-shadow: 6px 6px 7px rgb(0, 0, 0, 0.5);
-        }
-      `}</style>
     </div>
   );
 };
