@@ -9,29 +9,30 @@ export default function PageTitle({
   mobileTitleCentered = false,
   showLogo = false,
 }) {
-  const titleBaseStyles = `${textColor} ${shadowColor} page-title-shadow roboto-font break-normal tracking-wide [text-wrap:balance]`;
-  const mobileTitleStyles = `flex-grow text-left ${titleBaseStyles} py-3 text-[56px] md:text-8xl lg:mb-4`;
+  const titleBaseStyles = `${textColor} ${shadowColor} page-title-shadow roboto-font whitespace-normal break-normal tracking-wide [overflow-wrap:normal] [word-break:normal]`;
+  const mobileTitleStyles = `flex-grow text-left ${titleBaseStyles} py-3 text-[55px]`;
   return (
     <div>
-      <div id="desktop-version" className="hidden desktop:block">
+      <div id="desktop-version" className="hidden md:block">
         <div className={`${gradient} mb-8 w-full p-4`}>
           <div className="mx-auto max-w-screen-xl px-6">
-            <div className="relative flex w-full items-center gap-8 sm:flex-row sm:items-end">
+            <div className="relative flex w-full items-start gap-4 sm:flex-row desktop:gap-8">
               {/* Logo */}
               {showLogo && (
-                <div className="shrink-0">
+                <div className="w-[min(30vw,345px)] min-w-[180px] shrink-0">
                   <Logo
                     type="ufn"
                     color={logoColor}
                     width="345"
                     height="214"
+                    className="h-auto w-full"
                   />
                 </div>
               )}
 
               {/* Title */}
               <div
-                className={`mb-4 min-w-0 flex-grow text-left ${titleBaseStyles} text-8xl`}
+                className={`mb-4 min-w-0 flex-grow text-left ${titleBaseStyles} text-[5.25rem] leading-none`}
               >
                 {topTitle}
               </div>
@@ -39,7 +40,7 @@ export default function PageTitle({
           </div>
         </div>
       </div>
-      <div id="mobile-version" className="block desktop:hidden">
+      <div id="mobile-version" className="block md:hidden">
         <div className={`${gradient}`}>
           <div>
             {showLogo && (

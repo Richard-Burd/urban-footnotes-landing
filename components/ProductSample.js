@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+const responsiveImageStyle = { width: "100%", height: "auto" };
+
 const ProductSample = ({
   imagePath,
   address,
@@ -39,21 +41,19 @@ const ProductSample = ({
           <Image
             src={`${baseUrl}/${imagePath}`}
             alt={`picture of ${address}`}
-            // true width & true height controlled by parent grid
-            // image fills parent's allotted space
             width={400}
             height={1}
             sizes={sampleImageSizes}
+            style={responsiveImageStyle}
           />
           <Image
             className="absolute h-auto w-full max-w-[400px] scale-95 transform justify-center opacity-40 transition-opacity duration-300 ease-in-out hover:scale-100 hover:opacity-90 focus:opacity-100"
             src="/images/pdf-preview-pointy-hand.svg"
             alt="Pointy Hand Preview"
-            // true width & true height controlled by parent grid
-            // image fills parent's allotted space
             width={400}
             height={1}
             sizes={sampleImageSizes}
+            style={responsiveImageStyle}
             unoptimized
           />
         </div>

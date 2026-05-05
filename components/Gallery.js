@@ -2,7 +2,8 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import samplesData from "@/lib/samplesData";
 
-const REPORT_IMAGE_SIZES = "(min-width: 1000px) 1024px, calc(100vw - 2rem)";
+const REPORT_IMAGE_SIZES = "(min-width: 992px) 1024px, calc(100vw - 2rem)";
+const responsiveImageStyle = { width: "100%", height: "auto" };
 
 const CATEGORIES = [
   {
@@ -73,6 +74,7 @@ function ReportImage({ baseUrl, entry, viewType }) {
       width={1200}
       height={1}
       sizes={REPORT_IMAGE_SIZES}
+      style={responsiveImageStyle}
     />
   );
 }

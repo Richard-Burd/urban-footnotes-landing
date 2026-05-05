@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -30,29 +35,14 @@ body {
   font-family: "Arial Rounded MT Bold", sans-serif;
 }
 
-.varela-rounded-font {
-  font-family: "Varela Round", sans-serif;
-}
-
 .roboto-font {
-  font-family: "Roboto", sans-serif;
+  font-family: var(--font-roboto), sans-serif;
   font-weight: 400;
   font-style: normal;
-}
-
-.playfair-display-font {
-  font-family: "Playfair Display", serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.open-sans-font {
-  font-family: "Open Sans", sans-serif;
 }
 
 .italic {
-  font-family: "Roboto", sans-serif;
+  font-family: var(--font-roboto), sans-serif;
   font-weight: 400;
   font-style: italic;
 }

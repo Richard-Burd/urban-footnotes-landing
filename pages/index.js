@@ -37,7 +37,7 @@ const TITLE = "title-shadow-samples page-title-shadow roboto-font text-center te
           href={videoUrl}
           as="video"
           type="video/mp4"
-          media="(min-width: 1000px)"
+          media="(min-width: 992px)"
         />
       </Head>
 

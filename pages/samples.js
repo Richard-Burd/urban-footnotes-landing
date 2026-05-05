@@ -29,7 +29,7 @@ export default function Samples() {
       </div>
       <div
         id="page-title"
-        className="pb-4 pt-9 text-center text-[30px] text-title-text-samples text-white sm:text-[40px] md:text-[57px]"
+        className="pb-4 pt-9 text-center text-[24px] text-title-text-samples text-white sm:text-[32px] md:text-[44px]"
       >
         Property Report Sets, Ranked by Metrics
       </div>

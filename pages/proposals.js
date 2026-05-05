@@ -6,6 +6,7 @@ const CARD_DARK  = "bg-[linear-gradient(to_right,rgba(113,22,21,0.30),rgba(80,15
 const HEADING    = "roboto-font mb-3 text-2xl font-bold text-title-text-product title-shadow-product md:text-3xl";
 const BODY       = "text-[clamp(1.05rem,2.5vw,1.2rem)] leading-relaxed text-gray-100";
 const HIGH_FID_DEV_PROPOSAL = "/images/proposals/high-fid-dev-prop.png";
+const responsiveImageStyle = { width: "100%", height: "auto" };
 
 export default function Proposals() {
   return (
@@ -105,6 +106,7 @@ export default function Proposals() {
                   height={1}
                   sizes="(min-width: 1024px) 420px, calc(100vw - 3rem)"
                   className="w-full rounded-[6px]"
+                  style={responsiveImageStyle}
                 />
               </div>
             </section>

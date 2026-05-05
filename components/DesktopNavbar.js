@@ -54,16 +54,16 @@ export default function DesktopNavbar({ navItems }) {
 
   return (
     <nav className="site-nav roboto-font bg-neutral-950 px-4 text-white sm:px-6 lg:px-8">
-      <div className="mx-auto flex min-h-16 w-full max-w-screen-xl items-stretch gap-2">
+      <div className="mx-auto grid min-h-16 w-full max-w-screen-xl grid-cols-[1fr_auto] items-stretch gap-2">
         <Link
           href="/"
           aria-label="Urban Footnotes home"
-          className="flex shrink-0 items-center pr-2"
+          className="flex items-center justify-self-center rounded-full transition duration-200 ease-out hover:-translate-y-0.5 hover:drop-shadow-[0_0_14px_rgba(255,255,255,0.45)] focus-visible:-translate-y-0.5 focus-visible:drop-shadow-[0_0_14px_rgba(255,255,255,0.45)]"
         >
           <LogoNoText className="h-12 w-12 object-contain" />
         </Link>
 
-        <div className="flex min-w-0 flex-1 items-stretch justify-end gap-4 lg:gap-6">
+        <div className="flex min-w-0 items-stretch justify-end gap-0">
           {navItems.map((item) => {
             if (item.title === "Home") {
               return null;
