@@ -13,30 +13,26 @@ export default function PageTitle({
   return (
     <div>
       <div id="desktop-version" className="hidden min-[1000px]:block">
-        <div className="w-full max-w-screen-lg">
-          <div className={`${gradient} mb-8 flex justify-center p-4`}>
-            {/* Fixed-width container */}
-            <div className="mx-auto w-full px-6">
-              {/* Wrapper for logo and title */}
-              <div className="relative flex w-full items-center sm:flex-row sm:items-end">
-                {/* Logo */}
-                {showLogo && (
-                  <div className="mr-12">
-                    <Logo
-                      type="ufn"
-                      color={logoColor}
-                      width="345"
-                      height="214"
-                    />
-                  </div>
-                )}
-
-                {/* Title */}
-                <div
-                  className={`flex-grow text-left ${textColor} ${shadowColor} page-title-shadow roboto-font mb-4 text-8xl tracking-wide`}
-                >
-                  {topTitle}
+        <div className={`${gradient} mb-8 w-full p-4`}>
+          <div className="mx-auto max-w-screen-xl px-6">
+            <div className="relative flex w-full items-center sm:flex-row sm:items-end">
+              {/* Logo */}
+              {showLogo && (
+                <div className="mr-12">
+                  <Logo
+                    type="ufn"
+                    color={logoColor}
+                    width="345"
+                    height="214"
+                  />
                 </div>
+              )}
+
+              {/* Title */}
+              <div
+                className={`flex-grow text-left ${textColor} ${shadowColor} page-title-shadow roboto-font mb-4 text-8xl tracking-wide`}
+              >
+                {topTitle}
               </div>
             </div>
           </div>

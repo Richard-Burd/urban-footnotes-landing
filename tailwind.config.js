@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        xs: "480px",
+      },
       colors: {
         // custom colors for shadows are stored in the
         // ./styles/global.css file because TailwindCSS
@@ -25,7 +28,7 @@ module.exports = {
         "navbar-about": "#b4b4b4ff",
         "navbar-team": "#73d9eb",
         "navbar-product": "#ffafafff",
-        "navbar-samples": "#64df46ff",
+        "navbar-samples": "#a8e09cff",
         "navbar-order": "#f7eb7e",
         "navbar-contact-us": "#9177c9",
         "navbar-ads": "#F7A969",

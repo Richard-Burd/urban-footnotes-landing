@@ -278,7 +278,7 @@ const TITLE = "title-shadow-samples page-title-shadow roboto-font text-center te
           <div className="group relative rounded-[10px] py-4">
             <div className={`${CARD}  bg-red-900/20 group-hover:bg-red-900/40 mt-6`}>
               <div className={`${TITLE} text-title-text-product`}>
-                Product Features
+                Report Features
               </div>
               <div className="mt-0">
                 <Link
