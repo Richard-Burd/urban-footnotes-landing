@@ -124,20 +124,18 @@ const TeamMemberCard = ({ member }) => (
 
 export default function Team() {
   return (
-    <div className="text-white w-full max-w-screen-lg">
-      <center>
-        <PageTitle
-          topTitle="Our Team"
-          textColor="text-title-text-team"
-          shadowColor="title-shadow-team"
-          logoColor="#73ebe4ff"
-          gradient={
-            "bg-[linear-gradient(to_right,rgba(21,110,113,0.1),rgba(21,110,113,0.5))]"
-          }
-          mobileTitleCentered={true}
-          showLogo={true} // Integrates the logo
-        />
-      </center>
+    <div className="w-full text-white">
+      <PageTitle
+        topTitle="Our Team"
+        textColor="text-title-text-team"
+        shadowColor="title-shadow-team"
+        logoColor="#73ebe4ff"
+        gradient={
+          "bg-[linear-gradient(to_right,rgba(21,110,113,0.1),rgba(21,110,113,0.5))]"
+        }
+        mobileTitleCentered={true}
+        showLogo={true}
+      />
       <div className="roboto-font mx-4 pt-4 text-xl md:text-2xl">
         {/* Team Section */}
         <section className="grid w-full max-w-screen-lg grid-cols-1 gap-6 lg:grid-cols-2">

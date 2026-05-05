@@ -65,23 +65,16 @@ export default function About() {
   );
 
   return (
-    <div className="roboto-font text-white ">
-      {/* TITLE */}
-      <div className="flex justify-center w-full">
-        <div className="">
-            <div className="">
-              <PageTitle
-                topTitle="About Us"
-                textColor="text-white"
-                shadowColor="title-shadow-about"
-                logoColor="#d4d4d4ff"
-                gradient="bg-[linear-gradient(to_right,rgba(90,90,90,0.1),rgba(90,90,90,0.5))]"
-                mobileTitleCentered
-                showLogo
-              />
-            </div>
-          </div>
-        </div>
+    <div className="roboto-font w-full text-white">
+      <PageTitle
+        topTitle="About Us"
+        textColor="text-white"
+        shadowColor="title-shadow-about"
+        logoColor="#d4d4d4ff"
+        gradient="bg-[linear-gradient(to_right,rgba(90,90,90,0.1),rgba(90,90,90,0.5))]"
+        mobileTitleCentered
+        showLogo
+      />
       
 
       {/* GRID */}

@@ -11,6 +11,7 @@ const Logo = ({
   width = "100",
   height = "100",
   viewBox = ufnViewBox,
+  className = "",
 }) => {
   let path = ufnLogoPath;
   if (type === "ucs") {

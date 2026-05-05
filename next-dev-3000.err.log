@@ -1,0 +1,4 @@
+ ⚠ Port 3000 is in use, trying 3001 instead.
+Browserslist: browsers data (caniuse-lite) is 15 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme

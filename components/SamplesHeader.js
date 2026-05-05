@@ -3,20 +3,18 @@ import SamplesNavbar from "./SamplesNavbar";
 
 export default function SamplesHeader() {
   return (
-    <div>
-      <center>
-        <PageTitle
-          topTitle="Product Samples"
-          textColor="text-title-text-samples"
-          shadowColor="title-shadow-samples"
-          logoColor="#daffd1ff"
-          gradient={
-            "bg-[linear-gradient(to_right,rgba(59,80,35,0.1),rgba(61,113,21,0.5))]"
-          }
-          mobileTitleCentered={false}
-          showLogo={true} // Integrates the logo
-        />
-      </center>
+    <div className="w-full">
+      <PageTitle
+        topTitle="Sample Reports"
+        textColor="text-title-text-samples"
+        shadowColor="title-shadow-samples"
+        logoColor="#daffd1ff"
+        gradient={
+          "bg-[linear-gradient(to_right,rgba(59,80,35,0.1),rgba(61,113,21,0.5))]"
+        }
+        mobileTitleCentered={false}
+        showLogo={true}
+      />
       <div
         id="blurb-and-samples-navbar"
         className="mx-auto max-w-screen-lg min-[970px]:flex"

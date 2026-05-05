@@ -1,0 +1,15 @@
+
+> urban-footnotes-landing@0.1.0 dev
+> next dev
+
+  ▲ Next.js 14.2.28
+  - Local:        http://localhost:3001
+  - Environments: .env
+
+ ✓ Starting...
+ ✓ Ready in 1282ms
+ ○ Compiling /order ...
+ ✓ Compiled /order in 1556ms (386 modules)
+ ✓ Compiled in 202ms (386 modules)
+ GET /order 200 in 1986ms
+ ✓ Compiled in 214ms (380 modules)

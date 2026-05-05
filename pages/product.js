@@ -1,23 +1,19 @@
 import Image from "next/image";
-import PageTitle from "@/components/PageTitle";
+import NeighborhoodReportsPage from "@/components/NeighborhoodReportsPage";
 
 export default function Product() {
   const baseUrl = process.env.NEXT_PUBLIC_S3_BASE_URL;
   return (
-    <div>
-      <div>
-        <PageTitle
-          topTitle="Product Features"
-          textColor="text-title-text-product"
-          shadowColor={`title-shadow-product`}
-          logoColor="#e7c7c7ff"
-          gradient={
-            "bg-[linear-gradient(to_right,rgba(178,120,120,0.1),rgba(113,22,21,0.5))]"
-          }
-          showLogo={true} // Integrates the logo
-        />
-      </div>
-      <div id="desktop-version" className="max-[700px]:hidden">
+    <NeighborhoodReportsPage
+      activeView="features"
+      seoTitle="Product Features for Neighborhood Reports | Urban Foot Notes"
+      seoDescription="Explore Urban Foot Notes neighborhood report features, including walkability metrics, service access, maps, score summaries, and report page examples."
+      canonicalPath="/product"
+    >
+      <div
+        id="product-desktop-version"
+        className="mx-auto flex max-w-[1024px] flex-col items-center max-[700px]:hidden"
+      >
         <Image
           alt="First & Second pages of the product"
           src={`${baseUrl}/product-page-desktop.1a.v2.png`} // v.2.1
@@ -75,7 +71,10 @@ export default function Product() {
           height={1}
         />
       </div>
-      <div id="mobile-version" className="px-3 min-[701px]:hidden">
+      <div
+        id="product-mobile-version"
+        className="mx-auto flex max-w-[700px] flex-col items-center px-3 min-[701px]:hidden"
+      >
         <Image
           alt="First page of the product, mobile version"
           src={`${baseUrl}/product-page-mobile.1a.v2.png`} // v.2.1
@@ -109,6 +108,6 @@ export default function Product() {
           height={1}
         />
       </div>
-    </div>
+    </NeighborhoodReportsPage>
   );
 }
