@@ -36,7 +36,7 @@ export default function Order() {
 
       <section className="mx-auto w-full max-w-screen-lg px-4">
         <h2 className="roboto-font mb-6 text-3xl font-bold text-title-text-order title-shadow-order md:text-5xl">
-          Neighborhood Reports
+          Property Reports
         </h2>
         <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
         <stripe-pricing-table
@@ -68,6 +68,8 @@ export default function Order() {
                 src={`${baseUrl}/allocation-pie-chart-desktop.v3.png`}
                 width={898}
                 height={1}
+                sizes="(min-width: 1024px) 898px, 100vw"
+                className="h-auto w-auto max-w-full"
               />
             </div>
             <div className="hidden justify-center md:flex lg:hidden">
@@ -76,6 +78,8 @@ export default function Order() {
                 src={`${baseUrl}/allocation-pie-chart-tablet.v3.png`}
                 width={898}
                 height={1}
+                sizes="(min-width: 768px) 898px, 100vw"
+                className="h-auto w-auto max-w-full"
               />
             </div>
             <div className="flex justify-center md:hidden">
@@ -84,6 +88,8 @@ export default function Order() {
                 src={`${baseUrl}/allocation-pie-chart-mobile.v3.png`}
                 width={360}
                 height={1}
+                sizes="360px"
+                className="h-auto w-auto max-w-full"
               />
             </div>
           </div>

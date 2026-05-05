@@ -6,17 +6,17 @@ export default function Samples() {
   return (
     <NeighborhoodReportsPage
       activeView="samples"
-      seoTitle="Sample Neighborhood Reports | Urban Foot Notes"
-      seoDescription="View sample Urban Foot Notes neighborhood reports ranked by walkability metrics, nearby service types, and comparative property report scores."
+      seoTitle="Sample Property Reports | Urban Foot Notes"
+      seoDescription="View sample Urban Foot Notes Property Reports ranked by walkability metrics, nearby service types, and comparative property report scores."
       canonicalPath="/samples"
     >
       <div
         id="blurb-and-samples-navbar"
-        className="mx-auto max-w-screen-lg min-[970px]:flex"
+        className="mx-auto max-w-screen-lg desktop:flex"
       >
         <div
           id="explanation"
-          className="roboto-font mb-4 text-2.5xl text-gray-200 max-[1036px]:ml-8 sm:mr-8 lg:w-2/3"
+          className="roboto-font mx-8 mb-4 text-2.5xl text-gray-200 desktop:ml-0 desktop:mr-8 desktop:w-2/3"
         >
           <p className="pt-2">
             Samples are presented ranked by the number of service types (out of

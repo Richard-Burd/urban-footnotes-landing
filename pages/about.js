@@ -55,7 +55,7 @@ const IMAGE_MAP = {
 const WRAP = "mx-auto max-w-screen-xl 2xl:max-w-[1600px] px-6 md:px-10";
 const CARD = "rounded-[10px] group-hover:shadow-lg p-4 transition-shadow";
 const SOFT_CARD = "rounded-[10px] p-4 transition-shadow group-hover:shadow-lg";
-const TITLE = "title-shadow-samples page-title-shadow roboto-font text-center text-[35px] [@media(min-width:1000px)]:text-[45px]";
+const TITLE = "title-shadow-samples page-title-shadow roboto-font text-center text-[35px] desktop:text-[45px]";
 
 export default function About() {
   const [activeTab, setActiveTab] = useState(TABS[0].id);
@@ -154,6 +154,7 @@ export default function About() {
             height={160}
             src={`${baseUrl}/${IMAGE_MAP[activeTab]}`}
             alt={TABS.find(t => t.id === activeTab)?.label}
+            sizes="160px"
             className="h-full w-full rounded-lg object-contain shadow-lg"
           />
         </div>
@@ -171,7 +172,7 @@ export default function About() {
 
 
         {/* Benefits (mobile) */}
-        <section className="col-span-12 min-[700px]:hidden">
+        <section className="col-span-12 report:hidden">
           <div className="group overflow-hidden rounded-[10px]">
             <div className={CARD}>
               <p className="pb-6 text-center text-3xl font-medium">

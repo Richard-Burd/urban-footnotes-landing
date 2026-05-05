@@ -9,16 +9,17 @@ export default function PageTitle({
   mobileTitleCentered = false,
   showLogo = false,
 }) {
-  const mobileTitleStyles = `flex-grow text-left ${textColor} ${shadowColor} page-title-shadow roboto-font text-[56px] tracking-wide lg:mb-4 md:text-8xl py-3`;
+  const titleBaseStyles = `${textColor} ${shadowColor} page-title-shadow roboto-font break-normal tracking-wide [text-wrap:balance]`;
+  const mobileTitleStyles = `flex-grow text-left ${titleBaseStyles} py-3 text-[56px] md:text-8xl lg:mb-4`;
   return (
     <div>
-      <div id="desktop-version" className="hidden min-[1000px]:block">
+      <div id="desktop-version" className="hidden desktop:block">
         <div className={`${gradient} mb-8 w-full p-4`}>
           <div className="mx-auto max-w-screen-xl px-6">
-            <div className="relative flex w-full items-center sm:flex-row sm:items-end">
+            <div className="relative flex w-full items-center gap-8 sm:flex-row sm:items-end">
               {/* Logo */}
               {showLogo && (
-                <div className="mr-12">
+                <div className="shrink-0">
                   <Logo
                     type="ufn"
                     color={logoColor}
@@ -30,7 +31,7 @@ export default function PageTitle({
 
               {/* Title */}
               <div
-                className={`flex-grow text-left ${textColor} ${shadowColor} page-title-shadow roboto-font mb-4 text-8xl tracking-wide`}
+                className={`mb-4 min-w-0 flex-grow text-left ${titleBaseStyles} text-8xl`}
               >
                 {topTitle}
               </div>
@@ -38,55 +39,27 @@ export default function PageTitle({
           </div>
         </div>
       </div>
-      <div id="mobile-version" className="block min-[1000px]:hidden">
+      <div id="mobile-version" className="block desktop:hidden">
         <div className={`${gradient}`}>
-          {/* Fixed-width container */}
-          <div className="">
-            {/* Wrapper for logo and title */}
-            <div className="">
-              {/* Logo */}
-              {showLogo && (
-                <div className="w-screen">
-                  {/* large mobile logo */}
-                  <div className="block max-[360px]:hidden min-[999px]:hidden">
-                    <div className="py-6">
-                      <center>
-                        <Logo
-                          type="ufn"
-                          color={logoColor}
-                          width="296"
-                          height="183"
-                        />
-                      </center>
-                    </div>
-                  </div>
-                  {/* medium mobile logo */}
-                  <div className="block max-[280px]:hidden min-[361px]:hidden">
-                    <div className="py-6">
-                      <center>
-                        <Logo color={logoColor} width="240" height="150" />
-                      </center>
-                    </div>
-                  </div>
-                  {/* small mobile logo */}
-                  <div className="block max-[100px]:hidden min-[281px]:hidden">
-                    <div className="py-6">
-                      <center>
-                        <Logo color={logoColor} width="200" height="124" />
-                      </center>
-                    </div>
-                  </div>
+          <div>
+            {showLogo && (
+              <div className="flex w-full justify-center px-4 py-6">
+                <div className="w-[min(78vw,296px)] min-w-[200px] max-w-[296px]">
+                  <Logo
+                    type="ufn"
+                    color={logoColor}
+                    width="296"
+                    height="183"
+                    className="h-auto w-full"
+                  />
                 </div>
-              )}
-            </div>
+              </div>
+            )}
           </div>
         </div>
-        {/* if mobileTitleCentered = false, else show */}
         {mobileTitleCentered ? (
           <div className="px-2 leading-none">
-            <div className={mobileTitleStyles}>
-              <center>{topTitle}</center>
-            </div>
+            <div className={`${mobileTitleStyles} text-center`}>{topTitle}</div>
           </div>
         ) : (
           <div className="px-3 leading-none">

@@ -23,7 +23,7 @@ export default function Home() {
 /* ---- card format, rounded shape, padding ---- */
 const CARD =
   "rounded-[10px] group-hover:shadow-lg p-4 transition-shadow";
-const TITLE = "title-shadow-samples page-title-shadow roboto-font text-center text-[35px] [@media(min-width:1000px)]:text-[45px]";
+const TITLE = "title-shadow-samples page-title-shadow roboto-font text-center text-[35px] desktop:text-[45px]";
 
   // Filter & sort the "Highly Walkable" data
   const highlyWalkableData = samplesData
