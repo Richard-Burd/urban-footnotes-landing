@@ -11,6 +11,7 @@ const Logo = ({
   width = "100",
   height = "100",
   viewBox = ufnViewBox,
+  className = "",
 }) => {
   let path = ufnLogoPath;
   if (type === "ucs") {
@@ -27,6 +28,7 @@ const Logo = ({
       height={height}
       viewBox={viewBox}
       xmlns="http://www.w3.org/2000/svg"
+      className={className}
     >
       <path
         d={path} // the actual logo path (super large)

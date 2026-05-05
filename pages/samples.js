@@ -1,13 +1,35 @@
 import ProductSample from "@/components/ProductSample";
-import SamplesHeader from "@/components/SamplesHeader";
+import NeighborhoodReportsPage from "@/components/NeighborhoodReportsPage";
+import SamplesNavbar from "@/components/SamplesNavbar";
 
 export default function Samples() {
   return (
-    <div>
-      <SamplesHeader />
+    <NeighborhoodReportsPage
+      activeView="samples"
+      seoTitle="Sample Property Reports | Urban Foot Notes"
+      seoDescription="View sample Urban Foot Notes Property Reports ranked by walkability metrics, nearby service types, and comparative property report scores."
+      canonicalPath="/samples"
+    >
+      <div
+        id="blurb-and-samples-navbar"
+        className="mx-auto max-w-screen-lg desktop:flex"
+      >
+        <div
+          id="explanation"
+          className="roboto-font mx-8 mb-4 text-2.5xl text-gray-200 desktop:ml-0 desktop:mr-8 desktop:w-2/3"
+        >
+          <p className="pt-2">
+            Samples are presented ranked by the number of service types (out of
+            74 total) within approximately 1/4 mile of the address shown (0.4
+            kilometer in metric versions), then by those within 2/5 mile (0.7
+            kilometer in metric versions), and finally by Walkability Score.
+          </p>
+        </div>
+        <SamplesNavbar />
+      </div>
       <div
         id="page-title"
-        className="pb-4 pt-9 text-center text-[30px] text-title-text-samples text-white sm:text-[40px] md:text-[57px]"
+        className="pb-4 pt-9 text-center text-[24px] text-title-text-samples text-white sm:text-[32px] md:text-[44px]"
       >
         Property Report Sets, Ranked by Metrics
       </div>
@@ -409,6 +431,6 @@ export default function Samples() {
         <br />
         <br />
       </div>
-    </div>
+    </NeighborhoodReportsPage>
   );
 }

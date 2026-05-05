@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\casper\\\\Documents\\\\repos\\\\urban-footnotes-landing\" -Force)",
+      "Bash(Select-Object -Property Mode, Name, FullName)"
+    ]
+  }
+}

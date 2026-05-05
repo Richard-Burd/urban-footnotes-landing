@@ -6,11 +6,6 @@ const SamplesNavbarButton = ({ title, bgColor, isActive }) => {
       >
         {title}
       </button>
-      <style jsx>{`
-        .navbar-button-shadow {
-          box-shadow: 6px 6px 7px rgb(0, 0, 0, 0.5);
-        }
-      `}</style>
     </div>
   );
 };
