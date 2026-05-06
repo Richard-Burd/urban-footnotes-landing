@@ -102,8 +102,8 @@ export default function Proposals() {
                 <Image
                   src={HIGH_FID_DEV_PROPOSAL}
                   alt="High fidelity development proposal example"
-                  width={900}
-                  height={1}
+                  width={426}
+                  height={484}
                   sizes="(min-width: 1024px) 420px, calc(100vw - 3rem)"
                   className="w-full rounded-[6px]"
                   style={responsiveImageStyle}

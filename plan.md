@@ -1,5 +1,3 @@
-Ready for review
-Select text to add comments on the plan
 Navbar Audit & Improvement Plan
 
 

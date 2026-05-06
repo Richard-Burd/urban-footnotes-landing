@@ -20,7 +20,7 @@ export default function Product() {
           alt="First & Second pages of the product"
           src={`${baseUrl}/product-page-desktop.1a.v2.png`} // v.2.1
           width={1024}
-          height={1}
+          height={1883}
           sizes="(min-width: 1024px) 1024px, 100vw"
           style={responsiveImageStyle}
         />
@@ -28,7 +28,7 @@ export default function Product() {
           alt="Third page of the product"
           src={`${baseUrl}/product-page-desktop.1b.png`}
           width={1024}
-          height={1}
+          height={699}
           sizes="(min-width: 1024px) 1024px, 100vw"
           style={responsiveImageStyle}
         />
@@ -36,7 +36,7 @@ export default function Product() {
           alt="Fourth page of the product"
           src={`${baseUrl}/product-page-desktop.1c.v2.png`}
           width={1024}
-          height={1}
+          height={699}
           sizes="(min-width: 1024px) 1024px, 100vw"
           style={responsiveImageStyle}
         />
@@ -44,7 +44,7 @@ export default function Product() {
           alt="Fifth page of the product"
           src={`${baseUrl}/product-page-desktop.1d.v2.png`}
           width={1024}
-          height={1}
+          height={699}
           sizes="(min-width: 1024px) 1024px, 100vw"
           style={responsiveImageStyle}
         />
@@ -52,7 +52,7 @@ export default function Product() {
           alt="Sixth page of the product"
           src={`${baseUrl}/product-page-desktop.2e.v2.2.png`}
           width={1024}
-          height={1}
+          height={818}
           sizes="(min-width: 1024px) 1024px, 100vw"
           style={responsiveImageStyle}
         />
@@ -60,7 +60,7 @@ export default function Product() {
           alt="Seventh page of the product"
           src={`${baseUrl}/product-page-desktop.2f.png`}
           width={1024}
-          height={1}
+          height={770}
           sizes="(min-width: 1024px) 1024px, 100vw"
           style={responsiveImageStyle}
         />
@@ -68,7 +68,7 @@ export default function Product() {
           alt="Eighth page of the product"
           src={`${baseUrl}/product-page-desktop.2g.png`}
           width={1024}
-          height={1}
+          height={770}
           sizes="(min-width: 1024px) 1024px, 100vw"
           style={responsiveImageStyle}
         />
@@ -80,32 +80,32 @@ export default function Product() {
         <Image
           alt="First page of the product, mobile version"
           src={`${baseUrl}/product-page-mobile.1a.v2.png`} // v.2.1
-          width={700}
-          height={1}
+          width={600}
+          height={1550}
           sizes="(min-width: 700px) 700px, calc(100vw - 1.5rem)"
           style={responsiveImageStyle}
         />
         <Image
           alt="Second & Third pages of the product, mobile version"
           src={`${baseUrl}/product-page-mobile.1b.png`} // v.2.1
-          width={700}
-          height={1}
+          width={600}
+          height={2205}
           sizes="(min-width: 700px) 700px, calc(100vw - 1.5rem)"
           style={responsiveImageStyle}
         />
         <Image
           alt="Fourth & Fifth pages of the product, mobile version"
           src={`${baseUrl}/product-page-mobile.1c.v2.png`} // v.2.1
-          width={700}
-          height={1}
+          width={600}
+          height={2205}
           sizes="(min-width: 700px) 700px, calc(100vw - 1.5rem)"
           style={responsiveImageStyle}
         />
         <Image
           alt="Sixth, Seventh, & Eighth pages of the product, mobile version"
           src={`${baseUrl}/product-page-mobile.1d.v4.png`} // v.2.1
-          width={700}
-          height={1}
+          width={600}
+          height={3500}
           sizes="(min-width: 700px) 700px, calc(100vw - 1.5rem)"
           style={responsiveImageStyle}
         />

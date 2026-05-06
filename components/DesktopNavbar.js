@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import LogoNoText from "./LogoNoText";
 import { activeColor, defaultPathForItem, isPathActive } from "./navbarConfig";
 
@@ -48,9 +48,18 @@ export default function DesktopNavbar({ navItems }) {
   const currentPath = router.pathname;
   const [openMenu, setOpenMenu] = useState(null);
   const [openSubMenu, setOpenSubMenu] = useState(null);
+  const closeMenus = () => {
+    setOpenMenu(null);
+    setOpenSubMenu(null);
+  };
 
   const getActiveColor = (item) => activeColor(item, currentPath);
   const isItemActive = (item) => !!getActiveColor(item);
+
+  useEffect(() => {
+    setOpenMenu(null);
+    setOpenSubMenu(null);
+  }, [currentPath]);
 
   return (
     <nav className="site-nav roboto-font bg-neutral-950 px-4 text-white sm:px-6 lg:px-8">
@@ -58,6 +67,7 @@ export default function DesktopNavbar({ navItems }) {
         <Link
           href="/"
           aria-label="Urban Footnotes home"
+          onClick={closeMenus}
           className="flex items-center justify-self-center rounded-full transition duration-200 ease-out hover:-translate-y-0.5 hover:drop-shadow-[0_0_14px_rgba(255,255,255,0.45)] focus-visible:-translate-y-0.5 focus-visible:drop-shadow-[0_0_14px_rgba(255,255,255,0.45)]"
         >
           <LogoNoText className="h-12 w-12 object-contain" />
@@ -102,7 +112,11 @@ export default function DesktopNavbar({ navItems }) {
                   <div className={topLevelBayClass(itemActiveColor)}>
                     {hasChildren && defaultPath ? (
                       <div className={topLevelSplitControlClass(active)}>
-                        <Link href={defaultPath} className={topLevelSplitLinkClass}>
+                        <Link
+                          href={defaultPath}
+                          className={topLevelSplitLinkClass}
+                          onClick={closeMenus}
+                        >
                           {item.title}
                         </Link>
                         <button
@@ -117,7 +131,11 @@ export default function DesktopNavbar({ navItems }) {
                         </button>
                       </div>
                     ) : item.path ? (
-                      <Link href={item.path} className={topLevelControlClass(active)}>
+                      <Link
+                        href={item.path}
+                        className={topLevelControlClass(active)}
+                        onClick={closeMenus}
+                      >
                         {item.title}
                       </Link>
                     ) : (
@@ -155,6 +173,7 @@ export default function DesktopNavbar({ navItems }) {
                               <Link
                                 href={child.path}
                                 className={dropdownItemClass(childActive, childActiveColor)}
+                                onClick={closeMenus}
                               >
                                 {child.title}
                                 <ChevronIcon className="ml-2 -rotate-90" />
@@ -174,6 +193,7 @@ export default function DesktopNavbar({ navItems }) {
                             <Link
                               href={child.path}
                               className={dropdownItemClass(childActive, childActiveColor)}
+                              onClick={closeMenus}
                             >
                               {child.title}
                             </Link>
@@ -188,6 +208,7 @@ export default function DesktopNavbar({ navItems }) {
                                     href={gc.path}
                                     key={gc.title}
                                     className={dropdownItemClass(gcActive, gc.bgColor)}
+                                    onClick={closeMenus}
                                   >
                                     {gc.title}
                                   </Link>
