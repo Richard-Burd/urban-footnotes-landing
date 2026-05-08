@@ -26,7 +26,7 @@ export default function Samples() {
         {/* Desktop Property Report scoreboard */}
         <div
           id="desktop-scoreboard"
-          className="mx-auto hidden max-w-screen-lg max-[1040px]:px-4 min-[1000px]:block"
+          className="mx-auto hidden max-w-screen-lg px-4 desktop:block xl:px-0"
         >
           <div
             id="page-title"
@@ -179,7 +179,7 @@ export default function Samples() {
         </div>
 
         {/* Mobile Property Report scoreboard */}
-        <div id="mobilw-scoreboard" className="hidden px-4 max-[1001px]:block">
+        <div id="mobile-scoreboard" className="block px-4 desktop:hidden">
           <div className="px-4 pb-4 pt-4 text-[42px] text-title-text-samples">
             Property Report Scoreboard
           </div>

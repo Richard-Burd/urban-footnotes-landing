@@ -1,4 +1,7 @@
 import Image from "next/image";
+import { getAssetBaseUrl, toAssetUrl } from "@/lib/assetUrl";
+
+const responsiveImageStyle = { width: "100%", height: "auto" };
 
 const ProductSample = ({
   imagePath,
@@ -9,7 +12,9 @@ const ProductSample = ({
   walkabilityScore,
   pdfPath,
 }) => {
-  const baseUrl = process.env.NEXT_PUBLIC_S3_BASE_URL;
+  const baseUrl = getAssetBaseUrl();
+  const sampleImageSizes = "(min-width: 768px) 400px, calc(100vw - 2rem)";
+
   return (
     <div id={address} className="relative mb-24 text-center text-slate-300">
       <div className="pb-3 text-2xl">
@@ -29,27 +34,28 @@ const ProductSample = ({
         </div>
       </div>
       <a
-        href={`${baseUrl}/${pdfPath}`}
+        href={toAssetUrl(pdfPath, baseUrl)}
         target="_blank"
         rel="noopener noreferrer"
       >
-        <div className="flex justify-center px-2">
+        <div className="relative flex justify-center px-2">
           <Image
-            src={`${baseUrl}/${imagePath}`}
+            src={toAssetUrl(imagePath, baseUrl)}
             alt={`picture of ${address}`}
-            // true width & true height controlled by parent grid
-            // image fills parent's allotted space
             width={400}
             height={1}
+            sizes={sampleImageSizes}
+            style={responsiveImageStyle}
           />
-          <img
-            className="absolute flex scale-95 transform justify-center opacity-40 transition-opacity duration-300 ease-in-out hover:scale-100 hover:opacity-90 focus:opacity-100"
+          <Image
+            className="absolute h-auto w-full max-w-[400px] scale-95 transform justify-center opacity-40 transition-opacity duration-300 ease-in-out hover:scale-100 hover:opacity-90 focus:opacity-100"
             src="/images/pdf-preview-pointy-hand.svg"
             alt="Pointy Hand Preview"
-            // true width & true height controlled by parent grid
-            // image fills parent's allotted space
             width={400}
             height={1}
+            sizes={sampleImageSizes}
+            style={responsiveImageStyle}
+            unoptimized
           />
         </div>
       </a>

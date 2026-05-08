@@ -23,7 +23,7 @@ export default function Home() {
 /* ---- card format, rounded shape, padding ---- */
 const CARD =
   "rounded-[10px] group-hover:shadow-lg p-4 transition-shadow";
-const TITLE = "title-shadow-samples page-title-shadow roboto-font text-center text-[35px] [@media(min-width:1000px)]:text-[45px]";
+const TITLE = "title-shadow-samples page-title-shadow roboto-font text-center text-[35px] desktop:text-[45px]";
 
   // Filter & sort the "Highly Walkable" data
   const highlyWalkableData = samplesData
@@ -37,7 +37,7 @@ const TITLE = "title-shadow-samples page-title-shadow roboto-font text-center te
           href={videoUrl}
           as="video"
           type="video/mp4"
-          media="(min-width: 1000px)"
+          media="(min-width: 992px)"
         />
       </Head>
 
@@ -278,7 +278,7 @@ const TITLE = "title-shadow-samples page-title-shadow roboto-font text-center te
           <div className="group relative rounded-[10px] py-4">
             <div className={`${CARD}  bg-red-900/20 group-hover:bg-red-900/40 mt-6`}>
               <div className={`${TITLE} text-title-text-product`}>
-                Product Features
+                Report Features
               </div>
               <div className="mt-0">
                 <Link

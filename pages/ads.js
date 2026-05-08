@@ -2,6 +2,7 @@ import Logo from "@/components/Logo";
 import { useState, useRef, useEffect, useMemo, useCallback } from "react";
 import { Volume2, Pause, ChevronDown, Square } from "lucide-react";
 import PageTitle from "@/components/PageTitle";
+import { getAssetBaseUrl, toAssetUrl } from "@/lib/assetUrl";
 import styles from '../styles/Button.module.css'
 import Image from "next/image";
 
@@ -342,7 +343,7 @@ export default function Ads() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [openRole, setOpenRole] = useState(null);
 
-  const baseUrl = process.env.NEXT_PUBLIC_S3_BASE_URL;
+  const baseUrl = getAssetBaseUrl();
   const s3folder = 'ads';
   const current = BUTTONS.find(b => b.key === activeKey);
 
@@ -363,11 +364,10 @@ export default function Ads() {
     return acc;
   }, {});
 
-  const srcPath = file =>
-    `${baseUrl.replace(/\/+$/, '')}/${s3folder}/${file.replace(/^\/+/, '')}`;
+  const srcPath = (file) => toAssetUrl(`${s3folder}/${file}`, baseUrl);
 
   return (
-    <main className="space-y-8 text-orange-100">
+    <main className="w-full space-y-8 text-orange-100">
       <PageTitle
         topTitle="Outreach"
         textColor="text-title-text-ads"
