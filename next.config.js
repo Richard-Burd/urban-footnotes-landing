@@ -2,13 +2,7 @@
 const dotenv = require("dotenv");
 dotenv.config();
 
-const distDir =
-  process.env.NODE_ENV === "development"
-    ? `.next/dev-${process.pid}`
-    : ".next";
-
 const nextConfig = {
-  distDir,
   reactStrictMode: true,
   async redirects() {
     return [
