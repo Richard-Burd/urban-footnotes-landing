@@ -53,13 +53,29 @@ function ScoreChips({ entry, variant }) {
 
   return (
     <div className={containerClass}>
-      <div className={scoreChipClass(variant, "greenNear")}>{entry.greenNear}</div>
-      <div className={scoreChipClass(variant, "yellowFarther")}>
-        {entry.yellowFarther}
+      <div
+        className={scoreChipClass(variant, "greenNear")}
+        aria-label={`Nearby destinations: ${entry.greenNear}`}
+      >
+        <span aria-hidden="true">{entry.greenNear}</span>
       </div>
-      <div className={scoreChipClass(variant, "redDistant")}>{entry.redDistant}</div>
-      <div className={scoreChipClass(variant, "walkabilityScore")}>
-        {entry.walkabilityScore}
+      <div
+        className={scoreChipClass(variant, "yellowFarther")}
+        aria-label={`Farther destinations: ${entry.yellowFarther}`}
+      >
+        <span aria-hidden="true">{entry.yellowFarther}</span>
+      </div>
+      <div
+        className={scoreChipClass(variant, "redDistant")}
+        aria-label={`Distant destinations: ${entry.redDistant}`}
+      >
+        <span aria-hidden="true">{entry.redDistant}</span>
+      </div>
+      <div
+        className={scoreChipClass(variant, "walkabilityScore")}
+        aria-label={`Walkability score: ${entry.walkabilityScore}`}
+      >
+        <span aria-hidden="true">{entry.walkabilityScore}</span>
       </div>
     </div>
   );
@@ -154,7 +170,7 @@ function WalkabilitySection({
   return (
     <div id={category.title} className={sectionClass}>
       <div className="mb-2 border-b-4 border-x-slate-200">
-        <div className={headingClass}>{category.title}</div>
+        <h2 className={headingClass}>{category.title}</h2>
       </div>
       <div className={variant === "desktop" ? "column-layout flex flex-col" : "column-layout"}>
         {entries.map((entry) => (

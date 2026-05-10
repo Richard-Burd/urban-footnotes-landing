@@ -1,3 +1,4 @@
+import Head from "next/head";
 import PageTitle from "@/components/PageTitle";
 import Link from "next/link";
 
@@ -7,6 +8,9 @@ const BODY = "text-[clamp(1.05rem,2.5vw,1.2rem)] leading-relaxed text-gray-100";
 export default function OrderProposal() {
   return (
     <div className="roboto-font w-full text-white">
+      <Head>
+        <title>Order a Proposal | Urban Foot Notes</title>
+      </Head>
       <PageTitle
         topTitle="Order a Development Proposal"
         textColor="text-title-text-product"

@@ -1,3 +1,4 @@
+import Head from "next/head";
 import PageTitle from "@/components/PageTitle";
 import samplesData from "@/lib/samplesData";
 import SamplesHeader from "@/components/SamplesHeader";
@@ -20,6 +21,9 @@ export default function Samples() {
 
   return (
     <div>
+      <Head>
+        <title>Metrics Scoreboard | Urban Foot Notes</title>
+      </Head>
       <SamplesHeader />
       {/* Desktop & Mobile Property Report scoreboard */}
       <div id="property-report-scoreboards">

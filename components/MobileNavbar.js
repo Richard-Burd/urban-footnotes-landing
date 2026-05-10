@@ -52,7 +52,7 @@ export default function MobileNavbar({ navItems }) {
   const menuItems = navItems;
 
   return (
-    <nav className="site-nav roboto-font bg-neutral-950 text-white">
+    <nav aria-label="Main navigation" className="site-nav roboto-font bg-neutral-950 text-white">
       <div className="grid min-h-16 grid-cols-[auto_minmax(2.5rem,1fr)_auto] items-end gap-2 px-3 pt-2">
         <button
           type="button"
@@ -130,6 +130,7 @@ export default function MobileNavbar({ navItems }) {
                     onClick={() => toggleExpand(item.title)}
                     aria-haspopup="true"
                     aria-expanded={expanded}
+                    aria-label={`${expanded ? "Collapse" : "Expand"} ${item.title} menu`}
                     className={`${menuControlClass(active)} flex items-center justify-between`}
                   >
                     {item.title}

@@ -1,9 +1,13 @@
+import Head from "next/head";
 import Gallery from "@/components/Gallery";
 import SamplesHeader from "@/components/SamplesHeader";
 
 export default function GalleryDistantAerial() {
   return (
     <div>
+      <Head>
+        <title>Distant Aerial Gallery | Urban Foot Notes</title>
+      </Head>
       <SamplesHeader />
       <div
         id="page-title"

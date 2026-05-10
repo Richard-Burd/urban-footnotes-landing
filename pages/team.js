@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 import PageTitle from "@/components/PageTitle";
 import SocialMediaIcon from "@/components/SocialMediaIcon";
 
@@ -125,6 +126,9 @@ const TeamMemberCard = ({ member }) => (
 export default function Team() {
   return (
     <div className="w-full text-white">
+      <Head>
+        <title>Our Team | Urban Foot Notes</title>
+      </Head>
       <PageTitle
         topTitle="Our Team"
         textColor="text-title-text-team"

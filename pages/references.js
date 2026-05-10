@@ -1,9 +1,13 @@
+import Head from "next/head";
 import PageTitle from "@/components/PageTitle";
 
 export default function Associations() {
   const boxStyles = `roboto-font max-[2023px]:mx-6 rounded-[40px] bg-[linear-gradient(to_right,rgba(24,44,69,0.3),rgba(24,44,69,0.9))] p-8 shadow-md desktop:rounded-[40px] min-[1024px]:mx-0`;
   return (
     <div className="w-full text-white">
+      <Head>
+        <title>Selected References | Urban Foot Notes</title>
+      </Head>
       <div id="page-title">
         <PageTitle
           topTitle="Selected References"

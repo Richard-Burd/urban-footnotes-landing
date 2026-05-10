@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Head from "next/head";
 import PageTitle from "@/components/PageTitle";
 import Image from "next/image";
 
@@ -66,6 +67,9 @@ export default function About() {
 
   return (
     <div className="roboto-font w-full text-white">
+      <Head>
+        <title>About Us | Urban Foot Notes</title>
+      </Head>
       <PageTitle
         topTitle="About Us"
         textColor="text-white"

@@ -140,6 +140,7 @@ export default function DesktopNavbar({ navItems }) {
 
   return (
     <nav
+      aria-label="Main navigation"
       className="site-nav roboto-font bg-neutral-950 px-4 text-white sm:px-6 lg:px-8"
       onBlur={handleNavBlur}
     >

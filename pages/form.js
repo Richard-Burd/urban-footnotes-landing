@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Head from "next/head";
 
 export default function SupplementaryForm() {
   // Form states
@@ -26,6 +27,8 @@ export default function SupplementaryForm() {
   const [comments, setComments] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [orderId, setOrderId] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
   const maxCommentLength = 2000;
   const customOptionsDescriptionId = "custom-options-description";
 
@@ -53,8 +56,11 @@ export default function SupplementaryForm() {
   // Submit handler
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setErrorMessage("");
+    setSuccessMessage("");
+
     if (!address || !email) {
-      alert("Please complete address and email before submitting.");
+      setErrorMessage("Please complete address and email before submitting.");
       return;
     }
 
@@ -68,14 +74,14 @@ export default function SupplementaryForm() {
         const json = await res.json();
         setUploading(false);
         if (!res.ok) {
-          alert(`Upload failed: ${json.error}`);
+          setErrorMessage(`Upload failed: ${json.error}`);
           return;
         }
         logoUrl = json.fileLink;
       }
     } catch (err) {
       console.error(err);
-      alert("Error uploading file.");
+      setErrorMessage("Error uploading file.");
       setUploading(false);
       return;
     }
@@ -110,22 +116,34 @@ export default function SupplementaryForm() {
 
       if (resp.ok) {
         setOrderId(data.orderId);
-        alert(`Form submitted! Order ID: ${data.orderId}`);
+        setSuccessMessage(`Form submitted! Your Order ID is: ${data.orderId}`);
       } else {
-        alert(`Submission failed: ${data.error || 'Unknown error'}`);
+        setErrorMessage(`Submission failed: ${data.error || "Unknown error"}`);
       }
     } catch (err) {
       console.error(err);
-      alert("Error submitting form.");
+      setErrorMessage("Error submitting form.");
       setIsSubmitting(false);
     }
   };
 
   return (
     <div className="m-6 flex min-h-screen w-4/5 flex-col items-center justify-center rounded-lg bg-stone-300 text-neutral-900 shadow-sm">
+      <Head>
+        <title>Order Form | Urban Foot Notes</title>
+      </Head>
       <h1 className="m-6 w-4/5 text-center text-2xl font-bold">
         Please fill out the supplemental information below to customize and complete your order:
       </h1>
+
+      {/* Inline feedback regions — must be in DOM before content changes for screen readers */}
+      <div role="alert" aria-live="assertive" aria-atomic="true" className={errorMessage ? "mb-4 w-full max-w-xl rounded-lg border border-red-600 bg-red-100 px-4 py-3 text-red-800" : "sr-only"}>
+        {errorMessage}
+      </div>
+      <div aria-live="polite" aria-atomic="true" className={successMessage ? "mb-4 w-full max-w-xl rounded-lg border border-green-600 bg-green-100 px-4 py-3 text-green-800" : "sr-only"}>
+        {successMessage}
+      </div>
+
       <form onSubmit={handleSubmit} className="m-6 w-full max-w-xl">
         {/* Address & Email */}
         <div className="mb-6">
@@ -221,6 +239,7 @@ export default function SupplementaryForm() {
                   checked={selectedOptions.includes(opt)}
                   disabled={!selectedOptions.includes(opt) && totalSelections >= 5}
                   onChange={() => handleCheckboxChange(opt)}
+                  aria-describedby={customOptionsDescriptionId}
                   className="h-5 w-5"
                 />
                 <span>{opt}</span>
@@ -273,7 +292,6 @@ export default function SupplementaryForm() {
         </button>
       </form>
 
-      {/* Order ID */}
       {orderId && (
         <div className="mt-6 text-center">
           <h2 className="text-lg font-bold">Your Order ID:</h2>

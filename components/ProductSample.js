@@ -42,7 +42,7 @@ const ProductSample = ({
         <div className="relative flex justify-center px-2">
           <Image
             src={toAssetUrl(imagePath, baseUrl)}
-            alt={`picture of ${address}`}
+            alt={`Property report preview for ${address}`}
             width={400}
             height={1}
             sizes={sampleImageSizes}

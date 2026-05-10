@@ -32,6 +32,7 @@ const TITLE = "title-shadow-samples page-title-shadow roboto-font text-center te
   return (
     <div className="text-white">
       <Head>
+        <title>Urban Foot Notes – Walkability & Neighborhood Reports</title>
         <link
           rel="preload"
           href={videoUrl}

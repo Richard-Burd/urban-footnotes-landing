@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Image from "next/image";
 import PageTitle from "@/components/PageTitle";
 
@@ -16,6 +17,9 @@ export default function Proposals() {
 
   return (
     <div className="roboto-font w-full text-white">
+      <Head>
+        <title>Development Proposals | Urban Foot Notes</title>
+      </Head>
       <PageTitle
         topTitle="Development Proposals"
         textColor="text-title-text-product"

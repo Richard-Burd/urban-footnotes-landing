@@ -1,9 +1,13 @@
+import Head from "next/head";
 import PageTitle from "@/components/PageTitle";
 import Link from "next/link";
 
 export default function Contact() {
   return (
     <div className="w-full">
+      <Head>
+        <title>Contact Us | Urban Foot Notes</title>
+      </Head>
       <PageTitle
         topTitle="Contact Us"
         textColor="text-title-text-contact"

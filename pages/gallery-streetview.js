@@ -1,9 +1,13 @@
+import Head from "next/head";
 import Gallery from "@/components/Gallery";
 import SamplesHeader from "@/components/SamplesHeader";
 
 export default function GalleryStreetView() {
   return (
     <div>
+      <Head>
+        <title>Streetscape Gallery | Urban Foot Notes</title>
+      </Head>
       <SamplesHeader />
       <div
         id="page-title"

@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import Head from "next/head";
 import PageTitle from "@/components/PageTitle";
 import Image from "next/image";
 
@@ -22,6 +23,9 @@ export default function Pricing() {
 
   return (
     <div className="w-full">
+      <Head>
+        <title>Pricing | Urban Foot Notes</title>
+      </Head>
       <PageTitle
         topTitle="Ordering Your Report"
         textColor="text-title-text-order"

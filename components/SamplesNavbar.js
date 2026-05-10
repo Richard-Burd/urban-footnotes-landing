@@ -40,7 +40,7 @@ export default function SamplesNavbar() {
   const currentPath = router.pathname;
 
   return (
-    <div className="flex justify-center">
+    <nav aria-label="Report type navigation" className="flex justify-center">
       <div className="grid gap-x-2 gap-y-0 min-[530px]:w-[530px] min-[530px]:grid-cols-2">
         {sampleNavItems.map((item, index) => (
           <Link href={item.path} key={item.title} className="m-0 block p-0">
@@ -54,6 +54,6 @@ export default function SamplesNavbar() {
           </Link>
         ))}
       </div>
-    </div>
+    </nav>
   );
 }
