@@ -43,7 +43,12 @@ export default function SamplesNavbar() {
     <nav aria-label="Report type navigation" className="flex justify-center">
       <div className="grid gap-x-2 gap-y-0 min-[530px]:w-[530px] min-[530px]:grid-cols-2">
         {sampleNavItems.map((item, index) => (
-          <Link href={item.path} key={item.title} className="m-0 block p-0">
+          <Link
+            href={item.path}
+            key={item.title}
+            scroll={false}
+            className="m-0 block rounded-[11px] p-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navbar-samples focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950"
+          >
             <SamplesNavbarButton
               key={item.path || index}
               title={item.title}
