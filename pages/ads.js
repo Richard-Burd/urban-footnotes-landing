@@ -282,8 +282,10 @@ function AudioPlayer({ src }) {
     return (
     <div className="flex items-center justify-center gap-4 mb-6 w-1/3 mx-auto px-4">
       <button
+        type="button"
         onClick={togglePlay}
-        className="p-4 bg-[#3B1F07] rounded-full hover:bg-[#843F06] transition-colors duration-200"
+        aria-label={isPlaying ? "Pause audio" : "Play audio"}
+        className="rounded-full bg-[#3B1F07] p-4 transition-colors duration-200 hover:bg-[#843F06] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F7A969] focus-visible:ring-offset-2 focus-visible:ring-offset-[#120902]"
       >
         {isPlaying ? (
           <svg
@@ -301,6 +303,7 @@ function AudioPlayer({ src }) {
 
         <input
           type="range"
+          aria-label="Audio playback position"
         min="0"
           max={duration}
           value={progress}
@@ -367,7 +370,7 @@ export default function Ads() {
   const srcPath = (file) => toAssetUrl(`${s3folder}/${file}`, baseUrl);
 
   return (
-    <main className="w-full space-y-8 text-orange-100">
+    <div className="w-full space-y-8 text-orange-100">
       <PageTitle
         topTitle="Outreach"
         textColor="text-title-text-ads"
@@ -379,11 +382,14 @@ export default function Ads() {
       />
 
       <div className="mt-6 max-w-screen-lg mx-auto px-10 flex items-center space-x-4">
-        <span className="text-[28px] md=text-[16px]">What is your focus or role?</span>
+        <span className="text-[28px] md:text-base">What is your focus or role?</span>
         <div className="relative flex-grow dropdown">
           <button
             onClick={() => setDropdownOpen(o => !o)}
             className={styles.slim}
+            type="button"
+            aria-haspopup="listbox"
+            aria-expanded={dropdownOpen}
           >
             {current.role}: {current.title}
             <ChevronDown
@@ -398,6 +404,8 @@ export default function Ads() {
                   <button
                     onClick={() => setOpenRole(openRole === role ? null : role)}
                     className={styles.slim}
+                    type="button"
+                    aria-expanded={openRole === role}
                   >
                     {role}
                     <ChevronDown
@@ -409,7 +417,8 @@ export default function Ads() {
                       <button
                         key={item.key}
                         onClick={() => { setActiveKey(item.key); setDropdownOpen(false); setOpenRole(null); }}
-                        className="block w-full text-left px-8 py-2 text-[22px] md=text-[16px] text-white hover:bg-[#F7A969] hover=text-[#120902] transition-colors duration-200"
+                        className="block w-full px-8 py-2 text-left text-[22px] text-white transition-colors duration-200 hover:bg-[#F7A969] hover:text-[#120902] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#F7A969] md:text-base"
+                        type="button"
                       >
                         {item.title}
                       </button>
@@ -427,14 +436,14 @@ export default function Ads() {
         {current.showAudio && current.audioSrc && <AudioPlayer src={srcPath(current.audioSrc)} />}
 
         <article className="space-y-4">
-          <h2 className="text-[28px] md=text-[20px]">
+          <h2 className="text-[28px] md:text-[20px]">
             {current.content[0]}
           </h2>
           {current.content.slice(1).map((p, idx) => (
-            <p key={idx} className="text-[28px] md=text-[20px]">{p}</p>
+            <p key={idx} className="text-[28px] md:text-[20px]">{p}</p>
           ))}
         </article>
       </section>
-    </main>
+    </div>
   );
 }

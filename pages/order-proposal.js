@@ -16,7 +16,7 @@ export default function OrderProposal() {
         showLogo={true}
       />
 
-      <main className="mx-auto max-w-screen-xl px-4 py-8 md:px-10">
+      <div className="mx-auto max-w-screen-xl px-4 py-8 md:px-10">
         <div className="mx-auto max-w-2xl space-y-6">
 
           <section className="overflow-hidden rounded-[10px]">
@@ -58,7 +58,7 @@ export default function OrderProposal() {
           </section>
 
         </div>
-      </main>
+      </div>
     </div>
   );
 }

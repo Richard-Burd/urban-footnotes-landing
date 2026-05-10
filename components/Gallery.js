@@ -71,7 +71,7 @@ function ReportImage({ baseUrl, entry, viewType }) {
   return (
     <Image
       src={toAssetUrl(entry[viewType], baseUrl)}
-      alt={`picture of ${entry[viewType]}`}
+      alt={`${entry.address} ${viewType.replace(/([A-Z])/g, " $1").toLowerCase()} report image`}
       width={1200}
       height={1}
       sizes={REPORT_IMAGE_SIZES}
@@ -102,7 +102,7 @@ function WalkabilityEntry({ baseUrl, entry, onBackToTop, variant, viewType }) {
             <button
               type="button"
               onClick={onBackToTop}
-              className="text-lg text-gray-300"
+              className="rounded-md px-2 py-1 text-lg text-gray-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-300 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950"
             >
               Back to top of page
             </button>

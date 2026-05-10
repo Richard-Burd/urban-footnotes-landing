@@ -42,7 +42,7 @@ const TITLE = "title-shadow-samples page-title-shadow roboto-font text-center te
       </Head>
 
       {/* Page grid (12 cols) */}
-      <main className="mx-auto grid max-w-screen-2xl grid-cols-12 gap-x-0 gap-y-0 py-0 lg:mb-4 2xl:max-w-[3000px]">
+      <div className="mx-auto grid max-w-screen-2xl grid-cols-12 gap-x-0 gap-y-0 py-0 lg:mb-4 2xl:max-w-[3000px]">
         {" "}
         {/* HERO */}
 <section className="relative col-span-12 isolate overflow-hidden">
@@ -305,7 +305,7 @@ const TITLE = "title-shadow-samples page-title-shadow roboto-font text-center te
             />
           </div>
         </div>
-      </main>
+      </div>
     </div>
   );
 }

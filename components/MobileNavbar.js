@@ -25,7 +25,7 @@ const activeBayClass = (color, tab = false) =>
   }`;
 
 const menuControlClass = (active) =>
-  `${active ? "navbar-button-shadow" : ""} roboto-font rounded-md bg-stone-700 px-3 py-2 text-base font-bold text-white transition-colors hover:text-navbar-home focus:outline-none`;
+  `${active ? "navbar-button-shadow" : ""} roboto-font rounded-md bg-stone-700 px-3 py-2 text-base font-bold text-white transition-colors hover:text-navbar-home focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navbar-home focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950`;
 
 export default function MobileNavbar({ navItems }) {
   const router = useRouter();
@@ -59,7 +59,7 @@ export default function MobileNavbar({ navItems }) {
           onClick={toggleMenu}
           aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
           aria-expanded={menuOpen}
-          className="mb-2 rounded-md bg-stone-700 p-2 text-white transition-colors hover:bg-stone-600 focus:outline-none"
+          className="mb-2 rounded-md bg-stone-700 p-2 text-white transition-colors hover:bg-stone-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navbar-home focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950"
         >
           <svg
             className="h-6 w-6"
@@ -147,7 +147,7 @@ export default function MobileNavbar({ navItems }) {
                             <Link
                               href={child.path}
                               onClick={closeAll}
-                              className={`rounded-md bg-stone-700 px-3 py-1.5 text-base text-white transition-colors hover:text-navbar-home ${
+                              className={`rounded-md bg-stone-700 px-3 py-1.5 text-base text-white transition-colors hover:text-navbar-home focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navbar-home focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 ${
                                 childActive ? "navbar-button-shadow font-bold" : ""
                               }`}
                             >

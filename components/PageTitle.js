@@ -31,11 +31,11 @@ export default function PageTitle({
               )}
 
               {/* Title */}
-              <div
+              <h1
                 className={`mb-4 min-w-0 flex-grow text-left ${titleBaseStyles} text-[5.25rem] leading-none`}
               >
                 {topTitle}
-              </div>
+              </h1>
             </div>
           </div>
         </div>
@@ -60,11 +60,11 @@ export default function PageTitle({
         </div>
         {mobileTitleCentered ? (
           <div className="px-2 leading-none">
-            <div className={`${mobileTitleStyles} text-center`}>{topTitle}</div>
+            <h1 className={`${mobileTitleStyles} text-center`}>{topTitle}</h1>
           </div>
         ) : (
           <div className="px-3 leading-none">
-            <div className={mobileTitleStyles}>{topTitle}</div>
+            <h1 className={mobileTitleStyles}>{topTitle}</h1>
           </div>
         )}
       </div>

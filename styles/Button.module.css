@@ -1,12 +1,12 @@
 .slim {
   width: 100%;
-  /* → let it resize, but start at 2.5rem when it's one line */
-  min-height: 2.5rem;
+  /* Let it resize, but start at 2.75rem when it's one line. */
+  min-height: 2.75rem;
   height: auto;
 
   /* comfortable padding all around */
-  padding: clamp(0.1rem, 4vw, 0.5rem);
-  font-size: clamp(0.2rem, 4vw, 1.7rem);
+  padding: clamp(0.5rem, 4vw, 0.75rem);
+  font-size: clamp(1rem, 4vw, 1.7rem);
   line-height: 1.2;
 
   display: flex;
@@ -25,8 +25,12 @@
 }
 
 .slim:hover {
-
   background: #F7A969;
   color: #120902;
   transition: 200ms;
+}
+
+.slim:focus-visible {
+  outline: 2px solid #F7A969;
+  outline-offset: 2px;
 }

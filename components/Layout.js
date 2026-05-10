@@ -9,7 +9,7 @@ const Layout = ({ children }) => {
           <Navbar />
         </div>
 
-        <main className="flex flex-col items-center" role="main">
+        <main className="flex flex-col items-center">
           {children}
         </main>
 

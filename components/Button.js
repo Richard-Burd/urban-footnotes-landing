@@ -15,6 +15,7 @@ const variants = {
 
 export function Button({
   href,
+  type = "button",
   variant = "primary",
   fullWidth = false,
   className = "",
@@ -40,7 +41,7 @@ export function Button({
   }
 
   return (
-    <button className={"appearance-none " + cls} {...props}>
+    <button type={type} className={"appearance-none " + cls} {...props}>
       {children}
     </button>
   );
@@ -48,6 +49,7 @@ export function Button({
 
 Button.propTypes = {
   href: PropTypes.string,
+  type: PropTypes.oneOf(["button", "submit", "reset"]),
   variant: PropTypes.oneOf(["primary", "secondary", "ghost"]),
   fullWidth: PropTypes.bool,
   className: PropTypes.string,

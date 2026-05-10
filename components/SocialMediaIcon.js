@@ -10,6 +10,7 @@ export default function EmailIcon({
   activeBackgroundColor,
   width = 40,
   height = 40,
+  "aria-label": ariaLabel,
 }) {
   let renderedPath = undefined;
   if (icon === "email") {
@@ -51,6 +52,8 @@ export default function EmailIcon({
 
   const renderSVG = () => (
     <motion.svg
+      aria-hidden="true"
+      focusable="false"
       width={width}
       height={height}
       viewBox="0 0 13.229 13.229"
@@ -83,9 +86,11 @@ export default function EmailIcon({
   return (
     <div>
       {anchorLink ? (
-        <Link href={anchorLink}>{renderSVG()}</Link>
+        <Link href={anchorLink} aria-label={ariaLabel}>
+          {renderSVG()}
+        </Link>
       ) : hyperLink ? (
-        <a href={hyperLink} target="_blank" rel="noreferrer">
+        <a href={hyperLink} target="_blank" rel="noopener noreferrer" aria-label={ariaLabel}>
           {renderSVG()}
         </a>
       ) : (

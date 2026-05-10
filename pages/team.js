@@ -138,7 +138,7 @@ export default function Team() {
       />
       <div className="roboto-font mx-4 pt-4 text-xl md:text-2xl">
         {/* Team Section */}
-        <section className="grid w-full max-w-screen-lg grid-cols-1 gap-6 lg:grid-cols-2">
+        <section className="mx-auto grid w-full max-w-screen-lg grid-cols-1 gap-6 lg:grid-cols-2">
           {teamMembers.map((member) => (
             <TeamMemberCard key={member.id} member={member} />
           ))}

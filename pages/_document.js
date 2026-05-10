@@ -5,7 +5,7 @@ export default function Document() {
     <Html lang="en">
       <Head>
         {/* Favicon */}
-        <link rel="icon" href="/../ufavicon.ico" />
+        <link rel="icon" href="/ufavicon.ico" />
         <link
           href="https://fonts.cdnfonts.com/css/arial-rounded-mt-bold"
           rel="stylesheet"

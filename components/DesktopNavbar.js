@@ -20,19 +20,19 @@ const ChevronIcon = ({ className = "" }) => (
 );
 
 const topLevelControlClass = (active) =>
-  `${active ? "navbar-button-shadow" : ""} roboto-font flex shrink-0 items-center gap-1 whitespace-nowrap rounded-md bg-stone-700 px-3 py-2 text-base font-bold text-white transition-colors hover:text-navbar-home focus:outline-none`;
+  `${active ? "navbar-button-shadow" : ""} roboto-font flex shrink-0 items-center gap-1 whitespace-nowrap rounded-md bg-stone-700 px-3 py-2 text-base font-bold text-white transition-colors hover:text-navbar-home focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navbar-home focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950`;
 
 const topLevelSplitControlClass = (active) =>
-  `${active ? "navbar-button-shadow" : ""} roboto-font flex shrink-0 items-center overflow-hidden rounded-md bg-stone-700 text-base font-bold text-white transition-colors focus-within:outline-none`;
+  `${active ? "navbar-button-shadow" : ""} roboto-font flex shrink-0 items-center overflow-hidden rounded-md bg-stone-700 text-base font-bold text-white transition-colors focus-within:ring-2 focus-within:ring-navbar-home focus-within:ring-offset-2 focus-within:ring-offset-neutral-950`;
 
 const topLevelSplitLinkClass =
-  "px-3 py-2 text-white no-underline transition-colors hover:text-navbar-home focus:outline-none";
+  "px-3 py-2 text-white no-underline transition-colors hover:text-navbar-home focus-visible:outline-none";
 
 const topLevelSplitToggleClass =
-  "flex items-center px-2 py-2 text-white transition-colors hover:text-navbar-home focus:outline-none";
+  "flex items-center px-2 py-2 text-white transition-colors hover:text-navbar-home focus-visible:outline-none";
 
 const dropdownItemClass = (active, color) =>
-  `roboto-font flex w-full items-center justify-between px-4 py-2 text-left text-base transition-colors ${
+  `roboto-font flex w-full items-center justify-between px-4 py-2 text-left text-base transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-navbar-home ${
     active
       ? `${color} font-bold text-neutral-900`
       : "text-white hover:bg-stone-700 hover:text-navbar-home"
@@ -55,6 +55,83 @@ export default function DesktopNavbar({ navItems }) {
 
   const getActiveColor = (item) => activeColor(item, currentPath);
   const isItemActive = (item) => !!getActiveColor(item);
+  const focusFirstMenuItem = (menuRoot) => {
+    setTimeout(() => {
+      menuRoot
+        ?.querySelector("[data-dropdown] a, [data-dropdown] button")
+        ?.focus();
+    }, 0);
+  };
+  const focusFirstSubMenuItem = (menuRoot) => {
+    setTimeout(() => {
+      menuRoot
+        ?.querySelector("[data-submenu] a, [data-submenu] button")
+        ?.focus();
+    }, 0);
+  };
+  const handleNavBlur = (event) => {
+    if (!event.currentTarget.contains(event.relatedTarget)) {
+      closeMenus();
+    }
+  };
+  const handleTopMenuKeyDown = (event, itemTitle, isOpen) => {
+    if (event.key === "Escape") {
+      event.preventDefault();
+      closeMenus();
+      event.currentTarget.focus();
+      return;
+    }
+
+    if (event.key === "ArrowDown") {
+      event.preventDefault();
+      setOpenMenu(itemTitle);
+      setOpenSubMenu(null);
+      focusFirstMenuItem(event.currentTarget.closest("[data-nav-item]"));
+      return;
+    }
+
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      setOpenMenu(isOpen ? null : itemTitle);
+      setOpenSubMenu(null);
+    }
+  };
+  const handleTopLinkKeyDown = (event, itemTitle) => {
+    if (event.key === "ArrowDown") {
+      event.preventDefault();
+      setOpenMenu(itemTitle);
+      setOpenSubMenu(null);
+      focusFirstMenuItem(event.currentTarget.closest("[data-nav-item]"));
+    } else if (event.key === "Escape") {
+      event.preventDefault();
+      closeMenus();
+      event.currentTarget.focus();
+    }
+  };
+  const handleChildMenuKeyDown = (event, childTitle, hasGrandchildren) => {
+    if (event.key === "Escape") {
+      event.preventDefault();
+      closeMenus();
+      event.currentTarget
+        .closest("[data-nav-item]")
+        ?.querySelector("[data-top-menu-control]")
+        ?.focus();
+      return;
+    }
+
+    if (event.key === "ArrowRight" && hasGrandchildren) {
+      event.preventDefault();
+      setOpenSubMenu(childTitle);
+      focusFirstSubMenuItem(event.currentTarget.closest("[data-child-menu-item]"));
+      return;
+    }
+
+    if (event.key === "ArrowLeft" && hasGrandchildren) {
+      event.preventDefault();
+      setOpenSubMenu(null);
+      event.currentTarget.focus();
+    }
+  };
 
   useEffect(() => {
     setOpenMenu(null);
@@ -62,7 +139,10 @@ export default function DesktopNavbar({ navItems }) {
   }, [currentPath]);
 
   return (
-    <nav className="site-nav roboto-font bg-neutral-950 px-4 text-white sm:px-6 lg:px-8">
+    <nav
+      className="site-nav roboto-font bg-neutral-950 px-4 text-white sm:px-6 lg:px-8"
+      onBlur={handleNavBlur}
+    >
       <div className="mx-auto grid min-h-16 w-full max-w-screen-xl grid-cols-[1fr_auto] items-stretch gap-2">
         <Link
           href="/"
@@ -101,6 +181,7 @@ export default function DesktopNavbar({ navItems }) {
             return (
               <div
                 key={item.title}
+                data-nav-item
                 className="relative flex"
                 onMouseEnter={() => hasChildren && setOpenMenu(item.title)}
                 onMouseLeave={() => {
@@ -115,6 +196,7 @@ export default function DesktopNavbar({ navItems }) {
                         <Link
                           href={defaultPath}
                           className={topLevelSplitLinkClass}
+                          onKeyDown={(event) => handleTopLinkKeyDown(event, item.title)}
                           onClick={closeMenus}
                         >
                           {item.title}
@@ -125,7 +207,11 @@ export default function DesktopNavbar({ navItems }) {
                           aria-label={`${isOpen ? "Close" : "Open"} ${item.title} menu`}
                           aria-haspopup="true"
                           aria-expanded={isOpen}
+                          data-top-menu-control
                           className={topLevelSplitToggleClass}
+                          onKeyDown={(event) =>
+                            handleTopMenuKeyDown(event, item.title, isOpen)
+                          }
                         >
                           <ChevronIcon className={isOpen ? "rotate-180" : ""} />
                         </button>
@@ -144,7 +230,11 @@ export default function DesktopNavbar({ navItems }) {
                         onClick={() => setOpenMenu(isOpen ? null : item.title)}
                         aria-haspopup="true"
                         aria-expanded={isOpen}
+                        data-top-menu-control
                         className={topLevelControlClass(active)}
+                        onKeyDown={(event) =>
+                          handleTopMenuKeyDown(event, item.title, isOpen)
+                        }
                       >
                         {item.title}
                         <ChevronIcon className={isOpen ? "rotate-180" : ""} />
@@ -154,7 +244,10 @@ export default function DesktopNavbar({ navItems }) {
                 </div>
 
                 {hasChildren && isOpen && (
-                  <div className="absolute left-0 top-full z-50 min-w-[210px] overflow-hidden rounded-b-md bg-neutral-900 py-1 shadow-xl">
+                  <div
+                    data-dropdown
+                    className="absolute left-0 top-full z-50 min-w-[210px] overflow-hidden rounded-b-md bg-neutral-900 py-1 shadow-xl"
+                  >
                     {item.children.map((child) => {
                       const hasGrandchildren = !!child.children?.length;
                       const childActiveColor = getActiveColor(child);
@@ -164,6 +257,7 @@ export default function DesktopNavbar({ navItems }) {
                       return (
                         <div
                           key={child.title}
+                          data-child-menu-item
                           className="relative"
                           onMouseEnter={() => hasGrandchildren && setOpenSubMenu(child.title)}
                           onMouseLeave={() => hasGrandchildren && setOpenSubMenu(null)}
@@ -173,6 +267,16 @@ export default function DesktopNavbar({ navItems }) {
                               <Link
                                 href={child.path}
                                 className={dropdownItemClass(childActive, childActiveColor)}
+                                onFocus={() =>
+                                  hasGrandchildren && setOpenSubMenu(child.title)
+                                }
+                                onKeyDown={(event) =>
+                                  handleChildMenuKeyDown(
+                                    event,
+                                    child.title,
+                                    hasGrandchildren,
+                                  )
+                                }
                                 onClick={closeMenus}
                               >
                                 {child.title}
@@ -184,6 +288,10 @@ export default function DesktopNavbar({ navItems }) {
                                 className={dropdownItemClass(childActive, childActiveColor)}
                                 aria-haspopup="true"
                                 aria-expanded={isSubOpen}
+                                onFocus={() => setOpenSubMenu(child.title)}
+                                onKeyDown={(event) =>
+                                  handleChildMenuKeyDown(event, child.title, true)
+                                }
                               >
                                 {child.title}
                                 <ChevronIcon className="ml-2 -rotate-90" />
@@ -193,6 +301,9 @@ export default function DesktopNavbar({ navItems }) {
                             <Link
                               href={child.path}
                               className={dropdownItemClass(childActive, childActiveColor)}
+                              onKeyDown={(event) =>
+                                handleChildMenuKeyDown(event, child.title, false)
+                              }
                               onClick={closeMenus}
                             >
                               {child.title}
@@ -200,7 +311,10 @@ export default function DesktopNavbar({ navItems }) {
                           )}
 
                           {hasGrandchildren && isSubOpen && (
-                            <div className="absolute left-full top-0 z-50 min-w-[180px] overflow-hidden rounded-r-md bg-neutral-900 py-1 shadow-xl">
+                            <div
+                              data-submenu
+                              className="absolute left-full top-0 z-50 min-w-[180px] overflow-hidden rounded-r-md bg-neutral-900 py-1 shadow-xl"
+                            >
                               {child.children.map((gc) => {
                                 const gcActive = isPathActive(currentPath, gc.path);
                                 return (
@@ -208,6 +322,19 @@ export default function DesktopNavbar({ navItems }) {
                                     href={gc.path}
                                     key={gc.title}
                                     className={dropdownItemClass(gcActive, gc.bgColor)}
+                                    onKeyDown={(event) => {
+                                      if (event.key === "Escape") {
+                                        event.preventDefault();
+                                        closeMenus();
+                                      } else if (event.key === "ArrowLeft") {
+                                        event.preventDefault();
+                                        setOpenSubMenu(null);
+                                        event.currentTarget
+                                          .closest("[data-child-menu-item]")
+                                          ?.querySelector("a, button")
+                                          ?.focus();
+                                      }
+                                    }}
                                     onClick={closeMenus}
                                   >
                                     {gc.title}

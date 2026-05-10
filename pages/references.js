@@ -28,7 +28,7 @@ export default function Associations() {
                 <a
                   href="https://www.muttzrealty.com/"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="text-blue-500 underline hover:text-blue-400"
                 >
                   Muttz Realty, LLC
@@ -51,7 +51,7 @@ export default function Associations() {
             <a
               href="https://urbanplanet.org/forums/forum/250-nashville/"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="text-lg text-blue-500 underline hover:text-blue-400"
             >
               Urban Planet
@@ -67,7 +67,7 @@ export default function Associations() {
             <a
               href="https://citynownext.com/"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="text-lg text-blue-500 underline hover:text-blue-400"
             >
               City Now Next Real Estate Media, LLC
@@ -80,7 +80,7 @@ export default function Associations() {
             <a
               href="https://eastnashvilleurbandesign.wordpress.com/"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="text-lg text-blue-500 underline hover:text-blue-400"
             >
               East Nashville Urban Design
@@ -93,7 +93,7 @@ export default function Associations() {
             <a
               href="https://www.google.com/maps/d/viewer?mid=1ELRoQQW5WC_YAmOyc-QfGVr-J50&ll=36.14502126951252%2C-86.76894667856646&z=14"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="text-lg text-blue-500 underline hover:text-blue-400"
             >
               Nashville Projects & Development, interactive map

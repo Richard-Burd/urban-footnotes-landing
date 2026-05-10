@@ -78,7 +78,7 @@ export default function About() {
       
 
       {/* GRID */}
-      <main className={`grid grid-cols-12 gap-4 py-6 ${WRAP}`}>
+      <div className={`grid grid-cols-12 gap-4 py-6 ${WRAP}`}>
         {/* Mission */}
         <section className="col-span-12 md:col-span-5">
           <div className="group overflow-hidden rounded-[10px]">
@@ -134,7 +134,7 @@ export default function About() {
             onClick={() => setActiveTab(id)}
             type="button"
             aria-pressed={activeTab === id}
-            className={`rounded-lg px-4 py-2 text-lg font-medium transition md:text-2xl ${
+            className={`rounded-lg px-4 py-2 text-lg font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ffe1b3] focus-visible:ring-offset-2 focus-visible:ring-offset-stone-950 md:text-2xl ${
               activeTab === id
                 ? "bg-[#ffe1b3] text-black"
                 : "bg-stone-950 text-[#ffe1b3] hover:bg-[#1a1207]"
@@ -209,7 +209,7 @@ export default function About() {
                   <a
                     href="https://www.urbancruiseship.org"
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                   >
                     <i>Urban Cruise Ship</i>
                   </a>{" "}
@@ -217,7 +217,7 @@ export default function About() {
                   <a
                     href="https://www.urbancruiseship.org/cities"
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                   >
                     <b>cities</b>
                   </a>{" "}
@@ -239,7 +239,7 @@ export default function About() {
             </div>
           </div>
         </section>
-      </main>
+      </div>
     </div>
   );
 }

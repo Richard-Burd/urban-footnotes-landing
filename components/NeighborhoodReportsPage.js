@@ -15,7 +15,7 @@ export default function NeighborhoodReportsPage({
   const canonicalUrl = `${SITE_URL}${canonicalPath}`;
 
   return (
-    <main className="w-full">
+    <div className="w-full">
       <Head>
         <title>{seoTitle}</title>
         <meta name="description" content={seoDescription} />
@@ -30,6 +30,6 @@ export default function NeighborhoodReportsPage({
       <PropertyReportsTabs activeView={activeView} />
 
       {children}
-    </main>
+    </div>
   );
 }

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import Logo from "./Logo";
 
 const Footer = () => {
@@ -17,9 +16,9 @@ const Footer = () => {
           </div>
         </div>
       </Link>
-      <footer>
+      <div>
         <div className="ucs-font pb-12 pt-3 text-center tracking-widest text-stone-500 md:text-xl lg:text-2xl">
-          Copyright © Urban Cruise Ship {new Date().getFullYear()}
+          Copyright &copy; Urban Cruise Ship {new Date().getFullYear()}
         </div>
 
         <Link href="mailto:contact@urbancruiseship.org">
@@ -27,7 +26,7 @@ const Footer = () => {
             contact@urbancruiseship.org
           </div>
         </Link>
-      </footer>
+      </div>
     </div>
   );
 };

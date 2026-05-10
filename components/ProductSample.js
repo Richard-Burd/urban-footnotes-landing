@@ -37,6 +37,7 @@ const ProductSample = ({
         href={toAssetUrl(pdfPath, baseUrl)}
         target="_blank"
         rel="noopener noreferrer"
+        aria-label={`Open PDF sample report for ${address}`}
       >
         <div className="relative flex justify-center px-2">
           <Image
@@ -50,7 +51,8 @@ const ProductSample = ({
           <Image
             className="absolute h-auto w-full max-w-[400px] scale-95 transform justify-center opacity-40 transition-opacity duration-300 ease-in-out hover:scale-100 hover:opacity-90 focus:opacity-100"
             src="/images/pdf-preview-pointy-hand.svg"
-            alt="Pointy Hand Preview"
+            alt=""
+            aria-hidden="true"
             width={400}
             height={1}
             sizes={sampleImageSizes}

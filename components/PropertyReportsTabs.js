@@ -61,7 +61,7 @@ export default function PropertyReportsTabs({ activeView }) {
               key={tab.key}
               href={tab.href}
               aria-current={active ? "page" : undefined}
-              className={`roboto-font flex flex-1 items-center justify-center gap-2 rounded-lg px-3 py-3 text-center text-sm font-bold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navbar-samples focus-visible:ring-offset-2 focus-visible:ring-offset-stone-800 sm:px-4 sm:text-base lg:text-lg ${
+              className={`roboto-font flex flex-1 items-center justify-center gap-2 rounded-lg px-3 py-3 text-center text-base font-bold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navbar-samples focus-visible:ring-offset-2 focus-visible:ring-offset-stone-800 sm:px-4 lg:text-lg ${
                 active
                   ? "bg-navbar-samples !text-neutral-900 shadow-[0_2px_10px_rgba(0,0,0,0.5)]"
                   : "!text-stone-300 hover:bg-stone-700 hover:!text-white"

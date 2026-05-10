@@ -27,6 +27,7 @@ export default function SupplementaryForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [orderId, setOrderId] = useState("");
   const maxCommentLength = 2000;
+  const customOptionsDescriptionId = "custom-options-description";
 
   // Helpers: count total selections
   const totalSelections =
@@ -128,8 +129,9 @@ export default function SupplementaryForm() {
       <form onSubmit={handleSubmit} className="m-6 w-full max-w-xl">
         {/* Address & Email */}
         <div className="mb-6">
-          <label className="block mb-2 text-lg font-semibold">Confirm Property Address:</label>
+          <label htmlFor="property-address" className="block mb-2 text-lg font-semibold">Confirm Property Address:</label>
           <input
+            id="property-address"
             type="text"
             value={address}
             onChange={(e) => setAddress(e.target.value)}
@@ -138,8 +140,9 @@ export default function SupplementaryForm() {
           />
         </div>
         <div className="mb-6">
-          <label className="block mb-2 text-lg font-semibold">Email Address:</label>
+          <label htmlFor="email-address" className="block mb-2 text-lg font-semibold">Email Address:</label>
           <input
+            id="email-address"
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -151,8 +154,9 @@ export default function SupplementaryForm() {
         {/* Client Info */}
         <div className="mb-6 grid grid-cols-1 gap-6">
           <div>
-            <label className="block mb-2 text-lg font-semibold">Your Name:</label>
+            <label htmlFor="client-name" className="block mb-2 text-lg font-semibold">Your Name:</label>
             <input
+              id="client-name"
               type="text"
               value={clientName}
               onChange={(e) => setClientName(e.target.value)}
@@ -161,8 +165,9 @@ export default function SupplementaryForm() {
             />
           </div>
           <div>
-            <label className="block mb-2 text-lg font-semibold">Company Name:</label>
+            <label htmlFor="client-company" className="block mb-2 text-lg font-semibold">Company Name:</label>
             <input
+              id="client-company"
               type="text"
               value={clientCompany}
               onChange={(e) => setClientCompany(e.target.value)}
@@ -171,8 +176,9 @@ export default function SupplementaryForm() {
             />
           </div>
           <div>
-            <label className="block mb-2 text-lg font-semibold">Phone Number:</label>
+            <label htmlFor="client-phone" className="block mb-2 text-lg font-semibold">Phone Number:</label>
             <input
+              id="client-phone"
               type="text"
               value={clientPhone}
               onChange={(e) => setClientPhone(e.target.value)}
@@ -185,14 +191,21 @@ export default function SupplementaryForm() {
         {/* Discretionary Options */}
         <div className="mb-6">
           <h2 className="mb-2 text-lg font-semibold">Discretionary Options (up to 5)</h2>
-          <p className="mb-4 text-sm text-gray-600">
+          <p id={customOptionsDescriptionId} className="mb-4 text-sm text-gray-600">
             Select from the list or enter custom options below.
           </p>
           <div className="grid grid-cols-2 gap-4">
             {customOptions.map((opt, idx) => (
               <div key={idx} className="flex items-center space-x-2">
-                <input type="checkbox" checked={!!opt.trim()} readOnly className="h-5 w-5"/>
+                <span
+                  aria-hidden="true"
+                  className={`h-5 w-5 rounded border border-gray-500 ${
+                    opt.trim() ? "bg-green-500" : "bg-white"
+                  }`}
+                />
                 <input
+                  aria-describedby={customOptionsDescriptionId}
+                  aria-label={`Custom discretionary option ${idx + 1}`}
                   type="text"
                   value={opt}
                   onChange={(e) => handleCustomOptionChange(idx, e.target.value)}
@@ -220,8 +233,9 @@ export default function SupplementaryForm() {
 
         
         <div className="mb-6">
-          <label className="block mb-2 text-lg font-semibold">Upload Your File (max 100MB)</label>
+          <label htmlFor="file-upload" className="block mb-2 text-lg font-semibold">Upload Your File (max 100MB)</label>
           <input
+            id="file-upload"
             type="file"
             onChange={(e) => setFile(e.target.files?.[0] || null)}
             className="mb-2"
@@ -237,8 +251,9 @@ export default function SupplementaryForm() {
 
         {/* Comments */}
         <div className="mb-6">
-          <label className="block mb-2 text-lg font-semibold">Additional Comments</label>
+          <label htmlFor="additional-comments" className="block mb-2 text-lg font-semibold">Additional Comments</label>
           <textarea
+            id="additional-comments"
             value={comments}
             onChange={(e) => setComments(e.target.value)}
             maxLength={maxCommentLength}
@@ -252,7 +267,7 @@ export default function SupplementaryForm() {
         <button
           type="submit"
           disabled={isSubmitting || uploading}
-          className={`px-6 py-2 rounded-lg text-white shadow-md ${isSubmitting||uploading ? 'bg-gray-400 cursor-not-allowed' : 'bg-green-500 hover:bg-green-600'}`}
+          className={`rounded-lg px-6 py-2 text-base text-white shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-300 focus-visible:ring-offset-2 focus-visible:ring-offset-white ${isSubmitting||uploading ? 'bg-gray-400 cursor-not-allowed' : 'bg-green-500 hover:bg-green-600'}`}
         >
           {isSubmitting ? 'Submitting...' : 'Submit'}
         </button>

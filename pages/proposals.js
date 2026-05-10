@@ -25,7 +25,7 @@ export default function Proposals() {
         showLogo={true}
       />
 
-      <main className="mx-auto max-w-screen-xl px-4 py-8 md:px-10">
+      <div className="mx-auto max-w-screen-xl px-4 py-8 md:px-10">
         <div className="grid grid-cols-12 gap-6">
 
           {/* ── Left column ── */}
@@ -118,7 +118,7 @@ export default function Proposals() {
 
           </div>
         </div>
-      </main>
+      </div>
     </div>
   );
 }
