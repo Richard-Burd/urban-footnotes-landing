@@ -18,7 +18,7 @@ export default function Samples() {
           id="explanation"
           className="roboto-font mx-8 mb-4 text-2.5xl text-gray-200 desktop:ml-0 desktop:mr-8 desktop:w-2/3"
         >
-          <p className="pt-2">
+          <p className="pt-2 min-[876px]:pl-4">
             Samples are presented ranked by the number of service types (out of
             74 total) within approximately 1/4 mile of the address shown (0.4
             kilometer in metric versions), then by those within 2/5 mile (0.7
@@ -40,7 +40,7 @@ export default function Samples() {
             Highly Walkable
           </div>
         </div>
-        <div className="grid grid-cols-1 px-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-5 xl:grid-cols-4">
+        <div className="grid grid-cols-1 px-6 md:grid-cols-3 lg:grid-cols-3 lg:gap-x-5 xl:grid-cols-4">
           <ProductSample
             imagePath="preview-indianapolis-in-development-proposal.5.jpg"
             address="15 E Washington St, Indianapolis, IN 46204"
