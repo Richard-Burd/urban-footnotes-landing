@@ -252,7 +252,7 @@ export default function Home() {
                   serviceTypesFarther={7}
                   serviceTypesDistant={12}
                   walkabilityScore={20}
-                  width={2000}
+                  width={1000}
                   pdfPath="doc-233-8th-ave-new-york.5.pdf"
                 />
               </div>
