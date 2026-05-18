@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import PageTitle from "@/components/PageTitle";
 import Image from "next/image";
+import Head from "next/head";
 
 function DevelopmentProposalImages({ baseUrl, id = "images", className }) {
   return (
@@ -57,7 +58,8 @@ function DevelopmentProposalImages({ baseUrl, id = "images", className }) {
 }
 
 export default function Pricing() {
-  const baseUrl = process.env.NEXT_PUBLIC_S3_BASE_URL;
+  const baseUrl =
+    process.env.NEXT_PUBLIC_S3_BASE_URL?.replace(/\/+$/, "") ?? "";
   useEffect(() => {
     const script = document.createElement("script");
     script.src = "https://js.stripe.com/v3/pricing-table.js";
@@ -70,19 +72,21 @@ export default function Pricing() {
 
   return (
     <div>
-      <center>
-        <PageTitle
-          topTitle="Ordering Your Report"
-          textColor="text-title-text-order"
-          shadowColor="title-shadow-order"
-          logoColor="#eedfa2ff"
-          gradient={
-            "bg-[linear-gradient(to_right,rgba(123,117,92,0.1),rgba(113,96,21,0.8))]"
-          }
-          mobileTitleCentered={false}
-          showLogo={true} // Integrates the logo
-        />
-      </center>
+      <Head>
+        <title>Pricing | Urban Foot Notes</title>
+      </Head>
+      <PageTitle
+        className="flex justify-center"
+        topTitle="Ordering Your Report"
+        textColor="text-title-text-order"
+        shadowColor="title-shadow-order"
+        logoColor="#eedfa2ff"
+        gradient={
+          "bg-[linear-gradient(to_right,rgba(123,117,92,0.1),rgba(113,96,21,0.8))]"
+        }
+        mobileTitleCentered={false}
+        showLogo={true} // Integrates the logo
+      />
 
       <div className="w-full max-w-screen-lg px-4 text-xl text-white min-[876px]:text-2.5xl">
         <div className="mb-10">
@@ -112,7 +116,7 @@ export default function Pricing() {
         </div>
       </div>
 
-      <hr class="mx-4 border-t-2 border-gray-300 pb-8" />
+      <hr className="mx-4 border-t-2 border-gray-300 pb-8" />
 
       <div
         id="property-reports-intro"
@@ -203,7 +207,7 @@ export default function Pricing() {
               className="mt-8 text-xl min-[876px]:text-2xl"
             >
               Our development proposals have a level of planning detail
-              commensurate with earlystage preliminary architectural design
+              commensurate with early-stage preliminary architectural design
               drawings. They show schematic floor plans broken down by occupancy
               type per floor. Basic IBC compliant egress schemas are included as
               well. We can provide varying levels of fidelity in terms of 3D
@@ -279,12 +283,14 @@ export default function Pricing() {
                 height={1}
               />
             </div>
-            <div className="flex justify-center md:hidden">
+            <div className="flex w-full justify-center md:hidden">
               <Image
                 alt="First & Second pages of the product"
                 src={`${baseUrl}/allocation-pie-chart-mobile.v3.png`}
                 width={360}
                 height={1}
+                className="h-auto w-full max-w-[360px]"
+                sizes="(max-width: 768px) min(100vw - 2rem, 360px), 360px"
               />
             </div>
           </div>
