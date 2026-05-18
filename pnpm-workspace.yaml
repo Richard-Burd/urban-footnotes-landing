@@ -1,4 +1,8 @@
-allowBuilds:
-  sharp: true
-  unrs-resolver: true
+packages:
+  - "."
+
 minimumReleaseAge: 43200
+
+onlyBuiltDependencies:
+  - sharp
+  - unrs-resolver
