@@ -25,7 +25,7 @@ function DevelopmentProposalImages({ baseUrl, id = "images", className }) {
               here
             </a>
           </div>
-          <div>estimated cost: $x,xxx</div>
+          <div>estimated cost: $46,000</div>
         </div>
       </div>
 
@@ -49,7 +49,7 @@ function DevelopmentProposalImages({ baseUrl, id = "images", className }) {
               here
             </a>
           </div>
-          <div>estimated cost: $x,xxx</div>
+          <div>estimated cost: $32,000</div>
         </div>
       </div>
     </div>
@@ -173,7 +173,9 @@ export default function Pricing() {
               For this reason we cannot quote a fixed price but we offer the
               following examples{" "}
               <span className="inline min-[876px]:hidden">below</span>
-              <span className="hidden min-[876px]:inline">on the right</span>{" "}
+              <span className="hidden min-[876px]:inline">
+                on the right
+              </span>{" "}
               with estimated costs for each one.
             </div>
 
