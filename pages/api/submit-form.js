@@ -85,7 +85,7 @@ export default async function handler(req, res) {
         <p><strong>Client Company:</strong> ${clientCompany}</p>
         <p><strong>Client Phone:</strong> ${clientPhone}</p>
         <p><strong>Address:</strong> ${address}</p>
-        <p><strong>Logo URL:</strong> <a href="${logoUrl}" target="_blank">${logoUrl}</a></p>
+        <p><strong>Logo URL:</strong> <a href="${logoUrl}" target="_blank" rel="noopener noreferrer">${logoUrl}</a></p>
         <p><strong>Discretionary Options:</strong> ${options.length > 0 ? options.join(", ") : "None"}</p>
         <p><strong>Additional Comments:</strong></p>
         <p>${additionalComments || "None"}</p>

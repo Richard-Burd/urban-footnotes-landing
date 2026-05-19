@@ -1,4 +1,8 @@
 import Image from "next/image";
+import { getAssetBaseUrl, toAssetUrl } from "@/lib/assetUrl";
+
+const DEFAULT_WIDTH = 400;
+const responsiveImageStyle = { width: "100%", height: "auto" };
 
 const ProductSample = ({
   imagePath,
@@ -8,8 +12,12 @@ const ProductSample = ({
   serviceTypesDistant,
   walkabilityScore,
   pdfPath,
+  width = DEFAULT_WIDTH,
 }) => {
-  const baseUrl = process.env.NEXT_PUBLIC_S3_BASE_URL;
+  const baseUrl = getAssetBaseUrl();
+  const sampleImageSizes = `(min-width: 768px) ${width}px, calc(100vw - 2rem)`;
+  const overlayImageStyle = { ...responsiveImageStyle, maxWidth: width };
+
   return (
     <div id={address} className="relative mb-24 text-center text-slate-300">
       <div className="pb-3 text-2xl">
@@ -29,27 +37,30 @@ const ProductSample = ({
         </div>
       </div>
       <a
-        href={`${baseUrl}/${pdfPath}`}
+        href={toAssetUrl(pdfPath, baseUrl)}
         target="_blank"
         rel="noopener noreferrer"
+        aria-label={`Open PDF sample report for ${address}`}
       >
-        <div className="flex justify-center px-2">
+        <div className="relative flex justify-center px-2">
           <Image
-            src={`${baseUrl}/${imagePath}`}
-            alt={`picture of ${address}`}
-            // true width & true height controlled by parent grid
-            // image fills parent's allotted space
-            width={400}
+            src={toAssetUrl(imagePath, baseUrl)}
+            alt={`Property report preview for ${address}`}
+            width={width}
             height={1}
+            sizes={sampleImageSizes}
+            style={responsiveImageStyle}
           />
-          <img
-            className="absolute flex scale-95 transform justify-center opacity-40 transition-opacity duration-300 ease-in-out hover:scale-100 hover:opacity-90 focus:opacity-100"
+          <Image
+            className="absolute h-auto w-full scale-95 transform justify-center opacity-40 transition-opacity duration-300 ease-in-out hover:scale-100 hover:opacity-90 focus:opacity-100"
             src="/images/pdf-preview-pointy-hand.svg"
-            alt="Pointy Hand Preview"
-            // true width & true height controlled by parent grid
-            // image fills parent's allotted space
-            width={400}
+            alt=""
+            aria-hidden="true"
+            width={width}
             height={1}
+            sizes={sampleImageSizes}
+            style={overlayImageStyle}
+            unoptimized
           />
         </div>
       </a>

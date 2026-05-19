@@ -1,0 +1,8 @@
+packages:
+  - "."
+
+minimumReleaseAge: 43200
+
+onlyBuiltDependencies:
+  - sharp
+  - unrs-resolver

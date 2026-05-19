@@ -1,9 +1,13 @@
+import Head from "next/head";
 import PageTitle from "@/components/PageTitle";
 
 export default function Associations() {
-  const boxStyles = `roboto-font max-[2023px]:mx-6 rounded-[40px] bg-[linear-gradient(to_right,rgba(24,44,69,0.3),rgba(24,44,69,0.9))] p-8 shadow-md min-[1000px]:rounded-[40px] min-[1024px]:mx-0`;
+  const boxStyles = `roboto-font max-[2023px]:mx-6 rounded-[40px] bg-[linear-gradient(to_right,rgba(24,44,69,0.3),rgba(24,44,69,0.9))] p-8 shadow-md desktop:rounded-[40px] min-[1024px]:mx-0`;
   return (
-    <div className="text-white w-full max-w-screen-lg">
+    <div className="w-full text-white">
+      <Head>
+        <title>Selected References | Urban Foot Notes</title>
+      </Head>
       <div id="page-title">
         <PageTitle
           topTitle="Selected References"
@@ -28,7 +32,7 @@ export default function Associations() {
                 <a
                   href="https://www.muttzrealty.com/"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="text-blue-500 underline hover:text-blue-400"
                 >
                   Muttz Realty, LLC
@@ -51,7 +55,7 @@ export default function Associations() {
             <a
               href="https://urbanplanet.org/forums/forum/250-nashville/"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="text-lg text-blue-500 underline hover:text-blue-400"
             >
               Urban Planet
@@ -67,7 +71,7 @@ export default function Associations() {
             <a
               href="https://citynownext.com/"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="text-lg text-blue-500 underline hover:text-blue-400"
             >
               City Now Next Real Estate Media, LLC
@@ -80,7 +84,7 @@ export default function Associations() {
             <a
               href="https://eastnashvilleurbandesign.wordpress.com/"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="text-lg text-blue-500 underline hover:text-blue-400"
             >
               East Nashville Urban Design
@@ -93,7 +97,7 @@ export default function Associations() {
             <a
               href="https://www.google.com/maps/d/viewer?mid=1ELRoQQW5WC_YAmOyc-QfGVr-J50&ll=36.14502126951252%2C-86.76894667856646&z=14"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="text-lg text-blue-500 underline hover:text-blue-400"
             >
               Nashville Projects & Development, interactive map

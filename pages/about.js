@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Head from "next/head";
 import PageTitle from "@/components/PageTitle";
 import Image from "next/image";
 
@@ -55,7 +56,7 @@ const IMAGE_MAP = {
 const WRAP = "mx-auto max-w-screen-xl 2xl:max-w-[1600px] px-6 md:px-10";
 const CARD = "rounded-[10px] group-hover:shadow-lg p-4 transition-shadow";
 const SOFT_CARD = "rounded-[10px] p-4 transition-shadow group-hover:shadow-lg";
-const TITLE = "title-shadow-samples page-title-shadow roboto-font text-center text-[35px] [@media(min-width:1000px)]:text-[45px]";
+const TITLE = "title-shadow-samples page-title-shadow roboto-font text-center text-[35px] desktop:text-[45px]";
 
 export default function About() {
   const [activeTab, setActiveTab] = useState(TABS[0].id);
@@ -65,27 +66,23 @@ export default function About() {
   );
 
   return (
-    <div className="roboto-font text-white ">
-      {/* TITLE */}
-      <div className="flex justify-center w-full">
-        <div className="">
-            <div className="">
-              <PageTitle
-                topTitle="About Us"
-                textColor="text-white"
-                shadowColor="title-shadow-about"
-                logoColor="#d4d4d4ff"
-                gradient="bg-[linear-gradient(to_right,rgba(90,90,90,0.1),rgba(90,90,90,0.5))]"
-                mobileTitleCentered
-                showLogo
-              />
-            </div>
-          </div>
-        </div>
+    <div className="roboto-font w-full text-white">
+      <Head>
+        <title>About Us | Urban Foot Notes</title>
+      </Head>
+      <PageTitle
+        topTitle="About Us"
+        textColor="text-white"
+        shadowColor="title-shadow-about"
+        logoColor="#d4d4d4ff"
+        gradient="bg-[linear-gradient(to_right,rgba(90,90,90,0.1),rgba(90,90,90,0.5))]"
+        mobileTitleCentered
+        showLogo
+      />
       
 
       {/* GRID */}
-      <main className={`grid grid-cols-12 gap-4 py-6 ${WRAP}`}>
+      <div className={`grid grid-cols-12 gap-4 py-6 ${WRAP}`}>
         {/* Mission */}
         <section className="col-span-12 md:col-span-5">
           <div className="group overflow-hidden rounded-[10px]">
@@ -141,7 +138,7 @@ export default function About() {
             onClick={() => setActiveTab(id)}
             type="button"
             aria-pressed={activeTab === id}
-            className={`rounded-lg px-4 py-2 text-lg font-medium transition md:text-2xl ${
+            className={`rounded-lg px-4 py-2 text-lg font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ffe1b3] focus-visible:ring-offset-2 focus-visible:ring-offset-stone-950 md:text-2xl ${
               activeTab === id
                 ? "bg-[#ffe1b3] text-black"
                 : "bg-stone-950 text-[#ffe1b3] hover:bg-[#1a1207]"
@@ -161,6 +158,7 @@ export default function About() {
             height={160}
             src={`${baseUrl}/${IMAGE_MAP[activeTab]}`}
             alt={TABS.find(t => t.id === activeTab)?.label}
+            sizes="160px"
             className="h-full w-full rounded-lg object-contain shadow-lg"
           />
         </div>
@@ -178,7 +176,7 @@ export default function About() {
 
 
         {/* Benefits (mobile) */}
-        <section className="col-span-12 min-[700px]:hidden">
+        <section className="col-span-12 report:hidden">
           <div className="group overflow-hidden rounded-[10px]">
             <div className={CARD}>
               <p className="pb-6 text-center text-3xl font-medium">
@@ -215,7 +213,7 @@ export default function About() {
                   <a
                     href="https://www.urbancruiseship.org"
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                   >
                     <i>Urban Cruise Ship</i>
                   </a>{" "}
@@ -223,7 +221,7 @@ export default function About() {
                   <a
                     href="https://www.urbancruiseship.org/cities"
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                   >
                     <b>cities</b>
                   </a>{" "}
@@ -245,7 +243,7 @@ export default function About() {
             </div>
           </div>
         </section>
-      </main>
+      </div>
     </div>
   );
 }
