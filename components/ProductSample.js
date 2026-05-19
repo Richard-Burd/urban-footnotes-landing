@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { getAssetBaseUrl, toAssetUrl } from "@/lib/assetUrl";
 
+const DEFAULT_WIDTH = 400;
 const responsiveImageStyle = { width: "100%", height: "auto" };
 
 const ProductSample = ({
@@ -11,9 +12,11 @@ const ProductSample = ({
   serviceTypesDistant,
   walkabilityScore,
   pdfPath,
+  width = DEFAULT_WIDTH,
 }) => {
   const baseUrl = getAssetBaseUrl();
-  const sampleImageSizes = "(min-width: 768px) 400px, calc(100vw - 2rem)";
+  const sampleImageSizes = `(min-width: 768px) ${width}px, calc(100vw - 2rem)`;
+  const overlayImageStyle = { ...responsiveImageStyle, maxWidth: width };
 
   return (
     <div id={address} className="relative mb-24 text-center text-slate-300">
@@ -43,20 +46,20 @@ const ProductSample = ({
           <Image
             src={toAssetUrl(imagePath, baseUrl)}
             alt={`Property report preview for ${address}`}
-            width={400}
+            width={width}
             height={1}
             sizes={sampleImageSizes}
             style={responsiveImageStyle}
           />
           <Image
-            className="absolute h-auto w-full max-w-[400px] scale-95 transform justify-center opacity-40 transition-opacity duration-300 ease-in-out hover:scale-100 hover:opacity-90 focus:opacity-100"
+            className="absolute h-auto w-full scale-95 transform justify-center opacity-40 transition-opacity duration-300 ease-in-out hover:scale-100 hover:opacity-90 focus:opacity-100"
             src="/images/pdf-preview-pointy-hand.svg"
             alt=""
             aria-hidden="true"
-            width={400}
+            width={width}
             height={1}
             sizes={sampleImageSizes}
-            style={responsiveImageStyle}
+            style={overlayImageStyle}
             unoptimized
           />
         </div>
