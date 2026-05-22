@@ -229,10 +229,12 @@ export default function About() {
                   potential users.
                 </p>
                 <p>
-                  We saw a need for walkability and area reports that utilized  real researchers instead of just relying on big data. What
-                  initially involved John, Jye and Roseanne became a nearly
-                  two-year multiple-stage project involving all seven team
-                  members. We have worked hard to refine our product with extensive research.
+                  We saw a need for walkability and area reports that utilized 
+                  real researchers instead of just relying on big data. What 
+                  initially involved John, Jye and Roseanne became a nearly 
+                  three-and-a-half-year, multiple-stage project involving all 
+                  seven team members. We have worked hard to refine our product 
+                  with extensive research.
                 </p>
                 <p>
                   We hope our reports help as many people as possible live more
