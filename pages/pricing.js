@@ -1,7 +1,8 @@
-import { useEffect } from "react";
 import PageTitle from "@/components/PageTitle";
 import Image from "next/image";
 import Head from "next/head";
+import Link from "next/link";
+import { ORDER_PRODUCTS } from "@/lib/orderProducts";
 
 function DevelopmentProposalImages({ baseUrl, id = "images", className }) {
   return (
@@ -60,15 +61,6 @@ function DevelopmentProposalImages({ baseUrl, id = "images", className }) {
 export default function Pricing() {
   const baseUrl =
     process.env.NEXT_PUBLIC_S3_BASE_URL?.replace(/\/+$/, "") ?? "";
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://js.stripe.com/v3/pricing-table.js";
-    script.async = true;
-    document.body.appendChild(script);
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
 
   return (
     <div>
@@ -132,13 +124,24 @@ export default function Pricing() {
         </div>
       </div>
 
-      <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
-      <stripe-pricing-table
-        pricing-table-id="prctbl_1R8ebIGN52GuXWVWPtWvx2aH"
-        publishable-key="pk_live_51PWM5ZGN52GuXWVWNN9rPCsYn8nK2OK1xZl03U6AzK38Hh5I74b7o5GpPHMj9qyRrPgoVwLABMjC4ZgjrJqr8tXc004r8wQtLl"
-      ></stripe-pricing-table>
+      <div className="grid w-full max-w-screen-lg grid-cols-1 gap-4 px-4 pb-8 md:grid-cols-3">
+        {ORDER_PRODUCTS.map((product) => (
+          <Link
+            key={product.slug}
+            href={`/form?product=${product.slug}`}
+            className="block rounded-lg border border-white/20 bg-white/10 p-5 text-white shadow-md transition hover:-translate-y-0.5 hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-300"
+          >
+            <div className="mb-2 text-2xl font-bold">{product.shortName}</div>
+            <div className="mb-3 text-lg font-semibold">{product.name}</div>
+            <p className="text-base text-gray-100">{product.description}</p>
+            <div className="mt-5 inline-block rounded-lg bg-green-500 px-4 py-2 font-semibold">
+              Start order
+            </div>
+          </Link>
+        ))}
+      </div>
 
-      <hr class="mx-4 mt-12 border-t-2 border-gray-300 pb-14" />
+      <hr className="mx-4 mt-12 border-t-2 border-gray-300 pb-14" />
 
       <div
         id="development-proposals-intro"
@@ -250,7 +253,7 @@ export default function Pricing() {
         </div>
       </div>
 
-      <hr class="mx-4 mt-8 border-t-2 border-gray-300 pb-14" />
+      <hr className="mx-4 mt-8 border-t-2 border-gray-300 pb-14" />
 
       <div className="roboto-font w-full max-w-screen-lg px-4 pb-8 text-xl text-white md:text-2xl">
         <div id="explanations-n-pie-chart">

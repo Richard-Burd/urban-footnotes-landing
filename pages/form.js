@@ -1,7 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import Head from "next/head";
+import { useRouter } from "next/router";
+import { getOrderProduct } from "@/lib/orderProducts";
+import { MAX_COMMENT_LENGTH, MAX_UPLOAD_BYTES } from "@/lib/orderValidation";
+
+const FORM_DRAFT_KEY = "urban-footnotes-order-form";
 
 export default function SupplementaryForm() {
+  const router = useRouter();
+  const productSlug =
+    typeof router.query.product === "string" ? router.query.product : "";
+  const selectedProduct = useMemo(
+    () => getOrderProduct(productSlug),
+    [productSlug],
+  );
+
   // Form states
   const [address, setAddress] = useState("");
   const [email, setEmail] = useState("");
@@ -29,8 +42,64 @@ export default function SupplementaryForm() {
   const [orderId, setOrderId] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
-  const maxCommentLength = 2000;
+  const maxCommentLength = MAX_COMMENT_LENGTH;
   const customOptionsDescriptionId = "custom-options-description";
+
+  useEffect(() => {
+    try {
+      const draft = window.localStorage.getItem(FORM_DRAFT_KEY);
+      if (!draft) return;
+
+      const parsed = JSON.parse(draft);
+      setAddress(parsed.address || "");
+      setEmail(parsed.email || "");
+      setClientName(parsed.clientName || "");
+      setClientCompany(parsed.clientCompany || "");
+      setClientPhone(parsed.clientPhone || "");
+      setSelectedOptions(Array.isArray(parsed.selectedOptions) ? parsed.selectedOptions : []);
+      setCustomOptions(Array.isArray(parsed.customOptions) ? parsed.customOptions : ["", "", "", "", ""]);
+      setComments(parsed.comments || "");
+    } catch (error) {
+      console.error("Could not restore order form draft:", error);
+    }
+  }, []);
+
+  useEffect(() => {
+    const draft = {
+      address,
+      email,
+      clientName,
+      clientCompany,
+      clientPhone,
+      selectedOptions,
+      customOptions,
+      comments,
+    };
+
+    try {
+      window.localStorage.setItem(FORM_DRAFT_KEY, JSON.stringify(draft));
+    } catch (error) {
+      console.error("Could not save order form draft:", error);
+    }
+  }, [
+    address,
+    email,
+    clientName,
+    clientCompany,
+    clientPhone,
+    selectedOptions,
+    customOptions,
+    comments,
+  ]);
+
+  useEffect(() => {
+    if (router.query.cancelled) {
+      setErrorMessage("Payment was cancelled. Your form details are still here.");
+    }
+    if (typeof router.query.orderId === "string") {
+      setOrderId(router.query.orderId);
+    }
+  }, [router.query.cancelled, router.query.orderId]);
 
   // Helpers: count total selections
   const totalSelections =
@@ -59,25 +128,60 @@ export default function SupplementaryForm() {
     setErrorMessage("");
     setSuccessMessage("");
 
+    if (!selectedProduct) {
+      setErrorMessage("Please choose a valid report product from the pricing page.");
+      return;
+    }
+
     if (!address || !email) {
       setErrorMessage("Please complete address and email before submitting.");
       return;
     }
 
-    let logoUrl = "";
+    let uploadedFile = null;
+    let reservedOrderId = "";
     try {
       if (file) {
-        setUploading(true);
-        const form = new FormData();
-        form.append("file", file);
-        const res = await fetch("/api/upload", { method: "POST", body: form });
-        const json = await res.json();
-        setUploading(false);
-        if (!res.ok) {
-          setErrorMessage(`Upload failed: ${json.error}`);
+        if (file.size > MAX_UPLOAD_BYTES) {
+          setErrorMessage("File must be 100MB or smaller.");
           return;
         }
-        logoUrl = json.fileLink;
+
+        setUploading(true);
+        const presignRes = await fetch("/api/orders/presign-upload", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            filename: file.name,
+            contentType: file.type || "application/octet-stream",
+            size: file.size,
+          }),
+        });
+        const presignJson = await presignRes.json();
+        if (!presignRes.ok) {
+          setUploading(false);
+          setErrorMessage(
+            `Upload failed: ${presignJson.error || presignJson.message || "Unknown error"}`,
+          );
+          return;
+        }
+
+        const uploadRes = await fetch(presignJson.uploadUrl, {
+          method: "PUT",
+          headers: {
+            "Content-Type": file.type || "application/octet-stream",
+          },
+          body: file,
+        });
+        setUploading(false);
+        if (!uploadRes.ok) {
+          setErrorMessage("Upload failed while sending the file to storage.");
+          return;
+        }
+
+        reservedOrderId = presignJson.orderId;
+        uploadedFile = presignJson.upload;
+        setFileLink(uploadedFile.filename);
       }
     } catch (err) {
       console.error(err);
@@ -93,20 +197,22 @@ export default function SupplementaryForm() {
     ];
 
     const payload = {
+      orderId: reservedOrderId,
+      productSlug: selectedProduct.slug,
       address,
       clientName,
       clientCompany,
       clientPhone,
       email,
       discretionaryOptions: combinedOptions.length ? combinedOptions : [],
-      logoUrl: logoUrl || "https://cdn.filestackcontent.com/kaNkonzETJqkatZaMjiH",
+      upload: uploadedFile,
       additionalComments: comments || "None",
     };
 
-    // Final submission
+    // Create order and redirect to Stripe Checkout
     try {
       setIsSubmitting(true);
-      const resp = await fetch("/api/submit-form", {
+      const resp = await fetch("/api/orders/create", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
@@ -116,13 +222,14 @@ export default function SupplementaryForm() {
 
       if (resp.ok) {
         setOrderId(data.orderId);
-        setSuccessMessage(`Form submitted! Your Order ID is: ${data.orderId}`);
+        setSuccessMessage(`Order created. Redirecting to payment for ${data.orderId}...`);
+        window.location.assign(data.checkoutUrl);
       } else {
-        setErrorMessage(`Submission failed: ${data.error || "Unknown error"}`);
+        setErrorMessage(`Order failed: ${data.error || data.message || "Unknown error"}`);
       }
     } catch (err) {
       console.error(err);
-      setErrorMessage("Error submitting form.");
+      setErrorMessage("Error creating order.");
       setIsSubmitting(false);
     }
   };
@@ -135,6 +242,22 @@ export default function SupplementaryForm() {
       <h1 className="m-6 w-4/5 text-center text-2xl font-bold">
         Please fill out the supplemental information below to customize and complete your order:
       </h1>
+
+      <div className="mb-4 w-full max-w-xl rounded-lg border border-stone-400 bg-white/70 px-4 py-3">
+        <div className="text-sm font-semibold uppercase text-stone-600">
+          Selected report
+        </div>
+        {selectedProduct ? (
+          <>
+            <div className="text-lg font-bold">{selectedProduct.name}</div>
+            <div className="text-sm text-stone-700">{selectedProduct.description}</div>
+          </>
+        ) : (
+          <div className="text-sm text-red-700">
+            Choose a report package from the pricing page before submitting.
+          </div>
+        )}
+      </div>
 
       {/* Inline feedback regions — must be in DOM before content changes for screen readers */}
       <div role="alert" aria-live="assertive" aria-atomic="true" className={errorMessage ? "mb-4 w-full max-w-xl rounded-lg border border-red-600 bg-red-100 px-4 py-3 text-red-800" : "sr-only"}>
@@ -262,7 +385,7 @@ export default function SupplementaryForm() {
           {uploading && <p className="text-sm text-gray-600">Uploading...</p>}
           {fileLink && (
             <p className="text-sm">
-              File uploaded: <a href={fileLink} target="_blank" rel="noopener noreferrer" className="underline">View link</a>
+              File ready: {fileLink}
             </p>
           )}
         </div>
@@ -285,10 +408,10 @@ export default function SupplementaryForm() {
         {/* Submit */}
         <button
           type="submit"
-          disabled={isSubmitting || uploading}
-          className={`rounded-lg px-6 py-2 text-base text-white shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-300 focus-visible:ring-offset-2 focus-visible:ring-offset-white ${isSubmitting||uploading ? 'bg-gray-400 cursor-not-allowed' : 'bg-green-500 hover:bg-green-600'}`}
+          disabled={isSubmitting || uploading || !selectedProduct}
+          className={`rounded-lg px-6 py-2 text-base text-white shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-300 focus-visible:ring-offset-2 focus-visible:ring-offset-white ${isSubmitting||uploading||!selectedProduct ? 'bg-gray-400 cursor-not-allowed' : 'bg-green-500 hover:bg-green-600'}`}
         >
-          {isSubmitting ? 'Submitting...' : 'Submit'}
+          {isSubmitting ? 'Redirecting...' : 'Continue to payment'}
         </button>
       </form>
 

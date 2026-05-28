@@ -2,13 +2,17 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+This project uses pnpm. If pnpm is not available yet, enable Corepack once:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+corepack enable
+corepack prepare pnpm@10.33.4 --activate
+```
+
+Install dependencies and run the development server:
+
+```bash
+pnpm install
 pnpm dev
 ```
 
