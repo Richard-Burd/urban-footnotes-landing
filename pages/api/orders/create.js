@@ -1,9 +1,5 @@
 import { getProductPriceId } from "@/lib/orderProducts";
-import { sendOrderEmail } from "@/lib/orderEmail";
-import {
-  createDownloadUrl,
-  saveOrder,
-} from "@/lib/orderStorage";
+import { sendOrderIntakeEmail } from "@/lib/orderEmail";
 import {
   generateOrderId,
   normalizeSingleLine,
@@ -41,9 +37,7 @@ export default async function handler(req, res) {
   const order = {
     orderId,
     createdAt: now,
-    updatedAt: now,
     paymentStatus: "pending",
-    paidEmailSent: false,
     productSlug: normalized.product.slug,
     productName: normalized.product.name,
     address: normalized.address,
@@ -53,17 +47,10 @@ export default async function handler(req, res) {
     clientPhone: normalized.clientPhone,
     discretionaryOptions: normalized.discretionaryOptions,
     additionalComments: normalized.additionalComments || "None",
-    upload: normalized.upload,
-    stripe: null,
   };
 
   try {
-    await saveOrder(order);
-
-    const fileUrl = order.upload?.key
-      ? await createDownloadUrl(order.upload.key)
-      : "";
-    await sendOrderEmail({ order, fileUrl, type: "intake" });
+    await sendOrderIntakeEmail({ order });
 
     const checkoutSession = await getStripe().checkout.sessions.create({
       mode: "payment",
@@ -77,6 +64,7 @@ export default async function handler(req, res) {
       metadata: {
         orderId: order.orderId,
         productSlug: order.productSlug,
+        productName: order.productName,
       },
       payment_intent_data: {
         metadata: {
@@ -85,12 +73,6 @@ export default async function handler(req, res) {
         },
       },
     });
-
-    order.stripe = {
-      checkoutSessionId: checkoutSession.id,
-    };
-    order.updatedAt = new Date().toISOString();
-    await saveOrder(order);
 
     return res.status(200).json({
       orderId: order.orderId,

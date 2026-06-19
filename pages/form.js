@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { getOrderProduct } from "@/lib/orderProducts";
-import { MAX_COMMENT_LENGTH, MAX_UPLOAD_BYTES } from "@/lib/orderValidation";
+import { MAX_COMMENT_LENGTH } from "@/lib/orderValidation";
 
 const FORM_DRAFT_KEY = "urban-footnotes-order-form";
 
@@ -24,17 +24,25 @@ export default function SupplementaryForm() {
 
   // Discretionary options
   const discretionaryOptions = [
-    "Car Wash","Community Center","Costco","Farmers Market","Gas Station",
-    "Gifts/Novelties","Hiking Trail","Hospital","Ice Skating Rink","Landmark",
-    "Liquor Store","Sams Club","Sports Stadium","Target","Tobacco/Vape","Walmart",
+    "Car Wash",
+    "Community Center",
+    "Costco",
+    "Farmers Market",
+    "Gas Station",
+    "Gifts/Novelties",
+    "Hiking Trail",
+    "Hospital",
+    "Ice Skating Rink",
+    "Landmark",
+    "Liquor Store",
+    "Sams Club",
+    "Sports Stadium",
+    "Target",
+    "Tobacco/Vape",
+    "Walmart",
   ];
   const [selectedOptions, setSelectedOptions] = useState([]);
   const [customOptions, setCustomOptions] = useState(["", "", "", "", ""]);
-
-  // File upload states
-  const [file, setFile] = useState(null);
-  const [uploading, setUploading] = useState(false);
-  const [fileLink, setFileLink] = useState("");
 
   // Submission state
   const [comments, setComments] = useState("");
@@ -56,8 +64,14 @@ export default function SupplementaryForm() {
       setClientName(parsed.clientName || "");
       setClientCompany(parsed.clientCompany || "");
       setClientPhone(parsed.clientPhone || "");
-      setSelectedOptions(Array.isArray(parsed.selectedOptions) ? parsed.selectedOptions : []);
-      setCustomOptions(Array.isArray(parsed.customOptions) ? parsed.customOptions : ["", "", "", "", ""]);
+      setSelectedOptions(
+        Array.isArray(parsed.selectedOptions) ? parsed.selectedOptions : [],
+      );
+      setCustomOptions(
+        Array.isArray(parsed.customOptions)
+          ? parsed.customOptions
+          : ["", "", "", "", ""],
+      );
       setComments(parsed.comments || "");
     } catch (error) {
       console.error("Could not restore order form draft:", error);
@@ -94,7 +108,9 @@ export default function SupplementaryForm() {
 
   useEffect(() => {
     if (router.query.cancelled) {
-      setErrorMessage("Payment was cancelled. Your form details are still here.");
+      setErrorMessage(
+        "Payment was cancelled. Your form details are still here.",
+      );
     }
     if (typeof router.query.orderId === "string") {
       setOrderId(router.query.orderId);
@@ -129,64 +145,14 @@ export default function SupplementaryForm() {
     setSuccessMessage("");
 
     if (!selectedProduct) {
-      setErrorMessage("Please choose a valid report product from the pricing page.");
+      setErrorMessage(
+        "Please choose a valid report product from the pricing page.",
+      );
       return;
     }
 
     if (!address || !email) {
       setErrorMessage("Please complete address and email before submitting.");
-      return;
-    }
-
-    let uploadedFile = null;
-    let reservedOrderId = "";
-    try {
-      if (file) {
-        if (file.size > MAX_UPLOAD_BYTES) {
-          setErrorMessage("File must be 100MB or smaller.");
-          return;
-        }
-
-        setUploading(true);
-        const presignRes = await fetch("/api/orders/presign-upload", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            filename: file.name,
-            contentType: file.type || "application/octet-stream",
-            size: file.size,
-          }),
-        });
-        const presignJson = await presignRes.json();
-        if (!presignRes.ok) {
-          setUploading(false);
-          setErrorMessage(
-            `Upload failed: ${presignJson.error || presignJson.message || "Unknown error"}`,
-          );
-          return;
-        }
-
-        const uploadRes = await fetch(presignJson.uploadUrl, {
-          method: "PUT",
-          headers: {
-            "Content-Type": file.type || "application/octet-stream",
-          },
-          body: file,
-        });
-        setUploading(false);
-        if (!uploadRes.ok) {
-          setErrorMessage("Upload failed while sending the file to storage.");
-          return;
-        }
-
-        reservedOrderId = presignJson.orderId;
-        uploadedFile = presignJson.upload;
-        setFileLink(uploadedFile.filename);
-      }
-    } catch (err) {
-      console.error(err);
-      setErrorMessage("Error uploading file.");
-      setUploading(false);
       return;
     }
 
@@ -197,7 +163,7 @@ export default function SupplementaryForm() {
     ];
 
     const payload = {
-      orderId: reservedOrderId,
+      orderId,
       productSlug: selectedProduct.slug,
       address,
       clientName,
@@ -205,7 +171,6 @@ export default function SupplementaryForm() {
       clientPhone,
       email,
       discretionaryOptions: combinedOptions.length ? combinedOptions : [],
-      upload: uploadedFile,
       additionalComments: comments || "None",
     };
 
@@ -222,10 +187,14 @@ export default function SupplementaryForm() {
 
       if (resp.ok) {
         setOrderId(data.orderId);
-        setSuccessMessage(`Order created. Redirecting to payment for ${data.orderId}...`);
+        setSuccessMessage(
+          `Order created. Redirecting to payment for ${data.orderId}...`,
+        );
         window.location.assign(data.checkoutUrl);
       } else {
-        setErrorMessage(`Order failed: ${data.error || data.message || "Unknown error"}`);
+        setErrorMessage(
+          `Order failed: ${data.error || data.message || "Unknown error"}`,
+        );
       }
     } catch (err) {
       console.error(err);
@@ -240,7 +209,8 @@ export default function SupplementaryForm() {
         <title>Order Form | Urban Foot Notes</title>
       </Head>
       <h1 className="m-6 w-4/5 text-center text-2xl font-bold">
-        Please fill out the supplemental information below to customize and complete your order:
+        Please fill out the supplemental information below to customize and
+        complete your order:
       </h1>
 
       <div className="mb-4 w-full max-w-xl rounded-lg border border-stone-400 bg-white/70 px-4 py-3">
@@ -250,7 +220,9 @@ export default function SupplementaryForm() {
         {selectedProduct ? (
           <>
             <div className="text-lg font-bold">{selectedProduct.name}</div>
-            <div className="text-sm text-stone-700">{selectedProduct.description}</div>
+            <div className="text-sm text-stone-700">
+              {selectedProduct.description}
+            </div>
           </>
         ) : (
           <div className="text-sm text-red-700">
@@ -260,34 +232,61 @@ export default function SupplementaryForm() {
       </div>
 
       {/* Inline feedback regions — must be in DOM before content changes for screen readers */}
-      <div role="alert" aria-live="assertive" aria-atomic="true" className={errorMessage ? "mb-4 w-full max-w-xl rounded-lg border border-red-600 bg-red-100 px-4 py-3 text-red-800" : "sr-only"}>
+      <div
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+        className={
+          errorMessage
+            ? "mb-4 w-full max-w-xl rounded-lg border border-red-600 bg-red-100 px-4 py-3 text-red-800"
+            : "sr-only"
+        }
+      >
         {errorMessage}
       </div>
-      <div aria-live="polite" aria-atomic="true" className={successMessage ? "mb-4 w-full max-w-xl rounded-lg border border-green-600 bg-green-100 px-4 py-3 text-green-800" : "sr-only"}>
+      <div
+        aria-live="polite"
+        aria-atomic="true"
+        className={
+          successMessage
+            ? "mb-4 w-full max-w-xl rounded-lg border border-green-600 bg-green-100 px-4 py-3 text-green-800"
+            : "sr-only"
+        }
+      >
         {successMessage}
       </div>
 
       <form onSubmit={handleSubmit} className="m-6 w-full max-w-xl">
         {/* Address & Email */}
         <div className="mb-6">
-          <label htmlFor="property-address" className="block mb-2 text-lg font-semibold">Confirm Property Address:</label>
+          <label
+            htmlFor="property-address"
+            className="mb-2 block text-lg font-semibold"
+          >
+            Confirm Property Address:
+          </label>
           <input
             id="property-address"
             type="text"
             value={address}
             onChange={(e) => setAddress(e.target.value)}
-            className="w-full p-3 border rounded-lg shadow-sm"
+            className="w-full rounded-lg border p-3 shadow-sm"
             required
           />
         </div>
         <div className="mb-6">
-          <label htmlFor="email-address" className="block mb-2 text-lg font-semibold">Email Address:</label>
+          <label
+            htmlFor="email-address"
+            className="mb-2 block text-lg font-semibold"
+          >
+            Email Address:
+          </label>
           <input
             id="email-address"
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full p-3 border rounded-lg shadow-sm"
+            className="w-full rounded-lg border p-3 shadow-sm"
             required
           />
         </div>
@@ -295,44 +294,64 @@ export default function SupplementaryForm() {
         {/* Client Info */}
         <div className="mb-6 grid grid-cols-1 gap-6">
           <div>
-            <label htmlFor="client-name" className="block mb-2 text-lg font-semibold">Your Name:</label>
+            <label
+              htmlFor="client-name"
+              className="mb-2 block text-lg font-semibold"
+            >
+              Your Name:
+            </label>
             <input
               id="client-name"
               type="text"
               value={clientName}
               onChange={(e) => setClientName(e.target.value)}
               placeholder="What should we call you?"
-              className="w-full p-3 border rounded-lg shadow-sm"
+              className="w-full rounded-lg border p-3 shadow-sm"
             />
           </div>
           <div>
-            <label htmlFor="client-company" className="block mb-2 text-lg font-semibold">Company Name:</label>
+            <label
+              htmlFor="client-company"
+              className="mb-2 block text-lg font-semibold"
+            >
+              Company Name:
+            </label>
             <input
               id="client-company"
               type="text"
               value={clientCompany}
               onChange={(e) => setClientCompany(e.target.value)}
               placeholder="optional"
-              className="w-full p-3 border rounded-lg shadow-sm"
+              className="w-full rounded-lg border p-3 shadow-sm"
             />
           </div>
           <div>
-            <label htmlFor="client-phone" className="block mb-2 text-lg font-semibold">Phone Number:</label>
+            <label
+              htmlFor="client-phone"
+              className="mb-2 block text-lg font-semibold"
+            >
+              Phone Number:
+            </label>
             <input
               id="client-phone"
               type="text"
               value={clientPhone}
               onChange={(e) => setClientPhone(e.target.value)}
               placeholder="optional"
-              className="w-full p-3 border rounded-lg shadow-sm"
+              className="w-full rounded-lg border p-3 shadow-sm"
             />
           </div>
         </div>
 
         {/* Discretionary Options */}
         <div className="mb-6">
-          <h2 className="mb-2 text-lg font-semibold">Discretionary Options (up to 5)</h2>
-          <p id={customOptionsDescriptionId} className="mb-4 text-sm text-gray-600">
+          <h2 className="mb-2 text-lg font-semibold">
+            Discretionary Options (up to 5)
+          </h2>
+          <p
+            id={customOptionsDescriptionId}
+            className="mb-4 text-sm text-gray-600"
+          >
             Select from the list or enter custom options below.
           </p>
           <div className="grid grid-cols-2 gap-4">
@@ -349,9 +368,11 @@ export default function SupplementaryForm() {
                   aria-label={`Custom discretionary option ${idx + 1}`}
                   type="text"
                   value={opt}
-                  onChange={(e) => handleCustomOptionChange(idx, e.target.value)}
-                  placeholder={`Custom ${idx+1}`}
-                  className="flex-1 p-2 border rounded-lg shadow-sm"
+                  onChange={(e) =>
+                    handleCustomOptionChange(idx, e.target.value)
+                  }
+                  placeholder={`Custom ${idx + 1}`}
+                  className="flex-1 rounded-lg border p-2 shadow-sm"
                 />
               </div>
             ))}
@@ -360,7 +381,9 @@ export default function SupplementaryForm() {
                 <input
                   type="checkbox"
                   checked={selectedOptions.includes(opt)}
-                  disabled={!selectedOptions.includes(opt) && totalSelections >= 5}
+                  disabled={
+                    !selectedOptions.includes(opt) && totalSelections >= 5
+                  }
                   onChange={() => handleCheckboxChange(opt)}
                   aria-describedby={customOptionsDescriptionId}
                   className="h-5 w-5"
@@ -371,47 +394,44 @@ export default function SupplementaryForm() {
           </div>
         </div>
 
-        {/* File Upload */}
-
-        
-        <div className="mb-6">
-          <label htmlFor="file-upload" className="block mb-2 text-lg font-semibold">Upload Your File (max 100MB)</label>
-          <input
-            id="file-upload"
-            type="file"
-            onChange={(e) => setFile(e.target.files?.[0] || null)}
-            className="mb-2"
-          />
-          {uploading && <p className="text-sm text-gray-600">Uploading...</p>}
-          {fileLink && (
-            <p className="text-sm">
-              File ready: {fileLink}
-            </p>
-          )}
+        <div className="mb-6 rounded-lg border border-green-700/30 bg-green-50 p-4 text-sm text-green-950">
+          <h2 className="mb-1 text-base font-semibold">
+            Logo and source files
+          </h2>
+          <p>
+            After payment, your confirmation page and email will include a link
+            for sending us logos or source files.
+          </p>
         </div>
-
 
         {/* Comments */}
         <div className="mb-6">
-          <label htmlFor="additional-comments" className="block mb-2 text-lg font-semibold">Additional Comments</label>
+          <label
+            htmlFor="additional-comments"
+            className="mb-2 block text-lg font-semibold"
+          >
+            Additional Comments
+          </label>
           <textarea
             id="additional-comments"
             value={comments}
             onChange={(e) => setComments(e.target.value)}
             maxLength={maxCommentLength}
-            className="w-full p-3 border rounded-lg shadow-sm resize-none h-32"
+            className="h-32 w-full resize-none rounded-lg border p-3 shadow-sm"
             placeholder="Any questions or requests?"
           />
-          <p className="mt-1 text-sm text-gray-600">{comments.length}/{maxCommentLength}</p>
+          <p className="mt-1 text-sm text-gray-600">
+            {comments.length}/{maxCommentLength}
+          </p>
         </div>
 
         {/* Submit */}
         <button
           type="submit"
-          disabled={isSubmitting || uploading || !selectedProduct}
-          className={`rounded-lg px-6 py-2 text-base text-white shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-300 focus-visible:ring-offset-2 focus-visible:ring-offset-white ${isSubmitting||uploading||!selectedProduct ? 'bg-gray-400 cursor-not-allowed' : 'bg-green-500 hover:bg-green-600'}`}
+          disabled={isSubmitting || !selectedProduct}
+          className={`rounded-lg px-6 py-2 text-base text-white shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-300 focus-visible:ring-offset-2 focus-visible:ring-offset-white ${isSubmitting || !selectedProduct ? "cursor-not-allowed bg-gray-400" : "bg-green-500 hover:bg-green-600"}`}
         >
-          {isSubmitting ? 'Redirecting...' : 'Continue to payment'}
+          {isSubmitting ? "Redirecting..." : "Continue to payment"}
         </button>
       </form>
 
@@ -419,7 +439,9 @@ export default function SupplementaryForm() {
         <div className="mt-6 text-center">
           <h2 className="text-lg font-bold">Your Order ID:</h2>
           <p className="text-lg text-green-600">{orderId}</p>
-          <p className="text-sm text-gray-600">Please save this for your records.</p>
+          <p className="text-sm text-gray-600">
+            Please save this for your records.
+          </p>
         </div>
       )}
     </div>

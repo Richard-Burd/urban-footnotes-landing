@@ -64,6 +64,43 @@ export default function OrderSuccess() {
                 Your order ID is <strong>{details.orderId}</strong>.
               </p>
             )}
+            {details.customerEmail && (
+              <p>
+                We sent confirmation and next steps to{" "}
+                <strong>{details.customerEmail}</strong>.
+              </p>
+            )}
+            {details.logoSubmissionUrl && (
+              <div className="rounded-lg border border-green-300/40 bg-green-950/30 p-5">
+                <h2 className="mb-2 text-xl font-bold">
+                  Send us your logo or source files
+                </h2>
+                <p className="mb-4">
+                  Use the button below to submit any logos, images, or source
+                  files for your report. If you have trouble with the form,
+                  email us at{" "}
+                  <a
+                    href="mailto:contact@urbanfootnotes.com"
+                    className="text-blue-400 hover:underline"
+                  >
+                    contact@urbanfootnotes.com
+                  </a>
+                  .
+                </p>
+                <a
+                  href={details.logoSubmissionUrl}
+                  target={
+                    details.logoSubmissionUrl.startsWith("http")
+                      ? "_blank"
+                      : undefined
+                  }
+                  rel="noopener noreferrer"
+                  className="inline-block rounded-lg bg-green-500 px-5 py-2 font-semibold text-white hover:bg-green-600"
+                >
+                  Send logo or files
+                </a>
+              </div>
+            )}
             <p>We will use the details you submitted to prepare your report.</p>
           </div>
         )}

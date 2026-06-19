@@ -1,4 +1,5 @@
 import { getStripe } from "@/lib/stripeServer";
+import { getLogoSubmissionUrl } from "@/lib/orderConfig";
 
 export default async function handler(req, res) {
   if (req.method !== "GET") {
@@ -13,10 +14,14 @@ export default async function handler(req, res) {
 
   try {
     const session = await getStripe().checkout.sessions.retrieve(sessionId);
+    const orderId =
+      session.metadata?.orderId || session.client_reference_id || "";
     return res.status(200).json({
-      orderId: session.metadata?.orderId || session.client_reference_id || "",
+      orderId,
       paymentStatus: session.payment_status,
-      customerEmail: session.customer_details?.email || session.customer_email || "",
+      customerEmail:
+        session.customer_details?.email || session.customer_email || "",
+      logoSubmissionUrl: getLogoSubmissionUrl(orderId),
     });
   } catch (error) {
     console.error("Error retrieving Checkout Session:", error);

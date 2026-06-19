@@ -1,9 +1,8 @@
-import { sendOrderEmail } from "@/lib/orderEmail";
 import {
-  createDownloadUrl,
-  loadOrder,
-  saveOrder,
-} from "@/lib/orderStorage";
+  sendCustomerOrderConfirmationEmail,
+  sendPaidOrderEmail,
+} from "@/lib/orderEmail";
+import { getOrderProduct } from "@/lib/orderProducts";
 import { getStripe } from "@/lib/stripeServer";
 
 export const config = {
@@ -11,6 +10,11 @@ export const config = {
     bodyParser: false,
   },
 };
+
+const PAID_CHECKOUT_EVENTS = new Set([
+  "checkout.session.completed",
+  "checkout.session.async_payment_succeeded",
+]);
 
 async function readRawBody(req) {
   const chunks = [];
@@ -28,90 +32,91 @@ function formatAmount(amountTotal, currency) {
   }).format(amountTotal / 100);
 }
 
+function getEntityId(value) {
+  return typeof value === "string" ? value : value?.id || "";
+}
+
+async function markNotificationSent(stripe, sessionId, metadataKey) {
+  await stripe.checkout.sessions.update(sessionId, {
+    metadata: { [metadataKey]: "true" },
+  });
+}
+
 export default async function handler(req, res) {
   if (req.method !== "POST") {
     res.setHeader("Allow", "POST");
     return res.status(405).send("Method not allowed");
   }
 
-  if (!process.env.STRIPE_WEBHOOK_SECRET) {
-    return res.status(500).send("Missing STRIPE_WEBHOOK_SECRET env var");
+  const webhookSecret = process.env.SANDBOX_STRIPE_WEBHOOK_SECRET;
+  if (!webhookSecret) {
+    return res
+      .status(500)
+      .send("Missing SANDBOX_STRIPE_WEBHOOK_SECRET env var");
   }
 
+  const stripe = getStripe();
   const signature = req.headers["stripe-signature"];
   const rawBody = await readRawBody(req);
 
   let event;
   try {
-    event = getStripe().webhooks.constructEvent(
-      rawBody,
-      signature,
-      process.env.STRIPE_WEBHOOK_SECRET,
-    );
+    event = stripe.webhooks.constructEvent(rawBody, signature, webhookSecret);
   } catch (error) {
     console.error("Stripe webhook signature verification failed:", error);
     return res.status(400).send(`Webhook Error: ${error.message}`);
   }
 
-  if (event.type !== "checkout.session.completed") {
+  if (!PAID_CHECKOUT_EVENTS.has(event.type)) {
     return res.status(200).json({ received: true });
   }
 
-  const session = event.data.object;
-  const orderId = session.metadata?.orderId || session.client_reference_id;
-  if (!orderId) {
-    return res.status(400).send("Missing order ID on Checkout Session");
-  }
-
   try {
-    const order = await loadOrder(orderId);
-    if (order.paymentStatus === "paid" && order.paidEmailSent) {
-      return res.status(200).json({ received: true, duplicate: true });
+    const eventSession = event.data.object;
+    const session = await stripe.checkout.sessions.retrieve(eventSession.id);
+
+    if (session.payment_status !== "paid") {
+      return res.status(200).json({ received: true, paymentPending: true });
     }
 
-    const paymentIntent =
-      typeof session.payment_intent === "string"
-        ? session.payment_intent
-        : session.payment_intent?.id || "";
+    const orderId = session.metadata?.orderId || session.client_reference_id;
+    if (!orderId) {
+      return res.status(400).send("Missing order ID on Checkout Session");
+    }
 
-    const paidOrder = {
-      ...order,
+    const product = getOrderProduct(session.metadata?.productSlug);
+    const order = {
+      orderId,
+      createdAt: new Date(session.created * 1000).toISOString(),
       paymentStatus: "paid",
-      paidEmailSent: Boolean(order.paidEmailSent),
-      paidAt: new Date().toISOString(),
-      updatedAt: new Date().toISOString(),
-      stripe: {
-        ...(order.stripe || {}),
-        checkoutSessionId: session.id,
-        paymentIntent,
-        customerId:
-          typeof session.customer === "string"
-            ? session.customer
-            : session.customer?.id || "",
-      },
+      productSlug: session.metadata?.productSlug || "",
+      productName:
+        session.metadata?.productName || product?.name || "Property Report",
+      email: session.customer_details?.email || session.customer_email || "",
+    };
+    const payment = {
+      sessionId: session.id,
+      paymentIntent: getEntityId(session.payment_intent),
+      amountTotal: formatAmount(session.amount_total, session.currency),
+      currency: session.currency?.toUpperCase() || "USD",
     };
 
-    const fileUrl = paidOrder.upload?.key
-      ? await createDownloadUrl(paidOrder.upload.key)
-      : "";
+    if (session.metadata?.paidOrderEmailSent !== "true") {
+      await sendPaidOrderEmail({ order, payment });
+      await markNotificationSent(stripe, session.id, "paidOrderEmailSent");
+    }
 
-    await saveOrder(paidOrder);
-
-    await sendOrderEmail({
-      order: paidOrder,
-      fileUrl,
-      type: "paid",
-      payment: {
-        sessionId: session.id,
-        paymentIntent,
-        amountTotal: formatAmount(session.amount_total, session.currency),
-        currency: session.currency?.toUpperCase() || "USD",
-      },
-    });
-
-    paidOrder.paidEmailSent = true;
-    paidOrder.updatedAt = new Date().toISOString();
-    await saveOrder(paidOrder);
+    if (
+      order.email &&
+      session.metadata?.customerConfirmationEmailSent !== "true"
+    ) {
+      await sendCustomerOrderConfirmationEmail({ order, payment });
+      await markNotificationSent(
+        stripe,
+        session.id,
+        "customerConfirmationEmailSent",
+      );
+    }
 
     return res.status(200).json({ received: true });
   } catch (error) {
