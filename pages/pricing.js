@@ -93,7 +93,7 @@ export default function Pricing() {
         id="property-reports-intro"
         className="w-full max-w-screen-lg px-4 pb-8 text-white"
       >
-        <div className="pb-4 text-2xl font-semibold min-[876px]:text-5xl min-[876px]">
+        <div className="pb-4 text-2xl font-semibold min-[876px]:text-5xl">
           Property Reports
         </div>
         <div className="text-xl min-[876px]:text-2xl">
