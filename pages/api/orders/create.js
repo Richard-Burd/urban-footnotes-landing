@@ -81,7 +81,7 @@ export default async function handler(req, res) {
   } catch (error) {
     console.error("Error creating order:", error);
     return res.status(500).json({
-      error: error.message || "Could not create the order.",
+      error: "Could not create the order.",
     });
   }
 }
