@@ -1,7 +1,9 @@
-import { useEffect } from "react";
 import PageTitle from "@/components/PageTitle";
 import Image from "next/image";
 import Head from "next/head";
+import Link from "next/link";
+import { CheckCircle2 } from "lucide-react";
+import { ORDER_PRODUCTS, PRODUCT_FEATURES } from "@/lib/orderProducts";
 
 function DevelopmentProposalImages({ baseUrl, id = "images", className }) {
   return (
@@ -60,18 +62,9 @@ function DevelopmentProposalImages({ baseUrl, id = "images", className }) {
 export default function Pricing() {
   const baseUrl =
     process.env.NEXT_PUBLIC_S3_BASE_URL?.replace(/\/+$/, "") ?? "";
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://js.stripe.com/v3/pricing-table.js";
-    script.async = true;
-    document.body.appendChild(script);
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
 
   return (
-    <div>
+    <div className="flex flex-col items-center">
       <Head>
         <title>Pricing | Urban Foot Notes</title>
       </Head>
@@ -89,56 +82,57 @@ export default function Pricing() {
       />
 
       <div className="w-full max-w-screen-lg px-4 text-xl text-white min-[876px]:text-2.5xl">
-        <div className="mb-10">
-          The team at Urban Foot Notes can create two types of reports:
-        </div>
-        <div id="report-descriptions" className="mx-10 max-[876px]:mx-0">
-          <div id="property-report-description" className="mb-10">
-            <div className="font-bold italic">Property Report</div>
-            <div className="mx-6 max-[876px]:mx-0">
-              This is a standardized address-level walkability report that
-              scores access to 74 everyday services. Property reports are
-              directly comparable across addresses, helping agents, buyers,
-              renters, and planners make better decisions
-            </div>
-          </div>
-          <div
-            id="development-proposal-description"
-            className="mb-10 max-[876px]:mx-0"
-          >
-            <div className="font-bold italic">Development Proposal</div>
-            <div className="mx-6 max-[876px]:mx-0">
-              This includes everything in a property report plus a set of
-              architectural drawings showing how a property could be developed
-              so as to maximize walkability for a given address.
-            </div>
-          </div>
+        <div className="mb-5">
+          Select the right product for your needs:
         </div>
       </div>
 
-      <hr className="mx-4 border-t-2 border-gray-300 pb-8" />
+
 
       <div
         id="property-reports-intro"
         className="w-full max-w-screen-lg px-4 pb-8 text-white"
       >
-        <div className="pb-1 text-2xl font-semibold min-[876px]:text-4xl min-[876px]:underline">
+        <div className="pb-4 text-2xl font-semibold min-[876px]:text-5xl">
           Property Reports
         </div>
         <div className="text-xl min-[876px]:text-2xl">
-          These are available for purchase online. You can select one of the
-          three options below to purchase a Property Report for an address of
-          your choosing
+              This is a standardized address-level walkability report that
+              scores access to 74 everyday services. Property reports are
+              directly comparable across addresses, helping agents, buyers,
+              renters, and planners make better decisions
         </div>
       </div>
 
-      <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
-      <stripe-pricing-table
-        pricing-table-id="prctbl_1R8ebIGN52GuXWVWPtWvx2aH"
-        publishable-key="pk_live_51PWM5ZGN52GuXWVWNN9rPCsYn8nK2OK1xZl03U6AzK38Hh5I74b7o5GpPHMj9qyRrPgoVwLABMjC4ZgjrJqr8tXc004r8wQtLl"
-      ></stripe-pricing-table>
+      <div className="grid w-full max-w-screen-lg grid-cols-1 gap-6 px-4 pb-8 md:grid-cols-3">
+        {ORDER_PRODUCTS.map((product) => (
+          <div
+            key={product.slug}
+            className="flex flex-col rounded-2xl bg-neutral-900 p-6 text-white"
+          >
+            <div className="mb-1 text-2xl font-bold">{product.name}</div>
+            <p className="mb-6 text-sm text-gray-400">{product.description}</p>
+            <div className="mb-6 text-5xl font-bold">{product.price}</div>
+            <Link
+              href={`/form?product=${product.slug}`}
+              className="mb-6 rounded-full bg-amber-400 py-3 text-center font-semibold text-neutral-900 transition hover:bg-amber-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300"
+            >
+              Start order
+            </Link>
+            <div className="mb-3 text-sm text-gray-400">This includes:</div>
+            <ul className="space-y-2">
+              {PRODUCT_FEATURES.map((feature) => (
+                <li key={feature} className="flex items-center gap-2 text-sm">
+                  <CheckCircle2 className="h-4 w-4 shrink-0 text-green-500" />
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
 
-      <hr class="mx-4 mt-12 border-t-2 border-gray-300 pb-14" />
+      <hr className="w-full max-w-screen-lg mt-12 border-t-2 border-gray-300 pb-14" />
 
       <div
         id="development-proposals-intro"
@@ -146,7 +140,7 @@ export default function Pricing() {
       >
         <div
           id="title"
-          className="pb-1 text-2xl font-semibold min-[876px]:text-4xl min-[876px]:underline"
+          className="pb-1 text-2xl font-semibold min-[876px]:text-5xl min-[876px]"
         >
           Development Proposals
         </div>
@@ -250,12 +244,12 @@ export default function Pricing() {
         </div>
       </div>
 
-      <hr class="mx-4 mt-8 border-t-2 border-gray-300 pb-14" />
+      <hr className="mx-4 mt-8 border-t-2 border-gray-300 pb-14" />
 
       <div className="roboto-font w-full max-w-screen-lg px-4 pb-8 text-xl text-white md:text-2xl">
         <div id="explanations-n-pie-chart">
           <div className="roboto-font mb-4 text-xl text-gray-100 md:text-2.5xl">
-            <div className="pb-1 text-2xl font-semibold min-[876px]:text-4xl min-[876px]:underline">
+            <div className="pb-1 text-2xl font-semibold min-[876px]:text-4xl min-[876px]">
               Costs, Coverage & Accuracy
             </div>
             <p className="mb-10">
