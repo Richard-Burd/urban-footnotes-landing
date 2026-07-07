@@ -36,10 +36,36 @@ function getEntityId(value) {
   return typeof value === "string" ? value : value?.id || "";
 }
 
-async function markNotificationSent(stripe, sessionId, metadataKey) {
+async function updateNotificationMetadata(stripe, sessionId, metadata) {
   await stripe.checkout.sessions.update(sessionId, {
-    metadata: { [metadataKey]: "true" },
+    metadata,
   });
+}
+
+async function sendNotificationOrMarkFailed({
+  stripe,
+  session,
+  sentMetadataKey,
+  failedMetadataKey,
+  notificationType,
+  sendNotification,
+}) {
+  if (session.metadata?.[sentMetadataKey] === "true") {
+    return;
+  }
+
+  try {
+    await sendNotification();
+    await updateNotificationMetadata(stripe, session.id, {
+      [sentMetadataKey]: "true",
+      [failedMetadataKey]: "false",
+    });
+  } catch (emailError) {
+    console.error(`${notificationType} email failed:`, emailError);
+    await updateNotificationMetadata(stripe, session.id, {
+      [failedMetadataKey]: "true",
+    });
+  }
 }
 
 export default async function handler(req, res) {
@@ -101,21 +127,25 @@ export default async function handler(req, res) {
       currency: session.currency?.toUpperCase() || "USD",
     };
 
-    if (session.metadata?.paidOrderEmailSent !== "true") {
-      await sendPaidOrderEmail({ order, payment });
-      await markNotificationSent(stripe, session.id, "paidOrderEmailSent");
-    }
+    await sendNotificationOrMarkFailed({
+      stripe,
+      session,
+      sentMetadataKey: "paidOrderEmailSent",
+      failedMetadataKey: "paidOrderEmailFailed",
+      notificationType: "paid-order",
+      sendNotification: () => sendPaidOrderEmail({ order, payment }),
+    });
 
-    if (
-      order.email &&
-      session.metadata?.customerConfirmationEmailSent !== "true"
-    ) {
-      await sendCustomerOrderConfirmationEmail({ order, payment });
-      await markNotificationSent(
+    if (order.email) {
+      await sendNotificationOrMarkFailed({
         stripe,
-        session.id,
-        "customerConfirmationEmailSent",
-      );
+        session,
+        sentMetadataKey: "customerConfirmationEmailSent",
+        failedMetadataKey: "customerConfirmationEmailFailed",
+        notificationType: "customer-confirmation",
+        sendNotification: () =>
+          sendCustomerOrderConfirmationEmail({ order, payment }),
+      });
     }
 
     return res.status(200).json({ received: true });

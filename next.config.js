@@ -4,15 +4,6 @@ dotenv.config();
 
 const nextConfig = {
   reactStrictMode: true,
-  async redirects() {
-    return [
-      {
-        source: "/order",
-        destination: "/pricing",
-        permanent: true,
-      },
-    ];
-  },
   images: {
     remotePatterns: [
       {
