@@ -43,6 +43,15 @@ export default function OrderSuccess() {
       <main className="w-full max-w-xl rounded-lg bg-white/10 p-8 shadow-lg">
         <h1 className="mb-4 text-3xl font-bold">Order received</h1>
 
+        <div className="mb-6 rounded-lg border-2 border-amber-300 bg-amber-100 px-4 py-3 text-amber-950">
+          <div className="text-base font-bold uppercase">
+            TESTING PURPOSES, NOT A REAL TRANSACTION
+          </div>
+          <div className="mt-1 text-sm">
+            This confirmation is for checkout testing only.
+          </div>
+        </div>
+
         {status === "loading" && (
           <p className="text-lg text-gray-100">Confirming your payment...</p>
         )}

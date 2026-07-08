@@ -1,5 +1,5 @@
 import { getProductPriceId } from "@/lib/orderProducts";
-import { sendOrderIntakeEmail } from "@/lib/orderEmail";
+import { buildManualOrderEmail, sendOrderIntakeEmail } from "@/lib/orderEmail";
 import {
   generateOrderId,
   normalizeSingleLine,
@@ -7,6 +7,12 @@ import {
   validateOrderPayload,
 } from "@/lib/orderValidation";
 import { getSiteUrl, getStripe } from "@/lib/stripeServer";
+
+function shouldSendOrderIntakeEmail() {
+  if (process.env.SEND_ORDER_INTAKE_EMAIL === "true") return true;
+  if (process.env.SEND_ORDER_INTAKE_EMAIL === "false") return false;
+  return true;
+}
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
@@ -50,8 +56,6 @@ export default async function handler(req, res) {
   };
 
   try {
-    await sendOrderIntakeEmail({ order });
-
     const checkoutSession = await getStripe().checkout.sessions.create({
       mode: "payment",
       customer_email: order.email,
@@ -73,10 +77,29 @@ export default async function handler(req, res) {
         },
       },
     });
+    const sendIntakeEmail = shouldSendOrderIntakeEmail();
+    let intakeEmailStatus = sendIntakeEmail ? "pending" : "skipped";
+    let manualOrderEmail = null;
+
+    if (sendIntakeEmail) {
+      try {
+        await sendOrderIntakeEmail({ order });
+        intakeEmailStatus = "sent";
+      } catch (emailError) {
+        console.error("Order intake email failed:", emailError);
+        intakeEmailStatus = "manual-email-required";
+        manualOrderEmail = buildManualOrderEmail({
+          notificationType: "order-intake",
+          order,
+        });
+      }
+    }
 
     return res.status(200).json({
       orderId: order.orderId,
       checkoutUrl: checkoutSession.url,
+      intakeEmailStatus,
+      manualOrderEmail,
     });
   } catch (error) {
     console.error("Error creating order:", error);

@@ -33,8 +33,8 @@ export const navItems = [
     ],
   },
   {
-    title: "Pricing",
-    path: "/pricing",
+    title: "Order",
+    path: "/order",
     bgColor: "bg-navbar-order",
     pinned: true,
   },
@@ -61,6 +61,7 @@ export const navItems = [
 
 export const isPathActive = (currentPath, path) =>
   currentPath === path ||
+  (currentPath === "/pricing" && path === "/order") ||
   (SAMPLES_PATHS.includes(currentPath) && path === "/samples");
 
 export const defaultPathForItem = (item) => item.path ?? item.children?.[0]?.path;

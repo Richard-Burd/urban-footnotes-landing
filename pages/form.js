@@ -146,7 +146,7 @@ export default function SupplementaryForm() {
 
     if (!selectedProduct) {
       setErrorMessage(
-        "Please choose a valid report product from the pricing page.",
+        "Please choose a valid report product from the order page.",
       );
       return;
     }
@@ -187,6 +187,17 @@ export default function SupplementaryForm() {
 
       if (resp.ok) {
         setOrderId(data.orderId);
+        if (data.manualOrderEmail?.mailtoUrl) {
+          setSuccessMessage(
+            `Order created. Opening an email draft for ${data.orderId}, then continuing to payment...`,
+          );
+          window.setTimeout(() => {
+            window.location.assign(data.checkoutUrl);
+          }, 1800);
+          window.location.href = data.manualOrderEmail.mailtoUrl;
+          return;
+        }
+
         setSuccessMessage(
           `Order created. Redirecting to payment for ${data.orderId}...`,
         );
@@ -213,6 +224,15 @@ export default function SupplementaryForm() {
         complete your order:
       </h1>
 
+      <div className="mb-4 w-full max-w-xl rounded-lg border-2 border-amber-700 bg-amber-100 px-4 py-3 text-center text-amber-950">
+        <div className="text-base font-bold uppercase">
+          TESTING PURPOSES, NOT A REAL TRANSACTION
+        </div>
+        <div className="mt-1 text-sm">
+          This checkout flow is currently enabled only for testing.
+        </div>
+      </div>
+
       <div className="mb-4 w-full max-w-xl rounded-lg border border-stone-400 bg-white/70 px-4 py-3">
         <div className="text-sm font-semibold uppercase text-stone-600">
           Selected report
@@ -226,7 +246,7 @@ export default function SupplementaryForm() {
           </>
         ) : (
           <div className="text-sm text-red-700">
-            Choose a report package from the pricing page before submitting.
+            Choose a report package from the order page before submitting.
           </div>
         )}
       </div>
